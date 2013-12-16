@@ -88,6 +88,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Collection destination for static files.
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
