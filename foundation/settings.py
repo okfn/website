@@ -54,6 +54,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'djangosecure',
+    'compressor',
+    'twitter_bootstrap',
     'apps.homepage',
 )
 
@@ -88,6 +90,17 @@ USE_L10N = True
 
 USE_TZ = True
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
+
+# Where else to find static files
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
 # Collection destination for static files.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -120,3 +133,14 @@ if env.get('DJANGO_SECURE') == 'true':
     CSRF_COOKIE_HTTPONLY = True
 else:
     SECURE_SSL_REDIRECT = False
+
+COMPRESS_OFFLINE = env.get('DJANGO_COMPRESS_OFFLINE') == 'true'
+
+COMPRESS_PRECOMPILERS = (
+    ('text/less', 'lessc {infile} {outfile}'),
+)
+
+COMPRESS_CSS_FILTERS = [
+    'compressor.filters.css_default.CssAbsoluteFilter',
+    'compressor.filters.cssmin.CSSMinFilter'
+]

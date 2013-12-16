@@ -1,10 +1,16 @@
 {% extends "base.html" %}
 
+{% load compress %}
+
 {% block head-css %}
+{% compress css %}
+<link type="text/less" rel="stylesheet" href="/static/less/bootstrap.less" charset="utf-8">
+<link type="text/less" rel="stylesheet" href="/static/less/main.less" charset="utf-8">
+{% endcompress %}
 {% endblock %}
 
 {% block body-sheath %}
-  <header>
+  <header class='container'>
     <div>
       <h1>
         <a href="{% url 'homepage' %}">
@@ -12,24 +18,21 @@
         </a>
       </h1>
       {% if user.is_authenticated %}
-      <form action="{% url 'logout' %}"
-            method="POST" 
-            class="login-out">
+      <form action='{% url 'logout' %}' method='POST'>
         {% csrf_token %}
         <button type="submit">Logout</button>
       </form>
       {% else %}
-      <a href="{% url 'login' %}"
-         class="login-out">Login</a>
+      <a href='{% url 'login' %}'>Login</a>
       {% endif %}
     </div>
   </header>
 
-  <div id="main" class='{% block main-class %}{% endblock %}'>
+  <div id='main' class='container {% block main-class %}{% endblock %}'>
     {% block body %}{% endblock %}
   </div>
 
-  <footer>
+  <footer class='container'>
     <div>
       <p>This has been A Website.</p>
     </div>
