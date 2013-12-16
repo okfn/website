@@ -24,6 +24,8 @@ warnings.filterwarnings("ignore",
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+SITE_ID = int(env.get('DJANGO_SITE_ID', 1))
+
 DEBUG = env.get('DJANGO_DEBUG', 'true') == 'true'
 
 if DEBUG:
@@ -48,10 +50,12 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django.contrib.auth',
+    'django.contrib.flatpages',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'south',
     'djangosecure',
     'compressor',
