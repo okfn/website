@@ -11,21 +11,11 @@
 
 {% block body-sheath %}
   <header class='container'>
-    <div>
-      <h1>
-        <a href='/'>
-          A Website
-        </a>
-      </h1>
-      {% if user.is_authenticated %}
-      <form action='{% url 'logout' %}' method='POST'>
-        {% csrf_token %}
-        <button type='submit'>Logout</button>
-      </form>
-      {% else %}
-      <a href='{% url 'login' %}'>Login</a>
-      {% endif %}
-    </div>
+    <h1>
+      <a href='{% url 'pages-root' %}'>
+        {{ site.name }}
+      </a>
+    </h1>
   </header>
 
   <div id='main' class='container {% block main-class %}{% endblock %}'>

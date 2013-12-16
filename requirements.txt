@@ -10,7 +10,7 @@ gunicorn
 psycopg2
 cssmin
 
-git+https://github.com/divio/django-cms.git@904dd89
+git+https://github.com/divio/django-cms.git@develop
 django-reversion==1.8.0
 djangocms-text-ckeditor==2.0.5
 pillow==2.2.1
