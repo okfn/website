@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block head-css %}
+{% endblock %}
+
+{% block body-sheath %}
+  <header>
+    <div>
+      <h1>
+        <a href="{% url 'homepage' %}">
+          A Website
+        </a>
+      </h1>
+      {% if user.is_authenticated %}
+      <form action="{% url 'logout' %}"
+            method="POST" 
+            class="login-out">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+      </form>
+      {% else %}
+      <a href="{% url 'login' %}"
+         class="login-out">Login</a>
+      {% endif %}
+    </div>
+  </header>
+
+  <div id="main" class='{% block main-class %}{% endblock %}'>
+    {% block body %}{% endblock %}
+  </div>
+
+  <footer>
+    <div>
+      <p>This has been A Website.</p>
+    </div>
+  </footer>
+{% endblock %}

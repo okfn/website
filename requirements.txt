@@ -1,0 +1,9 @@
+Django==1.6.1
+South==0.8.4
+dj-database-url==0.2.2
+django-secure==1.0
+django-webtest==1.7.5
+dj-static==0.0.5
+webtest==2.0.9
+gunicorn
+psycopg2

@@ -1,0 +1,20 @@
+{% extends "general.html" %}
+
+{% block title %}Login{% endblock %}
+{% block body-class %}login{% endblock %}
+
+{% block body %}
+  <h1>Login</h1>
+  <form action='' method='POST' class='login'>
+    {% csrf_token %}
+    {% for field in form %}
+      {{ field.label_tag }}
+      {{ field }}
+      {{ field.errors }}
+    {% endfor %}
+    {{form.non_field_errors}}
+    <button type='submit' class='progress'>Log in</button>
+  </form>
+  
+  <a href="{% url 'password_reset' %}">Forgotten password?</a>
+{% endblock %}

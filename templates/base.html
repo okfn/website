@@ -1,0 +1,17 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang='en-gb'>
+  <head>
+    <meta charset='UTF-8'>
+    <title>{{ site_name }}: {% block title %}SET A TITLE{% endblock %}</title>
+
+    {% block head-icons %}{% endblock %}
+    {% block head-links %}{% endblock %}
+    {% block head-alternate %}{% endblock %}
+    {% block head-css %}{% endblock %}
+    {% block head-meta %}{% endblock %}
+  </head>
+  <body {% block body-attributes %}{% endblock %} class='{% block body-class %}{% endblock %}'>
+    {% block body-sheath %}{% endblock %}
+  </body>
+</html>
