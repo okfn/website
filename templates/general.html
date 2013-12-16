@@ -13,14 +13,14 @@
   <header class='container'>
     <div>
       <h1>
-        <a href="{% url 'homepage' %}">
+        <a href='{% url 'homepage' %}'>
           A Website
         </a>
       </h1>
       {% if user.is_authenticated %}
       <form action='{% url 'logout' %}' method='POST'>
         {% csrf_token %}
-        <button type="submit">Logout</button>
+        <button type='submit'>Logout</button>
       </form>
       {% else %}
       <a href='{% url 'login' %}'>Login</a>
@@ -34,7 +34,7 @@
 
   <footer class='container'>
     <div>
-      <p>This has been A Website.</p>
+      <p>This has been a website.</p>
     </div>
   </footer>
 {% endblock %}
