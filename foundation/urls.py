@@ -4,11 +4,10 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', 'apps.homepage.views.homepage', name='homepage'),
+#    url(r'^$', 'apps.homepage.views.homepage', name='homepage'),
 
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
-
 )
 
 # Login/logout, password changes and resets
@@ -33,7 +32,7 @@ urlpatterns += patterns('django.contrib.auth.views',
         name='password_reset_complete'),
 )
 
-# Fallthrough for flatpages
-urlpatterns += patterns('django.contrib.flatpages.views',
-    url(r'^(?P<url>.*/)$', 'flatpage'),
+# Fallthrough for CMS managed pages
+urlpatterns += patterns('',
+    url(r'^', include('cms.urls'))
 )

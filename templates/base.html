@@ -1,3 +1,6 @@
+{% load cms_tags %}
+{% load menu_tags %}
+{% load sekizai_tags %}
 <!DOCTYPE html>
 <html lang='en-gb'>
   <head>
@@ -8,10 +11,21 @@
     {% block head-icons %}{% endblock %}
     {% block head-links %}{% endblock %}
     {% block head-alternate %}{% endblock %}
+    {% render_block "css" %}
     {% block head-css %}{% endblock %}
     {% block head-meta %}{% endblock %}
   </head>
   <body {% block body-attributes %}{% endblock %} class='{% block body-class %}{% endblock %}'>
+    {% cms_toolbar %}
+    <ul>
+      {% show_menu 0 100 100 100 %}
+    </ul>
     {% block body-sheath %}{% endblock %}
+    {% render_block "js" %}
+    <script>
+      {% block javascript-variables %}{% endblock %}
+    </script>
+    {% block javascript-libraries %}{% endblock %}
+    {% block javascript-asynchronous %}{% endblock %}
   </body>
 </html>

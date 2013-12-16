@@ -47,19 +47,36 @@ else:
 ALLOWED_HOSTS = env.get('DJANGO_ALLOWED_HOSTS', '').split(',')
 
 INSTALLED_APPS = (
+    # Django core
+    'djangocms_admin_style', # CMS admin theme
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django.contrib.auth',
-    'django.contrib.flatpages',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'south',
     'djangosecure',
+    'south',
+    'reversion',
+
+    # Asset pipeline
     'compressor',
     'twitter_bootstrap',
+
+    # CMS plugins
+    'cms.plugins.file',
+    'djangocms_text_ckeditor',
+
+    # CMS
+    'cms',
+    'cms.stacks',
+    'mptt',
+    'menus',
+    'sekizai',
+
+    # Custom apps
     'apps.homepage',
 )
 
@@ -71,6 +88,23 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'cms.middleware.page.CurrentPageMiddleware',
+    'cms.middleware.user.CurrentUserMiddleware',
+    'cms.middleware.toolbar.ToolbarMiddleware',
+    'cms.middleware.language.LanguageCookieMiddleware',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.request',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.contrib.messages.context_processors.messages',
+    'cms.context_processors.media',
+    'sekizai.context_processors.sekizai',
 )
 
 ROOT_URLCONF = 'foundation.urls'
@@ -84,7 +118,10 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
+LANGUAGES = [
+    ('en', 'English'),
+]
 
 TIME_ZONE = 'UTC'
 
@@ -111,6 +148,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 TEMPLATE_DEBUG = DEBUG
 
@@ -148,3 +188,7 @@ COMPRESS_CSS_FILTERS = [
     'compressor.filters.css_default.CssAbsoluteFilter',
     'compressor.filters.cssmin.CSSMinFilter'
 ]
+
+CMS_TEMPLATES = (
+    ('cms_default.html', 'Default layout'),
+)
