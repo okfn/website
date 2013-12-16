@@ -11,18 +11,18 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 from os import environ as env
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
 import dj_database_url
 
-# # Silence warnings from ipython/sqlite
+# Silence warnings from ipython/sqlite
 import warnings
 import exceptions
 warnings.filterwarnings("ignore",
                         category=exceptions.RuntimeWarning,
                         module='django.db.backends.sqlite3.base',
                         lineno=58)
+
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 DEBUG = env.get('DJANGO_DEBUG', 'true') == 'true'
 
