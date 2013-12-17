@@ -48,7 +48,6 @@ ALLOWED_HOSTS = env.get('DJANGO_ALLOWED_HOSTS', '').split(',')
 
 INSTALLED_APPS = (
     # Django core
-    'djangocms_admin_style', # CMS admin theme
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django.contrib.auth',
@@ -57,6 +56,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+
+    # 3rd-party important
     'djangosecure',
     'south',
     'reversion',
