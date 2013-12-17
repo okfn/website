@@ -6,7 +6,14 @@
 {% endblock %}
 
 {% block body %}
-{% placeholder main_content %}
+<div class='row'>
+  <div class='col-md-8'>
+    {% placeholder main_content %}
+  </div>
+  <div class='col-md-4'>
+    {% placeholder sidebar %}
+  </div>
+</div>
 {% endblock %}
 
 {% block footer %}
