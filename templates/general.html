@@ -29,3 +29,12 @@
     </div>
   </footer>
 {% endblock %}
+
+{% block javascript-libraries %}
+{% compress js %}
+<script type="text/javascript" src="/static/js/jquery-2.0.3.js" charset="utf-8">
+</script>
+<script type="text/javascript" src="/static/js/dropdown.js" charset="utf-8">
+</script>
+{% endcompress %}
+{% endblock %}
