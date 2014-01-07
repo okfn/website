@@ -6,3 +6,6 @@ class Job(models.Model):
     description = models.TextField()
     submission_email = models.EmailField()
     submission_closes = models.DateTimeField()
+
+    class Meta:
+        ordering = ('submission_closes',)

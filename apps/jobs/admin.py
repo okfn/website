@@ -9,4 +9,11 @@ class JobAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.TextField: {'widget': AdminPagedownWidget},
     }
+    list_display = ('title', 'submission_closes', 'submission_email')
+    # On the jobs page, the jobs nearest their deadlines should display first,
+    # hence the model's default ordering of `submission_closes ASC`. But in the
+    # admin, old jobs don't roll off the "top" of the page, so we actually want
+    # the reverse ordering.
+    ordering = ('-submission_closes',)
+
 admin.site.register(Job, JobAdmin)
