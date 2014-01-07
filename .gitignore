@@ -18,3 +18,7 @@ nosetests.xml
 
 # Node packages
 node_modules
+
+# Site data
+/media
+/staticfiles
