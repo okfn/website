@@ -1,0 +1,46 @@
+{% load cms_tags %}
+{% load menu_tags %}
+{% load sekizai_tags %}
+<!DOCTYPE html>
+<html lang='en-gb'>
+  <head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>{{ site.name }}: {% block title %}SET A TITLE{% endblock %}</title>
+
+    {% block head-icons %}{% endblock %}
+    {% block head-links %}{% endblock %}
+    {% block head-alternate %}{% endblock %}
+    {% render_block "css" %}
+    {% block head-css %}{% endblock %}
+    {% block head-meta %}{% endblock %}
+  </head>
+  <body {% block body-attributes %}{% endblock %} class='{% block body-class %}{% endblock %}'>
+    {% cms_toolbar %}
+
+    <nav class='navbar navbar-default navbar-static-top' role='navigation'>
+      <ul class='nav navbar-nav'>
+        {% show_menu 0 100 100 100 %}
+      </ul>
+      {% if user.is_authenticated %}
+      <form class='navbar-form navbar-right' action='{% url 'logout' %}' method='POST'>
+        {% csrf_token %}
+        <button class='btn btn-default' type='submit'>Logout</button>
+      </form>
+      {% else %}
+      <p class='navbar-text navbar-right'>
+        <a class='navbar-link' href='{% url 'login' %}'>Login</a>
+      </p>
+      {% endif %}
+      </div>
+    </nav>
+
+    {% block body-sheath %}{% endblock %}
+    {% render_block "js" %}
+    <script>
+      {% block javascript-variables %}{% endblock %}
+    </script>
+    {% block javascript-libraries %}{% endblock %}
+    {% block javascript-asynchronous %}{% endblock %}
+  </body>
+</html>

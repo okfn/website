@@ -1,0 +1,21 @@
+{% extends "general.html" %}
+{% load cms_tags %}
+
+{% block title %}
+{% page_attribute "page_title" %}
+{% endblock %}
+
+{% block body %}
+<div class='row'>
+  <div class='col-md-8'>
+    {% placeholder main_content %}
+  </div>
+  <div class='col-md-4'>
+    {% placeholder sidebar %}
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% placeholder footer %}
+{% endblock %}

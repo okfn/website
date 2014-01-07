@@ -1,0 +1,24 @@
+*.sw[op]
+*.py[cod]
+__pycache__
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Database
+*.sqlite3
+
+# Node packages
+node_modules
+
+# Site data
+/media
+/staticfiles

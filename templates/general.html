@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load compress %}
+
+{% block head-css %}
+{% compress css %}
+<link type="text/less" rel="stylesheet" href="/static/less/bootstrap.less" charset="utf-8">
+<link type="text/less" rel="stylesheet" href="/static/less/main.less" charset="utf-8">
+{% endcompress %}
+{% endblock %}
+
+{% block body-sheath %}
+  <header class='container'>
+    <h1>
+      <a href='{% url 'pages-root' %}'>
+        {{ site.name }}
+      </a>
+    </h1>
+  </header>
+
+  <div id='main' class='container {% block main-class %}{% endblock %}'>
+    {% block body %}{% endblock %}
+  </div>
+
+  <footer class='container'>
+    <div>
+      <p>This has been a website.</p>
+      {% block footer %}{% endblock %}
+    </div>
+  </footer>
+{% endblock %}
+
+{% block javascript-libraries %}
+{% compress js %}
+<script type="text/javascript" src="/static/js/jquery-2.0.3.js" charset="utf-8">
+</script>
+<script type="text/javascript" src="/static/js/dropdown.js" charset="utf-8">
+</script>
+{% endcompress %}
+{% endblock %}
