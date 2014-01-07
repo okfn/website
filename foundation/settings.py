@@ -47,6 +47,9 @@ else:
 ALLOWED_HOSTS = env.get('DJANGO_ALLOWED_HOSTS', '').split(',')
 
 INSTALLED_APPS = (
+    # CMS admin theme
+    'djangocms_admin_style',
+
     # Django core
     'django.contrib.admin',
     'django.contrib.admindocs',
