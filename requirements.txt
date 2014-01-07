@@ -13,3 +13,4 @@ git+https://github.com/divio/django-cms.git@develop
 django-reversion==1.8.0
 djangocms-text-ckeditor==2.0.5
 pillow==2.2.1
+django-pagedown==0.0.5

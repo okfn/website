@@ -64,6 +64,7 @@ INSTALLED_APPS = (
     'djangosecure',
     'south',
     'reversion',
+    'pagedown',
 
     # Asset pipeline
     'compressor',
