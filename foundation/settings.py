@@ -82,6 +82,7 @@ INSTALLED_APPS = (
 
     # Custom apps
     'apps.homepage',
+    'apps.jobs',
 )
 
 MIDDLEWARE_CLASSES = (
