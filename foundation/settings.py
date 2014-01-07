@@ -65,6 +65,7 @@ INSTALLED_APPS = (
     'south',
     'reversion',
     'pagedown',
+    'markdown_deux',
 
     # Asset pipeline
     'compressor',

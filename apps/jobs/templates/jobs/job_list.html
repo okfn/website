@@ -1,0 +1,24 @@
+{% extends "general.html" %}
+
+{% load markdown_deux_tags %}
+
+{% block title %}Jobs{% endblock %}
+{% block body-class %}jobs{% endblock %}
+
+{% block body %}
+  {% for job in job_list %}
+    <h3>{{ job.title }}</h3>
+    <div class='job-description'>
+      {{ job.description|markdown }}
+    </div>
+    <p>
+      To apply for this job, please email
+      <a href="mailto:{{ job.submission_email }}">{{ job.submission_email }}</a>
+      by the submission closing time of
+      <strong>{{ job.submission_closes|time }}</strong> on
+      <strong>{{ job.submission_closes|date }}</strong>.
+    </p>
+  {% empty %}
+    <p>Unfortunately there are currently no job openings.</p>
+  {% endfor %}
+{% endblock %}
