@@ -27,7 +27,9 @@ if [ -f bin/run_collectstatic ]; then
     bin/run_collectstatic
 fi
 
-if [ -f bin/run_compress -a "$DJANGO_COMPRESS_OFFLINE" = "true" ]; then
+if [ -f bin/run_compress \
+     -a "$DJANGO_DEBUG" != "true" \
+     -a "$DJANGO_COMPRESS_OFFLINE" = "true" ]; then
     echo "-----> Running run_compress"
     chmod +x bin/run_compress
     bin/run_compress
