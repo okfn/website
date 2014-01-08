@@ -64,6 +64,7 @@ INSTALLED_APPS = (
     'djangosecure',
     'south',
     'reversion',
+    's3_folder_storage',
     'pagedown',
     'markdown_deux',
 
@@ -151,15 +152,30 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-# Collection destination for static files.
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+if env.get('DJANGO_USE_AWS_STORAGE') == 'true':
+    AWS_ACCESS_KEY_ID = env['AWS_ACCESS_KEY_ID']
+    AWS_SECRET_ACCESS_KEY = env['AWS_SECRET_ACCESS_KEY']
+    AWS_STORAGE_BUCKET_NAME = env['AWS_STORAGE_BUCKET_NAME']
+    AWS_QUERYSTRING_AUTH = False
+    AWS_HEADERS = {
+        'Cache-Control': 'max-age=86400',
+    }
 
-# URL prefix for static files.
-# Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/static/'
+    STATICFILES_STORAGE = 'lib.cached_storage.CachedStaticStorage'
+    STATIC_S3_PATH = 'assets'
+    STATIC_URL = '//s3.amazonaws.com/%s/assets/' % AWS_STORAGE_BUCKET_NAME
+    STATIC_ROOT = 'assets/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+    DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.DefaultStorage'
+    DEFAULT_S3_PATH = 'media'
+    MEDIA_URL = '//s3.amazonaws.com/%s/media/' % AWS_STORAGE_BUCKET_NAME
+    MEDIA_ROOT = 'media/'
+else:
+    STATIC_URL = '/assets/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 TEMPLATE_DEBUG = DEBUG
 
@@ -186,6 +202,9 @@ if env.get('DJANGO_SECURE') == 'true':
     CSRF_COOKIE_HTTPONLY = True
 else:
     SECURE_SSL_REDIRECT = False
+
+if env.get('DJANGO_USE_AWS_STORAGE') == 'true':
+    COMPRESS_STORAGE = 'lib.cached_storage.CachedStaticStorage'
 
 COMPRESS_OFFLINE = env.get('DJANGO_COMPRESS_OFFLINE') == 'true'
 

@@ -6,8 +6,8 @@
 
 {% block head-css %}
 {% compress css %}
-<link type="text/less" rel="stylesheet" href="/static/less/bootstrap.less" charset="utf-8">
-<link type="text/less" rel="stylesheet" href="/static/less/main.less" charset="utf-8">
+<link type="text/less" rel="stylesheet" href="{{ STATIC_URL }}less/bootstrap.less" charset="utf-8">
+<link type="text/less" rel="stylesheet" href="{{ STATIC_URL }}less/main.less" charset="utf-8">
 {% endcompress %}
 {% endblock %}
 
@@ -54,9 +54,9 @@
 
 {% block javascript-libraries %}
 {% compress js %}
-<script type="text/javascript" src="/static/js/jquery-2.0.3.js" charset="utf-8">
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-2.0.3.js" charset="utf-8">
 </script>
-<script type="text/javascript" src="/static/js/dropdown.js" charset="utf-8">
+<script type="text/javascript" src="{{ STATIC_URL }}js/dropdown.js" charset="utf-8">
 </script>
 {% endcompress %}
 {% endblock %}
