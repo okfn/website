@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load compress %}
+{% load cms_tags %}
 {% load menu_tags %}
 
 {% block head-css %}
@@ -13,7 +14,7 @@
 {% block body-sheath %}
   <nav class='navbar navbar-default navbar-static-top' role='navigation'>
     <ul class='nav navbar-nav'>
-      {% show_menu_below_id "main" 0 1 0 0 "menu/menu.html" %}
+      {% show_menu_below_id "home" 0 1 0 0 "menu/menu.html" %}
     </ul>
     {% if user.is_authenticated %}
     <form class='navbar-form navbar-right' action='{% url 'logout' %}' method='POST'>
@@ -41,10 +42,13 @@
   </div>
 
   <footer class='container'>
-    <div>
-      <p>This has been a website.</p>
-      {% block footer %}{% endblock %}
-    </div>
+    <ul class='footer-links'>
+      <li><a href="{% page_url "privacy-policy" %}">{% page_attribute "page_title" "privacy-policy" %}</a></li>
+      <li><a href="{% page_url "ip-policy" %}">{% page_attribute "page_title" "ip-policy" %}</a></li>
+      <li><a href="{% page_url "terms-of-use" %}">{% page_attribute "page_title" "terms-of-use" %}</a></li>
+      <li><a href="{% page_url "jobs" %}">{% page_attribute "page_title" "jobs" %}</a></li>
+      <li><a href="{% page_url "contact" %}">{% page_attribute "page_title" "contact" %}</a></li>
+    </ul>
   </footer>
 {% endblock %}
 
