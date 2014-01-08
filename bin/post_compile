@@ -33,6 +33,9 @@ if [ -f bin/run_compress \
     echo "-----> Running run_compress"
     chmod +x bin/run_compress
     bin/run_compress
+
+    # After running the compressor, I can now remove the assets directory.
+    rm -rf assets/
 fi
 
 echo "-----> Post-compile done"
