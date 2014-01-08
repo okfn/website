@@ -200,4 +200,6 @@ COMPRESS_CSS_FILTERS = [
 
 CMS_TEMPLATES = (
     ('cms_default.html', 'Default layout'),
+    ('cms_twocolumn.html', 'Two columns'),
+    ('cms_threecolumn.html', 'Three columns'),
 )
