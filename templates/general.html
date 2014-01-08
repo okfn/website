@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load compress %}
+{% load menu_tags %}
 
 {% block head-css %}
 {% compress css %}
@@ -10,6 +11,23 @@
 {% endblock %}
 
 {% block body-sheath %}
+  <nav class='navbar navbar-default navbar-static-top' role='navigation'>
+    <ul class='nav navbar-nav'>
+      {% show_menu_below_id "main" 0 1 0 0 "menu/menu.html" %}
+    </ul>
+    {% if user.is_authenticated %}
+    <form class='navbar-form navbar-right' action='{% url 'logout' %}' method='POST'>
+      {% csrf_token %}
+      <button class='btn btn-default' type='submit'>Logout</button>
+    </form>
+    {% else %}
+    <p class='navbar-text navbar-right'>
+      <a class='navbar-link' href='{% url 'login' %}'>Login</a>
+    </p>
+    {% endif %}
+    </div>
+  </nav>
+
   <header class='container'>
     <h1>
       <a href='{% url 'pages-root' %}'>
