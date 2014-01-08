@@ -14,7 +14,7 @@
 {% block body-sheath %}
   <nav class='navbar navbar-default navbar-static-top' role='navigation'>
     <ul class='nav navbar-nav'>
-      {% show_menu_below_id "home" 0 1 0 0 "menu/menu.html" %}
+      {% show_menu_below_id "home" 0 1 1 1 "menu/menu.html" %}
     </ul>
     {% if user.is_authenticated %}
     <form class='navbar-form navbar-right' action='{% url 'logout' %}' method='POST'>
