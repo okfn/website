@@ -3,6 +3,8 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
+from cms.sitemaps import CMSSitemap
+
 urlpatterns = patterns('',
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
@@ -30,7 +32,12 @@ urlpatterns += patterns('django.contrib.auth.views',
         name='password_reset_complete'),
 )
 
-# Fallthrough for CMS managed pages
+# CMS patterns
 urlpatterns += patterns('',
+    url(r'^sitemap\.xml$',
+        'django.contrib.sitemaps.views.sitemap',
+        {'sitemaps': {'cmspages': CMSSitemap}}),
+
+    # Fallthrough for CMS managed pages
     url(r'^', include('cms.urls'))
 )
