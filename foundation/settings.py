@@ -36,15 +36,23 @@ else:
 if env.get('DJANGO_EMAIL_DEBUG') == 'true':
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
-    EMAIL_HOST = env.get('DJANGO_EMAIL_HOST', 'localhost')
-    EMAIL_PORT = env.get('DJANGO_EMAIL_PORT', '25')
-    EMAIL_HOST_USER = env.get('DJANGO_EMAIL_USER', 'mail')
-    EMAIL_HOST_PASSWORD = env.get('DJANGO_EMAIL_HOST_PASSWORD', 'mail')
     EMAIL_USE_TLS = env.get('DJANGO_EMAIL_USE_TLS', 'true') == 'true'
+    if 'MANDRILL_USERNAME' in env:
+        EMAIL_HOST = 'smtp.mandrillapp.com'
+        EMAIL_PORT = 587
+        EMAIL_HOST_USER = env['MANDRILL_USERNAME']
+        EMAIL_HOST_PASSWORD = env['MANDRILL_APIKEY']
+    else:
+        EMAIL_HOST = env.get('DJANGO_EMAIL_HOST', 'localhost')
+        EMAIL_PORT = env.get('DJANGO_EMAIL_PORT', '25')
+        EMAIL_HOST_USER = env.get('DJANGO_EMAIL_USER', 'mail')
+        EMAIL_HOST_PASSWORD = env.get('DJANGO_EMAIL_HOST_PASSWORD', 'mail')
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = env.get('DJANGO_ALLOWED_HOSTS', '').split(',')
+
+DEFAULT_FROM_EMAIL = 'noreply@%s' % ALLOWED_HOSTS[0]
 
 INSTALLED_APPS = (
     # CMS admin theme
