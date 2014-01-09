@@ -34,8 +34,11 @@ if [ -f bin/run_compress \
     chmod +x bin/run_compress
     bin/run_compress
 
-    # After running the compressor, I can now remove the assets directory.
+    # After running the compressor, I can now remove the assets directory and
+    # all the NPM packages.
     rm -rf assets/
+    rm -rf .npm/
+    rm -rf .heroku/vendor/node/
 fi
 
 echo "-----> Post-compile done"
