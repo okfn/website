@@ -2,6 +2,7 @@
 
     pip install -r requirements.txt
     pip install honcho
+    npm install -g less
     python manage.py syncdb
     python manage.py migrate
     honcho -f Procfile.dev start

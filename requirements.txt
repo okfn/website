@@ -16,3 +16,4 @@ pillow==2.2.1
 django-pagedown==0.0.5
 django-markdown-deux==1.0.4
 django-s3-folder-storage==0.2
+static==0.4
