@@ -83,6 +83,7 @@ INSTALLED_APPS = (
 
     # CMS plugins
     'cms.plugins.file',
+    'cms.plugins.picture',
     'djangocms_text_ckeditor',
 
     # CMS
