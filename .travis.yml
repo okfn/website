@@ -1,0 +1,15 @@
+language: python
+python:
+  - 2.7
+  - 3.2
+  - 3.3
+  - pypy
+install:
+  - pip install -r requirements.dev.txt --use-mirrors
+script:
+  - python manage.py test
+matrix:
+  allow_failures:
+    - python: 3.2
+    - python: 3.3
+    - python: pypy
