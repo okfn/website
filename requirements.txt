@@ -4,12 +4,11 @@ dj-database-url==0.2.2
 django_compressor==1.3
 django-twitter-bootstrap==3.0.0
 django-secure==1.0
-django-webtest==1.7.5
 gunicorn
 psycopg2
 cssmin
 
-git+https://github.com/divio/django-cms.git@develop
+git+https://github.com/divio/django-cms.git@65677aa41df0c5f8c2d1c1006f227361ec56e588
 django-reversion==1.8.0
 djangocms-text-ckeditor==2.0.5
 pillow==2.2.1

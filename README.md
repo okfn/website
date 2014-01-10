@@ -1,6 +1,6 @@
 ## Running in development
 
-    pip install -r requirements.txt
+    pip install -r requirements.dev.txt
     pip install honcho
     npm install -g less
     python manage.py syncdb
