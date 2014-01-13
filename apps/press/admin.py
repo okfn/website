@@ -2,11 +2,12 @@ from django.contrib import admin
 from django.db import models
 
 from pagedown.widgets import AdminPagedownWidget
+import reversion
 
 from .models import PressRelease, PressMention
 
 
-class PressReleaseAdmin(admin.ModelAdmin):
+class PressReleaseAdmin(reversion.VersionAdmin):
     formfield_overrides = {
         models.TextField: {'widget': AdminPagedownWidget},
     }
@@ -15,7 +16,7 @@ class PressReleaseAdmin(admin.ModelAdmin):
 admin.site.register(PressRelease, PressReleaseAdmin)
 
 
-class PressMentionAdmin(admin.ModelAdmin):
+class PressMentionAdmin(reversion.VersionAdmin):
     list_display = ('title', 'publisher', 'url')
 
 admin.site.register(PressMention, PressMentionAdmin)

@@ -1,11 +1,12 @@
 from pagedown.widgets import AdminPagedownWidget
+import reversion
 
 from django.contrib import admin
 from django.db import models
 from .models import Job
 
 
-class JobAdmin(admin.ModelAdmin):
+class JobAdmin(reversion.VersionAdmin):
     formfield_overrides = {
         models.TextField: {'widget': AdminPagedownWidget},
     }
