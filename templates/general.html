@@ -42,13 +42,7 @@
   </div>
 
   <footer class='container'>
-    <ul class='footer-links'>
-      <li><a href="{% page_url "privacy-policy" %}">{% page_attribute "page_title" "privacy-policy" %}</a></li>
-      <li><a href="{% page_url "ip-policy" %}">{% page_attribute "page_title" "ip-policy" %}</a></li>
-      <li><a href="{% page_url "terms-of-use" %}">{% page_attribute "page_title" "terms-of-use" %}</a></li>
-      <li><a href="{% page_url "jobs" %}">{% page_attribute "page_title" "jobs" %}</a></li>
-      <li><a href="{% page_url "contact" %}">{% page_attribute "page_title" "contact" %}</a></li>
-    </ul>
+    {% static_placeholder 'footer' %}
   </footer>
 {% endblock %}
 

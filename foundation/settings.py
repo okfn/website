@@ -89,13 +89,11 @@ INSTALLED_APPS = (
 
     # CMS
     'cms',
-    'cms.stacks',
     'mptt',
     'menus',
     'sekizai',
 
     # Custom apps
-    'apps.content',
     'apps.homepage',
     'apps.jobs',
     'apps.press',
