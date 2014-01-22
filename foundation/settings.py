@@ -85,6 +85,7 @@ INSTALLED_APPS = (
     'cms.plugins.file',
     'cms.plugins.googlemap',
     'cms.plugins.picture',
+    'cms.plugins.link',
     'djangocms_text_ckeditor',
 
     # CMS
