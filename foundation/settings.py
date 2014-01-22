@@ -95,7 +95,6 @@ INSTALLED_APPS = (
     'sekizai',
 
     # Custom apps
-    'apps.homepage',
     'apps.jobs',
     'apps.press',
     'apps.organisation',
