@@ -6,7 +6,7 @@
 
 {% block head-css %}
 {% compress css %}
-<link type="text/less" rel="stylesheet" href="{{ STATIC_URL }}less/bootstrap.less" charset="utf-8">
+<link type="text/less" rel="stylesheet" href="{{ STATIC_URL }}vendor/bootstrap/less/bootstrap.less" charset="utf-8">
 <link type="text/less" rel="stylesheet" href="{{ STATIC_URL }}less/main.less" charset="utf-8">
 {% endcompress %}
 {% endblock %}
@@ -75,7 +75,8 @@
 <script type="text/javascript" src="{{ STATIC_URL }}vendor/jquery/jquery-2.0.3.js"
   charset="utf-8"></script>
 {# provided by django-twitter-bootstrap #}
-<script type="text/javascript" src="{{ STATIC_URL }}js/dropdown.js"
+<script type="text/javascript" src="{{ STATIC_URL }}vendor/bootstrap/js/dropdown.js"
+  charset="utf-8"></script>
   charset="utf-8"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/fontloader.js"
   charset="utf-8"></script>

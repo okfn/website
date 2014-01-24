@@ -79,7 +79,6 @@ INSTALLED_APPS = (
 
     # Asset pipeline
     'compressor',
-    'twitter_bootstrap',
 
     # CMS plugins
     'cms.plugins.file',
