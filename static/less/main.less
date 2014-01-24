@@ -121,6 +121,7 @@ header {
   border-radius: 0;
   border-right: none;
   border-left: none;
+  margin-bottom: 0;
 }
 
 // Align the first nav item with the grid.
@@ -143,6 +144,27 @@ header {
 }
 
 // FIXME: make nav default to open without javascript on small devices
+
+#postnav-splash {
+  background: @okf-green url(../img/escheresque.png);
+  border-top: 1px solid lighten(@okf-green, 6.5%);
+  border-bottom: 1px solid darken(@okf-green, 6.5%);
+
+  color: white;
+
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+#postnav-splash-pitch {
+  .make-sm-column(8);
+  p {
+    font-size: 18px;
+    html.wf-opensans-n4-active & {
+      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+  }
+}
 
 footer {
   margin-top: 20px;

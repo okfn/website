@@ -70,6 +70,21 @@
     </div>
   </nav>
 
+  {% block postnav %}
+  <div id='postnav-splash'>
+    <div class='container'>
+      <div class='row'>
+        <div id='postnav-splash-pitch'>
+          <h2>10 second pitch</h2>
+          <p class='pitch'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tincidunt erat ut magna volutpat fermentum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce aliquet eleifend eros, quis placerat nisi eleifend placerat. Quisque eget justo id nibh adipiscing dapibus eu id nunc.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+
   <div id='main' class='container {% block main-class %}{% endblock %}'>
     {% block body %}{% endblock %}
   </div>
