@@ -2,17 +2,17 @@
 @import "../vendor/bootstrap/less/variables.less";
 @import "../vendor/bootstrap/less/mixins.less";
 
-@okfgreen: #1A988B;
-@okfdarkgrey: #333;
-@okfmidgrey: #8c8c8c;
-@okflightgrey: #8c8c8c;
+@okf-green: #1A988B;
+@okf-darkgrey: #333;
+@okf-midgrey: #8c8c8c;
+@okf-lightgrey: #8c8c8c;
 
-@okflink: #3e8f80;
-@okflinkdark: #1f4840;
+@okf-link: #3e8f80;
+@okf-link-hover: #1f4840;
 
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: @okfdarkgrey;
+  color: @okf-darkgrey;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -21,10 +21,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a:link, a:visited {
-  color: @okflink;
+  color: @okf-link;
 }
 a:hover, a:active {
-  color: @okflinkdark;
+  color: @okf-link-hover;
 }
 
 @header-padding: 15px;
@@ -60,7 +60,7 @@ header {
     background-size: auto 40px;
 
     a:link, a:visited {
-      color: @okfdarkgrey;
+      color: @okf-darkgrey;
     }
     a:hover, a:active {
       text-decoration: none;
@@ -75,10 +75,10 @@ header {
   margin-right: 15px;
   margin-left: 0px;
   vertical-align: middle;
-  color: @okfmidgrey;
+  color: @okf-midgrey;
 
   a:link, a:visited {
-    color: @okfdarkgrey;
+    color: @okf-darkgrey;
   }
 
   // The words "Open Knowledge Foundation" wrap at this breakpoint, so we
