@@ -1,10 +1,128 @@
+@okfgreen: #1A988B;
+@okfdarkgrey: #333;
+@okfmidgrey: #8c8c8c;
+@okflightgrey: #8c8c8c;
+
+@okflink: #3e8f80;
+@okflinkdark: #1f4840;
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: @okfdarkgrey;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+a:link, a:visited {
+  color: @okflink;
+}
+a:hover, a:active {
+  color: @okflinkdark;
+}
+
 header {
-  margin-bottom: 10px;
+  margin: 20px 0;
+
+  h1 {
+    margin: 0;
+    padding: 15px 0 15px 44px;
+    font-size: 26px;
+    line-height: 1em;
+    background: transparent url(../img/okf-logo-header-2x.png) left center no-repeat;
+    background-size: auto 40px;
+
+    a:link, a:visited {
+      color: @okfdarkgrey;
+    }
+    a:hover, a:active {
+      text-decoration: none;
+    }
+  }
+
+  nav {
+    text-align: right;
+  }
+
+  .navbar-header > * {
+    vertical-align: middle;
+  }
+
+  #nav-secondary {
+    font-size: 14px;
+    margin: 18px 15px 18px 0;
+
+    color: @okfmidgrey;
+
+    a:link, a:visited {
+      color: @okfdarkgrey;
+    }
+  }
+
+  #nav-social {
+    vertical-align: middle;
+    margin: 11px 0;
+  }
+
 }
 
 footer {
   margin-top: 20px;
   opacity: 0.5;
+}
+
+// Progressively enhance to web fonts
+html.wf-opensans-n4-active {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+  }
+}
+
+.nav-simple {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    display: inline;
+    &:after {
+      content: '\00a0|';
+    }
+    &:last-of-type:after {
+      content: none;
+    }
+    a {
+      padding: 3px;
+    }
+  }
+}
+
+.social-links {
+  display: inline-block;
+  a {
+    display: inline-block;
+    width: 34px;
+    height: 24px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background: url(../img/social-icons.png) no-repeat;
+  }
+  a.facebook {
+    background-position: center -0px;
+  }
+  a.facebook:hover {
+    background-position: center -100px;
+  }
+  a.twitter {
+    background-position: center -150px;
+  }
+  a.twitter:hover {
+    background-position: center -250px;
+  }
 }
 
 #main {
