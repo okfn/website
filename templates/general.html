@@ -48,9 +48,10 @@
 
 {% block javascript-libraries %}
 {% compress js %}
-<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-2.0.3.js" charset="utf-8">
-</script>
-<script type="text/javascript" src="{{ STATIC_URL }}js/dropdown.js" charset="utf-8">
-</script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/vendor/jquery-2.0.3.js"
+  charset="utf-8"></script>
+{# provided by django-twitter-bootstrap #}
+<script type="text/javascript" src="{{ STATIC_URL }}js/dropdown.js"
+  charset="utf-8"></script>
 {% endcompress %}
 {% endblock %}
