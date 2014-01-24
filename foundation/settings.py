@@ -220,11 +220,10 @@ if env.get('DJANGO_USE_AWS_STORAGE') == 'true':
 COMPRESS_OFFLINE = env.get('DJANGO_COMPRESS_OFFLINE') == 'true'
 
 COMPRESS_PRECOMPILERS = (
-    ('text/less', 'lessc {infile} {outfile}'),
+    ('text/less', 'lib.precompilers.LessFilter'),
 )
 
 COMPRESS_CSS_FILTERS = [
-    'compressor.filters.css_default.CssAbsoluteFilter',
     'compressor.filters.cssmin.CSSMinFilter'
 ]
 
