@@ -12,46 +12,64 @@
 {% endblock %}
 
 {% block body-sheath %}
-  <header class='container'>
-    <div class='row'>
-      <div class='col-md-6'>
-        <h1>
-          <a href='{% url 'pages-root' %}'>{{ site.name }}</a>
-        </h1>
-      </div>
-      <nav role='navigation' class='navbar-header col-md-6'>
-        <ul id='nav-secondary' class='nav-simple'>
-          <li><a href='#'>blog</a></li>
-          <li><a href='#'>press</a></li>
-          <li><a href='#'>contact</a></li>
-          <li><a href='#'>donate</a></li>
-        </ul>
-        <div id='nav-social' class='social-links'>
-          <a class='facebook' href='http://www.facebook.com/OKFNetwork'>facebook</a>
-          <a class='twitter' href='https://twitter.com/okfn'>twitter</a>
+  <header>
+    <div class='container'>
+      <div class='row'>
+
+        <div id='header-brand'>
+          <h1>
+            <a href='{% url 'pages-root' %}'>{{ site.name }}</a>
+          </h1>
         </div>
-      </nav>
+
+        <nav id='header-nav' role='navigation' class='hidden-xs'>
+          <ul id='nav-secondary' class='nav-simple'>
+            <li><a href='#'>blog</a></li>
+            <li><a href='#'>press</a></li>
+            <li><a href='#'>contact</a></li>
+            <li><a href='#'>donate</a></li>
+          </ul>
+          <div id='nav-social' class='social-links'>
+            <a class='facebook' href='http://www.facebook.com/OKFNetwork'>facebook</a>
+            <a class='twitter' href='https://twitter.com/okfn'>twitter</a>
+          </div>
+        </nav>
+
+      </div>
     </div>
   </header>
 
-  <div class='container'>
-    <nav class='navbar navbar-default' role='navigation'>
-      <ul class='nav navbar-nav'>
-        {% show_menu_below_id "home" 0 1 1 1 "menu/menu.html" %}
-      </ul>
-      {% if user.is_authenticated %}
-      <form class='navbar-form navbar-right' action='{% url 'logout' %}' method='POST'>
-        {% csrf_token %}
-        <button class='btn btn-default' type='submit'>Logout</button>
-      </form>
-      {% else %}
-      <p class='navbar-text navbar-right'>
-        <a class='navbar-link' href='{% url 'login' %}'>Login</a>
-      </p>
-      {% endif %}
+  <nav id='navbar-main' class='navbar navbar-default' role='navigation'>
+    <div class='container'>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand visible-xs" href="#">Menu</a>
       </div>
-    </nav>
-  </div>
+      <div id='navbar-main-collapse' class='collapse navbar-collapse'>
+        <ul class='nav navbar-nav'>
+          {% show_menu_below_id "home" 0 0 0 0 "menu/menu.html" %}
+        </ul>
+        <form class="navbar-form navbar-right" role="search">
+          <div class="form-group">
+            <div class="input-group" style="width: 200px">
+              <input type="text" class="form-control" placeholder="Search">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-default">
+                  <span class="glyphicon glyphicon-search"></span>
+                  <span class="sr-only">Submit</span>
+                </button>
+              </span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
 
   <div id='main' class='container {% block main-class %}{% endblock %}'>
     {% block body %}{% endblock %}
@@ -74,10 +92,13 @@
 {% compress js %}
 <script type="text/javascript" src="{{ STATIC_URL }}vendor/jquery/jquery-2.0.3.js"
   charset="utf-8"></script>
+
 {# provided by django-twitter-bootstrap #}
 <script type="text/javascript" src="{{ STATIC_URL }}vendor/bootstrap/js/dropdown.js"
   charset="utf-8"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}vendor/bootstrap/js/collapse.js"
   charset="utf-8"></script>
+
 <script type="text/javascript" src="{{ STATIC_URL }}js/fontloader.js"
   charset="utf-8"></script>
 {% endcompress %}

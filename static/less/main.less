@@ -1,3 +1,7 @@
+// Import Twitter Bootstrap variables and mixins
+@import "../vendor/bootstrap/less/variables.less";
+@import "../vendor/bootstrap/less/mixins.less";
+
 @okfgreen: #1A988B;
 @okfdarkgrey: #333;
 @okfmidgrey: #8c8c8c;
@@ -23,13 +27,34 @@ a:hover, a:active {
   color: @okflinkdark;
 }
 
+@header-padding: 15px;
+@header-font-size: 26px;
+@header-nav-font-size: 14px;
+@header-height: @header-font-size + @header-padding * 2;
+@header-height-sm: @header-font-size * 2 + @header-padding * 2;
+// The (secondary) nav
+@header-nav-padding: (@header-height - @header-nav-font-size) / 2;
+@header-nav-padding-sm: (@header-height-sm - @header-nav-font-size) / 2;
+// The social buttons are 24px high
+@header-soc-padding: (@header-height - 24px) / 2;
+@header-soc-padding-sm: (@header-height-sm - 24px) / 2;
+
 header {
   margin: 20px 0;
 
+  #header-brand {
+    .make-sm-column(6);
+  }
+
+  #header-nav {
+    .make-sm-column(6);
+    text-align: right;
+  }
+
   h1 {
     margin: 0;
-    padding: 15px 0 15px 44px;
-    font-size: 26px;
+    padding: @header-padding 0 @header-padding 44px;
+    font-size: @header-font-size;
     line-height: 1em;
     background: transparent url(../img/okf-logo-header-2x.png) left center no-repeat;
     background-size: auto 40px;
@@ -41,32 +66,65 @@ header {
       text-decoration: none;
     }
   }
+}
 
-  nav {
-    text-align: right;
+#nav-secondary {
+  font-size: @header-nav-font-size;
+  margin-top: @header-nav-padding;
+  margin-bottom: @header-nav-padding;
+  margin-right: 15px;
+  margin-left: 0px;
+  vertical-align: middle;
+  color: @okfmidgrey;
+
+  a:link, a:visited {
+    color: @okfdarkgrey;
   }
 
-  .navbar-header > * {
-    vertical-align: middle;
-  }
-
-  #nav-secondary {
-    font-size: 14px;
-    margin: 18px 15px 18px 0;
-
-    color: @okfmidgrey;
-
-    a:link, a:visited {
-      color: @okfdarkgrey;
+  // The words "Open Knowledge Foundation" wrap at this breakpoint, so we
+  // have to recalculate the padding. See above for calculations.
+  @media (max-width: @screen-sm-max) {
+    & {
+      margin-top: @header-nav-padding-sm;
+      margin-bottom: @header-nav-padding-sm;
     }
   }
-
-  #nav-social {
-    vertical-align: middle;
-    margin: 11px 0;
-  }
-
 }
+
+#nav-social {
+  vertical-align: middle;
+  margin: @header-soc-padding 0;
+
+  // The words "Open Knowledge Foundation" wrap at this breakpoint, so we
+  // have to recalculate the padding. See above for calculations.
+  @media (max-width: @screen-sm-max) {
+    & {
+      margin-top: @header-soc-padding-sm;
+      margin-bottom: @header-soc-padding-sm;
+    }
+  }
+}
+
+// Align the first nav item with the grid.
+#navbar-main-collapse > :first-child {
+  @media (min-width: @grid-float-breakpoint) {
+    .navbar > .container &,
+    .navbar > .container-fluid & {
+      margin-left: -(2 * @navbar-padding-horizontal);
+    }
+  }
+}
+// Align the last nav item with the grid.
+#navbar-main-collapse > :last-child {
+  @media (min-width: @grid-float-breakpoint) {
+    .navbar > .container &,
+    .navbar > .container-fluid & {
+      margin-right: -(2 * @navbar-padding-horizontal);
+    }
+  }
+}
+
+// FIXME: make nav default to open without javascript on small devices
 
 footer {
   margin-top: 20px;
