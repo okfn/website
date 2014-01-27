@@ -5,6 +5,17 @@
 {% page_attribute "page_title" %}
 {% endblock %}
 
+{% block pagebanner %}
+<div id='page-banner' class='{% block pagebanner-class %}{% endblock %}'>
+  <div class='container'>
+    {% block pagebanner-inner %}
+      <h2>{% page_attribute "page_title" %}</h2>
+      {% placeholder "blurb" %}
+    {% endblock %}
+  </div>
+</div>
+{% endblock %}
+
 {% block body %}
 <div class='row'>
   <div class='col-md-12'>

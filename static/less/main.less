@@ -145,24 +145,24 @@ header {
 
 // FIXME: make nav default to open without javascript on small devices
 
-#postnav-splash {
-  background: @okf-green url(../img/escheresque.png);
-  border-top: 1px solid lighten(@okf-green, 3.5%);
-  border-bottom: 1px solid darken(@okf-green, 6.5%);
-
-  color: white;
-
+#page-banner {
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
 
-#postnav-splash-pitch {
-  .make-sm-column(8);
+.homepage-splash-banner {
+  background: @okf-green url(../img/escheresque.png);
+  border-top: 1px solid lighten(@okf-green, 3.5%);
+  border-bottom: 1px solid darken(@okf-green, 6.5%);
+  color: white;
   p {
     font-size: 18px;
     html.wf-opensans-n4-active & {
       font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
+  }
+  #splash-banner-pitch {
+    .make-sm-column(8);
   }
 }
 
