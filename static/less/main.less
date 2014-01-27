@@ -156,7 +156,21 @@ header {
       font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
   }
+
+  &.homepage-splash-banner {
+    background: @okf-green url(../img/escheresque.png);
+    border-top: 1px solid lighten(@okf-green, 3.5%);
+    border-bottom: 1px solid darken(@okf-green, 6.5%);
+    color: white;
+    p {
+      font-size: 18px;
+    }
+    #splash-banner-pitch {
+      .make-sm-column(8);
+    }
+  }
 }
+
 
 #main {
   padding-top: 20px;
@@ -246,15 +260,3 @@ html.wf-opensans-n4-active {
   }
 }
 
-.homepage-splash-banner {
-  background: @okf-green url(../img/escheresque.png);
-  border-top: 1px solid lighten(@okf-green, 3.5%);
-  border-bottom: 1px solid darken(@okf-green, 6.5%);
-  color: white;
-  p {
-    font-size: 18px;
-  }
-  #splash-banner-pitch {
-    .make-sm-column(8);
-  }
-}
