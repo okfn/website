@@ -1,7 +1,7 @@
 @okf-green: #1A988B;
 @okf-darkgrey: #333;
 @okf-midgrey: #8c8c8c;
-@okf-lightgrey: #8c8c8c;
+@okf-lightgrey: #ececec;
 
 @okf-link: #3e8f80;
 
@@ -146,24 +146,21 @@ header {
 // FIXME: make nav default to open without javascript on small devices
 
 #page-banner {
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-}
-
-.homepage-splash-banner {
-  background: @okf-green url(../img/escheresque.png);
-  border-top: 1px solid lighten(@okf-green, 3.5%);
-  border-bottom: 1px solid darken(@okf-green, 6.5%);
-  color: white;
+  @spacing: 45px;
+  padding-top: @spacing - @line-height-computed;
+  padding-bottom: @spacing - (@line-height-computed / 2);
+  background: @okf-lightgrey;
   p {
-    font-size: 18px;
+    font-size: 20px;
     html.wf-opensans-n4-active & {
       font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
   }
-  #splash-banner-pitch {
-    .make-sm-column(8);
-  }
+}
+
+#main {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 footer {
@@ -177,6 +174,32 @@ html.wf-opensans-n4-active {
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 400;
   }
+}
+
+.sidebar {
+  em {
+    color: lighten(@okf-darkgrey, 10%);
+  }
+
+  h3 {
+    color: lighten(@okf-darkgrey, 10%);
+    font-size: 18px;
+    text-transform: uppercase;
+    border-bottom: 1px solid @okf-green;
+    padding-bottom: @line-height-computed / 4;
+    margin-bottom: @line-height-computed / 4;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    & > li {
+      border-bottom: 1px dotted @okf-lightgrey;
+      line-height: 1.6em;
+    }
+  }
+
 }
 
 .nav-simple {
@@ -223,7 +246,15 @@ html.wf-opensans-n4-active {
   }
 }
 
-#main {
-  padding-top: 20px;
-  padding-bottom: 20px;
+.homepage-splash-banner {
+  background: @okf-green url(../img/escheresque.png);
+  border-top: 1px solid lighten(@okf-green, 3.5%);
+  border-bottom: 1px solid darken(@okf-green, 6.5%);
+  color: white;
+  p {
+    font-size: 18px;
+  }
+  #splash-banner-pitch {
+    .make-sm-column(8);
+  }
 }
