@@ -1,0 +1,32 @@
+{% extends "general.html" %}
+{% load cms_tags %}
+
+{% block title %}
+{% page_attribute "page_title" %}
+{% endblock %}
+
+{% block body %}
+<div class='row'>
+  <div class='col-md-8'>
+	<h3>Who we are and what we do</h3>
+    {% placeholder "elevator pitch" %}
+  </div>
+  <div class='col-md-4'>
+	<h3>Sign up!</h3>
+	<form>
+      <label>Name:</label><input><br>
+      <label>Email:</label><input><br>
+	</form>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-md-6'>
+	<h3>Services</h3>
+    {% placeholder "services" %}
+  </div>
+  <div class='col-md-6'>
+	<h3>Community</h3>
+    {% placeholder "community" %}
+  </div>
+</div>
+{% endblock %}
