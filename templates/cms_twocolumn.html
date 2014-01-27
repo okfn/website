@@ -3,11 +3,11 @@
 
 {% block body %}
 <div class='row'>
-  <div class='sidebar col-md-4'>
-    {% placeholder "sidebar" inherit %}
-  </div>
-  <div class='col-md-8'>
+  <div class='col-md-8 col-md-push-4'>
     {% placeholder "main" %}
+  </div>
+  <div class='sidebar col-md-4 col-md-pull-8'>
+    {% placeholder "sidebar" inherit %}
   </div>
 </div>
 {% endblock %}
