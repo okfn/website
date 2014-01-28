@@ -7,11 +7,11 @@
 
 {% block body %}
   <div class="row">
-    <div class="col-md-8 col-md-push-4">
+    <div class="col-md-9 col-md-push-3">
       {% for unit in unit_list %}
         <h3>{{ unit.name }}</h3>
-        {% for person in unit.members.all %}
-          {% include "organisation/person.html" %}
+        {% for member in unit.unitmembership_set.all %}
+          {% include "organisation/member.html" %}
         {% endfor %}
         <hr/>
       {% endfor %}
