@@ -1,0 +1,17 @@
+<div class="person">
+  <h4>{{ person.name }}</h4>
+  <div class="row">
+    <div class="col-md-2 col-sm-12">
+      <img src="{{ person.photo }}" alt="{{ person.name }}" />
+    </div>
+    <div class="col-md-10 col-sm-12">
+      {{ person.description }}
+      <div class="person-footer">
+        <a href="mailto:{{ person.email }}" class="email" title="Email">Email</a>
+        <a href="http://twitter.com/{{person.twitter}}" class="twitter" title="Twitter">@{{ person.twitter }}</a>
+        {% if person.url %}
+        <a href="{{ person.url }}" class="website" title="Personal website">Personal website</a>
+        {% endif %}
+    </div>
+  </div>
+</div>
