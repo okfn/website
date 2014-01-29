@@ -101,12 +101,12 @@ class UnitListViewTest(WebTest):
         self.assertTrue(twitter_april not in response)
 
         # Raphael is the last turtle. We assume that the unit list will be
-        # where the last occurance of the names come up (so they can crop up
-        # in a side bar (this breaks if the side bar is to the right).
+        # where the first occurance of the names come up (since main content
+        # should come before sidebars).
         # Leonardo doesn't use Twitter so there shouldn't be a twitter url
         # between the last Leo's name and Raph's name
-        leonardo = response.body.rfind(self.leonardo.name)
-        raphael = response.body.rfind(self.raphael.name)
+        leonardo = response.body.find(self.leonardo.name)
+        raphael = response.body.find(self.raphael.name)
         twitter = response.body.find('http://twitter.com/', leonardo, raphael)
         self.assertTrue(twitter == -1)
 
@@ -118,12 +118,12 @@ class UnitListViewTest(WebTest):
         self.assertTrue(self.april.url not in response)
 
         # Raphael is the last turtle. We assume that the unit list will be
-        # where the last occurance of the names come up (so they can crop up
-        # in a side bar (this breaks if the side bar is to the right).
+        # where the first occurance of the names come up (since main content
+        # should come before sidebars).
         # Leonardo doesn't have a website so there shouldn't be a
         # 'Personal website' between the last Leo's name and Raph's name
 
-        leonardo = response.body.rfind(self.leonardo.name)
-        raphael = response.body.rfind(self.raphael.name)
+        leonardo = response.body.find(self.leonardo.name)
+        raphael = response.body.find(self.raphael.name)
         website = response.body.find('Personal website', leonardo, raphael)
         self.assertTrue(website == -1)
