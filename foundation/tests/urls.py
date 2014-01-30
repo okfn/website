@@ -6,5 +6,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^login/', lambda x: x, name='login'),
     url(r'^jobs/', include('apps.jobs.urls')),
+    url(r'^about/', include('apps.organisation.urls')),
     url(r'^', include('cms.urls')),
 )

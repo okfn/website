@@ -6,6 +6,7 @@ class Person(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     name = models.CharField(max_length=100)
+    description = models.TextField(blank=True, null=True)
     email = models.EmailField()
     photo = models.ImageField(upload_to='organisation/people/photos',
                               blank=True)
@@ -16,6 +17,7 @@ class Person(models.Model):
         return self.name
 
     class Meta:
+        ordering = ["name"]
         verbose_name_plural = "people"
 
 
@@ -24,9 +26,16 @@ class Unit(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     name = models.CharField(max_length=100)
+    members = models.ManyToManyField('Person', through='UnitMembership')
+    order = models.IntegerField(
+        blank=True, null=True,
+        help_text="Higher numbers mean higher up in the food chain")
 
     def __unicode__(self):
         return self.name
+
+    class Meta:
+        ordering = ["-order", "name"]
 
 
 class UnitMembership(models.Model):
