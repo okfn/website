@@ -29,9 +29,14 @@ class UnitListViewTest(WebTest):
             email='april@oneil.me',
             twitter='april',
             url='http://oneil.me')
+        self.splinter = Person.objects.create(
+            name="Splinter",
+            description='Ninja rat',
+            email='splinter@tmnt.org')
 
         self.turtles = Unit.objects.create(name="Turtles")
         self.footclan = Unit.objects.create(name="Foot Clan")
+        self.masters = Unit.objects.create(name="Ninja Masters", order=1)
 
         self.turtle_leonardo = UnitMembership.objects.create(
             title='Leader',
@@ -47,6 +52,12 @@ class UnitListViewTest(WebTest):
             title='Comic relief',
             person=self.rocksteady,
             unit=self.footclan)
+
+        self.master_splinter = UnitMembership.objects.create(
+            title='Master',
+            person=self.splinter,
+            unit=self.masters)
+            
 
     def testUnitsInResponse(self):
         response = self.app.get(reverse('units-list'))
@@ -127,3 +138,11 @@ class UnitListViewTest(WebTest):
         raphael = response.body.find(self.raphael.name)
         website = response.body.find('Personal website', leonardo, raphael)
         self.assertTrue(website == -1)
+
+    def testManualOrderOfUnits(self):
+        response = self.app.get(reverse('units-list'))
+        masters = response.body.find(self.masters.name)
+        turtles = response.body.find(self.turtles.name)
+        footclan = response.body.find(self.footclan.name)
+
+        self.assertTrue(masters < footclan < turtles)
