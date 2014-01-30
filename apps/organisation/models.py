@@ -27,12 +27,15 @@ class Unit(models.Model):
 
     name = models.CharField(max_length=100)
     members = models.ManyToManyField('Person', through='UnitMembership')
+    order = models.IntegerField(
+        blank=True, null=True,
+        help_text="Higher numbers mean higher up in the food chain")
 
     def __unicode__(self):
         return self.name
 
     class Meta:
-        ordering = ["name"]
+        ordering = ["-order", "name"]
 
 
 class UnitMembership(models.Model):
