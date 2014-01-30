@@ -26,6 +26,7 @@ class Unit(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     name = models.CharField(max_length=100)
+    members = models.ManyToManyField('Person', through='UnitMembership')
 
     def __unicode__(self):
         return self.name

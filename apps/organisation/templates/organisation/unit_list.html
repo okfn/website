@@ -16,5 +16,14 @@
         <hr/>
       {% endfor %}
     </div>
+    <div class="sidebar col-md-3 col-md-pull-9">
+      <h3>Units</h3>
+      {% for unit in unit_list %}
+      <h4>{{ unit.name }}</h4>
+      <ul>{% for member in unit.members.all %}
+        <li><a href="#{{ member.name|slugify }}">{{ member.name }}</a></li>
+      {% endfor %}</ul>
+      {% endfor %}
+    </div>
   </div>
 {% endblock %}
