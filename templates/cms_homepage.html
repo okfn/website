@@ -1,13 +1,12 @@
 {% extends "cms_default.html" %}
+{% load cms_tags %}
 
 {% block pagebanner-class %}homepage-splash-banner{% endblock %}
 {% block pagebanner-inner %}
 <div class='row'>
   <div id='splash-banner-pitch'>
-    <h2>{% placeholder "pitch-title" %}</h2>
-    <p>
+    <h2>{% page_attribute "page_title" %}</h2>
     {% placeholder "pitch" %}
-    </p>
   </div>
 </div>
 {% endblock %}
