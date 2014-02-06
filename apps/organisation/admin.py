@@ -34,6 +34,7 @@ class BoardAdmin(reversion.VersionAdmin):
     list_display = ('name',)
     ordering = ('name',)
 
+    prepopulated_fields = {"slug": ("name",)}
     inlines = [BoardMembershipInline]
 
 admin.site.register(Board, BoardAdmin)

@@ -55,7 +55,9 @@ class Board(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100, default='')
     description = models.TextField()
+    members = models.ManyToManyField('Person', through='BoardMembership')
 
     def __unicode__(self):
         return self.name

@@ -8,7 +8,9 @@
     <div class="col-md-10">
       <p>{{ person.description }}</p>
       <div class="person-social-links">
+        {% if not skip_email %}
         <a href="mailto:{{ person.email }}" title="Email"><i class="fa fa-envelope fa-lg"></i></a>
+        {% endif %}
         {% if person.twitter %}
         <a href="http://twitter.com/{{person.twitter}}" title="Twitter"><i class="fa fa-twitter fa-lg"></i></a>
         {% endif %}
