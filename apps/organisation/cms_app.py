@@ -3,7 +3,7 @@ from cms.apphook_pool import apphook_pool
 from django.utils.translation import ugettext_lazy as _
 
 class UnitsAppHook(CMSApp):
-    name = _("Units")
+    name = _("Organisation")
     urls = ["apps.organisation.urls"]
 
 apphook_pool.register(UnitsAppHook)
