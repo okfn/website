@@ -60,22 +60,22 @@ class UnitListViewTest(WebTest):
             
 
     def testUnitsInResponse(self):
-        response = self.app.get(reverse('units-list'))
+        response = self.app.get(reverse('units'))
         self.assertTrue(self.turtles.name in response)
         self.assertTrue(self.footclan.name in response)
 
     def testUnitMemberInResponse(self):
-        response = self.app.get(reverse('units-list'))
+        response = self.app.get(reverse('units'))
         self.assertTrue(self.leonardo.name in response)
         self.assertTrue(self.raphael.name in response)
         self.assertTrue(self.rocksteady.name in response)
 
     def testNonUnitMemberNotInResponse(self):
-        response = self.app.get(reverse('units-list'))
+        response = self.app.get(reverse('units'))
         self.assertTrue(self.april.name not in response)
 
     def testUnitMembersInUnits(self):
-        response = self.app.get(reverse('units-list'))
+        response = self.app.get(reverse('units'))
         footclan = response.body.find(self.footclan.name)
         turtles = response.body.find(self.turtles.name)
 
@@ -88,21 +88,21 @@ class UnitListViewTest(WebTest):
         self.assertTrue(turtles < leonardo < raphael)
 
     def testDescriptionInResponse(self):
-        response = self.app.get(reverse('units-list'))
+        response = self.app.get(reverse('units'))
         self.assertTrue(self.leonardo.description in response)
         self.assertTrue(self.raphael.description in response)
         self.assertTrue(self.rocksteady.description in response)
         self.assertTrue(self.april.description not in response)
 
     def testEmailInResponse(self):
-        response = self.app.get(reverse('units-list'))
+        response = self.app.get(reverse('units'))
         self.assertTrue(self.leonardo.email in response)
         self.assertTrue(self.raphael.email in response)
         self.assertTrue(self.rocksteady.email in response)
         self.assertTrue(self.april.email not in response)
 
     def testTwitterInResponse(self):
-        response = self.app.get(reverse('units-list'))
+        response = self.app.get(reverse('units'))
         twitter_url = 'http://twitter.com/{handle}'
         twitter_raphael = twitter_url.format(handle=self.raphael.twitter)
         twitter_rocksteady = twitter_url.format(handle=self.rocksteady.twitter)
@@ -122,7 +122,7 @@ class UnitListViewTest(WebTest):
         self.assertTrue(twitter == -1)
 
     def testUrlInResponse(self):
-        response = self.app.get(reverse('units-list'))
+        response = self.app.get(reverse('units'))
 
         self.assertTrue(self.raphael.url in response)
         self.assertTrue(self.rocksteady.url in response)
@@ -140,7 +140,7 @@ class UnitListViewTest(WebTest):
         self.assertTrue(website == -1)
 
     def testManualOrderOfUnits(self):
-        response = self.app.get(reverse('units-list'))
+        response = self.app.get(reverse('units'))
         masters = response.body.find(self.masters.name)
         turtles = response.body.find(self.turtles.name)
         footclan = response.body.find(self.footclan.name)
