@@ -205,7 +205,7 @@ class BoardViewTest(WebTest):
         self.assertTrue(self.splinter.name in response.body)
         self.assertTrue(self.rat_board.title in response.body)
         self.assertTrue(self.splinter.description in response.body)
-        self.assertTrue(self.splinter.email in response.body)
+        self.assertTrue(self.splinter.email not in response.body)
 
         self.assertTrue(self.casey.name not in response.body)
         self.assertTrue(self.april.name not in response.body)
@@ -221,14 +221,14 @@ class BoardViewTest(WebTest):
         self.assertTrue(escape(self.april.name) in response.body)
         self.assertTrue(self.april_council.title in response.body)
         self.assertTrue(self.april.description in response.body)
-        self.assertTrue(self.april.email in response.body)
+        self.assertTrue(self.april.email not in response.body)
         self.assertTrue(self.april.twitter in response.body)
         self.assertTrue(self.april.url in response.body)
 
         self.assertTrue(self.casey.name in response.body)
         self.assertTrue(self.casey_council.title in response.body)
         self.assertTrue(self.casey.description in response.body)
-        self.assertTrue(self.casey.email in response.body)
+        self.assertTrue(self.casey.email not in response.body)
         self.assertTrue(self.casey.twitter in response.body)
         
         self.assertTrue(self.splinter.name not in response.body)

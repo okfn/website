@@ -12,9 +12,11 @@
 {% block body %}
   <div class="row">
     <div class="col-md-9 col-md-push-3">
+      {% with skip_email=True %}
       {% for member in object.boardmembership_set.all %}
         {% include "organisation/member.html" %}
       {% endfor %}
+      {% endwith %}
     </div>
     <div class="sidebar col-md-3 col-md-pull-9">
       <h3>Members</h3>
