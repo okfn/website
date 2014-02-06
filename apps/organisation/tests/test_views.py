@@ -1,8 +1,10 @@
 from django.core.urlresolvers import reverse
+from django.utils.html import escape
 from django.test.utils import override_settings
 from django_webtest import WebTest
 
-from apps.organisation.models import Person, Unit, UnitMembership
+from apps.organisation.models import\
+    Person, Unit, UnitMembership, Board, BoardMembership
 
 @override_settings(ROOT_URLCONF='foundation.tests.urls')
 class UnitListViewTest(WebTest):
@@ -146,3 +148,87 @@ class UnitListViewTest(WebTest):
         footclan = response.body.find(self.footclan.name)
 
         self.assertTrue(masters < footclan < turtles)
+
+@override_settings(ROOT_URLCONF='foundation.tests.urls')
+class BoardViewTest(WebTest):
+    def setUp(self):
+        self.leonardo = Person.objects.create(
+            name="Leonardo (Leo)",
+            description='Turtle with a blue mask',
+            email='leonardo@tmnt.org')
+        self.april = Person.objects.create(
+            name="April O'Neil",
+            description='Computer Programmer',
+            email='april@oneil.me',
+            twitter='april',
+            url='http://oneil.me')
+        self.casey = Person.objects.create(
+            name="Casey Jones",
+            description='Hockey mask wearing vigilante',
+            email='casey.jones@newyorkcricketclub.com',
+            twitter='arnold')
+        self.splinter = Person.objects.create(
+            name="Splinter",
+            description='Ninja rat',
+            email='splinter@tmnt.org')
+
+        self.board = Board.objects.create(
+            name='Board of directors',
+            slug='board',
+            description='The board consists of a rat')
+        self.council = Board.objects.create(
+            name='Advisory Council',
+            slug='advisory-board',
+            description='Get a room you two!')
+
+        self.rat_board = BoardMembership.objects.create(
+            title='Director',
+            person=self.splinter,
+            board=self.board)
+
+        self.april_council = BoardMembership.objects.create(
+            title='Technical consultant',
+            person=self.april,
+            board=self.council)
+        self.casey_council = BoardMembership.objects.create(
+            title='Sport utilities consultant',
+            person=self.casey,
+            board=self.council)
+
+    def testBoard(self):
+        response = self.app.get(reverse('board'))
+        self.assertTrue(self.board.name in response.body)
+        self.assertTrue(self.board.description in response.body)
+
+        self.assertTrue(self.council.name not in response.body)
+
+        self.assertTrue(self.splinter.name in response.body)
+        self.assertTrue(self.rat_board.title in response.body)
+        self.assertTrue(self.splinter.description in response.body)
+        self.assertTrue(self.splinter.email in response.body)
+
+        self.assertTrue(self.casey.name not in response.body)
+        self.assertTrue(self.april.name not in response.body)
+
+    def testAdvisoryCouncil(self):
+        response = self.app.get(reverse('advisory-board'))
+        self.assertTrue(self.council.name in response.body)
+        self.assertTrue(self.council.description in response.body)
+
+        self.assertTrue(self.board.name not in response.body)
+
+        # April's name must be escaped because of the single quote in O'Neil
+        self.assertTrue(escape(self.april.name) in response.body)
+        self.assertTrue(self.april_council.title in response.body)
+        self.assertTrue(self.april.description in response.body)
+        self.assertTrue(self.april.email in response.body)
+        self.assertTrue(self.april.twitter in response.body)
+        self.assertTrue(self.april.url in response.body)
+
+        self.assertTrue(self.casey.name in response.body)
+        self.assertTrue(self.casey_council.title in response.body)
+        self.assertTrue(self.casey.description in response.body)
+        self.assertTrue(self.casey.email in response.body)
+        self.assertTrue(self.casey.twitter in response.body)
+        
+        self.assertTrue(self.splinter.name not in response.body)
