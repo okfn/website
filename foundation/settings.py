@@ -88,6 +88,7 @@ INSTALLED_APPS = (
     's3_folder_storage',
     'pagedown',
     'markdown_deux',
+    'haystack',
 
     # Asset pipeline
     'compressor',
@@ -98,6 +99,7 @@ INSTALLED_APPS = (
     'cms.plugins.picture',
     'cms.plugins.link',
     'djangocms_text_ckeditor',
+    'aldryn_search',
 
     # CMS
     'cms',
@@ -147,6 +149,33 @@ WSGI_APPLICATION = 'foundation.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(default='sqlite:///development.sqlite3')
 }
+
+
+# Search engine configurations
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.simple_backend.SimpleEngine'
+    }
+}
+
+if env.get('HAYSTACK_SEARCH_ENGINE', None) == 'solr':
+    HAYSTACK_CONNECTIONS['default']['ENGINE'] = \
+        'haystack.backends.solr_backend.SolrEngine'
+    HAYSTACK_CONNECTIONS['default']['URL'] = \
+        env.get('HAYSTACK_SOLR_URL', '')
+elif env.get('HAYSTACK_SEARCH_ENGINE', None) == 'elasticsearch':
+    HAYSTACK_CONNECTIONS['default']['ENGINE'] = \
+        'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine'
+    HAYSTACK_CONNECTIONS['default']['URL'] = \
+        env.get('HAYSTACK_ELASTICSEARCH_URL', '')
+    HAYSTACK_CONNECTIONS['default']['INDEX_NAME'] = \
+        env.get('HAYSTACK_ELASTICSEARCH_INDEX_NAME', '')
+elif env.get('HAYSTACK_SEARCH_ENGINE', None) == 'whoosh':
+    HAYSTACK_CONNECTIONS['default']['ENGINE'] = \
+        'haystack.backends.whoosh_backend.WhooshEngine'
+    HAYSTACK_CONNECTIONS['default']['PATH'] = \
+        env.get('HAYSTACK_WHOOSH_PATH', '')
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
