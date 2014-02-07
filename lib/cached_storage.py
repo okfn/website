@@ -1,6 +1,7 @@
 from django.core.files.storage import get_storage_class
 from s3_folder_storage.s3 import StaticStorage
 
+
 class CachedStaticStorage(StaticStorage):
     """
     S3 storage backend that saves the files locally, too.

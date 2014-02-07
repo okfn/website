@@ -6,6 +6,7 @@ from django_webtest import WebTest
 from apps.organisation.models import\
     Person, Unit, UnitMembership, Board, BoardMembership
 
+
 @override_settings(ROOT_URLCONF='foundation.tests.urls')
 class UnitListViewTest(WebTest):
     def setUp(self):
@@ -59,7 +60,6 @@ class UnitListViewTest(WebTest):
             title='Master',
             person=self.splinter,
             unit=self.masters)
-            
 
     def testUnitsInResponse(self):
         response = self.app.get(reverse('units'))
@@ -149,6 +149,7 @@ class UnitListViewTest(WebTest):
 
         self.assertTrue(masters < footclan < turtles)
 
+
 @override_settings(ROOT_URLCONF='foundation.tests.urls')
 class BoardViewTest(WebTest):
     def setUp(self):
@@ -230,5 +231,5 @@ class BoardViewTest(WebTest):
         self.assertTrue(self.casey.description in response.body)
         self.assertTrue(self.casey.email not in response.body)
         self.assertTrue(self.casey.twitter in response.body)
-        
+
         self.assertTrue(self.splinter.name not in response.body)
