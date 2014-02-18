@@ -64,6 +64,7 @@ else:
 ALLOWED_HOSTS = env.get('DJANGO_ALLOWED_HOSTS', '').split(',')
 
 DEFAULT_FROM_EMAIL = 'noreply@%s' % ALLOWED_HOSTS[0]
+SERVER_EMAIL = 'admin-noreply@%s' % ALLOWED_HOSTS[0]
 
 INSTALLED_APPS = (
     # CMS admin theme
