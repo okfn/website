@@ -1,7 +1,6 @@
 import reversion
 
 from django.contrib import admin
-from django.db import models
 from .models import Person, Unit, Board
 from .models import UnitMembership, BoardMembership
 

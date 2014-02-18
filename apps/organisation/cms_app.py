@@ -7,9 +7,11 @@ class UnitsAppHook(CMSApp):
     name = _("Units")
     urls = ["apps.organisation.urls.units"]
 
+
 class BoardAppHook(CMSApp):
     name = _("Board of Directors")
     urls = ["apps.organisation.urls.board"]
+
 
 class AdvisoryBoardAppHook(CMSApp):
     name = _("Advisory Board")
@@ -18,4 +20,3 @@ class AdvisoryBoardAppHook(CMSApp):
 apphook_pool.register(UnitsAppHook)
 apphook_pool.register(BoardAppHook)
 apphook_pool.register(AdvisoryBoardAppHook)
-

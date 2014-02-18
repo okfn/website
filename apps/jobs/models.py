@@ -1,5 +1,4 @@
 from django.db import models
-from pagedown.widgets import AdminPagedownWidget
 
 
 class Job(models.Model):
