@@ -1,6 +1,7 @@
 *.sw[op]
 *.py[cod]
 __pycache__
+*~
 
 # Installer logs
 pip-log.txt
