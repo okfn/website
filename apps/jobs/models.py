@@ -1,5 +1,5 @@
 from django.db import models
-from pagedown.widgets import AdminPagedownWidget
+
 
 class Job(models.Model):
     title = models.CharField(max_length=150)

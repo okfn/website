@@ -2,6 +2,7 @@ from compressor.filters.base import CompilerFilter
 from compressor.filters.css_default import CssAbsoluteFilter
 from compressor.utils import staticfiles
 
+
 class CustomCssAbsoluteFilter(CssAbsoluteFilter):
     def find(self, basename):
         # This is the same as the inherited implementation except for the
@@ -12,6 +13,7 @@ class CustomCssAbsoluteFilter(CssAbsoluteFilter):
         # for details.
         if basename and staticfiles.finders:
             return staticfiles.finders.find(basename)
+
 
 # Work around the fact that django-compressor doesn't succeed in running the
 # CssAbsoluteFilter on less files due to broken path lookups.

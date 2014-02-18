@@ -5,13 +5,15 @@ admin.autodiscover()
 
 from cms.sitemaps import CMSSitemap
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
-)
+    )
 
 # Login/logout, password changes and resets
-urlpatterns += patterns('django.contrib.auth.views',
+urlpatterns += patterns(
+    'django.contrib.auth.views',
     url(r'^login/$', 'login',
         {'template_name': 'accounts/login.html'},
         name='login'),
@@ -30,14 +32,15 @@ urlpatterns += patterns('django.contrib.auth.views',
     url(r'^password/reset/complete/$',
         'password_reset_complete',
         name='password_reset_complete'),
-)
+    )
 
 # CMS patterns
-urlpatterns += patterns('',
+urlpatterns += patterns(
+    '',
     url(r'^sitemap\.xml$',
         'django.contrib.sitemaps.views.sitemap',
         {'sitemaps': {'cmspages': CMSSitemap}}),
 
     # Fallthrough for CMS managed pages
     url(r'^', include('cms.urls'))
-)
+    )

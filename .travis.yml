@@ -8,6 +8,7 @@ install:
   - pip install -r requirements.dev.txt --use-mirrors
 script:
   - python manage.py test
+  - flake8 --exclude=migrations .
 matrix:
   allow_failures:
     - python: 3.2

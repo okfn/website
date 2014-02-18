@@ -7,6 +7,7 @@ from django_webtest import WebTest
 
 from apps.jobs.models import Job
 
+
 @override_settings(ROOT_URLCONF='foundation.tests.urls')
 class JobListViewTest(WebTest):
     def setUp(self):

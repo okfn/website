@@ -2,7 +2,8 @@ from django.conf.urls import url, patterns, include
 
 from django.contrib import admin
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^login/', lambda x: x, name='login'),
     url(r'^jobs/', include('apps.jobs.urls')),
@@ -11,4 +12,4 @@ urlpatterns = patterns('',
     url(r'^about/advisory-board',
         include('apps.organisation.urls.advisoryboard')),
     url(r'^', include('cms.urls')),
-)
+    )

@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404
 
 from .models import Board
 
+
 class BoardView(DetailView):
     model = Board
     template_name = 'organisation/board_details.html'
