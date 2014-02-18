@@ -81,16 +81,40 @@
   </footer>
 {% endblock %}
 
-{% block javascript-variables %}
-  WebFontConfig = {
-    google: {
-      families: ['Open Sans:400italic,400']
-    }
-  };
-{% endblock %}
-
 {% block javascript-libraries %}
 {% compress js %}
+
+{% comment %}
+  NB: The inline script tags here get compiled into the single JavaScript file
+  for the page, so changes to these *will only show up* if the application is
+  redeployed.
+
+  The reason for this is simple. If we excise all inline script tags from our
+  pages, then we can serve in production with a Content-Security-Policy which
+  includes `unsafe-inline`, thus protecting ourselves from a wide range of XSS
+  attacks.
+{% endcomment %}
+
+<script>
+  window.WebFontConfig = {
+    google: { families: ['Open Sans:400italic,400'] }
+  };
+</script>
+
+{% if GOOGLE_ANALYTICS_TRACKING_ID and GOOGLE_ANALYTICS_DOMAIN %}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create',
+     '{{ GOOGLE_ANALYTICS_TRACKING_ID }}',
+     '{{ GOOGLE_ANALYTICS_DOMAIN }}');
+  ga('send', 'pageview');
+</script>
+{% endif %}
+
 <script type="text/javascript" src="{{ STATIC_URL }}vendor/jquery/jquery-2.0.3.js"
   charset="utf-8"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}vendor/webfont/webfont.js"
@@ -99,5 +123,6 @@
   charset="utf-8"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}vendor/bootstrap/js/collapse.js"
   charset="utf-8"></script>
+
 {% endcompress %}
 {% endblock %}

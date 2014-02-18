@@ -125,6 +125,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'cms.context_processors.media',
     'sekizai.context_processors.sekizai',
     'lib.context_processors.site_processor',
+    'lib.context_processors.google_analytics',
 )
 
 ROOT_URLCONF = 'foundation.urls'
@@ -232,3 +233,6 @@ CMS_TEMPLATES = (
     ('cms_threecolumn.html', 'Three columns'),
     ('cms_homepage.html', 'Homepage'),
 )
+
+GOOGLE_ANALYTICS_TRACKING_ID = env.get('DJANGO_GOOGLE_ANALYTICS_TRACKING_ID')
+GOOGLE_ANALYTICS_DOMAIN = env.get('DJANGO_GOOGLE_ANALYTICS_DOMAIN')
