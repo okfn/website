@@ -186,13 +186,22 @@ if env.get('DJANGO_USE_AWS_STORAGE') == 'true':
 
     STATICFILES_STORAGE = 'lib.cached_storage.CachedStaticStorage'
     STATIC_S3_PATH = 'assets'
-    STATIC_URL = '//s3.amazonaws.com/%s/assets/' % AWS_STORAGE_BUCKET_NAME
     STATIC_ROOT = 'assets/'
 
     DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.DefaultStorage'
     DEFAULT_S3_PATH = 'media'
-    MEDIA_URL = '//s3.amazonaws.com/%s/media/' % AWS_STORAGE_BUCKET_NAME
     MEDIA_ROOT = 'media/'
+
+    AWS_S3_CUSTOM_DOMAIN = env.get('DJANGO_AWS_S3_CUSTOM_DOMAIN')
+    if AWS_S3_CUSTOM_DOMAIN:
+        STATIC_URL = '//%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, STATIC_S3_PATH)
+        MEDIA_URL = '//%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, DEFAULT_S3_PATH)
+    else:
+        STATIC_URL = '//s3.amazonaws.com/%s/%s/' % (AWS_STORAGE_BUCKET_NAME,
+                                                    STATIC_S3_PATH)
+        MEDIA_URL = '//s3.amazonaws.com/%s/%s/' % (AWS_STORAGE_BUCKET_NAME,
+                                                   DEFAULT_S3_PATH)
+
 else:
     STATIC_URL = '/assets/'
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
