@@ -1,0 +1,5 @@
+{% if search_result.content_type == 'organisation.person' %}
+  {% with person=search_result.object %}
+    {% include "search/organisation/person.html" %}
+  {% endwith %}
+{% endif %}

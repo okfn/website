@@ -1,0 +1,12 @@
+{{ object.name }}
+{% for member in object.unitmembership_set.all %}
+{{ member.title }}
+{{ member.unit.name }}
+{% endfor %}
+{% for member in object.boardmembership_set.all %}
+{{ member.title }}
+{{ member.board.name }}
+{% endfor %}
+{{ object.description }}
+{{ object.twitter }}
+{{ object.url }}
