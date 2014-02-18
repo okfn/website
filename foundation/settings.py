@@ -8,6 +8,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
+import email.utils
 import os
 from os import environ as env
 
@@ -25,6 +26,16 @@ warnings.filterwarnings("ignore",
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 SITE_ID = int(env.get('DJANGO_SITE_ID', 1))
+
+# The people that get emailed when shit breaks
+ADMINS = []
+django_admins = env.get('DJANGO_ADMINS')
+if django_admins:
+    for person in django_admins.split(','):
+        res = email.utils.parseaddr(person)
+        if res != ('', ''):
+            ADMINS.append(res)
+ADMINS = tuple(ADMINS)
 
 DEBUG = env.get('DJANGO_DEBUG', 'true') == 'true'
 
