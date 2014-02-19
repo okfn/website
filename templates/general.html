@@ -53,10 +53,10 @@
         <ul class='nav navbar-nav'>
           {% show_menu_below_id "home" 0 0 0 0 "menu/menu.html" %}
         </ul>
-        <form class="navbar-form navbar-right" role="search">
+        <form class="navbar-form navbar-right" action="{% url 'haystack_search' %}" method="get" role="search">
           <div class="form-group">
             <div class="input-group" style="width: 200px">
-              <input type="text" class="form-control" placeholder="Search">
+              <input type="text" name="q" class="form-control" placeholder="Search">
               <span class="input-group-btn">
                 <button type="submit" class="btn btn-default">
                   <span class="glyphicon glyphicon-search"></span>
