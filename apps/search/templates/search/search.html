@@ -34,6 +34,7 @@ Your search for: "{{ query }}" returned {{page.object_list|length}} results.
     <h3>Results</h3>
     {% for search_result in page.object_list %}
       {% include "search/results.html" %}
+      <hr/>
     {% empty %}
     <p>No results found.</p>
     {% endfor %}

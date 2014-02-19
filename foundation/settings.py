@@ -111,6 +111,7 @@ INSTALLED_APPS = (
     'apps.jobs',
     'apps.press',
     'apps.organisation',
+    'apps.search',
 )
 
 MIDDLEWARE_CLASSES = (

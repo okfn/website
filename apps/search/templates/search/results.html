@@ -1,0 +1,10 @@
+{% if search_result.content_type == 'aldryn_search.titleproxy' %}
+  {% with cms=search_result.object result=search_result %}
+    {% include "search/cms/page.html" %}
+  {% endwith %}
+{% endif %}
+{% if search_result.content_type == 'organisation.person' %}
+  {% with person=search_result.object %}
+    {% include "search/organisation/person.html" %}
+  {% endwith %}
+{% endif %}
