@@ -8,3 +8,8 @@
     {% include "search/organisation/person.html" %}
   {% endwith %}
 {% endif %}
+{% if search_result.content_type == 'jobs.job' %}
+  {% with job=search_result.object %}
+    {% include "search/jobs/job.html" %}
+  {% endwith %}
+{% endif %}
