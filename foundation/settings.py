@@ -154,6 +154,10 @@ DATABASES = {
 
 # Search engine configurations
 
+# NB: simple_backend doesn't play nicely with Django==1.6 due to a known bug:
+#
+#     https://github.com/toastdriven/django-haystack/issues/908
+#
 HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'haystack.backends.simple_backend.SimpleEngine'
