@@ -10,7 +10,7 @@ psycopg2
 cssmin
 
 git+https://github.com/divio/django-cms.git@65677aa41df0c5f8c2d1c1006f227361ec56e588#egg=django-cms
-git+https://github.com/tryggvib/aldryn-search.git
+git+https://github.com/tryggvib/aldryn-search.git@e8b598c476713ae3b57f8572921aaa6e625798e8#egg=aldryn-search
 django-reversion==1.8.0
 djangocms-text-ckeditor==2.0.5
 pillow==2.2.1
