@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.conf.urls import patterns, include, url
 
 from django.contrib import admin
@@ -10,6 +11,16 @@ urlpatterns = patterns(
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
     )
+
+# Allow testing of error pages in development
+if settings.DEBUG:
+    urlpatterns += patterns(
+        '',
+        (r'^400/$', 'django.views.defaults.bad_request'),
+        (r'^403/$', 'django.views.defaults.permission_denied'),
+        (r'^404/$', 'django.views.defaults.page_not_found'),
+        (r'^500/$', 'django.views.defaults.server_error'),
+        )
 
 # Login/logout, password changes and resets
 urlpatterns += patterns(

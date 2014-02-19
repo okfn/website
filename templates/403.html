@@ -1,0 +1,26 @@
+{% extends "general.html" %}
+{% load i18n %}
+
+{% block title %}{% trans 'Permission denied' %}{% endblock %}
+
+{% block pagebanner %}
+<div id='page-banner'>
+  <div class='container'>
+    <h2>403: {% trans 'Permission denied' %}</h2>
+  </div>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class='row'>
+  <div class='col-md-8'>
+    <p>
+      {% blocktrans %}
+      Sorry, you're not allowed here. This might be a mix-up on our part, and if
+      so we apologise. Please contact a site administrator if you think this is
+      a mistake.
+      {% endblocktrans %}
+    </p>
+  </div>
+</div>
+{% endblock %}

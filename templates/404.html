@@ -1,0 +1,40 @@
+{% extends "general.html" %}
+{% load i18n %}
+
+{% block title %}{% trans 'Page not found' %}{% endblock %}
+
+{% block pagebanner %}
+<div id='page-banner'>
+  <div class='container'>
+    <h2>404: {% trans 'Page not found' %}</h2>
+  </div>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class='row'>
+  <div class='col-md-8'>
+    {# FIXME: hook up this search form! #}
+    <form role="search">
+      <p>
+        {% blocktrans %}
+        We're sorry, but the requested page could not be found. If you think there
+        should have been something here, you can try searching for it:
+        {% endblocktrans %}
+
+        <div class="form-group">
+          <div class="input-group" style="width: 400px">
+            <input type="text" class="form-control" placeholder="Search">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span>
+                <span class="sr-only">Submit</span>
+              </button>
+            </span>
+          </div>
+        </div>
+      </p>
+    </form>
+  </div>
+</div>
+{% endblock %}

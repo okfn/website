@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en-gb'>
+  <head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>{% block title %}An error occurred{% endblock %}</title>
+    <style>
+      body {
+        background: #ececec;
+        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      }
+      #container {
+        background: #fff;
+        width: 40em;
+        margin: 5em auto 0 auto;
+        padding: 1em;
+        border-top: 4px solid #1a988b;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id='container'>
+      {% block body %}
+      <h2>An error occurred</h2>
+      <p>
+      Some kind of error (we don't know what) occurred. This is about the worst
+      possible way we can fail, so we apologise. Please contact a site
+      administrator at <tt>sysadmin</tt> at this domain.
+      </p>
+      {% endblock %}
+    </div>
+
+  </body>
+</html>
