@@ -14,8 +14,7 @@
 {% block body %}
 <div class='row'>
   <div class='col-md-8'>
-    {# FIXME: hook up this search form! #}
-    <form role="search">
+    <form action="{% url 'haystack_search' %}" method="get" role="search">
       <p>
         {% blocktrans %}
         We're sorry, but the requested page could not be found. If you think there
@@ -24,7 +23,7 @@
 
         <div class="form-group">
           <div class="input-group" style="width: 400px">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" name="q" class="form-control" placeholder="Search">
             <span class="input-group-btn">
               <button type="submit" class="btn btn-default">
                 <span class="glyphicon glyphicon-search"></span>
