@@ -136,7 +136,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages',
     'cms.context_processors.media',
     'sekizai.context_processors.sekizai',
-    'lib.context_processors.site_processor',
+    'lib.context_processors.site',
     'lib.context_processors.google_analytics',
 )
 
