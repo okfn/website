@@ -4,6 +4,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
+from haystack.views import SearchView
 from cms.sitemaps import CMSSitemap
 
 urlpatterns = patterns(
@@ -43,6 +44,14 @@ urlpatterns += patterns(
     url(r'^password/reset/complete/$',
         'password_reset_complete',
         name='password_reset_complete'),
+    )
+
+# Search patterns (do not use haystack.url
+# since we're using an older version of haystack
+# because of django-cms-search)
+urlpatterns += patterns(
+    'haystack.views',
+    url(r'^search/', SearchView(), name='haystack_search'),
     )
 
 # CMS patterns
