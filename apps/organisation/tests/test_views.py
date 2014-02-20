@@ -9,7 +9,7 @@ from apps.organisation.models import\
 
 @override_settings(ROOT_URLCONF='foundation.tests.urls')
 class UnitListViewTest(WebTest):
-    def setUp(self):
+    def setUp(self):  # flake8: noqa
         self.leonardo = Person.objects.create(
             name="Leonardo (Leo)",
             description='Turtle with a blue mask',
@@ -61,22 +61,22 @@ class UnitListViewTest(WebTest):
             person=self.splinter,
             unit=self.masters)
 
-    def testUnitsInResponse(self):
+    def test_units_in_response(self):
         response = self.app.get(reverse('units'))
         self.assertTrue(self.turtles.name in response)
         self.assertTrue(self.footclan.name in response)
 
-    def testUnitMemberInResponse(self):
+    def test_unit_member_in_response(self):
         response = self.app.get(reverse('units'))
         self.assertTrue(self.leonardo.name in response)
         self.assertTrue(self.raphael.name in response)
         self.assertTrue(self.rocksteady.name in response)
 
-    def testNonUnitMemberNotInResponse(self):
+    def test_non_unit_member_not_in_response(self):
         response = self.app.get(reverse('units'))
         self.assertTrue(self.april.name not in response)
 
-    def testUnitMembersInUnits(self):
+    def test_unit_members_in_units(self):
         response = self.app.get(reverse('units'))
         footclan = response.body.find(self.footclan.name)
         turtles = response.body.find(self.turtles.name)
@@ -89,21 +89,21 @@ class UnitListViewTest(WebTest):
         self.assertTrue(footclan < rocksteady < turtles)
         self.assertTrue(turtles < leonardo < raphael)
 
-    def testDescriptionInResponse(self):
+    def test_description_in_response(self):
         response = self.app.get(reverse('units'))
         self.assertTrue(self.leonardo.description in response)
         self.assertTrue(self.raphael.description in response)
         self.assertTrue(self.rocksteady.description in response)
         self.assertTrue(self.april.description not in response)
 
-    def testEmailInResponse(self):
+    def test_email_in_response(self):
         response = self.app.get(reverse('units'))
         self.assertTrue(self.leonardo.email in response)
         self.assertTrue(self.raphael.email in response)
         self.assertTrue(self.rocksteady.email in response)
         self.assertTrue(self.april.email not in response)
 
-    def testTwitterInResponse(self):
+    def test_twitter_in_response(self):
         response = self.app.get(reverse('units'))
         twitter_url = 'http://twitter.com/{handle}'
         twitter_raphael = twitter_url.format(handle=self.raphael.twitter)
@@ -123,7 +123,7 @@ class UnitListViewTest(WebTest):
         twitter = response.body.find('http://twitter.com/', leonardo, raphael)
         self.assertTrue(twitter == -1)
 
-    def testUrlInResponse(self):
+    def test_url_in_response(self):
         response = self.app.get(reverse('units'))
 
         self.assertTrue(self.raphael.url in response)
@@ -141,7 +141,7 @@ class UnitListViewTest(WebTest):
         website = response.body.find('Personal website', leonardo, raphael)
         self.assertTrue(website == -1)
 
-    def testManualOrderOfUnits(self):
+    def test_manual_order_of_units(self):
         response = self.app.get(reverse('units'))
         masters = response.body.find(self.masters.name)
         turtles = response.body.find(self.turtles.name)
@@ -152,7 +152,7 @@ class UnitListViewTest(WebTest):
 
 @override_settings(ROOT_URLCONF='foundation.tests.urls')
 class BoardViewTest(WebTest):
-    def setUp(self):
+    def setUp(self):  # flake8: noqa
         self.leonardo = Person.objects.create(
             name="Leonardo (Leo)",
             description='Turtle with a blue mask',
@@ -196,7 +196,7 @@ class BoardViewTest(WebTest):
             person=self.casey,
             board=self.council)
 
-    def testBoard(self):
+    def test_board(self):
         response = self.app.get(reverse('board'))
         self.assertTrue(self.board.name in response.body)
         self.assertTrue(self.board.description in response.body)
@@ -211,7 +211,7 @@ class BoardViewTest(WebTest):
         self.assertTrue(self.casey.name not in response.body)
         self.assertTrue(self.april.name not in response.body)
 
-    def testAdvisoryCouncil(self):
+    def test_advisory_council(self):
         response = self.app.get(reverse('advisory-board'))
         self.assertTrue(self.council.name in response.body)
         self.assertTrue(self.council.description in response.body)
