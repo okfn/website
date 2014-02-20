@@ -95,10 +95,10 @@ INSTALLED_APPS = (
     'compressor',
 
     # CMS plugins
-    'cms.plugins.file',
-    'cms.plugins.googlemap',
-    'cms.plugins.picture',
-    'cms.plugins.link',
+    'djangocms_file',
+    'djangocms_googlemap',
+    'djangocms_picture',
+    'djangocms_link',
     'djangocms_text_ckeditor',
     'aldryn_search',
 

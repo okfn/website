@@ -1,6 +1,7 @@
 # Git repositories
-git+https://github.com/divio/django-cms.git@65677aa41df0c5f8c2d1c1006f227361ec56e588#egg=django-cms
+git+https://github.com/divio/django-cms.git@bbc6e0a1156d826653a2eb318d69548e1e981e61#egg=django-cms
 git+https://github.com/tryggvib/aldryn-search.git@e8b598c476713ae3b57f8572921aaa6e625798e8#egg=aldryn-search
+git+https://github.com/divio/djangocms-file.git@master#egg=djangocms-file
 
 # Primary deps
 Django>=1.6,<1.7
@@ -17,7 +18,10 @@ django-reversion>=1.8
 django-s3-folder-storage
 django-secure
 django_compressor
-djangocms-text-ckeditor>=2.0,<2.1
+djangocms-googlemap
+djangocms-picture
+djangocms-link
+djangocms-text-ckeditor>=2.1,<2.2
 
 # Heroku deployment requirements
 gunicorn
