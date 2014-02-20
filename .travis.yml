@@ -5,9 +5,12 @@ python:
   - pypy
 install:
   - pip install -r requirements.dev.txt
+  - pip install coveralls
 script:
-  - python manage.py test
+  - coverage run python manage.py test
   - flake8 .
+after_success:
+  - coveralls
 matrix:
   allow_failures:
     - python: 3.3

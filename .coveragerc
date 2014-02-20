@@ -1,0 +1,13 @@
+[run]
+branch = true
+source = apps
+omit =
+  */migrations/*
+  */tests/*
+
+[report]
+exclude_lines =
+  pragma: no cover
+  def __repr__
+  def __str__
+  def __unicode__
