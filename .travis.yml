@@ -4,7 +4,7 @@ python:
   - 3.3
   - pypy
 install:
-  - pip install -r requirements.dev.txt --use-mirrors
+  - pip install -r requirements.dev.txt
 script:
   - python manage.py test
   - flake8 .
