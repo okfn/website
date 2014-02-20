@@ -164,23 +164,20 @@ HAYSTACK_CONNECTIONS = {
     }
 }
 
-if env.get('HAYSTACK_SEARCH_ENGINE', None) == 'solr':
-    HAYSTACK_CONNECTIONS['default']['ENGINE'] = \
-        'haystack.backends.solr_backend.SolrEngine'
-    HAYSTACK_CONNECTIONS['default']['URL'] = \
-        env.get('HAYSTACK_SOLR_URL', '')
-elif env.get('HAYSTACK_SEARCH_ENGINE', None) == 'elasticsearch':
-    HAYSTACK_CONNECTIONS['default']['ENGINE'] = \
+haystack_default = HAYSTACK_CONNECTIONS['default']
+haystack_engine = env.get('HAYSTACK_SEARCH_ENGINE')
+
+if haystack_engine == 'solr':
+    haystack_default['ENGINE'] = 'haystack.backends.solr_backend.SolrEngine'
+    haystack_default['URL'] = env.get('HAYSTACK_SOLR_URL')
+elif haystack_engine == 'elasticsearch':
+    haystack_default['ENGINE'] = \
         'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine'
-    HAYSTACK_CONNECTIONS['default']['URL'] = \
-        env.get('HAYSTACK_ELASTICSEARCH_URL', '')
-    HAYSTACK_CONNECTIONS['default']['INDEX_NAME'] = \
-        env.get('HAYSTACK_ELASTICSEARCH_INDEX_NAME', '')
-elif env.get('HAYSTACK_SEARCH_ENGINE', None) == 'whoosh':
-    HAYSTACK_CONNECTIONS['default']['ENGINE'] = \
-        'haystack.backends.whoosh_backend.WhooshEngine'
-    HAYSTACK_CONNECTIONS['default']['PATH'] = \
-        env.get('HAYSTACK_WHOOSH_PATH', '')
+    haystack_default['URL'] = env.get('HAYSTACK_ELASTICSEARCH_URL')
+    haystack_default['INDEX_NAME'] = \
+        env.get('HAYSTACK_ELASTICSEARCH_INDEX_NAME')
+# Haystack also supports a number of other backends which could be configured
+# here.
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
