@@ -1,0 +1,7 @@
+{% load menu_tags %}
+{% if request.current_page.get_descendant_count > 0 %}
+<h3>Menu</h3>
+<ul>
+  {% show_sub_menu 1 %}
+</ul>
+{% endif %}

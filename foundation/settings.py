@@ -108,6 +108,7 @@ INSTALLED_APPS = (
     'sekizai',
 
     # Custom apps
+    'apps.djangocms_submenu',
     'apps.jobs',
     'apps.press',
     'apps.organisation',
