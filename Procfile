@@ -1,1 +1,1 @@
-web: gunicorn foundation.wsgi:application
+web: newrelic-admin run-program gunicorn foundation.wsgi:application

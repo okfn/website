@@ -20,7 +20,8 @@ pillow # required by djangocms-text-ckeditor
 
 # Heroku deployment requirements
 gunicorn
+newrelic
 psycopg2
-static
-requests>=2.2,<2.3 # required by django-haystack
 pyelasticsearch>=0.6,<0.7 # required by django-haystack
+requests>=2.2,<2.3 # required by django-haystack
+static
