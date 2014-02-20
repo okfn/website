@@ -179,6 +179,15 @@ elif haystack_engine == 'elasticsearch':
 # Haystack also supports a number of other backends which could be configured
 # here.
 
+# Haystack on heroku using Bonsai:
+bonsai_url = env.get('BONSAI_URL')
+if bonsai_url is not None:
+    haystack_default['ENGINE'] = \
+        'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine'
+    haystack_default['URL'] = bonsai_url
+    haystack_default['INDEX_NAME'] = \
+        env.get('HAYSTACK_ELASTICSEARCH_INDEX_NAME', 'foundation')
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
