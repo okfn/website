@@ -7,7 +7,7 @@ install:
   - pip install -r requirements.dev.txt
   - pip install coveralls
 script:
-  - coverage run python manage.py test
+  - coverage run manage.py test
   - flake8 .
 after_success:
   - coveralls
