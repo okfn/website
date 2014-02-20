@@ -1,0 +1,24 @@
+# Git repositories
+git+https://github.com/divio/django-cms.git@65677aa41df0c5f8c2d1c1006f227361ec56e588#egg=django-cms
+git+https://github.com/tryggvib/aldryn-search.git@e8b598c476713ae3b57f8572921aaa6e625798e8#egg=aldryn-search
+
+# Primary deps
+Django>=1.6,<1.7
+South
+cssmin
+dj-database-url
+django-classy-tags
+django-haystack>=2.1,<2.2
+django-markdown-deux
+django-pagedown
+django-reversion>=1.8
+django-s3-folder-storage
+django-secure
+django_compressor
+djangocms-text-ckeditor>=2.0,<2.1
+pillow # required by djangocms-text-ckeditor
+
+# Heroku deployment requirements
+gunicorn
+psycopg2
+static
