@@ -2,3 +2,4 @@
 django-webtest==1.7.5
 webtest==2.0.11
 flake8==2.1.0
+pep8-naming==0.2.1
