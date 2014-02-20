@@ -306,3 +306,13 @@ CMS_TEMPLATES = (
     ('cms_threecolumn.html', 'Three columns'),
     ('cms_homepage.html', 'Homepage'),
 )
+
+CMS_PLACEHOLDER_CONF = {
+    # The 'blurb' placeholder is only intended to take text. To minimise the
+    # chance of screwing up page layout, restrict the placeholder to only
+    # accept the text plugin.
+    'blurb': {
+        'plugins': ['TextPlugin'],
+        'text_only_plugins': ['LinkPlugin']
+    },
+}
