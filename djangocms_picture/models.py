@@ -57,7 +57,7 @@ class Picture(CMSPlugin):
                 return u"%s" % os.path.basename(self.image.path)
             except:
                 pass
-        return "<empty>"
+        return u"<empty>"
 
     def clean(self):
         if self.url and self.page_link:
