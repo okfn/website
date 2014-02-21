@@ -19,7 +19,6 @@ django-s3-folder-storage
 django-secure
 django_compressor
 djangocms-googlemap
-djangocms-picture
 djangocms-link
 djangocms-text-ckeditor>=2.1,<2.2
 

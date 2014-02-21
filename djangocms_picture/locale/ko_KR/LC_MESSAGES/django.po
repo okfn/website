@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: django-cms\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-06 14:10+0100\n"
+"PO-Revision-Date: 2014-02-06 13:31+0000\n"
+"Last-Translator: Kim Thoenen <kim@smuzey.ch>\n"
+"Language-Team: Korean (Korea) (http://www.transifex.com/projects/p/django-cms/language/ko_KR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko_KR\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: cms_plugins.py:12
+msgid "Picture"
+msgstr "사진"
+
+#: models.py:19
+msgid "left"
+msgstr "왼쪽"
+
+#: models.py:20
+msgid "right"
+msgstr "오른쪽"
+
+#: models.py:21
+msgid "center"
+msgstr "중앙"
+
+#: models.py:24
+msgid "image"
+msgstr "그림"
+
+#: models.py:26
+msgid "link"
+msgstr "연결"
+
+#: models.py:27
+msgid "If present, clicking on image will take user to link."
+msgstr "이미지를 클릭하면 링크로 이동할 것입니다."
+
+#: models.py:30
+msgid "page"
+msgstr "페이지"
+
+#: models.py:32
+msgid "If present, clicking on image will take user to specified page."
+msgstr ""
+
+#: models.py:36
+msgid "alternate text"
+msgstr "대체 글자"
+
+#: models.py:37
+msgid ""
+"Specifies an alternate text for an image, if the imagecannot be "
+"displayed.<br />Is also used by search enginesto classify the image."
+msgstr ""
+
+#: models.py:42
+msgid "long description"
+msgstr "상세 설명"
+
+#: models.py:43
+msgid "When user hovers above picture, this text will appear in a popup."
+msgstr ""
+
+#: models.py:47
+msgid "side"
+msgstr "옆쪽"
+
+#: models.py:48
+msgid "Move image left, right or center."
+msgstr "이미지를 윈쪽, 오른쪽 혹은 중앙으로 옮기세요."
+
+#: models.py:65
+msgid "You can enter a Link or a Page, but not both."
+msgstr "링크나 페이지를 입력하세요, 그러나 둘다 입력은 안됩니다."
