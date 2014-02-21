@@ -4,6 +4,7 @@ git+https://github.com/tryggvib/aldryn-search.git@e8b598c476713ae3b57f8572921aaa
 
 # Pinned requirements
 Django==1.6.2
+Pillow==2.3.0
 South==0.8.4
 #aldryn-search==0.1.6
 boto==2.25.0
@@ -30,7 +31,6 @@ gunicorn==18.0
 html5lib==0.999
 markdown2==2.2.0
 newrelic==2.14.0.11
-pillow==2.3.0
 psycopg2==2.5.2
 pyelasticsearch==0.6.1
 pylibmc==1.2.3

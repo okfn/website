@@ -4,6 +4,7 @@ git+https://github.com/tryggvib/aldryn-search.git@e8b598c476713ae3b57f8572921aaa
 
 # Primary deps
 Django>=1.6,<1.7
+Pillow # required by djangocms-text-ckeditor
 South
 cssmin
 dj-database-url
@@ -17,7 +18,6 @@ django-s3-folder-storage
 django-secure
 django_compressor
 djangocms-text-ckeditor>=2.0,<2.1
-pillow # required by djangocms-text-ckeditor
 
 # Heroku deployment requirements
 gunicorn
