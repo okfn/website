@@ -1,6 +1,6 @@
 # Git repositories
 git+https://github.com/divio/django-cms.git@bbc6e0a1156d826653a2eb318d69548e1e981e61#egg=django-cms
-git+https://github.com/tryggvib/aldryn-search.git@e8b598c476713ae3b57f8572921aaa6e625798e8#egg=aldryn-search
+git+https://github.com/aldryn/aldryn-search.git@cms3-compat#egg=aldryn-search
 git+https://github.com/divio/djangocms-file.git@master#egg=djangocms-file
 
 # Primary deps
