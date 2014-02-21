@@ -1,6 +1,6 @@
 from django.utils import timezone
 from haystack import indexes
-from apps.jobs.models import Job
+from .models import Job
 
 
 class JobIndex(indexes.SearchIndex, indexes.Indexable):

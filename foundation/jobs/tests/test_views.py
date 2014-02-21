@@ -5,7 +5,7 @@ from django.test.utils import override_settings
 from django.utils import timezone
 from django_webtest import WebTest
 
-from apps.jobs.models import Job
+from ..models import Job
 
 
 @override_settings(ROOT_URLCONF='foundation.tests.urls')

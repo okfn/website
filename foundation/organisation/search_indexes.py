@@ -1,5 +1,5 @@
 from haystack import indexes
-from apps.organisation.models import Person
+from .models import Person
 
 
 class PersonIndex(indexes.SearchIndex, indexes.Indexable):

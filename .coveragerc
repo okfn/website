@@ -1,9 +1,12 @@
 [run]
 branch = true
-source = apps
+source = foundation
 omit =
   */migrations/*
   */tests/*
+  */settings.py
+  */urls.py
+  */wsgi.py
 
 [report]
 exclude_lines =

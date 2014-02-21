@@ -3,8 +3,7 @@ from django.utils.html import escape
 from django.test.utils import override_settings
 from django_webtest import WebTest
 
-from apps.organisation.models import\
-    Person, Unit, UnitMembership, Board, BoardMembership
+from ..models import Person, Unit, UnitMembership, Board, BoardMembership
 
 
 @override_settings(ROOT_URLCONF='foundation.tests.urls')
