@@ -9,6 +9,7 @@ cssmin
 dj-database-url
 django-classy-tags
 django-haystack>=2.1,<2.2
+django-heroku-memcacheify
 django-markdown-deux
 django-pagedown
 django-reversion>=1.8

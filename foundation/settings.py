@@ -13,6 +13,7 @@ import os
 from os import environ as env
 
 import dj_database_url
+from memcacheify import memcacheify
 
 # Silence warnings from ipython/sqlite
 import warnings
@@ -147,6 +148,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 ROOT_URLCONF = 'foundation.urls'
 
 WSGI_APPLICATION = 'foundation.wsgi.application'
+
+# Use memcache for django.core.cache if available (see the
+# django-heroku-memcacheify documentation for details)
+CACHES = memcacheify()
 
 DATABASES = {
     'default': dj_database_url.config(default='sqlite:///development.sqlite3')
