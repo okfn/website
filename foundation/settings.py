@@ -300,11 +300,9 @@ if env.get('DJANGO_CSP_REPORT_URI') is not None:
 
     CSP_SCRIPT_SRC = asset_hosts + ['https://js-agent.newrelic.com',
                                     'https://www.google-analytics.com']
-
     CSP_STYLE_SRC = asset_hosts + ['https://fonts.googleapis.com',
                                    "'unsafe-inline'"]
-
-    CSP_IMG_SRC = asset_hosts
+    CSP_IMG_SRC = asset_hosts + ['data://']
     CSP_FONT_SRC = asset_hosts + ['https://themes.googleusercontent.com']
 
     CSP_REPORT_URI = env.get('DJANGO_CSP_REPORT_URI')
