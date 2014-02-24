@@ -292,9 +292,9 @@ if env.get('DJANGO_CSP_REPORT_URI') is not None:
 
     asset_hosts = []
     if AWS_S3_CUSTOM_DOMAIN:
-        asset_hosts.append(AWS_S3_CUSTOM_DOMAIN)
+        asset_hosts.append('https://%s' % AWS_S3_CUSTOM_DOMAIN)
     else:
-        asset_hosts.append('s3.amazonaws.com')
+        asset_hosts.append('https://s3.amazonaws.com')
 
     CSP_DEFAULT_SRC = ("'none'",)
 
