@@ -10,6 +10,7 @@ South
 cssmin
 dj-database-url
 django-classy-tags
+django-csp
 django-haystack>=2.1,<2.2
 django-heroku-memcacheify
 django-markdown-deux

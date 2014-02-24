@@ -119,6 +119,7 @@ INSTALLED_APPS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'djangosecure.middleware.SecurityMiddleware',
+    'csp.middleware.CSPMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -283,6 +284,20 @@ if env.get('DJANGO_SECURE') == 'true':
     CSRF_COOKIE_HTTPONLY = True
 else:
     SECURE_SSL_REDIRECT = False
+
+# Content Security Policy
+if env.get('DJANGO_CSP_REPORT_URI') is not None:
+    CSP_REPORT_ONLY = True
+    CSP_DEFAULT_SRC = ("'none'",)
+    CSP_IMG_SRC = ("'none'",)
+    CSP_OBJECT_SRC = ("'none'",)
+    CSP_MEDIA_SRC = ("'none'",)
+    CSP_FRAME_SRC = ("'none'",)
+    CSP_FONT_SRC = ("'none'",)
+    CSP_CONNECT_SRC = ("'none'",)
+    CSP_STYLE_SRC = ("'none'",)
+    CSP_SANDBOX = None
+    CSP_REPORT_URI = env.get('DJANGO_CSP_REPORT_URI')
 
 GOOGLE_ANALYTICS_TRACKING_ID = env.get('DJANGO_GOOGLE_ANALYTICS_TRACKING_ID')
 GOOGLE_ANALYTICS_DOMAIN = env.get('DJANGO_GOOGLE_ANALYTICS_DOMAIN')
