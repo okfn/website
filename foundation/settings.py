@@ -222,6 +222,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+AWS_S3_CUSTOM_DOMAIN = env.get('DJANGO_AWS_S3_CUSTOM_DOMAIN')
+
 if env.get('DJANGO_USE_AWS_STORAGE') == 'true':
     AWS_ACCESS_KEY_ID = env['AWS_ACCESS_KEY_ID']
     AWS_SECRET_ACCESS_KEY = env['AWS_SECRET_ACCESS_KEY']
@@ -239,7 +241,6 @@ if env.get('DJANGO_USE_AWS_STORAGE') == 'true':
     DEFAULT_S3_PATH = 'media'
     MEDIA_ROOT = 'media/'
 
-    AWS_S3_CUSTOM_DOMAIN = env.get('DJANGO_AWS_S3_CUSTOM_DOMAIN')
     if AWS_S3_CUSTOM_DOMAIN:
         STATIC_URL = '//%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, STATIC_S3_PATH)
         MEDIA_URL = '//%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, DEFAULT_S3_PATH)
@@ -288,15 +289,24 @@ else:
 # Content Security Policy
 if env.get('DJANGO_CSP_REPORT_URI') is not None:
     CSP_REPORT_ONLY = True
+
+    asset_hosts = []
+    if AWS_S3_CUSTOM_DOMAIN:
+        asset_hosts.append(AWS_S3_CUSTOM_DOMAIN)
+    else:
+        asset_hosts.append('s3.amazonaws.com')
+
     CSP_DEFAULT_SRC = ("'none'",)
-    CSP_IMG_SRC = ("'none'",)
-    CSP_OBJECT_SRC = ("'none'",)
-    CSP_MEDIA_SRC = ("'none'",)
-    CSP_FRAME_SRC = ("'none'",)
-    CSP_FONT_SRC = ("'none'",)
-    CSP_CONNECT_SRC = ("'none'",)
-    CSP_STYLE_SRC = ("'none'",)
-    CSP_SANDBOX = None
+
+    CSP_SCRIPT_SRC = asset_hosts + ['https://js-agent.newrelic.com',
+                                    'https://www.google-analytics.com']
+
+    CSP_STYLE_SRC = asset_hosts + ['https://fonts.googleapis.com',
+                                   "'unsafe-inline'"]
+
+    CSP_IMG_SRC = asset_hosts
+    CSP_FONT_SRC = asset_hosts + ['https://themes.googleusercontent.com']
+
     CSP_REPORT_URI = env.get('DJANGO_CSP_REPORT_URI')
 
 GOOGLE_ANALYTICS_TRACKING_ID = env.get('DJANGO_GOOGLE_ANALYTICS_TRACKING_ID')
