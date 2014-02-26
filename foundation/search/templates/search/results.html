@@ -13,3 +13,13 @@
     {% include "search/jobs/job.html" %}
   {% endwith %}
 {% endif %}
+{% if search_result.content_type == 'press.pressrelease' %}
+  {% with pressrelease=search_result.object %}
+    {% include "search/press/pressrelease.html" %}
+  {% endwith %}
+{% endif %}
+{% if search_result.content_type == 'press.pressmention' %}
+  {% with pressmention=search_result.object %}
+    {% include "search/press/pressmention.html" %}
+  {% endwith %}
+{% endif %}

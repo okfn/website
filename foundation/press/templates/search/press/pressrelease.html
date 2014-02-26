@@ -1,0 +1,21 @@
+{% load markdown_deux_tags %}
+
+<h3>
+  <a href="{% url 'press-release' slug=pressrelease.slug %}">
+    Press Release: {{ pressrelease.title }}
+  </a>
+</h3>
+
+{{ pressrelease.body|markdown }}
+
+<p>
+  <small>
+    <i class="fa fa-calendar"></i> Released:
+    <strong>{{ pressrelease.release_date|date }}</strong>.
+  </small>
+</p>
+
+<p>
+  <i class="fa fa-hand-o-right fa-large"></i>
+  <a href="{% url 'press-releases' %}">All press releases</a>
+</p>
