@@ -29,11 +29,12 @@ class PressReleaseDetailView(DetailView):
         return PressRelease.objects.filter(release_date__lt=timezone.now())
 
     def get_context_data(self, **kwargs):
-        context = super(PressReleaseDetailView, self).get_context_data(**kwargs)
+        context = super(PressReleaseDetailView, self)\
+            .get_context_data(**kwargs)
         context['sidebar_recent'] = {
-            'releases': PressRelease.objects\
-                .exclude(pk=context['object'].pk)\
-                .filter(release_date__lt=timezone.now())[:5],
+            'releases': PressRelease.objects
+            .exclude(pk=context['object'].pk)
+            .filter(release_date__lt=timezone.now())[:5],
             'mentions': PressMention.objects.all()[:5]
             }
         return context
@@ -56,11 +57,12 @@ class PressMentionDetailView(DetailView):
     model = PressMention
 
     def get_context_data(self, **kwargs):
-        context = super(PressMentionDetailView, self).get_context_data(**kwargs)
+        context = super(PressMentionDetailView, self)\
+            .get_context_data(**kwargs)
         context['sidebar_recent'] = {
-            'mentions': PressMention.objects\
-                .exclude(pk=context['object'].pk)[:5],
-            'releases': PressRelease.objects\
-                .filter(release_date__lt=timezone.now())[:5]
+            'mentions': PressMention.objects
+            .exclude(pk=context['object'].pk)[:5],
+            'releases': PressRelease.objects
+            .filter(release_date__lt=timezone.now())[:5]
             }
         return context

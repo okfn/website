@@ -4,6 +4,7 @@ from datetime import timedelta
 
 register = template.Library()
 
+
 @register.filter
 def active_release(release_date):
     try:
