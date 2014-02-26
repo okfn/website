@@ -25,6 +25,9 @@ class PressReleaseListView(ListView):
 class PressReleaseDetailView(DetailView):
     model = PressRelease
 
+    def get_queryset(self):
+        return PressRelease.objects.filter(release_date__lt=timezone.now())
+
     def get_context_data(self, **kwargs):
         context = super(PressReleaseDetailView, self).get_context_data(**kwargs)
         context['sidebar_recent'] = {
