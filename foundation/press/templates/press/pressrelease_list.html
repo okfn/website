@@ -1,0 +1,37 @@
+{% extends "cms_default.html" %}
+{% load cms_tags %}
+
+{% block title %}Press Releases{% endblock %}
+{% block body-class %}press-releases{% endblock %}
+
+{% block pagebanner-inner %}
+<h2>Press Releases</h2>
+{% placeholder "blurb" %}
+{% endblock %}
+
+{% block body %}
+<div class="row">
+  <div class="col-md-9 col-md-push-3">
+    {% for pressrelease in object_list %}
+    {% with headerlinks=True %}
+    {% include "press/pressrelease.html" %}
+    {% endwith %}
+    <hr/>
+    {% empty %}
+    <p>No press releases found.</p>
+    {% endfor %}
+  </div>
+  <div class="sidebar col-md-3 col-md-pull-9">
+    <h3>Recent Press Mentions</h3>
+    <ul>{% for pressmention in sidebar_recent.objects %}
+    <li>{% include "press/pressmention_short.html" %}</li>
+    {% empty %}
+    <li>No recent press mentions</li>
+    {% endfor %}</ul>
+    <p class="pull-right">
+      Look at <a href="{% url 'press-mentions' %}">all press mentions</a>
+    </p>
+    <div class="clearfix"></div>
+  </div>
+</div>
+{% endblock %}

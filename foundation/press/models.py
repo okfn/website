@@ -6,9 +6,9 @@ class PressRelease(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     title = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100, null=True)
     body = models.TextField()
     release_date = models.DateTimeField()
-    published = models.BooleanField()
 
     class Meta:
         ordering = ('-release_date',)
@@ -22,6 +22,7 @@ class PressMention(models.Model):
     publication_date = models.DateField()
     url = models.URLField()
     title = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100, null=True)
     author = models.CharField(max_length=100)
     notes = models.TextField()
 
