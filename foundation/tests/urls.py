@@ -8,6 +8,7 @@ urlpatterns = patterns(
     url(r'^login/', lambda x: x, name='login'),
     url(r'^search/', include('haystack.urls')),
     url(r'^jobs/', include('foundation.jobs.urls')),
+    url(r'^press/', include('foundation.press.urls')),
     url(r'^about/team', include('foundation.organisation.urls.units')),
     url(r'^about/board', include('foundation.organisation.urls.board')),
     url(r'^about/advisory-board',
