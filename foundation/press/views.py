@@ -1,6 +1,4 @@
 from django.utils import timezone
-from django.core.urlresolvers import reverse
-
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 
