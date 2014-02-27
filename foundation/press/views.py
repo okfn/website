@@ -9,6 +9,7 @@ from .models import PressRelease, PressMention
 
 class PressReleaseListView(ListView):
     model = PressRelease
+    paginate_by = 15
 
     def get_queryset(self):
         return PressRelease.objects.filter(release_date__lt=timezone.now())
@@ -41,8 +42,8 @@ class PressReleaseDetailView(DetailView):
 
 
 class PressMentionListView(ListView):
-
     model = PressMention
+    paginate_by = 15
 
     def get_context_data(self, **kwargs):
         context = super(PressMentionListView, self).get_context_data(**kwargs)
