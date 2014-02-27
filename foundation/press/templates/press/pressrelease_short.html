@@ -1,3 +1,7 @@
+<small title="Released on: {{ pressrelease.release_date|date }}">
+  <i class="fa fa-calendar"></i>
+  <strong>{{ pressrelease.release_date|date }}</strong>
+</small>
 <a href="{% url 'press-release' slug=pressrelease.slug %}" target="_blank">
   {{ pressrelease.title }}
 </a>

@@ -12,14 +12,23 @@
 {% block body %}
 <div class="row">
   <div class="col-md-9 col-md-push-3">
-    {% for pressrelease in object_list %}
     {% with headerlinks=True %}
-    {% include "press/pressrelease.html" %}
+      {% if object_list and not page_obj.has_previous %}
+        {% with pressrelease=object_list|first %}
+          {% include "press/pressrelease.html" %}
+        {% endwith %}
+        {% for pressrelease in object_list|slice:"1:" %}
+          <h3>{% include "press/pressrelease_short.html" %}</h3>
+        {% endfor %}
+      {% else %}
+        {% for pressrelease in object_list %}
+          <h3>{% include "press/pressrelease_short.html" %}</h3>
+        {% empty %}
+        <p>No press releases found.</p>
+        {% endfor %}
+      {% endif %}
     {% endwith %}
-    <hr/>
-    {% empty %}
-    <p>No press releases found.</p>
-    {% endfor %}
+
     {% include "includes/pager.html" %}
   </div>
   <div class="sidebar col-md-3 col-md-pull-9">

@@ -12,12 +12,11 @@
     {% endif %}
   </h3>
 
+  <p title="Released on: {{ pressrelease.release_date|date }}">
+    <i class="fa fa-calendar"></i>
+    <strong>{{ pressrelease.release_date|date }}</strong>
+  </p>
+
   {{ pressrelease.body|markdown }}
 
-  <p>
-    <small>
-      <i class="fa fa-calendar"></i> Released:
-      <strong>{{ pressrelease.release_date|date }}</strong>.
-    </small>
-  </p>
 </div>
