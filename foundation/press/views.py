@@ -16,10 +16,11 @@ class PressReleaseListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(PressReleaseListView, self).get_context_data(**kwargs)
-        context['sidebar_recent'] = {
+
+        context['recent_mentions'] = {
             'objects': PressMention.objects.all()[:5],
-            'fulllist': reverse('press-mentions')
             }
+
         return context
 
 
@@ -32,12 +33,16 @@ class PressReleaseDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(PressReleaseDetailView, self)\
             .get_context_data(**kwargs)
-        context['sidebar_recent'] = {
-            'releases': PressRelease.objects
+
+        context['recent_releases'] = {
+            'objects': PressRelease.objects
             .exclude(pk=context['object'].pk)
-            .filter(release_date__lt=timezone.now())[:5],
-            'mentions': PressMention.objects.all()[:5]
+            .filter(release_date__lt=timezone.now())[:5]
             }
+        context['recent_mentions'] = {
+            'objects': PressMention.objects.all()[:5]
+            }
+
         return context
 
 
@@ -47,10 +52,11 @@ class PressMentionListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(PressMentionListView, self).get_context_data(**kwargs)
-        context['sidebar_recent'] = {
+
+        context['recent_releases'] = {
             'objects': PressRelease.objects.all()[:5],
-            'fulllist': reverse('press-releases')
             }
+
         return context
 
 
@@ -60,10 +66,14 @@ class PressMentionDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(PressMentionDetailView, self)\
             .get_context_data(**kwargs)
-        context['sidebar_recent'] = {
-            'mentions': PressMention.objects
-            .exclude(pk=context['object'].pk)[:5],
-            'releases': PressRelease.objects
+
+        context['recent_mentions'] = {
+            'objects': PressMention.objects
+            .exclude(pk=context['object'].pk)[:5]
+            }
+        context['recent_releases'] = {
+            'objects': PressRelease.objects
             .filter(release_date__lt=timezone.now())[:5]
             }
+
         return context

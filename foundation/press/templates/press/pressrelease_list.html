@@ -26,16 +26,7 @@
     {% include "includes/pager.html" %}
   </div>
   <div class="sidebar col-md-3 col-md-pull-9">
-    <h3>Recent Press Mentions</h3>
-    <ul>{% for pressmention in sidebar_recent.objects %}
-    <li>{% include "press/pressmention_short.html" %}</li>
-    {% empty %}
-    <li>No recent press mentions</li>
-    {% endfor %}</ul>
-    <p class="pull-right">
-      Look at <a href="{% url 'press-mentions' %}">all press mentions</a>
-    </p>
-    <div class="clearfix"></div>
+    {% include "press/pressmention_recent.html" %}
   </div>
 </div>
 {% endblock %}

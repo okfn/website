@@ -1,0 +1,12 @@
+<h3>Recent Press Releases</h3>
+<ul>
+  {% for pressrelease in recent_releases.objects %}
+  <li>{% include "press/pressrelease_short.html" %}</li>
+  {% empty %}
+  <li>No press releases.</li>
+  {% endfor %}
+  <p class="pull-right">
+    Look at <a href="{% url 'press-releases' %}">all press releases</a>
+  </p>
+  <div class="clearfix"></div>
+</ul>

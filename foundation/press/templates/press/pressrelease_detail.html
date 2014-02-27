@@ -15,30 +15,8 @@
     {% endwith %}
   </div>
   <div class="sidebar col-md-3 col-md-pull-9">
-    <h3>Recent Press Releases</h3>
-    <ul>
-      {% for pressrelease in sidebar_recent.releases %}
-      <li>{% include "press/pressrelease_short.html" %}</li>
-      {% empty%}
-      <li>No other press releases</li>
-      {% endfor %}
-      <p class="pull-right">
-        Look at <a href="{% url 'press-releases' %}">all press releases</a>
-      </p>
-    </ul>
-    <div class="clearfix"></div>
-    <h3>Recent Press Mentions</h3>
-    <ul>
-      {% for pressmention in sidebar_recent.mentions %}
-      <li>{% include "press/pressmention_short.html" %}</li>
-      {% empty %}
-      <li>No press mentions</li>
-      {% endfor %}
-      <p class="pull-right">
-        Look at <a href="{% url 'press-mentions' %}">all press mentions</a>
-      </p>
-      <div class="clearfix"></div>
-    </ul>
+    {% include "press/pressrelease_recent.html" %}
+    {% include "press/pressmention_recent.html" %}
   </div>
 </div>
 {% endblock%}
