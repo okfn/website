@@ -5,8 +5,11 @@
   {% empty %}
   <li>No press releases.</li>
   {% endfor %}
+  {% url 'press-releases' as press_releases_url %}
+  {% if press_releases_url %}
   <p class="pull-right">
-    Look at <a href="{% url 'press-releases' %}">all press releases</a>
+    Look at <a href="{{ press_releases_url }}">all press releases</a>
   </p>
+  {% endif %}
   <div class="clearfix"></div>
 </ul>
