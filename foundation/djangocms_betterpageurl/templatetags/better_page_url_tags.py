@@ -36,7 +36,7 @@ class PageUrl(AsTag):
             if not varname:
                 raise
             else:
-                value = None
+                value = ''
 
         if varname:
             context[varname] = value

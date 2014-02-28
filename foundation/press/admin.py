@@ -11,12 +11,14 @@ class PressReleaseAdmin(reversion.VersionAdmin):
     formfield_overrides = {
         models.TextField: {'widget': AdminPagedownWidget},
     }
-    list_display = ('title', 'release_date', 'published')
+    list_display = ('title', 'release_date')
+    prepopulated_fields = {"slug": ("title",)}
 
 admin.site.register(PressRelease, PressReleaseAdmin)
 
 
 class PressMentionAdmin(reversion.VersionAdmin):
     list_display = ('title', 'publisher', 'url')
+    prepopulated_fields = {"slug": ("title",)}
 
 admin.site.register(PressMention, PressMentionAdmin)

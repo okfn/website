@@ -1,0 +1,48 @@
+{% load markdown_deux_tags %}
+
+<div class="press-mention">
+  <h3>
+    {% if headerlinks %}
+    <a href="{% url 'press-mention' slug=pressmention.slug %}">
+      {{ pressmention.title }}
+    </a>
+    {% else %}
+    <a href="{{ pressmention.url}}" target="_blank">
+      {{ pressmention.title }}
+      <small><i class="fa fa-external-link"></i></small>
+    </a>
+    {% endif %}
+  </h3>
+
+  {{ pressmention.notes|markdown }}
+
+  {% if pressmention.url %}
+  <p>
+    <small>
+      <i class="fa fa-link"></i> URL:
+      <a href="{{ pressmention.url }}" target="_blank">
+        {{ pressmention.url }}
+      </a>
+    </small>
+  </p>
+  {% endif %}
+
+  <p>
+    <small>
+      {% if pressmention.author %}
+      <i class="fa fa-user"></i> Author:
+      <strong>{{ pressmention.author }}</strong>
+      {% endif %}
+
+      {% if pressmention.publisher %}
+      <i class="fa fa-pencil"></i> Publisher:
+      <strong>{{ pressmention.publisher }}</strong>
+      {% endif %}
+
+      {% if pressmention.publication_date %}
+      <i class="fa fa-calendar"></i> Published:
+      <strong>{{ pressmention.publication_date|date }}</strong>
+      {% endif %}
+    </small>
+  </p>
+</div>

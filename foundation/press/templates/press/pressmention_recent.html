@@ -1,0 +1,13 @@
+<h3>Recent Press Mentions</h3>
+<ul>{% for pressmention in recent_mentions.objects %}
+  <li>{% include "press/pressmention_short.html" %}</li>
+  {% empty %}
+  <li>No recent press mentions</li>
+  {% endfor %}</ul>
+{% url 'press-mentions' as press_mentions_url %}
+{% if press_mentions_url %}
+<p class="pull-right">
+  Look at <a href="{{ press_mentions_url }}">all press mentions</a>
+</p>
+{% endif %}
+<div class="clearfix"></div>

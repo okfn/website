@@ -2,6 +2,7 @@
 
 {% load compress %}
 {% load cms_tags %}
+{% load better_page_url_tags %}
 {% load menu_tags %}
 
 {% block head-css %}
@@ -24,7 +25,8 @@
         <nav id='header-nav' role='navigation' class='hidden-xs'>
           <ul id='nav-secondary' class='nav-simple'>
             <li><a href='#'>blog</a></li>
-            <li><a href='#'>press</a></li>
+            {% page_url "press" as press_url %}
+            <li><a href='{{ press_url }}'>press</a></li>
             <li><a href='#'>contact</a></li>
             <li><a href='#'>donate</a></li>
           </ul>

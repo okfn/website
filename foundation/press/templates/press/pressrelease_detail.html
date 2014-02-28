@@ -1,0 +1,22 @@
+{% extends "cms_default.html" %}
+
+{% block title %}Press Release: {{ object.title }}{% endblock %}
+{% block body-class%}press-releases{% endblock %}
+
+{% block pagebanner-inner %}
+<h2>Press Release</h2>
+{% endblock %}
+
+{% block body %}
+<div class="row">
+  <div class="col-md-9 col-md-push-3">
+    {% with pressrelease=object %}
+    {% include "press/pressrelease.html" %}
+    {% endwith %}
+  </div>
+  <div class="sidebar col-md-3 col-md-pull-9">
+    {% include "press/pressrelease_recent.html" %}
+    {% include "press/pressmention_recent.html" %}
+  </div>
+</div>
+{% endblock%}
