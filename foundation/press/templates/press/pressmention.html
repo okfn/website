@@ -2,10 +2,9 @@
 
 <div class="press-mention">
   <h3>
-    {% if headerlinks %}
-    <a href="{% url 'press-mention' slug=pressmention.slug %}">
-      {{ pressmention.title }}
-    </a>
+    {% url 'press-mention' slug=pressmention.slug as mention_url %}
+    {% if headerlinks and mention_url %}
+    <a href="{{ mention_url }}">{{ pressmention.title }}</a>
     {% else %}
     <a href="{{ pressmention.url}}" target="_blank">
       {{ pressmention.title }}
