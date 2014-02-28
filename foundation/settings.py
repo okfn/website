@@ -308,6 +308,8 @@ if env.get('DJANGO_CSP_REPORT_URI') is not None:
                                   'https://themes.googleusercontent.com']
 
     CSP_REPORT_URI = env.get('DJANGO_CSP_REPORT_URI')
+else:
+    CSP_EXCLUDE_URL_PREFIXES = ('/',)
 
 GOOGLE_ANALYTICS_TRACKING_ID = env.get('DJANGO_GOOGLE_ANALYTICS_TRACKING_ID')
 GOOGLE_ANALYTICS_DOMAIN = env.get('DJANGO_GOOGLE_ANALYTICS_DOMAIN')
