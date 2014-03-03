@@ -11,7 +11,7 @@
       {% endthumbnail %}
     </div>
     <div class="col-md-10">
-      <p>{{ person.description|markdown }}</p>
+      {{ person.description|markdown }}
       <div class="person-social-links">
         {% if not skip_email %}
         <a href="mailto:{{ person.email }}" title="Email"><i class="fa fa-envelope fa-lg"></i></a>
