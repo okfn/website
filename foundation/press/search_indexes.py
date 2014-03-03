@@ -10,8 +10,7 @@ class PressReleaseIndex(indexes.SearchIndex, indexes.Indexable):
         return PressRelease
 
     def index_queryset(self, using=None):
-        now = timezone.now()
-        return self.get_model().objects.filter(release_date__lt=now)
+        return self.get_model().published_objects.all()
 
 
 class PressMentionIndex(indexes.SearchIndex, indexes.Indexable):
