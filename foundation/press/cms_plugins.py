@@ -17,7 +17,7 @@ class RecentPressReleasesPlugin(CMSPluginBase):
             .render(context, instance, placeholder)
 
         context['recent_releases'] = {
-            'objects': PressRelease.objects.all()[:5]
+            'objects': PressRelease.published_objects.all()[:5]
             }
         return context
 
