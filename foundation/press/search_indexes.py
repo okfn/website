@@ -1,4 +1,3 @@
-from django.utils import timezone
 from haystack import indexes
 from .models import PressRelease, PressMention
 
