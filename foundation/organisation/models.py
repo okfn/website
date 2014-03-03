@@ -73,3 +73,36 @@ class BoardMembership(models.Model):
 
     def __unicode__(self):
         return self.person.name + ' - ' + self.title
+
+
+class Project(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    picture = models.ImageField(upload_to='projects/pictures',
+                                blank=True)
+
+    twitter = models.CharField(max_length=18, blank=True)
+    homepage_url = models.URLField(blank=True)
+    sourcecode_url = models.URLField(blank=True)
+    mailinglist_url = models.URLField(blank=True)
+
+    theme = models.ForeignKey('Theme')
+
+    def __unicode__(self):
+        return self.name
+
+    class Meta:
+        ordering = ('name',)
+
+
+class Theme(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    name = models.CharField(max_length=100)
+
+    def __unicode__(self):
+        return self.name
