@@ -129,3 +129,9 @@ class PressMentionViewTest(WebTest):
         response = self.app.get(reverse('press-mentions'))
         releases_url = reverse('press-releases')
         self.assertTrue(releases_url in response)
+
+    def test_current_press_mention_not_in_mentions_list(self):
+        mention_url = reverse('press-mention',
+                              kwargs={'slug': self.mention.slug})
+        response = self.app.get(mention_url)
+        self.assertNotIn(mention_url, response)
