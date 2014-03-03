@@ -15,7 +15,6 @@ from os import environ as env
 
 import dj_database_url
 from memcacheify import memcacheify
-from sorl.thumbnail.log import ThumbnailLogHandler
 
 # Silence warnings from ipython/sqlite
 import warnings
@@ -351,6 +350,10 @@ CMS_PLACEHOLDER_CONF = {
         'text_only_plugins': ['LinkPlugin']
     },
 }
+
+# This import has to live here, because it has side-effects that require Django
+# to be configured already. Ugh.
+from sorl.thumbnail.log import ThumbnailLogHandler
 
 THUMBNAIL_DEBUG = DEBUG  # sorl.thumbnail debugging
 
