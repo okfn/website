@@ -14,5 +14,6 @@ urlpatterns = patterns(
     url(r'^about/board', include('foundation.organisation.urls.board')),
     url(r'^about/advisory-board',
         include('foundation.organisation.urls.advisoryboard')),
+    url(r'^projects/', include('foundation.organisation.urls.projects')),
     url(r'^', include('cms.urls')),
     )

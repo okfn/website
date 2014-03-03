@@ -41,6 +41,7 @@ admin.site.register(Board, BoardAdmin)
 
 class ProjectAdmin(reversion.VersionAdmin):
     list_display = ('name',)
+    prepopulated_fields = {"slug": ("name",)}
 
 admin.site.register(Project, ProjectAdmin)
 

@@ -1,0 +1,23 @@
+{% extends "cms_default.html" %}
+{% load cms_tags %}
+{% load markdown_deux_tags %}
+
+{% block body-class %}projects{% endblock %}
+
+{% block body %}
+<div class="row">
+  {# featured projects banner #}
+</div>
+<div class="row">
+  <div class="col-md-12">
+    {% for project in object_list %}
+      <h3>{{ project.name }}</h3>
+      {{ project.description|markdown }}
+    {% empty %}
+    <p>No projects found.</p>
+    {% endfor %}
+
+    {% include "includes/pager.html" %}
+  </div>
+</div>
+{% endblock %}
