@@ -1,0 +1,18 @@
+{% extends "cms_default.html" %}
+{% load markdown_deux_tags %}
+
+{% block title %}{{ object.name }}{% endblock %}
+{% block body-class %}projects{% endblock %}
+
+{% block pagebanner-inner %}
+<h2>Projects</h2>
+{% endblock %}
+
+{% block body %}
+<div class="row">
+  <div class="col-md-12">
+    <h3>{{ object.name }}</h3>
+    {{ object.description|markdown }}
+  </div>
+</div>
+{% endblock %}

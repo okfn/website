@@ -3,7 +3,8 @@ from django.utils.html import escape
 from django.test.utils import override_settings
 from django_webtest import WebTest
 
-from ..models import Person, Unit, UnitMembership, Board, BoardMembership
+from ..models import (Board, BoardMembership, Person, Project, Theme,
+                      Unit, UnitMembership)
 
 
 @override_settings(ROOT_URLCONF='foundation.tests.urls')
@@ -232,3 +233,51 @@ class BoardViewTest(WebTest):
         self.assertTrue(self.casey.twitter in response.body)
 
         self.assertTrue(self.splinter.name not in response.body)
+
+
+@override_settings(ROOT_URLCONF='foundation.tests.urls')
+class ProjectListViewTest(WebTest):
+    def setUp(self):  # flake8: noqa
+        self.invasions = Theme.objects.create(name='People invading things')
+
+        self.market_garden = Project.objects.create(
+            theme=self.invasions,
+            name='Market Garden',
+            slug='market-garden',
+            description='Just some guys in a glider')
+
+        self.barbarossa = Project.objects.create(
+            theme=self.invasions,
+            name='Barbarossa',
+            slug='barbarossa',
+            description='This could get cold quickly.')
+
+    def test_projects_listed(self):
+        response = self.app.get(reverse('projects'))
+
+        self.assertIn(self.market_garden.name, response)
+        self.assertIn(self.barbarossa.name, response)
+
+
+@override_settings(ROOT_URLCONF='foundation.tests.urls')
+class ProjectDetailViewTest(WebTest):
+    def setUp(self):  # flake8: noqa
+        self.invasions = Theme.objects.create(name='People invading things')
+
+        self.market_garden = Project.objects.create(
+            theme=self.invasions,
+            name='Market Garden',
+            slug='market-garden',
+            description='Just some guys in a glider')
+
+        self.barbarossa = Project.objects.create(
+            theme=self.invasions,
+            name='Barbarossa',
+            slug='barbarossa',
+            description='This could get cold quickly.')
+
+    def test_project_detail(self):
+        response = self.app.get(reverse('project',
+                                        kwargs={'slug': 'market-garden'}))
+
+        self.assertIn(self.market_garden.name, response)

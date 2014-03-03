@@ -1,7 +1,7 @@
 import reversion
 
 from django.contrib import admin
-from .models import Person, Unit, Board
+from .models import Person, Unit, Board, Theme, Project
 from .models import UnitMembership, BoardMembership
 
 
@@ -37,3 +37,16 @@ class BoardAdmin(reversion.VersionAdmin):
     inlines = [BoardMembershipInline]
 
 admin.site.register(Board, BoardAdmin)
+
+
+class ProjectAdmin(reversion.VersionAdmin):
+    list_display = ('name',)
+    prepopulated_fields = {"slug": ("name",)}
+
+admin.site.register(Project, ProjectAdmin)
+
+
+class ThemeAdmin(reversion.VersionAdmin):
+    list_display = ('name',)
+
+admin.site.register(Theme, ThemeAdmin)
