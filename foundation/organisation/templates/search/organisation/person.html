@@ -1,8 +1,12 @@
 {% load markdown_deux_tags %}
+{% load thumbnail %}
+
 <h4>{{ person.name }}</h4>
 <div class="row">
   <div class="col-md-2">
-    <img class="img-responsive" src="{{ MEDIA_URL }}{{ person.photo }}" alt="{{ person.name }}" />
+    {% thumbnail person.photo "116" as im %}
+    <img class="img-responsive" src="{{ im.url }}" alt="{{ person.name }}">
+    {% endthumbnail %}
   </div>
   <div class="col-md-8">
     {% for membership in person.unitmembership_set.all %}

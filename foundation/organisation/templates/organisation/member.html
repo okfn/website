@@ -1,11 +1,14 @@
 {% load markdown_deux_tags %}
+{% load thumbnail %}
 
 {% with person=member.person %}
 <div id="{{ person.name|slugify }}" class="person">
   <h4>{{ person.name }}{% if member.title %} <small>{{member.title}}</small>{% endif %}</h4>
   <div class="row">
     <div class="col-md-2">
-      <img class="img-responsive" src="{{ MEDIA_URL }}{{ person.photo }}" alt="{{ person.name }}" />
+      {% thumbnail person.photo "116" as im %}
+        <img class="img-responsive" src="{{ im.url }}" alt="{{ person.name }}">
+      {% endthumbnail %}
     </div>
     <div class="col-md-10">
       <p>{{ person.description|markdown }}</p>
