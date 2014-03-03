@@ -7,6 +7,7 @@ run) <http://okfn.org>.
 [djcms]: https://www.django-cms.org/
 
 [![Build Status](https://travis-ci.org/okfn/foundation.png?branch=master)](https://travis-ci.org/okfn/foundation)
+[![Coverage Status](https://coveralls.io/repos/okfn/foundation/badge.png?branch=master)](https://coveralls.io/r/okfn/foundation?branch=master)
 
 ## Running in development
 
