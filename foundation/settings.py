@@ -9,11 +9,13 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
 import email.utils
+import logging
 import os
 from os import environ as env
 
 import dj_database_url
 from memcacheify import memcacheify
+from sorl.thumbnail.log import ThumbnailLogHandler
 
 # Silence warnings from ipython/sqlite
 import warnings
@@ -260,7 +262,6 @@ else:
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 TEMPLATE_DEBUG = DEBUG
-THUMBNAIL_DEBUG = DEBUG  # sorl.thumbnail debugging
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
@@ -350,3 +351,9 @@ CMS_PLACEHOLDER_CONF = {
         'text_only_plugins': ['LinkPlugin']
     },
 }
+
+THUMBNAIL_DEBUG = DEBUG  # sorl.thumbnail debugging
+
+handler = ThumbnailLogHandler()
+handler.setLevel(logging.ERROR)
+logging.getLogger('sorl.thumbnail').addHandler(handler)
