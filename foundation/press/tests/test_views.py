@@ -90,6 +90,10 @@ class PressReleaseViewTest(WebTest):
 
         self.assertTrue('404' in response.status)
 
+    def test_future_releases_not_in_mentions_response(self):
+        response = self.app.get(reverse('press-mentions'))
+        self.assertTrue(self.in_ten_minutes.title not in response)
+
 
 @override_settings(ROOT_URLCONF='foundation.tests.urls')
 class PressMentionViewTest(WebTest):
