@@ -22,6 +22,7 @@ django_compressor
 djangocms-googlemap
 djangocms-link
 djangocms-text-ckeditor>=2.1,<2.2
+sorl-thumbnail
 
 # Heroku deployment requirements
 gunicorn

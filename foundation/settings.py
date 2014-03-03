@@ -90,6 +90,7 @@ INSTALLED_APPS = (
     'pagedown',
     'markdown_deux',
     'haystack',
+    'sorl.thumbnail',
 
     # Asset pipeline
     'compressor',
@@ -259,6 +260,7 @@ else:
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 TEMPLATE_DEBUG = DEBUG
+THUMBNAIL_DEBUG = DEBUG  # sorl.thumbnail debugging
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),

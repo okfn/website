@@ -42,4 +42,5 @@ pystache==0.5.3
 requests==2.2.1
 simplejson==3.3.3
 six==1.5.2
+sorl-thumbnail==11.12
 static==1.0.2
