@@ -1,5 +1,5 @@
 # Git repositories
-git+https://github.com/divio/django-cms.git@bbc6e0a1156d826653a2eb318d69548e1e981e61#egg=django-cms
+git+https://github.com/divio/django-cms.git@8df74e79c39c08a2a763ebfd56bca3526ceba79e#egg=django-cms
 git+https://github.com/aldryn/aldryn-search.git@cms3-compat#egg=aldryn-search
 git+https://github.com/divio/djangocms-file.git@master#egg=djangocms-file
 

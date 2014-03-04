@@ -111,7 +111,6 @@ INSTALLED_APPS = (
     'sekizai',
 
     # Custom apps
-    'foundation.djangocms_betterpageurl',
     'foundation.djangocms_submenu',
     'foundation.jobs',
     'foundation.press',
@@ -143,7 +142,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
-    'cms.context_processors.media',
+    'cms.context_processors.cms_settings',
     'sekizai.context_processors.sekizai',
     'lib.context_processors.site',
     'lib.context_processors.google_analytics',
