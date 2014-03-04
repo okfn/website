@@ -1,3 +1,4 @@
+from cms.models.pluginmodel import CMSPlugin
 from django.db import models
 
 
@@ -107,3 +108,10 @@ class Theme(models.Model):
 
     def __unicode__(self):
         return self.name
+
+
+class FeaturedProject(CMSPlugin):
+    project = models.ForeignKey('Project', related_name='+')
+
+    def __unicode__(self):
+        return self.project.name
