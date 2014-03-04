@@ -1,7 +1,6 @@
 # Git repositories
 git+https://github.com/divio/django-cms.git@8df74e79c39c08a2a763ebfd56bca3526ceba79e#egg=django-cms
 git+https://github.com/aldryn/aldryn-search.git@cms3-compat#egg=aldryn-search
-git+https://github.com/divio/djangocms-file.git@master#egg=djangocms-file
 
 # Pinned requirements
 Django==1.6.2
@@ -28,6 +27,7 @@ django-secure==1.0
 django-sekizai==0.7
 django-storages==1.1.8
 djangocms-admin-style==0.2.0
+djangocms-file==0.0.1
 djangocms-googlemap==0.0.2
 djangocms-link==1.2
 djangocms-text-ckeditor==2.1.2
