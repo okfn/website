@@ -56,7 +56,7 @@ class Board(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=100, default='')
+    slug = models.SlugField(max_length=100, unique=True)
     description = models.TextField()
     members = models.ManyToManyField('Person', through='BoardMembership')
 
@@ -81,7 +81,7 @@ class Project(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=100, default='')
+    slug = models.SlugField(max_length=100, unique=True)
     description = models.TextField()
     picture = models.ImageField(upload_to='projects/pictures',
                                 blank=True)
