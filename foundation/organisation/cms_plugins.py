@@ -8,6 +8,7 @@ from .models import FeaturedProject
 
 class FeaturedProjectPlugin(CMSPluginBase):
     model = FeaturedProject
+    module = "OKF"
     name = _("Featured Project")
     render_template = "organisation/project_featured.html"
 

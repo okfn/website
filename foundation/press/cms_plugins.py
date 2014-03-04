@@ -9,6 +9,7 @@ from .models import PressRelease, PressMention
 
 class RecentPressReleasesPlugin(CMSPluginBase):
     model = CMSPlugin
+    module = "OKF"
     name = _("Press Releases")
     render_template = "press/pressrelease_recent.html"
 
@@ -26,6 +27,7 @@ plugin_pool.register_plugin(RecentPressReleasesPlugin)
 
 class RecentPressMentionsPlugin(CMSPluginBase):
     model = CMSPlugin
+    module = "OKF"
     name = _("Press Mentions")
     render_template = "press/pressmention_recent.html"
 
