@@ -91,13 +91,25 @@ class Project(models.Model):
     sourcecode_url = models.URLField(blank=True)
     mailinglist_url = models.URLField(blank=True)
 
-    theme = models.ForeignKey('Theme')
+    theme = models.ForeignKey('Theme', related_name='+')
+    themes = models.ManyToManyField('Theme', blank=True)
+    types = models.ManyToManyField('ProjectType', blank=True)
 
     def __unicode__(self):
         return self.name
 
     class Meta:
         ordering = ('name',)
+
+
+class ProjectType(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    name = models.CharField(max_length=100)
+
+    def __unicode__(self):
+        return self.name
 
 
 class Theme(models.Model):

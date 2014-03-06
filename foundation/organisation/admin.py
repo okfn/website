@@ -1,7 +1,7 @@
 import reversion
 
 from django.contrib import admin
-from .models import Person, Unit, Board, Theme, Project
+from .models import Person, Unit, Board, Theme, Project, ProjectType
 from .models import UnitMembership, BoardMembership
 
 
@@ -42,8 +42,15 @@ admin.site.register(Board, BoardAdmin)
 class ProjectAdmin(reversion.VersionAdmin):
     list_display = ('name',)
     prepopulated_fields = {"slug": ("name",)}
+    exclude = ('theme',)
 
 admin.site.register(Project, ProjectAdmin)
+
+
+class ProjectTypeAdmin(reversion.VersionAdmin):
+    list_display = ('name',)
+
+admin.site.register(ProjectType, ProjectTypeAdmin)
 
 
 class ThemeAdmin(reversion.VersionAdmin):
