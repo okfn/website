@@ -3,8 +3,8 @@ from django.utils.html import escape
 from django.test.utils import override_settings
 from django_webtest import WebTest
 
-from ..models import (Board, BoardMembership, Person, Project, Theme,
-                      Unit, UnitMembership)
+from ..models import (Board, BoardMembership, Person, Project, Unit,
+                      UnitMembership)
 
 
 @override_settings(ROOT_URLCONF='foundation.tests.urls')
@@ -238,16 +238,12 @@ class BoardViewTest(WebTest):
 @override_settings(ROOT_URLCONF='foundation.tests.urls')
 class ProjectListViewTest(WebTest):
     def setUp(self):  # flake8: noqa
-        self.invasions = Theme.objects.create(name='People invading things')
-
         self.market_garden = Project.objects.create(
-            theme=self.invasions,
             name='Market Garden',
             slug='market-garden',
             description='Just some guys in a glider')
 
         self.barbarossa = Project.objects.create(
-            theme=self.invasions,
             name='Barbarossa',
             slug='barbarossa',
             description='This could get cold quickly.')
@@ -262,16 +258,12 @@ class ProjectListViewTest(WebTest):
 @override_settings(ROOT_URLCONF='foundation.tests.urls')
 class ProjectDetailViewTest(WebTest):
     def setUp(self):  # flake8: noqa
-        self.invasions = Theme.objects.create(name='People invading things')
-
         self.market_garden = Project.objects.create(
-            theme=self.invasions,
             name='Market Garden',
             slug='market-garden',
             description='Just some guys in a glider')
 
         self.barbarossa = Project.objects.create(
-            theme=self.invasions,
             name='Barbarossa',
             slug='barbarossa',
             description='This could get cold quickly.')

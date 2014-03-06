@@ -91,7 +91,6 @@ class Project(models.Model):
     sourcecode_url = models.URLField(blank=True)
     mailinglist_url = models.URLField(blank=True)
 
-    theme = models.ForeignKey('Theme', related_name='+')
     themes = models.ManyToManyField('Theme', blank=True)
     types = models.ManyToManyField('ProjectType', blank=True)
 
