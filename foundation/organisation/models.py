@@ -82,6 +82,9 @@ class Project(models.Model):
 
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
+    teaser = models.CharField(
+        max_length=100,
+        help_text="A single line description for list views")
     description = models.TextField()
     picture = models.ImageField(upload_to='projects/pictures',
                                 blank=True)
