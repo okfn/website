@@ -1,9 +1,11 @@
-@okf-green: #1A988B;
-@okf-darkgrey: #333;
-@okf-midgrey: #8c8c8c;
-@okf-lightgrey: #ececec;
+@okf-primary: rgb(122, 184, 0);
+@okf-secondary: rgb(255, 0, 0);
+@okf-secondary-alt: rgb(0, 165, 224);
+@okf-darkgrey: rgb(45, 45, 45);
+@okf-midgrey: rgb(142, 142, 142);
+@okf-lightgrey: rgb(240, 240, 240);
 
-@okf-link: #3e8f80;
+@okf-link: @okf-primary;
 
 @bootstrap-root: "../vendor/bootstrap/less";
 
@@ -21,7 +23,7 @@
 // Navbar
 @navbar-height: 60px;
 @navbar-default-color: #fff;
-@navbar-default-bg: @okf-green;
+@navbar-default-bg: @okf-primary;
 @navbar-default-link-color: #fff;
 @navbar-default-link-hover-color: #fff;
 @navbar-default-link-hover-bg: darken(@navbar-default-bg, 3%);
@@ -68,15 +70,10 @@ header {
 
   h1 {
     margin: 0;
-    padding: @header-padding 0 @header-padding 44px;
+    padding: @header-padding 0;
     font-size: @header-font-size;
     line-height: 1em;
-    background: transparent url(../img/okf-logo-header-2x.png) left center no-repeat;
-    background-size: auto 40px;
 
-    a:link, a:visited {
-      color: @okf-darkgrey;
-    }
     a:hover, a:focus {
       text-decoration: none;
     }
@@ -155,15 +152,15 @@ header {
   background: @okf-lightgrey;
   p {
     font-size: 20px;
-    html.wf-opensans-n4-active & {
-      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    html.wf-lato-n4-active & {
+      font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
   }
 
   &.homepage-splash-banner {
-    background: @okf-green url(../img/escheresque.png);
-    border-top: 1px solid lighten(@okf-green, 3.5%);
-    border-bottom: 1px solid darken(@okf-green, 6.5%);
+    background: @okf-primary url(../img/escheresque.png);
+    border-top: 1px solid lighten(@okf-primary, 3.5%);
+    border-bottom: 1px solid darken(@okf-primary, 6.5%);
     color: white;
     p {
       font-size: 18px;
@@ -186,10 +183,10 @@ footer {
 }
 
 // Progressively enhance to web fonts
-html.wf-opensans-n4-active {
+html.wf-lato-n7-active {
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 400;
+    font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: bold;
   }
 }
 
@@ -202,7 +199,7 @@ html.wf-opensans-n4-active {
     color: lighten(@okf-darkgrey, 10%);
     font-size: 18px;
     text-transform: uppercase;
-    border-bottom: 1px solid @okf-green;
+    border-bottom: 1px solid @okf-primary;
     padding-bottom: @line-height-computed / 4;
     margin-bottom: @line-height-computed / 4;
   }
