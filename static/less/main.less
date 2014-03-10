@@ -22,12 +22,12 @@
 
 // Navbar
 @navbar-height: 60px;
-@navbar-default-color: #fff;
-@navbar-default-bg: @okf-primary;
-@navbar-default-link-color: #fff;
-@navbar-default-link-hover-color: #fff;
+@navbar-default-color: @okf-darkgrey;
+@navbar-default-bg: @okf-lightgrey;
+@navbar-default-link-color: @okf-darkgrey;
+@navbar-default-link-hover-color: @okf-midgrey;
 @navbar-default-link-hover-bg: darken(@navbar-default-bg, 3%);
-@navbar-default-link-active-color: #fff;
+@navbar-default-link-active-color: @okf-midgrey;
 
 // Navbar toggle
 @navbar-default-toggle-hover-bg: darken(@navbar-default-bg, 3%);
@@ -40,21 +40,14 @@
 // Import the rest of Bootstrap
 @import "bootstrap.less";
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;
-}
-
 @header-padding: 15px;
-@header-font-size: 26px;
-@header-nav-font-size: 14px;
+@header-font-size: 16px;
+@header-nav-font-size: 16px;
 @header-height: @header-font-size + @header-padding * 2;
-@header-height-sm: @header-font-size * 2 + @header-padding * 2;
 // The (secondary) nav
 @header-nav-padding: (@header-height - @header-nav-font-size) / 2;
-@header-nav-padding-sm: (@header-height-sm - @header-nav-font-size) / 2;
 // The social buttons are 24px high
 @header-soc-padding: (@header-height - 24px) / 2;
-@header-soc-padding-sm: (@header-height-sm - 24px) / 2;
 
 header {
   margin: 20px 0;
@@ -70,11 +63,15 @@ header {
 
   h1 {
     margin: 0;
-    padding: @header-padding 0;
+    padding: @header-padding 0 @header-padding 60px;
     font-size: @header-font-size;
     line-height: 1em;
-
+    background: transparent url(../img/okf-logo-header-2x.png) left center no-repeat;
+    background-size: auto 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.23em;
     a:hover, a:focus {
+      color: @okf-primary;
       text-decoration: none;
     }
   }
@@ -92,35 +89,18 @@ header {
   a:link, a:visited {
     color: @okf-darkgrey;
   }
-
-  // The words "Open Knowledge Foundation" wrap at this breakpoint, so we
-  // have to recalculate the padding. See above for calculations.
-  @media (max-width: @screen-sm-max) {
-    & {
-      margin-top: @header-nav-padding-sm;
-      margin-bottom: @header-nav-padding-sm;
-    }
-  }
 }
 
 #nav-social {
   vertical-align: middle;
   margin: @header-soc-padding 0;
-
-  // The words "Open Knowledge Foundation" wrap at this breakpoint, so we
-  // have to recalculate the padding. See above for calculations.
-  @media (max-width: @screen-sm-max) {
-    & {
-      margin-top: @header-soc-padding-sm;
-      margin-bottom: @header-soc-padding-sm;
-    }
-  }
 }
 
 #navbar-main {
+  font-size: 17px;
   border-radius: 0;
-  border-right: none;
-  border-left: none;
+  border: none;
+  text-transform: lowercase;
   margin-bottom: 0;
 }
 
@@ -149,24 +129,28 @@ header {
   @spacing: 45px;
   padding-top: @spacing - @line-height-computed;
   padding-bottom: @spacing - (@line-height-computed / 2);
-  background: @okf-lightgrey;
+  background: @okf-primary;
+  color: white;
+
   p {
     font-size: 20px;
-    html.wf-lato-n4-active & {
-      font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    html.wf-lato-n3-active & {
+      font-weight: 300;
     }
   }
 
   &.homepage-splash-banner {
-    background: @okf-primary url(../img/escheresque.png);
-    border-top: 1px solid lighten(@okf-primary, 3.5%);
-    border-bottom: 1px solid darken(@okf-primary, 6.5%);
-    color: white;
+    h2 {
+      font-size: 48px;
+      text-transform: uppercase;
+      text-indent: -0.4em;
+      // if only ... hanging-punctuation: first;
+    }
     p {
-      font-size: 18px;
+      font-size: 22px;
     }
     #splash-banner-pitch {
-      .make-sm-column(8);
+      .make-sm-column(12);
     }
   }
 }
@@ -183,6 +167,12 @@ footer {
 }
 
 // Progressively enhance to web fonts
+html.wf-lato-n4-active {
+  body {
+    font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+}
+
 html.wf-lato-n7-active {
   h1, h2, h3, h4, h5, h6 {
     font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -223,14 +213,8 @@ html.wf-lato-n7-active {
   padding: 0;
   li {
     display: inline;
-    &:after {
-      content: '\00a0|';
-    }
-    &:last-of-type:after {
-      content: none;
-    }
     a {
-      padding: 3px;
+      padding: 3px 8px;
     }
   }
 }
