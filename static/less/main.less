@@ -160,10 +160,9 @@ header {
   }
 }
 
-
 #main {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 footer {
@@ -181,7 +180,6 @@ html.wf-lato-n4-active {
 html.wf-lato-n7-active {
   h1, h2, h3, h4, h5, h6 {
     font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: bold;
   }
 }
 
@@ -242,3 +240,60 @@ html.wf-lato-n7-active {
   }
 }
 
+@feature-block-height: 250px;
+@feature-block-xs-img-height: 150px;
+
+.feature-block-text {
+  color: #fff;
+  background: @okf-darkgrey;
+  border: 1px solid @okf-darkgrey; // forces margin uncollapse on block
+  margin-bottom: 30px;
+  padding: 0 15px 15px 15px;
+  h3 {
+    font-weight: normal;
+  }
+  @media (min-width: @screen-sm-min) {
+    min-height: @feature-block-height;
+  }
+}
+
+.feature-block-img {
+  background-position: center center;
+  background-size: cover;
+  height: @feature-block-height;
+  margin-bottom: 30px;
+  @media (max-width: @screen-xs-max) {
+    height: @feature-block-xs-img-height;
+    margin-bottom: 0;
+  }
+}
+
+.feature-globe {
+  background-image: url(../img/photography/globe.jpg)
+}
+
+.feature-city {
+  background-image: url(../img/photography/city-at-night.jpg)
+}
+
+.feature-okfest {
+  background-image: url(../img/photography/okfest-2012-group.jpg)
+}
+
+.feature-block-primary {
+  a:link, a:visited {
+    color: @okf-secondary;
+  }
+}
+
+.feature-block-secondary {
+  a:link, a:visited {
+    color: @okf-primary;
+  }
+}
+
+.feature-block-tertiary {
+  a:link, a:visited {
+    color: @okf-secondary-alt;
+  }
+}

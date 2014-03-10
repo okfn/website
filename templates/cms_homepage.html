@@ -9,3 +9,36 @@
   </div>
 </div>
 {% endblock %}
+
+{% block body %}
+<div class='row'>
+  <div class='col-sm-8'>
+    <div class='feature-block-img feature-globe'></div>
+  </div>
+  <div class='col-sm-4'>
+    <div class='feature-block-text feature-block-primary'>
+      {% placeholder "feature 1" %}
+    </div>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-sm-8 col-sm-push-4'>
+    <div class='feature-block-img feature-city'></div>
+  </div>
+  <div class='col-sm-4 col-sm-pull-8'>
+    <div class='feature-block-text feature-block-text-left feature-block-secondary'>
+      {% placeholder "feature 2" %}
+    </div>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-sm-8'>
+    <div class='feature-block-img feature-okfest'></div>
+  </div>
+  <div class='col-sm-4'>
+    <div class='feature-block-text feature-block-tertiary'>
+      {% placeholder "feature 3" %}
+    </div>
+  </div>
+</div>
+{% endblock %}
