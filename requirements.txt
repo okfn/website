@@ -30,7 +30,7 @@ djangocms-admin-style==0.2.0
 djangocms-file==0.0.1
 djangocms-googlemap==0.0.2
 djangocms-link==1.2
-djangocms-text-ckeditor==2.1.2
+djangocms-text-ckeditor==2.1.4
 gunicorn==18.0
 html5lib==0.999
 markdown2==2.2.0
