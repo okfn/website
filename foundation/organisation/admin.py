@@ -1,7 +1,8 @@
 import reversion
 
 from django.contrib import admin
-from .models import Person, Unit, Board, Theme, Project, ProjectType
+from .models import Person, Unit, Board, Theme,\
+    Project, ProjectType, WorkingGroup
 from .models import UnitMembership, BoardMembership
 
 
@@ -56,3 +57,9 @@ class ThemeAdmin(reversion.VersionAdmin):
     list_display = ('name',)
 
 admin.site.register(Theme, ThemeAdmin)
+
+
+class WorkingGroupAdmin(reversion.VersionAdmin):
+    list_display = ('name',)
+
+admin.site.register(WorkingGroup, WorkingGroupAdmin)

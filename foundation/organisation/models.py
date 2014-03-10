@@ -124,6 +124,27 @@ class Theme(models.Model):
         return self.name
 
 
+class WorkingGroup(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100, unique=True)
+
+    description = models.TextField()
+    url = models.URLField(blank=True)
+    logo = models.ImageField(upload_to='organisation/working-groups/logos',
+                             blank=True)
+
+    theme = models.ForeignKey('Theme', blank=True)
+
+    incubation = models.BooleanField(default=True,
+                                     help_text='Is this group in incubation?')
+
+    def __unicode__(self):
+        return self.name
+
+
 class FeaturedProject(CMSPlugin):
     project = models.ForeignKey('Project', related_name='+')
 
