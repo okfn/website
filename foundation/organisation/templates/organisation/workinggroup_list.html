@@ -12,31 +12,33 @@
 </div>
 <div class="row">
   <div class="col-md-9 col-md-push-3">
-    {% for group in object_list|split_rows:2 %}
+    {% for workinggroup in object_list %}
     <div class="row">
-      {% for workinggroup in group %}
-      {% if workinggroup %}
-      <div class="col-md-2">
-        {% thumbnail workinggroup.logo "116" as im %}
-        <img class="img-responsive" src="{{ im.url }}" alt="{{ workinggroup.name }}">
-        {% endthumbnail %}
+      <div class="col-md-4 {% cycle '' 'col-md-push-8' %}">
+        <div class="feature-block-img">
+          {% thumbnail workinggroup.logo "250" as im %}
+          <img class="img-responsive" src="{{ im.url }}" alt="{{ workinggroup.name }}">
+          {% endthumbnail %}
+        </div>
       </div>
-      <div class="col-md-4">
-        <h3>
-          <a href="{{ workinggroup.url}}" target="_blank">
-            {{ workinggroup.name }}
-          </a>
-        </h3>
-        
-        <p>
-          <a href="{{ workinggroup.url }}" target="_blank">
-            <i class="fa fa-link"></i> {{ workinggroup.url }}
-          </a>
-        </p>
-        {{ workinggroup.description|markdown }}
+      <div class="col-md-8 {% cycle '' 'col-md-pull-4' %}">
+        <div class="feature-block-text feature-block-{% cycle 'primary' 'secondary' 'tertiary' %}">
+          <h3>
+            <a href="{{ workinggroup.url}}" target="_blank">
+              {{ workinggroup.name }}
+            </a>
+          </h3>
+          
+          <p>
+            <small>
+              <a href="{{ workinggroup.url }}" target="_blank">
+                {{ workinggroup.url }}
+              </a>
+            </small>
+          </p>
+          {{ workinggroup.description|markdown }}
+        </div>
       </div>
-      {% endif %}
-      {% endfor %}
     </div>
     {% empty %}
     <p>No working groups found.</p>
