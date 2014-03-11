@@ -4,6 +4,10 @@
 {% load cms_tags %}
 {% load menu_tags %}
 
+{% block head-icons %}
+<link rel="icon" href="{{STATIC_URL}}favicon.ico">
+{% endblock %}
+
 {% block head-css %}
 {% compress css %}
 <link type="text/less" rel="stylesheet" href="{{ STATIC_URL }}less/main.less" charset="utf-8">
