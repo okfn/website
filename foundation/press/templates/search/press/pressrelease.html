@@ -1,9 +1,14 @@
 {% load markdown_deux_tags %}
 
 <h3>
-  <a href="{% url 'press-release' slug=pressrelease.slug %}">
+  {% url 'press-release' slug=pressrelease.slug as release_url %}
+  {% if release_url %}
+  <a href="{{ release_url }}">
     Press Release: {{ pressrelease.title }}
   </a>
+  {% else %}
+  Press Release: {{ pressrelease.title }}
+  {% endif %}
 </h3>
 
 {{ pressrelease.body|markdown }}
@@ -15,7 +20,10 @@
   </small>
 </p>
 
+{% url 'press-releases' as releases_url %}
+{% if releases_url %}
 <p>
   <i class="fa fa-hand-o-right fa-large"></i>
-  <a href="{% url 'press-releases' %}">All press releases</a>
+  <a href="{{ releases_url }}">All press releases</a>
 </p>
+{% endif %}
