@@ -219,8 +219,9 @@ header {
 }
 
 footer {
-  margin-top: 20px;
-  opacity: 0.5;
+  background: @okf-lightgrey;
+  border-top: 10px solid @okf-primary;
+  padding: 30px 0 (30px - @line-height-computed / 2) 0;
 }
 
 // Progressively enhance to web fonts
@@ -307,12 +308,12 @@ html.wf-lato-n7-active {
 .nav-simple {
   display: inline-block;
   list-style: none;
-  margin: 0;
   padding: 0;
   li {
     display: inline;
     a {
-      padding: 3px 8px;
+      padding: 3px 0;
+      margin-right: 16px;
     }
   }
 }

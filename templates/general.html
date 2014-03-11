@@ -49,8 +49,10 @@
     {% block body %}{% endblock %}
   </div>
 
-  <footer class='container'>
-    {% static_placeholder 'footer' %}
+  <footer>
+    <div class='container'>
+      {% include 'includes/footer.html' %}
+    </div>
   </footer>
 {% endblock %}
 
