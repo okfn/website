@@ -10,6 +10,7 @@ class PersonIndex(indexes.SearchIndex, indexes.Indexable):
     def get_model(self):
         return Person
 
+
 class WorkingGroupIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True, use_template=True)
     incubation = indexes.BooleanField(model_attr='incubation')
