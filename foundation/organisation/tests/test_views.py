@@ -3,8 +3,8 @@ from django.utils.html import escape
 from django.test.utils import override_settings
 from django_webtest import WebTest
 
-from ..models import (Board, BoardMembership, Person, Project, Unit,
-                      UnitMembership)
+from ..models import (Board, Person, Project, Unit, Theme, WorkingGroup,
+                      BoardMembership, UnitMembership)
 
 
 @override_settings(ROOT_URLCONF='foundation.tests.urls')
@@ -273,3 +273,43 @@ class ProjectDetailViewTest(WebTest):
                                         kwargs={'slug': 'market-garden'}))
 
         self.assertIn(self.market_garden.name, response)
+
+
+@override_settings(ROOT_URLCONF='foundation.tests.urls')
+class WorkingGroupListViewTest(WebTest):
+    def setUp(self):  # flake8: noqa
+        self.theme = Theme.objects.create(name='World Wide Web')
+
+        self.csv = WorkingGroup.objects.create(
+            name='CSV on the Web',
+            slug='csv-on-the-web',
+            description='Definition of a vocabulary for describing tables',
+            url='http://www.w3.org/2013/csvw/',
+            theme=self.theme,
+            incubation=False
+            )
+
+        self.government = WorkingGroup.objects.create(
+            name='Government Linked Data',
+            slug='government-linked-data',
+            description='Help governments around the world publish their data',
+            url='http://www.w3.org/2011/gld/',
+            theme=self.theme,
+            incubation=True
+            )
+
+    def test_workinggroup_list(self):
+        response = self.app.get(reverse('working-groups'))
+        
+        self.assertIn(self.csv.name, response)
+        self.assertIn(self.csv.description, response)
+        self.assertIn(self.csv.url, response)
+        
+        self.assertIn(self.government.name, response)
+        self.assertIn(self.government.url, response)
+        self.assertNotIn(self.government.description, response)
+        
+        # Active working groups should come before incubating groups
+        csv = response.body.find(self.csv.name)
+        government = response.body.find(self.government.name)
+        self.assertTrue(csv < government)
