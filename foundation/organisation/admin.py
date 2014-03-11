@@ -62,4 +62,6 @@ admin.site.register(Theme, ThemeAdmin)
 class WorkingGroupAdmin(reversion.VersionAdmin):
     list_display = ('name',)
 
+    prepopulated_fields = {"slug": ("name",)}
+
 admin.site.register(WorkingGroup, WorkingGroupAdmin)

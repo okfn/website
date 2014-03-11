@@ -2,7 +2,7 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.shortcuts import get_object_or_404
 
-from .models import Board, Project
+from .models import Board, Project, WorkingGroup
 
 
 class BoardView(DetailView):
@@ -24,3 +24,16 @@ class ProjectListView(ListView):
     model = Project
     paginate_by = 10
     template_name = 'organisation/project_list.html'
+
+
+class WorkingGroupListView(ListView):
+    model = WorkingGroup
+
+    def get_queryset(self):
+        return WorkingGroup.objects.active()
+
+    def get_context_data(self, **kwargs):
+        context = super(WorkingGroupListView, self).get_context_data(**kwargs)
+        context['incubator_list'] = WorkingGroup.objects.incubators()
+
+        return context

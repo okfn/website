@@ -124,7 +124,18 @@ class Theme(models.Model):
         return self.name
 
 
+class WorkingGroupManager(models.Manager):
+
+    def active(self):
+        return self.get_queryset().filter(incubation=False)
+
+    def incubators(self):
+        return self.get_queryset().filter(incubation=True)
+
+
 class WorkingGroup(models.Model):
+    objects = WorkingGroupManager()
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
