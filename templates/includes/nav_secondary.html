@@ -1,0 +1,15 @@
+{% load cms_tags %}
+
+<li><a href='http://blog.okfn.org'>blog</a></li>
+{% page_url "press" as press_url %}
+{% if press_url %}
+<li><a href='{{ press_url }}'>press</a></li>
+{% endif %}
+{% page_url "contact" as contact_url %}
+{% if contact_url %}
+<li><a href='#'>contact</a></li>
+{% endif %}
+{% page_url "donate" as donate_url %}
+{% if donate_url %}
+<li><a href='#'>donate</a></li>
+{% endif %}

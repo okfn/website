@@ -31,7 +31,7 @@
 
 // Navbar toggle
 @navbar-default-toggle-hover-bg: darken(@navbar-default-bg, 3%);
-@navbar-default-toggle-icon-bar-bg: #fff;
+@navbar-default-toggle-icon-bar-bg: @okf-darkgrey;
 @navbar-default-link-hover-bg: darken(@navbar-default-bg, 6.5%);
 
 // Fix up path to glyphicon fonts
@@ -208,6 +208,50 @@ html.wf-lato-n7-active {
     }
   }
 
+}
+
+.navbar-collapse {
+  // By default, Bootstrap sets max-height: 340px, which causes the nav to
+  // overflow and display a scrollbar. No thank you.
+  max-height: none;
+  .navbar-nav {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.navbar-form {
+  border: none;
+
+  .input-group-search {
+    width: 200px;
+    .input-group-btn .btn-default {
+      color: @okf-darkgrey;
+      background: transparent;
+      border-color: @okf-darkgrey;
+      border-left-color: transparent;
+      border-radius: 0;
+    }
+  }
+
+  .form-control {
+    font-size: 16px;
+    color: @okf-darkgrey;
+    background: transparent;
+    border-color: @okf-darkgrey;
+    border-right-color: fadeout(@okf-darkgrey, 90%);
+    border-radius: 0;
+    .box-shadow(none);
+  }
+
+  @media (max-width: @screen-sm-max) {
+    .input-group-search {
+      width: 150px;
+    }
+    .form-control {
+      width: 150px;
+    }
+  }
 }
 
 .nav-simple {
