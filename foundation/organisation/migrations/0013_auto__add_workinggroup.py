@@ -98,8 +98,17 @@ class Migration(SchemaMigration):
             'picture': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'blank': 'True'}),
             'slug': ('django.db.models.fields.SlugField', [], {'unique': 'True', 'max_length': '100'}),
             'sourcecode_url': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'}),
-            'theme': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['organisation.Theme']"}),
+            'teaser': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'themes': ('django.db.models.fields.related.ManyToManyField', [], {'to': u"orm['organisation.Theme']", 'symmetrical': 'False', 'blank': 'True'}),
             'twitter': ('django.db.models.fields.CharField', [], {'max_length': '18', 'blank': 'True'}),
+            'types': ('django.db.models.fields.related.ManyToManyField', [], {'to': u"orm['organisation.ProjectType']", 'symmetrical': 'False', 'blank': 'True'}),
+            'updated_at': ('django.db.models.fields.DateTimeField', [], {'auto_now': 'True', 'blank': 'True'})
+        },
+        u'organisation.projecttype': {
+            'Meta': {'object_name': 'ProjectType'},
+            'created_at': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'updated_at': ('django.db.models.fields.DateTimeField', [], {'auto_now': 'True', 'blank': 'True'})
         },
         u'organisation.theme': {
