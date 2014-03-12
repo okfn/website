@@ -29,3 +29,10 @@ class ProjectsAppHook(CMSApp):
     urls = ["foundation.organisation.urls.projects"]
 
 apphook_pool.register(ProjectsAppHook)
+
+
+class WorkingGroupsAppHook(CMSApp):
+    name = _("Working Groups")
+    urls = ["foundation.organisation.urls.workinggroups"]
+
+apphook_pool.register(WorkingGroupsAppHook)

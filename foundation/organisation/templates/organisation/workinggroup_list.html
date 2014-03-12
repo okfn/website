@@ -1,0 +1,59 @@
+{% extends "cms_default.html" %}
+{% load cms_tags %}
+{% load markdown_deux_tags %}
+{% load thumbnail %}
+
+{% block body-class %}working-groups{% endblock %}
+
+{% block body %}
+<div class="row">
+  {% placeholder "main" %}
+</div>
+<div class="row">
+  <div class="col-md-9 col-md-push-3">
+    {% for workinggroup in object_list %}
+    <div class="row">
+      <div class="col-md-4 {% cycle '' 'col-md-push-8' %}">
+        <div class="feature-block-img">
+          {% thumbnail workinggroup.logo "250" as im %}
+          <img class="img-responsive" src="{{ im.url }}" alt="{{ workinggroup.name }}">
+          {% endthumbnail %}
+        </div>
+      </div>
+      <div class="col-md-8 {% cycle '' 'col-md-pull-4' %}">
+        <div class="feature-block-text feature-block-{% cycle 'primary' 'secondary' 'tertiary' %}">
+          <h3>
+            <a href="{{ workinggroup.url}}" target="_blank">
+              {{ workinggroup.name }}
+            </a>
+          </h3>
+          
+          <p>
+            <small>
+              <a href="{{ workinggroup.url }}" target="_blank">
+                {{ workinggroup.url }}
+              </a>
+            </small>
+          </p>
+          {{ workinggroup.description|markdown }}
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <p>No working groups found.</p>
+    {% endfor %}
+  </div>
+  <div class="sidebar col-md-3 col-md-pull-9">
+    <h3>Incubating groups</h3>
+    {% static_placeholder "incubating_groups" %}
+    <ul>{% for workinggroup in incubator_list %}
+    <li>
+      <a href="{{ workinggroup.url }}" target="_blank">
+        {{ workinggroup.name }}
+      </a>
+    </li>
+    {% empty %}
+    <li>There are no incubating groups at the moment.</li>
+    {% endfor %}</ul>
+</div>
+{% endblock %}
