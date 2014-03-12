@@ -147,7 +147,7 @@ class WorkingGroup(models.Model):
     logo = models.ImageField(upload_to='organisation/working-groups/logos',
                              blank=True)
 
-    theme = models.ForeignKey('Theme', blank=True)
+    theme = models.ForeignKey('Theme', blank=True, null=True)
 
     incubation = models.BooleanField(default=True,
                                      help_text='Is this group in incubation?')
