@@ -1,0 +1,12 @@
+{{ object.name }}
+{{ object.description }}
+{{ object.twitter }}
+{{ object.homepage_url }}
+{{ object.mailinglist_url }}
+{{ object.sourcecode_url }}
+{% for theme in object.themes.all %}
+{{ theme.name }}
+{% endfor %}
+{% for type in object.types.all %}
+{{ type.name }}
+{% endfor %}

@@ -1,0 +1,9 @@
+{% load markdown_deux_tags %}
+{% load thumbnail %}
+
+<h3>{{ project.name }}</h3>
+<div class="row">
+  <div class="col-md-12">
+    {{ project.description|markdown }}
+  </div>
+</div>
