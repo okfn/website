@@ -28,6 +28,7 @@ class ProjectListView(ListView):
 
 class WorkingGroupListView(ListView):
     model = WorkingGroup
+    template_name = 'organisation/workinggroup_list.html'
 
     def get_queryset(self):
         return WorkingGroup.objects.active()
