@@ -1,11 +1,7 @@
-{% extends "cms_default.html" %}
+{% extends "cms_apphook.html" %}
+{% load i18n %}
 
-{% block title %}Press Mention: {{ object.title }}{% endblock %}
 {% block body-class %}press-mentions{% endblock %}
-
-{% block pagebanner-inner %}
-<h2>Press Mention</h2>
-{% endblock %}
 
 {% block body %}
 <div class="row">
@@ -19,4 +15,4 @@
     {% include "press/pressrelease_recent.html" %}
   </div>
 </div>
-{% endblock%}
+{% endblock %}

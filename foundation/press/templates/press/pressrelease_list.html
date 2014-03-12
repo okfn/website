@@ -1,7 +1,10 @@
-{% extends "cms_default.html" %}
+{% extends "cms_apphook.html" %}
+{% load i18n %}
 {% load cms_tags %}
 
 {% block body-class %}press-releases{% endblock %}
+
+{% block blurb %}{% static_placeholder "press releases blurb" %}{% endblock %}
 
 {% block body %}
 <div class="row">
@@ -18,7 +21,7 @@
         {% for pressrelease in object_list %}
           <h3>{% include "press/pressrelease_short.html" %}</h3>
         {% empty %}
-        <p>No press releases found.</p>
+        <p>{% trans 'No press releases found.' %}</p>
         {% endfor %}
       {% endif %}
     {% endwith %}

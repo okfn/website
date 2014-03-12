@@ -1,9 +1,12 @@
-{% extends "general.html" %}
+{% extends "cms_apphook.html" %}
 
+{% load i18n %}
+{% load cms_tags %}
 {% load markdown_deux_tags %}
 
-{% block title %}Jobs{% endblock %}
 {% block body-class %}jobs{% endblock %}
+
+{% block blurb %}{% static_placeholder "jobs blurb" %}{% endblock %}
 
 {% block body %}
   {% for job in job_list %}
@@ -12,13 +15,15 @@
       {{ job.description|markdown }}
     </div>
     <p>
+    {% blocktrans with email=job.submission_email time=job.submission_closes|time date=job.submission_closes|date %}
       To apply for this job, please email
-      <a href="mailto:{{ job.submission_email }}">{{ job.submission_email }}</a>
+      <a href="mailto:{{ email }}">{{ email }}</a>
       by the submission closing time of
-      <strong>{{ job.submission_closes|time }}</strong> on
-      <strong>{{ job.submission_closes|date }}</strong>.
+      <strong>{{ time }}</strong> on
+      <strong>{{ date }}</strong>.
+    {% endblocktrans %}
     </p>
   {% empty %}
-    <p>Unfortunately there are currently no job openings.</p>
+    <p>{% trans 'Unfortunately there are currently no job openings.' %}</p>
   {% endfor %}
 {% endblock %}

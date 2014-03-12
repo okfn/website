@@ -1,12 +1,9 @@
-{% extends "cms_default.html" %}
+{% extends "cms_apphook.html" %}
+{% load i18n %}
 {% load markdown_deux_tags %}
 
 {% block title %}{{ object.name }}{% endblock %}
 {% block body-class %}projects{% endblock %}
-
-{% block pagebanner-inner %}
-<h2>Projects</h2>
-{% endblock %}
 
 {% block body %}
 <div class="row">

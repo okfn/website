@@ -1,12 +1,15 @@
-{% extends "cms_default.html" %}
+{% extends "cms_apphook.html" %}
+{% load i18n %}
 {% load cms_tags %}
 {% load markdown_deux_tags %}
 
 {% block body-class %}projects{% endblock %}
 
+{% block blurb %}{% static_placeholder "projects blurb" %}{% endblock %}
+
 {% block body %}
 <div class="row">
-  {% placeholder "main" %}
+  {% static_placeholder "projects intro" %}
 </div>
 <div class="row">
   <div class="col-md-12">
@@ -14,7 +17,7 @@
       <h3>{{ project.name }}</h3>
       {{ project.description|markdown }}
     {% empty %}
-    <p>No projects found.</p>
+    <p>{% trans 'No projects found.' %}</p>
     {% endfor %}
 
     {% include "includes/pager.html" %}

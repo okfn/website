@@ -1,9 +1,12 @@
-{% extends "cms_default.html" %}
+{% extends "cms_apphook.html" %}
 
+{% load i18n %}
+{% load cms_tags %}
 {% load markdown_deux_tags %}
 
-{% block title %}Units{% endblock %}
 {% block body-class %}units{% endblock %}
+
+{% block blurb %}{% static_placeholder "units blurb" %}{% endblock %}
 
 {% block body %}
   <div class="row">

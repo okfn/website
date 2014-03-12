@@ -1,0 +1,9 @@
+{% extends "cms_default.html" %}
+{% load cms_tags %}
+
+{% block pagebanner-inner %}
+  <h2>{% page_attribute "page_title" %}</h2>
+  {% block blurb %}{% endblock %}
+{% endblock %}
+
+{% block body %}{% endblock %}

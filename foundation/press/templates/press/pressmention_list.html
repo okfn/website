@@ -1,7 +1,10 @@
-{% extends "cms_default.html" %}
+{% extends "cms_apphook.html" %}
+{% load i18n %}
 {% load cms_tags %}
 
 {% block body-class %}press-mentions{% endblock %}
+
+{% block blurb %}{% static_placeholder "press mentions blurb" %}{% endblock %}
 
 {% block body %}
 <div class="row">
@@ -11,7 +14,7 @@
     {% include "press/pressmention.html" %}
     <hr/>
     {% empty %}
-    <p>No press mentions found.</p>
+    <p>{% trans 'No press mentions found.' %}</p>
     {% endfor %}
     {% endwith %}
     {% include "includes/pager.html" %}

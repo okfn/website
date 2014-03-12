@@ -1,12 +1,16 @@
-{% extends 'cms_default.html' %}
+{% extends 'cms_apphook.html' %}
 
-{% block title %}Search{% endblock %}
+{% load i18n %}
+
+{% block title %}{% trans 'Search' %}{% endblock %}
 {% block body-class %}search{% endblock %}
 
 {% block pagebanner-inner %}
-<h2>Search</h2>
+<h2>{% trans 'Search' %}</h2>
 {% if query %}
-Your search for: "{{ query }}" returned {{page.object_list|length}} results.
+{% blocktrans with num=page.object_list|length %}
+Your search for: "{{ query }}" returned {{ num }} results.
+{% endblocktrans %}
 {% endif %}
 {% endblock %}
 
@@ -28,19 +32,21 @@ Your search for: "{{ query }}" returned {{page.object_list|length}} results.
   </div>
   <div class="col-md-9">
     {% if query %}
-    <h3>Results</h3>
+    <h3>{% trans 'Results' %}</h3>
     {% for search_result in page.object_list %}
       {% include "search/results.html" %}
       <hr/>
     {% empty %}
-    <p>No results found.</p>
+    <p>{% trans 'No results found.' %}</p>
     {% endfor %}
 
     {% if page.has_previous or page.has_next %}
+    {% trans 'Previous' as previous %}
+    {% trans 'Next' as next %}
     <div>
-      {% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; Previous{% if page.has_previous %}</a>{% endif %}
+      {% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; {{ previous }}{% if page.has_previous %}</a>{% endif %}
       |
-      {% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}Next &raquo;{% if page.has_next %}</a>{% endif %}
+      {% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}{{ next }} &raquo;{% if page.has_next %}</a>{% endif %}
     </div>
     {% endif %}
   {% endif %}
