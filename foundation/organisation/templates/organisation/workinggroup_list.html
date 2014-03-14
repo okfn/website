@@ -10,10 +10,9 @@
 
 {% block body %}
 <div class="row">
-  {% static_placeholder "working groups intro" %}
-</div>
-<div class="row">
   <div class="col-md-9 col-md-push-3">
+    {% static_placeholder "working groups intro" %}
+
     {% for workinggroup in object_list %}
     <div class="row">
       <div class="col-md-4 {% cycle '' 'col-md-push-8' %}">
