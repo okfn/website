@@ -9,6 +9,7 @@
 {% block blurb %}{% static_placeholder "jobs blurb" %}{% endblock %}
 
 {% block body %}
+  {% static_placeholder "jobs intro" %}
   {% for job in job_list %}
     <h3>{{ job.title }}</h3>
     <div class='job-description'>
