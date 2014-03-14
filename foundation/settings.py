@@ -92,6 +92,7 @@ INSTALLED_APPS = (
     'markdown_deux',
     'haystack',
     'sorl.thumbnail',
+    'geoposition',
 
     # Asset pipeline
     'compressor',

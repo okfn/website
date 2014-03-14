@@ -1,5 +1,8 @@
 from cms.models.pluginmodel import CMSPlugin
 from django.db import models
+from django_countries.fields import CountryField
+from geoposition.fields import GeopositionField
+from django.utils.text import slugify
 
 
 class Person(models.Model):
@@ -154,6 +157,69 @@ class WorkingGroup(models.Model):
 
     def __unicode__(self):
         return self.name
+
+
+class NetworkGroup(models.Model):
+    GROUP_TYPES = ((0, 'Local group'),
+                   (1, 'Chapter'))
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    name = models.CharField(max_length=100)
+
+    group_type = models.IntegerField(default=0, choices=GROUP_TYPES)
+    description = models.TextField(blank=True, null=True)
+
+    country = CountryField()
+    region = models.CharField(max_length=100, blank=True, null=True)
+    slug = models.SlugField()
+
+    mailinglist = models.URLField(blank=True, null=True)
+    homepage = models.URLField(blank=True, null=True)
+    twitter = models.CharField(max_length=18, blank=True, null=True)
+
+    position = GeopositionField(blank=True, null=True)
+
+    extra_information = models.TextField(blank=True, null=True)
+
+    members = models.ManyToManyField('Person',
+                                     through='NetworkGroupMembership')
+
+    def __unicode__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        if self.twitter.startswith('@'):
+            self.twitter = self.twitter[1:]
+
+        # Slug is either the country slugified or the region
+        # Therefore we cannot force slug to be
+        if self.region is None:
+            self.slug = slugify(self.get_country_display())
+        else:
+            self.slug = slugify(self.region)
+
+        super(NetworkGroup, self).save(*args, **kwargs)
+
+    class Meta:
+        unique_together = ('country', 'region')
+
+from south.modelsinspector import add_introspection_rules
+add_introspection_rules([], ["^geoposition\.fields\.GeopositionField"])
+
+
+class NetworkGroupMembership(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    title = models.CharField(max_length=100)
+    role = models.CharField(max_length=100)
+    networkgroup = models.ForeignKey('NetworkGroup')
+    person = models.ForeignKey('Person')
+
+    def __unicode__(self):
+        return self.person.name + ' - ' + self.networkgroup.name
 
 
 class FeaturedProject(CMSPlugin):
