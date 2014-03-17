@@ -1,9 +1,9 @@
 import reversion
 
 from django.contrib import admin
-from .models import Person, Unit, Board, Theme,\
-    Project, ProjectType, WorkingGroup
-from .models import UnitMembership, BoardMembership
+from .models import (Person, Unit, Board, Theme, Project, ProjectType,
+                     WorkingGroup, NetworkGroup, UnitMembership,
+                     BoardMembership, NetworkGroupMembership)
 
 
 class PersonAdmin(reversion.VersionAdmin):
@@ -65,3 +65,17 @@ class WorkingGroupAdmin(reversion.VersionAdmin):
     prepopulated_fields = {"slug": ("name",)}
 
 admin.site.register(WorkingGroup, WorkingGroupAdmin)
+
+
+class NetworkGroupMembershipInline(admin.TabularInline):
+    model = NetworkGroupMembership
+
+
+class NetworkGroupAdmin(reversion.VersionAdmin):
+    list_display = ('name', 'country',)
+    ordering = ('country', 'name')
+    exclude = ('slug',)
+
+    inlines = [NetworkGroupMembershipInline]
+
+admin.site.register(NetworkGroup, NetworkGroupAdmin)

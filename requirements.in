@@ -10,6 +10,8 @@ cssmin
 dj-database-url
 django-classy-tags>=0.5
 django-csp
+django-countries
+django-geoposition
 django-haystack>=2.1,<2.2
 django-heroku-memcacheify
 django-markdown-deux
