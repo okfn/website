@@ -3,7 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 
-from .models import FeaturedProject
+from .models import Project, FeaturedProject, ProjectList
 
 
 class FeaturedProjectPlugin(CMSPluginBase):
@@ -20,3 +20,27 @@ class FeaturedProjectPlugin(CMSPluginBase):
         return context
 
 plugin_pool.register_plugin(FeaturedProjectPlugin)
+
+
+class ProjectListPlugin(CMSPluginBase):
+    model = ProjectList
+    module = "OKF"
+    name = _("Project List")
+    render_template = "organisation/project_list_plugin.html"
+
+    def render(self, context, instance, placeholder):
+        context = super(ProjectListPlugin, self)\
+            .render(context, instance, placeholder)
+
+        results = Project.objects.all()
+
+        if instance.theme:
+            results = results.filter(themes=instance.theme)
+
+        if instance.project_type:
+            results = results.filter(types=instance.project_type)
+
+        context['projects'] = results
+        return context
+
+plugin_pool.register_plugin(ProjectListPlugin)

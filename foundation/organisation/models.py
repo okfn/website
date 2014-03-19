@@ -227,3 +227,12 @@ class FeaturedProject(CMSPlugin):
 
     def __unicode__(self):
         return self.project.name
+
+
+class ProjectList(CMSPlugin):
+    theme = models.ForeignKey(
+        'Theme', blank=True, null=True,
+        help_text='Limit to projects with this theme')
+    project_type = models.ForeignKey(
+        'ProjectType', blank=True, null=True,
+        help_text='Limit to projects with this type')
