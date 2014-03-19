@@ -51,7 +51,7 @@ class NetworkGroupFlagsPlugin(CMSPluginBase):
     model = CMSPlugin
     module = "OKF"
     name = _("Network Group Flags")
-    render_template = "organisation/network_group_flags.html"
+    render_template = "organisation/networkgroup_flags.html"
 
     def render(self, context, instance, placeholder):
         context = super(NetworkGroupFlagsPlugin, self)\

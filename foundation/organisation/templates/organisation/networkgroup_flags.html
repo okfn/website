@@ -1,0 +1,5 @@
+{% for networkgroup in countries %}
+<a href="{% url "network-country" country=networkgroup.country_slug %}" title="{{ networkgroup.name }}">
+  <img class="network-group-flag" src="{{ networkgroup.country.flag }}" alt="{{ networkgroup.name }}">
+</a>
+{% endfor %}
