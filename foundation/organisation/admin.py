@@ -74,7 +74,7 @@ class NetworkGroupMembershipInline(admin.TabularInline):
 class NetworkGroupAdmin(reversion.VersionAdmin):
     list_display = ('name', 'country',)
     ordering = ('country', 'name')
-    exclude = ('slug', 'country_slug')
+    exclude = ('country_slug', 'region_slug')
 
     inlines = [NetworkGroupMembershipInline]
 

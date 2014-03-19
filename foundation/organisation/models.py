@@ -162,11 +162,11 @@ class WorkingGroup(models.Model):
 class NetworkGroupManager(models.Manager):
 
     def countries(self):
-        return self.get_queryset().filter(region__isnull=True)
+        return self.get_queryset().filter(region_slug__isnull=True)
 
     def locals(self, country):
         return self.get_queryset().filter(country_slug=country,
-                                          region__isnull=False)
+                                          region_slug__isnull=False)
 
 
 class NetworkGroup(models.Model):
@@ -186,7 +186,7 @@ class NetworkGroup(models.Model):
     country = CountryField()
     country_slug = models.SlugField()
     region = models.CharField(max_length=100, blank=True, null=True)
-    slug = models.SlugField()
+    region_slug = models.SlugField(default=None, null=True)
 
     mailinglist = models.URLField(blank=True, null=True)
     homepage = models.URLField(blank=True, null=True)
@@ -206,20 +206,12 @@ class NetworkGroup(models.Model):
         if self.twitter.startswith('@'):
             self.twitter = self.twitter[1:]
 
-        # We force empty string to be None instead of working
-        # with an empty string in db requests
-        if self.region == '':
-            self.region = None
-
         # Slug is either the country slugified or the region
         # Therefore we cannot force slug to be unique
         # (regions might have same name in different countries)
         self.country_slug = slugify(self.get_country_display())
-        if self.region is None:
-            self.slug = self.country_slug
-        else:
-            self.slug = slugify(self.region)
-
+        if self.region:
+            self.region_slug = slugify(self.region)
 
         super(NetworkGroup, self).save(*args, **kwargs)
 
