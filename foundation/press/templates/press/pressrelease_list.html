@@ -8,7 +8,7 @@
 
 {% block body %}
 <div class="row">
-  <div class="col-md-9 col-md-push-3">
+  <div class="main col-md-9 col-md-push-3">
     {% with headerlinks=True %}
       {% if object_list and not page_obj.has_previous %}
         {% with pressrelease=object_list|first %}

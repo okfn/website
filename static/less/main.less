@@ -234,6 +234,11 @@ header {
 #main {
   padding-top: 30px;
   padding-bottom: 30px;
+  // Make sure sidebars and main content column have consistent whitespace after
+  // the page banner
+  .main > :first-child, .sidebar > :first-child {
+    margin-top: 0;
+  }
 }
 
 footer {

@@ -10,7 +10,7 @@
 
 {% block body %}
   <div class="row">
-    <div class="col-md-9 col-md-push-3">
+    <div class="main col-md-9 col-md-push-3">
       {% for unit in unit_list %}
         <h3>{{ unit.name }}</h3>
         {% for member in unit.unitmembership_set.all %}

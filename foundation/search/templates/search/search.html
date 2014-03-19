@@ -30,7 +30,7 @@ Your search for: "{{ query }}" returned {{ num }} results.
     </form>
     <hr/>
   </div>
-  <div class="col-md-9">
+  <div class="main col-md-9">
     {% if query %}
     <h3>{% trans 'Results' %}</h3>
     {% for search_result in page.object_list %}
