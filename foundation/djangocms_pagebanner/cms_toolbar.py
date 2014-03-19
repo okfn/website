@@ -7,6 +7,9 @@ from django.core.urlresolvers import reverse, NoReverseMatch
 from django.utils.translation import ugettext_lazy as _
 from .models import PageBannerExtension
 
+_banner_change_url = 'admin:djangocms_pagebanner_pagebannerextension_change'
+_banner_add_url = 'admin:djangocms_pagebanner_pagebannerextension_add'
+
 
 @toolbar_pool.register
 class PageBannerExtensionToolbar(CMSToolbar):
@@ -37,11 +40,10 @@ class PageBannerExtensionToolbar(CMSToolbar):
                 page_banner_extension = None
             try:
                 if page_banner_extension:
-                    url = reverse(
-                        'admin:djangocms_pagebanner_pagebannerextension_change',
-                        args=(page_banner_extension.pk,))
+                    url = reverse(_banner_change_url,
+                                  args=(page_banner_extension.pk,))
                 else:
-                    url = (reverse('admin:djangocms_pagebanner_pagebannerextension_add') +
+                    url = (reverse(_banner_add_url) +
                            '?extended_object=%s' % self.page.pk)
             except NoReverseMatch:
                 # not in urls
