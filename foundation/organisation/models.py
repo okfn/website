@@ -198,6 +198,7 @@ class NetworkGroup(models.Model):
 
     members = models.ManyToManyField('Person',
                                      through='NetworkGroupMembership')
+    working_groups = models.ManyToManyField('WorkingGroup', blank=True)
 
     def __unicode__(self):
         return self.name

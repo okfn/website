@@ -69,6 +69,12 @@
       </li>
     </ul>{% endfor %}
     {% endif %}
+    {% if object.working_groups.all %}
+    <h3>Our Main Interests</h3>
+    {% for group in object.working_groups.all %}<ul>
+      <li>{{ group.name }}</li>
+    </ul>{% endfor %}
+    {% endif %}
   </div>
 </div>
 {% endblock %}

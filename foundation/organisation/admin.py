@@ -71,11 +71,15 @@ class NetworkGroupMembershipInline(admin.TabularInline):
     model = NetworkGroupMembership
 
 
+class WorkingGroupInNetworksInline(admin.TabularInline):
+    model = NetworkGroup.working_groups.through
+
+
 class NetworkGroupAdmin(reversion.VersionAdmin):
     list_display = ('name', 'country',)
     ordering = ('country', 'name')
-    exclude = ('country_slug', 'region_slug')
+    exclude = ('country_slug', 'region_slug', 'working_groups')
 
-    inlines = [NetworkGroupMembershipInline]
+    inlines = [NetworkGroupMembershipInline, WorkingGroupInNetworksInline]
 
 admin.site.register(NetworkGroup, NetworkGroupAdmin)
