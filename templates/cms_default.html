@@ -1,5 +1,6 @@
 {% extends "general.html" %}
 {% load cms_tags %}
+{% load menu_tags %}
 
 {% block title %}
 {% page_attribute "page_title" %}
@@ -22,4 +23,8 @@
     {% placeholder "main" %}
   </div>
 </div>
+{% endblock %}
+
+{% block breadcrumb %}
+{% show_breadcrumb %}
 {% endblock %}

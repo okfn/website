@@ -40,6 +40,9 @@
 @navbar-default-toggle-icon-bar-bg: @okf-darkgrey;
 @navbar-default-link-hover-bg: darken(@navbar-default-bg, 6.5%);
 
+// Breadcrumbs
+@breadcrumb-bg: @okf-lightgrey;
+
 // Fix up path to glyphicon fonts
 @icon-font-path: "../vendor/bootstrap/fonts/";
 
@@ -212,6 +215,17 @@ header {
       padding-right: 0;
       padding-left: 0;
     }
+  }
+}
+
+#breadcrumb {
+  background-color: @breadcrumb-bg;
+  .breadcrumb {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: transparent;
   }
 }
 

@@ -45,6 +45,16 @@
 
   {% block pagebanner %}{% endblock %}
 
+  {% block breadcrumb-sheath %}
+  <div id='breadcrumb' role='navigation'>
+    <div class='container'>
+      <ol class='breadcrumb'>
+        {% block breadcrumb %}{% endblock %}
+      </ol>
+    </div>
+  </div>
+  {% endblock %}
+
   <div id='main' class='container {% block main-class %}{% endblock %}'>
     {% block body %}{% endblock %}
   </div>
