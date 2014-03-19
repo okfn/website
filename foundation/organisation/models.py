@@ -164,7 +164,7 @@ class NetworkGroupManager(models.Manager):
     def countries(self):
         return self.get_queryset().filter(region_slug__isnull=True)
 
-    def locals(self, country):
+    def regions(self, country):
         return self.get_queryset().filter(country_slug=country,
                                           region_slug__isnull=False)
 
@@ -227,7 +227,6 @@ class NetworkGroupMembership(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     title = models.CharField(max_length=100)
-    role = models.CharField(max_length=100)
     networkgroup = models.ForeignKey('NetworkGroup')
     person = models.ForeignKey('Person')
 

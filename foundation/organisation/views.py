@@ -2,7 +2,8 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.shortcuts import get_object_or_404
 
-from .models import Board, Project, WorkingGroup
+from .models import (Board, Project, WorkingGroup, NetworkGroup,
+                     NetworkGroupMembership)
 
 
 class BoardView(DetailView):
@@ -37,4 +38,33 @@ class WorkingGroupListView(ListView):
         context = super(WorkingGroupListView, self).get_context_data(**kwargs)
         context['incubator_list'] = WorkingGroup.objects.incubators()
 
+        return context
+
+
+class NetworkGroupDetailView(DetailView):
+    model = NetworkGroup
+
+    def get_object(self):
+        country = self.kwargs.get('country', None)
+        region = self.kwargs.get('region', None)
+        return get_object_or_404(NetworkGroup,
+                                 country_slug=country,
+                                 region_slug=region)
+
+    def get_context_data(self, **kwargs):
+        context = super(NetworkGroupDetailView, self).get_context_data(**kwargs)
+
+        # For country we want all members but only regional members for regions
+        country = self.kwargs.get('country', None)
+        region = self.kwargs.get('region', None)
+        if region is None:
+            context['regional_groups'] = NetworkGroup.objects.regions(country)
+            members = NetworkGroupMembership.objects.filter(
+                networkgroup__country_slug=country)
+        else:
+            members = NetworkGroupMembership.objects.filter(
+                networkgroup__country_slug=country,
+                networkgroup__region_slug=region)
+
+        context['group_members'] = members
         return context
