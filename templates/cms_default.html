@@ -7,7 +7,17 @@
 {% endblock %}
 
 {% block pagebanner %}
-<div id='page-banner' class='{% block pagebanner-class %}{% endblock %}'>
+<div 
+  id='page-banner' 
+  {% with banner=request.current_page.pagebannerextension %}
+  {% if banner %} 
+  style='background-image: url("{{ banner.banner_image.url }}");
+         min-height: {{ banner.banner_image.height }}px;
+        {% if banner.background_color %}background-color: {{ banner.background_color }};{% endif %}
+        {% if banner.font_color %}color: {{ banner.font_color }};{% endif %}'
+  {% endif %}
+  {% endwith %}
+  >
   <div class='container'>
     {% block pagebanner-inner %}
       <h2>{% page_attribute "page_title" %}</h2>

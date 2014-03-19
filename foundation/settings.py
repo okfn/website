@@ -112,6 +112,7 @@ INSTALLED_APPS = (
     'sekizai',
 
     # Custom apps
+    'foundation.djangocms_pagebanner',
     'foundation.djangocms_submenu',
     'foundation.jobs',
     'foundation.press',
