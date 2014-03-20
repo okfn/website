@@ -1,0 +1,31 @@
+{% load markdown_deux_tags %}
+{% load thumbnail %}
+
+<h3>
+  <a href="{% if networkgroup.region %}{% url "network-region" country=networkgroup.country_slug region=networkgroup.region_slug %}{% else %}{% url "network-country" country=networkgroup.country_slug %}{% endif %}">
+    {{networkgroup.get_group_type_display }}: {{ networkgroup.name }}
+  </a>
+</h3>
+<div class="row">
+  <div class="col-md-8">
+    {{ networkgroup.description|markdown }}
+    <p>
+      <i class="fa fa-globe fa-large"></i>
+      {% if networkgroup.region %}{{ networkgroup.region }}, {% endif %}{{ networkgroup.get_country_display }}
+      {% if networkgroup.homepage %}
+      <i class="fa fa-link fa-large"></i>
+      <a href="{{ networkgroup.homepage }}">{{ networkgroup.homepage }}</a>
+      {% endif %}
+      {% if networkgroup.mailinglist %}
+      <i class="fa fa-envelope fa-large"></i>
+      <a href="{{ networkgroup.mailinglist }}">Mailing list</a>
+      {% endif %}
+      {% if networkgroup.twitter %}
+      <i class="fa fa-twitter fa-large"></i>
+      <a href="http://twitter.com/{{ networkgroup.twitter}}">
+        @{{ networkgroup.twitter }}
+      </a>
+      {% endif %}
+    </p>
+  </div>
+</div>
