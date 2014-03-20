@@ -191,6 +191,8 @@ class NetworkGroup(models.Model):
     mailinglist = models.URLField(blank=True, null=True)
     homepage = models.URLField(blank=True, null=True)
     twitter = models.CharField(max_length=18, blank=True, null=True)
+    facebook = models.URLField(blank=True, null=True)
+    youtube = models.URLField(blank=True, null=True)
 
     position = GeopositionField(blank=True, null=True)
 

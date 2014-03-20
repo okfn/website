@@ -1,6 +1,10 @@
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.shortcuts import get_object_or_404
+from django.http import HttpResponse
+
+from iso3166 import countries
+import unicodecsv
 
 from .models import (Board, Project, WorkingGroup, NetworkGroup,
                      NetworkGroupMembership)
@@ -69,3 +73,54 @@ class NetworkGroupDetailView(DetailView):
 
         context['group_members'] = members
         return context
+
+
+def networkgroup_csv_output(request):
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="network.csv"'
+
+    writer = unicodecsv.writer(response)
+    header_row = ['ISO3', 'Country', 'Geo coordinates', 'Map location',
+                  'Local Groups status', 'Community Leaders', 'Website',
+                  'Mailing List', 'Twitter handle', 'Youtube channel',
+                  'Facebook page']
+
+    working_groups = []
+    for group in WorkingGroup.objects.all():
+        topic = u'Topic: {0}'.format(group.name)
+        working_groups.append(topic)
+    header_row.extend(working_groups)
+
+    writer.writerow(header_row)
+
+    for group in NetworkGroup.objects.all():
+        row = [countries.get(group.country.code).alpha3,  # ISO3
+               group.get_country_display(),  # Country
+               u'{lat},{lon}'.format(
+                   lat=group.position.latitude,
+                   lon=group.position.longitude
+                   ) if group.position.latitude else '',  # Geo coordinates
+               u'{region}, {country}'.format(
+                   region=group.region,
+                   country=group.get_country_display()
+                   ) if group.region else '',  # Map location
+               group.get_group_type_display(),  # Local group status
+               u', '.join([member.name
+                          for member in group.members.all()]),  # Leaders
+               group.homepage if group.homepage else '',  # Website
+               group.mailinglist if group.mailinglist else '',
+               group.twitter if group.twitter else '',
+               group.youtube if group.youtube else '',
+               group.facebook if group.facebook else '']
+
+        # Find topics of working group
+        group_working_groups = [g.name for g in group.working_groups.all()]
+        for working_group in working_groups:
+            if working_group[len('Topic: '):] in group_working_groups:
+                row.append('Y')
+            else:
+                row.append('')
+
+        writer.writerow(row)
+
+    return response
