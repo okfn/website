@@ -3,7 +3,10 @@ from django.utils.html import escape
 from django.test.utils import override_settings
 from django_webtest import WebTest
 
+from geoposition import Geoposition
+
 from ..models import (Board, Person, Project, Unit, Theme, WorkingGroup,
+                      NetworkGroup, NetworkGroupMembership,
                       BoardMembership, UnitMembership)
 
 
@@ -313,3 +316,189 @@ class WorkingGroupListViewTest(WebTest):
         csv = response.body.find(self.csv.name)
         government = response.body.find(self.government.name)
         self.assertTrue(csv < government)
+
+@override_settings(ROOT_URLCONF='foundation.tests.urls')
+class NetworkGroupDetailViewTest(WebTest):
+    def setUp(self):  # flake8: noqa
+
+        self.government = WorkingGroup.objects.create(
+            name='Open Government',
+            slug='open-government',
+            description='We work toward open governments around the world',
+            url='http://opengov.org',
+            incubation=False
+            )
+
+        self.lobbying = WorkingGroup.objects.create(
+            name='Lobbying Transparency',
+            slug='lobbying-transparency',
+            description='We want hotel lobbies made out of glass',
+            url='http://transparent.lobby.org',
+            incubation=False
+            )
+
+        self.otto = Person.objects.create(
+            name='Otto von Bismarck',
+            description='The oldest member and Duke of Lauenburg',
+            email='bismarck@bismarck.org',
+            twitter='busymark',
+            url='http://betterthanwinston.de'
+            )
+
+        self.winston = Person.objects.create(
+            name='Sir Winston Churchill',
+            description='Grandson of the 7th Duke of Marlborough',
+            email='winston@okfn.org',
+            twitter='ftw_stn',
+            url='http://forthewinston.org'
+            )
+
+        self.elizabeth = Person.objects.create(
+            name='Elizabeth Angela Marguerite Bowes-Lyon',
+            description='I am no duke, I am the queen',
+            email='queen@monarch.me',
+            twitter='thequeen',
+            url='http://monarch.me/'
+            )
+
+        self.britain = NetworkGroup.objects.create(
+            name='Open Knowledge Foundation Britan',
+            group_type=0, # local group
+            description='Bisquits, tea, and open data',
+            country='GB',
+            mailinglist='http://lists.okfn.org/okfn-britain',
+            homepage='http://gb.okfn.org/',
+            twitter='OKFNgb'
+            )
+      
+        self.buckingham = NetworkGroup.objects.create(
+            name='Open Knowledge Buckingham',
+            group_type=0, # local group
+            description='We run the Open Palace project',
+            country='GB',
+            region=u'Buckingham',
+            position=Geoposition(51.501364, -0.141890),
+            homepage='http://queen.okfn.org/',
+            twitter='buckingham'
+            )
+
+
+        self.germany = NetworkGroup.objects.create(
+            name='Open Knowledge Foundation Germany',
+            group_type=1, # chapter
+            description='Haben Sie ein Kugelschreiber bitte?',
+            country='DE',
+            mailinglist='http://lists.okfn.org/okfn-de',
+            homepage='http://de.okfn.org/',
+            twitter='OKFNde'
+            )
+
+        self.otto_germany = NetworkGroupMembership.objects.create(
+            networkgroup=self.germany,
+            person=self.otto,
+            title='First chancellor'
+            )
+
+        self.winston_britain = NetworkGroupMembership.objects.create(
+            networkgroup=self.britain,
+            person=self.winston,
+            title='Prime minister with intervals'
+            )
+
+        self.elizabeth_britain = NetworkGroupMembership.objects.create(
+            networkgroup=self.buckingham,
+            person=self.elizabeth,
+            title='Regent maker'
+            )
+
+        self.britain.working_groups.add(self.government)
+        self.buckingham.working_groups.add(self.lobbying)
+        self.germany.working_groups.add(self.government)
+        self.germany.working_groups.add(self.lobbying)
+
+    def test_country_group(self):
+        response = self.app.get(
+            reverse('network-country',
+                    kwargs={'country': self.britain.country_slug}))
+
+        self.assertIn(self.britain.name, response.body)
+
+        self.assertIn(self.britain.get_group_type_display().lower(),
+                      response.body.lower())
+        self.assertNotIn(self.germany.get_group_type_display().lower(),
+                         response.body.lower())
+
+        self.assertIn(self.britain.description, response.body)
+        self.assertIn(self.britain.get_country_display(), response.body)
+        self.assertIn(self.britain.homepage, response.body)
+        self.assertIn(self.britain.mailinglist, response.body)
+        self.assertIn(self.britain.twitter, response.body)
+
+        self.assertIn(self.winston.name, response.body)
+        self.assertIn(self.winston_britain.title, response.body)
+        self.assertIn(self.elizabeth.name, response.body)
+        self.assertIn(self.elizabeth_britain.title, response.body)
+        self.assertNotIn(self.otto.name, response.body)
+
+        self.assertIn(self.buckingham.name, response.body)
+        self.assertNotIn(self.buckingham.description, response.body)
+        self.assertNotIn(self.germany.name, response.body)
+
+    def test_regional_group(self):
+        response = self.app.get(
+            reverse('network-region',
+                    kwargs={'country': self.buckingham.country_slug,
+                            'region': self.buckingham.region_slug}))
+
+        self.assertIn(self.buckingham.name, response.body)
+        
+        self.assertIn(self.buckingham.description, response.body)
+
+        self.assertIn(self.buckingham.get_country_display(), response.body)
+        self.assertIn(self.buckingham.region, response.body)
+
+        self.assertIn(self.buckingham.homepage, response.body)
+        self.assertNotIn(self.britain.homepage, response.body)
+        self.assertNotIn(self.britain.mailinglist, response.body)
+        self.assertIn(self.buckingham.twitter, response.body)
+        self.assertNotIn(self.britain.twitter, response.body)
+
+        self.assertIn(self.elizabeth.name, response.body)
+        self.assertIn(self.elizabeth_britain.title, response.body)
+        self.assertNotIn(self.winston.name, response.body)
+        self.assertNotIn(self.otto.name, response.body)
+
+        self.assertIn(reverse('network-country',
+                              kwargs={'country':self.buckingham.country_slug}),
+                      response.body)
+        self.assertNotIn(self.britain.description, response.body)
+        self.assertNotIn(self.germany.name, response.body)
+
+
+    def test_workinggroups_in_networks(self):
+
+        britain = self.app.get(
+            reverse('network-country',
+                    kwargs={'country': self.britain.country_slug}))
+
+        # Britain is a single working group country and should not show
+        # regional group working groups
+        self.assertIn(self.government.name, britain.body)
+        self.assertNotIn(self.lobbying.name, britain.body)
+
+        buckingham = self.app.get(
+            reverse('network-region',
+                    kwargs={'country': self.buckingham.country_slug,
+                            'region': self.buckingham.region_slug}))
+
+        # Regional groups should not inherit working groups of country group
+        self.assertIn(self.lobbying.name, buckingham.body)
+        self.assertNotIn(self.government.name, buckingham.body)
+
+        germany = self.app.get(
+            reverse('network-country',
+                    kwargs={'country': self.germany.country_slug}))
+
+        # Germany has many groups and they should all be shown
+        self.assertIn(self.government.name, germany.body)
+        self.assertIn(self.lobbying.name, germany.body)

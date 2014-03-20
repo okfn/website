@@ -204,7 +204,7 @@ class NetworkGroup(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
-        if self.twitter.startswith('@'):
+        if self.twitter and self.twitter.startswith(u'@'):
             self.twitter = self.twitter[1:]
 
         # Slug is either the country slugified or the region
@@ -227,7 +227,7 @@ class NetworkGroup(models.Model):
                                    'region': self.region_slug})
         else:
             return reverse('network-country',
-                           kwargs={'country':self.country_slug})
+                           kwargs={'country': self.country_slug})
 
     class Meta:
         unique_together = ('country', 'region')

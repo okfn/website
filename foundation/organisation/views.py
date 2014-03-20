@@ -52,7 +52,8 @@ class NetworkGroupDetailView(DetailView):
                                  region_slug=region)
 
     def get_context_data(self, **kwargs):
-        context = super(NetworkGroupDetailView, self).get_context_data(**kwargs)
+        context = super(NetworkGroupDetailView, self)\
+            .get_context_data(**kwargs)
 
         # For country we want all members but only regional members for regions
         country = self.kwargs.get('country', None)
