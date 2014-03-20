@@ -4,6 +4,9 @@ from django.test.utils import override_settings
 from django_webtest import WebTest
 
 from geoposition import Geoposition
+from iso3166 import countries
+from StringIO import StringIO
+import unicodecsv
 
 from ..models import (Board, Person, Project, Unit, Theme, WorkingGroup,
                       NetworkGroup, NetworkGroupMembership,
@@ -502,3 +505,57 @@ class NetworkGroupDetailViewTest(WebTest):
         # Germany has many groups and they should all be shown
         self.assertIn(self.government.name, germany.body)
         self.assertIn(self.lobbying.name, germany.body)
+
+    def test_csv_output(self):
+        response = self.app.get(reverse('networkgroups-csv'))
+        csv = unicodecsv.reader(StringIO(response.body))
+
+        header_row = csv.next()
+
+        # Headers need to be on a specific form
+        headers = ['ISO3', 'Country', 'Geo coordinates', 'Map location',
+                   'Local Groups status', 'Community Leaders', 'Website',
+                   'Mailing List', 'Twitter handle', 'Youtube channel',
+                   'Facebook page']
+        for group in WorkingGroup.objects.all():
+            headers.append('Topic: {0}'.format(group.name))
+        
+        self.assertEqual(header_row, headers)
+
+        germany = csv.next()
+        germany_data = [countries.get(self.germany.country.code).alpha3,
+                        self.germany.get_country_display(),
+                        '', '', self.germany.get_group_type_display(),
+                        ', '.join([m.name for m in self.germany.members.all()]),
+                        self.germany.homepage, self.germany.mailinglist,
+                        self.germany.twitter, '', '', 'Y', 'Y']
+
+        self.assertEqual(germany, germany_data)
+
+        britain = csv.next()
+        britain_data = [countries.get(self.britain.country.code).alpha3,
+                        self.britain.get_country_display(),
+                        '', '', self.britain.get_group_type_display(),
+                        ', '.join([m.name for m in self.britain.members.all()]),
+                        self.britain.homepage, self.britain.mailinglist,
+                        self.britain.twitter, '', '', '', 'Y']
+
+        self.assertEqual(britain, britain_data)
+
+        buckingham = csv.next()
+        buckingham_data = [
+            countries.get(self.buckingham.country.code).alpha3,
+            self.buckingham.get_country_display(),
+            '{lat},{lon}'.format(
+                lat=self.buckingham.position.latitude,
+                lon=self.buckingham.position.longitude
+                ),
+            '{region}, {country}'.format(
+                region=self.buckingham.region,
+                country=self.buckingham.get_country_display()
+                ),
+            self.buckingham.get_group_type_display(),
+            ', '.join([m.name for m in self.buckingham.members.all()]),
+            self.buckingham.homepage,
+            self.buckingham.mailinglist,
+            self.buckingham.twitter, '', '', 'Y', '']

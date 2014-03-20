@@ -158,6 +158,9 @@ class WorkingGroup(models.Model):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        ordering = ('name',)
+
 
 class NetworkGroupManager(models.Manager):
 
@@ -233,6 +236,7 @@ class NetworkGroup(models.Model):
 
     class Meta:
         unique_together = ('country', 'region')
+        ordering = ('country', 'region')
 
 # Since the GeopositionField inherits from model.Field and not a core
 # Django Field (like for example CountryField which inherits from CharField)
