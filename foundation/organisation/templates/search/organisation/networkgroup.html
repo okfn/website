@@ -26,6 +26,18 @@
         @{{ networkgroup.twitter }}
       </a>
       {% endif %}
+      {% if object.facebook %}
+      <i class="fa fa-facebook-square fa-large"></i>
+      <a href="{{ object.facebook }}">
+        Facebook page
+      </a>
+      {% endif %}
+      {% if object.youtube %}
+      <i class="fa fa-youtube fa-large"></i>
+      <a href="http://youtube.com/user/{{ object.youtube }}">
+        YouTube channel
+      </a>
+      {% endif %}
     </p>
   </div>
 </div>

@@ -12,20 +12,7 @@
 
 {% block body %}
 <div class="row">
-  <div class="col-md-9 col-md-push-3">
-    <h3>Members</h3>
-    {% with skip_email=True %}
-    {% for member in group_members %}
-      {% include "organisation/member.html" %}
-    {% endfor %}
-    {% endwith %}
-
-    {% if object.extra_information %}
-    <h3>More information</h3>
-    {{ object.extra_information|markdown }}
-    {% endif %}
-  </div>
-  <div class="sidebar col-md-3 col-md-pull-9">
+<div class="sidebar col-md-3">
     <h3>Our {{ object.get_group_type_display|title }}</h3>
     <ul>
       <li>
@@ -55,8 +42,24 @@
       {% if object.twitter %}
       <li>
         <i class="fa fa-twitter fa-large"></i>
-        <a href="http://twitter.com/{{ object.twitter}}">
+        <a href="http://twitter.com/{{ object.twitter }}">
           @{{ object.twitter }}
+        </a>
+      </li>
+      {% endif %}
+      {% if object.facebook %}
+      <li>
+        <i class="fa fa-facebook-square fa-large"></i>
+        <a href="{{ object.facebook }}">
+          Facebook page
+        </a>
+      </li>
+      {% endif %}
+      {% if object.youtube %}
+      <li>
+        <i class="fa fa-youtube fa-large"></i>
+        <a href="http://youtube.com/user/{{ object.youtube }}">
+          YouTube channel
         </a>
       </li>
       {% endif %}
@@ -72,6 +75,19 @@
     {% for group in object.working_groups.all %}<ul>
       <li>{{ group.name }}</li>
     </ul>{% endfor %}
+    {% endif %}
+  </div>
+  <div class="col-md-9">
+    <h3>Members</h3>
+    {% with skip_email=True %}
+    {% for member in group_members %}
+      {% include "organisation/member.html" %}
+    {% endfor %}
+    {% endwith %}
+
+    {% if object.extra_information %}
+    <h3>More information</h3>
+    {{ object.extra_information|markdown }}
     {% endif %}
   </div>
 </div>

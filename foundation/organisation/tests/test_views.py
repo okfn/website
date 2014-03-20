@@ -382,7 +382,9 @@ class NetworkGroupDetailViewTest(WebTest):
             region=u'Buckingham',
             position=Geoposition(51.501364, -0.141890),
             homepage='http://queen.okfn.org/',
-            twitter='buckingham'
+            twitter='buckingham',
+            facebook='http://facebook.com/queenthepersonnottheband',
+            youtube='Queenovision'
             )
 
 
@@ -465,6 +467,8 @@ class NetworkGroupDetailViewTest(WebTest):
         self.assertNotIn(self.britain.mailinglist, response.body)
         self.assertIn(self.buckingham.twitter, response.body)
         self.assertNotIn(self.britain.twitter, response.body)
+        self.assertIn(self.buckingham.facebook, response.body)
+        self.assertIn(self.buckingham.youtube, response.body)
 
         self.assertIn(self.elizabeth.name, response.body)
         self.assertIn(self.elizabeth_britain.title, response.body)
