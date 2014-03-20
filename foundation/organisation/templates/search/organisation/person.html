@@ -21,7 +21,7 @@
     {% endfor %}
     {% for membership in person.networkgroupmembership_set.all %}
     <p>
-      <i class="fa fa-hand-o-right fa-large"></i> <a href="{% if membership.networkgroup.region %}{% url "network-region" country=membership.networkgroup.country_slug region=membership.networkgroup.region_slug %}{% else %}{% url "network-country" country=membership.networkgroup.country_slug %}{% endif %}">{{ membership.networkgroup.name }} ({{ membership.title }})</a>
+      <i class="fa fa-hand-o-right fa-large"></i> <a href="{{ membership.networkgroup.get_absolute_url }}">{{ membership.networkgroup.name }} ({{ membership.title }})</a>
     {% endfor %}
     {{ person.description|markdown }}
   </div>

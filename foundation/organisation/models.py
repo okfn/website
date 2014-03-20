@@ -216,6 +216,19 @@ class NetworkGroup(models.Model):
 
         super(NetworkGroup, self).save(*args, **kwargs)
 
+    def get_absolute_url(self):
+        from django.core.urlresolvers import reverse
+        # Because reverse can't be smart about conditional parameters
+        # we have to have two different urls depending on if it is a
+        # country or a region group
+        if self.region:
+            return reverse('network-region',
+                           kwargs={'country': self.country_slug,
+                                   'region': self.region_slug})
+        else:
+            return reverse('network-country',
+                           kwargs={'country':self.country_slug})
+
     class Meta:
         unique_together = ('country', 'region')
 

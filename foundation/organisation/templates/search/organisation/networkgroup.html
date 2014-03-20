@@ -2,7 +2,7 @@
 {% load thumbnail %}
 
 <h3>
-  <a href="{% if networkgroup.region %}{% url "network-region" country=networkgroup.country_slug region=networkgroup.region_slug %}{% else %}{% url "network-country" country=networkgroup.country_slug %}{% endif %}">
+  <a href="{{ networkgroup.get_absolute_url }}">
     {{networkgroup.get_group_type_display }}: {{ networkgroup.name }}
   </a>
 </h3>
