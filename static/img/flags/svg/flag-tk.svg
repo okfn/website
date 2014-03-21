@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="256" id="Flag_of_New_Zealand" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="Flag_of_Tokelau.svg" sodipodi:version="0.32" version="1.0" viewBox="-15 -7.5 30 15" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="Flag_of_New_Zealand" inkscape:cx="600" inkscape:cy="300" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="677" inkscape:window-width="1038" inkscape:window-x="4" inkscape:window-y="188" inkscape:zoom="0.46583333" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <defs id="defs3">
+    <inkscape:perspective id="perspective3483" inkscape:persp3d-origin="600 : 200 : 1" inkscape:vp_x="0 : 300 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="1200 : 300 : 1" sodipodi:type="inkscape:persp3d"/>
+    <clipPath id="border">
+      <rect height="15" id="rect6" width="30" x="-15" y="-7.5"/>
+    </clipPath>
+  </defs>
+  <rect height="15" id="rect8" style="fill:#020266;fill-opacity:1" width="30" x="-15" y="-7.5"/>
+  <comment id="comment10">The above line is the ensign field color: #CF142B red and #00247D blue</comment>
+  <g id="g3240" transform="matrix(0.7082335,0,0,0.7082335,-15.952202,-2.4349284)">
+    <path d="M 6.3655002,-4.8686952 L 7.2322578,-4.8686952 L 7.5000002,-5.6930056 L 7.7677418,-4.8686952 L 8.6345002,-4.8686952 L 7.9333794,-4.359316 L 8.201121,-3.5350056 L 7.5000002,-4.0443856 L 6.7988794,-3.5350056 L 7.066621,-4.359316 L 6.3655002,-4.8686952 z" id="path11001" style="fill:#ffffff"/>
+    <path d="M 2.8995002,-1.3816942 L 3.7662578,-1.3816942 L 4.0340002,-2.2060046 L 4.3017418,-1.3816942 L 5.1685002,-1.3816942 L 4.4673794,-0.872315 L 4.735121,-0.0480046 L 4.0340002,-0.5573846 L 3.3328794,-0.0480046 L 3.600621,-0.872315 L 2.8995002,-1.3816942 z" id="path2185" style="fill:#ffffff"/>
+    <path d="M 9.4619979,-2.246605 L 10.233255,-2.246605 L 10.471498,-2.9800047 L 10.709739,-2.246605 L 11.480997,-2.246605 L 10.857127,-1.7934037 L 11.095368,-1.060004 L 10.471498,-1.513206 L 9.8476269,-1.060004 L 10.085868,-1.7934037 L 9.4619979,-2.246605 z" id="path2191" style="fill:#ffffff"/>
+    <path d="M 6.2410005,4.0917423 L 7.2032583,4.0917423 L 7.5005009,3.1749929 L 7.7977425,4.0917423 L 8.7600012,4.0917423 L 7.9816302,4.6582438 L 8.2788719,5.5749932 L 7.5005009,5.0084908 L 6.7221299,5.5749932 L 7.0193715,4.6582438 L 6.2410005,4.0917423 z" id="path2197" style="fill:#ffffff"/>
+  </g>
+  <path d="M -15,7.5 C -5.3700461,2.6967347 -1.3386154,-3.2543654 9.0277772,-7.5 L 9.0277772,-7.5 C 6.213984,-3.93968 6.7949867,4.1169188 15,7.4525317 L -15,7.5 z" id="path3248" style="fill:#ffcc01;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+  <rect height="0.75" id="rect5209" style="opacity:1;fill:#020266;fill-opacity:1;stroke:none;stroke-opacity:1" width="30" x="-15" y="6"/>
+</svg>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="256" id="svg1353" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="Flag_of_Samoa.svg" sodipodi:version="0.32" version="1.0" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="svg1353" inkscape:cx="1440" inkscape:cy="720" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="690" inkscape:window-width="958" inkscape:window-x="5" inkscape:window-y="139" inkscape:zoom="0.19409722" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <defs id="defs1358">
+    <inkscape:perspective id="perspective3942" inkscape:persp3d-origin="1440 : 480 : 1" inkscape:vp_x="0 : 720 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="2880 : 720 : 1" sodipodi:type="inkscape:persp3d"/>
+  </defs>
+  <rect height="128" id="red area" style="fill:#ce1126" width="256" x="0" y="64"/>
+  <rect height="64" id="blue quarter" style="fill:#002b7f" width="128" x="0" y="64"/>
+  <polygon id="polygon1441" points="0,-1 0.58778525,0.80901699 -0.95105652,-0.30901699 0.95105652,-0.30901699 -0.58778525,0.80901699 0,-1 " style="fill:#ffffff" transform="matrix(9.3463307,0,0,9.3463307,63.999994,117.772)"/>
+  <polygon id="polygon1449" points="0,-1 0.58778525,0.80901699 -0.95105652,-0.30901699 0.95105652,-0.30901699 -0.58778525,0.80901699 0,-1 " style="fill:#ffffff" transform="matrix(7.4770629,0,0,7.3704854,44.44444,90.0372)"/>
+  <polygon id="polygon1451" points="0,-1 0.58778525,0.80901699 -0.95105652,-0.30901699 0.95105652,-0.30901699 -0.58778525,0.80901699 0,-1 " style="fill:#ffffff" transform="matrix(7.0097475,0,0,6.8791197,83.999992,86.8791)"/>
+  <use height="144" id="use2402" transform="translate(19.555556,-16)" width="288" x="0" xlink:href="#polygon1449" y="0"/>
+  <polygon id="polygon1455" points="0,-1 0.58778525,0.80901699 -0.95105652,-0.30901699 0.95105652,-0.30901699 -0.58778525,0.80901699 0,-1 " style="fill:#ffffff" transform="matrix(4.673164,0,0,4.673164,73.777771,101.1082)"/>
+</svg>

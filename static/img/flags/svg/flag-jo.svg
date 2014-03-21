@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="256" id="svg4639" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="Flag_of_Jordan.svg" sodipodi:version="0.32" version="1.0" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="svg4639" inkscape:cx="304.50805" inkscape:cy="150" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="674" inkscape:window-width="834" inkscape:window-x="76" inkscape:window-y="298" inkscape:zoom="0.93166667" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <defs id="defs4641">
+    <inkscape:perspective id="perspective2502" inkscape:persp3d-origin="300 : 100 : 1" inkscape:vp_x="0 : 150 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="600 : 150 : 1" sodipodi:type="inkscape:persp3d"/>
+  </defs>
+  <rect height="42.666668" id="rect4648" style="fill:#000000" width="256" x="0" y="63.999989"/>
+  <rect height="42.666668" id="rect5270" style="fill:#ffffff" width="256" x="0" y="106.66666"/>
+  <rect height="42.666668" id="rect5892" style="fill:#007a3d" width="256" x="0" y="149.33333"/>
+  <path d="M 0,63.999989 L 128,127.99999 L 0,191.99999 L 0,63.999989 z" id="path7135" style="fill:#ce1126"/>
+  <path d="M 40.58244,118.19874 L 38.529836,123.34534 L 33.237626,121.70428 L 35.98161,126.51793 L 31.398948,129.63237 L 36.873248,130.48829 L 36.450978,136.01299 L 40.533333,132.26666 L 44.589436,136.04139 L 44.205747,130.51388 L 49.685879,129.6962 L 45.125077,126.54984 L 47.902601,121.75548 L 42.599065,123.35954 L 40.58244,118.19874 z" id="path7757" style="fill:#ffffff"/>
+</svg>

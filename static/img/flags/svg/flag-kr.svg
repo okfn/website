@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="256" id="svg6159" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="Flag_of_South_Korea.svg" sodipodi:version="0.32" version="1.0" viewBox="-72 -48 144 96" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="svg6159" inkscape:cx="450" inkscape:cy="300" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="793" inkscape:window-width="916" inkscape:window-x="-22" inkscape:window-y="21" inkscape:zoom="0.62111111" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <defs id="defs6161">
+    <inkscape:perspective id="perspective6206" inkscape:persp3d-origin="450 : 200 : 1" inkscape:vp_x="0 : 300 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="900 : 300 : 1" sodipodi:type="inkscape:persp3d"/>
+    <rect height="4" id="b1" width="24" x="-12" y="-2"/>
+    <g id="b2">
+      <rect height="4" id="rect6165" width="11" x="-12" y="-2"/>
+      <rect height="4" id="rect6167" width="11" x="1" y="-2"/>
+    </g>
+  </defs>
+  <rect height="96" id="rect6169" style="fill:#ffffff" width="144" x="-72" y="-48"/>
+  <g id="g6171" transform="matrix(0.5546992,0.8320509,-0.8320509,0.5546992,0,0)">
+    <!--arctan(3/2)-->
+    <use height="96" id="use6173" transform="translate(0,-38)" width="144" x="0" xlink:href="#b2" y="0"/>
+    <use height="96" id="use6175" transform="translate(0,-44)" width="144" x="0" xlink:href="#b1" y="0"/>
+    <use height="96" id="use6177" transform="translate(0,-50)" width="144" x="0" xlink:href="#b2" y="0"/>
+    <use height="96" id="use6179" transform="translate(0,38)" width="144" x="0" xlink:href="#b1" y="0"/>
+    <use height="96" id="use6181" transform="translate(0,44)" width="144" x="0" xlink:href="#b2" y="0"/>
+    <use height="96" id="use6183" transform="translate(0,50)" width="144" x="0" xlink:href="#b1" y="0"/>
+  </g>
+  <g id="g6185" transform="matrix(0.5546992,-0.8320509,0.8320509,0.5546992,0,0)">
+    <!--arctan(-3/2)-->
+    <use height="96" id="use6187" transform="translate(0,-38)" width="144" x="0" xlink:href="#b1" y="0"/>
+    <use height="96" id="use6189" transform="translate(0,-44)" width="144" x="0" xlink:href="#b1" y="0"/>
+    <use height="96" id="use6191" transform="translate(0,-50)" width="144" x="0" xlink:href="#b1" y="0"/>
+    <use height="96" id="use6193" transform="translate(0,38)" width="144" x="0" xlink:href="#b2" y="0"/>
+    <use height="96" id="use6195" transform="translate(0,44)" width="144" x="0" xlink:href="#b2" y="0"/>
+    <use height="96" id="use6197" transform="translate(0,50)" width="144" x="0" xlink:href="#b2" y="0"/>
+    <path d="M 0,24 C 13.254834,24 24,13.254834 24,0 C 24,-13.254834 13.254834,-24 1.4695762e-15,-24 C -9.9411255,-24 -18,-15.941125 -18,-6 C -18,3.9411255 -9.9411255,12 -3.3065464e-15,12" id="path6199" style="fill:#c60c30"/>
+    <path d="M 0,-24 C -6.627417,-24 -12,-18.627417 -12,-12 C -12,-5.372583 -6.627417,-1.2174368e-15 -2.2043642e-15,0 C 6.627417,4.0581225e-16 12,5.372583 12,12 C 12,18.627417 6.627417,24 7.3478808e-16,24 C -13.254834,24 -24,13.254834 -24,2.9391523e-15 C -24,-13.254834 -13.254834,-24 -4.4087285e-15,-24" id="path6201" style="fill:#003478"/>
+  </g>
+</svg>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="256" id="svg2596" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" preserveAspectRatio="xMidYMid meet" sodipodi:docname="Flag_of_the_Solomon_Islands.svg" sodipodi:version="0.32" version="1.0" viewBox="-35 -30 200 100" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" zoomAndPan="magnify">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="svg2596" inkscape:cx="500" inkscape:cy="250" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="723" inkscape:window-width="819" inkscape:window-x="31" inkscape:window-y="4" inkscape:zoom="0.559" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <defs id="defs2598">
+    <inkscape:perspective id="perspective2633" inkscape:persp3d-origin="500 : 166.66667 : 1" inkscape:vp_x="0 : 250 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="1000 : 250 : 1" sodipodi:type="inkscape:persp3d"/>
+    <clipPath id="rect">
+      <rect height="100" id="rect2601" width="200" x="-35" y="-30"/>
+    </clipPath>
+  </defs>
+  <rect height="100" id="rect2603" style="fill:#215b33" width="200" x="-35" y="-30"/>
+  <path d="M -35,-30 L 165,-30 L -35,70" id="path2605" style="fill:#0051ba"/>
+  <line clip-path="url(#rect)" id="line2607" style="stroke:#fcd116;stroke-width:9" x1="165" x2="-35" y1="-30" y2="70"/>
+  <g id="star" style="fill:#ffffff" transform="scale(10,10)">
+    <g id="cone">
+      <polygon id="triangle" points="0,0 0,1 0.5,1 0,0 " transform="matrix(0.9510565,0.309017,-0.309017,0.9510565,0,-1)"/>
+      <use height="100" id="use2612" transform="scale(-1,1)" width="200" x="0" xlink:href="#triangle" y="0"/>
+    </g>
+    <use height="100" id="use2614" transform="matrix(0.309017,0.9510565,-0.9510565,0.309017,0,0)" width="200" x="0" xlink:href="#cone" y="0"/>
+    <use height="100" id="use2616" transform="matrix(0.309017,-0.9510565,0.9510565,0.309017,0,0)" width="200" x="0" xlink:href="#cone" y="0"/>
+    <use height="100" id="use2618" transform="matrix(-0.809017,0.5877853,-0.5877853,-0.809017,0,0)" width="200" x="0" xlink:href="#cone" y="0"/>
+    <use height="100" id="use2620" transform="matrix(-0.809017,-0.5877853,0.5877853,-0.809017,0,0)" width="200" x="0" xlink:href="#cone" y="0"/>
+  </g>
+  <use height="100" id="use2622" transform="translate(18.384776,18.384776)" width="200" x="0" xlink:href="#star" y="0"/>
+  <use height="100" id="use2624" transform="translate(-18.384776,18.384776)" width="200" x="0" xlink:href="#star" y="0"/>
+  <use height="100" id="use2626" transform="translate(-18.384776,-18.384776)" width="200" x="0" xlink:href="#star" y="0"/>
+  <use height="100" id="use2628" transform="translate(18.384776,-18.384776)" width="200" x="0" xlink:href="#star" y="0"/>
+</svg>

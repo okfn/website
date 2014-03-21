@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="256" id="svg2390" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="Flag_of_Bosnia_and_Herzegovina.svg" sodipodi:version="0.32" version="1.0" viewBox="0 0 200 100" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs2412">
+    <inkscape:perspective id="perspective2416" inkscape:persp3d-origin="500 : 166.66667 : 1" inkscape:vp_x="0 : 250 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="1000 : 250 : 1" sodipodi:type="inkscape:persp3d"/>
+  </defs>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="svg2390" inkscape:cx="500" inkscape:cy="250" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="674" inkscape:window-width="640" inkscape:window-x="56" inkscape:window-y="91" inkscape:zoom="0.559" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <rect height="100" id="rect2392" style="fill:#0d2b88" width="200" x="0" y="0"/>
+  <path d="M 116.91604,94.060661 L 122.5,76.875 L 128.08396,94.060662 L 113.46496,83.439338 L 131.53504,83.439339 L 116.91604,94.060661 z" id="star" style="fill:#ffffff"/>
+  <path d="M 53,0 L 153,0 L 153,100 L 53,0 z" id="path2395" style="fill:#ffd911"/>
+  <path d="M 31.53125,0 L 35,0 L 38.46875,0 L 40.58396,6.560662 L 35,2.5 L 29.41604,6.560661 L 31.53125,0 z" id="path11682" style="fill:#ffffff"/>
+  <path d="M 131.53125,100 L 125.96496,95.939338 L 132.875,95.9375 L 135,89.375 L 137.125,95.9375 L 144.03504,95.939339 L 138.46875,100 L 135,100 L 131.53125,100 z" id="path11689" style="fill:#ffffff"/>
+  <use height="100" id="use2399" transform="translate(-75,-75)" width="200" x="0" xlink:href="#star" y="0"/>
+  <use height="100" id="use2401" transform="translate(-62.5,-62.5)" width="200" x="0" xlink:href="#star" y="0"/>
+  <use height="100" id="use2403" transform="translate(-50,-50)" width="200" x="0" xlink:href="#star" y="0"/>
+  <use height="100" id="use2405" transform="translate(-37.5,-37.5)" width="200" x="0" xlink:href="#star" y="0"/>
+  <use height="100" id="use2407" transform="translate(-24.999998,-25)" width="200" x="0" xlink:href="#star" y="0"/>
+  <use height="100" id="use2409" transform="translate(-12.5,-12.5)" width="200" x="0" xlink:href="#star" y="0"/>
+</svg>

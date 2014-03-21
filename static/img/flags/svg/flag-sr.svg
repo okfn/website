@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="256" id="svg13846" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docbase="D:\Kuvat\Wikipedia" sodipodi:docname="Flag_of_Suriname.svg" sodipodi:version="0.32" version="1.0" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs13848">
+    <inkscape:perspective id="perspective7534" inkscape:persp3d-origin="450 : 200 : 1" inkscape:vp_x="0 : 300 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="900 : 300 : 1" sodipodi:type="inkscape:persp3d"/>
+  </defs>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" id="base" inkscape:current-layer="layer1" inkscape:cx="451.47225" inkscape:cy="402.68044" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="968" inkscape:window-width="1278" inkscape:window-x="0" inkscape:window-y="15" inkscape:zoom="1.3211111" pagecolor="#ffffff" showgrid="true"/>
+  <g id="layer1" inkscape:groupmode="layer" inkscape:label="Layer 1">
+    <rect height="34.133408" id="rect13854" style="fill:#007229;fill-opacity:1;stroke:none;stroke-opacity:1" width="256" x="0" y="42.333"/>
+    <rect height="34.133408" id="rect14731" style="fill:#007229;fill-opacity:1;stroke:none;stroke-opacity:1" width="256" x="0" y="178.86659"/>
+    <rect height="17.066704" id="rect14733" style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-opacity:1" width="256" x="0" y="76.466408"/>
+    <rect height="17.066704" id="rect15608" style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-opacity:1" width="256" x="0" y="161.7999"/>
+    <rect height="68.266815" id="rect15612" style="fill:#d21034;fill-opacity:1;stroke:none;stroke-opacity:1" width="256" x="0" y="93.533096"/>
+    <path d="M 339.10851,387.30026 L 267.15792,334.93188 L 195.11472,387.17278 L 222.68605,302.56099 L 150.73943,250.18716 L 239.73004,250.26257 L 267.30778,165.65286 L 294.73567,250.31127 L 383.72627,250.39342 L 311.68703,302.63978 L 339.10851,387.30026 z" id="path4004" inkscape:flatsided="false" inkscape:randomized="0" inkscape:rounded="0" sodipodi:arg1="0.94336306" sodipodi:arg2="1.5716816" sodipodi:cx="267.19934" sodipodi:cy="288.1413" sodipodi:r1="122.48848" sodipodi:r2="46.7906" sodipodi:sides="5" sodipodi:type="star" style="fill:#ffce00;fill-opacity:1;stroke:none;stroke-opacity:1" transform="matrix(0.286933,0,0,0.2869336,51.303196,48.065479)"/>
+  </g>
+</svg>

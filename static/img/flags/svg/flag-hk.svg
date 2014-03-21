@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="256" id="svg2" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="Flag_of_Hong_Kong.svg" sodipodi:version="0.32" version="1.0" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs4307">
+    <inkscape:perspective id="perspective4311" inkscape:persp3d-origin="450 : 200 : 1" inkscape:vp_x="0 : 300 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="900 : 300 : 1" sodipodi:type="inkscape:persp3d"/>
+  </defs>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="svg2" inkscape:cx="450" inkscape:cy="300" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="689" inkscape:window-width="822" inkscape:window-x="-68" inkscape:window-y="214" inkscape:zoom="0.62111111" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <rect height="170.66701" id="rect3936" style="fill:#de2910" width="256" x="0" y="42.333"/>
+  <g id="petal" transform="matrix(0.2844444,0,0,0.2844449,0,42.332986)">
+    <path d="M 449.96406,299.9134 C 344.70101,255.42714 391.36232,118.33155 492.03362,125.2227 C 471.66753,135.68964 468.71587,155.22042 480.34658,173.31291 C 493.37102,193.56871 479.14761,226.16147 461.54081,234.08031 C 432.60596,247.10474 426.8129,281.8303 449.96406,299.9134 L 449.96406,299.9134 z" id="path3961" style="fill:#ffffff"/>
+    <path d="M 444.27188,200.91974 L 438.35212,210.21352 L 436.20758,199.39932 L 425.52946,196.64004 L 435.15407,191.25054 L 434.48303,180.25099 L 442.56845,187.74044 L 452.82423,183.69773 L 448.2137,193.70715 L 455.21513,202.21256 L 444.27188,200.91974 z" id="path3963" style="fill:#de2910"/>
+    <path d="M 450.56002,298.75902 C 437.82888,292.22451 427.56372,278.60411 423.09163,262.32768 C 417.97665,243.65799 420.91894,223.58521 431.17471,207.29 L 428.96682,205.89629 C 418.32625,222.825 415.27369,243.63922 420.58107,263.01515 C 425.30891,280.23716 435.79462,294.1133 449.3681,301.07953 L 450.56002,298.75902 z" id="path3965" style="fill:#de2910"/>
+  </g>
+  <use height="600" id="use3967" transform="matrix(-0.809017,-0.5877864,0.5877842,-0.809017,156.51037,306.22254)" width="900" x="0" xlink:href="#petal" y="0"/>
+  <use height="600" id="use3969" transform="matrix(-0.809017,0.5877864,-0.5877842,-0.809017,306.5905,155.67633)" width="900" x="0" xlink:href="#petal" y="0"/>
+  <use height="600" id="use3971" transform="matrix(0.309017,0.9510583,-0.9510547,0.309017,210.01651,-33.527059)" width="900" x="0" xlink:href="#petal" y="0"/>
+  <use height="600" id="use3975" transform="matrix(0.309017,-0.9510583,0.9510547,0.309017,-33.08732,209.92622)" width="900" x="0" xlink:href="#petal" y="0"/>
+</svg>

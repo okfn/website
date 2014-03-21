@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="256" id="svg2783" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="Flag_of_Lesotho.svg" sodipodi:version="0.32" version="1.0" viewBox="0 0 450 300" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs2810">
+    <inkscape:perspective id="perspective2814" inkscape:persp3d-origin="450 : 200 : 1" inkscape:vp_x="0 : 300 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="900 : 300 : 1" sodipodi:type="inkscape:persp3d"/>
+  </defs>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="svg2783" inkscape:cx="450" inkscape:cy="300" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="684" inkscape:window-width="827" inkscape:window-x="60" inkscape:window-y="135" inkscape:zoom="0.62111111" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <rect height="300" id="rect2785" style="fill:#ffffff" width="450" x="0" y="0"/>
+  <rect height="90" id="rect2787" style="fill:#009543" width="450" x="0" y="210"/>
+  <rect height="90" id="rect2789" style="fill:#00209f" width="450" x="0" y="0"/>
+  <g id="g2791" transform="matrix(1.136951,0,0,1.136951,-30.56399,-28.2596)">
+    <path d="M 224.57279,108.91288 C 223.06891,108.94527 221.60163,110.6111 221.60163,110.6111 L 221.7312,128.40688 L 216.11281,134.29282 L 220.66103,134.29282 L 220.62261,144.49785 L 193.71607,180.72859 L 189.73861,179.35383 L 182.78661,194.18391 C 182.78661,194.18391 199.98153,204.95086 224.93897,204.65648 C 252.33122,204.33074 267.21342,193.68724 267.21342,193.68724 L 260.02955,179.04787 L 256.51172,180.57766 L 229.2608,144.53489 L 229.22239,134.02527 L 233.77061,134.02527 L 227.58054,128.21253 L 227.61713,110.48154 C 227.61713,110.48154 226.07666,108.88049 224.57279,108.91288 z" id="path1873" style="fill:#000000;stroke:#000000;stroke-width:0.87954509px;stroke-linecap:butt;stroke-linejoin:miter"/>
+    <path d="M 233.9532,151.51811 L 215.3486,151.51811 C 215.3486,151.51811 208.5958,137.29017 209.6904,127.34338 C 210.80495,117.21521 216.59331,112.42399 224.28906,112.33919 C 233.38789,112.23781 238.15674,116.79766 239.59739,126.93786 C 241.02497,136.98604 233.9532,151.51811 233.9532,151.51811 z" id="path2760" style="fill:none;fill-opacity:0.75;stroke:#000000;stroke-width:4.39772797;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"/>
+    <path d="M 192.05034,185.43391 C 191.7462,185.83943 189.51585,190.30013 189.51585,190.30013 L 193.36828,189.48909 L 192.05034,185.43391 z" id="path3649" style="fill:#ffffff;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter"/>
+    <path d="M 194.28069,191.21255 L 190.22551,192.53048 L 195.09173,194.4567 L 194.28069,191.21255 z" id="path3651" style="fill:#ffffff;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter"/>
+    <path d="M 196.10552,185.53529 L 198.13312,191.51669 L 203.10072,190.09737 L 201.78278,187.25874 L 196.10552,185.53529 z" id="path3653" style="fill:#ffffff;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter"/>
+    <path d="M 199.24829,193.64566 L 199.95795,196.07877 L 206.54763,197.70084 L 203.91176,192.12496 L 199.24829,193.64566 z" id="path3655" style="fill:#ffffff;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter"/>
+    <path d="M 206.54763,188.57668 L 208.87936,194.15256 L 213.84696,192.22634 L 212.22489,189.79323 L 206.54763,188.57668 z" id="path3657" style="fill:#ffffff;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter"/>
+    <path d="M 209.79178,196.18015 L 210.60281,198.30912 L 218.30767,199.4243 L 215.06352,194.35532 L 209.79178,196.18015 z" id="path3659" style="fill:#ffffff;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter"/>
+    <path d="M 217.19249,190.19875 L 220.03112,195.16635 L 227.22907,192.53048 L 226.41804,190.60427 L 217.19249,190.19875 z" id="path3661" style="fill:#ffffff;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter"/>
+    <path d="M 221.34906,196.99119 L 222.86975,199.62706 L 231.79116,199.32292 L 228.44563,194.35532 L 221.34906,196.99119 z" id="path3663" style="fill:#ffffff;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter"/>
+    <path d="M 230.77736,190.40151 L 233.21047,194.55808 L 238.88773,191.82083 L 237.36704,189.59047 L 230.77736,190.40151 z" id="path3665" style="fill:#ffffff;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter"/>
+    <path d="M 240.10429,193.54428 L 234.42703,196.38291 L 235.94772,198.81602 L 243.55119,197.59947 L 240.10429,193.54428 z" id="path3667" style="fill:#ffffff;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter"/>
+    <path d="M 241.92912,189.18496 L 244.86913,192.83462 L 249.63397,189.08357 L 248.0119,187.36012 L 241.92912,189.18496 z" id="path3669" style="fill:#ffffff;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter"/>
+    <path d="M 250.64777,191.11117 L 246.08569,194.55808 L 247.30224,196.68705 L 253.58778,195.06497 L 250.64777,191.11117 z" id="path3671" style="fill:#ffffff;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter"/>
+    <path d="M 256.93331,183.91321 L 258.04848,185.53529 L 254.90572,190.19875 L 251.66157,186.04219 L 256.93331,183.91321 z" id="path3673" style="fill:#ffffff;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter"/>
+    <path d="M 259.06228,187.9684 L 260.98849,191.82083 L 257.13607,193.13876 L 256.83193,191.31393 L 259.06228,187.9684 z" id="path3675" style="fill:#ffffff;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter"/>
+  </g>
+</svg>

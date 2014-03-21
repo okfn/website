@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="256" id="svg5687" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="Flag_of_Singapore.svg" sodipodi:version="0.32" version="1.0" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs5707">
+    <inkscape:perspective id="perspective5711" inkscape:persp3d-origin="2160 : 960 : 1" inkscape:vp_x="0 : 1440 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="4320 : 1440 : 1" sodipodi:type="inkscape:persp3d"/>
+  </defs>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="svg5687" inkscape:cx="2160" inkscape:cy="1440" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="737" inkscape:window-width="892" inkscape:window-x="17" inkscape:window-y="80" inkscape:zoom="0.12939815" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <rect height="85.33342" id="rect5689" style="fill:#ed2939" width="256" x="0" y="42.333"/>
+  <rect height="85.33342" id="rect5691" style="fill:#ffffff" width="256" x="0" y="127.66658"/>
+  <path d="M 87.803141,84.99979 C 87.803141,102.72201 73.436456,117.08872 55.714251,117.08872 C 37.992047,117.08872 23.625362,102.72201 23.625362,84.99979 C 23.625362,67.277573 37.992047,52.910858 55.714251,52.910858 C 73.436456,52.910858 87.803141,67.277573 87.803141,84.99979 L 87.803141,84.99979 z" id="path5693" style="fill:#ffffff"/>
+  <path d="M 97.886519,84.99979 C 97.886519,101.74791 84.309535,115.32482 67.561481,115.32482 C 50.813426,115.32482 37.236444,101.74791 37.236444,84.99979 C 37.236444,68.251674 50.813426,54.67476 67.561481,54.67476 C 84.309535,54.67476 97.886519,68.251674 97.886519,84.99979 L 97.886519,84.99979 z" id="path5695" style="fill:#ed2939"/>
+  <path d="M 59.685636,85.773991 L 55.326498,82.429988 L 50.968462,85.775591 L 52.646274,80.383286 L 48.273272,77.059382 L 53.669357,77.070782 L 55.324735,71.670877 L 56.981887,77.070182 L 62.377967,77.056782 L 58.006056,80.382386 L 59.685636,85.773991 z" id="star" style="fill:#ffffff"/>
+  <use height="2880" id="use5698" transform="translate(34.203765,6.3706134e-6)" width="4320" x="0" xlink:href="#star" y="0"/>
+  <use height="2880" id="use5700" transform="translate(17.11932,-12.694006)" width="4320" x="0" xlink:href="#star" y="0"/>
+  <use height="2880" id="use5702" transform="translate(6.3999721,20.311026)" width="4320" x="0" xlink:href="#star" y="0"/>
+  <use height="2880" id="use5704" transform="translate(27.803765,20.311026)" width="4320" x="0" xlink:href="#star" y="0"/>
+</svg>

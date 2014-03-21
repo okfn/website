@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="256" id="svg2" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="Flag_of_Slovakia.svg" sodipodi:version="0.32" space="preserve" style="overflow:visible" version="1.0" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="svg2" inkscape:cx="225" inkscape:cy="150" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="711" inkscape:window-width="853" inkscape:window-x="85" inkscape:window-y="164" inkscape:zoom="1.2422222" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <defs id="defs62">
+    <inkscape:perspective id="perspective5836" inkscape:persp3d-origin="225 : 100 : 1" inkscape:vp_x="0 : 150 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="450 : 150 : 1" sodipodi:type="inkscape:persp3d"/>
+    <clipPath id="XMLID_3_">
+      <path d="M 171.821,258.249 C 145.059,245.356 106.777,219.77 106.777,169.155 C 106.777,118.541 109.197,95.522 109.197,95.522 L 171.822,95.522 L 234.449,95.522 C 234.449,95.522 236.871,118.541 236.871,169.155 C 236.87,219.771 198.585,245.356 171.821,258.249 z" id="use53"/>
+    </clipPath>
+  </defs>
+  <rect height="56.888889" id="rect21" style="fill:#0f218b" width="256" x="0" y="99.222229"/>
+  <rect height="56.888889" id="rect27" style="fill:#ffffff" width="256" x="0" y="42.333324"/>
+  <rect height="56.888889" id="rect33" style="fill:#ff0000" width="256" x="0" y="156.11111"/>
+  <path d="M 49.753264,125.54752 C 49.753264,100.34513 51.246676,86.215226 51.246676,86.215226 L 84.846723,86.215226 L 118.44776,86.215226 C 118.44776,86.215226 119.94167,100.34562 119.94167,125.54752 C 119.94167,152.37512 99.560169,165.75412 86.140689,172.21751 L 84.846234,172.84104 L 83.553257,172.21751 C 70.135256,165.75461 49.753264,152.37512 49.753264,125.54752 z" id="path43" style="fill:#ffffff;fill-rule:evenodd"/>
+  <path d="M 84.847218,169.53233 C 71.635086,163.16719 52.735645,150.53564 52.735645,125.54752 C 52.735645,100.55988 53.930375,89.195626 53.930375,89.195626 L 84.847713,89.195626 L 115.76604,89.195626 C 115.76604,89.195626 116.96176,100.55988 116.96176,125.54752 C 116.96126,150.53613 98.060339,163.16719 84.847218,169.53233 z" id="use50" style="fill:#ff0000"/>
+  <path d="M 87.673099,118.99625 C 91.250381,119.05401 98.231154,119.19422 104.44622,117.1143 C 104.44622,117.1143 104.28182,119.33837 104.28182,121.92926 C 104.28182,124.52064 104.44622,126.74471 104.44622,126.74471 C 98.745088,124.83709 91.704576,124.79711 87.673099,124.84845 L 87.673099,138.65005 L 82.022326,138.65005 L 82.022326,124.84845 C 77.99036,124.79711 70.950832,124.83709 65.249206,126.74471 C 65.249206,126.74471 65.413604,124.52064 65.413604,121.92926 C 65.413604,119.33837 65.249206,117.1143 65.249206,117.1143 C 71.464272,119.19422 78.444555,119.05401 82.022326,118.99625 L 82.022326,110.32853 C 78.7615,110.2994 74.062564,110.45541 68.749961,112.23319 C 68.749961,112.23319 68.914364,110.00911 68.914364,107.41773 C 68.914364,104.82685 68.749961,102.60278 68.749961,102.60278 C 74.055157,104.37759 78.747676,104.53607 82.007512,104.50743 C 81.840151,99.018586 80.241089,92.100996 80.241089,92.100996 C 80.241089,92.100996 83.532026,92.358206 84.847218,92.358206 C 86.164383,92.358206 89.454336,92.100996 89.454336,92.100996 C 89.454336,92.100996 87.855764,99.019076 87.687913,104.50743 C 90.948238,104.53557 95.640764,104.37759 100.94596,102.60278 C 100.94596,102.60278 100.78156,104.82685 100.78156,107.41773 C 100.78156,110.00911 100.94596,112.23319 100.94596,112.23319 C 95.632868,110.45541 90.933925,110.2994 87.673099,110.32853 L 87.673099,118.99625 L 87.673099,118.99625 z" id="path57" style="fill:#ffffff"/>
+  <g clip-path="url(#XMLID_3_)" id="g55" transform="matrix(0.49369,0,0,0.49369,2.0905287e-2,42.037376)">
+    <path d="M 170.643,274.853 L 115.189,225.423 C 115.189,225.423 122.278,202.496 136.116,202.496 C 147.112,202.496 151.125,211.361 151.125,211.361 C 151.125,211.361 158.345,192.672 171.821,192.672 C 185.3,192.672 192.52,211.361 192.52,211.361 C 192.52,211.361 196.533,202.496 207.53,202.496 C 221.368,202.496 228.457,225.423 228.457,225.423 L 170.643,274.853 z" id="path59" style="fill:#0f218b;fill-rule:evenodd"/>
+  </g>
+</svg>

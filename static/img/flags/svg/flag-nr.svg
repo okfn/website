@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="256" id="svg4144" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="Flag_of_Nauru.svg" sodipodi:version="0.32" version="1.0" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs4153">
+    <inkscape:perspective id="perspective4157" inkscape:persp3d-origin="300 : 100 : 1" inkscape:vp_x="0 : 150 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="600 : 150 : 1" sodipodi:type="inkscape:persp3d"/>
+  </defs>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="svg4144" inkscape:cx="300" inkscape:cy="150" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="704" inkscape:window-width="778" inkscape:window-x="110" inkscape:window-y="220" inkscape:zoom="0.93166667" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <rect height="128" id="rect4146" style="fill:#002b7f" width="256" x="0" y="64"/>
+  <rect height="10.666667" id="rect4148" style="fill:#ffc61e" width="256" x="0" y="122.66667"/>
+  <path d="M 64,176 L 61.239253,164.96986 L 53.333333,173.14185 L 56.457515,162.20915 L 45.524779,165.33333 L 53.696811,157.42741 L 42.666667,154.66667 L 53.696811,151.90592 L 45.524779,144 L 56.457515,147.12418 L 53.333333,136.19149 L 61.239253,144.36348 L 64,133.33333 L 66.760747,144.36348 L 74.666667,136.19149 L 71.542485,147.12418 L 82.475221,144 L 74.303189,151.90592 L 85.333333,154.66667 L 74.303189,157.42741 L 82.475221,165.33333 L 71.542485,162.20915 L 74.666667,173.14185 L 66.760747,164.96986 L 64,176 z" id="path4150" style="fill:#ffffff"/>
+</svg>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="256" id="svg6735" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docbase="C:\Documents and Settings\David Nelson\Archives\Svg" sodipodi:docname="Flag_of_Djibouti.svg" sodipodi:version="0.32" version="1.0" viewBox="0 0 15 10" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs6768">
+    <inkscape:perspective id="perspective2749" inkscape:persp3d-origin="300 : 133.33333 : 1" inkscape:vp_x="0 : 200 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="600 : 200 : 1" sodipodi:type="inkscape:persp3d"/>
+  </defs>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="svg6735" inkscape:cx="300" inkscape:cy="200" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="674" inkscape:window-width="853" inkscape:window-x="64" inkscape:window-y="42" inkscape:zoom="0.9425" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <rect height="5" id="blue_stripe" style="fill:#6ab2e7" width="15" x="0" y="0"/>
+  <rect height="5" id="green_stripe" style="fill:#12ad2b" width="15" x="0" y="5"/>
+  <comment id="comment6752">the star is in the center of gravity of the triangle, so the x-pos is irrational (5 / sin30 * sin60)</comment>
+  <path d="M 0,0 L 0,5 L 0,10 L 4.330127,7.5 L 8.660254,5 L 4.330127,2.5 L 0,0 z" id="path6904" sodipodi:nodetypes="ccccccc" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+  <path d="M 2.8867514,4 L 3.1112654,4.690983 L 3.8378079,4.690983 L 3.2500227,5.118034 L 3.4745366,5.809017 L 2.8867514,5.381966 L 2.2989661,5.809017 L 2.5234801,5.118034 L 1.9356949,4.690983 L 2.6622374,4.690983 L 2.8867514,4 z" id="path6929" inkscape:flatsided="false" inkscape:randomized="0" inkscape:rounded="0" sodipodi:arg1="-1.5707963" sodipodi:arg2="-0.94247777" sodipodi:cx="2.8867514" sodipodi:cy="5" sodipodi:r1="1" sodipodi:r2="0.38196602" sodipodi:sides="5" sodipodi:type="star" style="opacity:1;fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
+</svg>

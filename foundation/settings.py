@@ -261,6 +261,9 @@ else:
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# Flag directory (uses flags from Open Icon Library)
+COUNTRIES_FLAG_URL = '/assets/img/flags/png/flag-{code}.png'
+
 TEMPLATE_DEBUG = DEBUG
 
 TEMPLATE_DIRS = (

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="256" id="svg2901" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="Flag_of_Canada.svg" sodipodi:version="0.32" version="1.0" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs2910">
+    <inkscape:perspective id="perspective2914" inkscape:persp3d-origin="500 : 166.66667 : 1" inkscape:vp_x="0 : 250 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="1000 : 250 : 1" sodipodi:type="inkscape:persp3d"/>
+  </defs>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="svg2901" inkscape:cx="500" inkscape:cy="250" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="701" inkscape:window-width="831" inkscape:window-x="61" inkscape:window-y="276" inkscape:zoom="0.559" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <rect height="128" id="rect2903" style="fill:#ff0000" width="256" x="0" y="64"/>
+  <rect height="128" id="rect2905" style="fill:#ffffff" width="128" x="64" y="64"/>
+  <path d="M 127.99802,76 L 119.26506,92.28807 C 118.27412,94.05832 116.49866,93.89412 114.72319,92.90539 L 108.40076,89.63151 L 113.11297,114.64965 C 114.10391,119.22032 110.92453,119.22032 109.35549,117.24404 L 98.32162,104.89179 L 96.530291,111.16456 C 96.32372,111.98831 95.41546,112.8535 94.052856,112.64747 L 80.100403,109.71393 L 83.765105,123.03739 C 84.549619,126.00201 85.161559,127.22946 82.973105,128.01136 L 78,130.34871 L 102.01825,149.85805 C 102.9689,150.59572 103.44921,151.92321 103.11077,153.12515 L 101.00866,160.0236 C 109.2785,159.07033 116.69278,158.21709 124.96243,157.26502 C 125.69723,157.25585 126.91568,157.88034 126.91066,158.7268 L 125.81492,184 L 129.83576,184 L 129.20283,158.781 C 129.19779,157.93454 130.30276,157.25585 131.03757,157.26502 C 139.30722,158.21709 146.72151,159.07033 154.99134,160.0236 L 152.88924,153.12515 C 152.5508,151.92321 153.0311,150.59572 153.98176,149.85805 L 178,130.34871 L 173.0269,128.01136 C 170.83844,127.22946 171.45038,126.00201 172.2349,123.03739 L 175.8996,109.71393 L 161.94714,112.64747 C 160.58454,112.8535 159.67628,111.98831 159.4697,111.16456 L 157.67838,104.89179 L 146.64451,117.24404 C 145.07547,119.22032 141.89609,119.22032 142.88703,114.64965 L 147.59922,89.63151 L 141.27681,92.90539 C 139.5013,93.89412 137.72588,94.05832 136.73493,92.28807" id="path2907" style="fill:#ff0000"/>
+</svg>
