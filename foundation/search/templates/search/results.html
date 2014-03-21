@@ -13,6 +13,11 @@
     {% include "search/organisation/project.html" %}
   {% endwith %}
 {% endif %}
+{% if search_result.content_type == 'organisation.networkgroup' %}
+  {% with networkgroup=search_result.object %}
+    {% include "search/organisation/networkgroup.html" %}
+  {% endwith %}
+{% endif %}
 {% if search_result.content_type == 'organisation.workinggroup' %}
   {% with workinggroup=search_result.object %}
     {% include "search/organisation/workinggroup.html" %}

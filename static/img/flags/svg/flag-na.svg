@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="256" id="svg4125" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="Flag_of_Namibia.svg" sodipodi:version="0.32" version="1.0" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs4138">
+    <inkscape:perspective id="perspective4142" inkscape:persp3d-origin="450 : 200 : 1" inkscape:vp_x="0 : 300 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="900 : 300 : 1" sodipodi:type="inkscape:persp3d"/>
+  </defs>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="svg4125" inkscape:cx="450" inkscape:cy="300" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="717" inkscape:window-width="757" inkscape:window-x="74" inkscape:window-y="106" inkscape:zoom="0.62111111" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <clipPath id="r">
+    <rect height="600" id="rect4128" width="900" x="0" y="0"/>
+  </clipPath>
+  <path d="M -3.5527137e-15,42.33333 L 256,42.33333 L -3.5527137e-15,213 L -3.5527137e-15,42.33333 z" id="blue_area" style="fill:#003580"/>
+  <path d="M -3.5527137e-15,213 L 256,213 L 256,42.33333 L -3.5527137e-15,213 z" id="green_area" style="fill:#009543"/>
+  <line clip-path="url(#r)" id="white_stripes" style="stroke:#ffffff;stroke-width:200" transform="matrix(0.2844444,0,0,0.2844444,0,42.33333)" x1="0" x2="900" y1="600" y2="0"/>
+  <line clip-path="url(#r)" id="red_stripe" style="stroke:#d21034;stroke-width:150" transform="matrix(0.2844444,0,0,0.2844444,0,42.33333)" x1="0" x2="900" y1="600" y2="0"/>
+  <path d="M 75.83359,103.4889 L 63.267938,101.33464 L 65.422204,113.90029 L 55.617163,105.75181 L 51.199986,117.71112 L 46.782811,105.75181 L 36.97777,113.90029 L 39.132035,101.33464 L 26.566384,103.4889 L 34.71486,93.68386 L 22.755552,89.26669 L 34.71486,84.84951 L 26.566384,75.04447 L 39.132035,77.19874 L 36.97777,64.63308 L 46.782811,72.78156 L 51.199986,60.82225 L 55.617163,72.78156 L 65.422204,64.63308 L 63.267938,77.19874 L 75.83359,75.04447 L 67.685115,84.84951 L 79.64442,89.26669 L 67.685115,93.68386 L 75.83359,103.4889 z" id="star" style="fill:#ffce00"/>
+  <path d="M 68.266659,89.26667 C 68.266659,98.69233 60.625654,106.33333 51.199997,106.33333 C 41.774338,106.33333 34.133332,98.69233 34.133332,89.26667 C 34.133332,79.84101 41.774338,72.20001 51.199997,72.20001 C 60.625654,72.20001 68.266659,79.84101 68.266659,89.26667 L 68.266659,89.26667 z" id="blue_gap" style="fill:#003580"/>
+  <path d="M 65.422226,89.26666 C 65.42487,97.12325 59.056589,103.49367 51.200001,103.49367 C 43.343414,103.49367 36.975133,97.12325 36.977777,89.26666 C 36.975133,81.41008 43.343414,75.03965 51.200001,75.03965 C 59.056589,75.03965 65.42487,81.41008 65.422226,89.26666 L 65.422226,89.26666 z" id="yellow_circle" style="fill:#ffce00"/>
+</svg>

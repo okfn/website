@@ -2,8 +2,9 @@ from django.utils.translation import ugettext_lazy as _
 
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
+from cms.models.pluginmodel import CMSPlugin
 
-from .models import Project, FeaturedProject, ProjectList
+from .models import Project, FeaturedProject, ProjectList, NetworkGroup
 
 
 class FeaturedProjectPlugin(CMSPluginBase):
@@ -44,3 +45,19 @@ class ProjectListPlugin(CMSPluginBase):
         return context
 
 plugin_pool.register_plugin(ProjectListPlugin)
+
+
+class NetworkGroupFlagsPlugin(CMSPluginBase):
+    model = CMSPlugin
+    module = "OKF"
+    name = _("Network Group Flags")
+    render_template = "organisation/networkgroup_flags.html"
+
+    def render(self, context, instance, placeholder):
+        context = super(NetworkGroupFlagsPlugin, self)\
+            .render(context, instance, placeholder)
+
+        context['countries'] = NetworkGroup.objects.countries()
+        return context
+
+plugin_pool.register_plugin(NetworkGroupFlagsPlugin)

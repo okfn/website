@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="256" id="Flag of Turkey" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="Flag_of_Turkey.svg" sodipodi:version="0.32" version="1.0" viewBox="0 0 360 240" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="Flag of Turkey" inkscape:cx="513" inkscape:cy="342" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="722" inkscape:window-width="943" inkscape:window-x="96" inkscape:window-y="147" inkscape:zoom="0.54483431" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <defs id="defs25">
+    <inkscape:perspective id="perspective4086" inkscape:persp3d-origin="513 : 228 : 1" inkscape:vp_x="0 : 342 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="1026 : 342 : 1" sodipodi:type="inkscape:persp3d"/>
+  </defs>
+  <rect height="240" id="Bayrak" style="fill:#e30a17" width="360" x="0" y="0"/>
+  <path d="M 342,171 C 247.608,171 171,247.608 171,342 C 171,436.392 247.608,513 342,513 C 402.82758,513 456.27816,481.19686 486.59375,433.3125 C 461.54249,461.22983 425.18315,478.8125 384.75,478.8125 C 309.2364,478.81251 247.9375,417.5136 247.9375,342 C 247.9375,266.4864 309.2364,205.1875 384.75,205.1875 C 425.18315,205.1875 461.54249,222.77018 486.59375,250.6875 C 456.27816,202.80314 402.82758,171 342,171 z" id="Cresent" style="fill:#ffffff" transform="scale(0.3508772,0.3508772)"/>
+  <path d="M -91.2,90.646156 C -91.213786,90.177433 -100.90798,78.577859 -100.64363,78.190551 C -100.37927,77.803242 -86.044797,82.604328 -85.603275,82.446373 C -85.161752,82.288419 -77.125574,69.484226 -76.675531,69.615958 C -76.225488,69.74769 -76.361997,84.864201 -76.075335,85.235303 C -75.788673,85.606405 -61.127846,89.292552 -61.11406,89.761276 C -61.100274,90.229999 -75.519114,94.771431 -75.783469,95.158739 C -76.047825,95.546048 -75.023114,110.62841 -75.464637,110.78636 C -75.906159,110.94431 -84.680984,98.634563 -85.131027,98.50283 C -85.581069,98.371098 -99.60859,104.00636 -99.895252,103.63526 C -100.18191,103.26416 -91.186214,91.11488 -91.2,90.646156 z" id="Star" style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.0999999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:8.2, 4.1;stroke-dashoffset:0;stroke-opacity:1" transform="matrix(1.1307266,-0.7729028,0.7729028,1.1307266,224.44531,-46.218016)"/>
+</svg>

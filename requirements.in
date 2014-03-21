@@ -24,7 +24,9 @@ djangocms-file
 djangocms-googlemap
 djangocms-link
 djangocms-text-ckeditor>=2.1.4,<2.2
+iso3166
 sorl-thumbnail
+unicodecsv
 
 # Heroku deployment requirements
 gunicorn

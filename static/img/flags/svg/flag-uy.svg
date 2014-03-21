@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="256" id="svg2436" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="Flag_of_Uruguay.svg" sodipodi:version="0.32" version="1.0" viewBox="-45 -45 243 162" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs2492">
+    <inkscape:perspective id="perspective2496" inkscape:persp3d-origin="450 : 200 : 1" inkscape:vp_x="0 : 300 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="900 : 300 : 1" sodipodi:type="inkscape:persp3d"/>
+  </defs>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="svg2436" inkscape:cx="450" inkscape:cy="300" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="679" inkscape:window-width="961" inkscape:window-x="211" inkscape:window-y="130" inkscape:zoom="0.62111111" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <rect height="162" id="rect2438" style="fill:#ffffff" width="243" x="-45" y="-45"/>
+  <path d="M 45,-18 L 198,-18 M 45,18 L 198,18 M -45,54 L 198,54 M -45,90 L 198,90" id="path2440" style="fill:none;stroke:#0038a8;stroke-width:18"/>
+  <g id="sun" stroke-miterlimit="20" style="fill:#fcd116;stroke:#000000;stroke-width:0.60000002;stroke-miterlimit:20">
+    <g id="4wavyrays">
+      <g id="2wavyrays">
+        <g id="wavyray" transform="matrix(0.9238795,0.3826834,-0.3826834,0.9238795,0,0)">
+          <path d="M 0,0 L 6,12 C -2,25 7,27 0,33 C 3,25 -4,28 -3,13" id="path2446"/>
+          <path d="M 0,11 C -2,24 4.5,28 0,33" id="path2448" style="fill:none"/>
+        </g>
+        <use height="162" id="use2450" transform="scale(-1,-1)" width="243" x="0" xlink:href="#wavyray" y="0"/>
+      </g>
+      <use height="162" id="use2452" transform="matrix(0,1,-1,0,0,0)" width="243" x="0" xlink:href="#2wavyrays" y="0"/>
+    </g>
+    <use height="162" id="use2454" transform="matrix(0.7071068,0.7071068,-0.7071068,0.7071068,0,0)" width="243" x="0" xlink:href="#4wavyrays" y="0"/>
+    <g id="4straightrays">
+      <g id="2straightrays">
+        <path d="M 0,0 L 6,0 L 0,33 L -6,0 L 0,0 L 0,33" id="straightray"/>
+        <use height="162" id="use2459" transform="scale(-1,-1)" width="243" x="0" xlink:href="#straightray" y="0"/>
+      </g>
+      <use height="162" id="use2461" transform="matrix(0,1,-1,0,0,0)" width="243" x="0" xlink:href="#2straightrays" y="0"/>
+    </g>
+    <use height="162" id="use2463" transform="matrix(0.7071068,0.7071068,-0.7071068,0.7071068,0,0)" width="243" x="0" xlink:href="#4straightrays" y="0"/>
+    <circle cx="0" cy="0" id="circle2465" r="11" sodipodi:cx="0" sodipodi:cy="0" sodipodi:rx="11" sodipodi:ry="11"/>
+    <g id="face" style="fill:#000000;stroke:none" transform="scale(0.1,0.1)">
+      <g id="right">
+        <path d="M 81,-44 C 74,-36 70,-50 45,-50 C 20,-50 16,-35 12,-38 C 8,-41 33,-59 41,-60 C 49,-61 72,-53 81,-44" id="path2469"/>
+        <path d="M 52,-35 C 59,-29 53,-16 46,-16 C 39,-16 26,-28 32,-36" id="path2471"/>
+        <path d="M 19,-26 C 20,-38 30,-40 46,-40 C 62,-40 69,-28 75,-25 C 68,-25 62,-35 46,-35 C 30,-35 30,-35 19,-25" id="path2473"/>
+        <path d="M 22,-23 C 26,-29 31,-17 42,-17 C 53,-17 59,-20 66,-25 C 73,-30 56,-13 45,-13 C 34,-13 19,-19 22,-23" id="path2475"/>
+        <path d="M 56,-17 C 69,-24 61,-34 56,-36 C 58,-34 66,-24 56,-17" id="path2477"/>
+        <path d="M 0,43 C 6,43 8,41 16,41 C 24,41 43,52 54,48 C 31,57 40,51 0,51 L -5,51" id="path2479"/>
+        <path d="M 58,57 C 54,50 55,52 47,41 C 55,47 57,50 58,57" id="path2481"/>
+        <path d="M 0,67 C 25,67 21,62 54,48 C 30,51 25,59 0,59 L -5,59" id="path2483"/>
+        <path d="M 0,30 C 7,30 9,25 17,25 C 25,25 36,28 41,32 C 42,33 38,24 30,23 C 22,22 25,9 16,7 C 16,11 19,10 20,16 C 20,21 11,21 9,16 C 11,24 5,24 0,24" id="path2485"/>
+      </g>
+      <use height="162" id="use2487" transform="scale(-1,1)" width="243" x="0" xlink:href="#right" y="0"/>
+      <path d="M 0,76 C -5,76 -18,79 0,79 C 18,79 5,76 0,76" id="path2489"/>
+    </g>
+  </g>
+</svg>

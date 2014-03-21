@@ -4,6 +4,7 @@ from django.db import models
 from django_countries.fields import CountryField
 from geoposition.fields import GeopositionField
 from django.utils.text import slugify
+from django.core.urlresolvers import reverse
 
 
 class Person(models.Model):
@@ -150,7 +151,7 @@ class WorkingGroup(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
 
     description = models.TextField()
-    url = models.URLField(blank=True)
+    homepage_url = models.URLField(blank=True)
     logo = models.ImageField(upload_to='organisation/working-groups/logos',
                              blank=True)
 
@@ -162,8 +163,23 @@ class WorkingGroup(models.Model):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        ordering = ('name',)
+
+
+class NetworkGroupManager(models.Manager):
+
+    def countries(self):
+        return self.get_queryset().filter(region_slug='')
+
+    def regions(self, country):
+        return self.get_queryset().exclude(region_slug='')\
+            .filter(country_slug=country)
+
 
 class NetworkGroup(models.Model):
+    objects = NetworkGroupManager()
+
     GROUP_TYPES = ((0, 'Local group'),
                    (1, 'Chapter'))
 
@@ -176,12 +192,15 @@ class NetworkGroup(models.Model):
     description = models.TextField(blank=True, null=True)
 
     country = CountryField()
-    region = models.CharField(max_length=100, blank=True, null=True)
-    slug = models.SlugField()
+    country_slug = models.SlugField()
+    region = models.CharField(max_length=100, blank=True)
+    region_slug = models.SlugField(default=None)
 
-    mailinglist = models.URLField(blank=True, null=True)
-    homepage = models.URLField(blank=True, null=True)
-    twitter = models.CharField(max_length=18, blank=True, null=True)
+    mailinglist_url = models.URLField(blank=True)
+    homepage_url = models.URLField(blank=True)
+    twitter = models.CharField(max_length=18, blank=True)
+    facebook_url = models.URLField(blank=True)
+    youtube = models.CharField(max_length=18, blank=True)
 
     position = GeopositionField(blank=True, null=True)
 
@@ -189,26 +208,44 @@ class NetworkGroup(models.Model):
 
     members = models.ManyToManyField('Person',
                                      through='NetworkGroupMembership')
+    working_groups = models.ManyToManyField('WorkingGroup', blank=True)
 
     def __unicode__(self):
         return self.name
 
     def save(self, *args, **kwargs):
-        if self.twitter.startswith('@'):
+        if self.twitter and self.twitter.startswith(u'@'):
             self.twitter = self.twitter[1:]
 
         # Slug is either the country slugified or the region
-        # Therefore we cannot force slug to be
-        if self.region is None:
-            self.slug = slugify(self.get_country_display())
-        else:
-            self.slug = slugify(self.region)
+        # Therefore we cannot force slug to be unique
+        # (regions might have same name in different countries)
+        self.country_slug = slugify(self.get_country_display())
+        self.region_slug = slugify(self.region)
 
         super(NetworkGroup, self).save(*args, **kwargs)
 
+    def get_absolute_url(self):
+        # Because reverse can't be smart about conditional parameters
+        # we have to have two different urls depending on if it is a
+        # country or a region group
+        if self.region:
+            return reverse('network-region',
+                           kwargs={'country': self.country_slug,
+                                   'region': self.region_slug})
+        else:
+            return reverse('network-country',
+                           kwargs={'country': self.country_slug})
+
     class Meta:
         unique_together = ('country', 'region')
+        ordering = ('country', 'region')
 
+# Since the GeopositionField inherits from model.Field and not a core
+# Django Field (like for example CountryField which inherits from CharField)
+# south won't be able to infer the introspection rules. Therefore we need to
+# extend the introspection to include the GeopositionField as discusses in:
+# http://south.readthedocs.org/en/latest/customfields.html
 from south.modelsinspector import add_introspection_rules
 add_introspection_rules([], ["^geoposition\.fields\.GeopositionField"])
 
@@ -218,7 +255,6 @@ class NetworkGroupMembership(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     title = models.CharField(max_length=100)
-    role = models.CharField(max_length=100)
     networkgroup = models.ForeignKey('NetworkGroup')
     person = models.ForeignKey('Person')
 

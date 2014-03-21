@@ -38,3 +38,10 @@ class WorkingGroupsAppHook(CMSApp):
     urls = ["foundation.organisation.urls.workinggroups"]
 
 apphook_pool.register(WorkingGroupsAppHook)
+
+
+class NetworkGroupsAppHook(CMSApp):
+    name = _("Network Groups")
+    urls = ["foundation.organisation.urls.networkgroups"]
+
+apphook_pool.register(NetworkGroupsAppHook)

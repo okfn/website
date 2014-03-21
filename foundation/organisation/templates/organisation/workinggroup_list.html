@@ -25,13 +25,13 @@
       <div class="col-md-8 {% cycle '' 'col-md-pull-4' %}">
         <div class="feature-block-text feature-block-{% cycle 'primary' 'secondary' 'tertiary' %}">
           <h3>
-            <a href="{{ workinggroup.url}}" target="_blank">
+            <a href="{{ workinggroup.homepage_url}}" target="_blank">
               {{ workinggroup.name }}
             </a>
           </h3>
           <p>
             <small>
-              <a href="{{ workinggroup.url }}" target="_blank">
+              <a href="{{ workinggroup.homepage_url }}" target="_blank">
                 {{ workinggroup.url }}
               </a>
             </small>
@@ -49,7 +49,7 @@
     {% static_placeholder "working groups incubating" %}
     <ul>{% for workinggroup in incubator_list %}
     <li>
-      <a href="{{ workinggroup.url }}" target="_blank">
+      <a href="{{ workinggroup.homepage_url }}" target="_blank">
         {{ workinggroup.name }}
       </a>
     </li>

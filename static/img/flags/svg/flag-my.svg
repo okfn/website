@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="256" id="svg3074" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="Flag_of_Malaysia.svg" sodipodi:version="0.32" version="1.0" viewBox="0 0 224 112" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="svg3074" inkscape:cx="448" inkscape:cy="224" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="726" inkscape:window-width="828" inkscape:window-x="0" inkscape:window-y="75" inkscape:zoom="0.62388393" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <defs id="defs3076">
+    <inkscape:perspective id="perspective3096" inkscape:persp3d-origin="448 : 149.33333 : 1" inkscape:vp_x="0 : 224 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="896 : 224 : 1" sodipodi:type="inkscape:persp3d"/>
+    <pattern height="16" id="str" patternUnits="userSpaceOnUse" width="99">
+      <rect fill="#fff" height="16" id="rect3079" width="99"/>
+      <rect fill="#dc241f" height="8" id="rect3081" width="99"/>
+    </pattern>
+  </defs>
+  <rect height="112" id="rect3083" style="fill:url(#str)" width="224" x="0" y="0"/>
+  <rect height="64" id="rect3085" style="fill:#0035ad" width="112" x="0" y="0"/>
+  <circle cx="46" cy="32" id="circle3087" r="24" sodipodi:cx="46" sodipodi:cy="32" sodipodi:rx="24" sodipodi:ry="24" style="fill:#ffd100"/>
+  <circle cx="51" cy="32" id="circle3089" r="21" sodipodi:cx="51" sodipodi:cy="32" sodipodi:rx="21" sodipodi:ry="21" style="fill:#0035ad"/>
+  <polygon id="polygon3091" points="70,52 68.2198,39.7994 61.3223,50.0194 65.0121,38.2547 54.3634,44.4698 62.7922,35.4711 50.5014,36.4504 62,32 50.5014,27.5496 62.7922,28.5289 54.3634,19.5302 65.0121,25.7453 61.3223,13.9806 68.2198,24.2006 70,12 71.7802,24.2006 78.6777,13.9806 74.9879,25.7453 85.6366,19.5302 77.2078,28.5289 89.4986,27.5496 78,32 89.4986,36.4504 77.2078,35.4711 85.6366,44.4698 74.9879,38.2547 78.6777,50.0194 71.7802,39.7994 70,52 " style="fill:#ffd100"/>
+</svg>

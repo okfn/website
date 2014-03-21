@@ -1,5 +1,5 @@
 from haystack import indexes
-from .models import Person, Project, WorkingGroup
+from .models import Person, Project, WorkingGroup, NetworkGroup
 
 
 class PersonIndex(indexes.SearchIndex, indexes.Indexable):
@@ -28,3 +28,13 @@ class WorkingGroupIndex(indexes.SearchIndex, indexes.Indexable):
 
     def get_model(self):
         return WorkingGroup
+
+
+class NetworkGroupIndex(indexes.SearchIndex, indexes.Indexable):
+    text = indexes.CharField(document=True, use_template=True)
+    mailinglist = indexes.CharField(model_attr='mailinglist')
+    homepage = indexes.CharField(model_attr='homepage')
+    twitter = indexes.CharField(model_attr='twitter')
+
+    def get_model(self):
+        return NetworkGroup

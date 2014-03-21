@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="256" id="svg2816" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="Flag_of_Liberia.svg" sodipodi:version="0.32" version="1.0" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs2827">
+    <inkscape:perspective id="perspective2831" inkscape:persp3d-origin="104.5 : 36.666667 : 1" inkscape:vp_x="0 : 55 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="209 : 55 : 1" sodipodi:type="inkscape:persp3d"/>
+  </defs>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="svg2816" inkscape:cx="104.5" inkscape:cy="55" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="706" inkscape:window-width="829" inkscape:window-x="97" inkscape:window-y="277" inkscape:zoom="2.6746411" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <path d="M 0,60.263158 L 256,60.263158 L 256,72.511962 L 256,84.760766 L 256,97.009569 L 256,109.25837 L 256,121.50718 L 256,133.75598 L 256,146.00478 L 256,158.25359 L 256,170.50239 L 256,182.7512 L 256,195 L 0,195 L 0,182.7512 L 0,170.50239 L 0,158.25359 L 0,146.00478 L 0,133.75598 L 0,60.263158 z" id="path2818" style="fill:#bf0a30"/>
+  <path d="M 0,72.511962 L 256,72.511962 L 256,84.760766 L 0,84.760766 L 0,97.009569 L 256,97.009569 L 256,109.25837 L 0,109.2135 L 0,121.50718 L 256,121.50718 L 256,133.75598 L 0,133.75598 L 0,121.50718 L 0,72.511962 z M 0,146.00478 L 256,146.00478 L 256,158.25359 L 0,158.25359 L 0,146.00478 z M 0,170.50239 L 256,170.50239 L 256,182.7512 L 0,182.7512 L 0,170.50239 z" id="path2820" style="fill:#ffffff"/>
+  <rect height="61.244019" id="rect2822" style="fill:#002868" width="61.244019" x="0" y="60.263161"/>
+  <path d="M 19.820757,105.75164 L 30.625684,97.915784 L 41.435862,105.77457 L 37.298637,93.049329 L 48.102634,85.207358 L 34.749022,85.207358 L 30.625684,72.508839 L 26.496622,85.199836 L 13.14285,85.206751 L 23.946416,93.049329 L 19.820757,105.75164 z" id="path2824" style="fill:#ffffff"/>
+</svg>

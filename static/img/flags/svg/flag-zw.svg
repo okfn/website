@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="256" id="svg4097" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="Flag_of_Zimbabwe.svg" sodipodi:version="0.32" version="1.0" viewBox="0 0 252 126" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs4170">
+    <inkscape:perspective id="perspective4174" inkscape:persp3d-origin="504 : 168 : 1" inkscape:vp_x="0 : 252 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="1008 : 252 : 1" sodipodi:type="inkscape:persp3d"/>
+  </defs>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="svg4097" inkscape:cx="504" inkscape:cy="252" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="708" inkscape:window-width="973" inkscape:window-x="26" inkscape:window-y="156" inkscape:zoom="0.55456349" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <rect height="126" id="green_stripes" style="fill:#319208" width="252" x="0" y="0"/>
+  <rect height="90" id="yellow_stripes" style="fill:#ffd200" width="252" x="0" y="18"/>
+  <rect height="54" id="red_stripes" style="fill:#de2010" width="252" x="0" y="36"/>
+  <rect height="18" id="black_stripe" style="fill:#000000" width="252" x="0" y="54"/>
+  <path d="M 4.5825757,0 L 88.582576,63 L 4.5825757,126 L 0,126 L 0,0 L 4.5825757,0 z" id="path4103" style="fill:#000000"/>
+  <comment id="comment4105">value has to be sqrt(21)</comment>
+  <path d="M 0,0 L 84,63 L 0,126" id="path4107" style="fill:#ffffff"/>
+  <g id="star">
+    <g id="upper_star_part" style="fill:#de2010" transform="matrix(32,0,0,32,34,63)">
+      <g id="g4111">
+        <polygon id="triangle_ur" points="0,0 0,1 0.75,1 0,0 " transform="matrix(0.8967361,0.4425657,-0.4425657,0.8967361,0,-1)"/>
+        <use height="126" id="triangle_ul" transform="scale(-1,1)" width="252" x="0" xlink:href="#triangle_ur" y="0"/>
+        <polygon id="triangle2_ur" points="0,0 0,1 0.75,1 0,0 " transform="matrix(0.9421747,0.3351221,-0.3351221,0.9421747,0,-1)"/>
+        <use height="126" id="triangle2_ul" transform="scale(-1,1)" width="252" x="0" xlink:href="#triangle2_ur" y="0"/>
+      </g>
+      <use height="126" id="use4117" transform="matrix(0.309017,0.9510565,-0.9510565,0.309017,0,0)" width="252" x="0" xlink:href="#triangle_ur" y="0"/>
+      <use height="126" id="use4119" transform="matrix(0.309017,-0.9510565,0.9510565,0.309017,0,0)" width="252" x="0" xlink:href="#triangle_ul" y="0"/>
+      <use height="126" id="use4121" transform="matrix(0.309017,0.9510565,-0.9510565,0.309017,0,0)" width="252" x="0" xlink:href="#triangle2_ur" y="0"/>
+      <use height="126" id="use4123" transform="matrix(0.309017,-0.9510565,0.9510565,0.309017,0,0)" width="252" x="0" xlink:href="#triangle2_ul" y="0"/>
+    </g>
+    <g id="lower_star_part" style="fill:#de2010" transform="matrix(27.5,0,0,27.5,34,63)">
+      <g id="cone_l">
+        <polygon id="triangle_l" points="0,0 0,1 0.5,1 0,0 " transform="matrix(0.9119424,0.4103181,-0.4103181,0.9119424,0,-1)"/>
+        <use height="126" id="use4128" transform="scale(-1,1)" width="252" x="0" xlink:href="#triangle_l" y="0"/>
+      </g>
+      <use height="126" id="use4130" transform="matrix(-0.809017,0.5877853,-0.5877853,-0.809017,0,0)" width="252" x="0" xlink:href="#cone_l" y="0"/>
+      <use height="126" id="use4132" transform="matrix(-0.809017,-0.5877853,0.5877853,-0.809017,0,0)" width="252" x="0" xlink:href="#cone_l" y="0"/>
+    </g>
+  </g>
+  <g id="bird">
+    <path d="M 28.63541,55.109321 C 30.611561,59.414581 31.105753,59.697041 36.046234,61.390941 C 40.986715,63.084631 54.943835,64.690451 56.320131,64.849251 C 55.420245,63.949371 39.698712,52.303801 36.46971,49.974681 C 33.240707,47.645571 32.340822,46.586881 32.340822,46.586881 C 32.340822,46.586881 29.429427,41.346381 28.423672,39.811281 C 27.417918,38.276181 25.565211,36.105871 23.130227,36.105871 C 20.695242,36.105871 19.21318,37.535101 18.507353,40.075951 C 18.119132,40.181821 16.037009,41.452451 16.107623,42.758031 C 16.707582,42.687311 20.483608,41.628621 21.78929,45.898731 C 23.095075,50.168841 23.165585,57.155981 21.824545,60.614501 C 20.483504,64.073021 18.401485,66.684171 18.401485,69.719221 C 18.401485,70.142691 18.683733,70.989641 19.38956,70.989641 C 19.636553,72.330791 21.612807,81.894131 21.612807,81.894131 L 49.774042,81.894131 L 54.247003,64.602161" id="path4135" style="fill:#ffc618;overflow:visible"/>
+    <g id="g4137" style="fill:none;stroke:#000000;stroke-width:0.21173774;overflow:visible">
+      <path d="M 28.63541,55.109321 C 30.611561,59.414581 31.105753,59.697041 36.046234,61.390941 C 40.986715,63.084631 54.943835,64.690451 56.320131,64.849251 C 55.420245,63.949371 39.698712,52.303801 36.46971,49.974681 C 33.240707,47.645571 32.340822,46.586881 32.340822,46.586881 C 32.340822,46.586881 29.429427,41.346381 28.423672,39.811281 C 27.417918,38.276181 25.565211,36.105871 23.130227,36.105871 C 20.695242,36.105871 19.21318,37.535101 18.507353,40.075951 C 18.119132,40.181821 16.037009,41.452451 16.107623,42.758031 C 16.707582,42.687311 20.483608,41.628621 21.78929,45.898731 C 23.095075,50.168841 23.165585,57.155981 21.824545,60.614501 C 20.483504,64.073021 18.401485,66.684171 18.401485,69.719221 C 18.401485,70.142691 18.683733,70.989641 19.38956,70.989641 C 19.636553,72.330791 21.612807,81.894131 21.612807,81.894131 L 49.774042,81.894131 L 54.247003,64.602161" id="path4139"/>
+      <path d="M 19.38956,70.989641 C 19.38956,70.989641 25.388832,70.636881 27.012225,70.636881 C 28.63541,70.636881 43.74613,70.655501 52.176976,72.604761" id="path4141"/>
+      <path d="M 21.508178,70.870751 C 21.508178,70.870751 20.907083,70.142691 21.2952,68.695891 C 21.683318,67.249081 25.918177,63.508111 25.918177,58.214871" id="path4143"/>
+      <path d="M 25.141736,70.636881 C 25.141736,70.636881 24.64775,68.272411 30.047065,66.260901 C 31.564587,65.802071 35.905007,63.367091 36.046234,61.390941" id="path4145"/>
+      <path d="M 29.473056,66.485261 C 29.473056,66.485261 42.71639,66.543151 53.197205,68.660531" id="path4147"/>
+      <path d="M 32.792626,64.905291 C 32.792626,64.905291 37.343128,65.060991 38.084211,64.849251 C 38.825293,64.637511 40.137077,64.087081 40.658976,62.536061" id="path4149"/>
+      <path d="M 35.490423,64.959261 C 35.490423,64.959261 37.924582,63.693791 38.401404,62.048281" id="path4151"/>
+      <path d="M 28.141424,81.894131 C 28.141424,81.894131 27.100311,74.677681 26.888574,70.636881 L 29.606013,73.230671 L 32.480809,70.716491 L 34.952392,73.354321 L 37.810027,70.929471 L 40.28099,73.707081 L 43.110918,71.300431 L 45.362698,73.918821 L 48.184976,71.877951 L 51.540109,75.066631" id="path4153"/>
+      <path d="M 50.9508,77.345081 C 40.870302,75.901381 27.380491,75.995051 27.380491,75.995051" id="path4155"/>
+      <path d="M 22.693931,51.052191 C 22.693931,51.052191 30.89381,47.133801 32.340822,46.586881" id="path4157"/>
+    </g>
+    <g id="g4159" style="fill:none;stroke:#000000;overflow:visible" transform="matrix(0.211738,0,0,0.211738,16,36)">
+      <polyline id="polyline4161" points="52.4873047,177.0859375 65.5048828,188.9375 77.2666016,177.1757813 89.1630859,189.4423828 102.0087891,178.0839844 113.8359375,190.5136719 127.1748047,179.5009766 138.0722656,192.2285156 151.3417969,182.0839844 165.2890625,194.4033203"/>
+      <circle cx="89.425293" cy="154.58398" id="circle4163" r="5.1665039" sodipodi:cx="89.425293" sodipodi:cy="154.58398" sodipodi:rx="5.1665039" sodipodi:ry="5.1665039"/>
+      <circle cx="111.23682" cy="156.04688" id="circle4165" r="5.1665039" sodipodi:cx="111.23682" sodipodi:cy="156.04688" sodipodi:rx="5.1665039" sodipodi:ry="5.1665039"/>
+      <circle cx="30.049805" cy="16.5" id="circle4167" r="4" sodipodi:cx="30.049805" sodipodi:cy="16.5" sodipodi:rx="4" sodipodi:ry="4"/>
+    </g>
+  </g>
+</svg>

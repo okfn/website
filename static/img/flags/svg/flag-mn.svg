@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="256" id="svg3382" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" preserveAspectRatio="xMidYMid meet" sodipodi:docname="Flag_of_Mongolia.svg" sodipodi:version="0.32" version="1.0" viewBox="0 0 240 120" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" zoomAndPan="magnify">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs3398">
+    <inkscape:perspective id="perspective3402" inkscape:persp3d-origin="450 : 150 : 1" inkscape:vp_x="0 : 225 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="900 : 225 : 1" sodipodi:type="inkscape:persp3d"/>
+  </defs>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="svg3382" inkscape:cx="450" inkscape:cy="225" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="677" inkscape:window-width="783" inkscape:window-x="50" inkscape:window-y="306" inkscape:zoom="0.62111111" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <rect height="120" id="red" style="fill:#dc171c" width="240" x="0" y="0"/>
+  <rect height="120" id="blue" style="fill:#47aecf" width="80" x="80" y="0"/>
+  <g id="g3386" style="fill:#fbea0f">
+    <circle cx="40" cy="41" id="crescent" r="11" sodipodi:cx="40" sodipodi:cy="41" sodipodi:rx="11" sodipodi:ry="11"/>
+    <circle cx="40" cy="36" id="crescent_overlay" r="12" sodipodi:cx="40" sodipodi:cy="36" sodipodi:rx="12" sodipodi:ry="12" style="fill:#dc171c"/>
+    <path d="M 35,23 C 35,25.761424 37.238576,28 40,28 C 42.761424,28 45,25.761424 45,23 C 45,21 43.75,20.75 43.75,20 C 43.75,19.25 44.5,18.25 43,17 C 43.75,18.25 42.5,18.5 42.5,19.75 C 42.5,21 43,21 43,22 C 43,22.552285 42.552285,23 42,23 C 41.447715,23 41,22.552285 41,22 C 41,21 42,20 42,18.5 C 42,17 41.75,16.5 41,15.25 C 40.25,14 39,13 40,12 C 38.5,12.5 39.25,14.5 39.25,15.75 C 39.25,17 38.25,17.75 38.25,19.25 C 38.25,20.75 39,21 39,22 C 39,22.552285 38.552285,23 38,23 C 37.447715,23 37,22.552285 37,22 C 37,21 37.5,21 37.5,19.75 C 37.5,18.5 36.25,18.25 37,17 C 35.5,18.25 36.25,19.25 36.25,20 C 36.25,20.75 35,21 35,23" id="flame"/>
+    <circle cx="40" cy="38" id="moon" r="8" sodipodi:cx="40" sodipodi:cy="38" sodipodi:rx="8" sodipodi:ry="8"/>
+    <circle cx="40" cy="78" id="yinyang" r="10" sodipodi:cx="40" sodipodi:cy="78" sodipodi:rx="10" sodipodi:ry="10"/>
+    <path d="M 18,54 L 28,54 L 28,102 L 18,102 L 18,54 z M 52,54 L 62,54 L 62,102 L 52,102 L 52,54 z M 30,54 L 40,60 L 50,54 L 30,54 z M 30,62 L 30,66 L 50,66 L 50,62 L 30,62 z M 30,90 L 30,94 L 50,94 L 50,90 L 30,90 z M 30,96 L 40,102 L 50,96 L 30,96 z" id="cornered_stuff"/>
+  </g>
+  <circle cx="40" cy="72.699997" id="yinyang_top" r="2" sodipodi:cx="40" sodipodi:cy="72.699997" sodipodi:rx="2" sodipodi:ry="2" style="fill:#dc171c"/>
+  <circle cx="40" cy="83.300003" id="yinyang_bottom" r="2" sodipodi:cx="40" sodipodi:cy="83.300003" sodipodi:rx="2" sodipodi:ry="2" style="fill:#dc171c"/>
+  <path d="M 40,67.5 C 42.899495,67.5 45.25,69.850505 45.25,72.75 C 45.25,75.649495 42.899495,78 40,78 C 37.100505,78 34.75,80.350505 34.75,83.25 C 34.75,86.149495 37.100505,88.5 40,88.5" id="yinyang_center" style="fill:none;stroke:#dc171c"/>
+</svg>

@@ -1,0 +1,43 @@
+{% load markdown_deux_tags %}
+{% load thumbnail %}
+
+<h3>
+  <a href="{{ networkgroup.get_absolute_url }}">
+    {{networkgroup.get_group_type_display }}: {{ networkgroup.name }}
+  </a>
+</h3>
+<div class="row">
+  <div class="col-md-8">
+    {{ networkgroup.description|markdown }}
+    <p>
+      <i class="fa fa-globe fa-large"></i>
+      {% if networkgroup.region %}{{ networkgroup.region }}, {% endif %}{{ networkgroup.get_country_display }}
+      {% if networkgroup.homepage_url %}
+      <i class="fa fa-link fa-large"></i>
+      <a href="{{ networkgroup.homepage_url }}">{{ networkgroup.homepage_url }}</a>
+      {% endif %}
+      {% if networkgroup.mailinglist_url %}
+      <i class="fa fa-envelope fa-large"></i>
+      <a href="{{ networkgroup.mailinglist_url }}">Mailing list</a>
+      {% endif %}
+      {% if networkgroup.twitter %}
+      <i class="fa fa-twitter fa-large"></i>
+      <a href="http://twitter.com/{{ networkgroup.twitter}}">
+        @{{ networkgroup.twitter }}
+      </a>
+      {% endif %}
+      {% if object.facebook_url %}
+      <i class="fa fa-facebook-square fa-large"></i>
+      <a href="{{ object.facebook_url }}">
+        Facebook page
+      </a>
+      {% endif %}
+      {% if object.youtube %}
+      <i class="fa fa-youtube fa-large"></i>
+      <a href="http://youtube.com/user/{{ object.youtube }}">
+        YouTube channel
+      </a>
+      {% endif %}
+    </p>
+  </div>
+</div>

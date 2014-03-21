@@ -19,6 +19,10 @@
       <i class="fa fa-hand-o-right fa-large"></i> <a href="{% url membership.board.slug %}">{{ membership.board.name }} ({{ membership.title }})</a>
     </p>
     {% endfor %}
+    {% for membership in person.networkgroupmembership_set.all %}
+    <p>
+      <i class="fa fa-hand-o-right fa-large"></i> <a href="{{ membership.networkgroup.get_absolute_url }}">{{ membership.networkgroup.name }} ({{ membership.title }})</a>
+    {% endfor %}
     {{ person.description|markdown }}
   </div>
 </div>

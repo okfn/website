@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="256" id="svg2439" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" preserveAspectRatio="xMidYMid meet" sodipodi:docname="Flag_of_Mauritania.svg" sodipodi:version="0.32" version="1.0" viewBox="-72 -28 144 96" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" zoomAndPan="magnify">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs2462">
+    <inkscape:perspective id="perspective2466" inkscape:persp3d-origin="450 : 200 : 1" inkscape:vp_x="0 : 300 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="900 : 300 : 1" sodipodi:type="inkscape:persp3d"/>
+  </defs>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="svg2439" inkscape:cx="450" inkscape:cy="300" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="795" inkscape:window-width="957" inkscape:window-x="19" inkscape:window-y="69" inkscape:zoom="0.62111111" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <rect height="96" id="rect2441" style="fill:#006233" width="144" x="-72" y="-28"/>
+  <circle cx="0" cy="8" id="circle2443" r="31" sodipodi:cx="0" sodipodi:cy="8" sodipodi:rx="31" sodipodi:ry="31" style="fill:#ffc400"/>
+  <path d="M -30,0 C -30,16.568542 -16.568542,30 1.8369702e-15,30 C 16.568542,30 30,16.568542 30,0 L 30,-24 L -30,-24" id="path2445" style="fill:#006233"/>
+  <g id="g2447" style="fill:#ffc400" transform="scale(12,12)">
+    <g id="cone">
+      <polygon id="triangle" points="0,0 0,1 0.5,1 0,0 " transform="matrix(0.9510565,0.309017,-0.309017,0.9510565,0,-1)"/>
+      <use height="96" id="use2451" transform="scale(-1,1)" width="144" x="0" xlink:href="#triangle" y="0"/>
+    </g>
+    <use height="96" id="use2453" transform="matrix(0.309017,0.9510565,-0.9510565,0.309017,0,0)" width="144" x="0" xlink:href="#cone" y="0"/>
+    <use height="96" id="use2455" transform="matrix(0.309017,-0.9510565,0.9510565,0.309017,0,0)" width="144" x="0" xlink:href="#cone" y="0"/>
+    <use height="96" id="use2457" transform="matrix(-0.809017,0.5877853,-0.5877853,-0.809017,0,0)" width="144" x="0" xlink:href="#cone" y="0"/>
+    <use height="96" id="use2459" transform="matrix(-0.809017,-0.5877853,0.5877853,-0.809017,0,0)" width="144" x="0" xlink:href="#cone" y="0"/>
+  </g>
+</svg>

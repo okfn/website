@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="256" id="svg4088" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="Flag_of_Ethiopia.svg" sodipodi:version="0.32" version="1.0" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs4103">
+    <inkscape:perspective id="perspective4107" inkscape:persp3d-origin="300 : 100 : 1" inkscape:vp_x="0 : 150 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="600 : 150 : 1" sodipodi:type="inkscape:persp3d"/>
+  </defs>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="svg4088" inkscape:cx="300" inkscape:cy="150" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="715" inkscape:window-width="880" inkscape:window-x="60" inkscape:window-y="110" inkscape:zoom="0.93166667" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <rect height="128" id="rect4090" style="fill:#e23d28" width="256" x="1.110223e-16" y="64"/>
+  <rect height="85.333336" id="rect4092" style="fill:#f9dd16" width="256" x="1.110223e-16" y="64"/>
+  <rect height="42.666668" id="rect4094" style="fill:#006b3f" width="256" x="1.110223e-16" y="64"/>
+  <path d="M 160.00008,128.00005 C 160.00008,145.67316 145.67319,160.00005 128.00006,160.00005 C 110.32695,160.00005 96.000056,145.67316 96.000056,128.00005 C 96.000056,110.32693 110.32695,96.00004 128.00006,96.00004 C 145.67319,96.00004 160.00008,110.32693 160.00008,128.00005 z" id="path4096" style="fill:#00a5db"/>
+  <path d="M 103.65303,119.9897 L 122.25251,119.9897 L 126.45793,107.04677 L 127.57949,110.49857 L 121.46815,129.30735 L 119.65343,127.98887 L 121.55935,122.12303 L 106.58931,122.12303 L 103.65303,119.9897 M 112.95277,148.61137 L 118.70033,130.92221 L 107.69041,122.92303 L 111.31985,122.92303 L 127.31955,134.54749 L 125.50483,135.86597 L 120.51505,132.24068 L 115.88905,146.47804 L 112.95277,148.61137 M 143.04737,148.61137 L 128.00007,137.67887 L 116.99016,145.67804 L 118.11172,142.22623 L 134.11141,130.60177 L 134.80457,132.7351 L 129.81479,136.36039 L 141.92582,145.15956 L 143.04737,148.61137 M 152.34712,119.9897 L 137.29982,130.92221 L 141.50523,143.86514 L 138.56895,141.73181 L 132.45761,122.92303 L 134.70073,122.92303 L 136.60666,128.78887 L 148.71767,119.9897 L 152.34712,119.9897 M 128.00007,102.30054 L 133.74763,119.9897 L 147.35663,119.9897 L 144.42035,122.12303 L 124.64364,122.12303 L 125.3368,119.9897 L 131.50451,119.9897 L 126.87851,105.75234 L 128.00007,102.30054 z" id="path4098" style="fill:#f9dd16"/>
+  <path d="M 128.00012,139.73332 L 128.00012,153.59999 M 116.84105,131.62579 L 103.65307,135.91083 M 121.10344,118.50752 L 112.95281,107.28916 M 134.89679,118.50752 L 143.04742,107.28916 M 139.15918,131.62579 L 152.34716,135.91083 L 139.15918,131.62579 z" id="path4100" style="stroke:#f9dd16;stroke-width:1.06666672"/>
+</svg>

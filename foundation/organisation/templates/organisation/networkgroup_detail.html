@@ -1,0 +1,94 @@
+{% extends "cms_apphook.html" %}
+{% load i18n %}
+{% load markdown_deux_tags %}
+
+{% block title %}{{ object.name }}{% endblock %}
+{% block body-class %}network-group{% endblock %}
+
+{% block pagebanner-inner %}
+<h2>{{ object.name }}</h2>
+<p>{{ object.description|markdown }}</p>
+{% endblock %}
+
+{% block body %}
+<div class="row">
+<div class="sidebar col-md-3">
+    <h3>Our {{ object.get_group_type_display|title }}</h3>
+    <ul>
+      <li>
+        <i class="fa fa-globe fa-large"></i>
+        {% if object.region %}{{ object.region }}, {% endif %}{{ object.get_country_display }}
+      </li>
+      {% if object.region %}
+      <li>
+        <i class="fa fa-arrow-up fa-large"></i>
+        <a href="{% url "network-country" country=object.country_slug %}" alt="Group for {{ object.get_country_display }}">
+          Our country group
+        </a>
+      </li>
+      {% endif %}
+      {% if object.homepage_url %}
+      <li>
+        <i class="fa fa-link fa-large"></i>
+        <a href="{{ object.homepage_url }}">{{ object.homepage_url }}</a>
+      </li>
+      {% endif %}
+      {% if object.mailinglist_url %}
+      <li>
+        <i class="fa fa-envelope fa-large"></i>
+        <a href="{{ object.mailinglist_url }}">Mailing list</a>
+      </li>
+      {% endif %}
+      {% if object.twitter %}
+      <li>
+        <i class="fa fa-twitter fa-large"></i>
+        <a href="http://twitter.com/{{ object.twitter }}">
+          @{{ object.twitter }}
+        </a>
+      </li>
+      {% endif %}
+      {% if object.facebook_url %}
+      <li>
+        <i class="fa fa-facebook-square fa-large"></i>
+        <a href="{{ object.facebook_url }}">
+          Facebook page
+        </a>
+      </li>
+      {% endif %}
+      {% if object.youtube %}
+      <li>
+        <i class="fa fa-youtube fa-large"></i>
+        <a href="http://youtube.com/user/{{ object.youtube }}">
+          YouTube channel
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+    {% if regional_groups %}
+    <h3>Our Regional Groups</h3>
+    {% for group in regional_groups %}<ul>
+      <li><a href="{{ group.get_absolute_url }}">{{ group.name }}</a></li>
+    </ul>{% endfor %}
+    {% endif %}
+    {% if object.working_groups.all %}
+    <h3>Our Main Interests</h3>
+    {% for group in object.working_groups.all %}<ul>
+      <li>{{ group.name }}</li>
+    </ul>{% endfor %}
+    {% endif %}
+  </div>
+  <div class="col-md-9">
+    <h3>Members</h3>
+    {% with skip_email=True %}
+    {% for member in group_members %}
+      {% include "organisation/member.html" %}
+    {% endfor %}
+    {% endwith %}
+
+    {% if object.extra_information %}
+    <h3>More information</h3>
+    {{ object.extra_information|markdown }}
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

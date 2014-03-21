@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg baseProfile="full" height="256" id="Flag_of_the_Cook_Islands" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" preserveAspectRatio="xMidYMid meet" sodipodi:docname="Flag_of_the_Cook_Islands.svg" sodipodi:version="0.32" version="1.0" viewBox="-15 -7.5 30 15" width="256" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" zoomAndPan="magnify">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title></dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>unsorted</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library, Source: Wikimedia Commons</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="Flag_of_the_Cook_Islands" inkscape:cx="300" inkscape:cy="150" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="786" inkscape:window-width="864" inkscape:window-x="4" inkscape:window-y="197" inkscape:zoom="0.93166667" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+  <defs id="defs3868">
+    <inkscape:perspective id="perspective3933" inkscape:persp3d-origin="300 : 100 : 1" inkscape:vp_x="0 : 150 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="600 : 150 : 1" sodipodi:type="inkscape:persp3d"/>
+    <clipPath id="border">
+      <rect height="15" id="rect3871" width="30" x="-15" y="-7.5"/>
+    </clipPath>
+  </defs>
+  <rect height="15" id="rect3873" style="fill:#00247d" width="30" x="-15" y="-7.5"/>
+  <comment id="comment3875">The above line is the ensign field color: #CF142B red and #00247D blue</comment>
+  <g id="canton" transform="matrix(0.5,0,0,0.5,-7.5,-3.75)">
+    <g clip-path="url(#border)" id="g3878">
+      <circle cx="0" cy="0" id="circle3880" r="20" sodipodi:cx="0" sodipodi:cy="0" sodipodi:rx="20" sodipodi:ry="20" style="fill:#00247d"/>
+      <path d="M -20,-10 L 20,10 M -20,10 L 20,-10" id="diags_white" style="stroke:#ffffff;stroke-width:3"/>
+      <path d="M -20,-10 L 20,10 M -20,10 L 20,-10" id="diags_red" style="stroke:#cf142b;stroke-width:2"/>
+      <path d="M 0,0 L 20,10 L 17,10 L -3,0 M 0,0 L 20,-10 L 23,-10 L 3,0 M 0,0 L -20,10 L -23,10 L -3,0 M 0,0 L -20,-10 L -17,-10 L 3,0" id="eraser_white" style="fill:#ffffff;stroke:none"/>
+      <comment id="comment3885">I think the above two lines give the simplest way to make the diagonals</comment>
+      <path d="M -20,0 L 20,0 M 0,-10 L 0,10" id="cross_white" style="stroke:#ffffff;stroke-width:5"/>
+      <path d="M -20,0 L 20,0 M 0,-10 L 0,10" id="cross_red" style="stroke:#cf142b;stroke-width:3"/>
+    </g>
+  </g>
+  <g id="star" style="fill:#ffffff" transform="matrix(1.125,0,0,1.125,7.5,-5.1)">
+    <g id="cone">
+      <polygon id="triangle" points="0,0 0,1 0.5,1 0,0 " transform="matrix(0.9510565,0.309017,-0.309017,0.9510565,0,-1)"/>
+      <use height="15" id="use3892" transform="scale(-1,1)" width="30" x="0" xlink:href="#triangle" y="0"/>
+    </g>
+    <use height="15" id="use3894" transform="matrix(0.309017,0.9510565,-0.9510565,0.309017,0,0)" width="30" x="0" xlink:href="#cone" y="0"/>
+    <use height="15" id="use3896" transform="matrix(0.309017,-0.9510565,0.9510565,0.309017,0,0)" width="30" x="0" xlink:href="#cone" y="0"/>
+    <use height="15" id="use3898" transform="matrix(-0.809017,0.5877853,-0.5877853,-0.809017,0,0)" width="30" x="0" xlink:href="#cone" y="0"/>
+    <use height="15" id="use3900" transform="matrix(-0.809017,-0.5877853,0.5877853,-0.809017,0,0)" width="30" x="0" xlink:href="#cone" y="0"/>
+  </g>
+  <use height="15" id="use3902" transform="matrix(0.9135455,0.4067366,-0.4067366,0.9135455,0.6484091,-3.0505248)" width="30" x="0" xlink:href="#star" y="0"/>
+  <use height="15" id="use3904" transform="matrix(0.6691306,0.7431448,-0.7431448,0.6691306,2.4815205,-5.5735862)" width="30" x="0" xlink:href="#star" y="0"/>
+  <use height="15" id="use3906" transform="matrix(0.309017,0.9510565,-0.9510565,0.309017,5.1823725,-7.1329239)" width="30" x="0" xlink:href="#star" y="0"/>
+  <use height="15" id="use3908" transform="matrix(-0.1045285,0.9945219,-0.9945219,-0.1045285,8.2839635,-7.4589142)" width="30" x="0" xlink:href="#star" y="0"/>
+  <use height="15" id="use3910" transform="matrix(-0.5,0.8660254,-0.8660254,-0.5,11.25,-6.4951905)" width="30" x="0" xlink:href="#star" y="0"/>
+  <use height="15" id="use3912" transform="matrix(-0.809017,0.5877853,-0.5877853,-0.809017,13.567627,-4.4083894)" width="30" x="0" xlink:href="#star" y="0"/>
+  <use height="15" id="use3914" transform="matrix(-0.9781476,0.2079117,-0.2079117,-0.9781476,14.836107,-1.5593377)" width="30" x="0" xlink:href="#star" y="0"/>
+  <use height="15" id="use3916" transform="matrix(-0.9781476,-0.2079117,0.2079117,-0.9781476,14.836107,1.5593377)" width="30" x="0" xlink:href="#star" y="0"/>
+  <use height="15" id="use3918" transform="matrix(-0.809017,-0.5877853,0.5877853,-0.809017,13.567627,4.4083894)" width="30" x="0" xlink:href="#star" y="0"/>
+  <use height="15" id="use3920" transform="matrix(-0.5,-0.8660254,0.8660254,-0.5,11.25,6.4951905)" width="30" x="0" xlink:href="#star" y="0"/>
+  <use height="15" id="use3922" transform="matrix(-0.1045285,-0.9945219,0.9945219,-0.1045285,8.2839635,7.4589142)" width="30" x="0" xlink:href="#star" y="0"/>
+  <use height="15" id="use3924" transform="matrix(0.309017,-0.9510565,0.9510565,0.309017,5.1823725,7.1329239)" width="30" x="0" xlink:href="#star" y="0"/>
+  <use height="15" id="use3926" transform="matrix(0.6691306,-0.7431448,0.7431448,0.6691306,2.4815205,5.5735862)" width="30" x="0" xlink:href="#star" y="0"/>
+  <use height="15" id="use3928" transform="matrix(0.9135455,-0.4067366,0.4067366,0.9135455,0.6484091,3.0505248)" width="30" x="0" xlink:href="#star" y="0"/>
+</svg>

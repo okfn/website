@@ -1,0 +1,13 @@
+{{ object.name }}
+{{ object.description }}
+{{ object.get_group_type_display }}
+{{ object.get_country_display }}
+{% if object.region %}
+{{ object.region }}
+{% endif %}
+{{ object.extra_information }}
+{% for group in object.working_group.all %}
+{{ group.name }}
+{{ group.description }}
+{% endfor %}
+
