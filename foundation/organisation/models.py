@@ -3,6 +3,7 @@ from django.db import models
 from django_countries.fields import CountryField
 from geoposition.fields import GeopositionField
 from django.utils.text import slugify
+from django.core.urlresolvers import reverse
 
 
 class Person(models.Model):
@@ -222,7 +223,6 @@ class NetworkGroup(models.Model):
         super(NetworkGroup, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        from django.core.urlresolvers import reverse
         # Because reverse can't be smart about conditional parameters
         # we have to have two different urls depending on if it is a
         # country or a region group
