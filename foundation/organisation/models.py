@@ -1,10 +1,9 @@
 from cms.models.pluginmodel import CMSPlugin
 from django.core.urlresolvers import reverse
 from django.db import models
+from django.utils.text import slugify
 from django_countries.fields import CountryField
 from geoposition.fields import GeopositionField
-from django.utils.text import slugify
-from django.core.urlresolvers import reverse
 
 
 class Person(models.Model):
