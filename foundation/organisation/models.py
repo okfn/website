@@ -1,4 +1,5 @@
 from cms.models.pluginmodel import CMSPlugin
+from django.core.urlresolvers import reverse
 from django.db import models
 from django_countries.fields import CountryField
 from geoposition.fields import GeopositionField
@@ -99,6 +100,9 @@ class Project(models.Model):
 
     themes = models.ManyToManyField('Theme', blank=True)
     types = models.ManyToManyField('ProjectType', blank=True)
+
+    def get_absolute_url(self):
+        return reverse('project', kwargs={'slug': self.slug})
 
     def __unicode__(self):
         return self.name
