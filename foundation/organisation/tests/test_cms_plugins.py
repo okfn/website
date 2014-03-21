@@ -1,10 +1,14 @@
 import collections
 
 from cms.test_utils.testcases import CMSTestCase
+from cms.models.pluginmodel import CMSPlugin
 
-from ..models import Project, ProjectType, Theme
+from ..models import Project, ProjectType, Theme, NetworkGroup
 from ..models import FeaturedProject, ProjectList
-from ..cms_plugins import FeaturedProjectPlugin, ProjectListPlugin
+from ..cms_plugins import (FeaturedProjectPlugin, ProjectListPlugin,
+                           NetworkGroupFlagsPlugin)
+
+from geoposition import Geoposition
 
 
 class FeaturedProjectPluginTest(CMSTestCase):
@@ -70,3 +74,52 @@ class ProjectListPluginTest(CMSTestCase):
         self.assertNotIn(self.x, result['projects'])
         self.assertNotIn(self.y, result['projects'])
         self.assertIn(self.z, result['projects'])
+
+
+class NetworkGroupPluginTest(CMSTestCase):
+
+    def setUp(self):  # flake8: noqa
+        super(NetworkGroupPluginTest, self).setUp()
+
+        self.britain = NetworkGroup.objects.create(
+            name='Open Knowledge Foundation Britan',
+            group_type=0, # local group
+            description='Bisquits, tea, and open data',
+            country='GB',
+            mailinglist='http://lists.okfn.org/okfn-britain',
+            homepage='http://gb.okfn.org/',
+            twitter='OKFNgb'
+            )
+      
+        self.buckingham = NetworkGroup.objects.create(
+            name='Open Knowledge Buckingham',
+            group_type=0, # local group
+            description='We run the Open Palace project',
+            country='GB',
+            region=u'Buckingham',
+            position=Geoposition(51.501364, -0.141890),
+            homepage='http://queen.okfn.org/',
+            twitter='buckingham',
+            facebook='http://facebook.com/queenthepersonnottheband',
+            youtube='Queenovision'
+            )
+
+        self.germany = NetworkGroup.objects.create(
+            name='Open Knowledge Foundation Germany',
+            group_type=1, # chapter
+            description='Haben Sie ein Kugelschreiber bitte?',
+            country='DE',
+            mailinglist='http://lists.okfn.org/okfn-de',
+            homepage='http://de.okfn.org/',
+            twitter='OKFNde'
+            )
+
+        self.instance = CMSPlugin()
+
+    def test_flag_plugin(self):
+        plug = NetworkGroupFlagsPlugin()
+        result = plug.render({}, self.instance, 'foo')
+        
+        self.assertIn(self.britain, result['countries'])
+        self.assertIn(self.germany, result['countries'])
+        self.assertNotIn(self.buckingham, result['countries'])
