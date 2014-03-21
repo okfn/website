@@ -121,6 +121,7 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'djangosecure.middleware.SecurityMiddleware',
     'csp.middleware.CSPMiddleware',
@@ -133,6 +134,7 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -334,6 +336,12 @@ COMPRESS_PRECOMPILERS = (
 COMPRESS_CSS_FILTERS = [
     'compressor.filters.cssmin.CSSMinFilter'
 ]
+
+CMS_CACHE_DURATIONS = {
+    'content': 60,
+    'menus': 3600,
+    'permissions': 3600,
+}
 
 CMS_TEMPLATES = (
     ('cms_default.html', 'Default layout'),
