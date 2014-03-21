@@ -359,6 +359,33 @@ html.wf-lato-n7-active {
   }
 }
 
+ul.icon-list {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    margin-bottom: 5px;
+  }
+
+  a i {
+    color: @okf-darkgrey;
+  }
+
+  a:hover i, a:active i {
+    color: @link-hover-color;
+    &.facebook {
+      color: #3b5998;
+    }
+    &.twitter {
+      color: #00aeef;
+    }
+  }
+}
+
+.project-icon-list {
+  margin-top: @line-height-computed;
+}
+
 @feature-block-height: 250px;
 @feature-block-xs-img-height: 150px;
 

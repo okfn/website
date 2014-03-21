@@ -1,15 +1,33 @@
 {% extends "cms_apphook.html" %}
 {% load i18n %}
-{% load markdown_deux_tags %}
+{% load thumbnail %}
 
 {% block title %}{{ object.name }}{% endblock %}
 {% block body-class %}projects{% endblock %}
 
 {% block body %}
 <div class="row">
-  <div class="main col-md-12">
-    <h3>{{ object.name }}</h3>
-    {{ object.description|markdown }}
+
+{% if object.picture %}
+  <div class="main col-md-9 col-md-push-3">
+    {% with project=object %}
+    {% include "organisation/project.html" %}
+    {% endwith %}
   </div>
+  <div class="sidebar col-md-3 col-md-pull-9">
+    {% thumbnail object.picture "263" as im %}
+      <img
+        class="img-responsive"
+        src="{{ im.url }}"
+        alt="Logo/banner for {{ object.name}}">
+    {% endthumbnail %}
+  </div>
+{% else %}
+  <div class="main col-md-12">
+    {% with project=object %}
+    {% include "organisation/project.html" %}
+    {% endwith %}
+  </div>
+{% endif %}
 </div>
 {% endblock %}
