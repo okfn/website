@@ -15,7 +15,7 @@
     {% endwith %}
   </div>
   <div class="sidebar col-md-3 col-md-pull-9">
-    {% thumbnail object.picture "263" as im %}
+    {% thumbnail object.picture "263" format="PNG" as im %}
       <img
         class="img-responsive"
         src="{{ im.url }}"
