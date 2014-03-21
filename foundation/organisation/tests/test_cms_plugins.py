@@ -82,12 +82,12 @@ class NetworkGroupPluginTest(CMSTestCase):
         super(NetworkGroupPluginTest, self).setUp()
 
         self.britain = NetworkGroup.objects.create(
-            name='Open Knowledge Foundation Britan',
+            name='Open Knowledge Foundation Britain',
             group_type=0, # local group
             description='Bisquits, tea, and open data',
             country='GB',
-            mailinglist='http://lists.okfn.org/okfn-britain',
-            homepage='http://gb.okfn.org/',
+            mailinglist_url='http://lists.okfn.org/okfn-britain',
+            homepage_url='http://gb.okfn.org/',
             twitter='OKFNgb'
             )
       
@@ -98,9 +98,9 @@ class NetworkGroupPluginTest(CMSTestCase):
             country='GB',
             region=u'Buckingham',
             position=Geoposition(51.501364, -0.141890),
-            homepage='http://queen.okfn.org/',
+            homepage_url='http://queen.okfn.org/',
             twitter='buckingham',
-            facebook='http://facebook.com/queenthepersonnottheband',
+            facebook_url='http://facebook.com/queenthepersonnottheband',
             youtube='Queenovision'
             )
 
@@ -109,8 +109,8 @@ class NetworkGroupPluginTest(CMSTestCase):
             group_type=1, # chapter
             description='Haben Sie ein Kugelschreiber bitte?',
             country='DE',
-            mailinglist='http://lists.okfn.org/okfn-de',
-            homepage='http://de.okfn.org/',
+            mailinglist_url='http://lists.okfn.org/okfn-de',
+            homepage_url='http://de.okfn.org/',
             twitter='OKFNde'
             )
 

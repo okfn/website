@@ -147,7 +147,7 @@ class WorkingGroup(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
 
     description = models.TextField()
-    url = models.URLField(blank=True)
+    homepage_url = models.URLField(blank=True)
     logo = models.ImageField(upload_to='organisation/working-groups/logos',
                              blank=True)
 
@@ -166,11 +166,11 @@ class WorkingGroup(models.Model):
 class NetworkGroupManager(models.Manager):
 
     def countries(self):
-        return self.get_queryset().filter(region_slug__isnull=True)
+        return self.get_queryset().filter(region_slug='')
 
     def regions(self, country):
-        return self.get_queryset().filter(country_slug=country,
-                                          region_slug__isnull=False)
+        return self.get_queryset().exclude(region_slug='')\
+            .filter(country_slug=country)
 
 
 class NetworkGroup(models.Model):
@@ -189,14 +189,14 @@ class NetworkGroup(models.Model):
 
     country = CountryField()
     country_slug = models.SlugField()
-    region = models.CharField(max_length=100, blank=True, null=True)
-    region_slug = models.SlugField(default=None, null=True)
+    region = models.CharField(max_length=100, blank=True)
+    region_slug = models.SlugField(default=None)
 
-    mailinglist = models.URLField(blank=True, null=True)
-    homepage = models.URLField(blank=True, null=True)
-    twitter = models.CharField(max_length=18, blank=True, null=True)
-    facebook = models.URLField(blank=True, null=True)
-    youtube = models.URLField(blank=True, null=True)
+    mailinglist_url = models.URLField(blank=True)
+    homepage_url = models.URLField(blank=True)
+    twitter = models.CharField(max_length=18, blank=True)
+    facebook_url = models.URLField(blank=True)
+    youtube = models.CharField(max_length=18, blank=True)
 
     position = GeopositionField(blank=True, null=True)
 
@@ -217,8 +217,7 @@ class NetworkGroup(models.Model):
         # Therefore we cannot force slug to be unique
         # (regions might have same name in different countries)
         self.country_slug = slugify(self.get_country_display())
-        if self.region:
-            self.region_slug = slugify(self.region)
+        self.region_slug = slugify(self.region)
 
         super(NetworkGroup, self).save(*args, **kwargs)
 

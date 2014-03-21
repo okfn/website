@@ -27,16 +27,16 @@
         </a>
       </li>
       {% endif %}
-      {% if object.homepage %}
+      {% if object.homepage_url %}
       <li>
         <i class="fa fa-link fa-large"></i>
-        <a href="{{ object.homepage }}">{{ object.homepage }}</a>
+        <a href="{{ object.homepage_url }}">{{ object.homepage_url }}</a>
       </li>
       {% endif %}
-      {% if object.mailinglist %}
+      {% if object.mailinglist_url %}
       <li>
         <i class="fa fa-envelope fa-large"></i>
-        <a href="{{ object.mailinglist }}">Mailing list</a>
+        <a href="{{ object.mailinglist_url }}">Mailing list</a>
       </li>
       {% endif %}
       {% if object.twitter %}
@@ -47,10 +47,10 @@
         </a>
       </li>
       {% endif %}
-      {% if object.facebook %}
+      {% if object.facebook_url %}
       <li>
         <i class="fa fa-facebook-square fa-large"></i>
-        <a href="{{ object.facebook }}">
+        <a href="{{ object.facebook_url }}">
           Facebook page
         </a>
       </li>

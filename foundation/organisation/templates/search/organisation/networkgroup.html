@@ -12,13 +12,13 @@
     <p>
       <i class="fa fa-globe fa-large"></i>
       {% if networkgroup.region %}{{ networkgroup.region }}, {% endif %}{{ networkgroup.get_country_display }}
-      {% if networkgroup.homepage %}
+      {% if networkgroup.homepage_url %}
       <i class="fa fa-link fa-large"></i>
-      <a href="{{ networkgroup.homepage }}">{{ networkgroup.homepage }}</a>
+      <a href="{{ networkgroup.homepage_url }}">{{ networkgroup.homepage_url }}</a>
       {% endif %}
-      {% if networkgroup.mailinglist %}
+      {% if networkgroup.mailinglist_url %}
       <i class="fa fa-envelope fa-large"></i>
-      <a href="{{ networkgroup.mailinglist }}">Mailing list</a>
+      <a href="{{ networkgroup.mailinglist_url }}">Mailing list</a>
       {% endif %}
       {% if networkgroup.twitter %}
       <i class="fa fa-twitter fa-large"></i>
@@ -26,9 +26,9 @@
         @{{ networkgroup.twitter }}
       </a>
       {% endif %}
-      {% if object.facebook %}
+      {% if object.facebook_url %}
       <i class="fa fa-facebook-square fa-large"></i>
-      <a href="{{ object.facebook }}">
+      <a href="{{ object.facebook_url }}">
         Facebook page
       </a>
       {% endif %}

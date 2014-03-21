@@ -290,7 +290,7 @@ class WorkingGroupListViewTest(WebTest):
             name='CSV on the Web',
             slug='csv-on-the-web',
             description='Definition of a vocabulary for describing tables',
-            url='http://www.w3.org/2013/csvw/',
+            homepage_url='http://www.w3.org/2013/csvw/',
             theme=self.theme,
             incubation=False
             )
@@ -299,7 +299,7 @@ class WorkingGroupListViewTest(WebTest):
             name='Government Linked Data',
             slug='government-linked-data',
             description='Help governments around the world publish their data',
-            url='http://www.w3.org/2011/gld/',
+            homepage_url='http://www.w3.org/2011/gld/',
             theme=self.theme,
             incubation=True
             )
@@ -309,10 +309,10 @@ class WorkingGroupListViewTest(WebTest):
         
         self.assertIn(self.csv.name, response)
         self.assertIn(self.csv.description, response)
-        self.assertIn(self.csv.url, response)
+        self.assertIn(self.csv.homepage_url, response)
         
         self.assertIn(self.government.name, response)
-        self.assertIn(self.government.url, response)
+        self.assertIn(self.government.homepage_url, response)
         self.assertNotIn(self.government.description, response)
         
         # Active working groups should come before incubating groups
@@ -328,7 +328,7 @@ class NetworkGroupDetailViewTest(WebTest):
             name='Open Government',
             slug='open-government',
             description='We work toward open governments around the world',
-            url='http://opengov.org',
+            homepage_url='http://opengov.org',
             incubation=False
             )
 
@@ -336,7 +336,7 @@ class NetworkGroupDetailViewTest(WebTest):
             name='Lobbying Transparency',
             slug='lobbying-transparency',
             description='We want hotel lobbies made out of glass',
-            url='http://transparent.lobby.org',
+            homepage_url='http://transparent.lobby.org',
             incubation=False
             )
 
@@ -365,12 +365,12 @@ class NetworkGroupDetailViewTest(WebTest):
             )
 
         self.britain = NetworkGroup.objects.create(
-            name='Open Knowledge Foundation Britan',
+            name='Open Knowledge Foundation Britain',
             group_type=0, # local group
             description='Bisquits, tea, and open data',
             country='GB',
-            mailinglist='http://lists.okfn.org/okfn-britain',
-            homepage='http://gb.okfn.org/',
+            mailinglist_url='http://lists.okfn.org/okfn-britain',
+            homepage_url='http://gb.okfn.org/',
             twitter='OKFNgb'
             )
       
@@ -381,9 +381,9 @@ class NetworkGroupDetailViewTest(WebTest):
             country='GB',
             region=u'Buckingham',
             position=Geoposition(51.501364, -0.141890),
-            homepage='http://queen.okfn.org/',
+            homepage_url='http://queen.okfn.org/',
             twitter='buckingham',
-            facebook='http://facebook.com/queenthepersonnottheband',
+            facebook_url='http://facebook.com/queenthepersonnottheband',
             youtube='Queenovision'
             )
 
@@ -393,8 +393,8 @@ class NetworkGroupDetailViewTest(WebTest):
             group_type=1, # chapter
             description='Haben Sie ein Kugelschreiber bitte?',
             country='DE',
-            mailinglist='http://lists.okfn.org/okfn-de',
-            homepage='http://de.okfn.org/',
+            mailinglist_url='http://lists.okfn.org/okfn-de',
+            homepage_url='http://de.okfn.org/',
             twitter='OKFNde'
             )
 
@@ -435,8 +435,8 @@ class NetworkGroupDetailViewTest(WebTest):
 
         self.assertIn(self.britain.description, response.body)
         self.assertIn(self.britain.get_country_display(), response.body)
-        self.assertIn(self.britain.homepage, response.body)
-        self.assertIn(self.britain.mailinglist, response.body)
+        self.assertIn(self.britain.homepage_url, response.body)
+        self.assertIn(self.britain.mailinglist_url, response.body)
         self.assertIn(self.britain.twitter, response.body)
 
         self.assertIn(self.winston.name, response.body)
@@ -462,12 +462,12 @@ class NetworkGroupDetailViewTest(WebTest):
         self.assertIn(self.buckingham.get_country_display(), response.body)
         self.assertIn(self.buckingham.region, response.body)
 
-        self.assertIn(self.buckingham.homepage, response.body)
-        self.assertNotIn(self.britain.homepage, response.body)
-        self.assertNotIn(self.britain.mailinglist, response.body)
+        self.assertIn(self.buckingham.homepage_url, response.body)
+        self.assertNotIn(self.britain.homepage_url, response.body)
+        self.assertNotIn(self.britain.mailinglist_url, response.body)
         self.assertIn(self.buckingham.twitter, response.body)
         self.assertNotIn(self.britain.twitter, response.body)
-        self.assertIn(self.buckingham.facebook, response.body)
+        self.assertIn(self.buckingham.facebook_url, response.body)
         self.assertIn(self.buckingham.youtube, response.body)
 
         self.assertIn(self.elizabeth.name, response.body)
@@ -531,7 +531,8 @@ class NetworkGroupDetailViewTest(WebTest):
                         self.germany.get_country_display(),
                         '', '', self.germany.get_group_type_display(),
                         ', '.join([m.name for m in self.germany.members.all()]),
-                        self.germany.homepage, self.germany.mailinglist,
+                        self.germany.homepage_url,
+                        self.germany.mailinglist_url,
                         self.germany.twitter, '', '', 'Y', 'Y']
 
         self.assertEqual(germany, germany_data)
@@ -541,7 +542,8 @@ class NetworkGroupDetailViewTest(WebTest):
                         self.britain.get_country_display(),
                         '', '', self.britain.get_group_type_display(),
                         ', '.join([m.name for m in self.britain.members.all()]),
-                        self.britain.homepage, self.britain.mailinglist,
+                        self.britain.homepage_url,
+                        self.britain.mailinglist_url,
                         self.britain.twitter, '', '', '', 'Y']
 
         self.assertEqual(britain, britain_data)
@@ -560,6 +562,8 @@ class NetworkGroupDetailViewTest(WebTest):
                 ),
             self.buckingham.get_group_type_display(),
             ', '.join([m.name for m in self.buckingham.members.all()]),
-            self.buckingham.homepage,
-            self.buckingham.mailinglist,
-            self.buckingham.twitter, '', '', 'Y', '']
+            self.buckingham.homepage_url,
+            self.buckingham.mailinglist_url,
+            self.buckingham.twitter,
+            self.buckingham.youtube,
+            self.buckingham.facebook_url, 'Y', '']

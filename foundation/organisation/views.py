@@ -49,8 +49,8 @@ class NetworkGroupDetailView(DetailView):
     model = NetworkGroup
 
     def get_object(self):
-        country = self.kwargs.get('country', None)
-        region = self.kwargs.get('region', None)
+        country = self.kwargs.get('country', '')
+        region = self.kwargs.get('region', '')
         return get_object_or_404(NetworkGroup,
                                  country_slug=country,
                                  region_slug=region)
@@ -107,11 +107,11 @@ def networkgroup_csv_output(request):
                group.get_group_type_display(),  # Local group status
                u', '.join([member.name
                           for member in group.members.all()]),  # Leaders
-               group.homepage if group.homepage else '',  # Website
-               group.mailinglist if group.mailinglist else '',
+               group.homepage_url,  # Website
+               group.mailinglist_url,
                group.twitter if group.twitter else '',
                group.youtube if group.youtube else '',
-               group.facebook if group.facebook else '']
+               group.facebook_url]
 
         # Find topics of working group
         group_working_groups = [g.name for g in group.working_groups.all()]
