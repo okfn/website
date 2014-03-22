@@ -1,4 +1,5 @@
 from django.utils import timezone
+from django.core.urlresolvers import reverse
 from django.db import models
 
 
@@ -20,6 +21,9 @@ class PressRelease(models.Model):
     body = models.TextField()
     release_date = models.DateTimeField()
 
+    def get_absolute_url(self):
+        return reverse('press-release', kwargs={'slug': self.slug})
+
     class Meta:
         ordering = ('-release_date',)
 
@@ -37,6 +41,9 @@ class PressMention(models.Model):
     notes = models.TextField()
 
     # TODO: add a projects FK.
+
+    def get_absolute_url(self):
+        return reverse('press-mention', kwargs={'slug': self.slug})
 
     class Meta:
         ordering = ('-publication_date',)
