@@ -1,14 +1,17 @@
 <h3>Recent Press Releases</h3>
 <ul>
   {% for pressrelease in recent_releases.objects %}
-  <li>{% include "press/pressrelease_short.html" %}</li>
+  <li class="press-release">
+    {% include "press/pressrelease_date.html" %}
+    {% include "press/pressrelease_title.html" %}
+  </li>
   {% empty %}
   <li>No press releases.</li>
   {% endfor %}
   {% url 'press-releases' as press_releases_url %}
   {% if press_releases_url %}
   <p class="pull-right">
-    Look at <a href="{{ press_releases_url }}">all press releases</a>
+    <a href="{{ press_releases_url }}">All press releases</a>
   </p>
   {% endif %}
   <div class="clearfix"></div>
