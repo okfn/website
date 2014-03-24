@@ -16,32 +16,28 @@
   {{ pressmention.notes|markdown }}
 
   {% if pressmention.url %}
-  <p>
-    <small>
-      <i class="fa fa-link"></i> URL:
-      <a href="{{ pressmention.url }}" target="_blank">
-        {{ pressmention.url }}
-      </a>
-    </small>
-  </p>
+  <div class="meta">
+    <i class="fa fa-link"></i> URL:
+    <a href="{{ pressmention.url }}" target="_blank">
+      {{ pressmention.url }}
+    </a>
+  </div>
   {% endif %}
 
-  <p>
-    <small>
-      {% if pressmention.author %}
-      <i class="fa fa-user"></i> Author:
-      <strong>{{ pressmention.author }}</strong>
-      {% endif %}
-
-      {% if pressmention.publisher %}
-      <i class="fa fa-pencil"></i> Publisher:
-      <strong>{{ pressmention.publisher }}</strong>
-      {% endif %}
-
-      {% if pressmention.publication_date %}
-      <i class="fa fa-calendar"></i> Published:
-      <strong>{{ pressmention.publication_date|date }}</strong>
-      {% endif %}
-    </small>
-  </p>
+  <div class="meta">
+    {% if pressmention.author %}
+    <i class="fa fa-user"></i> Author:
+    <strong>{{ pressmention.author }}</strong>
+    {% endif %}
+    
+    {% if pressmention.publisher %}
+    <i class="fa fa-pencil"></i> Publisher:
+    <strong>{{ pressmention.publisher }}</strong>
+    {% endif %}
+    
+    {% if pressmention.publication_date %}
+    <i class="fa fa-calendar"></i> Published:
+    <strong>{{ pressmention.publication_date|date }}</strong>
+    {% endif %}
+  </div>
 </div>

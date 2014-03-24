@@ -2,20 +2,7 @@
 {% load press %}
 
 <div class="press-release{% if pressrelease.release_date|active_release %} active{% endif %}">
-  <h3>
-    {% url 'press-release' slug=pressrelease.slug as release_url %}
-    {% if headerlinks and release_url %}
-    <a href="{{ release_url }}">{{ pressrelease.title }}</a>
-    {% else %}
-    {{ pressrelease.title }}
-    {% endif %}
-  </h3>
-
-  <p title="Released on: {{ pressrelease.release_date|date }}">
-    <i class="fa fa-calendar"></i>
-    <strong>{{ pressrelease.release_date|date }}</strong>
-  </p>
-
+  <h3>{% include "press/pressrelease_title.html" %}</h3>
+  {% include "press/pressrelease_date.html" %}
   {{ pressrelease.body|markdown }}
-
 </div>

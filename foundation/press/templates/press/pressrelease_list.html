@@ -14,12 +14,19 @@
         {% with pressrelease=object_list|first %}
           {% include "press/pressrelease.html" %}
         {% endwith %}
+        {% if object_list|slice:"1:"|length %}<hr/>{% endif %}
         {% for pressrelease in object_list|slice:"1:" %}
-          <h3>{% include "press/pressrelease_short.html" %}</h3>
+        <div class="press-release">
+          <h3>{% include "press/pressrelease_title.html" %}</h3>
+          {% include "press/pressrelease_date.html" %}
+        </div>
         {% endfor %}
       {% else %}
         {% for pressrelease in object_list %}
-          <h3>{% include "press/pressrelease_short.html" %}</h3>
+        <div class="press-release">
+          <h3>{% include "press/pressrelease_title.html" %}</h3>
+          {% include "press/pressrelease_date.html" %}
+        </div>
         {% empty %}
         <p>{% trans 'No press releases found.' %}</p>
         {% endfor %}

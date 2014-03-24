@@ -1,6 +1,10 @@
 <h3>Recent Press Mentions</h3>
 <ul>{% for pressmention in recent_mentions.objects %}
-  <li>{% include "press/pressmention_short.html" %}</li>
+  <li>
+    <a href="{{ pressmention.url }}" target="_blank">
+      {{ pressmention.title }} <small><i class="fa fa-external-link"></i></small>
+    </a>
+  </li>
   {% empty %}
   <li>No recent press mentions</li>
   {% endfor %}</ul>

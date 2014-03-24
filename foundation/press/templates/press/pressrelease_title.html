@@ -1,0 +1,6 @@
+{% url 'press-release' slug=pressrelease.slug as release_url %}
+{% if release_url %}
+<a href="{{ release_url }}">{{ pressrelease.title }}</a>
+{% else %}
+{{ pressrelease.title}}
+{% endif %}
