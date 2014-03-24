@@ -126,6 +126,9 @@ class Theme(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100, unique=True)
+    blurb = models.TextField(help_text='Blurb for theme page')
+    description = models.TextField()
 
     def __unicode__(self):
         return self.name
