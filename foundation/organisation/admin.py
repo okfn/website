@@ -55,6 +55,7 @@ admin.site.register(ProjectType, ProjectTypeAdmin)
 
 class ThemeAdmin(reversion.VersionAdmin):
     list_display = ('name',)
+    prepopulated_fields = {"slug": ("name",)}
 
 admin.site.register(Theme, ThemeAdmin)
 
