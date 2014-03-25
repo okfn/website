@@ -133,6 +133,9 @@ class Theme(models.Model):
     def __unicode__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('theme', kwargs={'slug': self.slug})
+
 
 class WorkingGroupManager(models.Manager):
 

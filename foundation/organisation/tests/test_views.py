@@ -280,11 +280,77 @@ class ProjectDetailViewTest(WebTest):
 
         self.assertIn(self.market_garden.name, response)
 
+@override_settings(ROOT_URLCONF='foundation.tests.urls')
+class ThemeDetailViewTest(WebTest):
+    def setUp(self):  # flake8: noqa
+        self.hats = Theme.objects.create(
+            name='Hats',
+            slug='hats',
+            blurb='People must wear hats to the party',
+            description='Any hat goes but Red Hat or Fedora get extra points')
+
+        self.orange = Theme.objects.create(
+            name='Orange clothes',
+            slug='orange-clothes',
+            blurb='People must wear orange clothes to the party',
+            description='Come dressed as an orange for extra points')
+
+        self.kernel = WorkingGroup.objects.create(
+            name='Kernel people',
+            slug='kernel-people',
+            description='Linus disciples',
+            homepage_url='http://kernel.org',
+            theme=self.hats)
+
+        self.i18n = WorkingGroup.objects.create(
+            name='Internationalisation',
+            slug='i18n',
+            description='I prefer my own language thank you',
+            homepage_url='https://fedoraproject.org/wiki/I18N',
+            theme=self.hats,
+            incubation=True)
+
+        self.beefy = Project.objects.create(
+            name='Beefy Miracle',
+            slug='beefy-miracle',
+            teaser='Does the number 17 mean anything to you?',
+            description='Mmmmm... edible projects',
+            homepage_url='https://fedoraproject.org/wiki/Beefy_Miracle')
+
+        self.beefy.themes.add(self.hats)
+
+    def test_theme_page(self):
+        response = self.app.get(
+            reverse('theme', kwargs={'slug': self.hats.slug}))
+
+        self.assertIn(self.hats.name, response)
+        self.assertIn(self.hats.blurb, response)
+        self.assertIn(self.hats.description, response)
+
+        self.assertIn(self.kernel.name, response)
+        self.assertIn(self.kernel.description, response)
+        self.assertIn(self.kernel.homepage_url, response)
+        # Incubating groups should also show up
+        self.assertIn(self.i18n.name, response)
+
+        self.assertIn(self.beefy.name, response)
+        self.assertIn(self.beefy.teaser, response)
+        self.assertIn(self.beefy.get_absolute_url(), response)
+        self.assertNotIn(self.beefy.description, response)
+
+        self.assertIn(self.orange.name, response)
+        self.assertIn(self.orange.get_absolute_url(), response)
+        self.assertNotIn(self.orange.description, response)
+
 
 @override_settings(ROOT_URLCONF='foundation.tests.urls')
 class WorkingGroupListViewTest(WebTest):
     def setUp(self):  # flake8: noqa
-        self.theme = Theme.objects.create(name='World Wide Web')
+        self.theme = Theme.objects.create(
+            name='World Wide Web',
+            slug='world-wide-web',
+            blurb='That thing in the browser',
+            description='This what people incorrectly call "The Internet"')
 
         self.csv = WorkingGroup.objects.create(
             name='CSV on the Web',

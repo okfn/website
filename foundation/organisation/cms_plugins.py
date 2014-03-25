@@ -4,7 +4,7 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from cms.models.pluginmodel import CMSPlugin
 
-from .models import Project, FeaturedProject, ProjectList, NetworkGroup
+from .models import Project, Theme, FeaturedProject, ProjectList, NetworkGroup
 
 
 class FeaturedProjectPlugin(CMSPluginBase):
@@ -45,6 +45,22 @@ class ProjectListPlugin(CMSPluginBase):
         return context
 
 plugin_pool.register_plugin(ProjectListPlugin)
+
+
+class ThemesPlugin(CMSPluginBase):
+    model = CMSPlugin
+    module = "OKF"
+    name = _("Theme list")
+    render_template = "organisation/theme_list.html"
+
+    def render(self, context, instance, placeholder):
+        context = super(ThemesPlugin, self)\
+            .render(context, instance, placeholder)
+        context['object_header'] = _("Themes")
+        context['object_list'] = Theme.objects.all()
+        return context
+
+plugin_pool.register_plugin(ThemesPlugin)
 
 
 class NetworkGroupFlagsPlugin(CMSPluginBase):

@@ -6,7 +6,7 @@ from cms.models.pluginmodel import CMSPlugin
 from ..models import Project, ProjectType, Theme, NetworkGroup
 from ..models import FeaturedProject, ProjectList
 from ..cms_plugins import (FeaturedProjectPlugin, ProjectListPlugin,
-                           NetworkGroupFlagsPlugin)
+                           ThemesPlugin, NetworkGroupFlagsPlugin)
 
 from geoposition import Geoposition
 
@@ -74,6 +74,33 @@ class ProjectListPluginTest(CMSTestCase):
         self.assertNotIn(self.x, result['projects'])
         self.assertNotIn(self.y, result['projects'])
         self.assertIn(self.z, result['projects'])
+
+
+class ThemePluginTest(CMSTestCase):
+
+    def setUp(self):  #flake8: noqa
+        super(ThemePluginTest, self).setUp()
+
+        self.hats = Theme.objects.create(
+            name='Hats',
+            slug='hats',
+            blurb='People must wear hats to the party',
+            description='Any hat goes but Red Hat or Fedora get extra points')
+
+        self.orange = Theme.objects.create(
+            name='Orange clothes',
+            slug='orange-clothes',
+            blurb='People must wear orange clothes to the party',
+            description='Come dressed as an orange for extra points')
+
+        self.instance = CMSPlugin()
+
+    def test_theme_plugin(self):
+        plug = ThemesPlugin()
+        result = plug.render({}, self.instance, 'foo')
+        
+        self.assertIn(self.hats, result['object_list'])
+        self.assertIn(self.orange, result['object_list'])
 
 
 class NetworkGroupPluginTest(CMSTestCase):
