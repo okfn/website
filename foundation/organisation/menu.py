@@ -2,7 +2,7 @@ from menus.base import NavigationNode
 from menus.menu_pool import menu_pool
 from django.utils.translation import ugettext_lazy as _
 from cms.menu_bases import CMSAttachMenu
-from .models import Project, NetworkGroup
+from .models import Project, Theme, NetworkGroup
 
 
 class ProjectMenu(CMSAttachMenu):
@@ -21,6 +21,24 @@ class ProjectMenu(CMSAttachMenu):
         return nodes
 
 menu_pool.register_menu(ProjectMenu)
+
+
+class ThemeMenu(CMSAttachMenu):
+
+    name = _("Themes")
+
+    def get_nodes(self, request):
+        nodes = []
+        for theme in Theme.objects.all():
+            node = NavigationNode(
+                theme.name,
+                theme.get_absolute_url(),
+                theme.pk,
+                )
+            nodes.append(node)
+        return nodes
+
+menu_pool.register_menu(ThemeMenu)
 
 
 class NetworkGroupMenu(CMSAttachMenu):
