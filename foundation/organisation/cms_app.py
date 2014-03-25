@@ -33,6 +33,13 @@ class ProjectsAppHook(CMSApp):
 apphook_pool.register(ProjectsAppHook)
 
 
+class ThemesAppHook(CMSApp):
+    name = _("Themes")
+    urls = ["foundation.organisation.urls.themes"]
+
+apphook_pool.register(ThemesAppHook)
+
+
 class WorkingGroupsAppHook(CMSApp):
     name = _("Working Groups")
     urls = ["foundation.organisation.urls.workinggroups"]

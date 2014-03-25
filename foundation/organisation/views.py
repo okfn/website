@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from iso3166 import countries
 import unicodecsv
 
-from .models import (Board, Project, WorkingGroup, NetworkGroup,
+from .models import (Board, Project, Theme, WorkingGroup, NetworkGroup,
                      NetworkGroupMembership)
 
 
@@ -29,6 +29,16 @@ class ProjectListView(ListView):
     model = Project
     paginate_by = 10
     template_name = 'organisation/project_list.html'
+
+
+class ThemeDetailView(DetailView):
+    model = Theme
+
+    def get_context_data(self, **kwargs):
+        theme = self.kwargs.get('slug', None)
+        context = super(ThemeDetailView, self).get_context_data(**kwargs)
+        context['themes'] = Theme.objects.exclude(slug=theme)
+        return context
 
 
 class WorkingGroupListView(ListView):
