@@ -15,6 +15,7 @@ urlpatterns = patterns(
     url(r'^about/advisory-board',
         include('foundation.organisation.urls.advisoryboard')),
     url(r'^projects/', include('foundation.organisation.urls.projects')),
+    url(r'^themes/', include('foundation.organisation.urls.themes')),
     url(r'^get-involved/working-groups',
         include('foundation.organisation.urls.workinggroups')),
     url(r'^network/', include('foundation.organisation.urls.networkgroups')),
