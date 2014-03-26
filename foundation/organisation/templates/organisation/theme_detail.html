@@ -27,7 +27,7 @@
         </h4>
         <div class="row">
           <div class="col-md-3 col-sm-12">
-            {% thumbnail group.logo "64" as im %}
+            {% thumbnail group.logo "64" format="PNG" as im %}
             <div class="center-block">
               <a href="{{ group.homepage_url }}">
                 <img class="img-responsive" src="{{ im.url }}" alt="Logo for {{ group.name }}">
@@ -53,7 +53,7 @@
         </h4>
         <div class="row">
           <div class="col-md-3 col-sm-12">
-            {% thumbnail project.picture "64" as im %}
+            {% thumbnail project.picture "64" format="PNG" as im %}
             <div class="center-block">
               <a href="{{ project.get_absolute_url }}">
                 <img class="img-responsive" src="{{ im.url }}" alt="Logo/banner for {{ project.name }}">
