@@ -90,8 +90,14 @@ class Project(models.Model):
         max_length=100,
         help_text="A single line description for list views")
     description = models.TextField()
-    picture = models.ImageField(upload_to='projects/pictures',
-                                blank=True)
+    banner = models.ImageField(
+        upload_to='projects/banners',
+        blank=True,
+        help_text="A banner used for featuring this project on the front page")
+    picture = models.ImageField(
+        upload_to='projects/pictures',
+        blank=True,
+        help_text="A simple logo or picture to represent this project")
 
     twitter = models.CharField(max_length=18, blank=True)
     homepage_url = models.URLField(blank=True)

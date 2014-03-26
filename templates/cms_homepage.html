@@ -55,16 +55,16 @@
     </div>
   </div>
 </div>
+<h3>{% trans "Our projects" %}</h3>
 <div class='row'>
-  <div class='col-sm-8'>
-    <div class='feature-block-img feature-okfest'></div>
-  </div>
-  <div class='col-sm-4'>
-    <div class='feature-block-text feature-block-tertiary'>
-      {% placeholder "feature 3" %}
-    </div>
-  </div>
+  {% placeholder "featured projects" %}
 </div>
+<p class='pull-right'>
+  {% page_url "projects" as projects_url %}
+  <a href='{{ projects_url }}' class='btn btn-default btn-lg' role='button'>
+    {% trans 'More projects' %}
+  </a>
+</p>
 {% endblock %}
 
 {# Don't display the breadcrumb on the homepage #}
