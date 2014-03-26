@@ -20,6 +20,7 @@
           <h3>{% include "press/pressrelease_title.html" %}</h3>
           {% include "press/pressrelease_date.html" %}
         </div>
+        {% if not forloop.last%}<hr>{% endif %}
         {% endfor %}
       {% else %}
         {% for pressrelease in object_list %}
@@ -27,6 +28,7 @@
           <h3>{% include "press/pressrelease_title.html" %}</h3>
           {% include "press/pressrelease_date.html" %}
         </div>
+        {% if not forloop.last%}<hr>{% endif %}
         {% empty %}
         <p>{% trans 'No press releases found.' %}</p>
         {% endfor %}
