@@ -2,6 +2,7 @@ from cms.models.pluginmodel import CMSPlugin
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.text import slugify
+from django.utils.translation import ugettext_lazy as _
 from django_countries.fields import CountryField
 from geoposition.fields import GeopositionField
 
@@ -281,3 +282,9 @@ class ProjectList(CMSPlugin):
     project_type = models.ForeignKey(
         'ProjectType', blank=True, null=True,
         help_text='Limit to projects with this type')
+
+
+class SignupForm(CMSPlugin):
+    title = models.CharField(max_length=50,
+                             default='Get Connected to Open Knowledge')
+    description = models.TextField(blank=True)

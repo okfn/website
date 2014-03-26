@@ -4,9 +4,10 @@ from cms.test_utils.testcases import CMSTestCase
 from cms.models.pluginmodel import CMSPlugin
 
 from ..models import Project, ProjectType, Theme, NetworkGroup
-from ..models import FeaturedProject, ProjectList
+from ..models import FeaturedProject, ProjectList, SignupForm
 from ..cms_plugins import (FeaturedProjectPlugin, ProjectListPlugin,
-                           ThemesPlugin, NetworkGroupFlagsPlugin)
+                           ThemesPlugin, NetworkGroupFlagsPlugin,
+                           SignupFormPlugin)
 
 from geoposition import Geoposition
 
@@ -98,7 +99,7 @@ class ThemePluginTest(CMSTestCase):
     def test_theme_plugin(self):
         plug = ThemesPlugin()
         result = plug.render({}, self.instance, 'foo')
-        
+
         self.assertIn(self.hats, result['object_list'])
         self.assertIn(self.orange, result['object_list'])
 
@@ -117,7 +118,7 @@ class NetworkGroupPluginTest(CMSTestCase):
             homepage_url='http://gb.okfn.org/',
             twitter='OKFNgb'
             )
-      
+
         self.buckingham = NetworkGroup.objects.create(
             name='Open Knowledge Buckingham',
             group_type=0, # local group
@@ -146,7 +147,24 @@ class NetworkGroupPluginTest(CMSTestCase):
     def test_flag_plugin(self):
         plug = NetworkGroupFlagsPlugin()
         result = plug.render({}, self.instance, 'foo')
-        
+
         self.assertIn(self.britain, result['countries'])
         self.assertIn(self.germany, result['countries'])
         self.assertNotIn(self.buckingham, result['countries'])
+
+
+class SignupFormPluginTest(CMSTestCase):
+
+    def setUp(self):  # flake8: noqa
+        super(SignupFormPluginTest, self).setUp()
+
+        self.loveme = SignupForm.objects.create(
+            title='Love me',
+            description='Tell me, do.')
+
+    def test_title_description_added_to_signupform_plugin(self):
+        plug = SignupFormPlugin()
+        result = plug.render({}, self.loveme, 'foo')
+
+        self.assertEqual('Love me', result['title'])
+        self.assertEqual('Tell me, do.', result['description'])

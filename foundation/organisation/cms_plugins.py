@@ -4,7 +4,8 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from cms.models.pluginmodel import CMSPlugin
 
-from .models import Project, Theme, FeaturedProject, ProjectList, NetworkGroup
+from .models import (Project, Theme, FeaturedProject, ProjectList,
+                     NetworkGroup, SignupForm)
 
 
 class FeaturedProjectPlugin(CMSPluginBase):
@@ -77,3 +78,20 @@ class NetworkGroupFlagsPlugin(CMSPluginBase):
         return context
 
 plugin_pool.register_plugin(NetworkGroupFlagsPlugin)
+
+
+class SignupFormPlugin(CMSPluginBase):
+    model = SignupForm
+    module = "OKF"
+    name = _("Signup Form")
+    render_template = "organisation/signup_form.html"
+
+    def render(self, context, instance, placeholder):
+        context = super(SignupFormPlugin, self)\
+            .render(context, instance, placeholder)
+
+        context['title'] = instance.title
+        context['description'] = instance.description
+        return context
+
+plugin_pool.register_plugin(SignupFormPlugin)
