@@ -156,9 +156,14 @@ ROOT_URLCONF = 'foundation.urls'
 
 WSGI_APPLICATION = 'foundation.wsgi.application'
 
-# Use memcache for django.core.cache if available (see the
-# django-heroku-memcacheify documentation for details)
-CACHES = memcacheify()
+if DEBUG:
+    CACHES = {
+        'default': {'BACKEND': 'django.core.cache.backends.dummy.DummyCache'}
+    }
+else:
+    # Use memcache for django.core.cache if available (see the
+    # django-heroku-memcacheify documentation for details)
+    CACHES = memcacheify()
 
 DATABASES = {
     'default': dj_database_url.config(default='sqlite:///development.sqlite3')
