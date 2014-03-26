@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.conf.urls import patterns, include, url
+from django.views.generic import TemplateView
 
 from django.contrib import admin
 admin.autodiscover()
@@ -60,6 +61,8 @@ urlpatterns += patterns(
     url(r'^sitemap\.xml$',
         'django.contrib.sitemaps.views.sitemap',
         {'sitemaps': {'cmspages': CMSSitemap}}),
+    url(r'^sitemap/$',
+        TemplateView.as_view(template_name='sitemap.html')),
 
     # Fallthrough for CMS managed pages
     url(r'^', include('cms.urls'))
