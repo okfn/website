@@ -10,20 +10,20 @@
 </div>
 <div id='page-banner-signup'>
   <div class='container'>
-    <form class='form-horizontal' action='' method='post' role='form'>
-      <div class='col-sm-4 col-lg-3'>
-        <label class='control-label' for='name'>
-          {% trans 'Join our mailing list:' %}
-        </label>
+    <form class='form-inline' action='' method='post' role='form'>
+      <div class='page-banner-signup-label'>
+        {% trans 'Join our mailing list:' %}
       </div>
-      <div class='col-sm-3 col-lg-4'>
-        <input type='text' class='form-control' name='name' placeholder='name'>
-      </div>
-      <div class='col-sm-3 col-lg-4'>
-        <input type='email' class='form-control' name='email' placeholder='email address'>
-      </div>
-      <div class='col-sm-2 col-lg-1'>
-        <button type='submit' class='btn btn-default'>submit</button>
+      <div class='page-banner-signup-form'>
+        <div class="form-group">
+          <label class='sr-only' for='name'>Name:</label>
+          <input type='text' class='form-control' name='name' placeholder='name'>
+        </div>
+        <div class="form-group">
+          <label class='sr-only' for='email'>Email address:</label>
+          <input type='email' class='form-control' name='email' placeholder='email address'>
+        </div>
+        <button type='submit' class='btn btn-default'>subscribe</button>
       </div>
     </form>
   </div>

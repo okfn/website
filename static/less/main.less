@@ -176,50 +176,60 @@ header {
 #page-banner-signup {
   background: @okf-darkgrey;
   color: white;
-  font-size: 16px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 
-  button, label {
-    width: 100%;
-  }
-
-  label {
-    font-weight: normal;
+  .page-banner-signup-label {
+    float: left;
     font-size: 18px;
+    width: 25%;
+    padding-top: (@padding-base-vertical + 1);
   }
+  .page-banner-signup-form {
+    float: left;
+    text-align: right;
+    width: 75%;
 
-  form > div {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    .form-group, button {
+      margin-left: 5px;
+    }
+    .form-group {
+      width: 280px;
+    }
+    button {
+      width: 120px;
+    }
+    @media (max-width: @screen-sm-max) {
+      .form-group {
+        width: 200px;
+      }
+      button {
+        width: 100px;
+      }
+    }
+    @media (max-width: @screen-xs-max) {
+      .form-group, button {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
   }
-
-  form > div:first-child {
-    padding-left: 0;
-  }
-
-  form > div:last-child {
-    padding-right: 0;
+  @media (max-width: @screen-xs-max) {
+    .page-banner-signup-label, .page-banner-signup-form {
+      width: 100%;
+      text-align: left;
+    }
   }
 
   .form-control {
     color: #fff;
     border: 1px solid #fff;
+    width: 100%;
     .form-control-focus();
   }
 
   .btn {
     border-color: #fff;
-  }
-
-  @media (max-width: @screen-xs-max) {
-    label {
-      padding: 0;
-    }
-    form > div {
-      padding-right: 0;
-      padding-left: 0;
-    }
   }
 }
 
