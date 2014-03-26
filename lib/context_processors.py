@@ -19,3 +19,14 @@ def google_analytics(request):
             'GOOGLE_ANALYTICS_DOMAIN': ga_domain,
         }
     return {}
+
+
+def sendy(request):
+    """
+    Add the Sendy mailing list token to the context for use when rendering
+    signup forms.
+    """
+    return {
+        'SENDY_URL': settings.SENDY_URL,
+        'SENDY_TOKEN': settings.SENDY_TOKEN,
+    }

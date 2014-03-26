@@ -10,7 +10,10 @@
 </div>
 <div id='page-banner-signup'>
   <div class='container'>
-    <form class='form-inline' action='' method='post' role='form'>
+    <form class='form-inline'
+          role='form'
+          action='{{ SENDY_URL}}'
+          method='post'>
       <div class='page-banner-signup-label'>
         {% trans 'Join our mailing list:' %}
       </div>
@@ -23,6 +26,7 @@
           <label class='sr-only' for='email'>Email address:</label>
           <input type='email' class='form-control' name='email' placeholder='email address'>
         </div>
+        <input type="hidden" name="list" value="{{ SENDY_TOKEN }}">
         <button type='submit' class='btn btn-default'>subscribe</button>
       </div>
     </form>

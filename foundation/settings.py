@@ -150,6 +150,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'sekizai.context_processors.sekizai',
     'lib.context_processors.site',
     'lib.context_processors.google_analytics',
+    'lib.context_processors.sendy',
 )
 
 ROOT_URLCONF = 'foundation.urls'
@@ -326,6 +327,9 @@ else:
 
 GOOGLE_ANALYTICS_TRACKING_ID = env.get('DJANGO_GOOGLE_ANALYTICS_TRACKING_ID')
 GOOGLE_ANALYTICS_DOMAIN = env.get('DJANGO_GOOGLE_ANALYTICS_DOMAIN')
+
+SENDY_URL = env.get('DJANGO_SENDY_URL', '')
+SENDY_TOKEN = env.get('DJANGO_SENDY_TOKEN', '')
 
 if env.get('DJANGO_USE_AWS_STORAGE') == 'true':
     COMPRESS_STORAGE = 'lib.cached_storage.CachedStaticStorage'
