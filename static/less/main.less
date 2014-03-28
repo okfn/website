@@ -61,6 +61,20 @@
 // The social buttons are 28px high
 @header-soc-padding: (@header-height - 28px) / 2;
 
+// Fix button heights. There seems to be a rendering bug in Firefox (at least
+// v27, and possibly others) which causes buttons to render with slightly
+// incorrect heights in certain circumstances. Setting an explicit height sorts
+// this out.
+.btn {
+  height: @input-height-base;
+}
+.btn-lg {
+  height: @input-height-large;
+}
+.btn-sm {
+  height: @input-height-small;
+}
+
 header {
   margin: 20px 0;
 
