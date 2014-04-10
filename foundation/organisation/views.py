@@ -81,7 +81,7 @@ class NetworkGroupDetailView(DetailView):
                 networkgroup__country_slug=country,
                 networkgroup__region_slug=region)
 
-        context['group_members'] = members
+        context['group_members'] = members.order_by('order', 'person__name')
         return context
 
 

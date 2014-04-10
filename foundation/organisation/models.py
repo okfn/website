@@ -12,7 +12,7 @@ class Person(models.Model):
 
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)
-    email = models.EmailField()
+    email = models.EmailField(blank=True)
     photo = models.ImageField(upload_to='organisation/people/photos',
                               blank=True)
     twitter = models.CharField(max_length=18, blank=True)
@@ -265,12 +265,18 @@ class NetworkGroupMembership(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, blank=True)
+    order = models.IntegerField(
+        blank=True, null=True,
+        help_text="Higher numbers mean higher up in the food chain")
     networkgroup = models.ForeignKey('NetworkGroup')
     person = models.ForeignKey('Person')
 
     def __unicode__(self):
         return self.person.name + ' - ' + self.networkgroup.name
+
+    class Meta:
+        ordering = ["-order", "person__name"]
 
 
 class FeaturedProject(CMSPlugin):
