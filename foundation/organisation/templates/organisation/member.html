@@ -5,12 +5,16 @@
 <div id="{{ person.name|slugify }}" class="person">
   <h4>{{ person.name }}{% if member.title %} <small>{{member.title}}</small>{% endif %}</h4>
   <div class="row">
+    {% if person.photo %}
     <div class="col-md-2">
       {% thumbnail person.photo "116" as im %}
         <img class="img-responsive" src="{{ im.url }}" alt="{{ person.name }}">
       {% endthumbnail %}
     </div>
     <div class="col-md-10">
+    {% else %}
+    <div class="col-md-12">
+    {% endif %}
       {{ person.description|markdown }}
       <div class="person-social-links">
         {% if not skip_email %}
