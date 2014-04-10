@@ -13,7 +13,7 @@
 {% block body %}
 <div class="row">
 <div class="sidebar col-md-3">
-    <h3>Our {{ object.get_group_type_display|title }}</h3>
+    <h3>Connect</h3>
     <ul>
       <li>
         <i class="fa fa-globe fa-large"></i>
@@ -71,14 +71,18 @@
     </ul>{% endfor %}
     {% endif %}
     {% if object.working_groups.all %}
-    <h3>Our Main Interests</h3>
+    <h3>Interest Areas</h3>
+    <p>
+      Members of this {{ object.get_group_type_display|lower }}
+      are active in the following Open Knowledge working group:
+    </p>
     {% for group in object.working_groups.all %}<ul>
-      <li>{{ group.name }}</li>
+      <li><a href="{{ group.homepage }}">{{ group.name }}</a></li>
     </ul>{% endfor %}
     {% endif %}
   </div>
   <div class="col-md-9">
-    <h3>Members</h3>
+    <h3>Core team</h3>
     {% with skip_email=True %}
     {% for member in group_members %}
       {% include "organisation/member.html" %}
