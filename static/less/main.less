@@ -75,6 +75,10 @@
   height: @input-height-small;
 }
 
+.col-md-2-4 {
+  .make-md-column(2.4);
+}
+
 header {
   margin: 20px 0;
 
@@ -467,6 +471,19 @@ ul.icon-list {
 .feature-block-tertiary {
   a:link, a:visited {
     color: @okf-secondary-alt;
+  }
+}
+
+.featured-theme {
+  @media (min-width: @screen-sm-min) {
+    min-height: 280px;
+  }
+  @media (min-width: @screen-md-min) {
+    min-height: 250px;
+  }
+
+  p.blurb {
+    margin-top: 10px;
   }
 }
 
