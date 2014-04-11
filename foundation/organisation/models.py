@@ -135,6 +135,10 @@ class Theme(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
     blurb = models.TextField(help_text='Blurb for theme page')
     description = models.TextField()
+    picture = models.ImageField(
+        upload_to='themes/pictures',
+        blank=True,
+        help_text="A simple logo or picture to represent this theme")
 
     def __unicode__(self):
         return self.name
@@ -277,6 +281,13 @@ class NetworkGroupMembership(models.Model):
 
     class Meta:
         ordering = ["-order", "person__name"]
+
+
+class FeaturedTheme(CMSPlugin):
+    theme = models.ForeignKey('Theme', related_name='+')
+
+    def __unicode__(self):
+        return self.theme.name
 
 
 class FeaturedProject(CMSPlugin):

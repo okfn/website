@@ -4,8 +4,34 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from cms.models.pluginmodel import CMSPlugin
 
-from .models import (Project, Theme, FeaturedProject, ProjectList,
-                     NetworkGroup, SignupForm)
+from sorl.thumbnail import get_thumbnail
+
+from .models import (Project, Theme, FeaturedTheme, FeaturedProject,
+                     ProjectList, NetworkGroup, SignupForm)
+
+
+class FeaturedThemePlugin(CMSPluginBase):
+    model = FeaturedTheme
+    module = "OKF"
+    name = _("Featured Theme")
+    text_enabled = True
+    render_template = "organisation/theme_featured.html"
+
+    def icon_alt(self, instance):
+        return 'Theme: %s' % instance.theme.name
+
+    def icon_src(self, instance):
+        im = get_thumbnail(instance.theme.picture, '50x50', quality=99)
+        return im.url
+
+    def render(self, context, instance, placeholder):
+        context = super(FeaturedThemePlugin, self)\
+            .render(context, instance, placeholder)
+
+        context['object'] = instance.theme
+        return context
+
+plugin_pool.register_plugin(FeaturedThemePlugin)
 
 
 class FeaturedProjectPlugin(CMSPluginBase):
