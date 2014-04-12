@@ -2,6 +2,7 @@
 {% load i18n %}
 {% load cms_tags %}
 {% load markdown_deux_tags %}
+{% load thumbnail %}
 
 {% block body-class %}projects{% endblock %}
 
@@ -12,15 +13,59 @@
   {% static_placeholder "projects intro" %}
 </div>
 <div class="row">
-  <div class="main col-md-12">
-    {% for project in object_list %}
-      <h3>{{ project.name }}</h3>
-      {{ project.description|markdown }}
-    {% empty %}
-    <p>{% trans 'No projects found.' %}</p>
-    {% endfor %}
-
-    {% include "includes/pager.html" %}
+  <div class="col-md-5 col-md-push-7">
+    <div class="project-filter pull-right">
+      Filter by:
+      <a href="?filter=popular" class="btn btn-default{% if request.GET.filter == 'popular' %} active{% endif %}">Popular</a>
+      <div class="btn-group">
+        <a href="#" class="btn btn-default dropdown-toggle{% if 'theme' in request.GET %} active {% endif %}" data-toggle="dropdown">
+          Theme <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          {% for theme in themes %}
+          <li{% if request.GET.theme == theme.slug %} class="active"{% endif %}><a href="?theme={{ theme.slug }}">{{ theme.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle{% if 'type' in request.GET%} active{% endif %}" data-toggle="dropdown">
+          Type <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          {% for projecttype in projecttypes %}
+          <li{% if request.GET.type == projecttype.slug %} class="active"{% endif %}><a href="?type={{ projecttype.slug }}">{{ projecttype.name|capfirst }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
+<div class="row">
+  {% for project in object_list %}
+  <div class="project col-md-4 col-xs-12">
+    <a href="{% url 'project' slug=project.slug %}" title="{{ project.name }}">
+      {% if project.banner %}
+      <h3 class="sr-only">{{ project.name }}</h3>
+      {% thumbnail project.banner "375" format="PNG" as im %}
+      <img class="img-responsive"
+           src="{{ im.url }}"
+           alt="Banner for {{ project.name }}">
+      {% endthumbnail %}
+      {% else %}
+      <h3>{{ project.name }}</h3>
+      {% endif %}
+    </a>
+    <p class="featured-project-teaser">{{ project.teaser }}</p>
+    <a href="{% url 'project' slug=project.slug %}"
+       title="{{ project.name }}"
+       class="btn btn-default"
+       role="button">
+      Find out more
+    </a>
+  </div>
+  {% empty %}
+  <p>{% trans 'No projects found.' %}</p>
+  {% endfor %}
+</div>
+{% include "includes/pager.html" %}
 {% endblock %}

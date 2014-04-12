@@ -104,6 +104,9 @@ class Project(models.Model):
     sourcecode_url = models.URLField(blank=True)
     mailinglist_url = models.URLField(blank=True)
 
+    featured = models.BooleanField(
+        default=False,
+        help_text="Should this be a featured project?")
     themes = models.ManyToManyField('Theme', blank=True)
     types = models.ManyToManyField('ProjectType', blank=True)
 
@@ -122,6 +125,7 @@ class ProjectType(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100, unique=True)
 
     def __unicode__(self):
         return self.name
