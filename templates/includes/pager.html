@@ -2,12 +2,12 @@
 <ul class="pager">
   <li class="previous{% if not page_obj.has_previous %} disabled{% endif %}">
     <a href="{% if page_obj.has_previous %}?page={{ page_obj.previous_page_number }}{% else %}#{% endif %}">
-      &larr; Newer
+      &larr; {% if timeless %}Previous{% else %}Newer{% endif %}
     </a>
   </li>
   <li class="next{% if not page_obj.has_next %} disabled{% endif %}">
     <a href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% else %}#{% endif %}">
-      Older &rarr;
+      {% if timeless %}Next{% else %}Older{% endif %} &rarr;
     </a>
   </li>
 </ul>

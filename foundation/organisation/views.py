@@ -6,8 +6,8 @@ from django.http import HttpResponse
 from iso3166 import countries
 import unicodecsv
 
-from .models import (Board, Project, Theme, WorkingGroup, NetworkGroup,
-                     NetworkGroupMembership)
+from .models import (Board, Project, ProjectType, Theme, WorkingGroup,
+                     NetworkGroup, NetworkGroupMembership)
 
 
 class BoardView(DetailView):
@@ -27,8 +27,32 @@ class ProjectDetailView(DetailView):
 
 class ProjectListView(ListView):
     model = Project
-    paginate_by = 10
+    paginate_by = 15
     template_name = 'organisation/project_list.html'
+
+    def get_queryset(self):
+        # We only filter the list by one url parameter with
+        # hierarchy as 1. filter, 2. theme, 3. type
+        filter_param = self.request.GET.get('filter', None)
+        if filter_param == 'popular':
+            # Popular filter is featured projects
+            return Project.objects.filter(featured=True)
+
+        theme_param = self.request.GET.get('theme', None)
+        if theme_param:
+            return Project.objects.filter(themes__slug=theme_param)
+
+        type_param = self.request.GET.get('type', None)
+        if type_param:
+            return Project.objects.filter(types__slug=type_param)
+
+        return Project.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super(ProjectListView, self).get_context_data(**kwargs)
+        context['themes'] = Theme.objects.all()
+        context['projecttypes'] = ProjectType.objects.all()
+        return context
 
 
 class ThemeDetailView(DetailView):
