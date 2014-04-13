@@ -3,6 +3,7 @@
 {% load cms_tags %}
 {% load markdown_deux_tags %}
 {% load thumbnail %}
+{% load chunks %}
 
 {% block body-class %}projects{% endblock %}
 
@@ -40,8 +41,10 @@
     </div>
   </div>
 </div>
+{% for projects in object_list|chunks:3 %}
 <div class="row">
-  {% for project in object_list %}
+  {% for project in projects %}
+  {% if project %}
   <div class="project col-md-4 col-xs-12">
     <a href="{% url 'project' slug=project.slug %}" title="{{ project.name }}">
       {% if project.banner %}
@@ -63,9 +66,13 @@
       Find out more
     </a>
   </div>
+  {% endif %}
   {% empty %}
   <p>{% trans 'No projects found.' %}</p>
   {% endfor %}
 </div>
+{% endfor %}
+{% with timeless=True %}
 {% include "includes/pager.html" %}
+{% endwith %}
 {% endblock %}
