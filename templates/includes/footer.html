@@ -9,6 +9,10 @@
   {% if ip_policy_url %}
   <li><a href='{{ ip_policy_url }}'>IP policy</a></li>
   {% endif %}
+  {% page_url "cookie-policy" as cookie_policy_url %}
+  {% if cookie_policy_url %}
+  <li><a href='{{ cookie_policy_url }}'>Cookie policy</a></li>
+  {% endif %}
   {% page_url "terms-of-use" as tou_url %}
   {% if tou_url %}
   <li><a href='{{ tou_url }}'>Terms of use</a></li>
