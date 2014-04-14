@@ -302,6 +302,14 @@ class FeaturedProject(CMSPlugin):
         return self.project.name
 
 
+class NetworkGroupList(CMSPlugin):
+    group_type = models.IntegerField(default=0,
+                                     choices=NetworkGroup.GROUP_TYPES)
+
+    def __unicode__(self):
+        return self.get_group_type_display()
+
+
 class ProjectList(CMSPlugin):
     theme = models.ForeignKey(
         'Theme', blank=True, null=True,

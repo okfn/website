@@ -385,6 +385,9 @@ CMS_PLACEHOLDER_CONF = {
     },
 }
 
+# Allow iframes in the cms text plugin
+TEXT_ADDITIONAL_TAGS = ('iframe',)
+
 # This import has to live here, because it has side-effects that require Django
 # to be configured already. Ugh.
 from sorl.thumbnail.log import ThumbnailLogHandler

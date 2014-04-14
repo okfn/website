@@ -7,7 +7,8 @@ from cms.models.pluginmodel import CMSPlugin
 from sorl.thumbnail import get_thumbnail
 
 from .models import (Project, Theme, FeaturedTheme, FeaturedProject,
-                     ProjectList, NetworkGroup, WorkingGroup, SignupForm)
+                     ProjectList, NetworkGroup, NetworkGroupList, WorkingGroup,
+                     SignupForm)
 
 
 class FeaturedThemePlugin(CMSPluginBase):
@@ -91,16 +92,20 @@ plugin_pool.register_plugin(ThemesPlugin)
 
 
 class NetworkGroupFlagsPlugin(CMSPluginBase):
-    model = CMSPlugin
+    model = NetworkGroupList
     module = "OKF"
     name = _("Network Group Flags")
     render_template = "organisation/networkgroup_flags.html"
+    text_enabled = True
 
     def render(self, context, instance, placeholder):
         context = super(NetworkGroupFlagsPlugin, self)\
             .render(context, instance, placeholder)
 
-        context['countries'] = NetworkGroup.objects.countries()
+        context['title'] = instance.get_group_type_display()
+        context['countries'] = NetworkGroup.objects.countries().filter(
+            group_type=instance.group_type)
+
         return context
 
 plugin_pool.register_plugin(NetworkGroupFlagsPlugin)
@@ -111,6 +116,7 @@ class WorkingGroupPlugin(CMSPluginBase):
     module = "OKF"
     name = _("Working Groups")
     render_template = "organisation/workinggroup_shortlist.html"
+    text_enabled = True
 
     def render(self, context, instance, placeholder):
         context = super(WorkingGroupPlugin, self)\

@@ -3,7 +3,8 @@ import collections
 from cms.test_utils.testcases import CMSTestCase
 from cms.models.pluginmodel import CMSPlugin
 
-from ..models import Project, ProjectType, Theme, NetworkGroup
+from ..models import (Project, ProjectType, Theme, NetworkGroup, 
+                      NetworkGroupList)
 from ..models import FeaturedProject, ProjectList, SignupForm
 from ..cms_plugins import (FeaturedProjectPlugin, ProjectListPlugin,
                            ThemesPlugin, NetworkGroupFlagsPlugin,
@@ -142,13 +143,22 @@ class NetworkGroupPluginTest(CMSTestCase):
             twitter='OKFNde'
             )
 
-        self.instance = CMSPlugin()
+        self.localgroups = NetworkGroupList(group_type=0)
+        self.chapters = NetworkGroupList(group_type=1)
 
-    def test_flag_plugin(self):
+    def test_localgroups_plugin(self):
         plug = NetworkGroupFlagsPlugin()
-        result = plug.render({}, self.instance, 'foo')
+        result = plug.render({}, self.localgroups, 'foo')
 
         self.assertIn(self.britain, result['countries'])
+        self.assertNotIn(self.germany, result['countries'])
+        self.assertNotIn(self.buckingham, result['countries'])
+
+    def test_chapters_plugin(self):
+        plug = NetworkGroupFlagsPlugin()
+        result = plug.render({}, self.chapters, 'foo')
+
+        self.assertNotIn(self.britain, result['countries'])
         self.assertIn(self.germany, result['countries'])
         self.assertNotIn(self.buckingham, result['countries'])
 
