@@ -1,11 +1,11 @@
 {% load thumbnail%}
 
 <h3>Working Groups</h3>
-<ul>{% for workinggroup in workinggroups %}
+<ul class="working-groups">{% for workinggroup in workinggroups %}
 <li>
   <a href="{{ workinggroup.homepage_url }}" title="{{ workinggroup.name }}">
     {% thumbnail workinggroup.logo "36" as im %}
-    <img class="working-group-flag" src="{{ im.url }}" alt="{{ workinggroup.name }}">
+    <img class="icon" src="{{ im.url }}" alt="{{ workinggroup.name }}">
     {% endthumbnail %}
     {{ workinggroup.name }}
 </a>
