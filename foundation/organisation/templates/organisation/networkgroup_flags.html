@@ -3,7 +3,7 @@
 <li>
   <a href="{{ networkgroup.get_absolute_url }}" title="{{ networkgroup.name }}">
     <img class="flag" src="{{ networkgroup.country.flag }}" alt="{{ networkgroup.name }}">
-    {{ networkgroup.name }}
+    {{ networkgroup.get_country_display }}
   </a>
 </li>
 {% endfor %}</ul>
