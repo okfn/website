@@ -74,6 +74,7 @@ class WorkingGroupListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(WorkingGroupListView, self).get_context_data(**kwargs)
+        context['active_list'] = WorkingGroup.objects.active()
         context['incubator_list'] = WorkingGroup.objects.incubators()
 
         return context

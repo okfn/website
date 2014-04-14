@@ -45,6 +45,18 @@
     {% endfor %}
   </div>
   <div class="sidebar col-md-3 col-md-pull-9">
+    <h3>Active groups</h3>
+    {% static_placeholder "working groups active" %}
+    <ul>{% for workinggroup in active_list %}
+    <li>
+      <a href="{{ workinggroup.homepage_url }}" target="_blank">
+        {{ workinggroup.name }}
+      </a>
+    </li>
+    {% empty %}
+    <li>{% trans 'There are no active groups at the moment.' %}</li>
+    {% endfor %}</ul>
+
     <h3>Incubating groups</h3>
     {% static_placeholder "working groups incubating" %}
     <ul>{% for workinggroup in incubator_list %}
