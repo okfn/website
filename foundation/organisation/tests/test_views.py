@@ -299,16 +299,16 @@ class ThemeDetailViewTest(WebTest):
             name='Kernel people',
             slug='kernel-people',
             description='Linus disciples',
-            homepage_url='http://kernel.org',
-            theme=self.hats)
+            homepage_url='http://kernel.org')
+        self.kernel.themes.add(self.hats)
 
         self.i18n = WorkingGroup.objects.create(
             name='Internationalisation',
             slug='i18n',
             description='I prefer my own language thank you',
             homepage_url='https://fedoraproject.org/wiki/I18N',
-            theme=self.hats,
             incubation=True)
+        self.i18n.themes.add(self.hats)
 
         self.beefy = Project.objects.create(
             name='Beefy Miracle',
@@ -357,18 +357,16 @@ class WorkingGroupListViewTest(WebTest):
             slug='csv-on-the-web',
             description='Definition of a vocabulary for describing tables',
             homepage_url='http://www.w3.org/2013/csvw/',
-            theme=self.theme,
-            incubation=False
-            )
+            incubation=False)
+        self.csv.themes.add(self.theme)
 
         self.government = WorkingGroup.objects.create(
             name='Government Linked Data',
             slug='government-linked-data',
             description='Help governments around the world publish their data',
             homepage_url='http://www.w3.org/2011/gld/',
-            theme=self.theme,
-            incubation=True
-            )
+            incubation=True)
+        self.government.themes.add(self.theme)
 
     def test_workinggroup_list(self):
         response = self.app.get(reverse('working-groups'))
