@@ -16,10 +16,10 @@
   <div class="main col-md-9 col-md-push-3">
     {{ object.description|markdown }}
     <div class="row">
-      {% if object.workinggroup_set.all %}
+      {% if object.workinggroups.all %}
       <div class="col-md-6 col-sm-12">
         <h3>Working Groups</h3>
-        {% for group in object.workinggroup_set.all %}
+        {% for group in object.workinggroups.all %}
         <h4>
           <a href="{{ group.homepage_url }}" target="_blank">
             {{ group.name }}
