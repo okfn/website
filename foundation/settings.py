@@ -82,7 +82,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.sitemaps',
-    'django.contrib.redirects',
+    'django.contrib.redirects',  # Provides redirects app
 
     # 3rd-party important
     'djangosecure',
@@ -118,6 +118,7 @@ INSTALLED_APPS = (
     'foundation.jobs',
     'foundation.press',
     'foundation.organisation',
+    'foundation.redirects',  # Provides CSV importer command for redirects
     'foundation.search',
 )
 
