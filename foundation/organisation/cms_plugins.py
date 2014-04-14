@@ -7,7 +7,7 @@ from cms.models.pluginmodel import CMSPlugin
 from sorl.thumbnail import get_thumbnail
 
 from .models import (Project, Theme, FeaturedTheme, FeaturedProject,
-                     ProjectList, NetworkGroup, SignupForm)
+                     ProjectList, NetworkGroup, WorkingGroup, SignupForm)
 
 
 class FeaturedThemePlugin(CMSPluginBase):
@@ -104,6 +104,22 @@ class NetworkGroupFlagsPlugin(CMSPluginBase):
         return context
 
 plugin_pool.register_plugin(NetworkGroupFlagsPlugin)
+
+
+class WorkingGroupPlugin(CMSPluginBase):
+    model = CMSPlugin
+    module = "OKF"
+    name = _("Working Groups")
+    render_template = "organisation/workinggroup_shortlist.html"
+
+    def render(self, context, instance, placeholder):
+        context = super(WorkingGroupPlugin, self)\
+            .render(context, instance, placeholder)
+
+        context['workinggroups'] = WorkingGroup.objects.active()
+        return context
+
+plugin_pool.register_plugin(WorkingGroupPlugin)
 
 
 class SignupFormPlugin(CMSPluginBase):
