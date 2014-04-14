@@ -23,6 +23,7 @@
       <ul>{% for member in object.members.all %}
         <li><a href="#{{ member.name|slugify }}">{{ member.name }}</a></li>
       {% endfor %}</ul>
+      {% static_placeholder object.name|truncatechars:10|add:" (sidebar)" %}
     </div>
   </div>
 {% endblock %}
