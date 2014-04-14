@@ -1,6 +1,7 @@
 import csv
 import errno
 from optparse import make_option
+import sys
 
 from django.contrib.redirects.models import Redirect
 from django.contrib.sites.models import Site
@@ -23,33 +24,41 @@ class Command(BaseCommand):
     def execute(self, *args, **options):
         if len(args) != 1:
             raise CommandError("You must provide a file to import!")
+
+        self.site = options["site"]
+        if not isinstance(self.site, Site):
+            try:
+                self.site = Site.objects.get(domain=options["site"])
+            except ObjectDoesNotExist:
+                raise CommandError("No site found for domain: %s"
+                                   % options["site"])
+
         filepath = args[0]
 
-        try:
-            with open(filepath) as fp:
-                reader = csv.reader(fp)
-                header = reader.next()
-                if sorted(header) != ["from", "to"]:
-                    raise CommandError("File should have 'from' and 'to' "
-                                       "columns!")
+        if filepath == '-':
+            rows = _get_rows(sys.stdin)
+            _create_redirects(self.site, rows)
+        else:
+            try:
+                with open(filepath) as fp:
+                    rows = _get_rows(fp)
+                    _create_redirects(self.site, rows)
 
-                dictreader = csv.DictReader(fp, header)
+            except IOError as e:
+                if e.errno == errno.ENOENT:
+                    raise CommandError("The specified file does not exist!")
+                else:
+                    raise
 
-                site = options["site"]
-                if not isinstance(site, Site):
-                    try:
-                        site = Site.objects.get(domain=options["site"])
-                    except ObjectDoesNotExist:
-                        raise CommandError("No site found for domain: %s"
-                                           % options["site"])
 
-                _create_redirects(site, dictreader)
+def _get_rows(fp):
+    reader = csv.reader(fp)
 
-        except IOError as e:
-            if e.errno == errno.ENOENT:
-                raise CommandError("The specified file does not exist!")
-            else:
-                raise
+    header = reader.next()
+    if sorted(header) != ["from", "to"]:
+        raise CommandError("CSV should have 'from' and 'to' columns!")
+
+    return csv.DictReader(fp, header)
 
 
 def _create_redirects(site, rows):
