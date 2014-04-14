@@ -29,15 +29,22 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 SITE_ID = int(env.get('DJANGO_SITE_ID', 1))
 
-# The people that get emailed when shit breaks
-ADMINS = []
-django_admins = env.get('DJANGO_ADMINS')
-if django_admins:
-    for person in django_admins.split(','):
-        res = email.utils.parseaddr(person)
-        if res != ('', ''):
-            ADMINS.append(res)
-ADMINS = tuple(ADMINS)
+
+def _parse_email_list(varname):
+    people = []
+    emails = env.get(varname)
+    if emails:
+        for person in emails.split(','):
+            res = email.utils.parseaddr(person)
+            if res != ('', ''):
+                people.append(res)
+    return tuple(people)
+
+# The people that get emailed when shit breaks (500)
+ADMINS = _parse_email_list('DJANGO_ADMINS')
+
+# The people that get emailed when shit is missing (404)
+MANAGERS = _parse_email_list('DJANGO_MANAGERS')
 
 DEBUG = env.get('DJANGO_DEBUG', 'true') == 'true'
 
