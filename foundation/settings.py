@@ -173,6 +173,9 @@ DATABASES = {
     'default': dj_database_url.config(default='sqlite:///development.sqlite3')
 }
 
+if not DEBUG:
+    # Keep database connections around for a while, reusing them when possible.
+    CONN_MAX_AGE = 60
 
 # Search engine configurations
 
