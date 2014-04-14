@@ -1,12 +1,15 @@
 from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.views.generic import TemplateView
+from django.views.generic import RedirectView
 
 from django.contrib import admin
 admin.autodiscover()
 
 from haystack.views import SearchView
 from cms.sitemaps import CMSSitemap
+
+ARCHIVE_ROOT = 'http://webarchive.okfn.org/okfn.org/201404'
 
 urlpatterns = patterns(
     '',
@@ -63,6 +66,17 @@ urlpatterns += patterns(
         {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^sitemap/$',
         TemplateView.as_view(template_name='sitemap.html')),
+
+    # Fallthrough prefix redirects. WARNING: these will override any pages
+    # created in the CMS with these names.
+    url(r'^blogs/(?P<remain>.+)$',
+        RedirectView.as_view(url=ARCHIVE_ROOT + '/blogs/%(remain)s')),
+    url(r'^members/(?P<remain>.+)$',
+        RedirectView.as_view(url=ARCHIVE_ROOT + '/members/%(remain)s')),
+    url(r'^wp-content/(?P<remain>.+)$',
+        RedirectView.as_view(url=ARCHIVE_ROOT + '/wp-content/%(remain)s')),
+    url(r'^wp-includes/(?P<remain>.+)$',
+        RedirectView.as_view(url=ARCHIVE_ROOT + '/wp-includes/%(remain)s')),
 
     # Fallthrough for CMS managed pages
     url(r'^', include('cms.urls'))
