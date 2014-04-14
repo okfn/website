@@ -32,9 +32,9 @@ class WorkingGroupIndex(indexes.SearchIndex, indexes.Indexable):
 
 class NetworkGroupIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True, use_template=True)
-    mailinglist = indexes.CharField(model_attr='mailinglist')
-    homepage = indexes.CharField(model_attr='homepage')
     twitter = indexes.CharField(model_attr='twitter')
+    homepage_url = indexes.CharField(model_attr='homepage_url')
+    mailinglist_url = indexes.CharField(model_attr='mailinglist_url')
 
     def get_model(self):
         return NetworkGroup
