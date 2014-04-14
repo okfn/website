@@ -1,34 +1,50 @@
 {% load cms_tags %}
-
-<ul class='nav-simple'>
-  {% page_url "privacy-policy" as privacy_policy_url %}
-  {% if privacy_policy_url %}
-  <li><a href='{{ privacy_policy_url }}'>Privacy policy</a></li>
+<div class="row">
+<div class="col-md-8 col-xs-12">
+  <ul class='nav-simple'>
+    {% page_url "privacy-policy" as privacy_policy_url %}
+    {% if privacy_policy_url %}
+    <li><a href='{{ privacy_policy_url }}'>Privacy policy</a></li>
+    {% endif %}
+    {% page_url "ip-policy" as ip_policy_url %}
+    {% if ip_policy_url %}
+    <li><a href='{{ ip_policy_url }}'>IP policy</a></li>
+    {% endif %}
+    {% page_url "cookie-policy" as cookie_policy_url %}
+    {% if cookie_policy_url %}
+    <li><a href='{{ cookie_policy_url }}'>Cookie policy</a></li>
+    {% endif %}
+    {% page_url "terms-of-use" as tou_url %}
+    {% if tou_url %}
+    <li><a href='{{ tou_url }}'>Terms of use</a></li>
+    {% endif %}
+    {% page_url "jobs" as jobs_url %}
+    {% if jobs_url %}
+    <li><a href='{{ jobs_url }}'>Jobs</a></li>
+    {% endif %}
+    {% page_url "contact" as contact_url %}
+    {% if contact_url %}
+    <li><a href='{{ contact_url }}'>Contact</a></li>
+    {% endif %}
+  </ul>
+  <p>
+    <a href='https://github.com/okfn/foundation/'
+       title='Site source code'>
+      <i class='fa fa-code fa-lg fa-fw'></i> Source code
+    </a>
+    available under the MIT license.
+  </p>
+</div>
+<div class="col-md-4 col-xs-12">
+  <p>
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />Content on this site, made by <a xmlns:cc="http://creativecommons.org/ns#" href="https://okfn.org/" property="cc:attributionName" rel="cc:attributionURL">Open Knowledge</a>, is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+  </p>
+  {% page_url "attribution" as attribution_url %}
+  {% if attribution_url %}
+  <p>
+    Refer to our <a href='{{ attribution_url }}'>attributions page</a> for
+    attributions of other work on the site.
+  </p>
   {% endif %}
-  {% page_url "ip-policy" as ip_policy_url %}
-  {% if ip_policy_url %}
-  <li><a href='{{ ip_policy_url }}'>IP policy</a></li>
-  {% endif %}
-  {% page_url "cookie-policy" as cookie_policy_url %}
-  {% if cookie_policy_url %}
-  <li><a href='{{ cookie_policy_url }}'>Cookie policy</a></li>
-  {% endif %}
-  {% page_url "terms-of-use" as tou_url %}
-  {% if tou_url %}
-  <li><a href='{{ tou_url }}'>Terms of use</a></li>
-  {% endif %}
-  {% page_url "jobs" as jobs_url %}
-  {% if jobs_url %}
-  <li><a href='{{ jobs_url }}'>Jobs</a></li>
-  {% endif %}
-  {% page_url "contact" as contact_url %}
-  {% if contact_url %}
-  <li><a href='{{ contact_url }}'>Contact</a></li>
-  {% endif %}
-</ul>
-<p>
-  This website was built with love by the staff at Open Knowledge, using
-  <a href="https://www.djangoproject.com/">Django</a>
-  and
-  <a href="https://www.django-cms.org/">Django CMS</a>.
-</p>
+</div>
+</div>
