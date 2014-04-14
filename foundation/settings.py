@@ -82,6 +82,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    'django.contrib.redirects',
 
     # 3rd-party important
     'djangosecure',
@@ -135,6 +136,7 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
+    'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
