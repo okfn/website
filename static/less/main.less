@@ -529,9 +529,19 @@ body.working-groups {
   }
 }
 
-img.network-group-flag {
-  margin-right: 4px;
-}
+ul.network-countries {
+    list-style: none;
+    padding-left: 0;
+
+    & > li {
+      border-bottom: 1px dotted @okf-lightgrey;
+      line-height: 1.6em;
+
+      img.flag {
+        margin-right: 4px;
+      }
+    }
+  }
 
 .press-release {
   margin-bottom: 8px;

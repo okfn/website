@@ -1,11 +1,10 @@
-{% regroup countries|dictsort:"group_type" by get_group_type_display as country_groups %}
-{% for group in country_groups %}
-<h3>{{ group.grouper }}</h3>
-<ul>{% for networkgroup in group.list %}
+<h3>{{ title }}</h3>
+<ul class="network-countries">{% for networkgroup in countries %}
 <li>
   <a href="{{ networkgroup.get_absolute_url }}" title="{{ networkgroup.name }}">
-    <img class="network-group-flag" src="{{ networkgroup.country.flag }}" alt="{{ networkgroup.name }}">
+    <img class="flag" src="{{ networkgroup.country.flag }}" alt="{{ networkgroup.name }}">
     {{ networkgroup.name }}
-</a>
-{% endfor %}
-{% endfor %}
+  </a>
+</li>
+{% endfor %}</ul>
+
