@@ -7,9 +7,9 @@
 {% endif %}
 {% page_url "contact" as contact_url %}
 {% if contact_url %}
-<li><a href='#'>contact</a></li>
+<li><a href='{{ contact_url }}'>contact</a></li>
 {% endif %}
 {% page_url "donate" as donate_url %}
 {% if donate_url %}
-<li><a href='#'>donate</a></li>
+<li><a href='{{ donate_url }}'>donate</a></li>
 {% endif %}
