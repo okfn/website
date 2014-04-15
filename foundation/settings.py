@@ -16,6 +16,8 @@ from os import environ as env
 import dj_database_url
 from memcacheify import memcacheify
 
+from django.utils.translation import ugettext_lazy as _
+
 # Silence warnings from ipython/sqlite
 import warnings
 import exceptions
@@ -284,6 +286,11 @@ else:
 
 # Flag directory (uses flags from Open Icon Library)
 COUNTRIES_FLAG_URL = '/assets/img/flags/png/flag-{code}.png'
+
+# Override country names in django_countries
+COUNTRIES_OVERRIDE = {
+    'TW': _('Taiwan')
+}
 
 TEMPLATE_DEBUG = DEBUG
 
