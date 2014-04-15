@@ -1,7 +1,6 @@
 # foundation
 
-This is the [Django][dj]/[Django CMS][djcms] project that runs (will shortly
-run) <http://okfn.org>.
+This is the [Django][dj]/[Django CMS][djcms] project that runs <http://okfn.org>.
 
 [dj]: https://www.djangoproject.com/
 [djcms]: https://www.django-cms.org/
