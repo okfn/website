@@ -50,9 +50,15 @@ class UnitMembership(models.Model):
     title = models.CharField(max_length=100)
     person = models.ForeignKey('Person')
     unit = models.ForeignKey('Unit')
+    order = models.IntegerField(
+        blank=True, null=True,
+        help_text="Higher numbers mean higher up in the food chain")
 
     def __unicode__(self):
         return self.person.name + ' - ' + self.title
+
+    class Meta:
+        ordering = ["-order", "person__name"]
 
 
 class Board(models.Model):

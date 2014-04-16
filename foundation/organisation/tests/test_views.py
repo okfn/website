@@ -16,6 +16,10 @@ from ..models import (Board, Person, Project, Unit, Theme, WorkingGroup,
 @override_settings(ROOT_URLCONF='foundation.tests.urls')
 class UnitListViewTest(WebTest):
     def setUp(self):  # flake8: noqa
+        self.donatello = Person.objects.create(
+            name="Donatello (Donnie)",
+            description='Turtle with a purple mask',
+            email='donatello@tmnt.org')
         self.leonardo = Person.objects.create(
             name="Leonardo (Leo)",
             description='Turtle with a blue mask',
@@ -47,10 +51,16 @@ class UnitListViewTest(WebTest):
         self.footclan = Unit.objects.create(name="Foot Clan")
         self.masters = Unit.objects.create(name="Ninja Masters", order=1)
 
+        self.turtle_donatello = UnitMembership.objects.create(
+            title='Hacker',
+            person=self.donatello,
+            unit=self.turtles)
+
         self.turtle_leonardo = UnitMembership.objects.create(
             title='Leader',
             person=self.leonardo,
-            unit=self.turtles)
+            unit=self.turtles,
+            order=1)
 
         self.turtle_raphael = UnitMembership.objects.create(
             title='Bad boy',
@@ -84,16 +94,20 @@ class UnitListViewTest(WebTest):
 
     def test_unit_members_in_units(self):
         response = self.app.get(reverse('units'))
-        footclan = response.body.find(self.footclan.name)
-        turtles = response.body.find(self.turtles.name)
 
         # Units are ordered alphabetically
+        footclan = response.body.find(self.footclan.name)
+        turtles = response.body.find(self.turtles.name)
         self.assertTrue(footclan < turtles)
+
+        # Unit members are ordered alphabetically
+        # unless order is overwritten
+        donatello = response.body.find(self.donatello.name)
         leonardo = response.body.find(self.leonardo.name)
         raphael = response.body.find(self.raphael.name)
         rocksteady = response.body.find(self.rocksteady.name)
         self.assertTrue(footclan < rocksteady < turtles)
-        self.assertTrue(turtles < leonardo < raphael)
+        self.assertTrue(turtles < leonardo < donatello < raphael)
 
     def test_description_in_response(self):
         response = self.app.get(reverse('units'))
