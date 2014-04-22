@@ -1,4 +1,4 @@
-<h3>{{ title }}</h3>
+<h3>{{ title }}{{ countries|length|pluralize }}</h3>
 <ul class="network-countries">{% for networkgroup in countries %}
 <li>
   <a href="{{ networkgroup.get_absolute_url }}" title="{{ networkgroup.name }}">
