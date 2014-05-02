@@ -17,7 +17,7 @@ def placeholder_content(page, slot='blurb'):
         return result
     for plugin in CMSPlugin.objects.filter(placeholder=page_placeholders):
         instance, plugin_type = plugin.get_plugin_instance()
-        if instance is not None:
+        if instance is not None and hasattr(instance, 'body'):
             result += instance.body
 
     return mark_safe(result)
