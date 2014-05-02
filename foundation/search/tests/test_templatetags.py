@@ -1,6 +1,5 @@
 from django.test import TestCase
 from cms.api import add_plugin, create_page
-from cms.models import Page, Placeholder
 
 from ..templatetags.cms_pages import placeholder_content
 
