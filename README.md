@@ -8,6 +8,15 @@ This is the [Django][dj]/[Django CMS][djcms] project that runs <http://okfn.org>
 [![Build Status](https://travis-ci.org/okfn/foundation.svg?branch=master)](https://travis-ci.org/okfn/foundation)
 [![Coveralls](http://img.shields.io/coveralls/okfn/foundation.svg?branch=master)](https://coveralls.io/r/okfn/foundation?branch=master)
 
+## Prerequisites and assumptions
+
+You must have the following installed:
+
+- Python 2.7
+- libmemcached (`brew install libmemcached` on Mac OS X using [Homebrew](http://brew.sh/))
+
+You may also wish to follow any install instructions inside a Python virtual environment. Explaining `virtualenv` is outside of the scope of this README, but [this tutorial might help](http://hackercodex.com/guide/python-development-environment-on-mac-osx/).
+
 ## Running in development
 
     pip install -r requirements.dev.txt
