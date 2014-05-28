@@ -52,6 +52,24 @@
 // Import the rest of Bootstrap
 @import "bootstrap.less";
 
+//Custom Open Knowledge Icons
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?-aat9k8');
+	src:url('../fonts/icomoon.eot?#iefix-aat9k8') format('embedded-opentype'),
+		  url('../fonts/icomoon.woff?-aat9k8') format('woff'),
+		  url('../fonts/icomoon.ttf?-aat9k8') format('truetype'),
+		  url('../fonts/icomoon.svg?-aat9k8#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+.fa-search {
+	font-family: 'icomoon';
+}
+.fa-search:before {
+	content: "\f002";
+}
+
 @header-padding: 17px;
 @header-font-size: 16px;
 @header-nav-font-size: 16px;
@@ -336,13 +354,18 @@ html.wf-lato-n7-active {
     .input-group-btn .btn {
       color: @okf-darkgrey;
       background: transparent;
-      border-color: @okf-darkgrey;
+      border-color: @okf-midgrey;
       border-left-color: transparent;
     }
   }
 
   .form-control {
-    border-color: @okf-darkgrey;
+    border-color: @okf-midgrey;
+    border-right-color:@navbar-default-bg;
+  }
+  .form-control:focus {
+    box-shadow:none;
+    background-color:#fff;
     border-right-color: fadeout(@okf-darkgrey, 90%);
   }
 
