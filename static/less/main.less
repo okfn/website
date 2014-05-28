@@ -114,7 +114,6 @@ header {
   line-height: 1em;
   margin-top: @header-nav-padding;
   margin-bottom: @header-nav-padding;
-  margin-right: 15px;
   margin-left: 0px;
   vertical-align: middle;
   color: @okf-midgrey;
@@ -126,7 +125,7 @@ header {
 
 #nav-social {
   vertical-align: middle;
-  margin: @header-soc-padding 0;
+  margin: @header-soc-padding 0 @header-soc-padding 5px;
 }
 
 #navbar-main {
@@ -373,14 +372,21 @@ html.wf-lato-n7-active {
   a {
     display: inline-block;
     color: #333333;
-    width: 34px;
+    width: 32px;
+    height:32px;
+    line-height:30px;
     text-align: center;
+    border-radius:16px;
+    border:solid 1px #333333;
+    margin-left:10px;
 
     &.facebook:hover {
       color: #3b5998;
+      border-color: #3b5998;
     }
     &.twitter:hover {
       color: #00aeef;
+      border-color: #00aeef;
     }
   }
 }
