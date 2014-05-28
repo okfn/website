@@ -1,6 +1,6 @@
 # Primary deps
 Django>=1.6,<1.7
-Pillow # required by djangocms-text-ckeditor
+Pillow>=2.4.0 # required by djangocms-text-ckeditor
 South
 aldryn-search>=0.1.9
 cssmin
@@ -31,5 +31,5 @@ gunicorn
 newrelic
 psycopg2
 pyelasticsearch>=0.6,<0.7 # required by django-haystack
-requests>=2.2,<2.3 # required by django-haystack
+requests>=2.3,<2.4 # required by django-haystack
 static

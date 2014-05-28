@@ -1,6 +1,6 @@
 # Pinned requirements
 Django==1.6.5
-Pillow==2.3.0
+Pillow==2.4.0
 South==0.8.4
 aldryn-search==0.1.9
 boto==2.25.0
@@ -38,7 +38,7 @@ psycopg2==2.5.2
 pyelasticsearch==0.6.1
 pylibmc==1.2.3
 pystache==0.5.3
-requests==2.2.1
+requests==2.3.0
 simplejson==3.3.3
 six==1.5.2
 sorl-thumbnail==11.12
