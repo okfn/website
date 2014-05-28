@@ -3,7 +3,7 @@ git+https://github.com/divio/django-cms.git@698fe1cf04308ae3d3577909d8377f314cb6
 git+https://github.com/aldryn/aldryn-search.git@cms3-compat#egg=aldryn-search
 
 # Pinned requirements
-Django==1.6.2
+Django==1.6.5
 Pillow==2.3.0
 South==0.8.4
 #aldryn-search==0.1.6
