@@ -22,7 +22,7 @@
 : ${DRYRUN:=}
 : ${QUIET:=}
 
-set -eo pipefail
+set -e
 
 usage () {
   echo "Usage: $0 <src> <dst>" >&2
