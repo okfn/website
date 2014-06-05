@@ -198,6 +198,9 @@ HAYSTACK_CONNECTIONS = {
     }
 }
 
+# Use realtime updates (synchronously update the index on model save/delete)
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
 haystack_default = HAYSTACK_CONNECTIONS['default']
 haystack_engine = env.get('HAYSTACK_SEARCH_ENGINE')
 
