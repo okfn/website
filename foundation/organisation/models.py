@@ -226,7 +226,10 @@ class NetworkGroup(models.Model):
     homepage_url = models.URLField(blank=True)
     twitter = models.CharField(max_length=18, blank=True)
     facebook_url = models.URLField(blank=True)
-    youtube = models.CharField(max_length=18, blank=True)
+    youtube = models.CharField(
+        max_length=100,
+        blank=True,
+        help_text="The YouTube user id (not the full URL) for this group")
 
     position = GeopositionField(blank=True, null=True)
 
