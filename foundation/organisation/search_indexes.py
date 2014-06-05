@@ -10,6 +10,9 @@ class PersonIndex(indexes.SearchIndex, indexes.Indexable):
     def get_model(self):
         return Person
 
+    def get_updated_field(self):
+        return 'updated_at'
+
 
 class ProjectIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True, use_template=True)
@@ -21,6 +24,9 @@ class ProjectIndex(indexes.SearchIndex, indexes.Indexable):
     def get_model(self):
         return Project
 
+    def get_updated_field(self):
+        return 'updated_at'
+
 
 class WorkingGroupIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True, use_template=True)
@@ -28,6 +34,9 @@ class WorkingGroupIndex(indexes.SearchIndex, indexes.Indexable):
 
     def get_model(self):
         return WorkingGroup
+
+    def get_updated_field(self):
+        return 'updated_at'
 
 
 class NetworkGroupIndex(indexes.SearchIndex, indexes.Indexable):
@@ -38,3 +47,6 @@ class NetworkGroupIndex(indexes.SearchIndex, indexes.Indexable):
 
     def get_model(self):
         return NetworkGroup
+
+    def get_updated_field(self):
+        return 'updated_at'

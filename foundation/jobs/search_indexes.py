@@ -11,6 +11,9 @@ class JobIndex(indexes.SearchIndex, indexes.Indexable):
     def get_model(self):
         return Job
 
+    def get_updated_field(self):
+        return 'updated_at'
+
     def index_queryset(self, using=None):
         now = timezone.now()
         return self.get_model().objects.filter(submission_closes__gt=now)
