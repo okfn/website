@@ -23,6 +23,6 @@
     <p>
       <i class="fa fa-hand-o-right fa-large"></i> <a href="{{ membership.networkgroup.get_absolute_url }}">{{ membership.networkgroup.name }} ({{ membership.title }})</a>
     {% endfor %}
-    {{ person.description|markdown }}
+    {{ person.description|markdown|truncatewords_html:80 }}
   </div>
 </div>
