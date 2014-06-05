@@ -3,7 +3,7 @@ import collections
 from cms.test_utils.testcases import CMSTestCase
 from cms.models.pluginmodel import CMSPlugin
 
-from ..models import (Project, ProjectType, Theme, NetworkGroup, 
+from ..models import (Project, ProjectType, Theme, NetworkGroup,
                       NetworkGroupList)
 from ..models import FeaturedProject, ProjectList, SignupForm
 from ..cms_plugins import (FeaturedProjectPlugin, ProjectListPlugin,
@@ -130,7 +130,7 @@ class NetworkGroupPluginTest(CMSTestCase):
             homepage_url='http://queen.okfn.org/',
             twitter='buckingham',
             facebook_url='http://facebook.com/queenthepersonnottheband',
-            youtube='Queenovision'
+            youtube_url='https://www.youtube.com/user/Queenovision'
             )
 
         self.germany = NetworkGroup.objects.create(

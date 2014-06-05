@@ -384,15 +384,15 @@ class WorkingGroupListViewTest(WebTest):
 
     def test_workinggroup_list(self):
         response = self.app.get(reverse('working-groups'))
-        
+
         self.assertIn(self.csv.name, response)
         self.assertIn(self.csv.description, response)
         self.assertIn(self.csv.homepage_url, response)
-        
+
         self.assertIn(self.government.name, response)
         self.assertIn(self.government.homepage_url, response)
         self.assertNotIn(self.government.description, response)
-        
+
         # Active working groups should come before incubating groups
         csv = response.body.find(self.csv.name)
         government = response.body.find(self.government.name)
@@ -451,7 +451,7 @@ class NetworkGroupDetailViewTest(WebTest):
             homepage_url='http://gb.okfn.org/',
             twitter='OKFNgb'
             )
-      
+
         self.buckingham = NetworkGroup.objects.create(
             name='Open Knowledge Buckingham',
             group_type=0, # local group
@@ -462,7 +462,7 @@ class NetworkGroupDetailViewTest(WebTest):
             homepage_url='http://queen.okfn.org/',
             twitter='buckingham',
             facebook_url='http://facebook.com/queenthepersonnottheband',
-            youtube='Queenovision'
+            youtube_url='https://www.youtube.com/user/Queenovision'
             )
 
 
@@ -534,7 +534,7 @@ class NetworkGroupDetailViewTest(WebTest):
                             'region': self.buckingham.region_slug}))
 
         self.assertIn(self.buckingham.name, response.body)
-        
+
         self.assertIn(self.buckingham.description, response.body)
 
         self.assertIn(self.buckingham.get_country_display(), response.body)
@@ -546,7 +546,7 @@ class NetworkGroupDetailViewTest(WebTest):
         self.assertIn(self.buckingham.twitter, response.body)
         self.assertNotIn(self.britain.twitter, response.body)
         self.assertIn(self.buckingham.facebook_url, response.body)
-        self.assertIn(self.buckingham.youtube, response.body)
+        self.assertIn(self.buckingham.youtube_url, response.body)
 
         self.assertIn(self.elizabeth.name, response.body)
         self.assertIn(self.elizabeth_britain.title, response.body)
@@ -601,7 +601,7 @@ class NetworkGroupDetailViewTest(WebTest):
                    'Facebook page']
         for group in WorkingGroup.objects.all():
             headers.append('Topic: {0}'.format(group.name))
-        
+
         self.assertEqual(header_row, headers)
 
         germany = csv.next()
@@ -643,5 +643,5 @@ class NetworkGroupDetailViewTest(WebTest):
             self.buckingham.homepage_url,
             self.buckingham.mailinglist_url,
             self.buckingham.twitter,
-            self.buckingham.youtube,
+            self.buckingham.youtube_url,
             self.buckingham.facebook_url, 'Y', '']

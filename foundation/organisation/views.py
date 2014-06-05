@@ -145,7 +145,7 @@ def networkgroup_csv_output(request):
                group.homepage_url,  # Website
                group.mailinglist_url,
                group.twitter if group.twitter else '',
-               group.youtube if group.youtube else '',
+               group.youtube_url if group.youtube_url else '',
                group.facebook_url]
 
         # Find topics of working group

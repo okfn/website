@@ -32,9 +32,9 @@
         Facebook page
       </a>
       {% endif %}
-      {% if object.youtube %}
+      {% if object.youtube_url %}
       <i class="fa fa-youtube fa-large"></i>
-      <a href="http://youtube.com/user/{{ object.youtube }}">
+      <a href="{{ object.youtube_url }}">
         YouTube channel
       </a>
       {% endif %}
