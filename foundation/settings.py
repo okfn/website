@@ -209,7 +209,7 @@ elif haystack_engine == 'elasticsearch':
         'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine'
     haystack_default['URL'] = env.get('HAYSTACK_ELASTICSEARCH_URL')
     haystack_default['INDEX_NAME'] = \
-        env.get('HAYSTACK_ELASTICSEARCH_INDEX_NAME')
+        env.get('HAYSTACK_ELASTICSEARCH_INDEX_NAME', 'foundation')
 # Haystack also supports a number of other backends which could be configured
 # here.
 
