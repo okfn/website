@@ -24,6 +24,9 @@ class PressRelease(models.Model):
     def get_absolute_url(self):
         return reverse('press-release', kwargs={'slug': self.slug})
 
+    def __unicode__(self):
+        return self.title
+
     class Meta:
         ordering = ('-release_date',)
 
@@ -44,6 +47,9 @@ class PressMention(models.Model):
 
     def get_absolute_url(self):
         return reverse('press-mention', kwargs={'slug': self.slug})
+
+    def __unicode__(self):
+        return self.title
 
     class Meta:
         ordering = ('-publication_date',)
