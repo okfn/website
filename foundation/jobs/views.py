@@ -1,13 +1,9 @@
-from django.utils import timezone
-from django.views.generic.list import ListView
-
-from .models import Job
+from django.views.generic.base import TemplateView
 
 
-class JobListView(ListView):
-    model = Job
+class JobListView(TemplateView):
+    template_name = "jobs/job_list.html"
 
-    def get_queryset(self):
-        # Only return jobs for which the submission close time is in the
-        # future.
-        return Job.objects.filter(submission_closes__gt=timezone.now())
+
+class JobHelperView(TemplateView):
+    template_name = "jobs/job_helper.html"

@@ -10,22 +10,18 @@
 
 {% block body %}
   {% static_placeholder "jobs intro" %}
-  {% for job in job_list %}
-    <h3>{{ job.title }}</h3>
-    <div class='job-description'>
-      {{ job.description|markdown }}
-    </div>
-    <p>
-    {% blocktrans with email=job.submission_email time=job.submission_closes|time date=job.submission_closes|date %}
-      To apply for this job, please email
-      <a href="mailto:{{ email }}">{{ email }}</a>
-      by the submission closing time of
-      <strong>{{ time }}</strong> on
-      <strong>{{ date }}</strong>.
-    {% endblocktrans %}
-    </p>
-  {% empty %}
-    <p>{% trans 'Unfortunately there are currently no job openings.' %}</p>
-  {% endfor %}
+  <iframe
+    name="resumator-job-frame"
+    id="resumator-job-frame"
+    class="resumator-advanced-widget"
+    src="//openknowledge.theresumator.com/apply/jobs/"
+    width="100%"
+    scrolling="no"
+    frameborder="0"
+    allowTransparency="true">
+  </iframe>
+  <script>
+    function resizeResumatorIframe(height,nojump){if(nojump===0){window.scrollTo(0,0);}document.getElementById("resumator-job-frame").height = parseInt(height)+20;}
+  </script>
   {% static_placeholder "jobs footer" %}
 {% endblock %}
