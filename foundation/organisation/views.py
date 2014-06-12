@@ -1,3 +1,4 @@
+from django.views.decorators.cache import cache_page
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.shortcuts import get_object_or_404
@@ -110,6 +111,7 @@ class NetworkGroupDetailView(DetailView):
         return context
 
 
+@cache_page(60 * 30)
 def networkgroup_csv_output(request):
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="network.csv"'
