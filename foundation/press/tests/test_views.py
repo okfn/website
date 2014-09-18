@@ -106,7 +106,8 @@ class PressMentionViewTest(WebTest):
             title='Our foundation knows open',
             slug='our-foundation-knows-open',
             author='Rite R. von Nuus',
-            notes='We are famous!'
+            notes='We are famous!',
+            published=True
             )
 
     def test_press_mention_in_response(self):

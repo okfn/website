@@ -16,7 +16,9 @@ class PressMentionIndexTest(TestCase):
             title='Our foundation knows open',
             slug='our-foundation-knows-open',
             author='Rite R. von Nuus',
-            notes='We are famous!')
+            notes='We are famous!',
+            published=True
+        )
 
     def test_queryset_includes_press_mentions(self):
         index = PressMentionIndex()

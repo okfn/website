@@ -19,7 +19,8 @@ class RecentPressMentionsPluginTest(CMSTestCase):
             title='Our foundation knows open',
             slug='our-foundation-knows-open',
             author='Rite R. von Nuus',
-            notes='We are famous!'
+            notes='We are famous!',
+            published=True
             )
 
     def test_mention_rendered(self):
