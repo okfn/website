@@ -25,3 +25,6 @@ class PressMentionIndex(indexes.SearchIndex, indexes.Indexable):
 
     def get_updated_field(self):
         return 'updated_at'
+
+    def index_queryset(self, using=None):
+        return self.get_model().published_objects.all()

@@ -20,10 +20,22 @@ class PressMentionIndexTest(TestCase):
             published=True
         )
 
+        self.unpublished_mention = PressMention.objects.create(
+            publisher='Runway',
+            publication_date=timezone.now()- timedelta(days=1),
+            url='http://www.runwaylive.com/open-fashion',
+            title='Open Fashion is the way to go!',
+            slug='open-fashion-is-the-new-black',
+            author='Andrea Sachs',
+            notes='Woo, open fashion!',
+            published=False
+        )
+
     def test_queryset_includes_press_mentions(self):
         index = PressMentionIndex()
 
         self.assertIn(self.mention, index.index_queryset())
+        self.assertNotIn(self.unpublished_mention, index.index_queryset())
 
 
 class PressReleaseIndexTest(TestCase):

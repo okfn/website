@@ -23,11 +23,23 @@ class RecentPressMentionsPluginTest(CMSTestCase):
             published=True
             )
 
+        self.unpublished_mention = PressMention.objects.create(
+            publisher='Runway',
+            publication_date=timezone.now()- timedelta(days=1),
+            url='http://www.runwaylive.com/open-fashion',
+            title='Open Fashion is the way to go!',
+            slug='open-fashion-is-the-new-black',
+            author='Andrea Sachs',
+            notes='Woo, open fashion!',
+            published=False
+            )
+
     def test_mention_rendered(self):
         plug = RecentPressMentionsPlugin()
         mentions = plug.render({}, plug, 'foo')['recent_mentions']['objects']
 
         self.assertIn(self.mention, mentions)
+        self.assertNotIn(self.unpublished_mention, mentions)
 
 
 class RecentPressReleasesPluginTest(CMSTestCase):

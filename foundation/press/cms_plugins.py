@@ -36,7 +36,7 @@ class RecentPressMentionsPlugin(CMSPluginBase):
             .render(context, instance, placeholder)
 
         context['recent_mentions'] = {
-            'objects': PressMention.objects.all()[:5]
+            'objects': PressMention.published_objects.all()[:5]
             }
         return context
 

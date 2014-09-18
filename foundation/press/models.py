@@ -38,6 +38,9 @@ class PublishedPressMentionMananger(models.Manager):
 
 
 class PressMention(models.Model):
+    objects = models.Manager()
+    published_objects = PublishedPressMentionMananger()
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

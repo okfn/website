@@ -110,6 +110,17 @@ class PressMentionViewTest(WebTest):
             published=True
             )
 
+        self.unpublished_mention = PressMention.objects.create(
+            publisher='Runway',
+            publication_date=timezone.now()- timedelta(days=1),
+            url='http://www.runwaylive.com/open-fashion',
+            title='Open Fashion is the way to go!',
+            slug='open-fashion-is-the-new-black',
+            author='Andrea Sachs',
+            notes='Woo, open fashion!',
+            published=False
+            )
+
     def test_press_mention_in_response(self):
         response = self.app.get(reverse('press-mentions'))
 
@@ -136,3 +147,19 @@ class PressMentionViewTest(WebTest):
                               kwargs={'slug': self.mention.slug})
         response = self.app.get(mention_url)
         self.assertNotIn(mention_url, response)
+
+    def test_unpublished_mention_not_in_response(self):
+        response = self.app.get(reverse('press-mentions'))
+
+        self.assertTrue(self.unpublished_mention.publisher not in response)
+        self.assertTrue(self.unpublished_mention.url not in response)
+        self.assertTrue(self.unpublished_mention.title not in response)
+        self.assertTrue(self.unpublished_mention.author not in response)
+        self.assertTrue(self.unpublished_mention.notes not in response)
+
+        date = defaultfilters.date(self.unpublished_mention.publication_date)
+        self.assertTrue(date not in response)
+
+        mention_url = reverse('press-mention',
+                              kwargs={'slug':self.unpublished_mention.slug})
+        self.assertTrue(mention_url not in response)
