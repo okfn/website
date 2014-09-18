@@ -34,7 +34,7 @@ class PressRelease(models.Model):
 class PublishedPressMentionMananger(models.Manager):
     def get_queryset(self):
         return super(PublishedPressMentionMananger, self).get_queryset(). \
-                filter(published=True)
+            filter(published=True)
 
 
 class PressMention(models.Model):
