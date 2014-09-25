@@ -292,7 +292,8 @@ COUNTRIES_FLAG_URL = '/assets/img/flags/png/flag-{code}.png'
 
 # Override country names in django_countries
 COUNTRIES_OVERRIDE = {
-    'TW': _('Taiwan')
+    'TW': _('Taiwan'),
+    'IR': _('Iran'),
 }
 
 TEMPLATE_DEBUG = DEBUG
