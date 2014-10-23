@@ -21,12 +21,12 @@ def google_analytics(request):
     return {}
 
 
-def sendy(request):
+def mailchimp(request):
     """
-    Add the Sendy mailing list token to the context for use when rendering
-    signup forms.
+    Add the Mailchimp mailing list url and token to the context for use when
+    rendering signup forms.
     """
     return {
-        'SENDY_URL': settings.SENDY_URL,
-        'SENDY_TOKEN': settings.SENDY_TOKEN,
+        'MAILCHIMP_URL': settings.MAILCHIMP_URL,
+        'MAILCHIMP_TOKEN': settings.MAILCHIMP_TOKEN,
     }
