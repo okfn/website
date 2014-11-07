@@ -294,6 +294,7 @@ COUNTRIES_FLAG_URL = '/assets/img/flags/png/flag-{code}.png'
 COUNTRIES_OVERRIDE = {
     'TW': _('Taiwan'),
     'IR': _('Iran'),
+    'KR': _('South Korea'),
 }
 
 TEMPLATE_DEBUG = DEBUG
