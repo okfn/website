@@ -11,7 +11,7 @@ class PicturePlugin(CMSPluginBase):
     model = Picture
     name = _("Picture")
     render_template = "cms/plugins/picture.html"
-    text_enabled = True
+    text_enabled = False
 
     def render(self, context, instance, placeholder):
         if instance.url:
