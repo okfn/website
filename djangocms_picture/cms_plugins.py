@@ -11,7 +11,7 @@ class PicturePlugin(CMSPluginBase):
     model = Picture
     name = _("Picture")
     render_template = "cms/plugins/picture.html"
-    text_enabled = False
+    text_enabled = True
 
     def render(self, context, instance, placeholder):
         if instance.url:
@@ -27,5 +27,8 @@ class PicturePlugin(CMSPluginBase):
         })
         return context
 
+    def icon_src(self, instance):
+        # TODO - possibly use 'instance' and provide a thumbnail image
+        return settings.STATIC_URL + u"cms/img/icons/plugins/image.png"
 
 plugin_pool.register_plugin(PicturePlugin)
