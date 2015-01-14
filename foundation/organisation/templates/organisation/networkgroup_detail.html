@@ -55,6 +55,14 @@
         </a>
       </li>
       {% endif %}
+      {% if object.gplus_url %}
+      <li>
+        <i class="fa fa-google-plus fa-large"></i>
+        <a href="{{ object.gplus_url }}">
+          Google Plus page
+        </a>
+      </li>
+      {% endif %}
       {% if object.youtube_url %}
       <li>
         <i class="fa fa-youtube fa-large"></i>
