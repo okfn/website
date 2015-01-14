@@ -149,7 +149,7 @@ def networkgroup_csv_output(request):
                group.twitter if group.twitter else '',
                group.youtube_url if group.youtube_url else '',
                group.facebook_url,
-               group.gplus_url if group.gplus_url else '',]
+               group.gplus_url if group.gplus_url else '', ]
 
         # Find topics of working group
         group_working_groups = [g.name for g in group.working_groups.all()]
