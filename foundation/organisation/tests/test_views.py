@@ -462,7 +462,8 @@ class NetworkGroupDetailViewTest(WebTest):
             homepage_url='http://queen.okfn.org/',
             twitter='buckingham',
             facebook_url='http://facebook.com/queenthepersonnottheband',
-            youtube_url='https://www.youtube.com/user/Queenovision'
+            youtube_url='https://www.youtube.com/user/Queenovision',
+            gplus_url='https://plus.google.com/+Intel',
             )
 
 
@@ -547,6 +548,7 @@ class NetworkGroupDetailViewTest(WebTest):
         self.assertNotIn(self.britain.twitter, response.body)
         self.assertIn(self.buckingham.facebook_url, response.body)
         self.assertIn(self.buckingham.youtube_url, response.body)
+        self.assertIn(self.buckingham.gplus_url, response.body)
 
         self.assertIn(self.elizabeth.name, response.body)
         self.assertIn(self.elizabeth_britain.title, response.body)
@@ -598,7 +600,7 @@ class NetworkGroupDetailViewTest(WebTest):
         headers = ['ISO3', 'Country', 'Geo coordinates', 'Map location',
                    'Local Groups status', 'Community Leaders', 'Website',
                    'Mailing List', 'Twitter handle', 'Youtube channel',
-                   'Facebook page']
+                   'Facebook page', 'Google+ page']
         for group in WorkingGroup.objects.all():
             headers.append('Topic: {0}'.format(group.name))
 
@@ -611,7 +613,8 @@ class NetworkGroupDetailViewTest(WebTest):
                         ', '.join([m.name for m in self.germany.members.all()]),
                         self.germany.homepage_url,
                         self.germany.mailinglist_url,
-                        self.germany.twitter, '', '', 'Y', 'Y']
+                        self.germany.twitter, '', '',
+                        self.germany.gplus_url, 'Y', 'Y']
 
         self.assertEqual(germany, germany_data)
 
@@ -622,8 +625,9 @@ class NetworkGroupDetailViewTest(WebTest):
                         ', '.join([m.name for m in self.britain.members.all()]),
                         self.britain.homepage_url,
                         self.britain.mailinglist_url,
-                        self.britain.twitter, '', '', '', 'Y']
-
+                        self.britain.twitter, '', '',
+                        self.britain.gplus_url, '', 'Y']
+        #import pdb; pdb.set_trace()
         self.assertEqual(britain, britain_data)
 
         buckingham = csv.next()
@@ -644,4 +648,4 @@ class NetworkGroupDetailViewTest(WebTest):
             self.buckingham.mailinglist_url,
             self.buckingham.twitter,
             self.buckingham.youtube_url,
-            self.buckingham.facebook_url, 'Y', '']
+            self.buckingham.facebook_url, 'Y', '' '']

@@ -120,7 +120,7 @@ def networkgroup_csv_output(request):
     header_row = ['ISO3', 'Country', 'Geo coordinates', 'Map location',
                   'Local Groups status', 'Community Leaders', 'Website',
                   'Mailing List', 'Twitter handle', 'Youtube channel',
-                  'Facebook page']
+                  'Facebook page', 'Google+ page']
 
     working_groups = []
     for group in WorkingGroup.objects.all():
@@ -148,7 +148,8 @@ def networkgroup_csv_output(request):
                group.mailinglist_url,
                group.twitter if group.twitter else '',
                group.youtube_url if group.youtube_url else '',
-               group.facebook_url]
+               group.facebook_url,
+               group.gplus_url if group.gplus_url else '',]
 
         # Find topics of working group
         group_working_groups = [g.name for g in group.working_groups.all()]
