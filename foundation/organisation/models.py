@@ -227,7 +227,7 @@ class NetworkGroup(models.Model):
     twitter = models.CharField(max_length=18, blank=True)
     facebook_url = models.URLField(blank=True)
     youtube_url = models.URLField(blank=True)
-    gplus_url = models.URLField(blank=True)
+    gplus_url = models.URLField('Google+ url', blank=True)
     wiki_url = models.URLField(blank=True)
 
     position = GeopositionField(blank=True, null=True)
