@@ -1,6 +1,6 @@
 # Pinned requirements
-Django==1.6.5
-Pillow==2.4.0
+Django==1.6.10
+Pillow==2.7.0
 South==0.8.4
 aldryn-search==0.1.9
 boto==2.25.0
