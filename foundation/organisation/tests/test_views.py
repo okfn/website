@@ -449,6 +449,7 @@ class NetworkGroupDetailViewTest(WebTest):
             country='GB',
             mailinglist_url='http://lists.okfn.org/okfn-britain',
             homepage_url='http://gb.okfn.org/',
+            wiki_url='http://wiki.okfn.org/GodSaveTheQueen',
             twitter='OKFNgb'
             )
 
@@ -543,6 +544,7 @@ class NetworkGroupDetailViewTest(WebTest):
 
         self.assertIn(self.buckingham.homepage_url, response.body)
         self.assertNotIn(self.britain.homepage_url, response.body)
+        self.assertNotIn(self.britain.wiki_url, response.body)
         self.assertNotIn(self.britain.mailinglist_url, response.body)
         self.assertIn(self.buckingham.twitter, response.body)
         self.assertNotIn(self.britain.twitter, response.body)
@@ -599,8 +601,8 @@ class NetworkGroupDetailViewTest(WebTest):
         # Headers need to be on a specific form
         headers = ['ISO3', 'Country', 'Geo coordinates', 'Map location',
                    'Local Groups status', 'Community Leaders', 'Website',
-                   'Mailing List', 'Twitter handle', 'Youtube channel',
-                   'Facebook page', 'Google+ page']
+                   'Wiki page', 'Mailing List', 'Twitter handle',
+                   'Youtube channel', 'Facebook page', 'Google+ page']
         for group in WorkingGroup.objects.all():
             headers.append('Topic: {0}'.format(group.name))
 
@@ -612,6 +614,7 @@ class NetworkGroupDetailViewTest(WebTest):
                         '', '', self.germany.get_group_type_display(),
                         ', '.join([m.name for m in self.germany.members.all()]),
                         self.germany.homepage_url,
+                        self.germany.wiki_url,
                         self.germany.mailinglist_url,
                         self.germany.twitter, '', '',
                         self.germany.gplus_url, 'Y', 'Y']
@@ -624,6 +627,7 @@ class NetworkGroupDetailViewTest(WebTest):
                         '', '', self.britain.get_group_type_display(),
                         ', '.join([m.name for m in self.britain.members.all()]),
                         self.britain.homepage_url,
+                        self.britain.wiki_url,
                         self.britain.mailinglist_url,
                         self.britain.twitter, '', '',
                         self.britain.gplus_url, '', 'Y']

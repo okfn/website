@@ -228,6 +228,7 @@ class NetworkGroup(models.Model):
     facebook_url = models.URLField(blank=True)
     youtube_url = models.URLField(blank=True)
     gplus_url = models.URLField(blank=True)
+    wiki_url = models.URLField(blank=True)
 
     position = GeopositionField(blank=True, null=True)
 
