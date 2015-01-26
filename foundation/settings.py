@@ -344,6 +344,7 @@ if env.get('DJANGO_CSP_REPORT_URI') is not None:
                                    "'unsafe-inline'"]
     CSP_IMG_SRC = asset_hosts + ['data://']
     CSP_FONT_SRC = asset_hosts + ['https://netdna.bootstrapcdn.com',
+                                  'https://fonts.gstatic.com',
                                   'https://themes.googleusercontent.com']
 
     CSP_REPORT_URI = env.get('DJANGO_CSP_REPORT_URI')
