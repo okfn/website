@@ -35,7 +35,7 @@ iso3166==0.6
 markdown2==2.3.0
 newrelic==2.40.0.34
 psycopg2==2.5.4
-pyelasticsearch==0.7.1
+elasticsearch==1.4.0
 pylibmc==1.4.1
 pystache==0.5.4
 requests==2.5.1
