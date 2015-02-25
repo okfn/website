@@ -33,7 +33,7 @@ gunicorn==19.2.1
 html5lib==0.999
 iso3166==0.7
 markdown2==2.3.0
-newrelic==2.40.0.36
+newrelic==2.44.0.36
 psycopg2==2.6
 elasticsearch==1.4.0
 pylibmc==1.4.1
