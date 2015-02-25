@@ -136,7 +136,7 @@ def networkgroup_csv_output(request):
                u'{lat},{lon}'.format(
                    lat=group.position.latitude,
                    lon=group.position.longitude
-                   ) if group.position.latitude else '',  # Geo coordinates
+                   ) if group.position else '',  # Geo coordinates
                u'{region}, {country}'.format(
                    region=group.region,
                    country=group.get_country_display()
