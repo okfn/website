@@ -95,7 +95,6 @@ INSTALLED_APPS = (
 
     # 3rd-party important
     'djangosecure',
-    'south',
     'reversion',
     's3_folder_storage',
     'pagedown',
@@ -118,6 +117,7 @@ INSTALLED_APPS = (
     # CMS
     'cms',
     'mptt',
+    'treebeard',
     'menus',
     'sekizai',
 
@@ -149,21 +149,33 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
 )
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.debug',
-    'django.core.context_processors.i18n',
-    'django.core.context_processors.request',
-    'django.core.context_processors.media',
-    'django.core.context_processors.static',
-    'django.core.context_processors.tz',
-    'django.contrib.messages.context_processors.messages',
-    'cms.context_processors.cms_settings',
-    'sekizai.context_processors.sekizai',
-    'lib.context_processors.site',
-    'lib.context_processors.google_analytics',
-    'lib.context_processors.mailchimp',
-)
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'APP_DIRS': True,
+        'DIRS': os.path.join(BASE_DIR, 'templates'),
+        'OPTIONS': {
+            'debug': DEBUG,
+            'context_processors':
+                (
+                    'django.contrib.auth.context_processors.auth',
+                    'django.core.context_processors.debug',
+                    'django.core.context_processors.i18n',
+                    'django.core.context_processors.request',
+                    'django.core.context_processors.media',
+                    'django.core.context_processors.static',
+                    'django.core.context_processors.tz',
+                    'django.contrib.messages.context_processors.messages',
+                    'cms.context_processors.cms_settings',
+                    'sekizai.context_processors.sekizai',
+                    'lib.context_processors.site',
+                    'lib.context_processors.google_analytics',
+                    'lib.context_processors.mailchimp',
+                    'django.template.context_processors.request',
+                ),
+            }
+    },
+]
 
 ROOT_URLCONF = 'foundation.urls'
 
@@ -296,12 +308,6 @@ COUNTRIES_OVERRIDE = {
     'IR': _('Iran'),
     'KR': _('South Korea'),
 }
-
-TEMPLATE_DEBUG = DEBUG
-
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
-)
 
 LOGIN_REDIRECT_URL = 'pages-root'
 LOGIN_URL = 'login'
