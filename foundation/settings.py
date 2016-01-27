@@ -127,7 +127,7 @@ INSTALLED_APPS = (
     'foundation.jobs',
     'foundation.press',
     'foundation.organisation',
-    'foundation.redirects',  # Provides CSV importer command for redirects
+    'foundation.redirector',  # Provides CSV importer command for redirects
     'foundation.search',
 )
 
