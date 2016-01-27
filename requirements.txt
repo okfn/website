@@ -28,6 +28,7 @@ djangocms-admin-style==1.0.8
 djangocms-file==0.2.0
 djangocms-googlemap==0.4.0
 djangocms-link==1.7
+djangocms-picture==0.2.0
 djangocms-text-ckeditor==2.8.1
 gunicorn==19.4.5
 html5lib==0.9999999
