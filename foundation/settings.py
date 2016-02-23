@@ -145,6 +145,7 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
 )
@@ -153,7 +154,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'APP_DIRS': True,
-        'DIRS': os.path.join(BASE_DIR, 'templates'),
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'OPTIONS': {
             'debug': DEBUG,
             'context_processors':
