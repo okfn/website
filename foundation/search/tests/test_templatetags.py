@@ -1,5 +1,6 @@
 from django.test import TestCase
 from cms.api import add_plugin, create_page
+from djangocms_picture.cms_plugins import PicturePlugin
 
 from ..templatetags.cms_pages import placeholder_content
 
@@ -21,6 +22,6 @@ class PlaceholderContentTest(TestCase):
         page = create_page('Test Page', 'cms_default.html', 'en')
         blurb = page.placeholders.get(slot='blurb')
 
-        add_plugin(blurb, 'PicturePlugin', 'en')
+        add_plugin(blurb, PicturePlugin, 'en')
 
         self.assertEqual(placeholder_content(page), '')
