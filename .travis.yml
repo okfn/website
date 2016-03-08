@@ -4,7 +4,7 @@ python:
   - 3.3
   - pypy
 before_install:
-  - bin/setup-travis
+  - bin/setup_travis
 install:
   - pip install -r requirements.dev.txt
   - pip install coveralls
