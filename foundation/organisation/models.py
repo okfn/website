@@ -269,14 +269,6 @@ class NetworkGroup(models.Model):
         unique_together = ('country', 'region')
         ordering = ('country', 'region')
 
-# Since the GeopositionField inherits from model.Field and not a core
-# Django Field (like for example CountryField which inherits from CharField)
-# south won't be able to infer the introspection rules. Therefore we need to
-# extend the introspection to include the GeopositionField as discusses in:
-# http://south.readthedocs.org/en/latest/customfields.html
-from south.modelsinspector import add_introspection_rules
-add_introspection_rules([], ["^geoposition\.fields\.GeopositionField"])
-
 
 class NetworkGroupMembership(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
