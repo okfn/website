@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/1.6/howto/deployment/wsgi/
 
 import os
 from django.core.wsgi import get_wsgi_application
-from lib.dj_static import Cling, MediaCling
+from dj_static import Cling, MediaCling
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "foundation.settings")
 application = get_wsgi_application()
