@@ -45,6 +45,6 @@ simplejson==3.8.2
 six==1.10.0
 sorl-thumbnail==12.3
 static==1.1.1
-dj-static=0.0.6
+dj-static==0.0.6
 unicodecsv==0.14.1
 
