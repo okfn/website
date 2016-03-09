@@ -7,7 +7,7 @@ import reversion
 from .models import PressRelease, PressMention
 
 
-class PressReleaseAdmin(reversion.VersionAdmin):
+class PressReleaseAdmin(reversion.admin.VersionAdmin):
     formfield_overrides = {
         models.TextField: {'widget': AdminPagedownWidget},
     }
@@ -17,7 +17,7 @@ class PressReleaseAdmin(reversion.VersionAdmin):
 admin.site.register(PressRelease, PressReleaseAdmin)
 
 
-class PressMentionAdmin(reversion.VersionAdmin):
+class PressMentionAdmin(reversion.admin.VersionAdmin):
     list_display = ('title', 'publisher', 'url')
     prepopulated_fields = {"slug": ("title",)}
 

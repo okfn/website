@@ -6,7 +6,7 @@ from .models import (Person, Unit, Board, Theme, Project, ProjectType,
                      BoardMembership, NetworkGroupMembership)
 
 
-class PersonAdmin(reversion.VersionAdmin):
+class PersonAdmin(reversion.admin.VersionAdmin):
     list_display = ('name', 'email', 'twitter')
     ordering = ('name',)
 
@@ -17,7 +17,7 @@ class UnitMembershipInline(admin.TabularInline):
     model = UnitMembership
 
 
-class UnitAdmin(reversion.VersionAdmin):
+class UnitAdmin(reversion.admin.VersionAdmin):
     list_display = ('name',)
     ordering = ('name',)
 
@@ -30,7 +30,7 @@ class BoardMembershipInline(admin.TabularInline):
     model = BoardMembership
 
 
-class BoardAdmin(reversion.VersionAdmin):
+class BoardAdmin(reversion.admin.VersionAdmin):
     list_display = ('name',)
     ordering = ('name',)
 
@@ -40,27 +40,27 @@ class BoardAdmin(reversion.VersionAdmin):
 admin.site.register(Board, BoardAdmin)
 
 
-class ProjectAdmin(reversion.VersionAdmin):
+class ProjectAdmin(reversion.admin.VersionAdmin):
     list_display = ('name',)
     prepopulated_fields = {"slug": ("name",)}
 
 admin.site.register(Project, ProjectAdmin)
 
 
-class ProjectTypeAdmin(reversion.VersionAdmin):
+class ProjectTypeAdmin(reversion.admin.VersionAdmin):
     list_display = ('name',)
 
 admin.site.register(ProjectType, ProjectTypeAdmin)
 
 
-class ThemeAdmin(reversion.VersionAdmin):
+class ThemeAdmin(reversion.admin.VersionAdmin):
     list_display = ('name',)
     prepopulated_fields = {"slug": ("name",)}
 
 admin.site.register(Theme, ThemeAdmin)
 
 
-class WorkingGroupAdmin(reversion.VersionAdmin):
+class WorkingGroupAdmin(reversion.admin.VersionAdmin):
     list_display = ('name',)
 
     prepopulated_fields = {"slug": ("name",)}
@@ -76,7 +76,7 @@ class WorkingGroupInNetworksInline(admin.TabularInline):
     model = NetworkGroup.working_groups.through
 
 
-class NetworkGroupAdmin(reversion.VersionAdmin):
+class NetworkGroupAdmin(reversion.admin.VersionAdmin):
     list_display = ('name', 'country',)
     ordering = ('country', 'name')
     exclude = ('country_slug', 'region_slug', 'working_groups')
