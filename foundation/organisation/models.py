@@ -1,4 +1,5 @@
 from cms.models.pluginmodel import CMSPlugin
+from cms.extensions import PageExtension
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.text import slugify
@@ -323,3 +324,7 @@ class SignupForm(CMSPlugin):
     title = models.CharField(max_length=50,
                              default='Get Connected to Open Knowledge')
     description = models.TextField(blank=True)
+
+
+class SideBarExtension(PageExtension):
+    enabled = models.BooleanField(default=True)

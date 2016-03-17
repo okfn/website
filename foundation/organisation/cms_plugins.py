@@ -1,14 +1,14 @@
 from django.utils.translation import ugettext_lazy as _
-
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from cms.models.pluginmodel import CMSPlugin
+from cms.extensions.extension_pool import extension_pool
 
 from sorl.thumbnail import get_thumbnail
 
 from .models import (Project, Theme, FeaturedTheme, FeaturedProject,
                      ProjectList, NetworkGroup, NetworkGroupList, WorkingGroup,
-                     SignupForm)
+                     SignupForm, SideBarExtension)
 
 
 class FeaturedThemePlugin(CMSPluginBase):
@@ -143,3 +143,6 @@ class SignupFormPlugin(CMSPluginBase):
         return context
 
 plugin_pool.register_plugin(SignupFormPlugin)
+
+
+extension_pool.register(SideBarExtension)

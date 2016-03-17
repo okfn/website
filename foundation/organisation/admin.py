@@ -3,8 +3,9 @@ import reversion
 from django.contrib import admin
 from .models import (Person, Unit, Board, Theme, Project, ProjectType,
                      WorkingGroup, NetworkGroup, UnitMembership,
-                     BoardMembership, NetworkGroupMembership)
+                     BoardMembership, NetworkGroupMembership, SideBarExtension)
 
+from cms.extensions import PageExtensionAdmin
 
 class PersonAdmin(reversion.admin.VersionAdmin):
     list_display = ('name', 'email', 'twitter')
@@ -84,3 +85,8 @@ class NetworkGroupAdmin(reversion.admin.VersionAdmin):
     inlines = [NetworkGroupMembershipInline, WorkingGroupInNetworksInline]
 
 admin.site.register(NetworkGroup, NetworkGroupAdmin)
+
+class SideBarExtensionAdmin(PageExtensionAdmin):
+    pass
+
+admin.site.register(SideBarExtension, SideBarExtensionAdmin)
