@@ -1,6 +1,6 @@
 {% load menu_tags %}
 {% load i18n %}
-{% if request.current_page.get_descendant_count > 0 and request.current_page.sidebarextension %}
+{% if request.current_page.get_descendant_count > 0 and not request.current_page.sidebarextension %}
   <h3>{% trans 'In this section' %}</h3>
   <ul>
     {% show_sub_menu 1 %}
