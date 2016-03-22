@@ -374,9 +374,9 @@ COMPRESS_OFFLINE_CONTEXT = {
     'GOOGLE_ANALYTICS_DOMAIN': GOOGLE_ANALYTICS_DOMAIN,
 }
 
-#COMPRESS_PRECOMPILERS = (
-    #('text/less', 'lib.precompilers.LessFilter'),
-#)
+COMPRESS_PRECOMPILERS = (
+    ('text/less', 'lib.precompilers.LessFilter'),
+)
 
 COMPRESS_CSS_FILTERS = [
     'compressor.filters.cssmin.CSSMinFilter'
