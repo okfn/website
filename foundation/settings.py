@@ -349,7 +349,7 @@ if env.get('DJANGO_CSP_REPORT_URI') is not None:
                                     "'self'"]
     CSP_STYLE_SRC = asset_hosts + ['https://fonts.googleapis.com',
                                    "'unsafe-inline'"]
-    CSP_IMG_SRC = asset_hosts + ["'data:'", 'https://www.google-analytics.com']
+    CSP_IMG_SRC = asset_hosts + ["data:", 'https://www.google-analytics.com']
     CSP_FONT_SRC = asset_hosts + ['https://netdna.bootstrapcdn.com',
                                   'https://fonts.gstatic.com',
                                   'https://themes.googleusercontent.com']
