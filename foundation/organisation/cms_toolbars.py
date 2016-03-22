@@ -14,9 +14,10 @@ class SideBarExtensionToolbar(ExtensionToolbar):
         current_page_menu = self._setup_extension_toolbar()
         # if it's all ok
         if current_page_menu:
-            # retrieves the instance of the current extension (if any) and the toolbar item URL
+            # retrieves the instance of the current extension (if any) and the
+            # toolbar item URL
             page_extension, url = self.get_page_extension_admin()
             if url:
                 # adds a toolbar item
                 current_page_menu.add_modal_item(_('Sidebar'), url=url,
-                    disabled=not self.toolbar.edit_mode)
+                        disabled=not self.toolbar.edit_mode)

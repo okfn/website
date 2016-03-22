@@ -7,6 +7,7 @@ from .models import (Person, Unit, Board, Theme, Project, ProjectType,
 
 from cms.extensions import PageExtensionAdmin
 
+
 class PersonAdmin(reversion.admin.VersionAdmin):
     list_display = ('name', 'email', 'twitter')
     ordering = ('name',)
@@ -85,6 +86,7 @@ class NetworkGroupAdmin(reversion.admin.VersionAdmin):
     inlines = [NetworkGroupMembershipInline, WorkingGroupInNetworksInline]
 
 admin.site.register(NetworkGroup, NetworkGroupAdmin)
+
 
 class SideBarExtensionAdmin(PageExtensionAdmin):
     pass
