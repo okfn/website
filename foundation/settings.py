@@ -344,9 +344,9 @@ if env.get('DJANGO_CSP_REPORT_URI') is not None:
 
     CSP_DEFAULT_SRC = ("'none'",)
 
-    CSP_SCRIPT_SRC = ["'self'", ] + asset_hosts + [
-                     'https://js-agent.newrelic.com',
-                     'https://www.google-analytics.com']
+    CSP_SCRIPT_SRC = asset_hosts + ['https://js-agent.newrelic.com',
+                     'https://www.google-analytics.com',
+                     "'unsafe-inline'", "'self'"]
     CSP_STYLE_SRC = asset_hosts + ['https://fonts.googleapis.com',
                                    "'unsafe-inline'"]
     CSP_IMG_SRC = asset_hosts + ["data:", 'https://www.google-analytics.com']
