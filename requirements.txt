@@ -1,13 +1,13 @@
 # Pinned requirements
-Django==1.8.11
-Pillow==3.1.1
+Django==1.8.12
+Pillow==3.2.0
 aldryn-search==0.2.11
 boto==2.39.0
 cssmin==0.2.0
 dj-database-url==0.4.0
 django-appconf==1.0.1
 django-classy-tags==0.7.2
-django-cms==3.2.2
+django-cms==3.2.3
 django-compressor==2.0
 django-csp==2.0.3
 django-countries==3.4.1
@@ -29,15 +29,15 @@ djangocms-file==1.0
 djangocms-googlemap==0.4.0
 djangocms-link==1.7
 djangocms-picture==1.0.0
-djangocms-text-ckeditor==2.9.0
+djangocms-text-ckeditor==2.9.1
 gunicorn==19.4.5
 html5lib==0.9999999
 iso3166==0.7
-markdown2==2.3.0
-newrelic==2.60.0.46
+markdown2==2.3.1
+newrelic==2.60.0.47
 psycopg2==2.6.1
 elasticsearch==2.3.0
-pylibmc==1.5.0
+pylibmc==1.5.1
 pystache==0.5.4
 requests==2.9.1
 simplejson==3.8.2
