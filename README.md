@@ -22,7 +22,7 @@ You may also wish to follow any install instructions inside a Python virtual env
     pip install -r requirements.dev.txt
     pip install honcho
     npm install -g less
-    python manage.py syncdb --migrate
+    python manage.py migrate
     honcho -f Procfile.dev start
 
 ## Running on Heroku
@@ -39,7 +39,7 @@ will work. These will be documented in due course.
                   DJANGO_COMPRESS_OFFLINE=true \
                   ...
     git push heroku master
-    heroku run python manage.py syncdb --migrate
+    heroku run python manage.py migrate
 
 ## TODO
 
