@@ -183,10 +183,23 @@ header {
   background-position: top center;
   background-repeat: no-repeat;
 
+  a {
+    color: inherit;
+  }
+
   p {
     font-size: 20px;
     html.wf-lato-n3-active & {
       font-weight: 300;
+    }
+
+    a {
+      text-decoration: none;
+      border-bottom: dotted 1px #fff;
+
+      &:hover {
+      	border-bottom-style: solid;
+      }
     }
   }
 
