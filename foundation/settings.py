@@ -393,6 +393,7 @@ CMS_TEMPLATES = (
     ('cms_twocolumn.html', 'Two columns'),
     ('cms_threecolumn.html', 'Three columns'),
     ('cms_homepage.html', 'Homepage'),
+    ('cms_resources.html', 'Brand resources')
 )
 
 CMS_PLACEHOLDER_CONF = {
