@@ -24,3 +24,7 @@ node_modules
 # Site data
 media
 staticfiles
+
+logfile
+
+.projectile
