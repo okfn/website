@@ -1,6 +1,6 @@
-@okf-primary: rgb(122, 184, 0);
-@okf-secondary: rgb(255, 0, 0);
-@okf-secondary-alt: rgb(0, 165, 224);
+@okf-primary: #69b93b;
+@okf-secondary: #da2e29;
+@okf-secondary-alt: #29a5da;
 @okf-darkgrey: rgb(45, 45, 45);
 @okf-midgrey: rgb(142, 142, 142);
 @okf-lightgrey: rgb(240, 240, 240);
@@ -102,6 +102,10 @@ header {
 
   #header-brand {
     .make-sm-column(6);
+
+    img {
+      height: 50px;
+    }
   }
 
   #header-nav {
@@ -116,14 +120,7 @@ header {
 
   h1 {
     margin: 0;
-    padding: @header-padding 0 @header-padding 60px;
-    font-size: @header-font-size;
-    font-weight: bold;
-    line-height: 1em;
-    background: transparent url(/assets/img/okf-logo-header-2x.png) left center no-repeat;
-    background-size: auto 50px;
-    text-transform: uppercase;
-    letter-spacing: 0.23em;
+    padding:0;
   }
 }
 
@@ -297,10 +294,84 @@ header {
   }
 }
 
-footer {
-  background: @okf-lightgrey;
-  border-top: 10px solid @okf-primary;
+footer.site-footer {
+  background: @okf-darkgrey;
   padding: 30px 0 (30px - @line-height-computed / 2) 0;
+	color: rgba(255, 255, 255, 0.6);
+	font-size: 14px;
+
+	a {
+		color: rgba(255, 255, 255, 0.9);
+
+		&:hover {
+			color:#fff;
+		}
+	}
+
+	.license {
+		display: block;
+		text-decoration: none;
+
+		@media (min-width: @screen-md-min) {
+			float: left;
+			margin-right: 5px;
+		}
+
+		svg {
+			fill: currentColor;
+			width: 16px;
+			height: 16px;
+		}
+	}
+
+	.footer-primary {
+		.make-row();
+
+		.footer-logo {
+			.make-md-column(2);
+			opacity: 0.9;
+
+			&:hover {
+				opacity: 1;
+			}
+
+			img {
+				width: 130px;
+				max-width: 100%;
+			}
+		}
+
+		.footer-links {
+			.make-md-column(10);
+			margin: 10px;
+
+			@media (min-width: @screen-md-min) {
+				text-align: right;
+				margin: 0;
+			}
+
+			li {
+				display: block;
+
+				@media (min-width: @screen-md-min) {
+					display: inline-block;
+					padding: 7px;
+
+					&:last-child {
+						padding-right: 0;
+					}
+				}
+			}
+		}
+	}
+
+	.footer-secondary {
+		font-size: 13px;
+		border-top: solid 1px rgba(255, 255, 255, 0.4);
+		margin-top: 15px;
+		padding-top: 15px;
+	}
+
 }
 
 // Progressively enhance to web fonts

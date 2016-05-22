@@ -21,7 +21,8 @@
 
         <div id='header-brand'>
           <a href='{% url 'pages-root' %}'>
-            <h1>{{ site.name }}</h1>
+            <h1><img src="//a.okfn.org/img/oki/landscape-rgb-468x122.png
+" alt="{{ site.name }}" /></h1>
           </a>
         </div>
 
@@ -59,7 +60,7 @@
     {% block body %}{% endblock %}
   </div>
 
-  <footer>
+  <footer class="site-footer">
     <div class='container'>
       {% include 'includes/footer.html' %}
     </div>
