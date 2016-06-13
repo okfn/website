@@ -5,7 +5,7 @@ This is the [Django][dj]/[Django CMS][djcms] project that runs <http://okfn.org>
 [dj]: https://www.djangoproject.com/
 [djcms]: https://www.django-cms.org/
 
-[![Build Status](https://travis-ci.org/okfn/foundation.svg?branch=master)](https://travis-ci.org/okfn/foundation)
+[![Build Status](https://travis-ci.org/okfn/website.svg?branch=master)](https://travis-ci.org/okfn/foundation)
 [![Coveralls](http://img.shields.io/coveralls/okfn/foundation.svg?branch=master)](https://coveralls.io/r/okfn/foundation?branch=master)
 
 ## Prerequisites and assumptions
