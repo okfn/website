@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Host: okfn.org
+Sitemap: https://okfn.org/sitemap.xml
