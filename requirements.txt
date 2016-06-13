@@ -1,13 +1,13 @@
 # Pinned requirements
 Django==1.8.12
 Pillow==3.2.0
-aldryn-search==0.2.11
+aldryn-search==0.2.12
 boto==2.39.0
 cssmin==0.2.0
 dj-database-url==0.4.0
 django-appconf==1.0.1
 django-classy-tags==0.7.2
-django-cms==3.2.3
+django-cms==3.3.0
 django-compressor==2.0
 django-csp==2.0.3
 django-countries==3.4.1
