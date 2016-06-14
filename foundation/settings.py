@@ -177,7 +177,7 @@ TEMPLATES = [
                     ),
                 'loaders': [
                     'django.template.loaders.filesystem.Loader',
-                    'aldryn_boilerplates.template_loaders.AppDirectoriesLoader',
+                    'aldryn_boilerplates.template_loaders.AppDirectoriesLoader',  # nopep8
                     'django.template.loaders.app_directories.Loader',
                     ],
                 }
