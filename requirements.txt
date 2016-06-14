@@ -28,6 +28,7 @@ djangocms-admin-style==1.1.0
 djangocms-file==1.0
 djangocms-googlemap==0.4.0
 djangocms-link==1.7
+git+git://github.com/divio/djangocms-oembed.git
 djangocms-picture==1.0.0
 djangocms-text-ckeditor==3.0.0
 gunicorn==19.4.5

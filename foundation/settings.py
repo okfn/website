@@ -112,6 +112,7 @@ INSTALLED_APPS = (
     'djangocms_picture',
     'djangocms_link',
     'djangocms_text_ckeditor',
+    'djangocms_oembed',
     'aldryn_search',
 
     # CMS
