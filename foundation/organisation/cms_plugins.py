@@ -104,7 +104,7 @@ class NetworkGroupFlagsPlugin(CMSPluginBase):
 
         context['title'] = instance.get_group_type_display()
         context['countries'] = NetworkGroup.objects.countries().filter(
-            group_type=instance.group_type)
+            group_type=instance.group_type).order_by('name')
 
         return context
 

@@ -143,6 +143,15 @@ class NetworkGroupPluginTest(CMSTestCase):
             twitter='OKFNde'
             )
 
+        self.switzerland = NetworkGroup.objects.create(
+            name='Open Knowledge Foundation Switzerland',
+            group_type=1, # chapter
+            description='Switzerland loves open data',
+            country='CH',
+            mailinglist_url='http://lists.okfn.org/okfn-ch',
+            homepage_url='http://opendata.ch',
+            )
+
         self.localgroups = NetworkGroupList(group_type=0)
         self.chapters = NetworkGroupList(group_type=1)
 
@@ -150,6 +159,9 @@ class NetworkGroupPluginTest(CMSTestCase):
         plug = NetworkGroupFlagsPlugin()
         result = plug.render({}, self.localgroups, 'foo')
 
+        self.assertSequenceEqual(sorted(result['countries'],
+                                        key=lambda group: group.name),
+                                 result['countries'])
         self.assertIn(self.britain, result['countries'])
         self.assertNotIn(self.germany, result['countries'])
         self.assertNotIn(self.buckingham, result['countries'])
@@ -158,6 +170,9 @@ class NetworkGroupPluginTest(CMSTestCase):
         plug = NetworkGroupFlagsPlugin()
         result = plug.render({}, self.chapters, 'foo')
 
+        self.assertSequenceEqual(sorted(result['countries'],
+                                        key=lambda chapter: chapter.name),
+                                 result['countries'])
         self.assertNotIn(self.britain, result['countries'])
         self.assertIn(self.germany, result['countries'])
         self.assertNotIn(self.buckingham, result['countries'])
