@@ -2,6 +2,7 @@
 Django==1.8.12
 Pillow==3.2.0
 aldryn-search==0.2.12
+git+git://github.com/aldryn/aldryn-video
 boto==2.39.0
 cssmin==0.2.0
 dj-database-url==0.4.0
