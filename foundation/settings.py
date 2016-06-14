@@ -112,7 +112,9 @@ INSTALLED_APPS = (
     'djangocms_picture',
     'djangocms_link',
     'djangocms_text_ckeditor',
+    'aldryn_boilerplates',
     'aldryn_search',
+    'aldryn_video',
 
     # CMS
     'cms',
@@ -152,7 +154,6 @@ MIDDLEWARE_CLASSES = (
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'APP_DIRS': True,
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'OPTIONS': {
             'debug': DEBUG,
@@ -172,10 +173,25 @@ TEMPLATES = [
                     'lib.context_processors.google_analytics',
                     'lib.context_processors.mailchimp',
                     'django.template.context_processors.request',
-                ),
-            }
+                    'aldryn_boilerplates.context_processors.boilerplate',
+                    ),
+                'loaders': [
+                    'django.template.loaders.filesystem.Loader',
+                    'aldryn_boilerplates.template_loaders.AppDirectoriesLoader',  # nopep8
+                    'django.template.loaders.app_directories.Loader',
+                    ],
+                }
     },
 ]
+
+STATICFILES_FINDERS = (
+        'django.contrib.staticfiles.finders.FileSystemFinder',
+        'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
+        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+        )
+
+ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
+
 
 ROOT_URLCONF = 'foundation.urls'
 
