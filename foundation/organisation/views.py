@@ -118,7 +118,8 @@ class NetworkGroupDetailView(DetailView):
 
 
 def extract_ograph_title(text):
-    url_pattern = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+    url_pattern = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]' \
+                   + '|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
     urls = re.findall(url_pattern, text)
     print urls
     if urls:
@@ -158,8 +159,9 @@ def relatable_person(request):
     person.now_reading = extract_ograph_title(data.get('text', ''))
     person.save()
 
+    message = 'You are consuming: {}'.format(person.now_reading)
     return JsonResponse({'success': True,
-                         'message': 'You are consuming: {}'.format(person.now_reading)})
+                         'message': message})
 
 
 @cache_page(60 * 30)
