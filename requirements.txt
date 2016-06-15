@@ -36,6 +36,7 @@ html5lib==0.9999999
 iso3166==0.7
 markdown2==2.3.1
 newrelic==2.62.0.47
+opengraph==0.5
 psycopg2==2.6.1
 elasticsearch==2.3.0
 pylibmc==1.5.1
