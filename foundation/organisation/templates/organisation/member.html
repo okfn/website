@@ -26,6 +26,9 @@
         {% if person.url %}
         <a href="{{ person.url }}" title="Personal website"><i class="fa fa-link fa-lg"></i></a>
         {% endif %}
+        {% if person.now_reading %}
+        <span><i class="fa fa-link fa-lg"></i>{{ person.now_reading }}</span>
+        {% endif %}
       </div>
     </div>
   </div>

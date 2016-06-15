@@ -12,6 +12,8 @@ class Person(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     name = models.CharField(max_length=100)
+    username_on_slack = models.CharField(max_length=100, blank=True, null=True)
+    now_reading = models.CharField(max_length=140, blank=True)
     description = models.TextField(blank=True, null=True)
     email = models.EmailField(blank=True)
     photo = models.ImageField(upload_to='organisation/people/photos',

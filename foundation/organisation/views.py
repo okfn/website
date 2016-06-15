@@ -1,14 +1,20 @@
+import json
+import re
+from os import environ as env
+
 from django.views.decorators.cache import cache_page
+from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.shortcuts import get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+import opengraph
 
 from iso3166 import countries
 import unicodecsv
 
 from .models import (Board, Project, ProjectType, Theme, WorkingGroup,
-                     NetworkGroup, NetworkGroupMembership)
+                     NetworkGroup, NetworkGroupMembership, Person)
 
 
 class BoardView(DetailView):
@@ -109,6 +115,51 @@ class NetworkGroupDetailView(DetailView):
 
         context['group_members'] = members.order_by('order', 'person__name')
         return context
+
+
+def extract_ograph_title(text):
+    url_pattern = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+    urls = re.findall(url_pattern, text)
+    print urls
+    if urls:
+        content = opengraph.OpenGraph(url=urls[0])
+        title = content.get('title', text)
+    return title.encode('utf-8')
+
+
+def fail_json(message):
+    response = JsonResponse({'success': False,
+                             'message': message})
+    response.status_code = 400
+    return response
+
+
+@csrf_exempt
+def relatable_person(request):
+    auth = request.META.get('HTTP_AUTHORIZATION')
+
+    print auth, env.get('HUBOT_API_KEY')
+    if auth != env.get('HUBOT_API_KEY'):
+        return fail_json('Not authorized')
+
+    try:
+        data = json.loads(request.body)
+    except ValueError:
+        return fail_json('Could not decode JSON data.')
+
+    username = data.get('username')
+    if not username:
+        return fail_json('You need to supply a field `username`')
+
+    person = Person.objects.filter(username_on_slack=username).first()
+    if not person:
+        return fail_json('No person with `username_slack` {}'.format(username))
+
+    person.now_reading = extract_ograph_title(data.get('text', ''))
+    person.save()
+
+    return JsonResponse({'success': True,
+                         'message': 'You are consuming: {}'.format(person.now_reading)})
 
 
 @cache_page(60 * 30)
