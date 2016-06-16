@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('organisation', '0003_auto_20160615_1002'),
+        ('organisation', '0002_sidebarextension'),
     ]
 
     operations = [
@@ -15,14 +15,15 @@ class Migration(migrations.Migration):
             name='NowDoing',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('doing_type', models.CharField(max_length=10, choices=[(b'READING', b'reading'), (b'LISTENING', b'listening'), (b'WORKING', b'working')])),
-                ('link', models.URLField(blank=True)),
+                ('doing_type', models.CharField(max_length=10, choices=[(b'reading', b'reading'), (b'listening', b'listening'), (b'working', b'working'), (b'location', b'location'), (b'watching', b'watching'), (b'eating', b'eating')])),
+                ('link', models.URLField(null=True, blank=True)),
                 ('text', models.TextField(null=True, blank=True)),
             ],
         ),
-        migrations.RemoveField(
+        migrations.AddField(
             model_name='person',
-            name='now_reading',
+            name='username_on_slack',
+            field=models.CharField(max_length=100, null=True, blank=True),
         ),
         migrations.AddField(
             model_name='nowdoing',
