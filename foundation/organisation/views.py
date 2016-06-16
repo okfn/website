@@ -1,5 +1,4 @@
 import json
-import re
 from os import environ as env
 
 from django.views.decorators.cache import cache_page
@@ -8,13 +7,14 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse, JsonResponse
-import opengraph
 
 from iso3166 import countries
 import unicodecsv
 
 from .models import (Board, Project, ProjectType, Theme, WorkingGroup,
-                     NetworkGroup, NetworkGroupMembership, Person)
+                     NetworkGroup, NetworkGroupMembership, Person, NowDoing)
+
+from utils import get_activity, fail_json, extract_ograph_title
 
 
 class BoardView(DetailView):
@@ -117,24 +117,6 @@ class NetworkGroupDetailView(DetailView):
         return context
 
 
-def extract_ograph_title(text):
-    url_pattern = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]' \
-                   + '|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
-    urls = re.findall(url_pattern, text)
-    print urls
-    if urls:
-        content = opengraph.OpenGraph(url=urls[0])
-        title = content.get('title', text)
-    return title.encode('utf-8')
-
-
-def fail_json(message):
-    response = JsonResponse({'success': False,
-                             'message': message})
-    response.status_code = 400
-    return response
-
-
 @csrf_exempt
 def relatable_person(request):
     auth = request.META.get('HTTP_AUTHORIZATION')
@@ -156,10 +138,20 @@ def relatable_person(request):
     if not person:
         return fail_json('No person with `username_slack` {}'.format(username))
 
-    person.now_reading = extract_ograph_title(data.get('text', ''))
-    person.save()
+    activity = get_activity(data.get('text'))
 
-    message = 'You are consuming: {}'.format(person.now_reading)
+    activities_of_this_type = person.nowdoing_set.filter(doing_type=activity)
+    for old_activity in activities_of_this_type:
+        old_activity.delete()
+
+    link, title = extract_ograph_title(data.get('text', ''))
+    now_doing = NowDoing(person=person,
+                         doing_type=activity,
+                         text=title,
+                         link=link)
+    now_doing.save()
+
+    message = 'You are consuming: {}'.format(now_doing.text)
     return JsonResponse({'success': True,
                          'message': message})
 
