@@ -10,7 +10,6 @@ from cms.extensions import PageExtensionAdmin
 
 class PersonAdmin(reversion.admin.VersionAdmin):
     list_display = ('name', 'email', 'twitter')
-    exclude = ('now_reading',)
     ordering = ('name',)
 
 admin.site.register(Person, PersonAdmin)
