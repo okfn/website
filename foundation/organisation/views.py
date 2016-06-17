@@ -1,5 +1,4 @@
 import json
-from os import environ as env
 
 from django.views.decorators.cache import cache_page
 from django.views.decorators.csrf import csrf_exempt
@@ -7,6 +6,7 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse, JsonResponse
+from django.conf import settings
 
 from iso3166 import countries
 import unicodecsv
@@ -121,9 +121,8 @@ class NetworkGroupDetailView(DetailView):
 def relatable_person(request):
     auth = request.META.get('HTTP_AUTHORIZATION')
 
-    print auth, env.get('HUBOT_API_KEY')
-    if auth != env.get('HUBOT_API_KEY'):
-        return fail_json('Not authorized')
+    if auth != settings.HUBOT_API_KEY:
+        return fail_json('Not authorized', status_code=403)
 
     try:
         data = json.loads(request.body)
