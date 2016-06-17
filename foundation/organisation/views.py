@@ -135,7 +135,8 @@ def relatable_person(request):
 
     person = Person.objects.filter(username_on_slack=username).first()
     if not person:
-        return fail_json('No person with `username_slack` {}'.format(username))
+        message = 'No person with `username_on_slack` {}'.format(username)
+        return fail_json(message)
 
     activity = get_activity(data.get('text'))
 
