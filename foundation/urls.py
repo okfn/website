@@ -73,13 +73,17 @@ urlpatterns += patterns(
     # Fallthrough prefix redirects. WARNING: these will override any pages
     # created in the CMS with these names.
     url(r'^blogs/(?P<remain>.+)$',
-        RedirectView.as_view(url=ARCHIVE_ROOT + '/blogs/%(remain)s')),
+        RedirectView.as_view(url=ARCHIVE_ROOT + '/blogs/%(remain)s',
+                             permanent=True)),
     url(r'^members/(?P<remain>.+)$',
-        RedirectView.as_view(url=ARCHIVE_ROOT + '/members/%(remain)s')),
+        RedirectView.as_view(url=ARCHIVE_ROOT + '/members/%(remain)s',
+                             permanent=True)),
     url(r'^wp-content/(?P<remain>.+)$',
-        RedirectView.as_view(url=ARCHIVE_ROOT + '/wp-content/%(remain)s')),
+        RedirectView.as_view(url=ARCHIVE_ROOT + '/wp-content/%(remain)s',
+                             permanent=True)),
     url(r'^wp-includes/(?P<remain>.+)$',
-        RedirectView.as_view(url=ARCHIVE_ROOT + '/wp-includes/%(remain)s')),
+        RedirectView.as_view(url=ARCHIVE_ROOT + '/wp-includes/%(remain)s',
+                             permanent=True)),
 
     # Fallthrough for CMS managed pages
     url(r'^', include('cms.urls'))
