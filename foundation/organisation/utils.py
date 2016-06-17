@@ -27,8 +27,8 @@ def get_activity(text):
     return None
 
 
-def fail_json(message):
+def fail_json(message, status_code=400):
     response = JsonResponse({'success': False,
                              'message': message})
-    response.status_code = 400
+    response.status_code = status_code
     return response
