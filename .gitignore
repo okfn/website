@@ -2,6 +2,7 @@
 *.py[cod]
 __pycache__
 *~
+.sass-cache/
 
 # Installer logs
 pip-log.txt
