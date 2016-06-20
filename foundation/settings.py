@@ -115,6 +115,7 @@ INSTALLED_APPS = (
     'aldryn_boilerplates',
     'aldryn_search',
     'aldryn_video',
+    'rssplugin',
 
     # CMS
     'cms',
