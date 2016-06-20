@@ -2,75 +2,103 @@
 {% load cms_tags %}
 {% load i18n %}
 
+{% block body-class %}home-template{% endblock %}
 {% block pagebanner %}
-<div id='page-banner' class='homepage-splash-banner'>
-  <div class='container'>
-    <div class="col-sm-3">
-      <img width="212" src="https://a.okfn.org/img/oki/standard-white-334x344.png" />
+<section class="banner">
+  <div class="container">
+    <div class="mission">
+      <h2>A WORLD WHERE KNOWLEDGE CREATES POWER FOR THE MANY, NOT THE FEW.</h2>
+      <p>
+        THIS IS THE WORLD WE CHOOSE.
+      </p>
     </div>
-    <div class="col-sm-9" style="margin-right:0;padding-right:0;">
-      {% placeholder "blurb" %}
+    <div id="news" class="news carousel slide" data-ride="carousel" data-interval="15000">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#news" data-slide-to="0" class="active"></li>
+        <li data-target="#news" data-slide-to="1"></li>
+        <li data-target="#news" data-slide-to="2"></li>
+      </ol>
+
+      <div class="carousel-inner" role="listbox">
+
+        <div class="project item active" data-img="opentrials-bg.jpg">
+          <a class="carousel-caption">
+            <h3>OpenTrials paper published</h3>
+            <p>OpenTrials: towards a collaborative open database of all available information on all clinical trials.</p>
+          </a>
+        </div>
+
+        <div class="item" data-img="test-2.jpg">
+          <a class="carousel-caption">
+            <h3>Item Two</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </a>
+        </div>
+
+        <div class="item" data-img="test-3.jpg">
+          <a class="carousel-caption">
+            <h3>Item Three</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </a>
+        </div>
+
+      </div>
     </div>
   </div>
-</div>
-<div id='page-banner-signup'>
-  <div class='container'>
-    <form class='form-inline'
-          role='form'
-          action='{{ MAILCHIMP_URL }}'
-          target='_blank'
-          method='post'>
-      <div class='page-banner-signup-label'>
-        {% trans 'Join our mailing list:' %}
-      </div>
-      <div class='page-banner-signup-form'>
-        <div class="form-group">
-          <label class='sr-only' for='name'>Name:</label>
-          <input type='text' class='form-control' id='name' name='MMERGE3' placeholder='name'>
-        </div>
-        <div class="form-group">
-          <label class='sr-only' for='email'>Email address:</label>
-          <input type='email' class='form-control' id='email' name='EMAIL' placeholder='email address'>
-        </div>
-        <input type="hidden" name="{{ MAILCHIMP_TOKEN }}" value="">
-        <button type='submit' class='btn btn-default'>subscribe</button>
-      </div>
-    </form>
-  </div>
-</div>
+</section>
 {% endblock %}
 
 {% block body %}
-<div class='row'>
-  <div class='col-md-12'>
-    {% placeholder "special" %}
-  </div>
-</div>
-<div class='row'>
-  <div class='col-sm-8'>
-    <div class='feature-block-img feature-okcon'></div>
-  </div>
-  <div class='col-sm-4'>
-    <div class='feature-block-text feature-block-primary'>
-      {% placeholder "feature 1" %}
+<section class="features">
+  <div class="container">
+    <div class="feature one">
+      <a class="image" href="{{ this.feature_one_link }}" style="background-image: url({{ this.feature_one_image }})"></a>
+      <h3>
+        <a href="{{ this.feature_one_link }}">{{ this.feature_one_heading }}</a>
+      </h3>
+      {{ this.feature_one_content }}
+    </div>
+
+    <div class="feature two">
+      <a class="image" href="{{ this.feature_two_link }}" style="background-image: url({{ this.feature_two_image }})"></a>
+      <h3>
+        <a href="{{ this.feature_two_link }}">{{ this.feature_two_heading }}</a>
+      </h3>
+      {{ this.feature_two_content }}
+    </div>
+
+    <div class="feature three">
+      <a class="image" href="{{ this.feature_three_link }}" style="background-image: url({{ this.feature_three_image }})"></a>
+      <h3>
+        <a href="{{ this.feature_three_link }}">{{ this.feature_three_heading }}</a>
+      </h3>
+      {{ this.feature_three_content }}
     </div>
   </div>
-</div>
-<div class='row'>
-  <div class='col-sm-8 col-sm-push-4'>
-    <div class='feature-block-img feature-scoda'></div>
-  </div>
-  <div class='col-sm-4 col-sm-pull-8'>
-    <div class='feature-block-text feature-block-text-left feature-block-secondary'>
-      {% placeholder "feature 2" %}
-    </div>
-  </div>
-</div>
-<div class='row'>
-  <div class='col-md-12'>
-    {% placeholder "featured themes" %}
-  </div>
-</div>
+</section>
+{% endblock %}
+
+{% block js %}
+<script>
+  $(function () {
+    // change bg img
+    $.fn.setBg = function(){
+      var newsimage = $('.banner .item.active').attr('data-img');
+      $('.banner').css('backgroundImage','url(static/img/' + newsimage + ')');
+    }
+    $.fn.setBg();
+    $('#news').on('slide.bs.carousel', function () {
+      $( ".banner").addClass( "transition");
+    })
+    $('#news').on('slid.bs.carousel', function () {
+      $.fn.setBg();
+      $( ".banner").removeClass( "transition");
+    })
+    // word spans
+    $(".carousel-caption h3, .carousel-caption p").lettering('words');
+  });
+</script>
 {% endblock %}
 
 {# Don't display the breadcrumb on the homepage #}

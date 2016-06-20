@@ -10,51 +10,58 @@
 
 {% block head-css %}
 {% compress css %}
-<link type="text/less" rel="stylesheet" href="{{ STATIC_URL }}less/main.less" charset="utf-8">
+<link type="text/less" rel="stylesheet" href="{{ STATIC_URL }}scss/style.scss" charset="utf-8">
 {% endcompress %}
 {% endblock %}
 
 {% block body-sheath %}
-  <header>
-    <div class='container'>
-      <div class='row'>
+<header class="site-header">
+  <div class="container">
+    <h1 class="brand">
+      <a href="/">
+        <img src="https://a.okfn.org/img/oki/standard-white-334x344.png
+" alt="Open Knowledge International">
+      </a>
+    </h1>
 
-        <div id='header-brand'>
-          <a href='{% url 'pages-root' %}'>
-            <h1><img src="//a.okfn.org/img/oki/landscape-rgb-468x122.png
-" alt="{{ site.name }}" /></h1>
-          </a>
-        </div>
+    <nav>
+      <ul class="secondary nav">
+        <li>
+          <a href="#"><span class="icon-facebook" aria-hidden="true"></span> Facebook</a>
+        </li>
+        <li>
+          <a href="#"><span class="icon-twitter" aria-hidden="true"></span> Twitter</a>
+        </li>
+        <li>
+          <a href="#"><span class="icon-heart" aria-hidden="true"></span> Donate</a>
+        </li>
+      </ul>
+        {% include 'includes/nav.html' %}
+    </nav>
+  </div>
 
-        <nav id='header-nav' role='navigation' class='hidden-xs'>
-          <ul id='nav-secondary' class='nav-simple'>
-            {% include 'includes/nav_secondary.html' %}
-          </ul>
-          <div id='nav-social' class='social-links'>
-            <a class="facebook" href='http://www.facebook.com/OKFNetwork'><i class="fa fa-facebook fa-lg"></i></a>
-            <a class="twitter" href='https://twitter.com/okfn'><i class="fa fa-twitter fa-lg"></i></a>
-          </div>
-        </nav>
-
+  <div class="search-bar">
+    <form class="container">
+      <div class="input">
+        <input type="text" placeholder="Search..." id="search">
       </div>
-    </div>
-  </header>
 
-  <nav id='navbar-main' class='navbar navbar-default' role='navigation'>
-    {% include 'includes/nav.html' %}
-  </nav>
+      <div class="buttons">
+        <button type="submit" class="submit">
+          <span class="icon-search" aria-hidden="true"></span>
+          <span class="sr-only">Submit</span>
+        </button>
+
+        <button class="cancel">
+          <span class="icon-close" aria-hidden="true"></span>
+          <span class="sr-only">Cancel</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</header>
 
   {% block pagebanner %}{% endblock %}
-
-  {% block breadcrumb-sheath %}
-  <div id='breadcrumb' role='navigation'>
-    <div class='container'>
-      <ol class='breadcrumb'>
-        {% block breadcrumb %}{% endblock %}
-      </ol>
-    </div>
-  </div>
-  {% endblock %}
 
   <div id='main' class='container {% block main-class %}{% endblock %}'>
     {% block body %}{% endblock %}

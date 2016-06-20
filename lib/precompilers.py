@@ -27,3 +27,15 @@ class LessFilter(CompilerFilter):
     def input(self, **kwargs):
         content = super(LessFilter, self).input(**kwargs)
         return CustomCssAbsoluteFilter(content).input(**kwargs)
+
+
+class SassFilter(CompilerFilter):
+    def __init__(self, content, attrs, **kwargs):
+        super(SassFilter, self).__init__(
+            content,
+            command='sass {infile} {outfile}',
+            **kwargs)
+
+    def input(self, **kwargs):
+        content = super(SassFilter, self).input(**kwargs)
+        return CustomCssAbsoluteFilter(content).input(**kwargs)
