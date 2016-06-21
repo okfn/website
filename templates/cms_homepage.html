@@ -1,6 +1,7 @@
 {% extends "cms_default.html" %}
 {% load cms_tags %}
 {% load i18n %}
+{% load staticfiles %}
 
 {% block body-class %}home-template{% endblock %}
 {% block pagebanner %}
@@ -19,7 +20,7 @@
 
       <div class="carousel-inner" role="listbox">
 
-        <div class="project item active" data-img="opentrials-bg.jpg">
+        <div class="project item active" data-img="{% static "img/opentrials-bg.jpg" %}">
           <a class="carousel-caption">
             <h3>OpenTrials paper published</h3>
             <p>OpenTrials: towards a collaborative open database of all available information on all clinical trials.</p>
@@ -81,32 +82,9 @@
   </a>
 </section>
 
+
 <section class="blog-latest container">
-  <div>
-    <article>
-      <img class="avatar" src="https://secure.gravatar.com/avatar/377c62a82666e509ecf5069235199a39?size=160" alt="Jonathan Gray" />
-      <h4><a>New Initiative: Open Data for Tax Justice #OD4TJ</a></h4>
-      <p>
-        Every year countries lose billions of dollars to tax avoidance, tax evasion and more generally to illicit financial flows. According to a recent IMF estimate around $700 billion of tax revenues is lost each year due to profit-shifting. In developing countries the loss is estimated to be around $200 billion, which as a share of
-      </p>
-    </article>
-
-    <article>
-      <img class="avatar" src="http://www.gravatar.com/avatar/e3e227c0523d23e4a9390fc7a25b3426?size=160" alt="Pavel Richter" />
-      <h4><a>Introducing Viderum</a></h4>
-      <p>
-        Ten years ago, Rufus started CKAN as an “apt-get for data” in order to enable governments and corporations to provide their data as truly open data. Today, CKAN is used by countless open data publishers around the globe and has become the de facto standard. With CKAN as the technical foundation, Open Knowledge has offered
-      </p>
-    </article>
-
-    <article>
-      <img class="avatar" src="http://www.gravatar.com/avatar/e950919607f5e79d6fd5b1c736ec8f30?size=160" alt="Adam Green" />
-      <h4><a>Treasures from the Public Domain in New Essays Book</a></h4>
-      <p>
-        Open Knowledge project The Public Domain Review launches its second book of selected essays, featuring sea serpents, pirates, vampires, and more.
-      </p>
-    </article>
-  </div>
+  {% placeholder "blogentries" %}
 </section>
 {% endblock %}
 
