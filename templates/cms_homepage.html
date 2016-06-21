@@ -7,10 +7,7 @@
 <section class="banner">
   <div class="container">
     <div class="mission">
-      <h2>A WORLD WHERE KNOWLEDGE CREATES POWER FOR THE MANY, NOT THE FEW.</h2>
-      <p>
-        THIS IS THE WORLD WE CHOOSE.
-      </p>
+      {% placeholder "blurb" %}
     </div>
     <div id="news" class="news carousel slide" data-ride="carousel" data-interval="15000">
       <!-- Indicators -->
@@ -53,33 +50,68 @@
 <section class="features">
   <div class="container">
     <div class="feature one">
-      <a class="image" href="{{ this.feature_one_link }}" style="background-image: url({{ this.feature_one_image }})"></a>
+      <a class="image" href="{{ this.feature_one_link }}" style="background-image: url(static/img/feature-team.jpg)"></a>
       <h3>
-        <a href="{{ this.feature_one_link }}">{{ this.feature_one_heading }}</a>
+        <a href="{{ this.feature_one_link }}">PASSIONATE TEAM</a>
       </h3>
-      {{ this.feature_one_content }}
+      Passionate about openness. Using advocacy, technology and training to unlock information and enable people to create and share knowledge.
     </div>
 
     <div class="feature two">
       <a class="image" href="{{ this.feature_two_link }}" style="background-image: url({{ this.feature_two_image }})"></a>
       <h3>
-        <a href="{{ this.feature_two_link }}">{{ this.feature_two_heading }}</a>
+        <a href="{{ this.feature_two_link }}">GLOBAL NETWORK</a>
       </h3>
-      {{ this.feature_two_content }}
+      Meet, campaign, learn, innovate, share, train, create, support, explore: some of the ways you can help open up knowledge for everyone. Join us.
     </div>
 
     <div class="feature three">
       <a class="image" href="{{ this.feature_three_link }}" style="background-image: url({{ this.feature_three_image }})"></a>
       <h3>
-        <a href="{{ this.feature_three_link }}">{{ this.feature_three_heading }}</a>
+        <a href="{{ this.feature_three_link }}">DIVERSE PROJECTS</a>
       </h3>
-      {{ this.feature_three_content }}
+      Through our projects, research and collaborations, we explore niche areas of data, and ways in which it can be used to empower people around the world.
     </div>
+  </div>
+</section>
+
+<section class="container call-to-action">
+  <a href="https://discuss.okfn.org/" rel="external">
+    Be part of the discussion - join the Open Knowledge Forums
+  </a>
+</section>
+
+<section class="blog-latest container">
+  <div>
+    <article>
+      <img class="avatar" src="https://secure.gravatar.com/avatar/377c62a82666e509ecf5069235199a39?size=160" alt="Jonathan Gray" />
+      <h4><a>New Initiative: Open Data for Tax Justice #OD4TJ</a></h4>
+      <p>
+        Every year countries lose billions of dollars to tax avoidance, tax evasion and more generally to illicit financial flows. According to a recent IMF estimate around $700 billion of tax revenues is lost each year due to profit-shifting. In developing countries the loss is estimated to be around $200 billion, which as a share of
+      </p>
+    </article>
+
+    <article>
+      <img class="avatar" src="http://www.gravatar.com/avatar/e3e227c0523d23e4a9390fc7a25b3426?size=160" alt="Pavel Richter" />
+      <h4><a>Introducing Viderum</a></h4>
+      <p>
+        Ten years ago, Rufus started CKAN as an “apt-get for data” in order to enable governments and corporations to provide their data as truly open data. Today, CKAN is used by countless open data publishers around the globe and has become the de facto standard. With CKAN as the technical foundation, Open Knowledge has offered
+      </p>
+    </article>
+
+    <article>
+      <img class="avatar" src="http://www.gravatar.com/avatar/e950919607f5e79d6fd5b1c736ec8f30?size=160" alt="Adam Green" />
+      <h4><a>Treasures from the Public Domain in New Essays Book</a></h4>
+      <p>
+        Open Knowledge project The Public Domain Review launches its second book of selected essays, featuring sea serpents, pirates, vampires, and more.
+      </p>
+    </article>
   </div>
 </section>
 {% endblock %}
 
 {% block js %}
+<script src="{{ STATIC_URL }}vendor/jquery-dotdotdot/jquery.dotdotdot.min.js"></script>
 <script>
   $(function () {
     // change bg img
@@ -97,6 +129,10 @@
     })
     // word spans
     $(".carousel-caption h3, .carousel-caption p").lettering('words');
+    // blog preview ellipsis
+    $(".blog-latest article").dotdotdot({
+      //	configuration goes here
+    });
   });
 </script>
 {% endblock %}

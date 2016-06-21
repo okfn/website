@@ -19,8 +19,27 @@
       }
     }
   }
+
+  .show-menu {
+    display: inline-block;
+    float: right;
+    color: inherit;
+    font-size: 42px;
+    margin-top: 36px;
+    outline: none;
+
+    @media (min-width: $screen-md-min) {
+      display: none;
+    }
+  }
+
   nav {
-    text-align: right;
+    display: none;
+
+    @media (min-width: $screen-md-min) {
+      display: block;
+      text-align: right;
+    }
 
     li {
       display: inline-block;

@@ -12,6 +12,7 @@
 {% compress css %}
 <link type="text/less" rel="stylesheet" href="{{ STATIC_URL }}scss/style.scss" charset="utf-8">
 {% endcompress %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.6.4/css/jquery.mmenu.all.min.css">
 {% endblock %}
 
 {% block body-sheath %}
@@ -24,40 +25,29 @@
       </a>
     </h1>
 
+    <a href="#mmenu" class="show-menu">
+      <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+      <span class="sr-only">Open the menu</span>
+    </a>
+
     <nav>
       <ul class="secondary nav">
+        {% include 'includes/nav_secondary.html' %}
+      </ul>
+      <ul class="primary nav">
+        {% include 'includes/nav.html' %}
         <li>
-          <a href="#"><span class="icon-facebook" aria-hidden="true"></span> Facebook</a>
-        </li>
-        <li>
-          <a href="#"><span class="icon-twitter" aria-hidden="true"></span> Twitter</a>
-        </li>
-        <li>
-          <a href="#"><span class="icon-heart" aria-hidden="true"></span> Donate</a>
+          <label for="search">
+            <span class="icon-search" aria-hidden="true"></span>
+            <span class="sr-only">Search</span>
+          </label>
         </li>
       </ul>
-        {% include 'includes/nav.html' %}
     </nav>
   </div>
 
   <div class="search-bar">
-    <form class="container">
-      <div class="input">
-        <input type="text" placeholder="Search..." id="search">
-      </div>
-
-      <div class="buttons">
-        <button type="submit" class="submit">
-          <span class="icon-search" aria-hidden="true"></span>
-          <span class="sr-only">Submit</span>
-        </button>
-
-        <button class="cancel">
-          <span class="icon-close" aria-hidden="true"></span>
-          <span class="sr-only">Cancel</span>
-        </button>
-      </div>
-    </form>
+      {% include 'includes/search.html' %}
   </div>
 </header>
 
@@ -67,6 +57,25 @@
     {% block body %}{% endblock %}
   </div>
 
+<section class="newsletter">
+    <form class="container" role="form" action="//okfn.us9.list-manage.com/subscribe/post?u=73f922f8e68e21a10efa21f02&amp;amp;id=32d370a7fc" target="_blank" method="post">
+      <legend>
+        Join our mailing list:
+      </legend>
+      <div class="input">
+        <label class="sr-only" for="name">Name:</label>
+        <input class="form-control" id="name" name="MMERGE3" placeholder="name" type="text">
+      </div>
+      <div class="input">
+        <label class="sr-only" for="email">Email address:</label>
+        <input class="form-control" id="email" name="EMAIL" placeholder="email address" type="email">
+      </div>
+      <div class="button">
+        <input name="b_73f922f8e68e21a10efa21f02_32d370a7fc" value="" type="hidden">
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </div>
+    </form>
+  </section>
   <footer class="site-footer">
     <div class='container'>
       {% include 'includes/footer.html' %}
@@ -116,6 +125,41 @@
   charset="utf-8"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}vendor/bootstrap/js/collapse.js"
   charset="utf-8"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}vendor/jquery-mmenu/js/jquery.mmenu.min.js"
+  charset="utf-8"></script>
+
+  <script>
+     $(function () {
+       // show / hide search bar
+       $('body > #page > .site-header nav label[for="search"]').click(function(){
+         $( 'body > #page > .site-header .search-bar' ).addClass( "active" );
+         console.log('clicked')
+       });
+       $('body > #page > .site-header .search-bar .cancel').click(function(event){
+         event.preventDefault();
+         $( 'body > #page > .site-header .search-bar' ).removeClass( "active" );
+       });
+       // mmenu
+       $("#mmenu").mmenu({
+          // options
+          offCanvas: {
+              position  : "right"
+           },
+           searchfield: true,
+           extensions: ["theme-dark"]
+       }, {
+          // configuration
+          classNames: {
+             selected: "active"
+          }
+       });
+       //external links
+       $('a[rel*=external]').click( function() {
+         window.open(this.href);
+         return false;
+       });
+     });
+   </script>
 
 {% endcompress %}
 {% endblock %}
