@@ -1,0 +1,13 @@
+{
+  "name": "jquery-mmenu",
+  "version": "4.0.3",
+  "main": "jquery.mmenu.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

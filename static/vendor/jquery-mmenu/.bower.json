@@ -1,0 +1,24 @@
+{
+  "name": "jquery-mmenu",
+  "version": "4.0.3",
+  "main": "jquery.mmenu.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "https://github.com/jackncoke/jquery-mmenu",
+  "_release": "4.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "4.0.3",
+    "commit": "001cf5a6e8fad6376efb5c51bea251a6a1b7e275"
+  },
+  "_source": "https://github.com/jackncoke/jquery-mmenu.git",
+  "_target": "^4.0.3",
+  "_originalSource": "jquery-mmenu",
+  "_direct": true
+}

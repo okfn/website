@@ -1,0 +1,25 @@
+{
+  "name": "website",
+  "homepage": "https://github.com/okfn/website",
+  "authors": [
+    "Knut Hühne <knut@viderum.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^3.0.0",
+    "jquery-mmenu": "^4.0.3",
+    "jQuery.dotdotdot": "jquery-dotdotdot#^1.8.1",
+    "letteringjs": "^0.7.0"
+  }
+}

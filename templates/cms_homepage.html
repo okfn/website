@@ -20,7 +20,7 @@
 
       <div class="carousel-inner" role="listbox">
 
-        <div class="project item active" data-img="{% static "img/opentrials-bg.jpg" %}">
+        <div class="project item active" data-img="{% static 'img/opentrials-bg.jpg' %}">
           <a class="carousel-caption">
             <h3>OpenTrials paper published</h3>
             <p>OpenTrials: towards a collaborative open database of all available information on all clinical trials.</p>
@@ -51,7 +51,7 @@
 <section class="features">
   <div class="container">
     <div class="feature one">
-      <a class="image" href="{{ this.feature_one_link }}" style="background-image: url(static/img/feature-team.jpg)"></a>
+      <a class="image" href="{{ this.feature_one_link }}" style="background-image: url({% static 'img/feature-team.jpg'%})"></a>
       <h3>
         <a href="{{ this.feature_one_link }}">PASSIONATE TEAM</a>
       </h3>
@@ -59,7 +59,7 @@
     </div>
 
     <div class="feature two">
-      <a class="image" href="{{ this.feature_two_link }}" style="background-image: url({{ this.feature_two_image }})"></a>
+      <a class="image" href="{{ this.feature_two_link }}" style="background-image: url({% static 'img/feature-network.jpg'%})"></a>
       <h3>
         <a href="{{ this.feature_two_link }}">GLOBAL NETWORK</a>
       </h3>
@@ -67,7 +67,7 @@
     </div>
 
     <div class="feature three">
-      <a class="image" href="{{ this.feature_three_link }}" style="background-image: url({{ this.feature_three_image }})"></a>
+      <a class="image" href="{{ this.feature_three_link }}" style="background-image: url({% static 'img/feature-projects.jpg'%})"></a>
       <h3>
         <a href="{{ this.feature_three_link }}">DIVERSE PROJECTS</a>
       </h3>
@@ -82,20 +82,19 @@
   </a>
 </section>
 
-
 <section class="blog-latest container">
   {% placeholder "blogentries" %}
 </section>
 {% endblock %}
 
-{% block js %}
-<script src="{{ STATIC_URL }}vendor/jquery-dotdotdot/jquery.dotdotdot.min.js"></script>
+{% block javascript-asynchronous %}
+<script src="{{ STATIC_URL }}vendor/jQuery.dotdotdot/src/jquery.dotdotdot.js"></script>
 <script>
   $(function () {
     // change bg img
     $.fn.setBg = function(){
       var newsimage = $('.banner .item.active').attr('data-img');
-      $('.banner').css('backgroundImage','url(static/img/' + newsimage + ')');
+      $('.banner').css('backgroundImage','url(' + newsimage + ')');
     }
     $.fn.setBg();
     $('#news').on('slide.bs.carousel', function () {
