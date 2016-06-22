@@ -14,15 +14,6 @@ echo "-----> In post-compile hook"
 # compile phase. See: https://github.com/heroku/heroku-buildpack-python/issues/57
 export MEMCACHE_SERVERS='' MEMCACHIER_SERVERS=''
 
-if [ -f bin/install_nodejs ]; then
-    echo "-----> Installing node"
-    chmod +x bin/install_nodejs
-    bin/install_nodejs
-
-    echo "-----> Installing less"
-    npm install -g less --quiet 2>&1 | indent
-fi
-
 MANAGE_FILE=$(find . -maxdepth 3 -type f -name 'manage.py' | head -1)
 MANAGE_FILE=${MANAGE_FILE:2}
 
@@ -38,7 +29,6 @@ if [ "$DJANGO_COMPRESS_OFFLINE" = "true" ]; then
     # After running the compressor, I can now remove the assets directory and
     # all the NPM packages.
     rm -rf assets/
-    rm -rf .npm/
     rm -rf .heroku/vendor/node/
 fi
 
