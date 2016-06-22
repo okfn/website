@@ -21,7 +21,7 @@ class SassFilter(CompilerFilter):
     def __init__(self, content, attrs, **kwargs):
         super(SassFilter, self).__init__(
             content,
-            command='sass {infile} {outfile}',
+            command='sassc {infile} {outfile}',
             **kwargs)
 
     def input(self, **kwargs):

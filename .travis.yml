@@ -1,8 +1,6 @@
 language: python
 python:
   - 2.7
-before_install:
-  - gem install sass
 install:
   - pip install -r requirements.dev.txt
   - pip install coveralls
