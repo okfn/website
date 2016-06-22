@@ -20,6 +20,10 @@
     "jquery": "^3.0.0",
     "jQuery.dotdotdot": "jquery-dotdotdot#^1.8.1",
     "letteringjs": "^0.7.0",
-    "jQuery.mmenu": "^5.6.5"
+    "jQuery.mmenu": "^5.6.5",
+    "bootstrap-sass": "^3.3.6"
+  },
+  "resolutions": {
+    "jquery": "1.9.1 - 2"
   }
 }
