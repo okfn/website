@@ -392,8 +392,7 @@ COMPRESS_OFFLINE_CONTEXT = {
 }
 
 COMPRESS_PRECOMPILERS = (
-    ('text/less', 'lib.precompilers.LessFilter'),
-    ('text/less', 'lib.precompilers.SassFilter'),
+    ('text/sass', 'lib.precompilers.SassFilter'),
 )
 
 COMPRESS_CSS_FILTERS = [

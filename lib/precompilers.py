@@ -17,18 +17,6 @@ class CustomCssAbsoluteFilter(CssAbsoluteFilter):
 
 # Work around the fact that django-compressor doesn't succeed in running the
 # CssAbsoluteFilter on less files due to broken path lookups.
-class LessFilter(CompilerFilter):
-    def __init__(self, content, attrs, **kwargs):
-        super(LessFilter, self).__init__(
-            content,
-            command='lessc --no-color {infile} {outfile}',
-            **kwargs)
-
-    def input(self, **kwargs):
-        content = super(LessFilter, self).input(**kwargs)
-        return CustomCssAbsoluteFilter(content).input(**kwargs)
-
-
 class SassFilter(CompilerFilter):
     def __init__(self, content, attrs, **kwargs):
         super(SassFilter, self).__init__(
