@@ -55,14 +55,21 @@
       padding-top: 10px;
       vertical-align: middle;
 
-      & > li > a {
-        padding: 8px 12px;
-      }
+      & > li {
+        & > a {
+          padding: 8px 12px;
+        }
 
-      .active {
-        a {
-          background-color: $brand-primary;
-          color: #fff;
+        &.active {
+          & > a {
+            background-color: $brand-primary;
+            color: #fff;
+          }
+        }
+
+        & ul {
+          position: absolute;
+          display: none;
         }
       }
 
