@@ -25,7 +25,9 @@ node_modules
 # Site data
 media
 staticfiles
-static/vendor/ # tracked by bower
+
+# Packages installed by bower
+static/vendor/
 
 logfile
 
