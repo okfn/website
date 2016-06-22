@@ -19,9 +19,7 @@
     {# django-cms toolbar injector -- this must remain in base #}
     {% cms_toolbar %}
 
-    <div id="page">
-      {% block body-sheath %}{% endblock %}
-    </div>
+    {% block body-sheath %}{% endblock %}
 
     {% render_block "js" %}
     <script>

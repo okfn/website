@@ -16,6 +16,7 @@
 {% endblock %}
 
 {% block body-sheath %}
+<div id="page">
 <header class="site-header">
   <div class="container">
     <h1 class="brand">
@@ -80,6 +81,14 @@
       {% include 'includes/footer.html' %}
     </div>
   </footer>
+</div>
+
+<nav id="mmenu">
+ <ul>
+    {% include 'includes/nav.html' %}
+    {% include 'includes/nav_secondary.html' %}
+ </ul>
+</nav>
 {% endblock %}
 
 {% block javascript-libraries %}
@@ -124,7 +133,7 @@
   charset="utf-8"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}vendor/bootstrap/js/collapse.js"
   charset="utf-8"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}vendor/jquery-mmenu/source/jquery.mmenu.js"
+<script type="text/javascript" src="{{ STATIC_URL }}vendor/jQuery.mmenu/dist/js/jquery.mmenu.min.js"
   charset="utf-8"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}vendor/letteringjs/jquery.lettering.js"
   charset="utf-8"></script>
