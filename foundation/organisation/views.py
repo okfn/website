@@ -164,8 +164,7 @@ def networkgroup_csv_output(request):
     writer = unicodecsv.writer(response)
     header_row = ['ISO3', 'Country', 'Geo coordinates', 'Map location',
                   'Local Groups status', 'Community Leaders', 'Website',
-                  'Wiki page', 'Mailing List', 'Twitter handle',
-                  'Youtube channel', 'Facebook page', 'Google+ page']
+                  'Mailing List', 'Twitter handle', 'Facebook page']
 
     working_groups = []
     for group in WorkingGroup.objects.all():
@@ -190,12 +189,9 @@ def networkgroup_csv_output(request):
                u', '.join([member.name
                           for member in group.members.all()]),  # Leaders
                group.homepage_url,  # Website
-               group.wiki_url if group.wiki_url else '',
                group.mailinglist_url,
                group.twitter if group.twitter else '',
-               group.youtube_url if group.youtube_url else '',
-               group.facebook_url,
-               group.gplus_url if group.gplus_url else '', ]
+               group.facebook_url]
 
         # Find topics of working group
         group_working_groups = [g.name for g in group.working_groups.all()]
