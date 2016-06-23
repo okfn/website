@@ -125,7 +125,6 @@ INSTALLED_APPS = (
 
     # Custom apps
     'foundation.blogfeed',
-    'foundation.djangocms_pagebanner',
     'foundation.jobs',
     'foundation.press',
     'foundation.organisation',
