@@ -17,7 +17,7 @@
     {% endif %}
       {{ person.description|markdown }}
       <div class="person-social-links">
-        {% if not skip_email %}
+        {% if not skip_email and person.email%}
         <a href="mailto:{{ person.email }}" title="Email"><i class="fa fa-envelope fa-lg"></i></a>
         {% endif %}
         {% if person.twitter %}
