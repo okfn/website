@@ -16,7 +16,7 @@ class CustomCssAbsoluteFilter(CssAbsoluteFilter):
 
 
 # Work around the fact that django-compressor doesn't succeed in running the
-# CssAbsoluteFilter on less files due to broken path lookups.
+# CssAbsoluteFilter on sass files due to broken path lookups.
 class SassFilter(CompilerFilter):
     def __init__(self, content, attrs, **kwargs):
         super(SassFilter, self).__init__(
