@@ -52,7 +52,7 @@
       </div>
       {% endif %}
 
-      {% if person.email %}
+      {% if person.email and not skip_email %}
       <div role="tabpanel" class="tab-pane" id="{{person.name|slugify}}-email">
          <h4>Email:</h4>
          {{ person.email }}
@@ -83,12 +83,10 @@
       <span class="sr-only">Home</span></a></li>
       {% endif %}
 
-      {% if person.email %}
-      <li role="presentation"><a href="#{{person.name|slugify}}-email" aria-controls="{{person.name|slugify}}-email" role="tab" data-toggle="tab"><span class="icon-home-circle" aria-hidden="true"></span>
-      <span class="sr-only">Email</span></a></li>
-      {% endif %}
+      {% if person.email and not skip_email %}
       <li role="presentation"><a href="#{{person.name|slugify}}-email" aria-controls="{{person.name|slugify}}-email" role="tab" data-toggle="tab"><span class="icon-mail-circle" aria-hidden="true"></span>
       <span class="sr-only">Email</span></a></li>
+      {% endif %}
 
     </ul>
   </div>
