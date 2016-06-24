@@ -125,7 +125,7 @@ class UnitListViewTest(WebTest):
 
     def test_twitter_in_response(self):
         response = self.app.get(reverse('units'))
-        twitter_url = 'http://twitter.com/{handle}'
+        twitter_url = 'https://twitter.com/{handle}'
         twitter_raphael = twitter_url.format(handle=self.raphael.twitter)
         twitter_rocksteady = twitter_url.format(handle=self.rocksteady.twitter)
         twitter_april = twitter_url.format(handle=self.april.twitter)
@@ -140,7 +140,7 @@ class UnitListViewTest(WebTest):
         # between the last Leo's name and Raph's name
         leonardo = response.body.find(self.leonardo.name)
         raphael = response.body.find(self.raphael.name)
-        twitter = response.body.find('http://twitter.com/', leonardo, raphael)
+        twitter = response.body.find('https://twitter.com/', leonardo, raphael)
         self.assertTrue(twitter == -1)
 
     def test_url_in_response(self):
