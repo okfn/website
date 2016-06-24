@@ -53,9 +53,9 @@
 
   {% block pagebanner %}{% endblock %}
 
-  <div id='main' class='container {% block main-class %}{% endblock %}'>
+  <section class='{% block main-class %}{% endblock %} main container'>
     {% block body %}{% endblock %}
-  </div>
+  </section>
 
 <section class="newsletter">
     <form class="container" role="form" action="//okfn.us9.list-manage.com/subscribe/post?u=73f922f8e68e21a10efa21f02&amp;amp;id=32d370a7fc" target="_blank" method="post">
@@ -151,6 +151,7 @@
          $( 'body > #page > .site-header .search-bar' ).removeClass( "active" );
        });
 
+       {% if not request.current_page.sidebarextension %}
 
        function loadScript(src){
          var theScript = document.createElement('script');
@@ -198,6 +199,8 @@
               });
             }
           })()
+
+          {% endif %}
 
        //external links
        $('a[rel*=external]').click( function() {

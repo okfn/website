@@ -1,9 +1,7 @@
 {% load menu_tags %}
 {% load i18n %}
 {% if request.current_page.get_descendant_count > 0 and not request.current_page.sidebarextension %}
-  <h3>{% trans 'In this section' %}</h3>
-  <nav id="side-nav" style='height: 80vh;'>
-           <ul>
-            {% include 'includes/nav.html' %}
-          </ul>
+<ul>
+  {% include 'includes/nav.html' %}
+</ul>
 {% endif %}
