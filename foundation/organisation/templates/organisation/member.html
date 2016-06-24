@@ -37,14 +37,29 @@
         <h4>Location:</h4>
         ...
       </div>
+
+      {% if person.twitter %}
       <div role="tabpanel" class="tab-pane" id="{{person.name|slugify}}-twitter">
         <h4>Twitter:</h4>
-        ...
+        <a href="https://twitter.com/{{person.twitter}}"> {{ person.twitter }} </a>
       </div>
+      {% endif %}
+
+      {% if person.url %}
       <div role="tabpanel" class="tab-pane" id="{{person.name|slugify}}-home">
         <h4>Homepage:</h4>
-        ...
+        <a href="{{ person.url }}"> {{ person.url }}</a>
       </div>
+      {% endif %}
+
+      {% if person.email %}
+      <div role="tabpanel" class="tab-pane" id="{{person.name|slugify}}-email">
+         <h4>Email:</h4>
+         {{ person.email }}
+      </div>
+      {% endif %}
+
+
     </div>
 
     <ul class="nav nav-tabs" role="tablist">
@@ -58,10 +73,23 @@
       <span class="sr-only">Watching</span></a></li>
       <li role="presentation"><a href="#{{person.name|slugify}}-location" aria-controls="{{person.name|slugify}}-location" role="tab" data-toggle="tab"><span class="icon-location-circle" aria-hidden="true"></span>
       <span class="sr-only">Location</span></a></li>
+      {% if person.twitter %}
       <li role="presentation"><a href="#{{person.name|slugify}}-twitter" aria-controls="{{person.name|slugify}}-twitter" role="tab" data-toggle="tab"><span class="icon-twitter-circle" aria-hidden="true"></span>
       <span class="sr-only">Twitter</span></a></li>
+      {% endif %}
+
+      {% if person.url %}
       <li role="presentation"><a href="#{{person.name|slugify}}-home" aria-controls="{{person.name|slugify}}-home" role="tab" data-toggle="tab"><span class="icon-home-circle" aria-hidden="true"></span>
       <span class="sr-only">Home</span></a></li>
+      {% endif %}
+
+      {% if person.email %}
+      <li role="presentation"><a href="#{{person.name|slugify}}-email" aria-controls="{{person.name|slugify}}-email" role="tab" data-toggle="tab"><span class="icon-home-circle" aria-hidden="true"></span>
+      <span class="sr-only">Email</span></a></li>
+      {% endif %}
+      <li role="presentation"><a href="#{{person.name|slugify}}-email" aria-controls="{{person.name|slugify}}-email" role="tab" data-toggle="tab"><span class="icon-mail-circle" aria-hidden="true"></span>
+      <span class="sr-only">Email</span></a></li>
+
     </ul>
   </div>
 </div>
