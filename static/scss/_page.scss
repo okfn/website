@@ -1,4 +1,5 @@
-.page-template {
+.page-template,
+.team-template {
 
   .banner {
     background-color: $brand-primary;
@@ -44,12 +45,51 @@
 
         @media (min-width: $screen-md-min) {
           display: block;
+          height: 90vh;
+
+          &.mm-menu {
+            background-color: $body-bg;
+
+            .mm-prev:before {
+              left: 8px;
+              border-color: $brand-primary;
+            }
+
+            .mm-navbar {
+              text-align: left;
+              padding: 0 20px;
+              border: none;
+
+              .mm-title {
+                color: $text-color;
+                text-transform: uppercase;
+              }
+            }
+
+            .mm-listview {
+              & > li:last-child {
+                &:after {
+                  display: none;
+                }
+              }
+              .mm-next:before {
+                display: none;
+              }
+            }
+          }
         }
         @include make-md-column(3);
       }
 
       article {
         @include make-md-column(9);
+        @include make-lg-column(8);
+        @include make-lg-column-offset(1);
+        overflow: hidden; // prevent scrollbar
+
+        & > :first-child {
+          margin-top: 0;
+        }
       }
     }
   }

@@ -10,9 +10,10 @@ $text-color: $gray-base; //BS
 
 // Typography
 
-$font-family-sans-serif:  Lato, "Helvetica Neue", Helvetica, Arial, sans-serif; //BS
+$font-family-sans-serif:  lato, "Helvetica Neue", Helvetica, Arial, sans-serif; //BS
 $font-size-base: 16px; //BS
-$icon-font-path: "/assets/vendor/bootstrap-sass/assets/fonts/bootstrap/"; //BS Glyphicons
+$icon-font-path: "vendor/bootstrap-sass/assets/fonts/bootstrap/"; //BS Glyphicons
+$headings-font-weight: 600; //BS
 
 
 // Components

@@ -35,7 +35,7 @@
         {% include 'includes/nav_secondary.html' %}
       </ul>
       <ul class="primary nav">
-        {% include 'includes/nav.html' %}
+        {% show_menu_below_id "home" 0 0 0 0 "menu/menu.html" %}
         <li>
           <label for="search">
             <span class="icon-search" aria-hidden="true"></span>
@@ -128,6 +128,8 @@
 <script type="text/javascript" src="{{ STATIC_URL }}vendor/jquery/dist/jquery.js"
   charset="utf-8"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}vendor/webfontloader/webfontloader.js"
+  charset="utf-8"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}vendor/bootstrap/dist/js/bootstrap.js"
   charset="utf-8"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}vendor/bootstrap/js/dropdown.js"
   charset="utf-8"></script>

@@ -2,32 +2,67 @@
 {% load thumbnail %}
 
 {% with person=member.person %}
-<div id="{{ person.name|slugify }}" class="person">
-  <h4>{{ person.name }}{% if member.title %} <small>{{member.title}}</small>{% endif %}</h4>
-  <div class="row">
-    {% if person.photo %}
-    <div class="col-md-2">
-      {% thumbnail person.photo "116" as im %}
-        <img class="img-responsive" src="{{ im.url }}" alt="{{ person.name }}">
-      {% endthumbnail %}
-    </div>
-    <div class="col-md-10">
-    {% else %}
-    <div class="col-md-12">
-    {% endif %}
-      {{ person.description|markdown }}
-      <div class="person-social-links">
-        {% if not skip_email %}
-        <a href="mailto:{{ person.email }}" title="Email"><i class="fa fa-envelope fa-lg"></i></a>
-        {% endif %}
-        {% if person.twitter %}
-        <a href="http://twitter.com/{{person.twitter}}" title="Twitter"><i class="fa fa-twitter fa-lg"></i></a>
-        {% endif %}
-        {% if person.url %}
-        <a href="{{ person.url }}" title="Personal website"><i class="fa fa-link fa-lg"></i></a>
-        {% endif %}
+<div class="profile">
+  <span class="image" style="background-image: url({{ person.gravatar_url }});">
+    {% thumbnail person.photo "116" as im %}
+      <img src="{{ im.url }}" alt="" />
+    {% endthumbnail %}
+  </span>
+  <h3 class="name">{{ person.name }}</h3>
+  {% if member.title %}
+   <p class="job-title">{{member.title}}</p>
+  {% endif %}
+
+  {{ person.description|markdown }}
+
+  <div class="meta">
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="{{person.name|slugify}}-working">
+        <h4>Working on:</h4>
+        ...
+      </div>
+      <div role="tabpanel" class="tab-pane" id="{{person.name|slugify}}-reading">
+        <h4>Reading:</h4>
+        ...
+      </div>
+      <div role="tabpanel" class="tab-pane" id="{{person.name|slugify}}-listening">
+        <h4>Listening to:</h4>
+        ...
+      </div>
+      <div role="tabpanel" class="tab-pane" id="{{person.name|slugify}}-watching">
+        <h4>Watching:</h4>
+        ...
+      </div>
+      <div role="tabpanel" class="tab-pane" id="{{person.name|slugify}}-location">
+        <h4>Location:</h4>
+        ...
+      </div>
+      <div role="tabpanel" class="tab-pane" id="{{person.name|slugify}}-twitter">
+        <h4>Twitter:</h4>
+        ...
+      </div>
+      <div role="tabpanel" class="tab-pane" id="{{person.name|slugify}}-home">
+        <h4>Homepage:</h4>
+        ...
       </div>
     </div>
+
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#{{person.name|slugify}}-working" aria-controls="{{person.name|slugify}}-working" role="tab" data-toggle="tab"><span class="icon-working-circle" aria-hidden="true"></span>
+      <span class="sr-only">Working on</span></a></li>
+      <li role="presentation"><a href="#{{person.name|slugify}}-reading" aria-controls="{{person.name|slugify}}-reading" role="tab" data-toggle="tab"><span class="icon-reading-circle" aria-hidden="true"></span>
+      <span class="sr-only">Reading</span></a></li>
+      <li role="presentation"><a href="#{{person.name|slugify}}-listening" aria-controls="{{person.name|slugify}}-listening" role="tab" data-toggle="tab"><span class="icon-listening-circle" aria-hidden="true"></span>
+      <span class="sr-only">Listening to</span></a></li>
+      <li role="presentation"><a href="#{{person.name|slugify}}-watching" aria-controls="{{person.name|slugify}}-watching" role="tab" data-toggle="tab"><span class="icon-playing-circle" aria-hidden="true"></span>
+      <span class="sr-only">Watching</span></a></li>
+      <li role="presentation"><a href="#{{person.name|slugify}}-location" aria-controls="{{person.name|slugify}}-location" role="tab" data-toggle="tab"><span class="icon-location-circle" aria-hidden="true"></span>
+      <span class="sr-only">Location</span></a></li>
+      <li role="presentation"><a href="#{{person.name|slugify}}-twitter" aria-controls="{{person.name|slugify}}-twitter" role="tab" data-toggle="tab"><span class="icon-twitter-circle" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span></a></li>
+      <li role="presentation"><a href="#{{person.name|slugify}}-home" aria-controls="{{person.name|slugify}}-home" role="tab" data-toggle="tab"><span class="icon-home-circle" aria-hidden="true"></span>
+      <span class="sr-only">Home</span></a></li>
+    </ul>
   </div>
 </div>
 {% endwith %}

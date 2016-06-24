@@ -1,3 +1,5 @@
+from hashlib import md5
+
 from cms.models.pluginmodel import CMSPlugin
 from cms.extensions import PageExtension
 from django.core.urlresolvers import reverse
@@ -21,6 +23,12 @@ class Person(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    @property
+    def gravatar_url(self):
+        base = "https://gravatar.com/avatar/{hash}/"
+        md5_hash = md5(self.email.strip().lower()).hexdigest()
+        return base.format(hash=md5_hash)
 
     class Meta:
         ordering = ["name"]
