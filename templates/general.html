@@ -13,6 +13,8 @@
 <link type="text/sass" rel="stylesheet" href="{{ STATIC_URL }}scss/style.scss" charset="utf-8">
 {% endcompress %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.6.4/css/jquery.mmenu.all.min.css">
+<script src="https://use.typekit.net/sew1dft.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
 {% endblock %}
 
 {% block body-sheath %}
@@ -107,12 +109,6 @@
   attacks.
 {% endcomment %}
 
-<script>
-  window.WebFontConfig = {
-    google: { families: ['Lato:300,400italic,400,700'] }
-  };
-</script>
-
 {% if GOOGLE_ANALYTICS_TRACKING_ID and GOOGLE_ANALYTICS_DOMAIN %}
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -128,8 +124,6 @@
 {% endif %}
 
 <script type="text/javascript" src="{{ STATIC_URL }}vendor/jquery/dist/jquery.js"
-  charset="utf-8"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}vendor/webfontloader/webfontloader.js"
   charset="utf-8"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}vendor/bootstrap/dist/js/bootstrap.js"
   charset="utf-8"></script>
