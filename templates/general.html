@@ -145,8 +145,6 @@
          $( 'body > #page > .site-header .search-bar' ).removeClass( "active" );
        });
 
-       {% if not request.current_page.sidebarextension %}
-
        function loadScript(src){
          var theScript = document.createElement('script');
              theScript.type = 'text/javascript';
@@ -193,8 +191,6 @@
               });
             }
           })()
-
-          {% endif %}
 
        //external links
        $('a[rel*=external]').click( function() {
