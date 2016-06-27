@@ -15,29 +15,19 @@
 
   {{ person.description|markdown }}
 
-  {% if person.username_on_slack %}
+
   <div class="meta">
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="{{person.name|slugify}}-working">
-        <h4>Working on:</h4>
-        ...
-      </div>
-      <div role="tabpanel" class="tab-pane" id="{{person.name|slugify}}-reading">
-        <h4>Reading:</h4>
-        ...
-      </div>
-      <div role="tabpanel" class="tab-pane" id="{{person.name|slugify}}-listening">
-        <h4>Listening to:</h4>
-        ...
-      </div>
-      <div role="tabpanel" class="tab-pane" id="{{person.name|slugify}}-watching">
-        <h4>Watching:</h4>
-        ...
-      </div>
-      <div role="tabpanel" class="tab-pane" id="{{person.name|slugify}}-location">
-        <h4>Location:</h4>
-        ...
-      </div>
+      {% for doing in person.nowdoing_set.all %}
+         <div role="tabpanel" class="tab-pane" id="{{person.name|slugify}}-{{doing.doing_type}}">
+          <h4> {{ doing.type }} </h4>
+          {% if doing.link %}
+            <a href="{{ doing.link }}"> {{ doing.text }} </a>
+          {% else %}
+            {{ doing.text }}
+          {% endif %}
+        </div>
+      {% endfor %}
 
       {% if person.twitter %}
       <div role="tabpanel" class="tab-pane" id="{{person.name|slugify}}-twitter">
@@ -54,7 +44,7 @@
       {% endif %}
 
       {% if person.email and not skip_email %}
-      <div role="tabpanel" class="tab-pane" id="{{person.name|slugify}}-email">
+      <div role="tabpanel" class="tab-pane active" id="{{person.name|slugify}}-email">
          <h4>Email:</h4>
          {{ person.email }}
       </div>
@@ -64,16 +54,18 @@
     </div>
 
     <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active"><a href="#{{person.name|slugify}}-working" aria-controls="{{person.name|slugify}}-working" role="tab" data-toggle="tab"><span class="icon-working-circle" aria-hidden="true"></span>
-      <span class="sr-only">Working on</span></a></li>
-      <li role="presentation"><a href="#{{person.name|slugify}}-reading" aria-controls="{{person.name|slugify}}-reading" role="tab" data-toggle="tab"><span class="icon-reading-circle" aria-hidden="true"></span>
-      <span class="sr-only">Reading</span></a></li>
-      <li role="presentation"><a href="#{{person.name|slugify}}-listening" aria-controls="{{person.name|slugify}}-listening" role="tab" data-toggle="tab"><span class="icon-listening-circle" aria-hidden="true"></span>
-      <span class="sr-only">Listening to</span></a></li>
-      <li role="presentation"><a href="#{{person.name|slugify}}-watching" aria-controls="{{person.name|slugify}}-watching" role="tab" data-toggle="tab"><span class="icon-playing-circle" aria-hidden="true"></span>
-      <span class="sr-only">Watching</span></a></li>
-      <li role="presentation"><a href="#{{person.name|slugify}}-location" aria-controls="{{person.name|slugify}}-location" role="tab" data-toggle="tab"><span class="icon-location-circle" aria-hidden="true"></span>
-      <span class="sr-only">Location</span></a></li>
+      {% for doing in person.nowdoing_set.all %}
+      <li role="presentation">
+        <a href="#{{person.name|slugify}}-{{doing.doing_type}}"
+           aria-controls="{{person.name|slugify}}-working"
+           role="tab"
+           data-toggle="tab">
+          <span class="icon-{{doing.doing_type}}-circle" aria-hidden="true"></span>
+          <span class="sr-only">{{doing.doing_type}}</span>
+        </a>
+      </li>
+      {% endfor %}
+
       {% if person.twitter %}
       <li role="presentation"><a href="#{{person.name|slugify}}-twitter" aria-controls="{{person.name|slugify}}-twitter" role="tab" data-toggle="tab"><span class="icon-twitter-circle" aria-hidden="true"></span>
       <span class="sr-only">Twitter</span></a></li>
@@ -85,12 +77,11 @@
       {% endif %}
 
       {% if person.email and not skip_email %}
-      <li role="presentation"><a href="#{{person.name|slugify}}-email" aria-controls="{{person.name|slugify}}-email" role="tab" data-toggle="tab"><span class="icon-mail-circle" aria-hidden="true"></span>
+      <li role="presentation" class="active"><a href="#{{person.name|slugify}}-email" aria-controls="{{person.name|slugify}}-email" role="tab" data-toggle="tab"><span class="icon-mail-circle" aria-hidden="true"></span>
       <span class="sr-only">Email</span></a></li>
       {% endif %}
 
     </ul>
   </div>
-  {% endif %}
 </div>
 {% endwith %}
