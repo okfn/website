@@ -4,7 +4,7 @@
 {% load markdown_deux_tags %}
 
 {% block title %}{{ object.name }}{% endblock %}
-{% block body-class %}theme{% endblock %}
+{% block body-class %}page-template{% endblock %}
 
 {% block pagebanner-inner %}
 <h2>{{ object.name }}</h2>
@@ -13,7 +13,15 @@
 
 {% block body %}
 <div class="row">
-  <div class="main col-md-9 col-md-push-3">
+  <nav>
+    <h3>Other themes</h3>
+    <ul>
+      {% for theme in themes %}
+        <li><a href="{{ theme.get_absolute_url }}">{{ theme.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <article>
     {{ object.description|markdown }}
     <div class="row">
       {% if object.workinggroups.all %}
@@ -69,12 +77,6 @@
       </div>
       {% endif %}
     </div>
-  </div>
-  <div class="sidebar col-md-3 col-md-pull-9">
-    <h3>Other themes</h3>
-    <ul>{% for theme in themes %}
-      <li><a href="{{ theme.get_absolute_url }}">{{ theme.name }}</a></li>
-    {% endfor %}</ul>
-  </div>
+  </article>
 </div>
 {% endblock %}
