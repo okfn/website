@@ -8,7 +8,7 @@
       position: absolute;
       background-color: $brand-primary;
       color: #fff;
-      z-index: 1;
+      z-index: 4;
       padding: 20px;
       width: 134px;
       border: solid 2px #fff;
@@ -56,8 +56,17 @@
       vertical-align: middle;
 
       & > li {
+        &:not(.search) {
+          border: solid 2px #fff;
+        }
+
         & > a {
           padding: 8px 12px;
+          z-index: 2;
+
+          &:hover {
+            background-color: #fff;
+          }
         }
 
         &.active {
@@ -67,9 +76,56 @@
           }
         }
 
-        & ul {
+        &.has-children {
+          &:hover {
+            border-color: $gray-lighter;
+
+            & > ul {
+              display: block;
+            }
+
+            &:not(.active) {
+              & > a {
+                background-color: #fff;
+              }
+            }
+          }
+        }
+
+        & > ul {
           position: absolute;
+          background-color: #fff;
+          text-align: left;
+          left: 0;
+          z-index: 2;
+          margin: -2px -2px 0 -2px;
+          padding: 0;
+          min-width: 100%;
+          border: solid 2px $gray-lighter;
+          box-sizing: content-box;
+          z-index: 1;
+          text-transform: none;
+          font-size: 14px;
           display: none;
+
+          li {
+            display: block;
+            border-bottom: solid 1px $gray-lighter;
+
+            &:last-child {
+              border: none;
+            }
+          }
+
+          a {
+            display: block;
+            padding: 8px 12px;
+            text-decoration: none;
+          }
+
+          ul {
+            display: none;
+          }
         }
       }
 
@@ -107,12 +163,13 @@
   }
 
   .search-bar {
-    background-color: $gray-light;
+    background-color: $gray-lighter;
     height: 120px;
     position: absolute;
     bottom: 120px;
     width: 100%;
     transition: bottom 0.3s ease-out;
+    z-index: 3;
 
     &.active {
       bottom: 0;
