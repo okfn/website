@@ -158,7 +158,8 @@
             var hamBurgerButton = document.getElementsByClassName('show-menu')[0];
             var display = window.getComputedStyle(hamBurgerButton,null).getPropertyValue("display");
             var bigScreen = (display === 'none');
-            if( bigScreen ) {
+            var navigationVisible = ($('#side-nav > ul').length) > 0
+            if( bigScreen & navigationVisible) {
               loadScript('{{ STATIC_URL }}vendor/jQuery.mmenu/dist/js/jquery.mmenu.oncanvas.min.js');
               $(window).load(function(){
                 $("#side-nav").mmenu({
