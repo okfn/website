@@ -425,23 +425,6 @@ CMS_PLACEHOLDER_CONF = {
 # Allow iframes in the cms text plugin
 TEXT_ADDITIONAL_TAGS = ('iframe',)
 
-LOGGING = {
-    'version': 1,
-    'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        'django.request': {
-            'handlers': ['console'],
-            'propagate': True,
-            'level': 'DEBUG',
-        }
-    },
-}
-
 # This import has to live here, because it has side-effects that require Django
 # to be configured already. Ugh.
 from sorl.thumbnail.log import ThumbnailLogHandler
