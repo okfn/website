@@ -2,13 +2,16 @@
 {% load i18n %}
 {% load cms_tags %}
 
-{% block body-class %}press-mentions{% endblock %}
+{% block body-class %}page-template{% endblock %}
 
 {% block blurb %}{% static_placeholder "press mentions blurb" %}{% endblock %}
 
 {% block body %}
-<div class="row">
-  <div class="main col-md-9 col-md-push-3">
+<div>
+  <nav>
+    {% include "press/pressrelease_recent.html" %}
+  </nav>
+  <article>
     {% with headerlinks=True %}
     {% for pressmention in object_list %}
     {% include "press/pressmention.html" %}
@@ -18,9 +21,6 @@
     {% endfor %}
     {% endwith %}
     {% include "includes/pager.html" %}
-  </div>
-  <div class="sidebar col-md-3 col-md-pull-9">
-    {% include "press/pressrelease_recent.html" %}
-  </div>
+  </article>
 </div>
 {% endblock %}
