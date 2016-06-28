@@ -300,7 +300,8 @@ class NetworkGroupMembership(models.Model):
     title = models.CharField(max_length=100, blank=True)
     order = models.IntegerField(
         blank=True, null=True,
-        help_text="Higher numbers mean higher up in the food chain")
+        help_text="The lower the number the higher on the"
+        " page this Person will be shown.")
     networkgroup = models.ForeignKey('NetworkGroup')
     person = models.ForeignKey('Person')
 
