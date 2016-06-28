@@ -1,3 +1,5 @@
+from mock import patch
+
 from django.core.urlresolvers import reverse
 from django.utils.html import escape
 from django.test.utils import override_settings
@@ -653,3 +655,56 @@ class NetworkGroupDetailViewTest(WebTest):
             self.buckingham.twitter,
             self.buckingham.youtube_url,
             self.buckingham.facebook_url, 'Y', '' '']
+
+    @override_settings(HUBOT_API_KEY='secretkey')
+    def test_relatable_person_authentication(self):
+        response = self.app.post(reverse('relatable-person'),
+                                 status=403)
+        self.assertEqual(response.json['message'], "Not authorized")
+
+    @override_settings(HUBOT_API_KEY='secretkey')
+    def test_relatable_person_json_deocding(self):
+        response = self.app.post(reverse('relatable-person'),
+                                 headers={'Authorization': 'secretkey'},
+                                 status=400)
+        self.assertEqual(response.json['message'], "Could not decode JSON data.")
+
+    @override_settings(HUBOT_API_KEY='secretkey')
+    def test_relatable_person_without_username(self):
+        response = self.app.post_json(reverse('relatable-person'),
+                                      headers={'Authorization': 'secretkey'},
+                                      status=400,
+                                      params={"text": "#reading this should not happend"})
+        self.assertEqual("You need to supply a field `username`",
+                          response.json['message'])
+
+    @override_settings(HUBOT_API_KEY='secretkey')
+    def test_relatable_person_username_not_found(self):
+        response = self.app.post_json(reverse('relatable-person'),
+                                      headers={'Authorization': 'secretkey'},
+                                      status=400,
+                                      params={"username": "knut"})
+        self.assertIn("No person with", response.json['message'])
+
+    @patch('foundation.organisation.views.extract_ograph_title',
+           return_value=('Close to the machine',
+                         "https://www.goodreads.com/book/show/486625.Close_to_the_Machine")
+           )
+    @override_settings(HUBOT_API_KEY='secretkey')
+    def test_relatable_person_updates_entries(self, *args):
+        donatello = Person.objects.create(
+            name="Donatello (Donnie)",
+            username_on_slack="donnie",
+            description='Turtle with a purple mask',
+            email='donatello@tmnt.org')
+        donatello.save()
+        payload = {"username": "donnie",
+                   "text": "#reading https://www.goodreads.com/book/show/486625.Close_to_the_Machine"
+                   }
+
+        response = self.app.post_json(reverse('relatable-person'),
+                                      headers={'Authorization': 'secretkey'},
+                                      status=200,
+                                      params=payload)
+        donnie = Person.objects.filter(username_on_slack='donnie').first()
+        self.assertEqual(donnie.nowdoing_set.count(), 1)

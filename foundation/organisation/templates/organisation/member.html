@@ -26,6 +26,16 @@
         {% if person.url %}
         <a href="{{ person.url }}" title="Personal website"><i class="fa fa-link fa-lg"></i></a>
         {% endif %}
+
+        {% for doing in person.nowdoing_set.all %}
+           {{ doing.doing_type }}:
+          {% if doing.link %}
+            <a href="{{ doing.link }}"> {{ doing.text }} </a>
+          {% else %}
+              {{ doing.text }}
+          {% endif %}
+        {% endfor %} 
+
       </div>
     </div>
   </div>
