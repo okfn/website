@@ -4,6 +4,9 @@ from django.views.generic import TemplateView
 from django.views.generic import RedirectView
 
 from django.contrib import admin
+
+from foundation.organisation.views import relatable_person
+
 admin.autodiscover()
 
 from haystack.views import SearchView
@@ -84,6 +87,11 @@ urlpatterns += patterns(
     url(r'^wp-includes/(?P<remain>.+)$',
         RedirectView.as_view(url=ARCHIVE_ROOT + '/wp-includes/%(remain)s',
                              permanent=True)),
+
+    # we would like to properly do this from within the cms
+    # but it does not work with `csrf_exempt`. See
+    # https://github.com/divio/django-cms/issues/4599
+    url(r'^api$', relatable_person, name='relatable-person'),
 
     # Fallthrough for CMS managed pages
     url(r'^', include('cms.urls'))

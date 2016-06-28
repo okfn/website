@@ -30,6 +30,7 @@ warnings.filterwarnings("ignore",
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 SITE_ID = int(env.get('DJANGO_SITE_ID', 1))
+HUBOT_API_KEY = env.get('HUBOT_API_KEY')
 
 
 def _parse_email_list(varname):

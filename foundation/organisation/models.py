@@ -14,6 +14,7 @@ class Person(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     name = models.CharField(max_length=100)
+    username_on_slack = models.CharField(max_length=100, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     email = models.EmailField(blank=True)
     photo = models.ImageField(upload_to='organisation/people/photos',
@@ -33,6 +34,27 @@ class Person(models.Model):
     class Meta:
         ordering = ["name"]
         verbose_name_plural = "people"
+
+
+class NowDoing(models.Model):
+    ACTIVITIES = (
+            ('reading', 'reading'),
+            ('listening', 'listening'),
+            ('working', 'working'),
+            ('location', 'location'),
+            ('watching', 'watching'),
+            ('eating', 'eating'),
+            )
+    person = models.ForeignKey(Person)
+    doing_type = models.CharField(
+                max_length=10,
+                choices=ACTIVITIES)
+    link = models.URLField(blank=True, null=True)
+    text = models.TextField(blank=True, null=True)
+
+    def __repr__(self):
+        return '<NowDoing: {}, {}>'.format(self.person.name,
+                                           self.doing_type)
 
 
 class Unit(models.Model):
@@ -286,7 +308,8 @@ class NetworkGroupMembership(models.Model):
     title = models.CharField(max_length=100, blank=True)
     order = models.IntegerField(
         blank=True, null=True,
-        help_text="Higher numbers mean higher up in the food chain")
+        help_text="The lower the number the higher on the"
+        " page this Person will be shown.")
     networkgroup = models.ForeignKey('NetworkGroup')
     person = models.ForeignKey('Person')
 
