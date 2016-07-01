@@ -20,7 +20,7 @@
     <div class="tab-content">
       {% for doing in person.nowdoing_set.all %}
          <div role="tabpanel" class="tab-pane" id="{{person.name|slugify}}-{{doing.doing_type}}">
-          <h4> {{ doing.type }} </h4>
+          <h4>{{ doing.doing_type }}:</h4>
           {% if doing.link %}
             <a href="{{ doing.link }}"> {{ doing.text }} </a>
           {% else %}
