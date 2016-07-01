@@ -363,12 +363,13 @@ if env.get('DJANGO_CSP_REPORT_URI') is not None:
 
     CSP_SCRIPT_SRC = asset_hosts + ['https://js-agent.newrelic.com',
                                     'https://www.google-analytics.com',
+                                    'https://use.typekit.net',
+                                    'https://bam.nr-data.net',
                                     "'unsafe-inline'", "'self'"]
-    CSP_STYLE_SRC = asset_hosts + ['https://fonts.googleapis.com',
-                                   "'unsafe-inline'"]
-    CSP_IMG_SRC = asset_hosts + ["data:", 'https://www.google-analytics.com']
-    CSP_FONT_SRC = asset_hosts + ['https://netdna.bootstrapcdn.com',
-                                  'https://fonts.gstatic.com',
+    CSP_STYLE_SRC = asset_hosts + ["'unsafe-inline'"]
+    CSP_IMG_SRC = asset_hosts + ["data:",
+                                 'https://www.google-analytics.com']
+    CSP_FONT_SRC = asset_hosts + ['data:',
                                   'https://themes.googleusercontent.com']
 
     CSP_REPORT_URI = env.get('DJANGO_CSP_REPORT_URI')
