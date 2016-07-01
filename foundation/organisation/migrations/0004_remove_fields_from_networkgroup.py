@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('organisation', '0002_sidebarextension'),
+        ('organisation', '0003_add_nowdoing_field'),
     ]
 
     operations = [
