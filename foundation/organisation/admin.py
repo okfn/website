@@ -11,6 +11,7 @@ from cms.extensions import PageExtensionAdmin
 class PersonAdmin(reversion.admin.VersionAdmin):
     list_display = ('name', 'email', 'twitter')
     ordering = ('name',)
+    search_fields = ('name',)
 
 admin.site.register(Person, PersonAdmin)
 
