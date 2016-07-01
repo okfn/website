@@ -1,5 +1,6 @@
-from mock import patch
+from StringIO import StringIO
 
+from mock import patch
 from django.core.urlresolvers import reverse
 from django.utils.html import escape
 from django.test.utils import override_settings
@@ -7,12 +8,11 @@ from django_webtest import WebTest
 
 from geoposition import Geoposition
 from iso3166 import countries
-from StringIO import StringIO
 import unicodecsv
 
 from ..models import (Board, Person, Project, Unit, Theme, WorkingGroup,
                       NetworkGroup, NetworkGroupMembership,
-                      BoardMembership, UnitMembership)
+                      BoardMembership, UnitMembership, NowDoing)
 
 
 @override_settings(ROOT_URLCONF='foundation.tests.urls')
@@ -662,7 +662,7 @@ class NetworkGroupDetailViewTest(WebTest):
                                       status=400,
                                       params={"text": "#reading this should not happend"})
         self.assertEqual("You need to supply a field `username`",
-                          response.json['message'])
+                         response.json['message'])
 
     @override_settings(HUBOT_API_KEY='secretkey')
     def test_relatable_person_username_not_found(self):
@@ -688,9 +688,91 @@ class NetworkGroupDetailViewTest(WebTest):
                    "text": "#reading https://www.goodreads.com/book/show/486625.Close_to_the_Machine"
                    }
 
-        response = self.app.post_json(reverse('relatable-person'),
-                                      headers={'Authorization': 'secretkey'},
-                                      status=200,
-                                      params=payload)
+        self.app.post_json(reverse('relatable-person'),
+                           headers={'Authorization': 'secretkey'},
+                           status=200,
+                           params=payload)
         donnie = Person.objects.filter(username_on_slack='donnie').first()
         self.assertEqual(donnie.nowdoing_set.count(), 1)
+
+    @override_settings(HUBOT_API_KEY='secretkey')
+    def test_relatable_person_updates_entries_with_last_updated_flag(self, *args):
+        donatello = Person.objects.create(
+            name="Donatello (Donnie)",
+            username_on_slack="donnie",
+            description='Turtle with a purple mask',
+            email='donatello@tmnt.org')
+        donatello.save()
+
+
+        payload = {"username": "donnie",
+                   "text": "#reading https://www.goodreads.com/book/show/486625.Close_to_the_Machine"
+                   }
+
+        self.app.post_json(reverse('relatable-person'),
+                           headers={'Authorization': 'secretkey'},
+                           status=200,
+                           params=payload)
+
+        payload = {"username": "donnie",
+                   "text": "#watching https://www.youtube.com/watch?v=IAISUDbjXj0"
+                   }
+
+        self.app.post_json(reverse('relatable-person'),
+                           headers={'Authorization': 'secretkey'},
+                           status=200,
+                           params=payload)
+        donnie = Person.objects.filter(username_on_slack='donnie').first()
+        self.assertEqual(donnie.nowdoing_set.count(), 2)
+        self.assertTrue(donnie.nowdoing_with_latest[0].is_newest_update)
+        self.assertEqual(donnie.nowdoing_with_latest[0].doing_type, "watching")
+
+    def test_NowDoing_icon_name_works(self, *args):
+        donatello = Person.objects.create(
+            name="Donatello (Donnie)",
+            username_on_slack="donnie",
+            description='Turtle with a purple mask',
+            email='donatello@tmnt.org')
+        donatello.save()
+
+        watching = NowDoing.objects.create(
+            person=donatello,
+            doing_type='watching',
+            text='a movie'
+        )
+        watching.save()
+
+        location = NowDoing.objects.create(
+            person=donatello,
+            doing_type='location',
+            text='Berlin'
+        )
+        watching.save()
+
+        self.assertEqual(watching.icon_name, "playing")
+        self.assertEqual(location.icon_name, "location")
+
+    def test_NowDoing_display_name(self, *args):
+        donatello = Person.objects.create(
+            name="Donatello (Donnie)",
+            username_on_slack="donnie",
+            description='Turtle with a purple mask',
+            email='donatello@tmnt.org')
+        donatello.save()
+
+        watching = NowDoing.objects.create(
+            person=donatello,
+            doing_type='watching',
+            text='a movie'
+        )
+        watching.save()
+
+        listening = NowDoing.objects.create(
+            person=donatello,
+            doing_type='listening',
+            text='The beatles'
+        )
+        watching.save()
+
+        self.assertEqual(listening.display_name, "Listening to")
+        self.assertEqual(watching.display_name, "Watching")
