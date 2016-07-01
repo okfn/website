@@ -138,12 +138,24 @@
        // show / hide search bar
        $('body > #page > .site-header nav label[for="search"]').click(function(){
          $( 'body > #page > .site-header .search-bar' ).addClass( "active" );
-         console.log('clicked')
        });
        $('body > #page > .site-header .search-bar .cancel').click(function(event){
          event.preventDefault();
          $( 'body > #page > .site-header .search-bar' ).removeClass( "active" );
        });
+
+      // TODO: this is only needed for pages where the member.html template is
+      // included so it should probably somehow be moved.
+       $(function () {
+         var allTabs = $('.profile .meta');
+         allTabs.each(function(){
+           var active = $(this).find('.active').length;
+           if (!active){
+             $(this).find('.nav li').first().addClass('active');
+             $(this).find('.tab-content .tab-pane').first().addClass('active');
+           }
+         })
+        });
 
        function loadScript(src){
          var theScript = document.createElement('script');

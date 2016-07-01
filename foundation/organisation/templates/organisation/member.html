@@ -16,7 +16,8 @@
   {{ person.description|markdown }}
 
 
-  <div class="meta">
+  {% if person.has_anything_to_show or person.email and not skip_email %}
+    <div class="meta">
     <div class="tab-content">
       {% for doing in person.nowdoing_with_latest %}
          <div role="tabpanel"
@@ -47,7 +48,7 @@
 
       {% if person.email and not skip_email %}
       <div role="tabpanel"
-       class="tab-pane {% if not person.nowdoing_with_latest %} active {% endif %}"
+       class="tab-pane"
         id="{{person.name|slugify}}-email">
          <h4>Email:</h4>
          {{ person.email }}
@@ -80,8 +81,7 @@
       {% endif %}
 
       {% if person.email and not skip_email %}
-      <li role="presentation"
-          {% if not person.nowdoing_with_latest %}class="active"{% endif %}>
+      <li role="presentation">
         <a href="#{{person.name|slugify}}-email"
            aria-controls="{{person.name|slugify}}-email"
            role="tab"
@@ -94,5 +94,6 @@
 
     </ul>
   </div>
+  {% endif %}
 </div>
 {% endwith %}
