@@ -27,9 +27,19 @@ class Person(models.Model):
 
     @property
     def gravatar_url(self):
+        """ Returns the gravatar url for this user (constructed from email)"""
         base = "https://gravatar.com/avatar/{hash}/"
         md5_hash = md5(self.email.strip().lower()).hexdigest()
         return base.format(hash=md5_hash)
+
+    @property
+    def nowdoing_with_latest(self):
+        """ All NowDoing attributes of the user with the most recently
+            updated one marked with `is_newest_update`"""
+        nowdoings = self.nowdoing_set.all().extra(order_by=['-updated_at'])
+        if nowdoings:
+            nowdoings[0].is_newest_update = True
+        return nowdoings
 
     class Meta:
         ordering = ["name"]
@@ -51,6 +61,26 @@ class NowDoing(models.Model):
         choices=ACTIVITIES)
     link = models.URLField(blank=True, null=True)
     text = models.TextField(blank=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    @property
+    def icon_name(self):
+        """ The name of the corresponding css icon class """
+        matching = {'watching': 'playing'}
+        return matching.get(self.doing_type, self.doing_type)
+
+    @property
+    def display_name(self):
+        """ The human readable string to be displayed in templates """
+        matching = {
+            'reading': 'Reading',
+            'listening': 'Listening to',
+            'working': 'Working on',
+            'location': 'Location',
+            'watching': 'Watching',
+            'eating': 'Eating'
+            }
+        return matching.get(self.doing_type, self.doing_type)
 
     def __repr__(self):
         return '<NowDoing: {}, {}>'.format(self.person.name,

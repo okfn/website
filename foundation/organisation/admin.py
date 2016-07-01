@@ -9,7 +9,7 @@ from cms.extensions import PageExtensionAdmin
 
 
 class PersonAdmin(reversion.admin.VersionAdmin):
-    list_display = ('name', 'email', 'twitter')
+    list_display = ('name', 'email', 'twitter', 'username_on_slack')
     ordering = ('name',)
     search_fields = ('name',)
 
