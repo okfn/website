@@ -33,12 +33,6 @@
         <a href="{{ object.homepage_url }}">{{ object.homepage_url }}</a>
       </li>
       {% endif %}
-      {% if object.wiki_url %}
-      <li>
-        <i class="fa fa-link fa-large"></i>
-        <a href="{{ object.wiki_url }}">Wiki page</a>
-      </li>
-      {% endif %}
       {% if object.mailinglist_url %}
       <li>
         <i class="fa fa-envelope fa-large"></i>
@@ -58,22 +52,6 @@
         <i class="fa fa-facebook-square fa-large"></i>
         <a href="{{ object.facebook_url }}">
           Facebook page
-        </a>
-      </li>
-      {% endif %}
-      {% if object.gplus_url %}
-      <li>
-        <i class="fa fa-google-plus fa-large"></i>
-        <a href="{{ object.gplus_url }}">
-          Google+ page
-        </a>
-      </li>
-      {% endif %}
-      {% if object.youtube_url %}
-      <li>
-        <i class="fa fa-youtube fa-large"></i>
-        <a href="{{ object.youtube_url }}">
-          YouTube channel
         </a>
       </li>
       {% endif %}

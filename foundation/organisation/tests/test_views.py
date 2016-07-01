@@ -451,7 +451,6 @@ class NetworkGroupDetailViewTest(WebTest):
             country='GB',
             mailinglist_url='http://lists.okfn.org/okfn-britain',
             homepage_url='http://gb.okfn.org/',
-            wiki_url='http://wiki.okfn.org/GodSaveTheQueen',
             twitter='OKFNgb'
             )
 
@@ -465,8 +464,6 @@ class NetworkGroupDetailViewTest(WebTest):
             homepage_url='http://queen.okfn.org/',
             twitter='buckingham',
             facebook_url='http://facebook.com/queenthepersonnottheband',
-            youtube_url='https://www.youtube.com/user/Queenovision',
-            gplus_url='https://plus.google.com/+Intel',
             )
 
 
@@ -546,13 +543,10 @@ class NetworkGroupDetailViewTest(WebTest):
 
         self.assertIn(self.buckingham.homepage_url, response.body)
         self.assertNotIn(self.britain.homepage_url, response.body)
-        self.assertNotIn(self.britain.wiki_url, response.body)
         self.assertNotIn(self.britain.mailinglist_url, response.body)
         self.assertIn(self.buckingham.twitter, response.body)
         self.assertNotIn(self.britain.twitter, response.body)
         self.assertIn(self.buckingham.facebook_url, response.body)
-        self.assertIn(self.buckingham.youtube_url, response.body)
-        self.assertIn(self.buckingham.gplus_url, response.body)
 
         self.assertIn(self.elizabeth.name, response.body)
         self.assertIn(self.elizabeth_britain.title, response.body)
@@ -603,8 +597,7 @@ class NetworkGroupDetailViewTest(WebTest):
         # Headers need to be on a specific form
         headers = ['ISO3', 'Country', 'Geo coordinates', 'Map location',
                    'Local Groups status', 'Community Leaders', 'Website',
-                   'Wiki page', 'Mailing List', 'Twitter handle',
-                   'Youtube channel', 'Facebook page', 'Google+ page']
+                   'Mailing List', 'Twitter handle', 'Facebook page']
         for group in WorkingGroup.objects.all():
             headers.append('Topic: {0}'.format(group.name))
 
@@ -616,11 +609,8 @@ class NetworkGroupDetailViewTest(WebTest):
                         '', '', self.germany.get_group_type_display(),
                         ', '.join([m.name for m in self.germany.members.all()]),
                         self.germany.homepage_url,
-                        self.germany.wiki_url,
                         self.germany.mailinglist_url,
-                        self.germany.twitter, '', '',
-                        self.germany.gplus_url, 'Y', 'Y']
-
+                        self.germany.twitter, '', 'Y', 'Y']
         self.assertEqual(germany, germany_data)
 
         britain = csv.next()
@@ -629,11 +619,8 @@ class NetworkGroupDetailViewTest(WebTest):
                         '', '', self.britain.get_group_type_display(),
                         ', '.join([m.name for m in self.britain.members.all()]),
                         self.britain.homepage_url,
-                        self.britain.wiki_url,
                         self.britain.mailinglist_url,
-                        self.britain.twitter, '', '',
-                        self.britain.gplus_url, '', 'Y']
-        #import pdb; pdb.set_trace()
+                        self.britain.twitter, '', '', 'Y']
         self.assertEqual(britain, britain_data)
 
         buckingham = csv.next()
@@ -653,7 +640,6 @@ class NetworkGroupDetailViewTest(WebTest):
             self.buckingham.homepage_url,
             self.buckingham.mailinglist_url,
             self.buckingham.twitter,
-            self.buckingham.youtube_url,
             self.buckingham.facebook_url, 'Y', '' '']
 
     @override_settings(HUBOT_API_KEY='secretkey')
