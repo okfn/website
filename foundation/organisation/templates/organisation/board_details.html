@@ -2,7 +2,6 @@
 {% load cms_tags %}
 
 {% block title %}{{ object.name }}{% endblock %}
-{% block body-class %}board{% endblock %}
 
 {% block pagebanner-inner %}
 <h2>{{ object.name }}</h2>
@@ -10,20 +9,20 @@
 {% endblock %}
 
 {% block body %}
-  <div class="row">
-    <div class="main col-md-9 col-md-push-3">
+  <div>
+    <nav>
+      <h3>Members</h3>
+      <ul>{% for member in object.members.all %}
+        <li><a href="#{{ member.name|slugify }}">{{ member.name }}</a></li>
+        {% endfor %}</ul>
+        {% static_placeholder object.name|truncatechars:10|add:" (sidebar)" %}
+      </nav>
+    <article>
       {% with skip_email=True %}
       {% for member in object.boardmembership_set.all %}
         {% include "organisation/member.html" %}
       {% endfor %}
       {% endwith %}
-    </div>
-    <div class="sidebar col-md-3 col-md-pull-9">
-      <h3>Members</h3>
-      <ul>{% for member in object.members.all %}
-        <li><a href="#{{ member.name|slugify }}">{{ member.name }}</a></li>
-      {% endfor %}</ul>
-      {% static_placeholder object.name|truncatechars:10|add:" (sidebar)" %}
-    </div>
+    </article>
   </div>
 {% endblock %}
