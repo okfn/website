@@ -370,6 +370,8 @@ if env.get('DJANGO_CSP_REPORT_URI') is not None:
                                    'https://use.typekit.net']
     CSP_IMG_SRC = asset_hosts + ["data:",
                                  'https://gravatar.com',
+                                 'https://p.typekit.net',
+                                 'https://ping.typekit.net',
                                  'https://www.google-analytics.com']
     CSP_FONT_SRC = asset_hosts + ['data:',
                                   'https://themes.googleusercontent.com']
