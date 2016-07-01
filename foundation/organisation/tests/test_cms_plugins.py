@@ -130,7 +130,6 @@ class NetworkGroupPluginTest(CMSTestCase):
             homepage_url='http://queen.okfn.org/',
             twitter='buckingham',
             facebook_url='http://facebook.com/queenthepersonnottheband',
-            youtube_url='https://www.youtube.com/user/Queenovision'
             )
 
         self.germany = NetworkGroup.objects.create(
