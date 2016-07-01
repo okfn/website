@@ -38,17 +38,17 @@ class Person(models.Model):
 
 class NowDoing(models.Model):
     ACTIVITIES = (
-            ('reading', 'reading'),
-            ('listening', 'listening'),
-            ('working', 'working'),
-            ('location', 'location'),
-            ('watching', 'watching'),
-            ('eating', 'eating'),
-            )
+        ('reading', 'reading'),
+        ('listening', 'listening'),
+        ('working', 'working'),
+        ('location', 'location'),
+        ('watching', 'watching'),
+        ('eating', 'eating'),
+        )
     person = models.ForeignKey(Person)
     doing_type = models.CharField(
-                max_length=10,
-                choices=ACTIVITIES)
+        max_length=10,
+        choices=ACTIVITIES)
     link = models.URLField(blank=True, null=True)
     text = models.TextField(blank=True, null=True)
 
