@@ -9,7 +9,7 @@ from django.utils.timezone import utc
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('organisation', '0003_add_nowdoing_field'),
+        ('organisation', '0004_remove_fields_from_networkgroup'),
     ]
 
     operations = [
