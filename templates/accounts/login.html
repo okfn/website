@@ -1,7 +1,6 @@
 {% extends "general.html" %}
 
 {% block title %}Login{% endblock %}
-{% block body-class %}login{% endblock %}
 
 {% block body %}
   <h1>Login</h1>
@@ -15,6 +14,6 @@
     {{form.non_field_errors}}
     <button type='submit' class='btn btn-default'>Log in</button>
   </form>
-  
+
   <a href="{% url 'password_reset' %}">Forgotten password?</a>
 {% endblock %}
