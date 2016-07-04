@@ -43,12 +43,24 @@
       nav {
         display: none;
 
+        #side-nav {
+          width: 100%;
+        }
+
+        #outer-nav{
+          overflow: hidden;
+          height: 100%;
+        }
+
         @media (min-width: $screen-md-min) {
           display: block;
-          height: 90vh;
+          height: 60vh;
+
 
           &.mm-menu {
             background-color: $body-bg;
+            height: 30vh;
+
 
             .mm-prev:before {
               left: 8px;

@@ -3,10 +3,12 @@
 
 {% block body %}
 <div>
-  <nav id="side-nav">
+  <nav id='outer-nav'>
     {% static_placeholder "sitewide sidebar" %}
-    {% include 'includes/sidebar.html' %}
     {% placeholder "sidebar" inherit %}
+    <nav id="side-nav">
+      {% include 'includes/sidebar.html' %}
+    </nav>
   </nav>
   <article>
     {% placeholder "main" %}
