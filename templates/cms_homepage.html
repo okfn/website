@@ -51,25 +51,25 @@
 <section class="features">
   <div class="container">
     <div class="feature one">
-      <a class="image" href="{{ this.feature_one_link }}" style="background-image: url({% static 'img/feature-team.jpg'%})"></a>
+      <a class="image" href="/about/team" style="background-image: url({% static 'img/feature-team.jpg'%})"></a>
       <h3>
-        <a href="{{ this.feature_one_link }}">PASSIONATE TEAM</a>
+        <a href="/about/team">PASSIONATE TEAM</a>
       </h3>
       Passionate about openness. Using advocacy, technology and training to unlock information and enable people to create and share knowledge.
     </div>
 
     <div class="feature two">
-      <a class="image" href="{{ this.feature_two_link }}" style="background-image: url({% static 'img/feature-network.jpg'%})"></a>
+      <a class="image" href="{% url 'pages-details-by-slug' 'network' %}" style="background-image: url({% static 'img/feature-network.jpg'%})"></a>
       <h3>
-        <a href="{{ this.feature_two_link }}">GLOBAL NETWORK</a>
+        <a href="{% url 'pages-details-by-slug' 'network' %}">GLOBAL NETWORK</a>
       </h3>
       Meet, campaign, learn, innovate, share, train, create, support, explore: some of the ways you can help open up knowledge for everyone. Join us.
     </div>
 
     <div class="feature three">
-      <a class="image" href="{{ this.feature_three_link }}" style="background-image: url({% static 'img/feature-projects.jpg'%})"></a>
+      <a class="image" href="{% url 'projects' %}" style="background-image: url({% static 'img/feature-projects.jpg'%})"></a>
       <h3>
-        <a href="{{ this.feature_three_link }}">DIVERSE PROJECTS</a>
+        <a href="{% url 'projects' %}">DIVERSE PROJECTS</a>
       </h3>
       Through our projects, research and collaborations, we explore niche areas of data, and ways in which it can be used to empower people around the world.
     </div>
