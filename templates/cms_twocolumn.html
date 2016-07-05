@@ -4,11 +4,11 @@
 {% block body %}
 <div>
   <nav id='outer-nav'>
-    {% static_placeholder "sitewide sidebar" %}
-    {% placeholder "sidebar" inherit %}
     <nav id="side-nav">
       {% include 'includes/sidebar.html' %}
     </nav>
+    {% static_placeholder "sitewide sidebar" %}
+    {% placeholder "sidebar" inherit %}
   </nav>
   <article>
     {% placeholder "main" %}
