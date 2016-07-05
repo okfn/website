@@ -166,6 +166,14 @@
              s.parentNode.insertBefore(theScript, s);
        };
 
+       function resizeNavBar(){
+         var contents = $('.mm-current .mm-listview').height();
+         var header = $('.mm-current .mm-navbar').height();
+         var PADDING_TOP = 40;
+         var totalHeight = contents + header + PADDING_TOP;
+         $('#side-nav').animate({height: totalHeight}, 400);
+       }
+
        (function() {
             var hamBurgerButton = document.getElementsByClassName('show-menu')[0];
             var display = window.getComputedStyle(hamBurgerButton,null).getPropertyValue("display");
@@ -183,6 +191,10 @@
                   },
                   "offCanvas": false
                 });
+                resizeNavBar();
+
+                api = $("#side-nav").data("mmenu");
+                api.bind('openPanel', resizeNavBar);
               });
             }
             else{
