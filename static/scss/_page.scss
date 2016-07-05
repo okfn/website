@@ -41,10 +41,9 @@
       @include make-row();
 
       nav {
-        display: none;
-
         #side-nav {
           width: 100%;
+          display: none;
         }
 
         #outer-nav{
@@ -53,7 +52,10 @@
         }
 
         @media (min-width: $screen-md-min) {
-          display: block;
+
+          &#side-nav{
+            display: block;
+          }
 
           &.mm-menu {
             background-color: $body-bg;
