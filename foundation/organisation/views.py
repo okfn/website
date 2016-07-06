@@ -39,7 +39,7 @@ class ProjectListView(ListView):
 
     def get_queryset(self):
         # Do we want to show old projects?
-        show_old = self.request.GET.get('show_old', False)
+        show_old = self.request.path.endswith("old")
         if show_old:
             return Project.objects.filter(old_project=True)
 
@@ -49,7 +49,6 @@ class ProjectListView(ListView):
         context = super(ProjectListView, self).get_context_data(**kwargs)
         context['themes'] = Theme.objects.all()
         context['projecttypes'] = ProjectType.objects.all()
-        context['old_projects'] = self.request.GET.get('show_old', False)
         return context
 
 
