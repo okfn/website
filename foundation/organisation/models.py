@@ -159,6 +159,10 @@ class Project(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    old_project = models.BooleanField(
+        default=False,
+        help_text='Is this an old/archived project?')
+
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
     teaser = models.CharField(

@@ -7,6 +7,7 @@
 
 {% block blurb %}{% static_placeholder "projects blurb" %}{% endblock %}
 
+
 {% block main %}
 <div class="row">
   {% static_placeholder "projects intro" %}
@@ -89,6 +90,13 @@
   </div>
 </div>
 {% endfor %}
+
+{% if not old_projects %}
+  <a href="/projects/?show_old=True">Old projects </a>
+{% else %}
+  <a href="/projects">Current projects </a>
+{% endif %}
+
 {% with timeless=True %}
 {% include "includes/pager.html" %}
 {% endwith %}
