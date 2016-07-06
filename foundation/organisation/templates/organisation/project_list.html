@@ -15,11 +15,11 @@
 {% for project in object_list %}
 <div class="row">
   <div class="profile">
-    <span class="image">
-      {% thumbnail project.picture "116" as im %}
-        <img src="{{ im.url }}" alt="" />
-      {% endthumbnail %}
-    </span>
+    <a class="image" href="{{ project.homepage_url | default:'#' }}">
+        {% thumbnail project.picture "116" as im %}
+          <img src="{{ im.url }}" alt="" />
+        {% endthumbnail %}
+    </a>
     <h3 class="name">{{ project.name }}</h3>
 
     {{ project.teaser|markdown }}
