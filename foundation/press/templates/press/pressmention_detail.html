@@ -2,16 +2,13 @@
 {% load i18n %}
 
 
-{% block body %}
-<div>
-  <nav>
-    {% include "press/pressmention_recent.html" %}
-    {% include "press/pressrelease_recent.html" %}
-  </nav>
-  <article>
-    {% with pressmention=object %}
-    {% include "press/pressmention.html" %}
-    {% endwith %}
-  </article>
-</div>
+{% block custom_sidebar %}
+  {% include "press/pressmention_recent.html" %}
+  {% include "press/pressrelease_recent.html" %}
+{% endblock %}
+
+{% block main %}
+  {% with pressmention=object %}
+  {% include "press/pressmention.html" %}
+  {% endwith %}
 {% endblock %}

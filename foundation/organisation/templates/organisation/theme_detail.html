@@ -10,17 +10,16 @@
 <p>{{ object.blurb|markdown }}</p>
 {% endblock %}
 
-{% block body %}
-<div class="row">
-  <nav>
+{% block custom_sidebar %}
     <h3>Other themes</h3>
     <ul>
       {% for theme in themes %}
         <li><a href="{{ theme.get_absolute_url }}">{{ theme.name }}</a></li>
       {% endfor %}
     </ul>
-  </nav>
-  <article>
+{% endblock %}
+
+{% block main %}
     {{ object.description|markdown }}
     <div class="row">
       {% if object.workinggroups.all %}

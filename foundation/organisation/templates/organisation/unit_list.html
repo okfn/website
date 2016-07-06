@@ -6,23 +6,11 @@
 
 {% block blurb %}{% static_placeholder "units blurb" %}{% endblock %}
 
-{% block body %}
-<section class="main container">
-  <div>
-    <nav id="side-nav">
-      <ul>
-        {% include 'includes/nav.html' %}
-      </ul>
-    </nav>
-    <article>
-      {% for unit in unit_list %}
-        <h2 id='{{ unit.name | slugify }}'>{{ unit.name }}</h2>
-        {% for member in unit.unitmembership_set.all %}
-          {% include "organisation/member.html" %}
-        {% endfor %}
-      {% endfor %}
-    </article>
-    </div>
-  </div>
-</section>
+{% block main %}
+  {% for unit in unit_list %}
+    <h2 id='{{ unit.name | slugify }}'>{{ unit.name }}</h2>
+    {% for member in unit.unitmembership_set.all %}
+      {% include "organisation/member.html" %}
+    {% endfor %}
+  {% endfor %}
 {% endblock %}

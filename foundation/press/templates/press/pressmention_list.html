@@ -4,12 +4,11 @@
 
 {% block blurb %}{% static_placeholder "press mentions blurb" %}{% endblock %}
 
-{% block body %}
-<div>
-  <nav>
+{% block custom_sidebar %}
     {% include "press/pressrelease_recent.html" %}
-  </nav>
-  <article>
+{% endblock %}
+
+{% block main %}
     {% with headerlinks=True %}
     {% for pressmention in object_list %}
     {% include "press/pressmention.html" %}
@@ -19,6 +18,4 @@
     {% endfor %}
     {% endwith %}
     {% include "includes/pager.html" %}
-  </article>
-</div>
 {% endblock %}

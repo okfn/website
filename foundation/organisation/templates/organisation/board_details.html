@@ -8,21 +8,18 @@
 <p>{{ object.description }}</p>
 {% endblock %}
 
-{% block body %}
-  <div>
-    <nav>
-      <h3>Members</h3>
-      <ul>{% for member in object.members.all %}
-        <li><a href="#{{ member.name|slugify }}">{{ member.name }}</a></li>
-        {% endfor %}</ul>
-        {% static_placeholder object.name|truncatechars:10|add:" (sidebar)" %}
-      </nav>
-    <article>
+{% block custom_sidebar %}
+  <h3>Members</h3>
+  <ul>{% for member in object.members.all %}
+    <li><a href="#{{ member.name|slugify }}">{{ member.name }}</a></li>
+    {% endfor %}</ul>
+    {% static_placeholder object.name|truncatechars:10|add:" (sidebar)" %}
+{% endblock %}
+
+{% block main %}
       {% with skip_email=True %}
       {% for member in object.boardmembership_set.all %}
         {% include "organisation/member.html" %}
       {% endfor %}
       {% endwith %}
-    </article>
-  </div>
 {% endblock %}

@@ -1,10 +1,18 @@
 {% extends "cms_default.html" %}
 {% load cms_tags %}
 
-{% block body-class %}page-template{% endblock %}
-{% block pagebanner-inner %}
-  <h2>{% page_attribute "page_title" %}</h2>
-  {% block blurb %}{% endblock %}
+{% block body %}
+<div>
+  <aside>
+    <nav id="side-nav">
+      {% include 'includes/sidebar.html' %}
+    </nav>
+    <div>
+      {% block custom_sidebar %}{% endblock %}
+    </div>
+  </aside>
+  <article>
+    {% block main %}{% endblock %}
+  </article>
+</div>
 {% endblock %}
-
-{% block body %}{% endblock %}

@@ -14,9 +14,11 @@
     background-size: 132px auto;
     -webkit-transform: translate3d(0, 0, 0); // prevents overflow issue
     text-align: center;
+    background-position: center center;
 
     img {
-      width: 100%;
+      width: 132px;
+      height: 132px;
       transition: opacity 0.5s;
     }
 

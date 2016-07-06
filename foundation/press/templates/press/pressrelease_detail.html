@@ -4,16 +4,14 @@
 
 {% block title %}{% trans 'Press release' %}: {{ object.title }}{% endblock %}
 
-{% block body %}
-<div>
-  <nav>
+
+{% block custom_sidebar %}
     {% include "press/pressrelease_recent.html" %}
     {% include "press/pressmention_recent.html" %}
-  </nav>
-  <article>
+{% endblock %}
+
+{% block main %}
     {% with pressrelease=object %}
     {% include "press/pressrelease.html" %}
     {% endwith %}
-  </article>
-</div>
 {% endblock %}

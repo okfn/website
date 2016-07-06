@@ -1,5 +1,5 @@
 .page-template,
-.team-template {
+[class$="-template"]:not(.home-template) {
 
   .banner {
     background-color: $brand-primary;
@@ -40,57 +40,80 @@
     & > div {
       @include make-row();
 
-      nav {
+      aside {
+        @include make-md-column(3);
+        overflow: hidden;
+
         #side-nav {
           width: 100%;
           display: none;
         }
 
-        #outer-nav{
-          overflow: hidden;
-          height: 100%;
+        & > div {
+          font-size: 14px;
+          padding: 20px;
+          background-color: $gray-lighter;
+          margin-bottom: $grid-gutter-width;
+
+          & > :first-child {
+            margin-top: 0;
+          }
+
+          & > :last-child {
+            margin-bottom: 0;
+          }
+
+          h3 {
+            font-size: 16px;
+            font-weight: normal;
+            text-transform: uppercase;
+          }
         }
 
         @media (min-width: $screen-md-min) {
+          padding-left: 0;
 
-          &#side-nav{
-            display: block;
+          & > div {
+            background-color: transparent;
           }
 
-          &.mm-menu {
-            background-color: $body-bg;
-            height: 30vh;
+          #side-nav{
+            display: block;
 
+            &.mm-menu {
+              background-color: $body-bg;
+              height: 30vh;
+              position: relative;
 
-            .mm-prev:before {
-              left: 8px;
-              border-color: $brand-primary;
-            }
-
-            .mm-navbar {
-              text-align: left;
-              padding: 0 20px;
-              border: none;
-
-              .mm-title {
-                color: $text-color;
-                text-transform: uppercase;
+              .mm-prev:before {
+                left: 8px;
+                border-color: $brand-primary;
               }
-            }
 
-            .mm-listview {
-              & > li:last-child {
-                &:after {
-                  display: none;
+              .mm-navbar {
+                text-align: left;
+                padding: 0 20px;
+                border: none;
+
+                .mm-title {
+                  color: $text-color;
+                  text-transform: uppercase;
                 }
               }
-              .mm-next:before {
-                display: none;
+
+              .mm-listview {
+                & > li:last-child {
+                  &:after {
+                    display: none;
+                  }
+                }
+                .mm-next:before {
+                  display: none;
+                }
               }
             }
           }
         }
-        @include make-md-column(3);
       }
 
       article {
