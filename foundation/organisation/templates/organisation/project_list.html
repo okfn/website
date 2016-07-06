@@ -15,7 +15,10 @@
 {% for project in object_list %}
 <div class="row">
   <div class="profile">
-    <span class="image" style="background-image: url({{ project.picture }});">
+    <span class="image">
+      {% thumbnail project.picture "116" as im %}
+        <img src="{{ im.url }}" alt="" />
+      {% endthumbnail %}
     </span>
     <h3 class="name">{{ project.name }}</h3>
 
