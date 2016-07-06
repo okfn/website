@@ -162,13 +162,9 @@ class Project(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
     teaser = models.CharField(
-        max_length=100,
+        max_length=400,
         help_text="A single line description for list views")
     description = models.TextField()
-    banner = models.ImageField(
-        upload_to='projects/banners',
-        blank=True,
-        help_text="A banner used for featuring this project on the front page")
     picture = models.ImageField(
         upload_to='projects/pictures',
         blank=True,
@@ -177,11 +173,8 @@ class Project(models.Model):
     twitter = models.CharField(max_length=18, blank=True)
     homepage_url = models.URLField(blank=True)
     sourcecode_url = models.URLField(blank=True)
-    mailinglist_url = models.URLField(blank=True)
+    forum_url = models.URLField(blank=True)
 
-    featured = models.BooleanField(
-        default=False,
-        help_text="Should this be a featured project?")
     themes = models.ManyToManyField('Theme', blank=True)
     types = models.ManyToManyField('ProjectType', blank=True)
 

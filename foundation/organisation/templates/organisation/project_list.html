@@ -11,63 +11,84 @@
 <div class="row">
   {% static_placeholder "projects intro" %}
 </div>
+{% for project in object_list %}
 <div class="row">
-  <div class="col-md-5 col-md-push-7">
-    <div class="project-filter pull-right">
-      Filter by:
-      <a href="?filter=popular" class="btn btn-default{% if request.GET.filter == 'popular' %} active{% endif %}">Popular</a>
-      <div class="btn-group">
-        <a href="#" class="btn btn-default dropdown-toggle{% if 'theme' in request.GET %} active {% endif %}" data-toggle="dropdown">
-          Theme <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu" role="menu">
-          {% for theme in themes %}
-          <li{% if request.GET.theme == theme.slug %} class="active"{% endif %}><a href="?theme={{ theme.slug }}">{{ theme.name }}</a></li>
-          {% endfor %}
-        </ul>
+  <div class="profile">
+    <span class="image" style="background-image: url({{ project.picture }});">
+    </span>
+    <h3 class="name">{{ project.name }}</h3>
+
+    {{ project.teaser|markdown }}
+
+
+    {% if project.twitter or project.sourcecode_url or project.homepage_url or project.forum_url %}
+    <div class="meta">
+      <div class="tab-content">
+
+        {% if project.twitter %}
+        <div role="tabpanel" class="tab-pane" id="{{project.name|slugify}}-twitter">
+          <h4>Twitter:</h4>
+          <a href="https://twitter.com/{{project.twitter}}"> {{ project.twitter }} </a>
+        </div>
+        {% endif %}
+
+        {% if project.homepage_url %}
+        <div role="tabpanel" class="tab-pane" id="{{project.name|slugify}}-home">
+          <h4>Homepage:</h4>
+          <a href="{{ project.homepage_url }}"> {{ project.homepage_url }}</a>
+        </div>
+        {% endif %}
+
+        {% if project.sourcecode_url%}
+        <div role="tabpanel" class="tab-pane" id="{{project.name|slugify}}-sourcecode_url">
+           <h4>Sourcecode:</h4>
+           <a href="{{ project.sourcecode_url }}"> {{ project.sourcecode_url }}</a>
+        </div>
+        {% endif %}
+
+        {% if project.forum_url %}
+        <div role="tabpanel" class="tab-pane" id="{{project.name|slugify}}-forum_url">
+           <h4>Sourcecode:</h4>
+           {{ project.forum_url }}
+        </div>
+        {% endif %}
+
       </div>
-      <div class="btn-group">
-        <button type="button" class="btn btn-default dropdown-toggle{% if 'type' in request.GET%} active{% endif %}" data-toggle="dropdown">
-          Type <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" role="menu">
-          {% for projecttype in projecttypes %}
-          <li{% if request.GET.type == projecttype.slug %} class="active"{% endif %}><a href="?type={{ projecttype.slug }}">{{ projecttype.name|capfirst }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
+
+      <ul class="nav nav-tabs" role="tablist">
+        {% if project.twitter %}
+        <li role="presentation"><a href="#{{project.name|slugify}}-twitter" aria-controls="{{project.name|slugify}}-twitter" role="tab" data-toggle="tab"><span class="icon-twitter-circle" aria-hidden="true"></span>
+        <span class="sr-only">Twitter</span></a></li>
+        {% endif %}
+
+        {% if project.homepage_url %}
+        <li role="presentation"><a href="#{{project.name|slugify}}-home" aria-controls="{{project.name|slugify}}-home" role="tab" data-toggle="tab"><span class="icon-home-circle" aria-hidden="true"></span>
+        <span class="sr-only">Homepage</span></a></li>
+        {% endif %}
+
+        <!-- TODO: Replace with new icon -->
+        {% if project.sourcecode_url %}
+        <li role="presentation">
+          <a href="#{{project.name|slugify}}-sourcecode_url"
+             aria-controls="{{project.name|slugify}}-sourcecode_url"
+             role="tab"
+             data-toggle="tab">
+            <span class="icon-mail-circle" aria-hidden="true"></span>
+            <span class="sr-only">Email</span>
+          </a>
+        </li>
+        {% endif %}
+
+        <!-- TODO: Replace with new icon -->
+        {% if project.forum_url %}
+        <li role="presentation"><a href="#{{project.name|slugify}}-forum_url" aria-controls="{{project.name|slugify}}-forum_url" role="tab" data-toggle="tab"><span class="icon-home-circle" aria-hidden="true"></span>
+        <span class="sr-only">Forum</span></a></li>
+        {% endif %}
+
+      </ul>
     </div>
+    {% endif %}
   </div>
-</div>
-{% for projects in object_list|chunks:3 %}
-<div class="row">
-  {% for project in projects %}
-  {% if project %}
-  <div class="project col-md-4 col-xs-12">
-    <a href="{% url 'project' slug=project.slug %}" title="{{ project.name }}">
-      {% if project.banner %}
-      <h3 class="sr-only">{{ project.name }}</h3>
-      {% thumbnail project.banner "375" format="PNG" as im %}
-      <img class="img-responsive"
-           src="{{ im.url }}"
-           alt="Banner for {{ project.name }}">
-      {% endthumbnail %}
-      {% else %}
-      <h3>{{ project.name }}</h3>
-      {% endif %}
-    </a>
-    <p class="featured-project-teaser">{{ project.teaser }}</p>
-    <a href="{% url 'project' slug=project.slug %}"
-       title="{{ project.name }}"
-       class="btn btn-default"
-       role="button">
-      Find out more
-    </a>
-  </div>
-  {% endif %}
-  {% empty %}
-  <p>{% trans 'No projects found.' %}</p>
-  {% endfor %}
 </div>
 {% endfor %}
 {% with timeless=True %}
