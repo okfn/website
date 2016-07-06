@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('/assets/fonts/icons/icomoon.eot?h117mi');
-    src:    url('/assets/fonts/icons/icomoon.eot?h117mi#iefix') format('embedded-opentype'),
-            url('/assets/fonts/icons/icomoon.ttf?h117mi') format('truetype'),
-            url('/assets/fonts/icons/icomoon.woff?h117mi') format('woff'),
-            url('/assets/fonts/icons/icomoon.svg?h117mi#icomoon') format('svg');
+    src:    url('/assets/fonts/icons/icomoon.eot?o0grch');
+    src:    url('/assets/fonts/icons/icomoon.eot?o0grch#iefix') format('embedded-opentype'),
+            url('/assets/fonts/icons/icomoon.ttf?o0grch') format('truetype'),
+            url('/assets/fonts/icons/icomoon.woff?o0grch') format('woff'),
+            url('/assets/fonts/icons/icomoon.svg?o0grch#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -38,6 +38,12 @@
 }
 .icon-search:before {
     content: "\e901";
+}
+.icon-code-circle:before {
+    content: "\e910";
+}
+.icon-forum-circle:before {
+    content: "\e90f";
 }
 .icon-mail-circle:before {
     content: "\e90e";

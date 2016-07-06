@@ -66,22 +66,20 @@
         <span class="sr-only">Homepage</span></a></li>
         {% endif %}
 
-        <!-- TODO: Replace with new icon -->
         {% if project.sourcecode_url %}
         <li role="presentation">
           <a href="#{{project.name|slugify}}-sourcecode_url"
              aria-controls="{{project.name|slugify}}-sourcecode_url"
              role="tab"
              data-toggle="tab">
-            <span class="icon-mail-circle" aria-hidden="true"></span>
+            <span class="icon-code-circle" aria-hidden="true"></span>
             <span class="sr-only">Email</span>
           </a>
         </li>
         {% endif %}
 
-        <!-- TODO: Replace with new icon -->
         {% if project.forum_url %}
-        <li role="presentation"><a href="#{{project.name|slugify}}-forum_url" aria-controls="{{project.name|slugify}}-forum_url" role="tab" data-toggle="tab"><span class="icon-home-circle" aria-hidden="true"></span>
+        <li role="presentation"><a href="#{{project.name|slugify}}-forum_url" aria-controls="{{project.name|slugify}}-forum_url" role="tab" data-toggle="tab"><span class="icon-forum-circle" aria-hidden="true"></span>
         <span class="sr-only">Forum</span></a></li>
         {% endif %}
 
