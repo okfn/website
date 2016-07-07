@@ -28,7 +28,7 @@ class Person(models.Model):
     @property
     def gravatar_url(self):
         """ Returns the gravatar url for this user (constructed from email)"""
-        base = "https://gravatar.com/avatar/{hash}/"
+        base = "https://gravatar.com/avatar/{hash}?s=132"
         md5_hash = md5(self.email.strip().lower()).hexdigest()
         return base.format(hash=md5_hash)
 

@@ -5,7 +5,7 @@
 {% with person=member.person %}
 <div class="profile">
   <span class="image"
-        style="background-image: url({{ person.gravatar_url }}{% if person.photo %}?default={{person.photo.url}}{% endif %});">
+        style="background-image: url({{ person.gravatar_url }}{% if person.photo %}&default={{person.photo.url}}{% endif %});">
       <img src="{% static 'img/blank.png'%}" alt="" />
   </span>
   <h3 class="name">{{ person.name }}</h3>
