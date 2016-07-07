@@ -1,13 +1,12 @@
 {% load markdown_deux_tags %}
 {% load thumbnail %}
+{% load staticfiles %}
 
 {% with person=member.person %}
 <div class="profile">
   <span class="image"
         style="background-image: url({{ person.gravatar_url }}{% if person.photo %}?default={{person.photo.url}}{% endif %});">
-    {% thumbnail person.photo "116" as im %}
-      <img src="{{ im.url }}" alt="" />
-    {% endthumbnail %}
+      <img src="{% static 'img/blank.png'%}" alt="" />
   </span>
   <h3 class="name">{{ person.name }}</h3>
   {% if member.title %}
