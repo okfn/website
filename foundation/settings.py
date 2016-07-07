@@ -126,6 +126,7 @@ INSTALLED_APPS = (
 
     # Custom apps
     'foundation.blogfeed',
+    'foundation.features',
     'foundation.jobs',
     'foundation.press',
     'foundation.organisation',

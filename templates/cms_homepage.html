@@ -10,39 +10,7 @@
     <div class="mission">
       {% placeholder "blurb" %}
     </div>
-    <div id="news" class="news carousel slide" data-ride="carousel" data-interval="15000">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#news" data-slide-to="0" class="active"></li>
-        <li data-target="#news" data-slide-to="1"></li>
-        <li data-target="#news" data-slide-to="2"></li>
-      </ol>
-
-      <div class="carousel-inner" role="listbox">
-
-        <div class="project item active" data-img="{% static 'img/opentrials-bg.jpg' %}">
-          <a class="carousel-caption">
-            <h3>OpenTrials paper published</h3>
-            <p>OpenTrials: towards a collaborative open database of all available information on all clinical trials.</p>
-          </a>
-        </div>
-
-        <div class="item" data-img="{% static 'img/book-bg.jpg' %}">
-          <a class="carousel-caption">
-            <h3>The Open Data Handbook</h3>
-            <p>Guides, case studies and resources for government &amp; civil society on the "what, why &amp; how" of open data.</p>
-          </a>
-        </div>
-
-        <div class="item" data-img="{% static 'img/changing-what-counts-bg.jpg' %}">
-          <a class="carousel-caption" href="https://blog.okfn.org/2016/03/03/changing-what-counts/">
-            <h3>Changing What Counts</h3>
-            <p>How Can Citizen-Generated and Civil Society Data Be Used as an Advocacy Tool to Change Official Data Collection?</p>
-          </a>
-        </div>
-
-      </div>
-    </div>
+      {% placeholder featured_news %}
   </div>
 </section>
 {% endblock %}
