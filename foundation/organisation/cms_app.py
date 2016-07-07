@@ -1,7 +1,7 @@
 from cms.app_base import CMSApp
 from cms.apphook_pool import apphook_pool
 from django.utils.translation import ugettext_lazy as _
-from .menu import ProjectMenu, ThemeMenu, NetworkGroupMenu
+from .menu import ProjectMenu, ThemeMenu
 
 
 class UnitsAppHook(CMSApp):
@@ -51,6 +51,5 @@ apphook_pool.register(WorkingGroupsAppHook)
 class NetworkGroupsAppHook(CMSApp):
     name = _("Network Groups")
     urls = ["foundation.organisation.urls.networkgroups"]
-    menus = [NetworkGroupMenu]
 
 apphook_pool.register(NetworkGroupsAppHook)
