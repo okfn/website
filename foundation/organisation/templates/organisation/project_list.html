@@ -28,13 +28,6 @@
     <div class="meta">
       <div class="tab-content">
 
-        {% if project.twitter %}
-        <div role="tabpanel" class="tab-pane" id="{{project.name|slugify}}-twitter">
-          <h4>Twitter:</h4>
-          <a href="https://twitter.com/{{project.twitter}}"> {{ project.twitter }} </a>
-        </div>
-        {% endif %}
-
         {% if project.homepage_url %}
         <div role="tabpanel" class="tab-pane" id="{{project.name|slugify}}-home">
           <h4>Homepage:</h4>
@@ -56,13 +49,17 @@
         </div>
         {% endif %}
 
+        {% if project.twitter %}
+        <div role="tabpanel" class="tab-pane" id="{{project.name|slugify}}-twitter">
+          <h4>Twitter:</h4>
+          <a href="https://twitter.com/{{project.twitter}}"> {{ project.twitter }} </a>
+        </div>
+        {% endif %}
+
+
       </div>
 
       <ul class="nav nav-tabs" role="tablist">
-        {% if project.twitter %}
-        <li role="presentation"><a href="#{{project.name|slugify}}-twitter" aria-controls="{{project.name|slugify}}-twitter" role="tab" data-toggle="tab"><span class="icon-twitter-circle" aria-hidden="true"></span>
-        <span class="sr-only">Twitter</span></a></li>
-        {% endif %}
 
         {% if project.homepage_url %}
         <li role="presentation"><a href="#{{project.name|slugify}}-home" aria-controls="{{project.name|slugify}}-home" role="tab" data-toggle="tab"><span class="icon-home-circle" aria-hidden="true"></span>
@@ -86,6 +83,10 @@
         <span class="sr-only">Forum</span></a></li>
         {% endif %}
 
+        {% if project.twitter %}
+        <li role="presentation"><a href="#{{project.name|slugify}}-twitter" aria-controls="{{project.name|slugify}}-twitter" role="tab" data-toggle="tab"><span class="icon-twitter-circle" aria-hidden="true"></span>
+          <span class="sr-only">Twitter</span></a></li>
+        {% endif %}
       </ul>
     </div>
     {% endif %}
