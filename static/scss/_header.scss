@@ -62,7 +62,7 @@
 
         & > a {
           padding: 8px 12px;
-          z-index: 2;
+          z-index: 25;
 
           &:hover {
             background-color: #fff;
@@ -82,7 +82,7 @@
 
             & > ul {
               display: block;
-              z-index: 100; //needs to be above carousel indicators
+              z-index: 20; //needs to be above carousel indicators
               width: 200px;
             }
 
