@@ -83,6 +83,7 @@
             & > ul {
               display: block;
               z-index: 100; //needs to be above carousel indicators
+              width: 200px;
             }
 
             &:not(.active) {
