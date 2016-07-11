@@ -51,8 +51,8 @@
 
         {% if project.forum_url %}
         <div role="tabpanel" class="tab-pane" id="{{project.name|slugify}}-forum_url">
-           <h4>Sourcecode:</h4>
-           {{ project.forum_url }}
+           <h4>Forum:</h4>
+           <a href="{{ project.forum_url }}">{{ project.forum_url }}</a>
         </div>
         {% endif %}
 
