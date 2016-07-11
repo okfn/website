@@ -1,3 +1,5 @@
+from hashlib import md5
+
 from cms.models.pluginmodel import CMSPlugin
 from cms.extensions import PageExtension
 from django.core.urlresolvers import reverse
@@ -23,6 +25,30 @@ class Person(models.Model):
     def __unicode__(self):
         return self.name
 
+    @property
+    def gravatar_url(self):
+        """ Returns the gravatar url for this user (constructed from email)"""
+        base = "https://gravatar.com/avatar/{hash}?s=132"
+        md5_hash = md5(self.email.strip().lower()).hexdigest()
+        return base.format(hash=md5_hash)
+
+    @property
+    def nowdoing_with_latest(self):
+        """ All NowDoing attributes of the user with the most recently
+            updated one marked with `is_newest_update`"""
+        nowdoings = self.nowdoing_set.all().extra(order_by=['-updated_at'])
+        if nowdoings:
+            nowdoings[0].is_newest_update = True
+        return nowdoings
+
+    @property
+    def has_anything_to_show(self):
+        """ Is there anything that we can show for this person in the
+            template (other then email which is checked separately)"""
+        return (self.url or
+                self.twitter or
+                self.nowdoing_set.count())
+
     class Meta:
         ordering = ["name"]
         verbose_name_plural = "people"
@@ -30,19 +56,39 @@ class Person(models.Model):
 
 class NowDoing(models.Model):
     ACTIVITIES = (
-            ('reading', 'reading'),
-            ('listening', 'listening'),
-            ('working', 'working'),
-            ('location', 'location'),
-            ('watching', 'watching'),
-            ('eating', 'eating'),
-            )
+        ('reading', 'reading'),
+        ('listening', 'listening'),
+        ('working', 'working'),
+        ('location', 'location'),
+        ('watching', 'watching'),
+        ('eating', 'eating'),
+        )
     person = models.ForeignKey(Person)
     doing_type = models.CharField(
-                max_length=10,
-                choices=ACTIVITIES)
+        max_length=10,
+        choices=ACTIVITIES)
     link = models.URLField(blank=True, null=True)
     text = models.TextField(blank=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    @property
+    def icon_name(self):
+        """ The name of the corresponding css icon class """
+        matching = {'watching': 'playing'}
+        return matching.get(self.doing_type, self.doing_type)
+
+    @property
+    def display_name(self):
+        """ The human readable string to be displayed in templates """
+        matching = {
+            'reading': 'Reading',
+            'listening': 'Listening to',
+            'working': 'Working on',
+            'location': 'Location',
+            'watching': 'Watching',
+            'eating': 'Eating'
+            }
+        return matching.get(self.doing_type, self.doing_type)
 
     def __repr__(self):
         return '<NowDoing: {}, {}>'.format(self.person.name,
@@ -113,16 +159,16 @@ class Project(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    old_project = models.BooleanField(
+        default=False,
+        help_text='Is this an old/archived project?')
+
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
     teaser = models.CharField(
-        max_length=100,
+        max_length=400,
         help_text="A single line description for list views")
     description = models.TextField()
-    banner = models.ImageField(
-        upload_to='projects/banners',
-        blank=True,
-        help_text="A banner used for featuring this project on the front page")
     picture = models.ImageField(
         upload_to='projects/pictures',
         blank=True,
@@ -131,11 +177,8 @@ class Project(models.Model):
     twitter = models.CharField(max_length=18, blank=True)
     homepage_url = models.URLField(blank=True)
     sourcecode_url = models.URLField(blank=True)
-    mailinglist_url = models.URLField(blank=True)
+    forum_url = models.URLField(blank=True)
 
-    featured = models.BooleanField(
-        default=False,
-        help_text="Should this be a featured project?")
     themes = models.ManyToManyField('Theme', blank=True)
     types = models.ManyToManyField('ProjectType', blank=True)
 

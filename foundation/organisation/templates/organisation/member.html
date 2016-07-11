@@ -1,43 +1,99 @@
 {% load markdown_deux_tags %}
 {% load thumbnail %}
+{% load staticfiles %}
 
 {% with person=member.person %}
-<div id="{{ person.name|slugify }}" class="person">
-  <h4>{{ person.name }}{% if member.title %} <small>{{member.title}}</small>{% endif %}</h4>
-  <div class="row">
-    {% if person.photo %}
-    <div class="col-md-2">
-      {% thumbnail person.photo "116" as im %}
-        <img class="img-responsive" src="{{ im.url }}" alt="{{ person.name }}">
-      {% endthumbnail %}
-    </div>
-    <div class="col-md-10">
-    {% else %}
-    <div class="col-md-12">
-    {% endif %}
-      {{ person.description|markdown }}
-      <div class="person-social-links">
-        {% if not skip_email %}
-        <a href="mailto:{{ person.email }}" title="Email"><i class="fa fa-envelope fa-lg"></i></a>
-        {% endif %}
-        {% if person.twitter %}
-        <a href="http://twitter.com/{{person.twitter}}" title="Twitter"><i class="fa fa-twitter fa-lg"></i></a>
-        {% endif %}
-        {% if person.url %}
-        <a href="{{ person.url }}" title="Personal website"><i class="fa fa-link fa-lg"></i></a>
-        {% endif %}
+<div class="profile">
+  <span class="image"
+        style="background-image: url({{ person.gravatar_url }}{% if person.photo %}&default={{person.photo.url}}{% endif %});">
+      <img src="{% static 'img/blank.png'%}" alt="" />
+  </span>
+  <h3 class="name">{{ person.name }}</h3>
+  {% if member.title %}
+   <p class="job-title">{{member.title}}</p>
+  {% endif %}
 
-        {% for doing in person.nowdoing_set.all %}
-           {{ doing.doing_type }}:
+  {{ person.description|markdown }}
+
+
+  {% if person.has_anything_to_show or person.email and not skip_email %}
+    <div class="meta">
+    <div class="tab-content">
+      {% for doing in person.nowdoing_with_latest %}
+         <div role="tabpanel"
+              class="tab-pane {% if doing.is_newest_update %} active {% endif %}"
+              id="{{person.name|slugify}}-{{doing.doing_type}}">
+          <h4>{{ doing.display_name }}:</h4>
           {% if doing.link %}
             <a href="{{ doing.link }}"> {{ doing.text }} </a>
           {% else %}
-              {{ doing.text }}
+            {{ doing.text }}
           {% endif %}
-        {% endfor %} 
+        </div>
+      {% endfor %}
 
+      {% if person.twitter %}
+      <div role="tabpanel" class="tab-pane" id="{{person.name|slugify}}-twitter">
+        <h4>Twitter:</h4>
+        <a href="https://twitter.com/{{person.twitter}}"> {{ person.twitter }} </a>
       </div>
+      {% endif %}
+
+      {% if person.url %}
+      <div role="tabpanel" class="tab-pane" id="{{person.name|slugify}}-home">
+        <h4>Homepage:</h4>
+        <a href="{{ person.url }}"> {{ person.url }}</a>
+      </div>
+      {% endif %}
+
+      {% if person.email and not skip_email %}
+      <div role="tabpanel"
+       class="tab-pane"
+        id="{{person.name|slugify}}-email">
+         <h4>Email:</h4>
+         {{ person.email }}
+      </div>
+      {% endif %}
     </div>
+
+    <ul class="nav nav-tabs" role="tablist">
+      {% for doing in person.nowdoing_with_latest %}
+      <li role="presentation"
+          {% if doing.is_newest_update %} class="active" {% endif %}>
+        <a href="#{{person.name|slugify}}-{{doing.doing_type}}"
+           aria-controls="{{person.name|slugify}}-working"
+           role="tab"
+           data-toggle="tab">
+          <span class="icon-{{doing.icon_name}}-circle" aria-hidden="true"></span>
+          <span class="sr-only">{{doing.doing_type}}</span>
+        </a>
+      </li>
+      {% endfor %}
+
+      {% if person.twitter %}
+      <li role="presentation"><a href="#{{person.name|slugify}}-twitter" aria-controls="{{person.name|slugify}}-twitter" role="tab" data-toggle="tab"><span class="icon-twitter-circle" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span></a></li>
+      {% endif %}
+
+      {% if person.url %}
+      <li role="presentation"><a href="#{{person.name|slugify}}-home" aria-controls="{{person.name|slugify}}-home" role="tab" data-toggle="tab"><span class="icon-home-circle" aria-hidden="true"></span>
+      <span class="sr-only">Home</span></a></li>
+      {% endif %}
+
+      {% if person.email and not skip_email %}
+      <li role="presentation">
+        <a href="#{{person.name|slugify}}-email"
+           aria-controls="{{person.name|slugify}}-email"
+           role="tab"
+           data-toggle="tab">
+          <span class="icon-mail-circle" aria-hidden="true"></span>
+          <span class="sr-only">Email</span>
+        </a>
+      </li>
+      {% endif %}
+
+    </ul>
   </div>
+  {% endif %}
 </div>
 {% endwith %}

@@ -14,6 +14,7 @@ You must have the following installed:
 
 - Python 2.7
 - libmemcached (`brew install libmemcached` on Mac OS X using [Homebrew](http://brew.sh/))
+- node
 
 You may also wish to follow any install instructions inside a Python virtual environment. Explaining `virtualenv` is outside of the scope of this README, but [this tutorial might help](http://hackercodex.com/guide/python-development-environment-on-mac-osx/).
 
@@ -21,7 +22,7 @@ You may also wish to follow any install instructions inside a Python virtual env
 
     pip install -r requirements.dev.txt
     pip install honcho
-    npm install -g less
+    npm install
     python manage.py migrate
     honcho -f Procfile.dev start
 
@@ -40,6 +41,3 @@ will work. These will be documented in due course.
                   ...
     git push heroku master
     heroku run python manage.py migrate
-
-## TODO
-

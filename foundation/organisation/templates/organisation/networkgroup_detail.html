@@ -3,16 +3,13 @@
 {% load markdown_deux_tags %}
 
 {% block title %}{{ object.name }}{% endblock %}
-{% block body-class %}network-group{% endblock %}
 
 {% block pagebanner-inner %}
 <h2>{{ object.name }}</h2>
 <p>{{ object.description|markdown }}</p>
 {% endblock %}
 
-{% block body %}
-<div class="row">
-<div class="sidebar col-md-3">
+{% block custom_sidebar %}
     <h3>Connect</h3>
     <ul>
       <li>
@@ -72,8 +69,9 @@
       <li><a href="{{ group.homepage }}">{{ group.name }}</a></li>
     </ul>{% endfor %}
     {% endif %}
-  </div>
-  <div class="col-md-9">
+{% endblock %}
+
+{% block main %}
     <h3>Core team</h3>
     {% for member in group_members %}
       {% include "organisation/member.html" %}
@@ -83,6 +81,4 @@
     <h3>More information</h3>
     {{ object.extra_information|markdown }}
     {% endif %}
-  </div>
-</div>
 {% endblock %}

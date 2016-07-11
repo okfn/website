@@ -2,43 +2,38 @@
 {% load i18n %}
 {% load cms_tags %}
 
-{% block body-class %}press-releases{% endblock %}
-
 {% block blurb %}{% static_placeholder "press releases blurb" %}{% endblock %}
 
-{% block body %}
-<div class="row">
-  <div class="main col-md-9 col-md-push-3">
-    {% with headerlinks=True %}
-      {% if object_list and not page_obj.has_previous %}
-        {% with pressrelease=object_list|first %}
-          {% include "press/pressrelease.html" %}
-        {% endwith %}
-        {% if object_list|slice:"1:"|length %}<hr/>{% endif %}
-        {% for pressrelease in object_list|slice:"1:" %}
-        <div class="press-release">
-          <h3>{% include "press/pressrelease_title.html" %}</h3>
-          {% include "press/pressrelease_date.html" %}
-        </div>
-        {% if not forloop.last%}<hr>{% endif %}
-        {% endfor %}
-      {% else %}
-        {% for pressrelease in object_list %}
-        <div class="press-release">
-          <h3>{% include "press/pressrelease_title.html" %}</h3>
-          {% include "press/pressrelease_date.html" %}
-        </div>
-        {% if not forloop.last%}<hr>{% endif %}
-        {% empty %}
-        <p>{% trans 'No press releases found.' %}</p>
-        {% endfor %}
-      {% endif %}
-    {% endwith %}
+{% block main %}
+  {% with headerlinks=True %}
+    {% if object_list and not page_obj.has_previous %}
+      {% with pressrelease=object_list|first %}
+        {% include "press/pressrelease.html" %}
+      {% endwith %}
+      {% if object_list|slice:"1:"|length %}<hr/>{% endif %}
+      {% for pressrelease in object_list|slice:"1:" %}
+      <div class="press-release">
+        <h3>{% include "press/pressrelease_title.html" %}</h3>
+        {% include "press/pressrelease_date.html" %}
+      </div>
+      {% if not forloop.last%}<hr>{% endif %}
+      {% endfor %}
+    {% else %}
+      {% for pressrelease in object_list %}
+      <div class="press-release">
+        <h3>{% include "press/pressrelease_title.html" %}</h3>
+        {% include "press/pressrelease_date.html" %}
+      </div>
+      {% if not forloop.last%}<hr>{% endif %}
+      {% empty %}
+      <p>{% trans 'No press releases found.' %}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
 
-    {% include "includes/pager.html" %}
-  </div>
-  <div class="sidebar col-md-3 col-md-pull-9">
+  {% include "includes/pager.html" %}
+{% endblock %}
+
+{% block custom_sidebar %}
     {% include "press/pressmention_recent.html" %}
-  </div>
-</div>
 {% endblock %}

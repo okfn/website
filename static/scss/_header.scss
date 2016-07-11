@@ -1,0 +1,231 @@
+.site-header {
+  height: 120px;
+  position: relative;
+
+  .brand {
+    margin: 0;
+    a {
+      position: absolute;
+      background-color: $brand-primary;
+      color: #fff;
+      z-index: 4;
+      padding: 20px;
+      width: 134px;
+      border: solid 2px #fff;
+      top: -2px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .show-menu {
+    display: inline-block;
+    float: right;
+    color: inherit;
+    font-size: 42px;
+    margin-top: 36px;
+    outline: none;
+
+    @media (min-width: $screen-md-min) {
+      display: none;
+    }
+  }
+
+  nav {
+    display: none;
+
+    @media (min-width: $screen-md-min) {
+      display: block;
+      text-align: right;
+    }
+
+    li {
+      display: inline-block;
+
+      a {
+        color: $text-color;
+      }
+    }
+
+    .primary {
+      font-size: 17px;
+      text-transform: uppercase;
+      padding-top: 10px;
+      vertical-align: middle;
+
+      & > li {
+        &:not(.search) {
+          border: solid 2px #fff;
+        }
+
+        & > a {
+          padding: 8px 12px;
+          z-index: 2;
+
+          &:hover {
+            background-color: #fff;
+          }
+        }
+
+        &.active {
+          & > a {
+            background-color: $brand-primary;
+            color: #fff;
+          }
+        }
+
+        &.has-children {
+          &:hover {
+            border-color: $gray-lighter;
+
+            & > ul {
+              display: block;
+              z-index: 100; //needs to be above carousel indicators
+            }
+
+            &:not(.active) {
+              & > a {
+                background-color: #fff;
+              }
+            }
+          }
+        }
+
+        & > ul {
+          position: absolute;
+          background-color: #fff;
+          text-align: left;
+          left: 0;
+          z-index: 2;
+          margin: -2px -2px 0 -2px;
+          padding: 0;
+          min-width: 100%;
+          border: solid 2px $gray-lighter;
+          box-sizing: content-box;
+          z-index: 1;
+          text-transform: none;
+          font-size: 14px;
+          display: none;
+
+          li {
+            display: block;
+            border-bottom: solid 1px $gray-lighter;
+
+            &:last-child {
+              border: none;
+            }
+          }
+
+          a {
+            display: block;
+            padding: 8px 12px;
+            text-decoration: none;
+          }
+
+          ul {
+            display: none;
+          }
+        }
+      }
+
+      label[for="search"] {
+        background-color: $text-color;
+        color: #fff;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        border-radius: 50%;
+        margin-left: 10px;
+        position: relative;
+        line-height: 22px;
+        cursor: pointer;
+
+        .icon-search {
+          font-size: 15px;
+          padding-top: 7px;
+          display: inline-block;
+        }
+      }
+    }
+
+    .secondary {
+      padding-top: 8px;
+
+      & > li > a {
+        padding-right: 2px;
+
+        [class^="icon-"] {
+          padding-right: 2px;
+        }
+      }
+    }
+  }
+
+  .search-bar {
+    background-color: $gray-lighter;
+    height: 120px;
+    position: absolute;
+    bottom: 120px;
+    width: 100%;
+    transition: bottom 0.3s ease-out;
+    z-index: 3;
+
+    &.active {
+      bottom: 0;
+    }
+
+    .container {
+      padding-top: 30px;
+      padding-left: 180px;
+      position: relative;
+
+      .input {
+        padding-right: 115px;
+
+        input[type="text"] {
+          height: 60px;
+          font-size: 30px;
+          border: none;
+          border-bottom: solid 2px $gray-base;
+          background-color: inherit;
+          width: 100%;
+          outline: none;
+          float: left;
+        }
+      }
+
+      .buttons {
+        position: absolute;
+        right: 15px;
+        top: 40px;
+
+        button {
+          border: none;
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          outline: none;
+          background-color: $brand-primary;
+          color: #fff;
+          margin-left: 10px;
+          line-height: 40px;
+          vertical-align: middle;
+          padding: 2px;
+
+          @-moz-document url-prefix() {
+            line-height: 42px;
+          }
+
+          &.cancel {
+            background-color: inherit;
+            color: inherit;
+            box-shadow: inset 0px 0px 0px 2px $text-color;
+          }
+        }
+      }
+
+    }
+  }
+}

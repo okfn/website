@@ -1,0 +1,131 @@
+.page-template,
+[class$="-template"]:not(.home-template) {
+
+  .banner {
+    background-color: $brand-primary;
+    color: #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    @media (min-width: $screen-md-min) {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    h2 {
+      font-size: 42px;
+      text-transform: uppercase;
+      margin: 0;
+      font-weight: 900;
+    }
+
+    p {
+      font-size: 20px;
+      font-weight: bold;
+      font-style: italic;
+      text-transform: uppercase;
+      margin: 0.1em 0 0 0;
+    }
+  }
+
+  .main {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    @media (min-width: $screen-md-min) {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    & > div {
+      @include make-row();
+
+      aside {
+        @include make-md-column(3);
+        overflow: hidden;
+
+        #side-nav {
+          width: 100%;
+          display: none;
+        }
+
+        & > div {
+          font-size: 14px;
+          padding: 20px;
+          background-color: $gray-lighter;
+          margin-bottom: $grid-gutter-width;
+
+          & > :first-child {
+            margin-top: 0;
+          }
+
+          & > :last-child {
+            margin-bottom: 0;
+          }
+
+          h3 {
+            font-size: 16px;
+            font-weight: normal;
+            text-transform: uppercase;
+          }
+        }
+
+        @media (min-width: $screen-md-min) {
+          padding-left: 0;
+
+          & > div {
+            background-color: transparent;
+          }
+
+          #side-nav{
+            display: block;
+
+            &.mm-menu {
+              background-color: $body-bg;
+              height: 30vh;
+              position: relative;
+
+              .mm-prev:before {
+                left: 8px;
+                border-color: $brand-primary;
+              }
+
+              .mm-navbar {
+                text-align: left;
+                padding: 0 20px;
+                border: none;
+
+                .mm-title {
+                  color: $text-color;
+                  text-transform: uppercase;
+                }
+              }
+
+              .mm-listview {
+                & > li:last-child {
+                  &:after {
+                    display: none;
+                  }
+                }
+                .mm-next:before {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      article {
+        @include make-md-column(9);
+        @include make-lg-column(8);
+        @include make-lg-column-offset(1);
+        overflow: hidden; // prevent scrollbar
+
+        & > :first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

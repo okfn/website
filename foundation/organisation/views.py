@@ -38,22 +38,12 @@ class ProjectListView(ListView):
     template_name = 'organisation/project_list.html'
 
     def get_queryset(self):
-        # We only filter the list by one url parameter with
-        # hierarchy as 1. filter, 2. theme, 3. type
-        filter_param = self.request.GET.get('filter', None)
-        if filter_param == 'popular':
-            # Popular filter is featured projects
-            return Project.objects.filter(featured=True)
+        # Do we want to show old projects?
+        show_old = self.request.path.endswith("old")
+        if show_old:
+            return Project.objects.filter(old_project=True)
 
-        theme_param = self.request.GET.get('theme', None)
-        if theme_param:
-            return Project.objects.filter(themes__slug=theme_param)
-
-        type_param = self.request.GET.get('type', None)
-        if type_param:
-            return Project.objects.filter(types__slug=type_param)
-
-        return Project.objects.all()
+        return Project.objects.filter(old_project=False)
 
     def get_context_data(self, **kwargs):
         context = super(ProjectListView, self).get_context_data(**kwargs)

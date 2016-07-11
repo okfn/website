@@ -1,0 +1,17 @@
+<form class="container" action="{% url 'haystack_search' %}" method="get" role="search">
+<div class="input">
+  <input type="text" placeholder="Search..." id="search" name="q">
+</div>
+
+<div class="buttons">
+  <button type="submit" class="submit">
+    <span class="icon-search" aria-hidden="true"></span>
+    <span class="sr-only">Submit</span>
+  </button>
+
+  <button class="cancel">
+    <span class="icon-close" aria-hidden="true"></span>
+    <span class="sr-only">Cancel</span>
+  </button>
+</div>
+</form>

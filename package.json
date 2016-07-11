@@ -1,0 +1,21 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "This is the Django/Django CMS project that runs <http://okfn.org>.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okfn/website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/okfn/website/issues"
+  },
+  "homepage": "https://github.com/okfn/website#readme",
+  "dependencies": {
+    "bower": "1.7.9"
+  },
+  "scripts": {
+    "postinstall": "bower install"
+  }
+}

@@ -125,7 +125,8 @@ INSTALLED_APPS = (
     'sekizai',
 
     # Custom apps
-    'foundation.djangocms_pagebanner',
+    'foundation.blogfeed',
+    'foundation.features',
     'foundation.jobs',
     'foundation.press',
     'foundation.organisation',
@@ -176,20 +177,20 @@ TEMPLATES = [
                     'django.template.context_processors.request',
                     'aldryn_boilerplates.context_processors.boilerplate',
                     ),
-                'loaders': [
-                    'django.template.loaders.filesystem.Loader',
-                    'aldryn_boilerplates.template_loaders.AppDirectoriesLoader',  # nopep8
-                    'django.template.loaders.app_directories.Loader',
-                    ],
-                }
+            'loaders': [
+                'django.template.loaders.filesystem.Loader',
+                'aldryn_boilerplates.template_loaders.AppDirectoriesLoader',
+                'django.template.loaders.app_directories.Loader',
+                ],
+            }
     },
 ]
 
 STATICFILES_FINDERS = (
-        'django.contrib.staticfiles.finders.FileSystemFinder',
-        'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
-        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-        )
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    )
 
 ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
 
@@ -363,12 +364,18 @@ if env.get('DJANGO_CSP_REPORT_URI') is not None:
 
     CSP_SCRIPT_SRC = asset_hosts + ['https://js-agent.newrelic.com',
                                     'https://www.google-analytics.com',
+                                    'https://use.typekit.net',
+                                    'https://bam.nr-data.net',
                                     "'unsafe-inline'", "'self'"]
-    CSP_STYLE_SRC = asset_hosts + ['https://fonts.googleapis.com',
-                                   "'unsafe-inline'"]
-    CSP_IMG_SRC = asset_hosts + ["data:", 'https://www.google-analytics.com']
-    CSP_FONT_SRC = asset_hosts + ['https://netdna.bootstrapcdn.com',
-                                  'https://fonts.gstatic.com',
+    CSP_STYLE_SRC = asset_hosts + ["'unsafe-inline'",
+                                   'https://use.typekit.net']
+    CSP_IMG_SRC = asset_hosts + ["data:",
+                                 'https://gravatar.com',
+                                 'https://secure.gravatar.com',
+                                 'https://p.typekit.net',
+                                 'https://ping.typekit.net',
+                                 'https://www.google-analytics.com']
+    CSP_FONT_SRC = asset_hosts + ['data:',
                                   'https://themes.googleusercontent.com']
 
     CSP_REPORT_URI = env.get('DJANGO_CSP_REPORT_URI')
@@ -392,7 +399,7 @@ COMPRESS_OFFLINE_CONTEXT = {
 }
 
 COMPRESS_PRECOMPILERS = (
-    ('text/less', 'lib.precompilers.LessFilter'),
+    ('text/sass', 'lib.precompilers.SassFilter'),
 )
 
 COMPRESS_CSS_FILTERS = [

@@ -4,7 +4,7 @@
 {% block title %}{% trans 'Page not found' %}{% endblock %}
 
 {% block pagebanner %}
-<div id='page-banner'>
+<div class='banner'>
   <div class='container'>
     <h2>404: {% trans 'Page not found' %}</h2>
   </div>
@@ -13,7 +13,7 @@
 
 {% block body %}
 <div class='row'>
-  <div class='col-md-8'>
+  <div class='main col-md-12'>
     <form action="{% url 'haystack_search' %}" method="get" role="search">
       <p>
         {% blocktrans %}

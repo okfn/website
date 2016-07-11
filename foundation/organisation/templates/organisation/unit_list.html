@@ -4,29 +4,13 @@
 {% load cms_tags %}
 {% load markdown_deux_tags %}
 
-{% block body-class %}units{% endblock %}
-
 {% block blurb %}{% static_placeholder "units blurb" %}{% endblock %}
 
-{% block body %}
-  <div class="row">
-    <div class="main col-md-9 col-md-push-3">
-      {% for unit in unit_list %}
-        <h3>{{ unit.name }}</h3>
-        {% for member in unit.unitmembership_set.all %}
-          {% include "organisation/member.html" %}
-        {% endfor %}
-        <hr/>
-      {% endfor %}
-    </div>
-    <div class="sidebar col-md-3 col-md-pull-9">
-      <h3>Units</h3>
-      {% for unit in unit_list %}
-      <h4>{{ unit.name }}</h4>
-      <ul>{% for member in unit.members.all %}
-        <li><a href="#{{ member.name|slugify }}">{{ member.name }}</a></li>
-      {% endfor %}</ul>
-      {% endfor %}
-    </div>
-  </div>
+{% block main %}
+  {% for unit in unit_list %}
+    <h2 id='{{ unit.name | slugify }}'>{{ unit.name }}</h2>
+    {% for member in unit.unitmembership_set.all %}
+      {% include "organisation/member.html" %}
+    {% endfor %}
+  {% endfor %}
 {% endblock %}

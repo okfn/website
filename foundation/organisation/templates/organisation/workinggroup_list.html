@@ -4,13 +4,9 @@
 {% load markdown_deux_tags %}
 {% load thumbnail %}
 
-{% block body-class %}working-groups{% endblock %}
-
 {% block blurb %}{% static_placeholder "working groups blurb" %}{% endblock %}
 
-{% block body %}
-<div class="row">
-  <div class="main col-md-9 col-md-push-3">
+{% block main %}
     {% static_placeholder "working groups intro" %}
 
     {% for workinggroup in object_list %}
@@ -44,7 +40,9 @@
     <p>{% trans 'No working groups found.' %}</p>
     {% endfor %}
   </div>
-  <div class="sidebar col-md-3 col-md-pull-9">
+{% endblock %}
+
+{% block custom_sidebar %}
     <h3>Active groups</h3>
     {% static_placeholder "working groups active" %}
     <ul>{% for workinggroup in active_list %}
@@ -68,6 +66,4 @@
     {% empty %}
     <li>{% trans 'There are no incubating groups at the moment.' %}</li>
     {% endfor %}</ul>
-  </div>
-</div>
 {% endblock %}

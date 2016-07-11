@@ -2,6 +2,7 @@
 *.py[cod]
 __pycache__
 *~
+.sass-cache/
 
 # Installer logs
 pip-log.txt
@@ -24,6 +25,9 @@ node_modules
 # Site data
 media
 staticfiles
+
+# Packages installed by bower
+static/vendor/
 
 logfile
 

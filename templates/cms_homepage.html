@@ -1,76 +1,85 @@
 {% extends "cms_default.html" %}
 {% load cms_tags %}
 {% load i18n %}
+{% load staticfiles %}
 
+{% block body-class %}home-template{% endblock %}
 {% block pagebanner %}
-<div id='page-banner' class='homepage-splash-banner'>
-  <div class='container'>
-    <div class="col-sm-3">
-      <img width="212" src="https://a.okfn.org/img/oki/standard-white-334x344.png" />
-    </div>
-    <div class="col-sm-9" style="margin-right:0;padding-right:0;">
+<section class="banner">
+  <div class="container">
+    <div class="mission">
       {% placeholder "blurb" %}
     </div>
+      {% placeholder featured_news %}
   </div>
-</div>
-<div id='page-banner-signup'>
-  <div class='container'>
-    <form class='form-inline'
-          role='form'
-          action='{{ MAILCHIMP_URL }}'
-          target='_blank'
-          method='post'>
-      <div class='page-banner-signup-label'>
-        {% trans 'Join our mailing list:' %}
-      </div>
-      <div class='page-banner-signup-form'>
-        <div class="form-group">
-          <label class='sr-only' for='name'>Name:</label>
-          <input type='text' class='form-control' id='name' name='MMERGE3' placeholder='name'>
-        </div>
-        <div class="form-group">
-          <label class='sr-only' for='email'>Email address:</label>
-          <input type='email' class='form-control' id='email' name='EMAIL' placeholder='email address'>
-        </div>
-        <input type="hidden" name="{{ MAILCHIMP_TOKEN }}" value="">
-        <button type='submit' class='btn btn-default'>subscribe</button>
-      </div>
-    </form>
-  </div>
-</div>
+</section>
 {% endblock %}
 
 {% block body %}
-<div class='row'>
-  <div class='col-md-12'>
-    {% placeholder "special" %}
-  </div>
-</div>
-<div class='row'>
-  <div class='col-sm-8'>
-    <div class='feature-block-img feature-okcon'></div>
-  </div>
-  <div class='col-sm-4'>
-    <div class='feature-block-text feature-block-primary'>
-      {% placeholder "feature 1" %}
+<section class="features">
+  <div class="container">
+    <div class="feature one">
+      <a class="image" href="/about/team" style="background-image: url({% static 'img/feature-team.jpg'%})"></a>
+      <h3>
+        <a href="/about/team">PASSIONATE TEAM</a>
+      </h3>
+      Passionate about openness. Using advocacy, technology and training to unlock information and enable people to create and share knowledge.
+    </div>
+
+    <div class="feature two">
+      <a class="image" href="{% url 'pages-details-by-slug' 'network' %}" style="background-image: url({% static 'img/feature-network.jpg'%})"></a>
+      <h3>
+        <a href="{% url 'pages-details-by-slug' 'network' %}">GLOBAL NETWORK</a>
+      </h3>
+      Meet, campaign, learn, innovate, share, train, create, support, explore: some of the ways you can help open up knowledge for everyone. Join us.
+    </div>
+
+    <div class="feature three">
+      <a class="image" href="{% url 'projects' %}" style="background-image: url({% static 'img/feature-projects.jpg'%})"></a>
+      <h3>
+        <a href="{% url 'projects' %}">DIVERSE PROJECTS</a>
+      </h3>
+      Through our projects, research and collaborations, we explore niche areas of data, and ways in which it can be used to empower people around the world.
     </div>
   </div>
-</div>
-<div class='row'>
-  <div class='col-sm-8 col-sm-push-4'>
-    <div class='feature-block-img feature-scoda'></div>
-  </div>
-  <div class='col-sm-4 col-sm-pull-8'>
-    <div class='feature-block-text feature-block-text-left feature-block-secondary'>
-      {% placeholder "feature 2" %}
-    </div>
-  </div>
-</div>
-<div class='row'>
-  <div class='col-md-12'>
-    {% placeholder "featured themes" %}
-  </div>
-</div>
+</section>
+
+<section class="container call-to-action">
+  <a href="https://discuss.okfn.org/" rel="external">
+    Be part of the discussion - join the Open Knowledge Forums
+  </a>
+</section>
+
+<section class="blog-latest container">
+  {% placeholder "blogentries" %}
+</section>
+{% endblock %}
+
+{% block javascript-asynchronous %}
+<script src="{{ STATIC_URL }}vendor/jQuery.dotdotdot/src/jquery.dotdotdot.js"></script>
+<script>
+  $(function () {
+    // change bg img
+    $.fn.setBg = function(){
+      var newsimage = $('.banner .item.active').attr('data-img');
+      $('.banner').css('backgroundImage','url(' + newsimage + ')');
+    }
+    $.fn.setBg();
+    $('#news').on('slide.bs.carousel', function () {
+      $( ".banner").addClass( "transition");
+    })
+    $('#news').on('slid.bs.carousel', function () {
+      $.fn.setBg();
+      $( ".banner").removeClass( "transition");
+    })
+    // word spans
+    $(".carousel-caption h3, .carousel-caption p").lettering('words');
+    // blog preview ellipsis
+    $(".blog-latest article").dotdotdot({
+      //	configuration goes here
+    });
+  });
+</script>
 {% endblock %}
 
 {# Don't display the breadcrumb on the homepage #}

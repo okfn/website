@@ -2,14 +2,18 @@
 {% load cms_tags %}
 
 {% block body %}
-<div class='row'>
-  <div class='main col-md-8 col-md-push-4'>
+<div>
+  <aside>
+    <nav id="side-nav">
+      {% include 'includes/sidebar.html' %}
+    </nav>
+    <div>
+      {% static_placeholder "sitewide sidebar" %}
+      {% placeholder "sidebar" inherit %}
+    </div>
+  </aside>
+  <article>
     {% placeholder "main" %}
-  </div>
-  <div class='sidebar col-md-4 col-md-pull-8'>
-    {% static_placeholder "sitewide sidebar" %}
-    {% include 'includes/sidebar.html' %}
-    {% placeholder "sidebar" inherit %}
-  </div>
+  </article>
 </div>
 {% endblock %}

@@ -1,18 +1,14 @@
 {% extends "cms_apphook.html" %}
 {% load i18n %}
 
-{% block body-class %}press-mentions{% endblock %}
 
-{% block body %}
-<div class="row">
-  <div class="main col-md-9 col-md-push-3">
-    {% with pressmention=object %}
-    {% include "press/pressmention.html" %}
-    {% endwith %}
-  </div>
-  <div class="sidebar col-md-3 col-md-pull-9">
-    {% include "press/pressmention_recent.html" %}
-    {% include "press/pressrelease_recent.html" %}
-  </div>
-</div>
+{% block custom_sidebar %}
+  {% include "press/pressmention_recent.html" %}
+  {% include "press/pressrelease_recent.html" %}
+{% endblock %}
+
+{% block main %}
+  {% with pressmention=object %}
+  {% include "press/pressmention.html" %}
+  {% endwith %}
 {% endblock %}
