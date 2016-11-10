@@ -12,7 +12,7 @@
   <div class="carousel-inner" role="listbox">
     {% for feature in feature_list %}
     <div class="project item {% if forloop.first %}active{% endif %}" data-img="{{ feature.image.url }}">
-      <a class="carousel-caption" {% if feature.url %}href="{{feature.url}}" {% endif %}>
+      <a class="carousel-caption" {% if feature.link %}href="{{feature.link}}" {% endif %}>
         <h3>{{feature.title}}</h3>
         <p>{{feature.text}}</p>
       </a>
