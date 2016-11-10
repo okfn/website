@@ -1,12 +1,12 @@
 {% load staticfiles %}
 <div>
-  {% for entry in entries %}
-  <article>
-    <img class="avatar" src="{% static 'img/avatar-none.png' %}" alt="{{entry.author}}" />
-    <h4><a href='{{entry.link}}'>{{entry.title}}</a></h4>
-    <p>
-      {{entry.summary}}
-    </p>
-  </article>
-  {% endfor %}
+    {% for entry in entries %}
+        <article>
+            <img class="avatar" src="{% static 'img/avatar-none.png' %}" alt="{{ entry.author }}"/>
+            <h4><a href='{{ entry.link }}'>{{ entry.title }}</a></h4>
+            <p>
+                {{ entry.summary| safe }}
+            </p>
+        </article>
+    {% endfor %}
 </div>
