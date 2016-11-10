@@ -273,7 +273,12 @@ class NetworkGroup(models.Model):
     objects = NetworkGroupManager()
 
     GROUP_TYPES = ((0, 'Local group'),
-                   (1, 'Chapter'))
+                   (1, 'Chapter'),
+                   (2, 'Established group'),
+                   (3, 'Incubating group'),
+                   (4, 'Hibernated group'),
+                   (5, 'Affiliate')
+                   )
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
