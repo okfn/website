@@ -1,12 +1,16 @@
 {% load staticfiles %}
 <div>
     {% for entry in entries %}
-        <article>
-            <img class="avatar" src="{% static 'img/avatar-none.png' %}" alt="{{ entry.author }}"/>
-            <h4><a href='{{ entry.link }}'>{{ entry.title }}</a></h4>
-            <p>
-                {{ entry.summary| safe }}
-            </p>
-        </article>
+        {% with entry.enclosures|first as author_image_enclosure %}
+            <article>
+                <img class="avatar"
+                     src="{% if author_image_enclosure %}{{ author_image_enclosure.href }}{% else %}{% static 'img/avatar-none.png' %}{% endif %}"
+                     alt="{{ entry.author }}"/>
+                <h4><a href='{{ entry.link }}'>{{ entry.title }}</a></h4>
+                <p>
+                    {{ entry.summary|safe }}
+                </p>
+            </article>
+        {% endwith %}
     {% endfor %}
 </div>
