@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 <html lang='en-gb'>
-  <head>
+<head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>{{ site.name }}: {% block title %}SET A TITLE{% endblock %}</title>
@@ -13,19 +13,28 @@
     {% block head-alternate %}{% endblock %}
     {% render_block "css" %}
     {% block head-css %}{% endblock %}
-    {% block head-meta %}{% endblock %}
-  </head>
-  <body {% block body-attributes %}{% endblock %} class='{% block body-class %}{% endblock %}'>
-    {# django-cms toolbar injector -- this must remain in base #}
-    {% cms_toolbar %}
+    {% block head-meta %}
+        {% block head-meta-fb-open-graph %}
+            <meta property="og:type" content="website"/>
 
-    {% block body-sheath %}{% endblock %}
+            <meta property="og:description"
+                  content="A world where knowledge creates power for the many, not the few. This is the world we choose."/>
+            <meta property="og:image"
+                  content="https://a.okfn.org/img/oki/standard-rgb-667x687.png"/>
+        {% endblock %}
+    {% endblock %}
+</head>
+<body {% block body-attributes %}{% endblock %} class='{% block body-class %}{% endblock %}'>
+{# django-cms toolbar injector -- this must remain in base #}
+{% cms_toolbar %}
 
-    {% render_block "js" %}
-    <script>
-      {% block javascript-variables %}{% endblock %}
-    </script>
-    {% block javascript-libraries %}{% endblock %}
-    {% block javascript-asynchronous %}{% endblock %}
-  </body>
+{% block body-sheath %}{% endblock %}
+
+{% render_block "js" %}
+<script>
+    {% block javascript-variables %}{% endblock %}
+</script>
+{% block javascript-libraries %}{% endblock %}
+{% block javascript-asynchronous %}{% endblock %}
+</body>
 </html>

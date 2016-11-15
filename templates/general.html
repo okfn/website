@@ -5,79 +5,95 @@
 {% load menu_tags %}
 
 {% block head-icons %}
-<link rel="icon" href="{{STATIC_URL}}favicon.ico">
+    <link rel="icon" href="{{ STATIC_URL }}favicon.ico">
 {% endblock %}
 
 {% block head-css %}
-{% compress css %}
-<link type="text/sass" rel="stylesheet" href="{{ STATIC_URL }}scss/style.scss" charset="utf-8">
-<link rel="stylesheet" href="{{ STATIC_URL }}vendor/jQuery.mmenu/dist/css/jquery.mmenu.all.css">
-{% endcompress %}
-<script src="https://use.typekit.net/sew1dft.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
+    {% compress css %}
+        <link type="text/sass" rel="stylesheet" href="{{ STATIC_URL }}scss/style.scss" charset="utf-8">
+        <link rel="stylesheet" href="{{ STATIC_URL }}vendor/jQuery.mmenu/dist/css/jquery.mmenu.all.css">
+    {% endcompress %}
+    <script src="https://use.typekit.net/sew1dft.js"></script>
+    <script>try {
+        Typekit.load({async: true});
+    } catch (e) {
+    }</script>
+{% endblock %}
+
+
+{% block head-meta-fb-open-graph %}
+    <meta property="og:url"
+          content="https://www.okfn.org"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Open Knowledge International"/>
+    <meta property="og:description"
+          content="A world where knowledge creates power for the many, not the few. This is the world we choose."/>
+    <meta property="og:image"
+          content="https://a.okfn.org/img/oki/standard-rgb-667x687.png"/>
 {% endblock %}
 
 {% block body-sheath %}
-<div id="page">
-<header class="site-header">
-  <div class="container">
-    <h1 class="brand">
-      <a href="/">
-        <img src="https://a.okfn.org/img/oki/standard-white-334x344.png" alt="Open Knowledge International">
-      </a>
-    </h1>
+    <div id="page">
+        <header class="site-header">
+            <div class="container">
+                <h1 class="brand">
+                    <a href="/">
+                        <img src="https://a.okfn.org/img/oki/standard-white-334x344.png"
+                             alt="Open Knowledge International">
+                    </a>
+                </h1>
 
-    <a href="#mmenu" class="show-menu">
-      <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-      <span class="sr-only">Open the menu</span>
-    </a>
+                <a href="#mmenu" class="show-menu">
+                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                    <span class="sr-only">Open the menu</span>
+                </a>
 
-    <nav>
-      <ul class="secondary nav">
-        {% include 'includes/nav_secondary.html' %}
-      </ul>
-      <ul class="primary nav">
-        {% show_menu_below_id "home" 0 1 1 100 "menu/menu.html" %}
-        <li>
-          <label for="search">
-            <span class="icon-search" aria-hidden="true"></span>
-            <span class="sr-only">Search</span>
-          </label>
-        </li>
-      </ul>
-    </nav>
-  </div>
+                <nav>
+                    <ul class="secondary nav">
+                        {% include 'includes/nav_secondary.html' %}
+                    </ul>
+                    <ul class="primary nav">
+                        {% show_menu_below_id "home" 0 1 1 100 "menu/menu.html" %}
+                        <li>
+                            <label for="search">
+                                <span class="icon-search" aria-hidden="true"></span>
+                                <span class="sr-only">Search</span>
+                            </label>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
 
-  <div class="search-bar">
-      {% include 'includes/search.html' %}
-  </div>
-</header>
+            <div class="search-bar">
+                {% include 'includes/search.html' %}
+            </div>
+        </header>
 
-  {% block pagebanner %}{% endblock %}
+        {% block pagebanner %}{% endblock %}
 
-  <section class='{% block main-class %}{% endblock %} main container'>
-    {% block body %}{% endblock %}
-  </section>
+        <section class='{% block main-class %}{% endblock %} main container'>
+            {% block body %}{% endblock %}
+        </section>
 
-  <footer class="site-footer">
-    <div class='container'>
-      {% include 'includes/footer.html' %}
+        <footer class="site-footer">
+            <div class='container'>
+                {% include 'includes/footer.html' %}
+            </div>
+        </footer>
     </div>
-  </footer>
-</div>
 
-<nav id="mmenu">
- <ul>
-    {% include 'includes/nav.html' %}
-    {% include 'includes/nav_secondary.html' %}
- </ul>
-</nav>
+    <nav id="mmenu">
+        <ul>
+            {% include 'includes/nav.html' %}
+            {% include 'includes/nav_secondary.html' %}
+        </ul>
+    </nav>
 {% endblock %}
 
 {% block javascript-libraries %}
-{% compress js %}
+    {% compress js %}
 
-{% comment %}
+        {% comment %}
   NB: The inline script tags here get compiled into the single JavaScript file
   for the page, so changes to these *will only show up* if the application is
   redeployed.
@@ -88,122 +104,129 @@
   attacks.
 {% endcomment %}
 
-{% if GOOGLE_ANALYTICS_TRACKING_ID and GOOGLE_ANALYTICS_DOMAIN %}
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        {% if GOOGLE_ANALYTICS_TRACKING_ID and GOOGLE_ANALYTICS_DOMAIN %}
+            <script>
+                (function (i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r;
+                    i[r] = i[r] || function () {
+                                (i[r].q = i[r].q || []).push(arguments)
+                            }, i[r].l = 1 * new Date();
+                    a = s.createElement(o),
+                            m = s.getElementsByTagName(o)[0];
+                    a.async = 1;
+                    a.src = g;
+                    m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create',
-     '{{ GOOGLE_ANALYTICS_TRACKING_ID }}',
-     '{{ GOOGLE_ANALYTICS_DOMAIN }}');
-  ga('send', 'pageview');
-</script>
-{% endif %}
+                ga('create',
+                        '{{ GOOGLE_ANALYTICS_TRACKING_ID }}',
+                        '{{ GOOGLE_ANALYTICS_DOMAIN }}');
+                ga('send', 'pageview');
+            </script>
+        {% endif %}
 
-<script type="text/javascript" src="{{ STATIC_URL }}vendor/jquery/dist/jquery.js"
-  charset="utf-8"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}vendor/bootstrap/dist/js/bootstrap.js"
-  charset="utf-8"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}vendor/bootstrap/js/dropdown.js"
-  charset="utf-8"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}vendor/bootstrap/js/collapse.js"
-  charset="utf-8"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}vendor/letteringjs/jquery.lettering.js"
-  charset="utf-8"></script>
-  <script>
-     $(function () {
-       // show / hide search bar
-       $('body > #page > .site-header nav label[for="search"]').click(function(){
-         $( 'body > #page > .site-header .search-bar' ).addClass( "active" );
-       });
-       $('body > #page > .site-header .search-bar .cancel').click(function(event){
-         event.preventDefault();
-         $( 'body > #page > .site-header .search-bar' ).removeClass( "active" );
-       });
-
-      // TODO: this is only needed for pages where the member.html template is
-      // included so it should probably somehow be moved.
-       $(function () {
-         var allTabs = $('.profile .meta');
-         allTabs.each(function(){
-           var active = $(this).find('.active').length;
-           if (!active){
-             $(this).find('.nav li').first().addClass('active');
-             $(this).find('.tab-content .tab-pane').first().addClass('active');
-           }
-         })
-        });
-
-       function loadScript(src){
-         var theScript = document.createElement('script');
-             theScript.type = 'text/javascript';
-             theScript.src = src;
-
-         var s = document.getElementsByTagName('script')[0];
-             s.parentNode.insertBefore(theScript, s);
-       };
-
-       function resizeNavBar(){
-         var contents = $('.mm-current .mm-listview').height();
-         var header = $('.mm-current .mm-navbar').height();
-         var PADDING_TOP = 40;
-         var totalHeight = contents + header + PADDING_TOP;
-         $('#side-nav').animate({height: totalHeight}, 400);
-       }
-
-       (function() {
-            var hamBurgerButton = document.getElementsByClassName('show-menu')[0];
-            var display = window.getComputedStyle(hamBurgerButton,null).getPropertyValue("display");
-            var bigScreen = (display === 'none');
-            var navigationVisible = ($('#side-nav > ul').length) > 0
-            if( bigScreen & navigationVisible) {
-              loadScript('{{ STATIC_URL }}vendor/jQuery.mmenu/dist/js/jquery.mmenu.oncanvas.min.js');
-              $(window).load(function(){
-                $("#side-nav").mmenu({
-                  // options
-                }, {
-                  // configuration
-                  classNames: {
-                    selected: "active"
-                  },
-                  "offCanvas": false
+        <script type="text/javascript" src="{{ STATIC_URL }}vendor/jquery/dist/jquery.js"
+                charset="utf-8"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}vendor/bootstrap/dist/js/bootstrap.js"
+                charset="utf-8"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}vendor/bootstrap/js/dropdown.js"
+                charset="utf-8"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}vendor/bootstrap/js/collapse.js"
+                charset="utf-8"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}vendor/letteringjs/jquery.lettering.js"
+                charset="utf-8"></script>
+        <script>
+            $(function () {
+                // show / hide search bar
+                $('body > #page > .site-header nav label[for="search"]').click(function () {
+                    $('body > #page > .site-header .search-bar').addClass("active");
                 });
-                $('#side-nav').css('display', 'block')
-                resizeNavBar();
-
-                api = $("#side-nav").data("mmenu");
-                api.bind('openPanel', resizeNavBar);
-              });
-            }
-            else{
-              loadScript('{{ STATIC_URL }}vendor/jQuery.mmenu/dist/js/jquery.mmenu.min.js');
-              $(window).load(function(){
-                $("#mmenu").mmenu({
-                  // options
-                  offCanvas: {
-                    position  : "right"
-                  },
-                  searchfield: true,
-                  extensions: ["theme-dark"]
-                }, {
-                  // configuration
-                  classNames: {
-                    selected: "active"
-                  }
+                $('body > #page > .site-header .search-bar .cancel').click(function (event) {
+                    event.preventDefault();
+                    $('body > #page > .site-header .search-bar').removeClass("active");
                 });
-              });
-            }
-          })()
 
-       //external links
-       $('a[rel*=external]').click( function() {
-         window.open(this.href);
-         return false;
-       });
-     });
-   </script>
+                // TODO: this is only needed for pages where the member.html template is
+                // included so it should probably somehow be moved.
+                $(function () {
+                    var allTabs = $('.profile .meta');
+                    allTabs.each(function () {
+                        var active = $(this).find('.active').length;
+                        if (!active) {
+                            $(this).find('.nav li').first().addClass('active');
+                            $(this).find('.tab-content .tab-pane').first().addClass('active');
+                        }
+                    })
+                });
 
-{% endcompress %}
+                function loadScript(src) {
+                    var theScript = document.createElement('script');
+                    theScript.type = 'text/javascript';
+                    theScript.src = src;
+
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(theScript, s);
+                };
+
+                function resizeNavBar() {
+                    var contents = $('.mm-current .mm-listview').height();
+                    var header = $('.mm-current .mm-navbar').height();
+                    var PADDING_TOP = 40;
+                    var totalHeight = contents + header + PADDING_TOP;
+                    $('#side-nav').animate({height: totalHeight}, 400);
+                }
+
+                (function () {
+                    var hamBurgerButton = document.getElementsByClassName('show-menu')[0];
+                    var display = window.getComputedStyle(hamBurgerButton, null).getPropertyValue("display");
+                    var bigScreen = (display === 'none');
+                    var navigationVisible = ($('#side-nav > ul').length) > 0
+                    if (bigScreen & navigationVisible) {
+                        loadScript('{{ STATIC_URL }}vendor/jQuery.mmenu/dist/js/jquery.mmenu.oncanvas.min.js');
+                        $(window).load(function () {
+                            $("#side-nav").mmenu({
+                                // options
+                            }, {
+                                // configuration
+                                classNames: {
+                                    selected: "active"
+                                },
+                                "offCanvas": false
+                            });
+                            $('#side-nav').css('display', 'block')
+                            resizeNavBar();
+
+                            api = $("#side-nav").data("mmenu");
+                            api.bind('openPanel', resizeNavBar);
+                        });
+                    }
+                    else {
+                        loadScript('{{ STATIC_URL }}vendor/jQuery.mmenu/dist/js/jquery.mmenu.min.js');
+                        $(window).load(function () {
+                            $("#mmenu").mmenu({
+                                // options
+                                offCanvas: {
+                                    position: "right"
+                                },
+                                searchfield: true,
+                                extensions: ["theme-dark"]
+                            }, {
+                                // configuration
+                                classNames: {
+                                    selected: "active"
+                                }
+                            });
+                        });
+                    }
+                })()
+
+                //external links
+                $('a[rel*=external]').click(function () {
+                    window.open(this.href);
+                    return false;
+                });
+            });
+        </script>
+
+    {% endcompress %}
 {% endblock %}
