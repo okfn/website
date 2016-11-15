@@ -13,8 +13,16 @@
     {% block head-alternate %}{% endblock %}
     {% render_block "css" %}
     {% block head-css %}{% endblock %}
-    {% block head-meta %}{% endblock %}
-    {% block head-fb-open-graph %}{% endblock %}
+    {% block head-meta %}
+        {% block head-meta-fb-open-graph %}
+            <meta property="og:type" content="website"/>
+
+            <meta property="og:description"
+                  content="A world where knowledge creates power for the many, not the few. This is the world we choose."/>
+            <meta property="og:image"
+                  content="https://a.okfn.org/img/oki/standard-rgb-667x687.png"/>
+        {% endblock %}
+    {% endblock %}
 </head>
 <body {% block body-attributes %}{% endblock %} class='{% block body-class %}{% endblock %}'>
 {# django-cms toolbar injector -- this must remain in base #}
