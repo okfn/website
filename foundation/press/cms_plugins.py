@@ -41,3 +41,13 @@ class RecentPressMentionsPlugin(CMSPluginBase):
         return context
 
 plugin_pool.register_plugin(RecentPressMentionsPlugin)
+
+
+class PressResourcePlugin(CMSPluginBase):
+    model = CMSPlugin
+    module = "OKF"
+    name = _("Press Resources")
+    render_template = "press/pressresources.html"
+
+
+plugin_pool.register_plugin(PressResourcePlugin)
