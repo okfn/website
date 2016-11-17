@@ -105,6 +105,8 @@ INSTALLED_APPS = (
     'geoposition',
     'spurl',
     'standard_form',
+    'formtools',
+
 
     # Asset pipeline
     'compressor',
