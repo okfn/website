@@ -103,6 +103,8 @@ INSTALLED_APPS = (
     'haystack',
     'sorl.thumbnail',
     'geoposition',
+    'spurl',
+    'standard_form',
 
     # Asset pipeline
     'compressor',
