@@ -1,8 +1,0 @@
-{% load markdown_deux_tags %}
-<h4><a href="{% url 'jobs-list' %}">Job opening: {{ job.title }}</a></h4>
-{{ job.description|markdown }}
-<p>
-  Submission closes
-  <strong>{{ job.submission_closes|time }}</strong> on
-  <strong>{{ job.submission_closes|date }}</strong>.
-</p>
