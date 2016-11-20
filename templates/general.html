@@ -49,7 +49,7 @@
                         {% show_menu_below_id "home" 0 1 1 100 "menu/menu.html" %}
                         <li>
                             <label for="search">
-                                <span class="icon-search" aria-hidden="true"></span>
+                                <span class="icon-search" aria-hidden="true" id="display-search-bar"></span>
                                 <span class="sr-only">Search</span>
                             </label>
                         </li>
@@ -57,7 +57,7 @@
                 </nav>
             </div>
 
-            <div class="search-bar">
+            <div class="search-bar" id="main-search-bar">
                 {% include 'includes/search.html' %}
             </div>
         </header>
@@ -131,12 +131,12 @@
         <script>
             $(function () {
                 // show / hide search bar
-                $('body > #page > .site-header nav label[for="search"]').click(function () {
-                    $('body > #page > .site-header .search-bar').addClass("active");
+                $('#display-search-bar').on('click', function () {
+                    $('#main-search-bar').addClass("active");
                 });
-                $('body > #page > .site-header .search-bar .cancel').click(function (event) {
+                $('#main-search-bar .cancel').on('click', function (event) {
                     event.preventDefault();
-                    $('body > #page > .site-header .search-bar').removeClass("active");
+                    $('#main-search-bar').removeClass("active");
                 });
 
                 // TODO: this is only needed for pages where the member.html template is
