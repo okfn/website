@@ -16,11 +16,13 @@
     {% block head-meta %}
         {% block head-meta-fb-open-graph %}
             <meta property="og:type" content="website"/>
-
+            <meta property="og:url"
+                  content="{% if request.is_secure %}https://{% else %}http://{% endif %}{{ request.get_host }}{{ request.get_absolute_url }}"/>
             <meta property="og:description"
                   content="A world where knowledge creates power for the many, not the few. This is the world we choose."/>
             <meta property="og:image"
-                  content="https://a.okfn.org/img/oki/standard-rgb-667x687.png"/>
+                  content="{{ STATIC_URL }}img/oki-logo-og-green-background-1200x630.png"/>
+            {% block head-meta-fb-open-graph-extra %}{% endblock %}
         {% endblock %}
     {% endblock %}
 </head>
