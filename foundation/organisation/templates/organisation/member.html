@@ -5,35 +5,27 @@
 {% with person=member.person %}
     <div class="row">
         <div class="profile container">
-  <span class="image"
-        style="background-image: url(
-                {{ person.gravatar_url }}{% if person.photo %}&default={{ person.photo.url }}{% endif %});">
-      <img src="{% static 'img/blank.png' %}" alt=""/>
-  </span>
+            <span class="image" style="background-image: url(
+                    {{ person.gravatar_url }}{% if person.photo %}&default={{ person.photo.url }}{% endif %});"><img
+                    src="{% static 'img/blank.png' %}" alt=""/></span>
             <h3 class="name">{{ person.name }}</h3>
             {% if member.title %}
                 <p class="job-title">{{ member.title }}</p>
             {% endif %}
-
             {{ person.description|markdown }}
-
 
             {% if person.has_anything_to_show or person.email and not skip_email %}
                 <div class="meta">
                     <div class="tab-content">
-                        {% for doing in person.nowdoing_with_latest %}
-                            <div role="tabpanel"
-                                 class="tab-pane {% if doing.is_newest_update %} active {% endif %}"
-                                 id="{{ person.name|slugify }}-{{ doing.doing_type }}">
-                                <h4>{{ doing.display_name }}:</h4>
-                                {% if doing.link %}
-                                    <a href="{{ doing.link }}"> {{ doing.text }} </a>
-                                {% else %}
-                                    {{ doing.text }}
-                                {% endif %}
-                            </div>
-                        {% endfor %}
 
+                        {% if person.email and not skip_email %}
+                            <div role="tabpanel"
+                                 class="tab-pane active"
+                                 id="{{ person.name|slugify }}-email">
+                                <h4>Email:</h4>
+                                {{ person.email }}
+                            </div>
+                        {% endif %}
                         {% if person.twitter %}
                             <div role="tabpanel" class="tab-pane" id="{{ person.name|slugify }}-twitter">
                                 <h4>Twitter:</h4>
@@ -48,30 +40,34 @@
                             </div>
                         {% endif %}
 
-                        {% if person.email and not skip_email %}
+                        {% for doing in person.nowdoing_with_latest %}
                             <div role="tabpanel"
                                  class="tab-pane"
-                                 id="{{ person.name|slugify }}-email">
-                                <h4>Email:</h4>
-                                {{ person.email }}
+                                 id="{{ person.name|slugify }}-{{ doing.doing_type }}">
+                                <h4>{{ doing.display_name }}:</h4>
+                                {% if doing.link %}
+                                    <a href="{{ doing.link }}"> {{ doing.text }} </a>
+                                {% else %}
+                                    {{ doing.text }}
+                                {% endif %}
                             </div>
-                        {% endif %}
+                        {% endfor %}
+
+
                     </div>
 
                     <ul class="nav nav-tabs" role="tablist">
-                        {% for doing in person.nowdoing_with_latest %}
-                            <li role="presentation"
-                                    {% if doing.is_newest_update %} class="active" {% endif %}>
-                                <a href="#{{ person.name|slugify }}-{{ doing.doing_type }}"
-                                   aria-controls="{{ person.name|slugify }}-working"
+                        {% if person.email and not skip_email %}
+                            <li role="presentation" class="active">
+                                <a href="#{{ person.name|slugify }}-email"
+                                   aria-controls="{{ person.name|slugify }}-email"
                                    role="tab"
                                    data-toggle="tab">
-                                    <span class="icon-{{ doing.icon_name }}-circle" aria-hidden="true"></span>
-                                    <span class="sr-only">{{ doing.doing_type }}</span>
+                                    <span class="icon-mail-circle" aria-hidden="true"></span>
+                                    <span class="sr-only">Email</span>
                                 </a>
                             </li>
-                        {% endfor %}
-
+                        {% endif %}
                         {% if person.twitter %}
                             <li role="presentation"><a href="#{{ person.name|slugify }}-twitter"
                                                        aria-controls="{{ person.name|slugify }}-twitter" role="tab"
@@ -88,17 +84,18 @@
                                 <span class="sr-only">Home</span></a></li>
                         {% endif %}
 
-                        {% if person.email and not skip_email %}
+                        {% for doing in person.nowdoing_with_latest %}
                             <li role="presentation">
-                                <a href="#{{ person.name|slugify }}-email"
-                                   aria-controls="{{ person.name|slugify }}-email"
+                                <a href="#{{ person.name|slugify }}-{{ doing.doing_type }}"
+                                   aria-controls="{{ person.name|slugify }}-working"
                                    role="tab"
                                    data-toggle="tab">
-                                    <span class="icon-mail-circle" aria-hidden="true"></span>
-                                    <span class="sr-only">Email</span>
+                                    <span class="icon-{{ doing.icon_name }}-circle" aria-hidden="true"></span>
+                                    <span class="sr-only">{{ doing.doing_type }}</span>
                                 </a>
                             </li>
-                        {% endif %}
+                        {% endfor %}
+
 
                     </ul>
                 </div>
