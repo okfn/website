@@ -5,80 +5,91 @@
 {% block title %}{{ object.name }}{% endblock %}
 
 {% block pagebanner-inner %}
-<h2>{{ object.name }}</h2>
-<p>{{ object.description|markdown }}</p>
+    <h2>{{ object.name }}</h2>
+    <p>{{ object.description|markdown }}</p>
 {% endblock %}
 
 {% block custom_sidebar %}
     <h3>Connect</h3>
     <ul>
-      <li>
-        <i class="fa fa-globe fa-large"></i>
-        {% if object.region %}{{ object.region }}, {% endif %}{{ object.get_country_display }}
-      </li>
-      {% if object.region %}
-      <li>
-        <i class="fa fa-arrow-up fa-large"></i>
-        <a href="{% url "network-country" country=object.country_slug %}" alt="Group for {{ object.get_country_display }}">
-          Our country group
-        </a>
-      </li>
-      {% endif %}
-      {% if object.homepage_url %}
-      <li>
-        <i class="fa fa-link fa-large"></i>
-        <a href="{{ object.homepage_url }}">{{ object.homepage_url }}</a>
-      </li>
-      {% endif %}
-      {% if object.mailinglist_url %}
-      <li>
-        <i class="fa fa-envelope fa-large"></i>
-        <a href="{{ object.mailinglist_url }}">Mailing list</a>
-      </li>
-      {% endif %}
-      {% if object.twitter %}
-      <li>
-        <i class="fa fa-twitter fa-large"></i>
-        <a href="http://twitter.com/{{ object.twitter }}">
-          @{{ object.twitter }}
-        </a>
-      </li>
-      {% endif %}
-      {% if object.facebook_url %}
-      <li>
-        <i class="fa fa-facebook-square fa-large"></i>
-        <a href="{{ object.facebook_url }}">
-          Facebook page
-        </a>
-      </li>
-      {% endif %}
+        <li>
+            <i class="fa fa-globe fa-large"></i>
+            {% if object.region %}{{ object.region }}, {% endif %}{{ object.get_country_display }}
+        </li>
+        {% if object.region %}
+            <li>
+                <i class="fa fa-arrow-up fa-large"></i>
+                <a href="{% url "network-country" country=object.country_slug %}"
+                   alt="Group for {{ object.get_country_display }}">
+                    Our country group
+                </a>
+            </li>
+        {% endif %}
+        {% if object.homepage_url %}
+            <li>
+                <i class="fa fa-link fa-large"></i>
+                <a href="{{ object.homepage_url }}">{{ object.homepage_url }}</a>
+            </li>
+        {% endif %}
+        {% if object.mailinglist_url %}
+            <li>
+                <i class="fa fa-envelope fa-large"></i>
+                <a href="{{ object.mailinglist_url }}">Mailing list</a>
+            </li>
+        {% endif %}
+        {% if object.twitter %}
+            <li>
+                <i class="fa fa-twitter fa-large"></i>
+                <a href="http://twitter.com/{{ object.twitter }}">
+                    @{{ object.twitter }}
+                </a>
+            </li>
+        {% endif %}
+        {% if object.facebook_url %}
+            <li>
+                <i class="fa fa-facebook-square fa-large"></i>
+                <a href="{{ object.facebook_url }}">
+                    Facebook page
+                </a>
+            </li>
+        {% endif %}
+        {% if object.forum_group_url %}
+            <li>
+                <i class="fa fa-link fa-large"></i>
+                <a href="{{ object.forum_group_url }}">
+                    Forum Group
+                </a>
+            </li>
+        {% endif %}
     </ul>
     {% if regional_groups %}
-    <h3>Our Regional Groups</h3>
-    {% for group in regional_groups %}<ul>
-      <li><a href="{{ group.get_absolute_url }}">{{ group.name }}</a></li>
-    </ul>{% endfor %}
+        <h3>Our Regional Groups</h3>
+        {% for group in regional_groups %}
+            <ul>
+                <li><a href="{{ group.get_absolute_url }}">{{ group.name }}</a></li>
+            </ul>{% endfor %}
     {% endif %}
     {% if object.working_groups.all %}
-    <h3>Interest Areas</h3>
-    <p>
-      Members of this {{ object.get_group_type_display|lower }}
-      are active in the following Open Knowledge working group:
-    </p>
-    {% for group in object.working_groups.all %}<ul>
-      <li><a href="{{ group.homepage }}">{{ group.name }}</a></li>
-    </ul>{% endfor %}
+        <h3>Interest Areas</h3>
+        <p>
+            Members of this {{ object.get_group_type_display|lower }}
+            are active in the following Open Knowledge working group:
+        </p>
+        {% for group in object.working_groups.all %}
+            <ul>
+                <li><a href="{{ group.homepage }}">{{ group.name }}</a></li>
+            </ul>{% endfor %}
     {% endif %}
 {% endblock %}
 
 {% block main %}
     <h3>Core team</h3>
     {% for member in group_members %}
-      {% include "organisation/member.html" %}
+        {% include "organisation/member.html" %}
     {% endfor %}
 
     {% if object.extra_information %}
-    <h3>More information</h3>
-    {{ object.extra_information|markdown }}
+        <h3>More information</h3>
+        {{ object.extra_information|markdown }}
     {% endif %}
 {% endblock %}
