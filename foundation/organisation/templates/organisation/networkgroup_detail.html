@@ -13,12 +13,12 @@
     <h3>Connect</h3>
     <ul>
         <li>
-            <i class="fa fa-globe fa-large"></i>
+                <span class="icon-globe" aria-hidden="true"></span>
             {% if object.region %}{{ object.region }}, {% endif %}{{ object.get_country_display }}
         </li>
         {% if object.region %}
             <li>
-                <i class="fa fa-arrow-up fa-large"></i>
+                <span class="icon-arrow-up" aria-hidden="true"></span>
                 <a href="{% url "network-country" country=object.country_slug %}"
                    alt="Group for {{ object.get_country_display }}">
                     Our country group
@@ -27,19 +27,19 @@
         {% endif %}
         {% if object.homepage_url %}
             <li>
-                <i class="fa fa-link fa-large"></i>
+                <span class="icon-link" aria-hidden="true"></span>
                 <a href="{{ object.homepage_url }}">{{ object.homepage_url }}</a>
             </li>
         {% endif %}
         {% if object.mailinglist_url %}
             <li>
-                <i class="fa fa-envelope fa-large"></i>
+                <span class="icon-mail" aria-hidden="true"></span>
                 <a href="{{ object.mailinglist_url }}">Mailing list</a>
             </li>
         {% endif %}
         {% if object.twitter %}
             <li>
-                <i class="fa fa-twitter fa-large"></i>
+                <span class="icon-twitter2" aria-hidden="true"></span>
                 <a href="http://twitter.com/{{ object.twitter }}">
                     @{{ object.twitter }}
                 </a>
@@ -47,7 +47,7 @@
         {% endif %}
         {% if object.facebook_url %}
             <li>
-                <i class="fa fa-facebook-square fa-large"></i>
+                <span class="icon-facebook-square" aria-hidden="true"></span>
                 <a href="{{ object.facebook_url }}">
                     Facebook page
                 </a>
@@ -55,7 +55,7 @@
         {% endif %}
         {% if object.forum_group_url %}
             <li>
-                <i class="fa fa-comments fa-large"></i>
+                <span class="icon-comments"></span>
                 <a href="{{ object.forum_group_url }}">
                     Forum Group
                 </a>
