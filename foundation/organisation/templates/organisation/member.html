@@ -4,7 +4,7 @@
 
 {% with person=member.person %}
     <div class="row">
-        <div class="profile container">
+        <div class="profile col-md-12">
             <span class="image" style="background-image: url(
                     {{ person.gravatar_url }}{% if person.photo %}&default={{ person.photo.url }}{% endif %});"><img
                     src="{% static 'img/blank.png' %}" alt=""/></span>
