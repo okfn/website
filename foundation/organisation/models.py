@@ -22,7 +22,9 @@ class Person(models.Model):
     twitter = models.CharField(max_length=18, blank=True)
     url = models.URLField(blank=True)
 
-    NOWDOING_DEFAULT_ORDER = ('working', 'location', 'reading', 'listening', 'watching', 'eating')
+    NOWDOING_DEFAULT_ORDER = (
+        'working', 'location', 'reading', 'listening', 'watching', 'eating'
+    )
 
     def __unicode__(self):
         return self.name
@@ -50,7 +52,8 @@ class Person(models.Model):
         ordered_nowdoings = list()
         for doing_type in custom_order:
             if nowdoings.filter(doing_type=doing_type):
-                ordered_nowdoings.append(nowdoings.filter(doing_type=doing_type).first())
+                ordered_nowdoings.append(
+                    nowdoings.filter(doing_type=doing_type).first())
         return ordered_nowdoings
 
     @property
