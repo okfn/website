@@ -288,6 +288,8 @@ STATICFILES_DIRS = (
 
 AWS_S3_CUSTOM_DOMAIN = env.get('DJANGO_AWS_S3_CUSTOM_DOMAIN')
 
+CUSTOM_ASSETS_DOMAIN = env.get('DJANGO_CUSTOM_ASSETS_DOMAIN')
+
 if env.get('DJANGO_USE_AWS_STORAGE') == 'true':
     AWS_ACCESS_KEY_ID = env['AWS_ACCESS_KEY_ID']
     AWS_SECRET_ACCESS_KEY = env['AWS_SECRET_ACCESS_KEY']
@@ -363,6 +365,8 @@ if env.get('DJANGO_CSP_REPORT_URI') is not None:
         asset_hosts.append('https://%s' % AWS_S3_CUSTOM_DOMAIN)
     else:
         asset_hosts.append('https://s3.amazonaws.com')
+    if CUSTOM_ASSETS_DOMAIN:
+        asset_hosts.append('https://%s' % CUSTOM_ASSETS_DOMAIN)
 
     CSP_DEFAULT_SRC = ("'none'",)
 
@@ -375,11 +379,14 @@ if env.get('DJANGO_CSP_REPORT_URI') is not None:
                                    'https://use.typekit.net']
     CSP_IMG_SRC = asset_hosts + ["data:",
                                  'https://gravatar.com',
+                                 'https://1.gravatar.com',
+                                 'https://2.gravatar.com',
                                  'https://secure.gravatar.com',
                                  'https://p.typekit.net',
                                  'https://ping.typekit.net',
                                  'https://www.google-analytics.com']
     CSP_FONT_SRC = asset_hosts + ['data:',
+                                  'https://use.typekit.net',
                                   'https://themes.googleusercontent.com']
 
     CSP_REPORT_URI = env.get('DJANGO_CSP_REPORT_URI')
