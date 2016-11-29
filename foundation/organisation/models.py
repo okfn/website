@@ -22,6 +22,8 @@ class Person(models.Model):
     twitter = models.CharField(max_length=18, blank=True)
     url = models.URLField(blank=True)
 
+    NOWDOING_DEFAULT_ORDER = ('working', 'location', 'reading', 'listening', 'watching', 'eating')
+
     def __unicode__(self):
         return self.name
 
@@ -40,6 +42,16 @@ class Person(models.Model):
         if nowdoings:
             nowdoings[0].is_newest_update = True
         return nowdoings
+
+    @property
+    def nowdoing_by_custom_order(self, custom_order=None):
+        custom_order = custom_order or self.NOWDOING_DEFAULT_ORDER
+        nowdoings = self.nowdoing_with_latest
+        ordered_nowdoings = list()
+        for doing_type in custom_order:
+            if nowdoings.filter(doing_type=doing_type):
+                ordered_nowdoings.append(nowdoings.filter(doing_type=doing_type).first())
+        return ordered_nowdoings
 
     @property
     def has_anything_to_show(self):
@@ -62,7 +74,7 @@ class NowDoing(models.Model):
         ('location', 'location'),
         ('watching', 'watching'),
         ('eating', 'eating'),
-        )
+    )
     person = models.ForeignKey(Person)
     doing_type = models.CharField(
         max_length=10,
@@ -87,7 +99,7 @@ class NowDoing(models.Model):
             'location': 'Location',
             'watching': 'Watching',
             'eating': 'Eating'
-            }
+        }
         return matching.get(self.doing_type, self.doing_type)
 
     def __repr__(self):
@@ -224,7 +236,6 @@ class Theme(models.Model):
 
 
 class WorkingGroupManager(models.Manager):
-
     def active(self):
         return self.get_queryset().filter(incubation=False)
 
@@ -260,12 +271,11 @@ class WorkingGroup(models.Model):
 
 
 class NetworkGroupManager(models.Manager):
-
     def countries(self):
         return self.get_queryset().filter(region_slug='')
 
     def regions(self, country):
-        return self.get_queryset().exclude(region_slug='')\
+        return self.get_queryset().exclude(region_slug='') \
             .filter(country_slug=country)
 
 
@@ -347,7 +357,7 @@ class NetworkGroupMembership(models.Model):
     order = models.IntegerField(
         blank=True, null=True,
         help_text="The lower the number the higher on the"
-        " page this Person will be shown.")
+                  " page this Person will be shown.")
     networkgroup = models.ForeignKey('NetworkGroup')
     person = models.ForeignKey('Person')
 
