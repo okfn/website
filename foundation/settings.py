@@ -212,8 +212,9 @@ else:
     # django-heroku-memcacheify documentation for details)
     CACHES = memcacheify()
 
+db_config = dj_database_url.config(default='sqlite:///development.sqlite3')
 DATABASES = {
-    'default': dj_database_url.config(default='sqlite:///development.sqlite3')
+    'default': db_config
 }
 
 if not DEBUG:
@@ -331,6 +332,7 @@ COUNTRIES_OVERRIDE = {
     'TW': _('Taiwan'),
     'IR': _('Iran'),
     'KR': _('South Korea'),
+    'AB': _('Scotland'),
 }
 
 LOGIN_REDIRECT_URL = 'pages-root'

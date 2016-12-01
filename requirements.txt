@@ -11,7 +11,7 @@ django-classy-tags==0.7.2
 django-cms==3.3.0
 django-compressor==2.0
 django-csp==2.0.3
-django-countries==3.4.1
+django-countries==4.0
 django-geoposition==0.2.2
 django-haystack==2.4.1
 django-heroku-memcacheify==1.0.0
