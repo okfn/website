@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="no"?>
+  
+<!-- Flag of Scotland
+     This is the blue saltire (St. Andrew's Cross) that once served
+     as the national flag of Scotland.-->
+
+<!-- The flag proportion is 3:5 -->
+
+<!-- There seems to be some controversy as to an acceptable background color;
+     the following are known to be used:
+     rgbhex  red grn blu  name/source
+     0072C6    0 114 196  PANTONE Matching System, Swatch 300 (PMS 300)
+     085A9C    8  90 156  World Flag Database
+     2DAEFF   45 174 255  Image on Wikipedia
+-->
+ 
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 50 30">
+
+<clipPath id="a">
+	<rect width="50" height="30" />
+</clipPath>
+
+<g clip-path="#a">
+	<rect width="50" height="30" fill="#2DAEFF" />
+	<path d="M 0,0 L 50,30 M 0,30 L 50,0" fill="none" stroke="white" stroke-width="6"/>
+</g>
+</svg>
