@@ -47,3 +47,13 @@ will work. These will be documented in due course.
                   ...
     git push heroku master
     heroku run python manage.py migrate
+
+## Notes
+
+### Using a local PostgreSQL database
+
+1. Get a dump of the database
+2. Create a local database `createdb okfn`
+3. Populate it `psql okfn --file=/path/to/dump.sq`
+
+Then to run the app use `export DATABASE_URL=postgres://{USER}@localhost/okfn && honcho -f Procfile.dev start`
