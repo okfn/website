@@ -1,0 +1,19 @@
+{% load markdown_deux_tags %}
+<article class="article-list-item">
+  <div class="inner">
+    {% if instance.image %}
+    <a class="image"{% if instance.call_to_action_url %} href="{{ instance.call_to_action_url }}"{% endif %}>
+      <img src="{{ instance.image.url }}" alt="" />
+    </a>
+    {% endif %}
+    <h1>{{ instance.title }}</h1>
+    {% if instance.description %}
+    <div class="description">
+      {{ instance.description|markdown }}
+    </div>
+    {% endif %}
+    {% if instance.call_to_action_text %}
+    <a class="more btn"{% if instance.call_to_action_url %} href="{{ instance.call_to_action_url }}"{% endif %}>{{ instance.call_to_action_text }}</a>
+    {% endif %}
+  </div>
+</article>

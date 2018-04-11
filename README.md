@@ -54,6 +54,6 @@ will work. These will be documented in due course.
 
 1. Get a dump of the database
 2. Create a local database `createdb okfn`
-3. Populate it `psql okfn --file=/path/to/dump.sq`
+3. Populate it `psql okfn --file=/path/to/dump.sq` or `pg_restore -d okfn path/to/dump.dump`
 
 Then to run the app use `export DATABASE_URL=postgres://{USER}@localhost/okfn && honcho -f Procfile.dev start`

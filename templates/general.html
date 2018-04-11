@@ -10,8 +10,9 @@
 
 {% block head-css %}
     {% compress css %}
-        <link type="text/sass" rel="stylesheet" href="{{ STATIC_URL }}scss/style.scss" charset="utf-8">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
         <link rel="stylesheet" href="{{ STATIC_URL }}vendor/jQuery.mmenu/dist/css/jquery.mmenu.all.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/simpletextrotator.css">
     {% endcompress %}
     <script src="https://use.typekit.net/sew1dft.js"></script>
     <script>try {
@@ -28,45 +29,46 @@
 {% block body-sheath %}
     <div id="page">
         <header class="site-header">
-            <div class="container">
-                <h1 class="brand">
-                    <a href="/">
-                        <img src="https://a.okfn.org/img/oki/standard-white-334x344.png"
-                             alt="Open Knowledge International">
+            <div class="header">
+                <div class="container">
+                    <h1 class="brand">
+                        <a href="/">
+                          {% include 'includes/logo.svg' %}
+                        </a>
+                    </h1>
+
+                    <a href="#mmenu" class="show-menu">
+                        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                        <span class="sr-only">Open the menu</span>
                     </a>
-                </h1>
 
-                <a href="#mmenu" class="show-menu">
-                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-                    <span class="sr-only">Open the menu</span>
-                </a>
+                    <nav>
+                        <ul class="secondary nav">
+                            {% include 'includes/nav_secondary.html' %}
+                        </ul>
+                        <ul class="primary nav">
+                            {% show_menu_below_id "home" 0 1 1 100 "menu/menu.html" %}
+                            <li class="search">
+                                <label for="search">
+                                    <span class="icon-search" aria-hidden="true" id="display-search-bar"></span>
+                                    <span class="sr-only">Search</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
 
-                <nav>
-                    <ul class="secondary nav">
-                        {% include 'includes/nav_secondary.html' %}
-                    </ul>
-                    <ul class="primary nav">
-                        {% show_menu_below_id "home" 0 1 1 100 "menu/menu.html" %}
-                        <li>
-                            <label for="search">
-                                <span class="icon-search" aria-hidden="true" id="display-search-bar"></span>
-                                <span class="sr-only">Search</span>
-                            </label>
-                        </li>
-                    </ul>
-                </nav>
+                <div class="search-bar" id="main-search-bar">
+                    {% include 'includes/search.html' %}
+                </div>
             </div>
 
-            <div class="search-bar" id="main-search-bar">
-                {% include 'includes/search.html' %}
-            </div>
+            {% block pagebanner %}{% endblock %}
         </header>
 
-        {% block pagebanner %}{% endblock %}
-
-        <section class='{% block main-class %}{% endblock %} main container'>
+        <main class='{% block main-class %}container {% endblock %}main'>
             {% block body %}{% endblock %}
-        </section>
+        </main>
 
         <footer class="site-footer">
             <div class='container'>
@@ -128,6 +130,7 @@
                 charset="utf-8"></script>
         <script type="text/javascript" src="{{ STATIC_URL }}vendor/letteringjs/jquery.lettering.js"
                 charset="utf-8"></script>
+        {% block template-scripts %}{% endblock template-scripts %}
         <script>
             $(function () {
                 // show / hide search bar
@@ -218,6 +221,8 @@
                     window.open(this.href);
                     return false;
                 });
+
+                {% block template-js %}{% endblock template-js %}
             });
         </script>
 

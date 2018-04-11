@@ -27,6 +27,15 @@
     @include icon-font();
 }
 
+.icon-arrow-right:before {
+  content: "\e919";
+}
+.icon-arrow-left:before {
+  content: "\e91a";
+}
+.icon-close:before {
+  content: "\e900";
+}
 .icon-mail:before {
   content: "\e911";
 }
@@ -59,9 +68,6 @@
 }
 .icon-twitter2:before {
   content: "\e902";
-}
-.icon-close:before {
-  content: "\e900";
 }
 .icon-search:before {
   content: "\e901";
@@ -105,4 +111,3 @@
 .icon-facebook:before {
   content: "\e904";
 }
-

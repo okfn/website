@@ -127,6 +127,7 @@ INSTALLED_APPS = (
     'treebeard',
     'menus',
     'sekizai',
+    'aldryn_quote',
 
     # Custom apps
     'foundation.blogfeed',
@@ -136,6 +137,7 @@ INSTALLED_APPS = (
     'foundation.organisation',
     'foundation.redirector',  # Provides CSV importer command for redirects
     'foundation.search',
+    'article_list_item'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -430,7 +432,8 @@ CMS_TEMPLATES = (
     ('cms_twocolumn.html', 'Two columns'),
     ('cms_threecolumn.html', 'Three columns'),
     ('cms_homepage.html', 'Homepage'),
-    ('cms_resources.html', 'Brand resources')
+    ('cms_resources.html', 'Brand resources'),
+    ('cms_services.html', 'Tools and services')
 )
 
 CMS_PLACEHOLDER_CONF = {
