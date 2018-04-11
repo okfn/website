@@ -37,5 +37,5 @@ $("#services .component-nav .prev").on('click', function () {
 $('.testimonials.owl-carousel').owlCarousel({
   loop: true,
   items: 1,
-  //autoplay: true
+  autoplay: true
 })
