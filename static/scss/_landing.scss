@@ -77,6 +77,13 @@
 
     background-color: $header-bg;
 
+    @media (min-width: $screen-sm-min) {
+      background-image: url(../img/services-bg.svg);
+      background-repeat: no-repeat;
+      background-position: center right;
+      background-size: auto 100%;
+    }
+
     @media (max-height: 768px) {
       display: flex;
       flex-direction: column;
@@ -144,7 +151,7 @@
           margin-right: 1em;
 
           &:first-child {
-            @include button-variant(#fff, $gray-base, $gray-base);
+            @include button-variant(#fff, $brand-commercial, $brand-commercial);
           }
         }
       }
@@ -183,8 +190,18 @@
     border-bottom: solid 4px $gray-lighter;
     padding-top: 50px;
 
+    h2, h3 {
+      color: $brand-primary
+    }
+
     &:first-child {
       padding-top: 0;
+
+      .intro {
+        h2, h3 {
+          color: $brand-commercial;
+        }
+      }
     }
 
     .intro {
@@ -281,7 +298,7 @@
         }
 
         .more {
-          @include button-variant(#fff, $brand-primary, $brand-primary);
+          @include button-variant(#fff, $brand-commercial, $brand-commercial);
           margin-top: $padding-base-vertical;
         }
       }
@@ -361,7 +378,7 @@
   }
 
   .secondary-section {
-    $aside-colour: $brand-primary;
+    $aside-colour: $brand-commercial;
     position: relative;
     z-index: 1;
 
@@ -409,6 +426,20 @@
       background-color: rgba($aside-colour,0.1);
       color: $aside-colour;
       padding: $grid-gutter-width;
+
+      .owl-dots {
+        .owl-dot {
+          span {
+            background: rgba($aside-colour,0.25);
+          }
+          &.active,
+          &:hover {
+            span {
+              background: $aside-colour;
+            }
+          }
+        }
+      }
 
       @media (min-width: $screen-md-min) {
         background-color: rgba($aside-colour,0);
@@ -508,7 +539,7 @@
     }
 
     a {
-      @include button-variant(#fff, $gray-base, $gray-base);
+      @include button-variant(#fff, $brand-commercial, $brand-commercial);
     }
 
     .container {
