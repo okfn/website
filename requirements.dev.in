@@ -1,5 +1,13 @@
 -r requirements.in
+
+WebOb
+WebTest
+beautifulsoup4
 django-webtest
-webtest
 flake8
+mccabe
 pep8-naming
+pep8
+pyflakes
+waitress
+mock
