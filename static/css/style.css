@@ -7149,6 +7149,13 @@ html {
         padding-bottom: 80px; }
         .landing.page-template .site-header .banner h2, .landing.page-template .site-header .banner h1 {
           font-size: 94px; } }
+  .landing.page-template .site-header .search-bar {
+    background-color: #333;
+    color: #fff; }
+    .landing.page-template .site-header .search-bar .container .input input[type="text"] {
+      border-bottom-color: #fff; }
+    .landing.page-template .site-header .search-bar .container .buttons button.cancel {
+      box-shadow: inset 0px 0px 0px 2px #fff; }
 
 .landing.page-template .main {
   margin-bottom: 0; }
