@@ -1,6 +1,7 @@
 // Colours
 
 $green: #61BC30;
+$green-dark: #56A329;
 $red: #DA2E29;
 $blue: #29A5DA;
 $purple: #9F42D0;
@@ -13,6 +14,8 @@ $brand-info: $blue; //BS
 $brand-danger: $red; //BS
 $text-color: $gray-base; //BS
 $brand-commercial: $purple;
+$brand-primary-text: $green-dark;
+$link-color: $brand-primary-text; //BS
 
 // Typography
 

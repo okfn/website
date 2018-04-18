@@ -45,7 +45,7 @@
 }
 
 @mixin banner-button {
-  @include button-variant($brand-primary, #fff, #fff);
+  @include button-variant($brand-primary-text, #fff, #fff);
 
   @media (min-width: $screen-md-min) {
     @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-large);

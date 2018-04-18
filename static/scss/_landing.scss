@@ -104,8 +104,7 @@
     }
 
     nav {
-      & > .primary > li > a:not(:hover),
-      .secondary a {
+      & > .primary > li > a:not(:hover) {
         color: $header-col;
       }
 
@@ -117,7 +116,7 @@
 
           &.active > a {
             background-color: $header-col;
-            color: $header-bg;
+            color: $brand-primary-text;
           }
 
           &.has-children {
@@ -129,7 +128,7 @@
 
         label[for="search"] {
           background-color: $header-col;
-          color: $header-bg;
+          color: $brand-primary-text;
         }
       }
     }
@@ -172,6 +171,26 @@
 
         h2, h1 {
           font-size: 94px;
+        }
+      }
+    }
+
+    .search-bar {
+      background-color: $gray-base;
+      color: #fff;
+
+      .container {
+        .input {
+          input[type="text"] {
+            border-bottom-color: #fff;
+          }
+        }
+        .buttons {
+          button {
+            &.cancel {
+              box-shadow: inset 0px 0px 0px 2px #fff;
+            }
+          }
         }
       }
     }
@@ -466,6 +485,11 @@
 
         @media (min-width: $screen-md-min) {
           padding-left: $grid-gutter-width;
+          width: (($container-md - $grid-gutter-width) / 2) - $grid-gutter-width; // nasty explicit width for IE
+        }
+
+        @media (min-width: $screen-lg-min) {
+          width: (($container-lg - $grid-gutter-width) / 2) - $grid-gutter-width; // nasty explicit width for IE
         }
 
         q {
