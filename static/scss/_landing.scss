@@ -485,6 +485,11 @@
 
         @media (min-width: $screen-md-min) {
           padding-left: $grid-gutter-width;
+          width: (($container-md - $grid-gutter-width) / 2) - $grid-gutter-width; // nasty explicit width for IE
+        }
+
+        @media (min-width: $screen-lg-min) {
+          width: (($container-lg - $grid-gutter-width) / 2) - $grid-gutter-width; // nasty explicit width for IE
         }
 
         q {

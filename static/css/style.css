@@ -7369,7 +7369,11 @@ html {
       margin: 0; }
       @media (min-width: 992px) {
         .landing.page-template .secondary-section .testimonials blockquote {
-          padding-left: 30px; } }
+          padding-left: 30px;
+          width: 440px; } }
+      @media (min-width: 1200px) {
+        .landing.page-template .secondary-section .testimonials blockquote {
+          width: 540px; } }
       .landing.page-template .secondary-section .testimonials blockquote q {
         font-style: italic;
         position: relative; }
