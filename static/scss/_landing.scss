@@ -104,8 +104,7 @@
     }
 
     nav {
-      & > .primary > li > a:not(:hover),
-      .secondary a {
+      & > .primary > li > a:not(:hover) {
         color: $header-col;
       }
 
@@ -117,7 +116,7 @@
 
           &.active > a {
             background-color: $header-col;
-            color: $header-bg;
+            color: $brand-primary-text;
           }
 
           &.has-children {
@@ -129,7 +128,7 @@
 
         label[for="search"] {
           background-color: $header-col;
-          color: $header-bg;
+          color: $brand-primary-text;
         }
       }
     }
