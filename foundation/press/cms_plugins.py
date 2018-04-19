@@ -22,6 +22,7 @@ class RecentPressReleasesPlugin(CMSPluginBase):
             }
         return context
 
+
 plugin_pool.register_plugin(RecentPressReleasesPlugin)
 
 
@@ -39,6 +40,7 @@ class RecentPressMentionsPlugin(CMSPluginBase):
             'objects': PressMention.published_objects.all()[:5]
             }
         return context
+
 
 plugin_pool.register_plugin(RecentPressMentionsPlugin)
 

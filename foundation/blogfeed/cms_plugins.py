@@ -23,4 +23,5 @@ class FeedDisplayPlugin(CMSPluginBase):
         context['entries'] = self._get_three_articles()
         return context
 
+
 plugin_pool.register_plugin(FeedDisplayPlugin)

@@ -24,6 +24,7 @@ class ProjectMenu(CMSAttachMenu):
         nodes = [current_projects, old_projects]
         return nodes
 
+
 menu_pool.register_menu(ProjectMenu)
 
 
@@ -41,5 +42,6 @@ class ThemeMenu(CMSAttachMenu):
                 )
             nodes.append(node)
         return nodes
+
 
 menu_pool.register_menu(ThemeMenu)

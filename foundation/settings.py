@@ -43,6 +43,7 @@ def _parse_email_list(varname):
                 people.append(res)
     return tuple(people)
 
+
 # The people that get emailed when shit breaks (500)
 ADMINS = _parse_email_list('DJANGO_ADMINS')
 
@@ -127,7 +128,7 @@ INSTALLED_APPS = (
     'treebeard',
     'menus',
     'sekizai',
-    #'aldryn_quote',
+    # 'aldryn_quote',
 
     # Custom apps
     'foundation.blogfeed',

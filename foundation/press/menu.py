@@ -20,6 +20,7 @@ class PressReleaseMenu(CMSAttachMenu):
             nodes.append(node)
         return nodes
 
+
 menu_pool.register_menu(PressReleaseMenu)
 
 
@@ -37,5 +38,6 @@ class PressMentionMenu(CMSAttachMenu):
             )
             nodes.append(node)
         return nodes
+
 
 menu_pool.register_menu(PressMentionMenu)

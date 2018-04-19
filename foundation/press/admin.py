@@ -14,11 +14,13 @@ class PressReleaseAdmin(reversion.admin.VersionAdmin):
     list_display = ('title', 'release_date')
     prepopulated_fields = {"slug": ("title",)}
 
+
 admin.site.register(PressRelease, PressReleaseAdmin)
 
 
 class PressMentionAdmin(reversion.admin.VersionAdmin):
     list_display = ('title', 'publisher', 'url')
     prepopulated_fields = {"slug": ("title",)}
+
 
 admin.site.register(PressMention, PressMentionAdmin)
