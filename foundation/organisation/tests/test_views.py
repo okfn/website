@@ -109,7 +109,7 @@ class UnitListViewTest(WebTest):
         raphael = response.body.find(self.raphael.name)
         rocksteady = response.body.find(self.rocksteady.name)
         self.assertTrue(footclan < rocksteady < turtles)
-        self.assertTrue(turtles < leonardo < donatello < raphael)
+        self.assertTrue(turtles < donatello < raphael < leonardo)
 
     def test_description_in_response(self):
         response = self.app.get(reverse('units'))
@@ -169,7 +169,7 @@ class UnitListViewTest(WebTest):
         turtles = response.body.find(self.turtles.name)
         footclan = response.body.find(self.footclan.name)
 
-        self.assertTrue(masters < footclan < turtles)
+        self.assertTrue(footclan < turtles < masters)
 
 
 @override_settings(ROOT_URLCONF='foundation.tests.urls')
