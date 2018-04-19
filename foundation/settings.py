@@ -127,7 +127,7 @@ INSTALLED_APPS = (
     'treebeard',
     'menus',
     'sekizai',
-    'aldryn_quote',
+    #'aldryn_quote',
 
     # Custom apps
     'foundation.blogfeed',
