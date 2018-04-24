@@ -1,0 +1,29 @@
+{% extends "cms_default.html" %}
+{% load cms_tags %}
+{% block body-class %}article-template{% endblock %}
+{% block pagebanner %}
+<div class='banner'>
+  <div class='container'>
+    {% block pagebanner-inner %}
+      {% placeholder "headline" inherit or %}<h2>{% page_attribute "page_title" %}</h2>{% endplaceholder %}
+      {% placeholder "blurb" inherit %}
+    {% endblock %}
+  </div>
+</div>
+{% endblock %}
+{% block body %}
+<div>
+  <aside>
+    <nav id="side-nav">
+      {% include 'includes/sidebar.html' %}
+    </nav>
+    <div>
+      {% static_placeholder "sitewide sidebar" %}
+      {% placeholder "sidebar" inherit %}
+    </div>
+  </aside>
+  <article>
+    {% placeholder "main" %}
+  </article>
+</div>
+{% endblock %}

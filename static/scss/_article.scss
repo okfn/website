@@ -1,0 +1,48 @@
+.article-template {
+  article {
+    h1 {
+      font-weight: bold;
+
+      @media (min-width: $screen-md-min) {
+        font-size: 54px;
+      }
+
+      & + p {
+        font-size: 1.25em;
+        margin-bottom: 2em;
+      }
+    }
+
+    .plugin_picture {
+      display: block;
+
+      &.align-left,
+      &.align-right {
+        background-color: #fff000;
+        border-radius: 50%;
+        overflow: hidden;
+        border: solid 8px $brand-primary;
+        margin-top: $grid-gutter-width;
+        margin-bottom: $grid-gutter-width;
+        width: 330px;
+        height: 330px;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      @media (min-width: $screen-sm-min) {
+        &.align-left {
+          float: left;
+          margin-right: $grid-gutter-width;
+        }
+
+        &.align-right {
+          float: right;
+          margin-left: $grid-gutter-width;
+        }
+      }
+    }
+  }
+}

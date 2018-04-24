@@ -1,0 +1,178 @@
+[class$="-template"].services {
+
+  .site-header {
+    $header-bg: $brand-primary;
+    $header-col: #fff;
+
+    background-color: $header-bg;
+
+    @media (min-width: $screen-sm-min) {
+      background-image: url(../img/services-bg.svg);
+      background-repeat: no-repeat;
+      background-position: top right;
+      background-size: auto 800px;
+    }
+
+    .brand {
+      .a,
+      .b {
+        fill: $header-col;
+      }
+    }
+
+    nav {
+      & > .primary > li > a:not(:hover) {
+        color: $header-col;
+      }
+
+      .primary {
+        & > li {
+          &:not(.search) {
+            border-color: rgba($header-bg,0);
+          }
+
+          &.active > a {
+            background-color: $header-col;
+            color: $brand-primary-text;
+          }
+
+          &.has-children {
+            &:hover {
+              border-color: $gray-lighter;
+
+              & > a {
+                color: $text-color;
+              }
+            }
+          }
+        }
+
+        label[for="search"] {
+          background-color: $header-col;
+          color: $brand-primary-text;
+        }
+      }
+    }
+
+    .show-menu {
+      color: $header-col;
+    }
+
+    .banner {
+      background-color: rgba($header-bg,0);
+
+      .cta {
+        a {
+          &:first-child {
+            @include button-variant(#fff, $brand-commercial, $brand-commercial);
+          }
+        }
+      }
+    }
+
+    .search-bar {
+      background-color: $gray-base;
+      color: #fff;
+
+      .container {
+        .input {
+          input[type="text"] {
+            border-bottom-color: #fff;
+          }
+        }
+        .buttons {
+          button {
+            &.cancel {
+              box-shadow: inset 0px 0px 0px 2px #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.landing {
+
+    .primary-section {
+      &:first-child {
+
+        .intro {
+          h2, h3 {
+            color: $brand-commercial;
+          }
+        }
+      }
+    }
+
+    .features {
+      padding-top: $grid-gutter-width;
+      padding-bottom: $grid-gutter-width;
+
+      @media (min-width: $screen-md-min) {
+        display: flex;
+        justify-content: space-between;
+        margin-left: -$grid-gutter-width/2;
+        margin-right: -$grid-gutter-width/2;
+      }
+
+      .article-list-item {
+        .more {
+          @include button-variant(#fff, $brand-commercial, $brand-commercial);
+        }
+      }
+    }
+
+    .secondary-section {
+      $aside-colour: $brand-commercial;
+
+      @media (min-width: $screen-md-min) {
+        &::before {
+          background-color: rgba($aside-colour,0.1);
+        }
+      }
+
+      .testimonials {
+        background-color: rgba($aside-colour,0.1);
+        color: $aside-colour;
+
+        @media (min-width: $screen-md-min) {
+          background-color: rgba($aside-colour,0);
+        }
+
+        .owl-dots {
+          .owl-dot {
+            span {
+              background: rgba($aside-colour,0.25);
+            }
+            &.active,
+            &:hover {
+              span {
+                background: $aside-colour;
+              }
+            }
+          }
+        }
+
+        blockquote {
+          footer {
+            color: $aside-colour;
+          }
+        }
+      }
+    }
+
+    section.cta {
+      a {
+        @include button-variant(#fff,$brand-commercial, $brand-commercial);
+      }
+    }
+  }
+}
+
+.services.article-template {
+  article {
+    .plugin_picture {
+      border-color: $brand-commercial;
+    }
+  }
+}

@@ -72,18 +72,6 @@
   }
 
   .site-header {
-    $header-bg: $brand-primary;
-    $header-col: #fff;
-
-    background-color: $header-bg;
-
-    @media (min-width: $screen-sm-min) {
-      background-image: url(../img/services-bg.svg);
-      background-repeat: no-repeat;
-      background-position: center right;
-      background-size: auto 100%;
-    }
-
     @media (max-height: 768px) {
       display: flex;
       flex-direction: column;
@@ -96,49 +84,7 @@
       }
     }
 
-    .brand {
-      .a,
-      .b {
-        fill: $header-col;
-      }
-    }
-
-    nav {
-      & > .primary > li > a:not(:hover) {
-        color: $header-col;
-      }
-
-      .primary {
-        & > li {
-          &:not(.search) {
-            border-color: $header-bg;
-          }
-
-          &.active > a {
-            background-color: $header-col;
-            color: $brand-primary-text;
-          }
-
-          &.has-children {
-            &:hover {
-              border-color: $gray-lighter;
-            }
-          }
-        }
-
-        label[for="search"] {
-          background-color: $header-col;
-          color: $brand-primary-text;
-        }
-      }
-    }
-
-    .show-menu {
-      color: $header-col;
-    }
-
     .banner {
-      background-color: rgba($header-bg,0);
 
       .rotate {
         text-transform: capitalize;
@@ -150,7 +96,7 @@
           margin-right: 1em;
 
           &:first-child {
-            @include button-variant(#fff, $brand-commercial, $brand-commercial);
+            @include button-variant(#fff, $gray-base, $gray-base);
           }
         }
       }
@@ -174,26 +120,6 @@
         }
       }
     }
-
-    .search-bar {
-      background-color: $gray-base;
-      color: #fff;
-
-      .container {
-        .input {
-          input[type="text"] {
-            border-bottom-color: #fff;
-          }
-        }
-        .buttons {
-          button {
-            &.cancel {
-              box-shadow: inset 0px 0px 0px 2px #fff;
-            }
-          }
-        }
-      }
-    }
   }
 
   .main {
@@ -210,17 +136,11 @@
     padding-top: 50px;
 
     h2, h3 {
-      color: $brand-primary
+      color: $brand-primary;
     }
 
     &:first-child {
       padding-top: 0;
-
-      .intro {
-        h2, h3 {
-          color: $brand-commercial;
-        }
-      }
     }
 
     .intro {
@@ -317,7 +237,7 @@
         }
 
         .more {
-          @include button-variant(#fff, $brand-commercial, $brand-commercial);
+          @include button-variant(#fff, $brand-primary, $brand-primary);
           margin-top: $padding-base-vertical;
         }
       }
@@ -397,7 +317,7 @@
   }
 
   .secondary-section {
-    $aside-colour: $brand-commercial;
+    $aside-colour: $brand-primary;
     position: relative;
     z-index: 1;
 
@@ -563,7 +483,7 @@
     }
 
     a {
-      @include button-variant(#fff, $brand-commercial, $brand-commercial);
+      @include button-variant(#fff,$gray-base, $gray-base);
     }
 
     .container {
