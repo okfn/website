@@ -1,7 +1,7 @@
 # Pinned requirements
 Django==1.8.12
 Pillow==3.2.0
-git+git://github.com/aldryn/aldryn-quote
+git+git://github.com/philipp-x/aldryn-quote
 aldryn-search==0.2.12
 git+git://github.com/aldryn/aldryn-video
 boto==2.39.0
