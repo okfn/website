@@ -1,0 +1,32 @@
+{% extends "cms_default.html" %}
+{% load cms_tags %}
+
+{% block body-class %}contact-template{% endblock %}
+
+{% block body %}
+
+<div>
+  <ul class="tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">General enquiries</a></li>
+    <li role="presentation"><a href="#service" aria-controls="service" role="tab" data-toggle="tab">Service enquiries</a></li>
+    <li role="presentation"><a href="#press" aria-controls="press" role="tab" data-toggle="tab">Press enquiries</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="general">
+      {% placeholder "main" %}
+    </div>
+    <div role="tabpanel" class="tab-pane" id="service">
+      {% placeholder "service" %}
+
+      [services form here]
+    </div>
+    <div role="tabpanel" class="tab-pane" id="press">
+      {% placeholder "press" %}
+
+      [press form here]
+    </div>
+  </div>
+</div>
+
+{% endblock %}

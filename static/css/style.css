@@ -7004,6 +7004,56 @@ html {
 .article-list:not(:first-child) {
   margin-top: 30px; }
 
+.tabs {
+  padding: 0;
+  margin: 0; }
+  @media (min-width: 768px) {
+    .tabs {
+      display: flex; } }
+  .tabs li {
+    display: block;
+    flex-grow: 1;
+    flex-basis: 0;
+    border: solid 4px #f0f0f0;
+    border-radius: 1px;
+    margin: 15px;
+    text-align: center;
+    position: relative; }
+    .tabs li a {
+      color: #333;
+      display: block;
+      padding: 30px 15px; }
+      @media (min-width: 1200px) {
+        .tabs li a {
+          padding-top: 60px;
+          padding-bottom: 60px;
+          font-size: 24px; } }
+    .tabs li.active {
+      background-color: #61BC30;
+      border-color: #61BC30; }
+      .tabs li.active a {
+        color: #fff; }
+      @media (min-width: 768px) {
+        .tabs li.active:before {
+          content: '';
+          display: block;
+          width: 20%;
+          padding-top: 20%;
+          background-color: #61BC30;
+          position: absolute;
+          border-radius: 1px;
+          z-index: -1;
+          bottom: -10%;
+          -webkit-transform: rotate(45deg);
+                  transform: rotate(45deg);
+          left: 50%;
+          margin-left: -10%; } }
+  .tabs + .tab-content {
+    padding: 15px; }
+    @media (min-width: 1200px) {
+      .tabs + .tab-content {
+        padding-top: 30px; } }
+
 .prev-next {
   padding: 0;
   margin: 0;

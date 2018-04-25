@@ -438,7 +438,8 @@ CMS_TEMPLATES = (
     ('cms_article.html', 'Article'),
     ('cms_services_article.html', 'Services article'),
     ('cms_childlist.html', 'Child list'),
-    ('cms_services_childlist.html', 'Services child list')
+    ('cms_services_childlist.html', 'Services child list'),
+    ('cms_contact.html', 'Contact')
 )
 
 CMS_PLACEHOLDER_CONF = {
