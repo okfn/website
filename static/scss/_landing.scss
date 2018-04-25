@@ -60,17 +60,6 @@
 
 .landing.page-template {
 
-  .cta {
-    a {
-      @include btn;
-      @include banner-button;
-
-      @media (min-width: $screen-lg-min) {
-        padding: 0.75em 1.75em;
-      }
-    }
-  }
-
   .site-header {
     @media (max-height: 768px) {
       display: flex;
@@ -464,35 +453,47 @@
       height: 74px;
     }
   }
+}
 
-  section.cta {
-    background-color: $brand-primary;
-    color: #fff;
-    padding-top: $grid-gutter-width;
-    padding-bottom: $grid-gutter-width;
+.landing.page-template .cta,
+section.cta {
+  a {
+    @include btn;
+    @include banner-button;
 
-    p {
-      opacity: 1;
-      margin: 0;
-      @media (min-width: $screen-sm-min) {
-        font-size: 22px;
-      }
-      @media (min-width: $screen-md-min) {
-        font-size: 30px;
-      }
+    @media (min-width: $screen-lg-min) {
+      padding: 0.75em 1.75em;
     }
+  }
+}
 
-    a {
-      @include button-variant(#fff,$gray-base, $gray-base);
+section.cta {
+  background-color: $brand-primary;
+  color: #fff;
+  padding-top: $grid-gutter-width;
+  padding-bottom: $grid-gutter-width;
+
+  p {
+    opacity: 1;
+    margin: 0;
+    @media (min-width: $screen-sm-min) {
+      font-size: 22px;
     }
+    @media (min-width: $screen-md-min) {
+      font-size: 30px;
+    }
+  }
 
-    .container {
-      display: flex;
-      align-items: center;
+  a {
+    @include button-variant(#fff,$gray-base, $gray-base);
+  }
 
-      :first-child {
-        flex-grow: 1;
-      }
+  .container {
+    display: flex;
+    align-items: center;
+
+    :first-child {
+      flex-grow: 1;
     }
   }
 }

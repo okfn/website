@@ -6981,86 +6981,6 @@ html {
     .owl-dots .owl-dot.active span, .owl-dots .owl-dot:hover span {
       background: #61BC30; }
 
-.landing.page-template .cta a {
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: normal;
-  text-align: center;
-  vertical-align: middle;
-  touch-action: manipulation;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 6px 12px;
-  font-size: 16px;
-  line-height: 1.428571429;
-  border-radius: 2px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  color: #56A329;
-  background-color: #fff;
-  border-color: #fff; }
-  .landing.page-template .cta a:focus, .landing.page-template .cta a.focus, .landing.page-template .cta a:active:focus, .landing.page-template .cta a:active.focus, .landing.page-template .cta a.active:focus, .landing.page-template .cta a.active.focus {
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px; }
-  .landing.page-template .cta a:hover, .landing.page-template .cta a:focus, .landing.page-template .cta a.focus {
-    color: #333;
-    text-decoration: none; }
-  .landing.page-template .cta a:active, .landing.page-template .cta a.active {
-    outline: 0;
-    background-image: none;
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
-  .landing.page-template .cta a.disabled, .landing.page-template .cta a[disabled],
-  fieldset[disabled] .landing.page-template .cta a {
-    cursor: not-allowed;
-    opacity: 0.65;
-    filter: alpha(opacity=65);
-    box-shadow: none; }
-  .landing.page-template .cta a:focus, .landing.page-template .cta a.focus {
-    color: #56A329;
-    background-color: #e6e5e5;
-    border-color: #bfbfbf; }
-  .landing.page-template .cta a:hover {
-    color: #56A329;
-    background-color: #e6e5e5;
-    border-color: #e0e0e0; }
-  .landing.page-template .cta a:active, .landing.page-template .cta a.active,
-  .open > .landing.page-template .cta a.dropdown-toggle {
-    color: #56A329;
-    background-color: #e6e5e5;
-    border-color: #e0e0e0; }
-    .landing.page-template .cta a:active:hover, .landing.page-template .cta a:active:focus, .landing.page-template .cta a:active.focus, .landing.page-template .cta a.active:hover, .landing.page-template .cta a.active:focus, .landing.page-template .cta a.active.focus,
-    .open > .landing.page-template .cta a.dropdown-toggle:hover,
-    .open > .landing.page-template .cta a.dropdown-toggle:focus,
-    .open > .landing.page-template .cta a.dropdown-toggle.focus {
-      color: #56A329;
-      background-color: #d4d4d4;
-      border-color: #bfbfbf; }
-  .landing.page-template .cta a:active, .landing.page-template .cta a.active,
-  .open > .landing.page-template .cta a.dropdown-toggle {
-    background-image: none; }
-  .landing.page-template .cta a.disabled:hover, .landing.page-template .cta a.disabled:focus, .landing.page-template .cta a.disabled.focus, .landing.page-template .cta a[disabled]:hover, .landing.page-template .cta a[disabled]:focus, .landing.page-template .cta a[disabled].focus,
-  fieldset[disabled] .landing.page-template .cta a:hover,
-  fieldset[disabled] .landing.page-template .cta a:focus,
-  fieldset[disabled] .landing.page-template .cta a.focus {
-    background-color: #fff;
-    border-color: #fff; }
-  .landing.page-template .cta a .badge {
-    color: #fff;
-    background-color: #56A329; }
-  @media (min-width: 992px) {
-    .landing.page-template .cta a {
-      padding: 10px 16px;
-      font-size: 20px;
-      line-height: 1.3333333;
-      border-radius: 3px; } }
-  @media (min-width: 1200px) {
-    .landing.page-template .cta a {
-      padding: 0.75em 1.75em; } }
-
 @media (max-height: 768px) {
   .landing.page-template .site-header {
     display: flex;
@@ -7377,60 +7297,194 @@ html {
   .landing.page-template .logos img {
     height: 74px; }
 
-.landing.page-template section.cta {
+.landing.page-template .cta a,
+section.cta a {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 1.428571429;
+  border-radius: 2px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #56A329;
+  background-color: #fff;
+  border-color: #fff; }
+  .landing.page-template .cta a:focus, .landing.page-template .cta a.focus, .landing.page-template .cta a:active:focus, .landing.page-template .cta a:active.focus, .landing.page-template .cta a.active:focus, .landing.page-template .cta a.active.focus,
+  section.cta a:focus,
+  section.cta a.focus,
+  section.cta a:active:focus,
+  section.cta a:active.focus,
+  section.cta a.active:focus,
+  section.cta a.active.focus {
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px; }
+  .landing.page-template .cta a:hover, .landing.page-template .cta a:focus, .landing.page-template .cta a.focus,
+  section.cta a:hover,
+  section.cta a:focus,
+  section.cta a.focus {
+    color: #333;
+    text-decoration: none; }
+  .landing.page-template .cta a:active, .landing.page-template .cta a.active,
+  section.cta a:active,
+  section.cta a.active {
+    outline: 0;
+    background-image: none;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+  .landing.page-template .cta a.disabled, .landing.page-template .cta a[disabled],
+  fieldset[disabled] .landing.page-template .cta a,
+  section.cta a.disabled,
+  section.cta a[disabled],
+  fieldset[disabled]
+  section.cta a {
+    cursor: not-allowed;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    box-shadow: none; }
+  .landing.page-template .cta a:focus, .landing.page-template .cta a.focus,
+  section.cta a:focus,
+  section.cta a.focus {
+    color: #56A329;
+    background-color: #e6e5e5;
+    border-color: #bfbfbf; }
+  .landing.page-template .cta a:hover,
+  section.cta a:hover {
+    color: #56A329;
+    background-color: #e6e5e5;
+    border-color: #e0e0e0; }
+  .landing.page-template .cta a:active, .landing.page-template .cta a.active,
+  .open > .landing.page-template .cta a.dropdown-toggle,
+  section.cta a:active,
+  section.cta a.active,
+  .open >
+  section.cta a.dropdown-toggle {
+    color: #56A329;
+    background-color: #e6e5e5;
+    border-color: #e0e0e0; }
+    .landing.page-template .cta a:active:hover, .landing.page-template .cta a:active:focus, .landing.page-template .cta a:active.focus, .landing.page-template .cta a.active:hover, .landing.page-template .cta a.active:focus, .landing.page-template .cta a.active.focus,
+    .open > .landing.page-template .cta a.dropdown-toggle:hover,
+    .open > .landing.page-template .cta a.dropdown-toggle:focus,
+    .open > .landing.page-template .cta a.dropdown-toggle.focus,
+    section.cta a:active:hover,
+    section.cta a:active:focus,
+    section.cta a:active.focus,
+    section.cta a.active:hover,
+    section.cta a.active:focus,
+    section.cta a.active.focus,
+    .open >
+    section.cta a.dropdown-toggle:hover,
+    .open >
+    section.cta a.dropdown-toggle:focus,
+    .open >
+    section.cta a.dropdown-toggle.focus {
+      color: #56A329;
+      background-color: #d4d4d4;
+      border-color: #bfbfbf; }
+  .landing.page-template .cta a:active, .landing.page-template .cta a.active,
+  .open > .landing.page-template .cta a.dropdown-toggle,
+  section.cta a:active,
+  section.cta a.active,
+  .open >
+  section.cta a.dropdown-toggle {
+    background-image: none; }
+  .landing.page-template .cta a.disabled:hover, .landing.page-template .cta a.disabled:focus, .landing.page-template .cta a.disabled.focus, .landing.page-template .cta a[disabled]:hover, .landing.page-template .cta a[disabled]:focus, .landing.page-template .cta a[disabled].focus,
+  fieldset[disabled] .landing.page-template .cta a:hover,
+  fieldset[disabled] .landing.page-template .cta a:focus,
+  fieldset[disabled] .landing.page-template .cta a.focus,
+  section.cta a.disabled:hover,
+  section.cta a.disabled:focus,
+  section.cta a.disabled.focus,
+  section.cta a[disabled]:hover,
+  section.cta a[disabled]:focus,
+  section.cta a[disabled].focus,
+  fieldset[disabled]
+  section.cta a:hover,
+  fieldset[disabled]
+  section.cta a:focus,
+  fieldset[disabled]
+  section.cta a.focus {
+    background-color: #fff;
+    border-color: #fff; }
+  .landing.page-template .cta a .badge,
+  section.cta a .badge {
+    color: #fff;
+    background-color: #56A329; }
+  @media (min-width: 992px) {
+    .landing.page-template .cta a,
+    section.cta a {
+      padding: 10px 16px;
+      font-size: 20px;
+      line-height: 1.3333333;
+      border-radius: 3px; } }
+  @media (min-width: 1200px) {
+    .landing.page-template .cta a,
+    section.cta a {
+      padding: 0.75em 1.75em; } }
+
+section.cta {
   background-color: #61BC30;
   color: #fff;
   padding-top: 30px;
   padding-bottom: 30px; }
-  .landing.page-template section.cta p {
+  section.cta p {
     opacity: 1;
     margin: 0; }
     @media (min-width: 768px) {
-      .landing.page-template section.cta p {
+      section.cta p {
         font-size: 22px; } }
     @media (min-width: 992px) {
-      .landing.page-template section.cta p {
+      section.cta p {
         font-size: 30px; } }
-  .landing.page-template section.cta a {
+  section.cta a {
     color: #fff;
     background-color: #333;
     border-color: #333; }
-    .landing.page-template section.cta a:focus, .landing.page-template section.cta a.focus {
+    section.cta a:focus, section.cta a.focus {
       color: #fff;
       background-color: #1a1919;
       border-color: black; }
-    .landing.page-template section.cta a:hover {
+    section.cta a:hover {
       color: #fff;
       background-color: #1a1919;
       border-color: #141414; }
-    .landing.page-template section.cta a:active, .landing.page-template section.cta a.active,
-    .open > .landing.page-template section.cta a.dropdown-toggle {
+    section.cta a:active, section.cta a.active,
+    .open > section.cta a.dropdown-toggle {
       color: #fff;
       background-color: #1a1919;
       border-color: #141414; }
-      .landing.page-template section.cta a:active:hover, .landing.page-template section.cta a:active:focus, .landing.page-template section.cta a:active.focus, .landing.page-template section.cta a.active:hover, .landing.page-template section.cta a.active:focus, .landing.page-template section.cta a.active.focus,
-      .open > .landing.page-template section.cta a.dropdown-toggle:hover,
-      .open > .landing.page-template section.cta a.dropdown-toggle:focus,
-      .open > .landing.page-template section.cta a.dropdown-toggle.focus {
+      section.cta a:active:hover, section.cta a:active:focus, section.cta a:active.focus, section.cta a.active:hover, section.cta a.active:focus, section.cta a.active.focus,
+      .open > section.cta a.dropdown-toggle:hover,
+      .open > section.cta a.dropdown-toggle:focus,
+      .open > section.cta a.dropdown-toggle.focus {
         color: #fff;
         background-color: #080808;
         border-color: black; }
-    .landing.page-template section.cta a:active, .landing.page-template section.cta a.active,
-    .open > .landing.page-template section.cta a.dropdown-toggle {
+    section.cta a:active, section.cta a.active,
+    .open > section.cta a.dropdown-toggle {
       background-image: none; }
-    .landing.page-template section.cta a.disabled:hover, .landing.page-template section.cta a.disabled:focus, .landing.page-template section.cta a.disabled.focus, .landing.page-template section.cta a[disabled]:hover, .landing.page-template section.cta a[disabled]:focus, .landing.page-template section.cta a[disabled].focus,
-    fieldset[disabled] .landing.page-template section.cta a:hover,
-    fieldset[disabled] .landing.page-template section.cta a:focus,
-    fieldset[disabled] .landing.page-template section.cta a.focus {
+    section.cta a.disabled:hover, section.cta a.disabled:focus, section.cta a.disabled.focus, section.cta a[disabled]:hover, section.cta a[disabled]:focus, section.cta a[disabled].focus,
+    fieldset[disabled] section.cta a:hover,
+    fieldset[disabled] section.cta a:focus,
+    fieldset[disabled] section.cta a.focus {
       background-color: #333;
       border-color: #333; }
-    .landing.page-template section.cta a .badge {
+    section.cta a .badge {
       color: #333;
       background-color: #fff; }
-  .landing.page-template section.cta .container {
+  section.cta .container {
     display: flex;
     align-items: center; }
-    .landing.page-template section.cta .container :first-child {
+    section.cta .container :first-child {
       flex-grow: 1; }
 
 .article-template article h1 {
@@ -7602,40 +7656,40 @@ html {
   [class$="-template"].services.landing .secondary-section .testimonials blockquote footer {
     color: #9F42D0; }
 
-[class$="-template"].services.landing section.cta a {
+[class$="-template"].services section.cta a {
   color: #fff;
   background-color: #9F42D0;
   border-color: #9F42D0; }
-  [class$="-template"].services.landing section.cta a:focus, [class$="-template"].services.landing section.cta a.focus {
+  [class$="-template"].services section.cta a:focus, [class$="-template"].services section.cta a.focus {
     color: #fff;
     background-color: #842cb3;
     border-color: #571d75; }
-  [class$="-template"].services.landing section.cta a:hover {
+  [class$="-template"].services section.cta a:hover {
     color: #fff;
     background-color: #842cb3;
     border-color: #7e2aaa; }
-  [class$="-template"].services.landing section.cta a:active, [class$="-template"].services.landing section.cta a.active,
-  .open > [class$="-template"].services.landing section.cta a.dropdown-toggle {
+  [class$="-template"].services section.cta a:active, [class$="-template"].services section.cta a.active,
+  .open > [class$="-template"].services section.cta a.dropdown-toggle {
     color: #fff;
     background-color: #842cb3;
     border-color: #7e2aaa; }
-    [class$="-template"].services.landing section.cta a:active:hover, [class$="-template"].services.landing section.cta a:active:focus, [class$="-template"].services.landing section.cta a:active.focus, [class$="-template"].services.landing section.cta a.active:hover, [class$="-template"].services.landing section.cta a.active:focus, [class$="-template"].services.landing section.cta a.active.focus,
-    .open > [class$="-template"].services.landing section.cta a.dropdown-toggle:hover,
-    .open > [class$="-template"].services.landing section.cta a.dropdown-toggle:focus,
-    .open > [class$="-template"].services.landing section.cta a.dropdown-toggle.focus {
+    [class$="-template"].services section.cta a:active:hover, [class$="-template"].services section.cta a:active:focus, [class$="-template"].services section.cta a:active.focus, [class$="-template"].services section.cta a.active:hover, [class$="-template"].services section.cta a.active:focus, [class$="-template"].services section.cta a.active.focus,
+    .open > [class$="-template"].services section.cta a.dropdown-toggle:hover,
+    .open > [class$="-template"].services section.cta a.dropdown-toggle:focus,
+    .open > [class$="-template"].services section.cta a.dropdown-toggle.focus {
       color: #fff;
       background-color: #6f2596;
       border-color: #571d75; }
-  [class$="-template"].services.landing section.cta a:active, [class$="-template"].services.landing section.cta a.active,
-  .open > [class$="-template"].services.landing section.cta a.dropdown-toggle {
+  [class$="-template"].services section.cta a:active, [class$="-template"].services section.cta a.active,
+  .open > [class$="-template"].services section.cta a.dropdown-toggle {
     background-image: none; }
-  [class$="-template"].services.landing section.cta a.disabled:hover, [class$="-template"].services.landing section.cta a.disabled:focus, [class$="-template"].services.landing section.cta a.disabled.focus, [class$="-template"].services.landing section.cta a[disabled]:hover, [class$="-template"].services.landing section.cta a[disabled]:focus, [class$="-template"].services.landing section.cta a[disabled].focus,
-  fieldset[disabled] [class$="-template"].services.landing section.cta a:hover,
-  fieldset[disabled] [class$="-template"].services.landing section.cta a:focus,
-  fieldset[disabled] [class$="-template"].services.landing section.cta a.focus {
+  [class$="-template"].services section.cta a.disabled:hover, [class$="-template"].services section.cta a.disabled:focus, [class$="-template"].services section.cta a.disabled.focus, [class$="-template"].services section.cta a[disabled]:hover, [class$="-template"].services section.cta a[disabled]:focus, [class$="-template"].services section.cta a[disabled].focus,
+  fieldset[disabled] [class$="-template"].services section.cta a:hover,
+  fieldset[disabled] [class$="-template"].services section.cta a:focus,
+  fieldset[disabled] [class$="-template"].services section.cta a.focus {
     background-color: #9F42D0;
     border-color: #9F42D0; }
-  [class$="-template"].services.landing section.cta a .badge {
+  [class$="-template"].services section.cta a .badge {
     color: #9F42D0;
     background-color: #fff; }
 

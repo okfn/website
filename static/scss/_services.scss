@@ -160,11 +160,11 @@
         }
       }
     }
+  }
 
-    section.cta {
-      a {
-        @include button-variant(#fff,$brand-commercial, $brand-commercial);
-      }
+  section.cta {
+    a {
+      @include button-variant(#fff,$brand-commercial, $brand-commercial);
     }
   }
 }
