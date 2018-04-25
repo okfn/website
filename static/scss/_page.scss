@@ -128,16 +128,16 @@
             }
           }
         }
-      }
 
-      article {
-        @include make-md-column(9);
-        @include make-lg-column(8);
-        @include make-lg-column-offset(1);
-        overflow: hidden; // prevent scrollbar
+        & + article {
+          @include make-md-column(9);
+          @include make-lg-column(8);
+          @include make-lg-column-offset(1);
+          overflow: hidden; // prevent scrollbar
 
-        & > :first-child {
-          margin-top: 0;
+          & > :first-child {
+            margin-top: 0;
+          }
         }
       }
     }

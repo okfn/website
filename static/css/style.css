@@ -6817,34 +6817,34 @@ html {
             .page-template .main > div aside #side-nav.mm-menu .mm-listview .mm-next:before,
             [class$="-template"]:not(.home-template) .main > div aside #side-nav.mm-menu .mm-listview .mm-next:before {
               display: none; } }
-    .page-template .main > div article,
-    [class$="-template"]:not(.home-template) .main > div article {
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-      overflow: hidden; }
-      @media (min-width: 992px) {
-        .page-template .main > div article,
-        [class$="-template"]:not(.home-template) .main > div article {
-          float: left;
-          width: 75%; } }
-      @media (min-width: 1200px) {
-        .page-template .main > div article,
-        [class$="-template"]:not(.home-template) .main > div article {
-          float: left;
-          width: 66.6666666667%; } }
-      @media (min-width: 1200px) {
-        .page-template .main > div article,
-        [class$="-template"]:not(.home-template) .main > div article {
-          margin-left: 8.3333333333%; } }
-      .page-template .main > div article > :first-child,
-      [class$="-template"]:not(.home-template) .main > div article > :first-child {
-        margin-top: 0; }
+      .page-template .main > div aside + article,
+      [class$="-template"]:not(.home-template) .main > div aside + article {
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        overflow: hidden; }
+        @media (min-width: 992px) {
+          .page-template .main > div aside + article,
+          [class$="-template"]:not(.home-template) .main > div aside + article {
+            float: left;
+            width: 75%; } }
+        @media (min-width: 1200px) {
+          .page-template .main > div aside + article,
+          [class$="-template"]:not(.home-template) .main > div aside + article {
+            float: left;
+            width: 66.6666666667%; } }
+        @media (min-width: 1200px) {
+          .page-template .main > div aside + article,
+          [class$="-template"]:not(.home-template) .main > div aside + article {
+            margin-left: 8.3333333333%; } }
+        .page-template .main > div aside + article > :first-child,
+        [class$="-template"]:not(.home-template) .main > div aside + article > :first-child {
+          margin-top: 0; }
 
 .profile {
   margin-top: 45px;
@@ -6936,6 +6936,74 @@ html {
   .profile:hover .image img {
     opacity: 0; }
 
+@media (min-width: 992px) {
+  .article-list {
+    display: flex;
+    margin-left: -15px;
+    margin-right: -15px;
+    flex-wrap: wrap; } }
+
+.article-list .article-list-item {
+  padding: 15px;
+  display: flex;
+  text-align: center; }
+  @media (min-width: 992px) {
+    .article-list .article-list-item {
+      padding-left: 15px;
+      padding-right: 15px;
+      width: 50%; } }
+  @media (min-width: 1200px) {
+    .article-list .article-list-item {
+      width: 33.3333333333%; } }
+  .article-list .article-list-item .inner {
+    border: solid 4px #f0f0f0;
+    border-radius: 1px;
+    padding: 30px; }
+  .article-list .article-list-item h1 {
+    font-size: 20px; }
+    .article-list .article-list-item h1:first-child {
+      margin-top: 0; }
+  .article-list .article-list-item .more {
+    color: #fff;
+    background-color: #61BC30;
+    border-color: #61BC30;
+    margin-top: 6px; }
+    .article-list .article-list-item .more:focus, .article-list .article-list-item .more.focus {
+      color: #fff;
+      background-color: #4c9326;
+      border-color: #2d5616; }
+    .article-list .article-list-item .more:hover {
+      color: #fff;
+      background-color: #4c9326;
+      border-color: #488b24; }
+    .article-list .article-list-item .more:active, .article-list .article-list-item .more.active,
+    .open > .article-list .article-list-item .more.dropdown-toggle {
+      color: #fff;
+      background-color: #4c9326;
+      border-color: #488b24; }
+      .article-list .article-list-item .more:active:hover, .article-list .article-list-item .more:active:focus, .article-list .article-list-item .more:active.focus, .article-list .article-list-item .more.active:hover, .article-list .article-list-item .more.active:focus, .article-list .article-list-item .more.active.focus,
+      .open > .article-list .article-list-item .more.dropdown-toggle:hover,
+      .open > .article-list .article-list-item .more.dropdown-toggle:focus,
+      .open > .article-list .article-list-item .more.dropdown-toggle.focus {
+        color: #fff;
+        background-color: #3d771e;
+        border-color: #2d5616; }
+    .article-list .article-list-item .more:active, .article-list .article-list-item .more.active,
+    .open > .article-list .article-list-item .more.dropdown-toggle {
+      background-image: none; }
+    .article-list .article-list-item .more.disabled:hover, .article-list .article-list-item .more.disabled:focus, .article-list .article-list-item .more.disabled.focus, .article-list .article-list-item .more[disabled]:hover, .article-list .article-list-item .more[disabled]:focus, .article-list .article-list-item .more[disabled].focus,
+    fieldset[disabled] .article-list .article-list-item .more:hover,
+    fieldset[disabled] .article-list .article-list-item .more:focus,
+    fieldset[disabled] .article-list .article-list-item .more.focus {
+      background-color: #61BC30;
+      border-color: #61BC30; }
+    .article-list .article-list-item .more .badge {
+      color: #61BC30;
+      background-color: #fff; }
+
+.article-list:not(:first-child) {
+  margin-top: 30px; }
+
 .prev-next {
   padding: 0;
   margin: 0;
@@ -6980,6 +7048,23 @@ html {
       border-radius: 50%; }
     .owl-dots .owl-dot.active span, .owl-dots .owl-dot:hover span {
       background: #61BC30; }
+
+.primary-section .intro {
+  font-size: 20px; }
+  @media (min-width: 992px) {
+    .primary-section .intro {
+      font-size: 24px; } }
+  @media (min-width: 992px) {
+    .primary-section .intro h2, .primary-section .intro h3 {
+      font-size: 42px; } }
+  @media (min-width: 1200px) {
+    .primary-section .intro h2, .primary-section .intro h3 {
+      font-size: 60px; } }
+
+.primary-section p,
+.secondary-section p {
+  opacity: 0.75;
+  line-height: 1.6; }
 
 @media (max-height: 768px) {
   .landing.page-template .site-header {
@@ -7049,9 +7134,6 @@ html {
 
 .landing.page-template .main {
   margin-bottom: 0; }
-  .landing.page-template .main p {
-    opacity: 0.75;
-    line-height: 1.6; }
 
 .landing.page-template .primary-section {
   border-bottom: solid 4px #f0f0f0;
@@ -7065,21 +7147,12 @@ html {
       display: flex;
       align-items: flex-end;
       justify-content: space-between; } }
-  .landing.page-template .primary-section .intro .text {
-    font-size: 20px; }
-    @media (min-width: 992px) {
-      .landing.page-template .primary-section .intro .text {
-        font-size: 24px;
-        width: 83.3333333333%; } }
-    @media (min-width: 1200px) {
-      .landing.page-template .primary-section .intro .text {
-        width: 66.6666666667%; } }
-    @media (min-width: 992px) {
-      .landing.page-template .primary-section .intro .text h2, .landing.page-template .primary-section .intro .text h3 {
-        font-size: 42px; } }
-    @media (min-width: 1200px) {
-      .landing.page-template .primary-section .intro .text h2, .landing.page-template .primary-section .intro .text h3 {
-        font-size: 60px; } }
+  @media (min-width: 992px) {
+    .landing.page-template .primary-section .intro .text {
+      width: 83.3333333333%; } }
+  @media (min-width: 1200px) {
+    .landing.page-template .primary-section .intro .text {
+      width: 66.6666666667%; } }
   .landing.page-template .primary-section .article-list-item {
     text-align: center;
     margin-bottom: 30px;
@@ -7590,7 +7663,7 @@ section.cta {
     [class$="-template"].services .site-header .search-bar .container .buttons button.cancel {
       box-shadow: inset 0px 0px 0px 2px #fff; }
 
-[class$="-template"].services.landing .primary-section:first-child .intro h2, [class$="-template"].services.landing .primary-section:first-child .intro h3 {
+[class$="-template"].services .primary-section:first-child .intro h2, [class$="-template"].services .primary-section:first-child .intro h3 {
   color: #9F42D0; }
 
 [class$="-template"].services.landing .features {

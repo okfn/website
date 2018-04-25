@@ -1,0 +1,15 @@
+{% extends "cms_childlist.html" %}
+{% load cms_tags %}
+{% block body-class %}services childlist-template{% endblock %}
+{% block pre_footer %}
+<section class="cta">
+  <div class="container">
+    <div class="text">
+      {% static_placeholder "services call to action text" %}
+    </div>
+    <div class="link">
+      {% static_placeholder "services call to action link" %}
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -91,18 +91,18 @@
     }
   }
 
-  &.landing {
+  .primary-section {
+    &:first-child {
 
-    .primary-section {
-      &:first-child {
-
-        .intro {
-          h2, h3 {
-            color: $brand-commercial;
-          }
+      .intro {
+        h2, h3 {
+          color: $brand-commercial;
         }
       }
     }
+  }
+
+  &.landing {
 
     .features {
       padding-top: $grid-gutter-width;
