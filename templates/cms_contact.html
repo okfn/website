@@ -14,17 +14,55 @@
 
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="general">
-      {% placeholder "main" %}
+      <div class="intro">
+        {% placeholder "main" %}
+      </div>
     </div>
     <div role="tabpanel" class="tab-pane" id="service">
-      {% placeholder "service" %}
+      <div class="intro">
+        {% placeholder "service" %}
+      </div>
 
-      [services form here]
+      <form class="contact">
+        <div class="fieldset">
+          <label>Name
+            <input type="text" class="form-control input-lg">
+          </label>
+          <label>Organisation
+            <input type="text" class="form-control input-lg">
+          </label>
+          <label>Email address
+            <input type="email" class="form-control input-lg">
+          </label>
+        </div>
+        <label>How can we help?
+          <textarea class="form-control" rows="10"></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary btn-lg">Send</button>
+      </form>
     </div>
     <div role="tabpanel" class="tab-pane" id="press">
-      {% placeholder "press" %}
+      <div class="intro">
+        {% placeholder "press" %}
+      </div>
 
-      [press form here]
+      <form class="contact">
+        <div class="fieldset">
+          <label>Name
+            <input type="text" class="form-control input-lg">
+          </label>
+          <label>Organisation
+            <input type="text" class="form-control input-lg">
+          </label>
+          <label>Email address
+            <input type="email" class="form-control input-lg">
+          </label>
+        </div>
+        <label>How can we help?
+          <textarea class="form-control" rows="10"></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary btn-lg">Send</button>
+      </form>
     </div>
   </div>
 </div>

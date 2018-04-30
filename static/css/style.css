@@ -7640,6 +7640,46 @@ section.cta {
       float: right;
       margin-left: 30px; } }
 
+.form-control {
+  border-width: 4px;
+  box-shadow: none; }
+
+.contact-template .intro {
+  color: rgba(51, 51, 51, 0.8); }
+  .contact-template .intro p:first-child {
+    font-size: 24px; }
+
+.contact-template form.contact {
+  margin-left: -15px;
+  margin-right: -15px; }
+  .contact-template form.contact:before, .contact-template form.contact:after {
+    content: " ";
+    display: table; }
+  .contact-template form.contact:after {
+    clear: both; }
+  .contact-template form.contact label {
+    display: block;
+    padding: 15px;
+    font-weight: 600;
+    color: rgba(51, 51, 51, 0.8); }
+    .contact-template form.contact label:hover {
+      background-color: rgba(97, 188, 48, 0.1); }
+    .contact-template form.contact label input,
+    .contact-template form.contact label textarea {
+      margin-top: 6px;
+      font-weight: normal; }
+  @media (min-width: 992px) {
+    .contact-template form.contact .fieldset {
+      display: flex; }
+      .contact-template form.contact .fieldset label {
+        flex-grow: 1;
+        flex-basis: 0; } }
+  .contact-template form.contact .btn {
+    margin: 15px; }
+  @media (min-width: 992px) {
+    .contact-template form.contact {
+      font-size: 1.25em; } }
+
 [class$="-template"].services .site-header {
   background-color: #61BC30; }
   @media (min-width: 768px) {
