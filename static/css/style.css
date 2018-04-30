@@ -7684,7 +7684,7 @@ section.cta {
   background-color: #61BC30; }
   @media (min-width: 768px) {
     [class$="-template"].services .site-header {
-      background-image: url(../img/services-bg.png);
+      background-image: url(../img/services-bg.svg);
       background-repeat: no-repeat;
       background-position: top right;
       background-size: auto 800px; } }
