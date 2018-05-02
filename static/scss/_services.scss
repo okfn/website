@@ -1,17 +1,10 @@
 [class$="-template"].services {
 
   .site-header {
-    $header-bg: $brand-primary;
+    $header-bg: $gray-base;
     $header-col: #fff;
 
     background-color: $header-bg;
-
-    @media (min-width: $screen-sm-min) {
-      background-image: url("../img/services-bg.svg");
-      background-repeat: no-repeat;
-      background-position: top right;
-      background-size: auto 800px;
-    }
 
     .brand {
       .a,
@@ -33,7 +26,7 @@
 
           &.active > a {
             background-color: $header-col;
-            color: $brand-primary-text;
+            color: $header-bg;
           }
 
           &.has-children {
@@ -49,8 +42,12 @@
 
         label[for="search"] {
           background-color: $header-col;
-          color: $brand-primary-text;
+          color: $header-bg;
         }
+      }
+
+      .secondary > li > a {
+        color: $header-col;
       }
     }
 
@@ -60,12 +57,38 @@
 
     .banner {
       background-color: rgba($header-bg,0);
+      position: relative;
+
+      .container {
+        position: relative;
+        z-index: 2;
+      }
 
       .cta {
         a {
+          color: $gray-base;
+
           &:first-child {
             @include button-variant(#fff, $brand-commercial, $brand-commercial);
           }
+        }
+      }
+
+      & > svg {
+        display: none;
+      }
+
+      @supports (mix-blend-mode: multiply) {
+        & > svg {
+          display: block;
+          position: absolute;
+          z-index: 1;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: auto;
+          fill: $brand-commercial;
+          mix-blend-mode: multiply;
         }
       }
     }
@@ -103,6 +126,12 @@
   }
 
   &.landing {
+
+    .site-header {
+      background-image: url("../img/services-banner.jpg");
+      background-position: right top;
+      background-size: cover;
+    }
 
     .features {
       padding-top: $grid-gutter-width;
