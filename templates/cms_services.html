@@ -16,7 +16,7 @@
 {% block template-js %}{% include 'includes/services.js' %}{% endblock template-js %}
 {% block pagebanner %}
 <div class="banner">
-  {% include 'includes/banner-bg.svg' %}
+  {% include 'includes/banner-pattern.html' %}
   <div class="container">
     {% block pagebanner-inner %}
       {% placeholder "headline" %}
@@ -27,6 +27,7 @@
     {% endblock %}
   </div>
 </div>
+{% placeholder "banner image" inherit %}
 {% endblock %}
 
 {% block body %}

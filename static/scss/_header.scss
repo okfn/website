@@ -1,4 +1,7 @@
 .site-header {
+  position: relative;
+  z-index: 1;
+
   .header {
     height: 120px;
     position: relative;

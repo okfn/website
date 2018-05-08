@@ -57,7 +57,6 @@
 
     .banner {
       background-color: rgba($header-bg,0);
-      position: relative;
 
       .container {
         position: relative;
@@ -74,21 +73,30 @@
         }
       }
 
-      & > svg {
+      .banner-pattern {
         display: none;
       }
 
       @supports (mix-blend-mode: multiply) {
-        & > svg {
+        .banner-pattern {
           display: block;
           position: absolute;
           z-index: 1;
+          mix-blend-mode: multiply;
           left: 0;
           right: 0;
+          top: 0;
           bottom: 0;
-          height: auto;
-          fill: $brand-commercial;
-          mix-blend-mode: multiply;
+          overflow: hidden;
+
+          svg {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -16vw;
+            height: auto;
+            fill: $brand-commercial;
+          }
         }
       }
     }
@@ -131,6 +139,10 @@
       background-image: url("../img/services-banner.jpg");
       background-position: right top;
       background-size: cover;
+    }
+
+    .banner .banner-pattern svg {
+      bottom: 0;
     }
 
     .features {

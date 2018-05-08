@@ -42,6 +42,31 @@
         margin-top: 0.5em;
       }
     }
+
+    & + .plugin_picture {
+      display: none;
+
+      @supports (mix-blend-mode: overlay) {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        align-items: center;
+        mix-blend-mode: overlay;
+
+        img {
+          display: block;
+          width: 100%;
+          @supports (object-fit: cover) {
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
   }
 
   .main {
