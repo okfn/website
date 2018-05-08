@@ -128,7 +128,6 @@ INSTALLED_APPS = (
     'treebeard',
     'menus',
     'sekizai',
-    'djangobower',
 
     # Custom apps
     'foundation.blogfeed',
