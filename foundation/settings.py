@@ -107,6 +107,7 @@ INSTALLED_APPS = (
     'spurl',
     'standard_form',
     'formtools',
+    'schedule',
 
 
     # Asset pipeline
@@ -121,6 +122,7 @@ INSTALLED_APPS = (
     'aldryn_boilerplates',
     'aldryn_search',
     'aldryn_video',
+    'aldryn_quote',
 
     # CMS
     'cms',
@@ -128,7 +130,7 @@ INSTALLED_APPS = (
     'treebeard',
     'menus',
     'sekizai',
-    'aldryn_quote',
+    'djangobower',
 
     # Custom apps
     'foundation.blogfeed',
@@ -197,6 +199,13 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'djangobower.finders.BowerFinder',
+    )
+
+BOWER_INSTALLED_APPS = (
+    'jquery',
+    'jquery-ui',
+    'bootstrap'
     )
 
 ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
@@ -205,6 +214,8 @@ ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
 ROOT_URLCONF = 'foundation.urls'
 
 WSGI_APPLICATION = 'foundation.wsgi.application'
+
+BOWER_COMPONENTS_ROOT = 'bower_components'
 
 if DEBUG:
     CACHES = {
@@ -439,7 +450,8 @@ CMS_TEMPLATES = (
     ('cms_services_article.html', 'Services article'),
     ('cms_childlist.html', 'Child list'),
     ('cms_services_childlist.html', 'Services child list'),
-    ('cms_contact.html', 'Contact')
+    ('cms_contact.html', 'Contact'),
+    ('cms_schedule.html', 'Schedule')
 )
 
 CMS_PLACEHOLDER_CONF = {
