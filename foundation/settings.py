@@ -107,8 +107,6 @@ INSTALLED_APPS = (
     'spurl',
     'standard_form',
     'formtools',
-    'schedule',
-
 
     # Asset pipeline
     'compressor',
@@ -199,13 +197,6 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'djangobower.finders.BowerFinder',
-    )
-
-BOWER_INSTALLED_APPS = (
-    'jquery',
-    'jquery-ui',
-    'bootstrap'
     )
 
 ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
@@ -451,7 +442,6 @@ CMS_TEMPLATES = (
     ('cms_childlist.html', 'Child list'),
     ('cms_services_childlist.html', 'Services child list'),
     ('cms_contact.html', 'Contact'),
-    ('cms_schedule.html', 'Schedule')
 )
 
 CMS_PLACEHOLDER_CONF = {

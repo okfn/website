@@ -1,6 +1,5 @@
 {% extends "cms_default.html" %}
 {% load cms_tags %}
-{% load scheduletags %}
 
 {% block body-class %}contact-template{% endblock %}
 
@@ -10,18 +9,24 @@
   <h4>Nature of enquiry</h4>
 
   <ul class="tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#commercial" aria-controls="commercial" role="tab" data-toggle="tab">Commercial</a></li>
-    <li role="presentation"><a href="#press" aria-controls="press" role="tab" data-toggle="tab">Press</a></li>
-    <li role="presentation"><a href="#current-projects" aria-controls="current-projects" role="tab" data-toggle="tab">Current Projects</a></li>
-    <li role="presentation"><a href="#other" aria-controls="other" role="tab" data-toggle="tab">Anything else </a></li>
+    <li role="presentation" class="active"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">General enquiries</a></li>
+    <li role="presentation"><a href="#service" aria-controls="service" role="tab" data-toggle="tab">Service enquiries</a></li>
+    <li role="presentation"><a href="#press" aria-controls="press" role="tab" data-toggle="tab">Press enquiries</a></li>
+
 
   </ul>
 
   <div class="tab-content">
 
-    <div role="tabpanel" class="tab-pane active" id="commercial">
+    <div role="tabpanel" class="tab-pane active" id="general">
       <div class="intro">
-        {% placeholder "commercial" %}
+        {% placeholder "general" %}
+      </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="service">
+      <div class="intro">
+        {% placeholder "service" %}
       </div>
 
       <form class="contact">
@@ -65,35 +70,6 @@
         </label>
         <button type="submit" class="btn btn-primary btn-lg">Send</button>
       </form>
-    </div>
-
-    <div role="tabpanel" class="tab-pane" id="current-projects">
-      <div class="intro">
-        {% placeholder "current-projects" %}
-      </div>
-      <form class="contact">
-        <div class="fieldset">
-          <label>Name
-            <input type="text" class="form-control input-lg">
-          </label>
-          <label>Organisation
-            <input type="text" class="form-control input-lg">
-          </label>
-          <label>Email address
-            <input type="email" class="form-control input-lg">
-          </label>
-        </div>
-        <label>How can we help?
-          <textarea class="form-control" rows="10"></textarea>
-        </label>
-        <button type="submit" class="btn btn-primary btn-lg">Send</button>
-      </form>
-    </div>
-
-    <div role="tabpanel" class="tab-pane" id="other">
-      <div class="intro">
-        {% placeholder "other" %}
-      </div>
     </div>
 
   </div>
