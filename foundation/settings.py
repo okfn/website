@@ -107,6 +107,7 @@ INSTALLED_APPS = (
     'spurl',
     'standard_form',
     'formtools',
+    'sendemail',
 
     # Asset pipeline
     'compressor',
