@@ -27,20 +27,22 @@
         {% placeholder "service" %}
       </div>
 
-      <form class="contact">
+      <form id="service_form" class="contact" method="post">
+        {% csrf_token %}
         <div class="fieldset">
+          <input id="type" type='hidden' name="type" value="Service"/>
           <label>Name
-            <input type="text" class="form-control input-lg">
+            <input id="name" name="name" type="text" class="form-control input-lg">
           </label>
           <label>Organisation
-            <input type="text" class="form-control input-lg">
+            <input id="organisation" name="organisation" type="text" class="form-control input-lg">
           </label>
           <label>Email address
-            <input type="email" class="form-control input-lg">
+            <input id="email" name="email" type="email" class="form-control input-lg">
           </label>
         </div>
         <label>How can we help?
-          <textarea class="form-control" rows="10"></textarea>
+          <textarea id="message" name="message" class="form-control" rows="10"></textarea>
         </label>
         <button type="submit" class="btn btn-primary btn-lg">Send</button>
       </form>
@@ -51,20 +53,22 @@
         {% placeholder "press" %}
       </div>
 
-      <form class="contact">
+      <form id="press_form" class="contact" method="post">
+        {% csrf_token %}
         <div class="fieldset">
+          <input id="type" type='hidden' name="type" value="Press"/>
           <label>Name
-            <input type="text" class="form-control input-lg">
+            <input id="name" name="name" type="text" class="form-control input-lg">
           </label>
           <label>Organisation
-            <input type="text" class="form-control input-lg">
+            <input id="organisation" name="organisation" type="text" class="form-control input-lg">
           </label>
           <label>Email address
-            <input type="email" class="form-control input-lg">
+            <input id="email" name="email" type="email" class="form-control input-lg">
           </label>
         </div>
         <label>How can we help?
-          <textarea class="form-control" rows="10"></textarea>
+          <textarea id="message" name="message" class="form-control" rows="10"></textarea>
         </label>
         <button type="submit" class="btn btn-primary btn-lg">Send</button>
       </form>

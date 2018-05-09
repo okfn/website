@@ -20,7 +20,8 @@ urlpatterns = patterns(
     url(r'^admin/', include(admin.site.urls)),
     url(r'^robots.txt$', TemplateView.as_view(template_name="robots.txt",
                                               content_type="text/plain"),
-        name="robots_file")
+        name="robots_file"),
+    url('', include('sendemail.urls')),
 )
 
 # Allow testing of error pages in development
