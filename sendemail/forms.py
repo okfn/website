@@ -1,5 +1,6 @@
 from django import forms
 
+
 # define form fields and specify what data types to expect
 class ContactForm(forms.Form):
     email = forms.EmailField(required=True)
@@ -15,7 +16,7 @@ class ContactForm(forms.Form):
         if not valid:
             return False
 
-        # ensure that form data that's forwarded to email is from either of the two forms
+        # ensure that form data that's emailed is from one of the two forms
         if self.cleaned_data['type'] not in ['Press', 'Service']:
             return False
 

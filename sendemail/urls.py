@@ -1,8 +1,8 @@
-from django.conf.urls import url, include
-from django.contrib import admin
+from django.conf.urls import url
+# from django.contrib import admin
 
 from . import views
 
 urlpatterns = [
-    url('contact/', views.contactView, name='contact'),
+    url('contact/', views.contactview, name='contact'),
 ]
