@@ -21,9 +21,9 @@ def contactview(request):
             type = form.cleaned_data['type']
 
             # collate and send filled form data in one email
-            email_message = 'From: ' + email + '\n' + 'Name: ' + name + '\n'
-            + 'Organisation: ' + organisation + '\n'
-            + 'Message: ' + message + '\n'
+            message_from = 'Name: ' + name + '\n' + 'From: ' + organisation
+            message_details = 'Email: ' + email + '\n' + 'Message: ' + message
+            email_message = message_from + '\n' + message_details
             email_subject = type + ' Enquiry from ' + name
 
             # specify where form data is sent, depending on the type of enquiry
@@ -45,7 +45,7 @@ def contactview(request):
                 request,
                 'Thank you for your message. ' +
                 'Someone from Open Knowledge International' +
-                'will be in touch soon.')
+                ' will be in touch soon.')
 
     # reload the contact page after form data has been sent successfully
     return render(request, "cms_contact.html", {'form': form})
