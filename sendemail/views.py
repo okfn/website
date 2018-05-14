@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
+from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
@@ -28,15 +29,15 @@ def contactview(request):
 
             # specify where form data is sent, depending on the type of enquiry
             if type == 'Service':
-                recepients = ['oks@okfn.org']
+                recepients = settings.SERVICE_EMAIL_RECEPIENTS
             else:
-                recepients = ['press@okfn.org']
+                recepients = settings.PRESS_EMAIL_RECEPIENTS
 
             # all form data will originate from the same email address
             try:
                 send_mail(
                     email_subject, email_message,
-                    "info@okfn.org", recepients)
+                    settings.CONTACT_EMAIL_SENDER, recepients)
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
 

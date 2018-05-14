@@ -72,6 +72,14 @@ else:
         EMAIL_HOST_USER = env.get('DJANGO_EMAIL_USER', 'mail')
         EMAIL_HOST_PASSWORD = env.get('DJANGO_EMAIL_HOST_PASSWORD', 'mail')
 
+# set default email sender account for contact form enquiries
+CONTACT_EMAIL_SENDER = env.get('CONTACT_EMAIL_SENDER')
+
+# accounts that receive various enquiries from contact forms
+PRESS_EMAIL_RECEPIENTS = _parse_email_list('PRESS_EMAIL_RECEPIENTS')
+SERVICE_EMAIL_RECEPIENTS = _parse_email_list('SERVICE_EMAIL_RECEPIENTS')
+GENERAL_EMAIL_RECEPIENTS = _parse_email_list('GENERAL_EMAIL_RECEPIENTS')
+
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = env.get('DJANGO_ALLOWED_HOSTS', '').split(',')
