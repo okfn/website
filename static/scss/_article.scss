@@ -1,5 +1,9 @@
 .article-template {
   article {
+    @mixin intro {
+      font-size: 1.25em;
+      margin-bottom: 2em;
+    }
     h1 {
       font-weight: bold;
 
@@ -8,27 +12,43 @@
       }
 
       & + p {
-        font-size: 1.25em;
-        margin-bottom: 2em;
+        @include intro;
       }
+    }
+
+    p:first-child {
+      @include intro;
     }
 
     .plugin_picture {
       display: block;
+      margin-top: $grid-gutter-width;
+
+      img {
+        width: 100%;
+      }
 
       &.align-left,
       &.align-right {
-        background-color: #fff000;
         border-radius: 50%;
         overflow: hidden;
         border: solid 8px $brand-primary;
-        margin-top: $grid-gutter-width;
         margin-bottom: $grid-gutter-width;
         width: 330px;
         height: 330px;
 
         img {
-          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &.align-center {
+        text-align: center;
+
+        img {
+          width: auto;
+          max-width: 100%;
         }
       }
 

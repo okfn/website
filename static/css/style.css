@@ -6746,7 +6746,7 @@ html {
         right: 0;
         bottom: 0;
         left: 0;
-        z-index: -1;
+        z-index: -2;
         align-items: center;
         mix-blend-mode: overlay; }
         .page-template .banner + .plugin_picture img,
@@ -7647,19 +7647,31 @@ section.cta {
     font-size: 1.25em;
     margin-bottom: 2em; }
 
+.article-template article p:first-child {
+  font-size: 1.25em;
+  margin-bottom: 2em; }
+
 .article-template article .plugin_picture {
-  display: block; }
+  display: block;
+  margin-top: 30px; }
+  .article-template article .plugin_picture img {
+    width: 100%; }
   .article-template article .plugin_picture.align-left, .article-template article .plugin_picture.align-right {
-    background-color: #fff000;
     border-radius: 50%;
     overflow: hidden;
     border: solid 8px #61BC30;
-    margin-top: 30px;
     margin-bottom: 30px;
     width: 330px;
     height: 330px; }
     .article-template article .plugin_picture.align-left img, .article-template article .plugin_picture.align-right img {
-      width: 100%; }
+      height: 100%;
+      -o-object-fit: cover;
+         object-fit: cover; }
+  .article-template article .plugin_picture.align-center {
+    text-align: center; }
+    .article-template article .plugin_picture.align-center img {
+      width: auto;
+      max-width: 100%; }
   @media (min-width: 768px) {
     .article-template article .plugin_picture.align-left {
       float: left;
@@ -7780,7 +7792,7 @@ section.cta {
       [class$="-template"].services .site-header .banner .banner-pattern {
         display: block;
         position: absolute;
-        z-index: 1;
+        z-index: -1;
         mix-blend-mode: multiply;
         left: 0;
         right: 0;
@@ -7915,4 +7927,21 @@ section.cta {
 
 .services.article-template article .plugin_picture {
   border-color: #9F42D0; }
+
+.services.article-template .main > div article aside {
+  background-color: #9F42D0;
+  color: #fff;
+  padding: 30px; }
+  .services.article-template .main > div article aside :first-child {
+    margin-top: 0; }
+  .services.article-template .main > div article aside :last-child {
+    margin-bottom: 0; }
+  .services.article-template .main > div article aside:empty {
+    display: none; }
+  .services.article-template .main > div article aside:last-child {
+    float: none;
+    width: auto;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: 30px; }
 /*# sourceMappingURL=style.css.map */

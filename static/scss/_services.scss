@@ -81,7 +81,7 @@
         .banner-pattern {
           display: block;
           position: absolute;
-          z-index: 1;
+          z-index: -1;
           mix-blend-mode: multiply;
           left: 0;
           right: 0;
@@ -214,6 +214,32 @@
   article {
     .plugin_picture {
       border-color: $brand-commercial;
+    }
+  }
+
+  .main > div article aside {
+    background-color: $brand-commercial;
+    color: #fff;
+    padding: $grid-gutter-width;
+
+    :first-child {
+      margin-top: 0;
+    }
+
+    :last-child {
+      margin-bottom: 0;
+    }
+
+    &:empty {
+      display: none;
+    }
+
+    &:last-child {
+      float: none;
+      width: auto;
+      margin-left: -$grid-gutter-width/2;
+      margin-right: -$grid-gutter-width/2;
+      margin-top: $grid-gutter-width;
     }
   }
 }
