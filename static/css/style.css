@@ -7265,14 +7265,20 @@ html {
     .landing.page-template .primary-section .features .article-list-item .inner {
       margin-top: 72px; }
     .landing.page-template .primary-section .features .article-list-item .image {
-      width: 116px;
-      height: 50px;
-      position: relative; }
+      width: 128px;
+      height: 128px;
+      margin-top: -80px;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: #fff;
+      box-shadow: 0px 0px 0px 4px #fff; }
       .landing.page-template .primary-section .features .article-list-item .image img {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        margin-left: -58px; }
+        width: 100%; }
+        @supports ((-o-object-fit: contain) or (object-fit: contain)) {
+          .landing.page-template .primary-section .features .article-list-item .image img {
+            height: 100%;
+            -o-object-fit: contain;
+               object-fit: contain; } }
     .landing.page-template .primary-section .features .article-list-item .more {
       color: #fff;
       background-color: #61BC30;
