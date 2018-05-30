@@ -28,7 +28,7 @@ You may also wish to follow any install instructions inside a Python virtual env
 
     pip install -r requirements.dev.txt
     pip install honcho
-    npm install
+    npm ci
     python manage.py migrate
     honcho -f Procfile.dev start
 
