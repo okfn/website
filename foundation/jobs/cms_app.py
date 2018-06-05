@@ -7,4 +7,5 @@ class JobsAppHook(CMSApp):
     name = _("Jobs")
     urls = ["foundation.jobs.urls"]
 
+
 apphook_pool.register(JobsAppHook)

@@ -1,0 +1,54 @@
+.form-control {
+  border-width: 4px;
+  box-shadow: none;
+}
+
+.contact-template {
+  .intro {
+    color: rgba($text-color, 0.8);
+    
+    p:first-child {
+      font-size: 24px;
+    }
+  }
+
+  form.contact {
+    @include make-row();
+
+    label {
+      display: block;
+      padding: ($grid-gutter-width / 2);
+      font-weight: 600;
+      color: rgba($text-color, 0.8);
+
+      &:hover {
+        background-color: rgba($brand-primary,0.1);
+      }
+
+      input,
+      textarea {
+        margin-top: $padding-base-vertical;
+        font-weight: normal;
+      }
+    }
+
+    .fieldset {
+      @media (min-width: $screen-md-min) {
+        display: flex;
+
+        label {
+          flex-grow: 1;
+          flex-basis: 0;
+        }
+      }
+    }
+
+    .btn {
+      margin: ($grid-gutter-width / 2);
+    }
+
+    @media (min-width: $screen-md-min) {
+      font-size: 1.25em;
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{% extends "cms_default.html" %}
+{% load cms_tags %}
+
+{% block body-class %}contact-template{% endblock %}
+
+{% block body %}
+
+<div>
+  <ul class="tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">General enquiries</a></li>
+    <li role="presentation"><a href="#service" aria-controls="service" role="tab" data-toggle="tab">Service enquiries</a></li>
+    <li role="presentation"><a href="#press" aria-controls="press" role="tab" data-toggle="tab">Press enquiries</a></li>
+
+
+  </ul>
+
+  <div class="tab-content">
+
+    <div role="tabpanel" class="tab-pane active" id="general">
+      <div class="intro">
+        {% placeholder "general" %}
+      </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="service">
+      <div class="intro">
+        {% placeholder "service" %}
+      </div>
+
+      <form id="service_form" class="contact" method="post">
+        {% csrf_token %}
+        <div class="fieldset">
+          <input id="type" type='hidden' name="type" value="Service"/>
+          <label>Name
+            <input id="name" name="name" type="text" class="form-control input-lg">
+          </label>
+          <label>Organisation
+            <input id="organisation" name="organisation" type="text" class="form-control input-lg">
+          </label>
+          <label>Email address
+            <input id="email" name="email" type="email" class="form-control input-lg">
+          </label>
+        </div>
+        <label>How can we help?
+          <textarea id="message" name="message" class="form-control" rows="10"></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary btn-lg">Send</button>
+      </form>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="press">
+      <div class="intro">
+        {% placeholder "press" %}
+      </div>
+
+      <form id="press_form" class="contact" method="post">
+        {% csrf_token %}
+        <div class="fieldset">
+          <input id="type" type='hidden' name="type" value="Press"/>
+          <label>Name
+            <input id="name" name="name" type="text" class="form-control input-lg">
+          </label>
+          <label>Organisation
+            <input id="organisation" name="organisation" type="text" class="form-control input-lg">
+          </label>
+          <label>Email address
+            <input id="email" name="email" type="email" class="form-control input-lg">
+          </label>
+        </div>
+        <label>How can we help?
+          <textarea id="message" name="message" class="form-control" rows="10"></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary btn-lg">Send</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block template-scripts %}
+<script>
+  $(function () {
+    // Enable link to tab
+    var url = document.location.toString();
+    if (url.match('#')) {
+      $('.tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+    }
+  });
+</script>
+{% endblock template-scripts %}

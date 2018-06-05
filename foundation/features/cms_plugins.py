@@ -20,4 +20,5 @@ class FeaturePlugin(CMSPluginBase):
         context['feature_list'] = Feature.objects.all()
         return context
 
+
 plugin_pool.register_plugin(FeaturePlugin)

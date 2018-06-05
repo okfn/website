@@ -43,6 +43,7 @@ def _parse_email_list(varname):
                 people.append(res)
     return tuple(people)
 
+
 # The people that get emailed when shit breaks (500)
 ADMINS = _parse_email_list('DJANGO_ADMINS')
 
@@ -70,6 +71,14 @@ else:
         EMAIL_PORT = env.get('DJANGO_EMAIL_PORT', '25')
         EMAIL_HOST_USER = env.get('DJANGO_EMAIL_USER', 'mail')
         EMAIL_HOST_PASSWORD = env.get('DJANGO_EMAIL_HOST_PASSWORD', 'mail')
+
+# set default email sender account for contact form enquiries
+CONTACT_EMAIL_SENDER = env.get('CONTACT_EMAIL_SENDER')
+
+# accounts that receive various enquiries from contact forms
+PRESS_EMAIL_RECEPIENTS = _parse_email_list('PRESS_EMAIL_RECEPIENTS')
+SERVICE_EMAIL_RECEPIENTS = _parse_email_list('SERVICE_EMAIL_RECEPIENTS')
+GENERAL_EMAIL_RECEPIENTS = _parse_email_list('GENERAL_EMAIL_RECEPIENTS')
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -106,7 +115,7 @@ INSTALLED_APPS = (
     'spurl',
     'standard_form',
     'formtools',
-
+    'sendemail',
 
     # Asset pipeline
     'compressor',
@@ -120,6 +129,7 @@ INSTALLED_APPS = (
     'aldryn_boilerplates',
     'aldryn_search',
     'aldryn_video',
+    'aldryn_quote',
 
     # CMS
     'cms',
@@ -136,6 +146,7 @@ INSTALLED_APPS = (
     'foundation.organisation',
     'foundation.redirector',  # Provides CSV importer command for redirects
     'foundation.search',
+    'article_list_item'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -202,6 +213,8 @@ ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
 ROOT_URLCONF = 'foundation.urls'
 
 WSGI_APPLICATION = 'foundation.wsgi.application'
+
+BOWER_COMPONENTS_ROOT = 'bower_components'
 
 if DEBUG:
     CACHES = {
@@ -430,7 +443,13 @@ CMS_TEMPLATES = (
     ('cms_twocolumn.html', 'Two columns'),
     ('cms_threecolumn.html', 'Three columns'),
     ('cms_homepage.html', 'Homepage'),
-    ('cms_resources.html', 'Brand resources')
+    ('cms_resources.html', 'Brand resources'),
+    ('cms_services.html', 'Tools and services'),
+    ('cms_article.html', 'Article'),
+    ('cms_services_article.html', 'Services article'),
+    ('cms_childlist.html', 'Child list'),
+    ('cms_services_childlist.html', 'Services child list'),
+    ('cms_contact.html', 'Contact'),
 )
 
 CMS_PLACEHOLDER_CONF = {

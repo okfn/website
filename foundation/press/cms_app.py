@@ -10,6 +10,7 @@ class PressReleaseAppHook(CMSApp):
     urls = ["foundation.press.urls.pressreleases"]
     menus = [PressReleaseMenu]
 
+
 apphook_pool.register(PressReleaseAppHook)
 
 
@@ -17,5 +18,6 @@ class PressMentionAppHook(CMSApp):
     name = _("Press Mentions")
     urls = ["foundation.press.urls.pressmentions"]
     menus = [PressMentionMenu]
+
 
 apphook_pool.register(PressMentionAppHook)

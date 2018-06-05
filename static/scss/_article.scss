@@ -1,0 +1,68 @@
+.article-template {
+  article {
+    @mixin intro {
+      font-size: 1.25em;
+      margin-bottom: 2em;
+    }
+    h1 {
+      font-weight: bold;
+
+      @media (min-width: $screen-md-min) {
+        font-size: 54px;
+      }
+
+      & + p {
+        @include intro;
+      }
+    }
+
+    p:first-child {
+      @include intro;
+    }
+
+    .plugin_picture {
+      display: block;
+      margin-top: $grid-gutter-width;
+
+      img {
+        width: 100%;
+      }
+
+      &.align-left,
+      &.align-right {
+        border-radius: 50%;
+        overflow: hidden;
+        border: solid 8px $brand-primary;
+        margin-bottom: $grid-gutter-width;
+        width: 330px;
+        height: 330px;
+
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &.align-center {
+        text-align: center;
+
+        img {
+          width: auto;
+          max-width: 100%;
+        }
+      }
+
+      @media (min-width: $screen-sm-min) {
+        &.align-left {
+          float: left;
+          margin-right: $grid-gutter-width;
+        }
+
+        &.align-right {
+          float: right;
+          margin-left: $grid-gutter-width;
+        }
+      }
+    }
+  }
+}

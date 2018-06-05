@@ -8,6 +8,7 @@ class UnitsAppHook(CMSApp):
     name = _("Units")
     urls = ["foundation.organisation.urls.units"]
 
+
 apphook_pool.register(UnitsAppHook)
 
 
@@ -15,12 +16,14 @@ class BoardAppHook(CMSApp):
     name = _("Board of Directors")
     urls = ["foundation.organisation.urls.board"]
 
+
 apphook_pool.register(BoardAppHook)
 
 
 class AdvisoryBoardAppHook(CMSApp):
     name = _("Advisory Board")
     urls = ["foundation.organisation.urls.advisoryboard"]
+
 
 apphook_pool.register(AdvisoryBoardAppHook)
 
@@ -30,6 +33,7 @@ class ProjectsAppHook(CMSApp):
     urls = ["foundation.organisation.urls.projects"]
     menus = [ProjectMenu]
 
+
 apphook_pool.register(ProjectsAppHook)
 
 
@@ -38,6 +42,7 @@ class ThemesAppHook(CMSApp):
     urls = ["foundation.organisation.urls.themes"]
     menus = [ThemeMenu]
 
+
 apphook_pool.register(ThemesAppHook)
 
 
@@ -45,11 +50,13 @@ class WorkingGroupsAppHook(CMSApp):
     name = _("Working Groups")
     urls = ["foundation.organisation.urls.workinggroups"]
 
+
 apphook_pool.register(WorkingGroupsAppHook)
 
 
 class NetworkGroupsAppHook(CMSApp):
     name = _("Network Groups")
     urls = ["foundation.organisation.urls.networkgroups"]
+
 
 apphook_pool.register(NetworkGroupsAppHook)

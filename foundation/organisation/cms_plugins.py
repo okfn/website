@@ -32,6 +32,7 @@ class FeaturedThemePlugin(CMSPluginBase):
         context['object'] = instance.theme
         return context
 
+
 plugin_pool.register_plugin(FeaturedThemePlugin)
 
 
@@ -47,6 +48,7 @@ class FeaturedProjectPlugin(CMSPluginBase):
 
         context['project'] = instance.project
         return context
+
 
 plugin_pool.register_plugin(FeaturedProjectPlugin)
 
@@ -72,6 +74,7 @@ class ProjectListPlugin(CMSPluginBase):
         context['projects'] = results
         return context
 
+
 plugin_pool.register_plugin(ProjectListPlugin)
 
 
@@ -87,6 +90,7 @@ class ThemesPlugin(CMSPluginBase):
         context['object_header'] = _("Themes")
         context['object_list'] = Theme.objects.all()
         return context
+
 
 plugin_pool.register_plugin(ThemesPlugin)
 
@@ -108,6 +112,7 @@ class NetworkGroupFlagsPlugin(CMSPluginBase):
 
         return context
 
+
 plugin_pool.register_plugin(NetworkGroupFlagsPlugin)
 
 
@@ -125,6 +130,7 @@ class WorkingGroupPlugin(CMSPluginBase):
         context['workinggroups'] = WorkingGroup.objects.active()
         return context
 
+
 plugin_pool.register_plugin(WorkingGroupPlugin)
 
 
@@ -141,6 +147,7 @@ class SignupFormPlugin(CMSPluginBase):
         context['title'] = instance.title
         context['description'] = instance.description
         return context
+
 
 plugin_pool.register_plugin(SignupFormPlugin)
 
