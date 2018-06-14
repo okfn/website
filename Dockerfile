@@ -22,4 +22,4 @@ RUN pip install -r requirements.txt
 ENV PORT 80
 EXPOSE $PORT
 
-CMD gunicorn foundation.wsgi:application
+CMD gunicorn foundation.wsgi:application --access-logfile '-' --error-logfile '-'
