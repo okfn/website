@@ -22,4 +22,4 @@ RUN pip install -r requirements.txt
 ENV PORT 80
 EXPOSE $PORT
 
-CMD newrelic-admin run-program gunicorn foundation.wsgi:application
+CMD gunicorn foundation.wsgi:application

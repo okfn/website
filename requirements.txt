@@ -40,7 +40,6 @@ html5lib==0.9999999
 iso3166==0.7
 libsass==0.11.1
 markdown2==2.3.1
-newrelic==2.62.0.47
 opengraph==0.5
 psycopg2==2.7.1
 elasticsearch==2.3.0

@@ -28,7 +28,6 @@ unicodecsv
 
 # Heroku deployment requirements
 gunicorn
-newrelic
 psycopg2
 pyelasticsearch>=0.6,<0.7 # required by django-haystack
 requests>=2.3,<2.4 # required by django-haystack
