@@ -1,0 +1,88 @@
+@import "../../css/_imp/import";
+
+
+/*
+	jQuery.mmenu position extension CSS
+*/
+
+.mm-menu.mm-offcanvas
+{
+	&.mm-right
+	{
+		left: auto;
+	}
+}
+
+@include mm_sizing_right;
+
+
+
+/*
+	jQuery.mmenu z-position extension CSS
+*/
+
+html.mm-front
+{
+	.mm-slideout
+	{
+		transform: none !important;
+		z-index: 0;
+	}
+	#mm-blocker
+	{
+		z-index: 1;
+	}
+	.mm-menu.mm-offcanvas
+	{
+		z-index: 2;
+	}
+}
+
+.mm-menu.mm-offcanvas
+{
+	&.mm-front,
+	&.mm-next
+	{
+		transition: transform $mm_transitionDuration $mm_transitionFunction;
+		//	transform: translate3d( -100%, 0, 0 );
+		@include mm_translate( -100%, 0 );
+
+		&.mm-right
+		{
+			//	transform: translate3d( 100%, 0, 0 );
+			@include mm_translate( 100%, 0 );
+		}
+	}
+	&.mm-top
+	{
+		//	transform: translate3d( 0, -100%, 0 );
+		@include mm_translate( 0, -100% );
+	}
+	&.mm-bottom
+	{
+		//	transform: translate3d( 0, 100%, 0 );
+		@include mm_translate( 0, 100% );
+	}
+	&.mm-top,
+	&.mm-bottom
+	{
+		width: 100%;
+		min-width: 100%;
+		max-width: 100%;
+	}
+	&.mm-bottom
+	{
+		top: auto;
+	}
+}
+html.mm-opening .mm-menu.mm-offcanvas
+{
+	&.mm-front,
+	&.mm-next
+	{
+		//	transform: translate3d( 0, 0, 0 );
+		@include mm_translate( 0, 0 );
+	}
+}
+
+@include mm_sizing_zposition;
