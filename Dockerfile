@@ -24,7 +24,8 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 RUN . /root/.nvm/nvm.sh && nvm install 10
 RUN . /root/.nvm/nvm.sh && nvm use 10
-RUN . /root/.nvm/nvm.sh && npm install
+RUN . /root/.nvm/nvm.sh && npm install -g bower
+RUN . /root/.nvm/nvm.sh && bower install --allow-root
 
 ENV PORT 80
 EXPOSE $PORT
