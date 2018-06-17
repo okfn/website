@@ -24,7 +24,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 RUN . /root/.nvm/nvm.sh && nvm install 10
 RUN . /root/.nvm/nvm.sh && nvm use 10
-RUN . /root/.nvm/nvm.sh && npm install --production
+RUN . /root/.nvm/nvm.sh && npm install
 
 ENV PORT 80
 EXPOSE $PORT
