@@ -8,15 +8,18 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
+import os
+import sys
 import email.utils
 import logging
-import os
 from os import environ as env
-
 import dj_database_url
-from memcacheify import memcacheify
-
 from django.utils.translation import ugettext_lazy as _
+from dotenv import load_dotenv
+
+# Activate dotenv
+if 'test' not in sys.argv:
+    load_dotenv('.env')
 
 # Silence warnings from ipython/sqlite
 import warnings
@@ -216,14 +219,21 @@ WSGI_APPLICATION = 'foundation.wsgi.application'
 
 BOWER_COMPONENTS_ROOT = 'bower_components'
 
-if DEBUG:
+CACHE_URL = env.get('CACHE_URL')
+if CACHE_URL:
+    CACHES = {
+        "default": {
+            "BACKEND": "django_redis.cache.RedisCache",
+            "LOCATION": CACHE_URL,
+            "OPTIONS": {
+                "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            }
+        }
+    }
+else:
     CACHES = {
         'default': {'BACKEND': 'django.core.cache.backends.dummy.DummyCache'}
     }
-else:
-    # Use memcache for django.core.cache if available (see the
-    # django-heroku-memcacheify documentation for details)
-    CACHES = memcacheify()
 
 db_config = dj_database_url.config(default='sqlite:///development.sqlite3')
 DATABASES = {

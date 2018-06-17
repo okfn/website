@@ -1,4 +1,3 @@
-# Primary deps
 Django>=1.6,<1.7
 Pillow>=2.4.0 # required by djangocms-text-ckeditor
 South
@@ -11,7 +10,7 @@ django-csp
 django-countries
 django-geoposition
 django-haystack>=2.1,<2.2
-django-heroku-memcacheify
+django-redis>4.8,<4.9
 django-markdown-deux
 django-pagedown
 django-reversion>=1.8
@@ -25,10 +24,9 @@ djangocms-text-ckeditor>=2.1.4,<2.2
 iso3166
 sorl-thumbnail
 unicodecsv
-
-# Heroku deployment requirements
 gunicorn
 psycopg2
 pyelasticsearch>=0.6,<0.7 # required by django-haystack
 requests>=2.3,<2.4 # required by django-haystack
 static
+python-dotenv>0.8

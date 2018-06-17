@@ -15,7 +15,7 @@ django-csp==2.0.3
 django-countries==4.0
 django-geoposition==0.2.2
 django-haystack==2.4.1
-django-heroku-memcacheify==1.0.0
+django-redis==4.8.0
 django-formtools==1.0
 django-markdown-deux==1.0.5
 django-mptt==0.8.3
@@ -54,3 +54,6 @@ dj-static==0.0.6
 unicodecsv==0.14.1
 rcssmin==1.0.6
 rjsmin==1.0.12
+pytz==2018.4
+redis==2.10.6
+python-dotenv==0.8.2
