@@ -3,7 +3,6 @@ MAINTAINER Open Knowledge International
 
 WORKDIR /app
 RUN apt-get update
-RUN apt-get install -y libmemcached-dev
 
 COPY article_list_item ./article_list_item
 COPY contrib ./contrib
