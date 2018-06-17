@@ -26,6 +26,9 @@ node_modules
 media
 staticfiles
 
+# Packages installed by bower
+static/vendor/
+
 # Extra
 logfile
 .projectile

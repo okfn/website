@@ -3,6 +3,7 @@ MAINTAINER Open Knowledge International
 
 WORKDIR /app
 RUN apt-get update
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
 COPY article_list_item ./article_list_item
 COPY contrib ./contrib
@@ -13,9 +14,17 @@ COPY sendemail ./sendemail
 COPY static ./static
 COPY templates ./templates
 COPY tools ./tools
+COPY .bowerrc .
+COPY bower.json .
 COPY manage.py .
+COPY package-lock.json .
+COPY package.json .
 COPY requirements.txt .
+
 RUN pip install -r requirements.txt
+RUN . /root/.nvm/nvm.sh && nvm install 10
+RUN . /root/.nvm/nvm.sh && nvm use 10
+RUN . /root/.nvm/nvm.sh && npm install --production
 
 ENV PORT 80
 EXPOSE $PORT

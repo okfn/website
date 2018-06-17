@@ -20,7 +20,6 @@ django-formtools==1.0
 django-markdown-deux==1.0.5
 django-mptt==0.8.3
 django-pagedown==0.1.1
-django-pylibmc-sasl==0.2.4
 #django-reversion==1.8.5
 django-reversion==1.10.1
 django-s3-folder-storage==0.3
@@ -43,7 +42,6 @@ markdown2==2.3.1
 opengraph==0.5
 psycopg2==2.7.1
 elasticsearch==2.3.0
-pylibmc==1.5.1
 pystache==0.5.4
 requests==2.9.1
 simplejson==3.8.2
