@@ -31,6 +31,5 @@ ENV PORT 80
 EXPOSE $PORT
 
 CMD gunicorn foundation.wsgi:application \ 
-    --timeout 120 \ 
     --access-logfile '-' \ 
     --error-logfile '-'
