@@ -64,16 +64,10 @@ if env.get('DJANGO_EMAIL_DEBUG') == 'true':
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
     EMAIL_USE_TLS = env.get('DJANGO_EMAIL_USE_TLS', 'true') == 'true'
-    if 'MANDRILL_USERNAME' in env:
-        EMAIL_HOST = 'smtp.mandrillapp.com'
-        EMAIL_PORT = 587
-        EMAIL_HOST_USER = env['MANDRILL_USERNAME']
-        EMAIL_HOST_PASSWORD = env['MANDRILL_APIKEY']
-    else:
-        EMAIL_HOST = env.get('DJANGO_EMAIL_HOST', 'localhost')
-        EMAIL_PORT = env.get('DJANGO_EMAIL_PORT', '25')
-        EMAIL_HOST_USER = env.get('DJANGO_EMAIL_USER', 'mail')
-        EMAIL_HOST_PASSWORD = env.get('DJANGO_EMAIL_HOST_PASSWORD', 'mail')
+    EMAIL_HOST = env.get('DJANGO_EMAIL_HOST', 'localhost')
+    EMAIL_HOST_USER = env.get('DJANGO_EMAIL_HOST_USER', 'mail')
+    EMAIL_HOST_PASSWORD = env.get('DJANGO_EMAIL_HOST_PASSWORD', 'mail')
+    EMAIL_PORT = env.get('DJANGO_EMAIL_PORT', '25')
 
 # set default email sender account for contact form enquiries
 CONTACT_EMAIL_SENDER = env.get('CONTACT_EMAIL_SENDER')
