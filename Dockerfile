@@ -30,4 +30,7 @@ RUN . /root/.nvm/nvm.sh && bower install --allow-root
 ENV PORT 80
 EXPOSE $PORT
 
-CMD gunicorn foundation.wsgi:application --access-logfile '-' --error-logfile '-'
+CMD gunicorn foundation.wsgi:application \ 
+    --timeout 120 \ 
+    --access-logfile '-' \ 
+    --error-logfile '-'
