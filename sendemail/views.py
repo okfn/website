@@ -33,6 +33,9 @@ def contactview(request):
             else:
                 recepients = settings.PRESS_EMAIL_RECEPIENTS
 
+            # flatten recepients list: (('name1', 'email1'), ...) -> ('email1', ...)
+            recepients = map(lambda recepient: recepient[1], recepients)
+
             # all form data will originate from the same email address
             try:
                 send_mail(
