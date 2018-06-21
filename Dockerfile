@@ -30,6 +30,8 @@ RUN . /root/.nvm/nvm.sh && bower install --allow-root
 ENV PORT 80
 EXPOSE $PORT
 
-CMD gunicorn foundation.wsgi:application \ 
-    --access-logfile '-' \ 
-    --error-logfile '-'
+CMD python manage.py migrate && \
+    python manage.py update_index && \
+    gunicorn foundation.wsgi:application \ 
+        --access-logfile '-' \ 
+        --error-logfile '-'
