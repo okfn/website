@@ -27,18 +27,19 @@ Prepare the database. This step can be skipped if you'd like to use dummy SQLite
 - Create a local database `createdb okfn`
 - Populate it `psql okfn --file=/path/to/dump.sq` or `pg_restore -d okfn path/to/dump.dump`
 
-Prepare the app:
-```bash
-pip install -r requirements.dev.txt
-npm install
-python manage.py migrate # only if you didn't use the database dump
-```
-
 Cherry-pick environment variables from `.env.example` you'd like to set and add it to the `.env` file. Popular options:
 - CACHE_URL
 - DATABASE_URL
 - DJANGO_DEBUG
 - DJANGO_SECRET_KEY
+
+Prepare the app:
+```bash
+pip install -r requirements.dev.txt
+npm install
+python manage.py migrate
+python manage.py update_index
+```
 
 Start the server:
 ```
