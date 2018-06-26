@@ -1,19 +1,15 @@
-# foundation
-
-This is the [Django][dj]/[Django CMS][djcms] project that runs <http://okfn.org>.
-
-[dj]: https://www.djangoproject.com/
-[djcms]: https://www.django-cms.org/
+# okfn.org
 
 [![Build Status](https://travis-ci.org/okfn/website.svg?branch=master)](https://travis-ci.org/okfn/website)
 [![Coverage Status](https://coveralls.io/repos/github/okfn/website/badge.svg?branch=master)](https://coveralls.io/github/okfn/website?branch=master)
+
+This is the [Django](https://www.djangoproject.com/)/[Django CMS](https://www.django-cms.org/) project that runs <http://okfn.org>.
 
 ## Prerequisites and assumptions
 
 You must have the following installed:
 
 - Python 2.7
-- libmemcached (`brew install libmemcached` on Mac OS X using [Homebrew](http://brew.sh/))
 - node
 
 Also, the python packages being used require the following libraries to be installed:
@@ -26,34 +22,33 @@ You may also wish to follow any install instructions inside a Python virtual env
 
 ## Running in development
 
-    pip install -r requirements.dev.txt
-    pip install honcho
-    npm ci
-    python manage.py migrate
-    honcho -f Procfile.dev start
+Prepare the database. This step can be skipped if you'd like to use dummy SQLite database:
+- Get a dump of the database
+- Create a local database `createdb okfn`
+- Populate it `psql okfn --file=/path/to/dump.sq` or `pg_restore -d okfn path/to/dump.dump`
 
-## Running on Heroku
+Cherry-pick environment variables from `.env.example` you'd like to set and add it to the `.env` file. Popular options:
+- CACHE_URL
+- DATABASE_URL
+- DJANGO_DEBUG
+- DJANGO_SECRET_KEY
 
-Please note that the following are by no means full instructions. There are a
-number of config variables that will also need setting before the application
-will work. These will be documented in due course.
+Prepare the app:
+```bash
+pip install -r requirements.dev.txt
+npm install
+python manage.py migrate
+python manage.py update_index
+```
 
-    heroku create
-    heroku labs:enable user-env-compile
-    heroku addons:add heroku-postgresql
-    heroku addons:add mandrill
-    heroku config DJANGO_DEBUG=false \
-                  DJANGO_COMPRESS_OFFLINE=true \
-                  ...
-    git push heroku master
-    heroku run python manage.py migrate
+Start the server:
+```
+python manage.py runserver # dev
+gunicorn foundation.wsgi:application --access-logfile '-' --error-logfile '-' # prod
+```
 
-## Notes
-
-### Using a local PostgreSQL database
-
-1. Get a dump of the database
-2. Create a local database `createdb okfn`
-3. Populate it `psql okfn --file=/path/to/dump.sq` or `pg_restore -d okfn path/to/dump.dump`
-
-Then to run the app use `export DATABASE_URL=postgres://{USER}@localhost/okfn && honcho -f Procfile.dev start`
+Another option is to use Docker. For this one you should configure your database to work with remote connections using a proper IP address in the connection string or you should use default SQLite database (omit `DATABASE_URL`):
+```
+docker build -t okfn .
+docker run -d -p 8888:80 -e DATABASE_URL=<change_me> -e <...> okfn
+```

@@ -8,15 +8,18 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
+import os
+import sys
 import email.utils
 import logging
-import os
 from os import environ as env
-
 import dj_database_url
-from memcacheify import memcacheify
-
 from django.utils.translation import ugettext_lazy as _
+from dotenv import load_dotenv
+
+# Activate dotenv
+if 'test' not in sys.argv:
+    load_dotenv('.env')
 
 # Silence warnings from ipython/sqlite
 import warnings
@@ -61,16 +64,10 @@ if env.get('DJANGO_EMAIL_DEBUG') == 'true':
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
     EMAIL_USE_TLS = env.get('DJANGO_EMAIL_USE_TLS', 'true') == 'true'
-    if 'MANDRILL_USERNAME' in env:
-        EMAIL_HOST = 'smtp.mandrillapp.com'
-        EMAIL_PORT = 587
-        EMAIL_HOST_USER = env['MANDRILL_USERNAME']
-        EMAIL_HOST_PASSWORD = env['MANDRILL_APIKEY']
-    else:
-        EMAIL_HOST = env.get('DJANGO_EMAIL_HOST', 'localhost')
-        EMAIL_PORT = env.get('DJANGO_EMAIL_PORT', '25')
-        EMAIL_HOST_USER = env.get('DJANGO_EMAIL_USER', 'mail')
-        EMAIL_HOST_PASSWORD = env.get('DJANGO_EMAIL_HOST_PASSWORD', 'mail')
+    EMAIL_HOST = env.get('DJANGO_EMAIL_HOST', 'localhost')
+    EMAIL_HOST_USER = env.get('DJANGO_EMAIL_HOST_USER', 'mail')
+    EMAIL_HOST_PASSWORD = env.get('DJANGO_EMAIL_HOST_PASSWORD', 'mail')
+    EMAIL_PORT = env.get('DJANGO_EMAIL_PORT', '25')
 
 # set default email sender account for contact form enquiries
 CONTACT_EMAIL_SENDER = env.get('CONTACT_EMAIL_SENDER')
@@ -208,22 +205,29 @@ STATICFILES_FINDERS = (
     )
 
 ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
-
-
 ROOT_URLCONF = 'foundation.urls'
-
 WSGI_APPLICATION = 'foundation.wsgi.application'
-
 BOWER_COMPONENTS_ROOT = 'bower_components'
 
-if DEBUG:
+# Cache configuration
+
+CACHE_URL = env.get('CACHE_URL')
+if CACHE_URL:
+    CACHES = {
+        "default": {
+            "BACKEND": "django_redis.cache.RedisCache",
+            "LOCATION": CACHE_URL,
+            "OPTIONS": {
+                "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            }
+        }
+    }
+else:
     CACHES = {
         'default': {'BACKEND': 'django.core.cache.backends.dummy.DummyCache'}
     }
-else:
-    # Use memcache for django.core.cache if available (see the
-    # django-heroku-memcacheify documentation for details)
-    CACHES = memcacheify()
+
+# Database configuration
 
 db_config = dj_database_url.config(default='sqlite:///development.sqlite3')
 DATABASES = {
@@ -234,44 +238,26 @@ if not DEBUG:
     # Keep database connections around for a while, reusing them when possible.
     CONN_MAX_AGE = 60
 
-# Search engine configurations
-
-# NB: simple_backend doesn't play nicely with Django==1.6 due to a known bug:
-#
-#     https://github.com/toastdriven/django-haystack/issues/908
-#
-HAYSTACK_CONNECTIONS = {
-    'default': {
-        'ENGINE': 'haystack.backends.simple_backend.SimpleEngine'
-    }
-}
+# Search configuration
 
 # Use realtime updates (synchronously update the index on model save/delete)
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
-
-haystack_default = HAYSTACK_CONNECTIONS['default']
-haystack_engine = env.get('HAYSTACK_SEARCH_ENGINE')
-
-if haystack_engine == 'solr':
-    haystack_default['ENGINE'] = 'haystack.backends.solr_backend.SolrEngine'
-    haystack_default['URL'] = env.get('HAYSTACK_SOLR_URL')
-elif haystack_engine == 'elasticsearch':
-    haystack_default['ENGINE'] = \
-        'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine'
-    haystack_default['URL'] = env.get('HAYSTACK_ELASTICSEARCH_URL')
-    haystack_default['INDEX_NAME'] = \
-        env.get('HAYSTACK_ELASTICSEARCH_INDEX_NAME', 'foundation')
-# Haystack also supports a number of other backends which could be configured
-# here.
-
-# Haystack on heroku using Bonsai:
-bonsai_url = env.get('BONSAI_URL')
-if bonsai_url is not None:
-    haystack_default['ENGINE'] = \
-        'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine'
-    haystack_default['URL'] = bonsai_url
-    haystack_default['INDEX_NAME'] = \
-        env.get('HAYSTACK_ELASTICSEARCH_INDEX_NAME', 'foundation')
+SEARCH_URL = env.get('SEARCH_URL')
+if SEARCH_URL:
+    HAYSTACK_CONNECTIONS = {
+        'default': {
+            'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+            'URL': SEARCH_URL,
+            'INDEX_NAME': 'foundation',
+        }
+    }
+else:
+    HAYSTACK_CONNECTIONS = {
+        'default': {
+            'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+            'PATH': os.path.join(os.path.dirname(__file__), '..', 'whoosh_index'),
+        }
+    }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
