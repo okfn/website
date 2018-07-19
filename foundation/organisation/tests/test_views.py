@@ -212,11 +212,19 @@ class BoardViewTest(WebTest):
         self.april_council = BoardMembership.objects.create(
             title='Technical consultant',
             person=self.april,
-            board=self.council)
+            board=self.council,
+            order=2)
         self.casey_council = BoardMembership.objects.create(
             title='Sport utilities consultant',
             person=self.casey,
-            board=self.council)
+            board=self.council,
+            order=1)
+        self.leonardo_council = BoardMembership.objects.create(
+            title='Medical consultant',
+            person=self.leonardo,
+            board=self.council,
+            order=3)
+
 
     def test_board(self):
         response = self.app.get(reverse('board'))
@@ -255,6 +263,13 @@ class BoardViewTest(WebTest):
         self.assertTrue(self.casey.twitter in response.body)
 
         self.assertTrue(self.splinter.name not in response.body)
+
+    def test_manual_order_of_units(self):
+        response = self.app.get(reverse('advisory-board'))
+        april = response.body.find(escape(self.april.name))
+        leonardo = response.body.find(self.leonardo.name)
+        casey = response.body.find(self.casey.name)
+        self.assertTrue(leonardo < april < casey)
 
 
 @override_settings(ROOT_URLCONF='foundation.tests.urls')
