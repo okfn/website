@@ -152,10 +152,17 @@ class Board(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
     description = models.TextField()
+    order = models.IntegerField(
+        blank=True, null=True,
+        help_text="Higher numbers mean higher up in the food chain")
+
     members = models.ManyToManyField('Person', through='BoardMembership')
 
     def __unicode__(self):
         return self.name
+
+    class Meta:
+        ordering = ["-order", "name"]
 
 
 class BoardMembership(models.Model):
@@ -165,9 +172,15 @@ class BoardMembership(models.Model):
     title = models.CharField(max_length=100)
     person = models.ForeignKey('Person')
     board = models.ForeignKey('Board')
+    order = models.IntegerField(
+        blank=True, null=True,
+        help_text="Higher numbers mean higher up in the food chain")
 
     def __unicode__(self):
         return self.person.name + ' - ' + self.title
+
+    class Meta:
+        ordering = ["-order", "person__name"]
 
 
 class Project(models.Model):
