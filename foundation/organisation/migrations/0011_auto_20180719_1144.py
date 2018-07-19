@@ -12,21 +12,12 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterModelOptions(
-            name='board',
-            options={'ordering': ['-order', 'name']},
-        ),
-        migrations.AlterModelOptions(
             name='boardmembership',
             options={'ordering': ['-order', 'person__name']},
         ),
         migrations.AddField(
-            model_name='board',
-            name='order',
-            field=models.IntegerField(help_text=b'Higher numbers mean higher up in the food chain', null=True, blank=True),
-        ),
-        migrations.AddField(
             model_name='boardmembership',
             name='order',
-            field=models.IntegerField(help_text=b'Higher numbers mean higher up in the food chain', null=True, blank=True),
+            field=models.IntegerField(help_text=b'Higher numbers mean higher up in the list', null=True, blank=True),
         ),
     ]
