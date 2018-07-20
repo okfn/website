@@ -118,7 +118,7 @@ class Unit(models.Model):
     members = models.ManyToManyField('Person', through='UnitMembership')
     order = models.IntegerField(
         blank=True, null=True,
-        help_text="Higher numbers mean higher up in the food chain")
+        help_text="Higher numbers mean higher up in the list")
 
     def __unicode__(self):
         return self.name
@@ -136,7 +136,7 @@ class UnitMembership(models.Model):
     unit = models.ForeignKey('Unit')
     order = models.IntegerField(
         blank=True, null=True,
-        help_text="Higher numbers mean higher up in the food chain")
+        help_text="Higher numbers mean higher up in the list")
 
     def __unicode__(self):
         return self.person.name + ' - ' + self.title
