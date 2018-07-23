@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/okfn/website#readme",
   "dependencies": {
-    "bower": "1.7.9"
+    "bower": "1.8.4"
   },
   "scripts": {
     "postinstall": "npm install -g bower"
