@@ -15,9 +15,6 @@
   "dependencies": {
     "bower": "1.8.4"
   },
-  "scripts": {
-    "postinstall": "npm install -g bower"
-  },
   "devDependencies": {
     "autoprefixer": "^8.2.0",
     "grunt": "^1.0.3",
