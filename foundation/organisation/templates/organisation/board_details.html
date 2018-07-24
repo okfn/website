@@ -10,8 +10,8 @@
 
 {% block custom_sidebar %}
   <h3>Members</h3>
-  <ul>{% for member in object.members.all %}
-    <li><a href="#{{ member.name|slugify }}">{{ member.name }}</a></li>
+  <ul>{% for membership in object.boardmembership_set.all %}
+    <li><a href="#{{ membership.person.name|slugify }}">{{ membership.person.name }}</a></li>
     {% endfor %}</ul>
     {% static_placeholder object.name|truncatechars:10|add:" (sidebar)" %}
 {% endblock %}

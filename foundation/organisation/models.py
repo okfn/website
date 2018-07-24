@@ -118,7 +118,7 @@ class Unit(models.Model):
     members = models.ManyToManyField('Person', through='UnitMembership')
     order = models.IntegerField(
         blank=True, null=True,
-        help_text="Higher numbers mean higher up in the food chain")
+        help_text="Higher numbers mean higher up in the list")
 
     def __unicode__(self):
         return self.name
@@ -136,7 +136,7 @@ class UnitMembership(models.Model):
     unit = models.ForeignKey('Unit')
     order = models.IntegerField(
         blank=True, null=True,
-        help_text="Higher numbers mean higher up in the food chain")
+        help_text="Higher numbers mean higher up in the list")
 
     def __unicode__(self):
         return self.person.name + ' - ' + self.title
@@ -152,6 +152,7 @@ class Board(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
     description = models.TextField()
+
     members = models.ManyToManyField('Person', through='BoardMembership')
 
     def __unicode__(self):
@@ -165,9 +166,15 @@ class BoardMembership(models.Model):
     title = models.CharField(max_length=100)
     person = models.ForeignKey('Person')
     board = models.ForeignKey('Board')
+    order = models.IntegerField(
+        blank=True, null=True,
+        help_text="Higher numbers mean higher up in the list")
 
     def __unicode__(self):
         return self.person.name + ' - ' + self.title
+
+    class Meta:
+        ordering = ["-order", "person__name"]
 
 
 class Project(models.Model):
