@@ -1,6 +1,8 @@
 # Pinned requirements
 Django==1.8.12
 Pillow==3.2.0
+aldryn-boilerplates==0.7.7
+aldryn-common==1.0.4
 git+git://github.com/philipp-x/aldryn-quote
 aldryn-search==0.2.12
 git+git://github.com/aldryn/aldryn-video
