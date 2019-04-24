@@ -6,7 +6,7 @@
     <div class="row">
         <div class="profile col-md-12" id="{{ person.name|slugify }}">
             <span class="image" style="background-image: url(
-                    {{ person.gravatar_url }}{% if person.photo %}&default={{ person.photo.url }}{% endif %});"><img
+            {% if person.photo %}{{ person.photo.url }}{% else %}{{ person.gravatar_url }}{% endif %});"><img
                     src="{% static 'img/blank.png' %}" alt=""/></span>
             <h3 class="name">{{ person.name }}</h3>
             {% if member.title %}
