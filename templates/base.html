@@ -4,9 +4,9 @@
 <!DOCTYPE html>
 <html lang='en-gb'>
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>{{ site.name }}: {% block title %}SET A TITLE{% endblock %}</title>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>{% block title %}SET A TITLE{% endblock %}</title>
 
     {% block head-icons %}{% endblock %}
     {% block head-links %}{% endblock %}
@@ -15,13 +15,16 @@
     {% block head-css %}{% endblock %}
     {% block head-meta %}
         {% block head-meta-fb-open-graph %}
+
+            <meta property="og:title" content="{% page_attribute 'page_title' %}"/>
             <meta property="og:type" content="website"/>
             <meta property="og:url"
                   content="{% if request.is_secure %}https://{% else %}http://{% endif %}{{ request.get_host }}{{ request.get_absolute_url }}"/>
             <meta property="og:description"
-                  content="A world where knowledge creates power for the many, not the few. This is the world we choose."/>
+                  content="{% page_attribute 'meta_description' %}"/>
             <meta property="og:image"
                   content="{{ STATIC_URL }}img/okf-logo-og-green-background-1200x630.png"/>
+
             {% block head-meta-fb-open-graph-extra %}{% endblock %}
         {% endblock %}
     {% endblock %}
