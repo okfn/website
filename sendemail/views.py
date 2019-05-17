@@ -49,7 +49,7 @@ def contactview(request):
             messages.info(
                 request,
                 'Thank you for your message. ' +
-                'Someone from Open Knowledge International' +
+                'Someone from Open Knowledge Foundation' +
                 ' will be in touch soon.')
 
     # reload the contact page after form data has been sent successfully
