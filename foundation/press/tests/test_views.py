@@ -64,11 +64,6 @@ class PressReleaseViewTest(WebTest):
         one_month_ago = response.body.find(self.one_month_old.title)
         self.assertTrue(one_day_ago < one_month_ago)
 
-    def test_press_mentions_accessible(self):
-        response = self.app.get(reverse('press-releases'))
-        mentions = reverse('press-mentions')
-        self.assertTrue(mentions in response)
-
     def test_future_releases_not_in_response(self):
         response = self.app.get(reverse('press-releases'))
         self.assertTrue(self.in_ten_minutes.title not in response)
