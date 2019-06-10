@@ -52,3 +52,23 @@ Another option is to use Docker. For this one you should configure your database
 docker build -t okfn .
 docker run -d -p 8888:80 -e DATABASE_URL=<change_me> -e <...> okfn
 ```
+
+
+## Static files
+
+Static assets are collected and stored in a Amazon S3 Bucket, and served via Cloudfront CDN. To update the collected static files, make sure you have this env vars set:
+
+```
+AWS_STORAGE_BUCKET_NAME="okfn-org-production"
+JANGO_USE_AWS_STORAGE="true"
+
+AWS_ACCESS_KEY_ID="change-me"
+AWS_SECRET_ACCESS_KEY="change-me"
+
+```
+
+To update the static files run
+
+```
+python manage.py collectstatic
+```
