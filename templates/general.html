@@ -9,11 +9,9 @@
 {% endblock %}
 
 {% block head-css %}
-    {% compress css %}
         <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
         <link rel="stylesheet" href="{{ STATIC_URL }}vendor/jQuery.mmenu/dist/css/jquery.mmenu.all.css">
         <link rel="stylesheet" href="{{ STATIC_URL }}css/simpletextrotator.css">
-    {% endcompress %}
     <script src="https://use.typekit.net/sew1dft.js"></script>
     <script>try {
         Typekit.load({async: true});
@@ -80,7 +78,6 @@
 {% endblock %}
 
 {% block javascript-libraries %}
-    {% compress js %}
 
         {% comment %}
   NB: The inline script tags here get compiled into the single JavaScript file
@@ -220,5 +217,4 @@
             });
         </script>
 
-    {% endcompress %}
 {% endblock %}
