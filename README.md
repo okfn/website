@@ -53,7 +53,6 @@ docker build -t okfn .
 docker run -d -p 8888:80 -e DATABASE_URL=<change_me> -e <...> okfn
 ```
 
-
 ## Static files
 
 Static assets are collected and stored in a Amazon S3 Bucket, and served via Cloudfront CDN. To update the collected static files, make sure you have this env vars set:
