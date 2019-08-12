@@ -42,7 +42,7 @@ iso3166==0.7
 libsass==0.11.1
 markdown2==2.3.1
 opengraph==0.5
-psycopg2==2.7.1
+psycopg2==2.8.3
 elasticsearch==2.3.0
 pystache==0.5.4
 requests==2.9.1
