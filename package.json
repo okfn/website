@@ -13,13 +13,15 @@
   },
   "homepage": "https://github.com/okfn/website#readme",
   "dependencies": {
-    "bower": "1.8.4"
+    "bower": "^1.8.8"
   },
   "devDependencies": {
     "autoprefixer": "^8.2.0",
-    "grunt": "^1.0.3",
+    "grunt": "^1.0.4",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-postcss": "^0.9.0",
-    "grunt-sass": "^3.0.1"
+    "grunt-sass": "^3.0.1",
+    "grunt-shell": "^3.0.1",
+    "node-sass": "^4.13.0"
   }
 }
