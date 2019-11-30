@@ -1,0 +1,24 @@
+{
+  "gray": {
+    "100": {
+      "value": "{color.gray.100.value}",
+      "comment": "BS"
+    },
+    "500": {
+      "value": "{color.gray.500.value}",
+      "comment": "BS"
+    },
+    "900": {
+      "value": "{color.gray.900.value}",
+      "comment": "BS"
+    }
+  },
+  "primary": {
+    "value": "{color.blue.base.value}",
+    "comment": "BS"
+  },
+  "body-color": {
+    "value": "{color.text.base.value}",
+    "comment": "BS"
+  }
+}
