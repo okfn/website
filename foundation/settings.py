@@ -207,7 +207,6 @@ STATICFILES_FINDERS = (
 ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
 ROOT_URLCONF = 'foundation.urls'
 WSGI_APPLICATION = 'foundation.wsgi.application'
-BOWER_COMPONENTS_ROOT = 'bower_components'
 
 # Cache configuration
 
