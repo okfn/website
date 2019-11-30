@@ -427,14 +427,10 @@ CMS_CACHE_DURATIONS = {
 CMS_TEMPLATES = (
     ('cms_default.html', 'Default layout'),
     ('cms_twocolumn.html', 'Two columns'),
-    ('cms_threecolumn.html', 'Three columns'),
     ('cms_homepage.html', 'Homepage'),
-    ('cms_resources.html', 'Brand resources'),
     ('cms_landing.html', 'Landing'),
     ('cms_article.html', 'Article'),
-    ('cms_services_article.html', 'Services article'),
     ('cms_childlist.html', 'Child list'),
-    ('cms_services_childlist.html', 'Services child list'),
     ('cms_contact.html', 'Contact'),
 )
 
