@@ -34,6 +34,17 @@ module.exports = function(grunt) {
       }
     },
 
+    shell: {
+      tokens: {
+        command: 'npx style-dictionary build',
+          options: {
+          execOptions: {
+            cwd: 'design-tokens'
+          }
+        }
+      }
+    },
+
     uglify: {
       scripts: {
         files: {
@@ -51,6 +62,12 @@ module.exports = function(grunt) {
       css: {
         files: '**/*.scss',
         tasks: ['sass', 'postcss:dist']
+      },
+
+      tokens: {
+        files: 'design-tokens/properties/**/*.json',
+        tasks: ['shell:tokens']
+      },
 
       js: {
         files: 'src/js/*.js',
@@ -63,6 +80,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-postcss');
+  grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask('default',['watch']);
