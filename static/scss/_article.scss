@@ -7,7 +7,7 @@
     h1 {
       font-weight: bold;
 
-      @media (min-width: $screen-md-min) {
+      @include media-breakpoint-up(md) {
         font-size: 54px;
       }
 
@@ -32,7 +32,7 @@
       &.align-right {
         border-radius: 50%;
         overflow: hidden;
-        border: solid 8px $brand-primary;
+        border: solid 8px $color-gray-900;
         margin-bottom: $grid-gutter-width;
         width: 330px;
         height: 330px;
@@ -40,6 +40,8 @@
         img {
           height: 100%;
           object-fit: cover;
+          border-radius: 50%;
+          border: solid 6px #fff;
         }
       }
 
@@ -52,7 +54,7 @@
         }
       }
 
-      @media (min-width: $screen-sm-min) {
+      @include media-breakpoint-up(sm) {
         &.align-left {
           float: left;
           margin-right: $grid-gutter-width;

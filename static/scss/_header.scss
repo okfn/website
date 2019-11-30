@@ -1,13 +1,28 @@
 .site-header {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: map-get($grid-breakpoints, lg)) and (orientation: landscape) {
+    min-height: 100vh;
+  }
+
+  @media (min-width: map-get($grid-breakpoints, lg)) and (orientation: landscape) and (min-height: 34rem) {
+    min-height: 34rem;
+  }
+
 
   .header {
     height: 120px;
     position: relative;
 
-    @media (min-width: $screen-md-min) {
+    @include media-breakpoint-up(md) {
       height: 150px;
+    }
+
+    .container {
+      height: 100%;
     }
 
     .brand {
@@ -15,25 +30,20 @@
       a {
         position: absolute;
         z-index: 50;
-        width: 250px;
-
-        img,
-        svg {
-          width: 100%;
-        }
+        top: 0;
+        bottom: 0;
 
         svg {
-          height: 120px;
-          @media (min-width: $screen-md-min) {
-            height: 150px;
+          width: 12rem;
+          height: 100%;
+
+          @include media-breakpoint-up(md) {
+            width: 15rem;
           }
 
-          .a {
-            fill: $green;
-          }
-          .b {
-            fill: $red;
-          }
+          .a{fill:#00d1ff;}
+          .b{fill:#d9dbdc;}
+          .c{fill:#231f20;}
         }
       }
     }
@@ -42,11 +52,13 @@
       display: inline-block;
       float: right;
       color: inherit;
-      font-size: 42px;
-      margin-top: 36px;
+      font-size: $size-font-xxxxl;
       outline: none;
+      height: 100%;
+      display: flex;
+      align-items: center;
 
-      @media (min-width: $screen-lg-min) {
+      @include media-breakpoint-up(xl) {
         display: none;
       }
     }
@@ -54,33 +66,42 @@
     nav {
       display: none;
 
-      @media (min-width: $screen-lg-min) {
-        display: block;
-        text-align: right;
+      @include media-breakpoint-up(xl) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
       }
 
       li {
         display: inline-block;
 
         a {
-          color: $text-color;
+          color: $color-text-base;
         }
       }
 
       .primary {
-        font-size: 17px;
-        text-transform: uppercase;
+        font-size: $size-font-lg;
         padding-top: 10px;
         vertical-align: middle;
 
+        a {
+          box-shadow: none;
+        }
+
         & > li {
-          &:not(.search) {
-            border: solid 2px #fff;
+          position: relative;
+          margin: 0 0 0 $size-spacing-base;
+
+          &.search {
+            display: flex;
+            align-items: center;
           }
 
           & > a {
-            padding: 8px 12px;
+            padding: $size-spacing-xs 0;
             z-index: 25;
+            border-bottom: solid 0.5ex #fff;
 
             &:hover {
               background-color: #fff;
@@ -89,14 +110,13 @@
 
           &.active {
             & > a {
-              background-color: $brand-primary;
-              color: #fff;
+              border-bottom-color: $color-text-decoration;
             }
           }
 
           &.has-children {
             &:hover {
-              border-color: $gray-lighter;
+              border-color: $color-gray-100;
 
               & > ul {
                 display: block;
@@ -116,30 +136,41 @@
             position: absolute;
             background-color: #fff;
             text-align: left;
-            left: 0;
+            left: -0.6rem;
             z-index: 2;
-            margin: -2px -2px 0 -2px;
+            border: solid 0.2rem #fff;
             padding: 0;
-            min-width: 100%;
-            border: solid 2px $gray-lighter;
             box-sizing: content-box;
             z-index: 1;
             text-transform: none;
-            font-size: 14px;
+            font-size: $size-font-base;
+            border-radius: 0.4rem;
             display: none;
 
             li {
               display: block;
-              border-bottom: solid 1px $gray-lighter;
+              border-style: solid;
+              border-width: 0 0.2rem;
+              border-color: $color-gray-900;
+
+              &:first-child {
+                border-top-width: 0.2rem;
+                border-top-left-radius: 0.3rem;
+                border-top-right-radius: 0.3rem;
+                padding-top: $size-spacing-sm;
+              }
 
               &:last-child {
-                border: none;
+                border-bottom-width: 0.2rem;
+                border-bottom-left-radius: 0.3rem;
+                border-bottom-right-radius: 0.3rem;
+                padding-bottom: $size-spacing-sm;
               }
             }
 
             a {
               display: block;
-              padding: 8px 12px;
+              padding: $size-spacing-xs $size-spacing-base;
               text-decoration: none;
             }
 
@@ -150,39 +181,24 @@
         }
 
         label[for="search"] {
-          background-color: $text-color;
-          color: #fff;
-          width: 30px;
-          height: 30px;
-          text-align: center;
-          border-radius: 50%;
-          margin-left: 10px;
-          position: relative;
-          line-height: 22px;
           cursor: pointer;
+          margin: 0;
+          line-height: 1;
 
           .icon-search {
-            font-size: 15px;
-            padding-top: 7px;
+            font-size: $size-font-xl;
             display: inline-block;
           }
         }
       }
 
       .secondary {
-        padding-top: 8px;
+        font-size: $size-font-sm;
+        padding-top: $size-spacing-base;
 
-        & > li > a {
-          padding-right: 2px;
-          background-color: transparent;
-          font-weight: 300;
-          opacity: 0.9;
-
-          [class^="icon-"] {
-            font-size: 17px;
-            position: relative;
-            top: 1px;
-          }
+        .nav-link {
+          padding-right: 0;
+          opacity: 0.8;
 
           &:hover {
             opacity: 1;
@@ -192,7 +208,7 @@
     }
 
     .search-bar {
-      background-color: $gray-lighter;
+      background-color: $color-gray-100;
       height: 150px;
       position: absolute;
       bottom: 150px;
@@ -216,7 +232,7 @@
             height: 60px;
             font-size: 30px;
             border: none;
-            border-bottom: solid 2px $gray-base;
+            border-bottom: solid 2px $color-gray-900;
             background-color: inherit;
             width: 100%;
             outline: none;
@@ -235,7 +251,7 @@
             height: 42px;
             border-radius: 50%;
             outline: none;
-            background-color: $brand-primary;
+            background-color: $color-blue-base;
             color: #fff;
             margin-left: 10px;
             line-height: 40px;
@@ -249,11 +265,111 @@
             &.cancel {
               background-color: inherit;
               color: inherit;
-              box-shadow: inset 0px 0px 0px 2px $text-color;
+              box-shadow: inset 0px 0px 0px 2px $color-text-base;
             }
           }
         }
       }
     }
+  }
+
+  .banner {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(xl) {
+      padding-top: $size-spacing-lg;
+      padding-bottom: $size-spacing-lg;
+    }
+
+    .container {
+      display: flex;
+      flex-grow: 1;
+      align-items: stretch;
+    }
+  }
+
+  .banner_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & > * {
+      font-size: $size-font-lg;
+
+      @include media-breakpoint-up(lg) {
+        max-width: 40ch;
+      }
+
+      @include media-breakpoint-up(xl) {
+        font-size: $size-font-xl;
+      }
+
+      &:first-child {
+        font-size: $size-font-xxxxl;
+        line-height: 1.1;
+        margin-bottom: $size-spacing-base;
+
+        @include media-breakpoint-up(md) {
+          font-size: $size-font-xxxxxl;
+        }
+
+        @include media-breakpoint-up(lg) {
+          max-width: 16ch;
+          font-size: $size-font-xxxxxxl;
+        }
+        @include media-breakpoint-up(xl) {
+          font-size: $size-font-xxxxxxxl;
+        }
+      }
+    }
+  }
+
+  .banner_image {
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+      display: block;
+      position: relative;
+      flex-grow: 1;
+      margin: $size-spacing-base 0;
+    }
+
+    .plugin_picture {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center right;
+    }
+  }
+
+  .banner_video {
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+      display: block;
+      width: 440px;
+      flex-shrink: 0;
+      margin-left: $size-spacing-xl;
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: 490px;
+    }
+  }
+
+  .banner_video-inner {
+    background-color: $color-gray-100;
+    position: relative;
+  	padding-top: 100%;
+  	height: 0;
   }
 }

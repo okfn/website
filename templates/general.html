@@ -13,17 +13,17 @@
 {% endblock %}
 
 {% block body-sheath %}
-    <div id="page">
+    <div class="page" id="page">
         <header class="site-header">
             <div class="header">
                 <div class="container">
                     <h1 class="brand">
-                        <a href="/">
-                          <img src="{{ STATIC_URL }}img/landscape-rgb-468x122.png" alt="Logo" style="margin:40px auto"/>
+                        <a class="brand_link" href="/">
+                          {% include 'includes/logo.svg' %}
                         </a>
                     </h1>
                     <a href="#mmenu" class="show-menu">
-                        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                        <span class="icon-menu" aria-hidden="true"></span>
                         <span class="sr-only">Open the menu</span>
                     </a>
 
@@ -54,7 +54,18 @@
         <main class='{% block main-class %}container {% endblock %}main'>
             {% block body %}{% endblock %}
         </main>
-        {% block pre_footer %}{% endblock %}
+        {% block pre_footer %}
+        <section class="footer-cta">
+          <div class="container">
+            <div class="text">
+              {% static_placeholder "footer call to action text" %}
+            </div>
+            <div class="link">
+              {% static_placeholder "footer call to action link" %}
+            </div>
+          </div>
+        </section>
+        {% endblock %}
         <footer class="site-footer">
             <div class='container'>
                 {% include 'includes/footer.html' %}
@@ -62,7 +73,7 @@
         </footer>
     </div>
 
-    <nav id="mmenu">
+    <nav id="mmenu" class="mobile-menu">
         <ul>
             {% include 'includes/nav.html' %}
             {% include 'includes/nav_secondary.html' %}

@@ -430,7 +430,7 @@ CMS_TEMPLATES = (
     ('cms_threecolumn.html', 'Three columns'),
     ('cms_homepage.html', 'Homepage'),
     ('cms_resources.html', 'Brand resources'),
-    ('cms_services.html', 'Tools and services'),
+    ('cms_landing.html', 'Landing'),
     ('cms_article.html', 'Article'),
     ('cms_services_article.html', 'Services article'),
     ('cms_childlist.html', 'Child list'),
@@ -460,3 +460,7 @@ THUMBNAIL_DEBUG = DEBUG  # sorl.thumbnail debugging
 handler = ThumbnailLogHandler()
 handler.setLevel(logging.ERROR)
 logging.getLogger('sorl.thumbnail').addHandler(handler)
+
+QUOTE_STYLES = (
+    'carousel',
+)

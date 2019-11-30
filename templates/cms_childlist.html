@@ -2,22 +2,9 @@
 {% load cms_tags %}
 
 {% block body-class %}childlist-template{% endblock %}
-{% block pagebanner %}
-<div class='banner'>
-  <div class='container'>
-    {% block pagebanner-inner %}
-      {% placeholder "headline" or %}<h2>{% page_attribute "page_title" %}</h2>{% endplaceholder %}
-      {% placeholder "blurb" %}
-    {% endblock %}
-  </div>
-</div>
-{% endblock %}
 
 {% block body %}
 <section id="more" class="primary-section">
-  <div class="intro">
-    {% placeholder "main" %}
-  </div>
   <div class="article-list">
   {% for page in request.current_page.get_children %}
     {% page_attribute "page_title" page as child_title %}
@@ -26,11 +13,12 @@
     {% if child_description != "None" and child_description != "" %}
     <article class="article-list-item">
       <div class="inner">
-        <h1>{{ child_title }}</h1>
-        <div class="description">
-          {{ child_description }}
+        <div class="text">
+          <h1 class="title"><a class="title_link" href="{{ child_slug }}">{{ child_title }}</a></h1>
+          <div class="description">
+            {{ child_description }}
+          </div>
         </div>
-        <a class="more btn" href="{{ child_slug }}">Read more</a>
       </div>
     </article>
     {% endif %}

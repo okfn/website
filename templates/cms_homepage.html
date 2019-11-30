@@ -7,80 +7,33 @@
 {% block pagebanner %}
 <section class="banner">
   <div class="container">
-    <div class="mission">
+    <div class="banner_text">
       {% placeholder "blurb" %}
     </div>
-      {% placeholder featured_news %}
+    <div class="banner_video">
+      <div class="banner_video-inner">
+        <!-- video -->
+      </div>
+    </div>
   </div>
 </section>
 {% endblock %}
 
 {% block body %}
 <section class="features">
-  <div class="container">
-    <div class="feature one">
-      <a class="image" href="/team" style="background-image: url({% static 'img/feature-team.jpg'%})"></a>
-      <h3>
-        <a href="/team">PASSIONATE TEAM</a>
-      </h3>
-      Passionate about openness. Using advocacy, technology and training to unlock information and enable people to create and share knowledge.
-    </div>
-
-    <div class="feature two">
-      <a class="image" href="{% url 'pages-details-by-slug' 'network' %}" style="background-image: url({% static 'img/feature-network.jpg'%})"></a>
-      <h3>
-        <a href="{% url 'pages-details-by-slug' 'network' %}">GLOBAL NETWORK</a>
-      </h3>
-      Meet, campaign, learn, innovate, share, train, create, support, explore: some of the ways you can help open up knowledge for everyone. Join us.
-    </div>
-
-    <div class="feature three">
-      <a class="image" href="{% url 'projects' %}" style="background-image: url({% static 'img/feature-projects.jpg'%})"></a>
-      <h3>
-        <a href="{% url 'projects' %}">DIVERSE PROJECTS</a>
-      </h3>
-      Through our projects, research and collaborations, we explore niche areas of data, and ways in which it can be used to empower people around the world.
-    </div>
-  </div>
+  {% placeholder "features" %}
 </section>
 
-<section class="container call-to-action">
-  <a href="https://discuss.okfn.org/" rel="external">
-    Be part of the discussion - join the Open Knowledge Forums
-  </a>
+<section>
+  <h2 class="home_section-heading">Latest updates</h2>
+  {% placeholder featured_news %}
 </section>
 
-<section class="blog-latest container">
-  <!-- Temporarily disabled -->
-  {#% placeholder "blogentries" %#}
-</section>
 {% endblock %}
 
+{% block pre_footer %}{% endblock %}
+
 {% block javascript-asynchronous %}
-<script src="{{ STATIC_URL }}vendor/jQuery.dotdotdot/src/jquery.dotdotdot.js"></script>
-<script>
-  $(function () {
-    // change bg img
-    $.fn.setBg = function(){
-      var newsimage = $('.banner .item.active').attr('data-img');
-      $('.banner').css('backgroundImage','url(' + newsimage + ')');
-    }
-    $.fn.setBg();
-    $('#news').on('slide.bs.carousel', function () {
-      $( ".banner").addClass( "transition");
-    })
-    $('#news').on('slid.bs.carousel', function () {
-      $.fn.setBg();
-      $( ".banner").removeClass( "transition");
-    })
-    // word spans
-    $(".carousel-caption h3, .carousel-caption p").lettering('words');
-    // blog preview ellipsis
-    $(".blog-latest article").dotdotdot({
-      //	configuration goes here
-    });
-  });
-</script>
 {% endblock %}
 
 {# Don't display the breadcrumb on the homepage #}
