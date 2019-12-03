@@ -1,0 +1,10 @@
+{
+  "headings": {
+    "font": {
+      "weight": {
+        "value": "{font.weight.black.value}",
+        "comment": "BS"
+      }
+    }
+  }
+}

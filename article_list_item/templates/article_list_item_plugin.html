@@ -6,14 +6,16 @@
       <img src="{{ instance.image.url }}" alt="" />
     </a>
     {% endif %}
-    <h1>{{ instance.title }}</h1>
-    {% if instance.description %}
-    <div class="description">
-      {{ instance.description|markdown }}
+    <div class="text">
+      <h1 class="title">{% if instance.call_to_action_url %}<a class="title_link" href="{{ instance.call_to_action_url }}">{% endif %}{{ instance.title }}{% if instance.call_to_action_url %}</a>{% endif %}</h1>
+      {% if instance.description %}
+      <div class="description">
+        {{ instance.description|markdown }}
+      </div>
+      {% endif %}
+      {% if instance.call_to_action_text %}
+      <a class="more"{% if instance.call_to_action_url %} href="{{ instance.call_to_action_url }}"{% endif %}>{{ instance.call_to_action_text }}</a>
+      {% endif %}
     </div>
-    {% endif %}
-    {% if instance.call_to_action_text %}
-    <a class="more btn"{% if instance.call_to_action_url %} href="{{ instance.call_to_action_url }}"{% endif %}>{{ instance.call_to_action_text }}</a>
-    {% endif %}
   </div>
 </article>

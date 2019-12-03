@@ -1,0 +1,6 @@
+.more {
+  font-weight: bold;
+  display: inline-block;
+  padding-bottom: 0.5ex;
+  @include link-underline(-3.3ex);
+}

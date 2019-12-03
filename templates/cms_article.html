@@ -1,20 +1,11 @@
 {% extends "cms_default.html" %}
 {% load cms_tags %}
 {% block body-class %}article-template{% endblock %}
-{% block pagebanner %}
-<div class='banner'>
-  <div class='container'>
-    {% block pagebanner-inner %}
-      {% placeholder "headline" inherit or %}<h2>{% page_attribute "page_title" %}</h2>{% endplaceholder %}
-      {% placeholder "blurb" inherit %}
-    {% endblock %}
-  </div>
-</div>
-{% endblock %}
+
 {% block body %}
 <div>
   <aside>
-    <nav id="side-nav">
+    <nav id="side-nav" class="side-nav">
       {% include 'includes/sidebar.html' %}
     </nav>
     <div>
@@ -28,4 +19,7 @@
     {% endblock %}
   </article>
 </div>
+
+{% include 'includes/cta.html' %}
 {% endblock %}
+{% block template-js %}$( ".carousel-item" ).first().addClass( "active" );{% endblock template-js %}

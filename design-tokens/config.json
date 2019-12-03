@@ -1,0 +1,27 @@
+{
+  "source": ["properties/**/*.json"],
+  "platforms": {
+    "scss": {
+      "transformGroup": "scss",
+      "buildPath": "build/scss/",
+      "files": [{
+        "destination": "_variables.scss",
+        "format": "scss/variables"
+      }]
+    },
+    "assets/embed/scss": {
+      "transforms": ["attribute/cti", "name/cti/kebab", "asset/base64"],
+      "buildPath": "build/scss/",
+      "files": [{
+        "destination": "_fonts.scss",
+        "format": "scss/variables",
+        "filter": {
+          "attributes": {
+            "category": "asset",
+            "type": "font"
+          }
+        }
+      }]
+    }
+  }
+}

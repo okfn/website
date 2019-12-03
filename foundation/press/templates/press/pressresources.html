@@ -1,156 +1,4 @@
-<style>
-    ul.logos {
-        padding: 0;
-
-    }
-
-    ul.logos > li {
-        display: block;
-        margin-bottom: 15px;
-
-    }
-
-    ul.logos > li .image {
-        display: block;
-        padding: 25px;
-        background-color: #fff;
-        text-align: center;
-        border: solid 5px #f0f0f0;
-
-    }
-
-    ul.logos > li .image img {
-        max-width: 100%;
-
-    }
-
-    ul.logos > li .text {
-        display: block;
-        background-color: #f0f0f0;
-        padding: 4px 10px 10px 10px;
-        font-size: 14px;
-        line-height: 1.1;
-
-    }
-
-    ul.logos > li .text a {
-        color: inherit;
-
-    }
-
-    ul.logos > li .text .png-toggle {
-        position: relative;
-
-    }
-
-    ul.logos > li .text .png-toggle label {
-        font-weight: normal;
-        position: relative;
-        cursor: pointer;
-
-    }
-
-    ul.logos > li .text .png-toggle label:after {
-        content: '';
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 3px 3px 0 3px;
-        border-color: #2d2d2d transparent transparent transparent;
-        position: absolute;
-        right: -9px;
-        top: 50%;
-        margin-top: -2px;
-    }
-
-    ul.logos > li .text .png-toggle .pngs {
-        display: none;
-        position: absolute;
-        z-index: 1;
-        left: 0;
-        background-color: #fff;
-        border: solid 1px #f0f0f0;
-
-    }
-
-    ul.logos > li .text .png-toggle input[type=checkbox] {
-        opacity: 0;
-
-    }
-
-    ul.logos > li .text .png-toggle input[type=checkbox]:checked ~ .pngs {
-        display: block;
-
-    }
-
-    ul.logos > li .text .png-toggle input[type=checkbox]:checked ~ .pngs:before {
-        content: '';
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 0 6px 6px 6px;
-        border-color: transparent transparent #fff transparent;
-        position: absolute;
-        top: -5px;
-        left: 25%;
-        margin-left: -6px;
-    }
-
-    ul.logos > li.reversed .image {
-        background-color: #69b93b;
-        border-color: #5ca234;
-
-    }
-
-    ul.logos > li.reversed .text {
-        background-color: #5ca234;
-        color: #fff;
-
-    }
-
-    ul.logos > li.reversed .text label:after {
-        border-top-color: #fff;
-
-    }
-
-    ul.logos > li.reversed .text .pngs a {
-        color: #69b93b;
-
-    }
-
-    ul.logos > li.reversed.grey .image {
-        background-color: #2d2d2d;
-        border-color: #1e1e1e;
-
-    }
-
-    ul.logos > li.reversed.grey .text {
-        background-color: #1e1e1e;
-
-    }
-
-    ul.logos > li.reversed.grey .text .pngs a {
-        color: #2d2d2d;
-
-    }
-
-    ul.logos.landscape li .image {
-        padding-left: 20px;
-        padding-right: 20px;
-
-    }
-
-    ul.logos.small-use li .image {
-        padding: 35px;
-    }
-
-    .exclusion-area {
-      max-width: 100%;
-      margin-top: 20px;
-    }
-</style>
-
-<div class='row'>
+<div class='press-resources'>
     <h3>Our Logos</h3>
     <p>
         There are a number of variations of the logo, suitable for different contexts. Designers should use the most appropriate logo at their discretion, adhering to the guidance below. There are small use versions for use when space is limited.
@@ -173,15 +21,15 @@
                     href="//branding.okfn.org/assets/standard-full-rgb.svg">SVG</a>,
         <span class="png-toggle"><label for="show-standard-rgb">PNG</label>
           <input type="checkbox" id="show-standard-rgb">
-          <ul class="pngs nav nav-pills nav-stacked">
+          <ul class="pngs nav">
             <li>
-              <a href="//a.okfn.org/img/oki/standard-rgb-167x172.png">167x172px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/standard-rgb-167x172.png">167x172px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/standard-rgb-334x344.png">334x344px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/standard-rgb-334x344.png">334x344px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/standard-rgb-667x687.png">667x687px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/standard-rgb-667x687.png">667x687px</a>
             </li>
           </ul>
         </span>
@@ -198,15 +46,15 @@
                     href="//branding.okfn.org/assets/standard-grey-rgb.svg">SVG</a>,
         <span class="png-toggle"><label for="show-standard-grey">PNG</label>
           <input type="checkbox" id="show-standard-grey">
-          <ul class="pngs nav nav-pills nav-stacked">
+          <ul class="pngs nav">
             <li>
-              <a href="//a.okfn.org/img/oki/standard-grey-167x172.png">167x172px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/standard-grey-167x172.png">167x172px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/standard-grey-334x344.png">334x344px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/standard-grey-334x344.png">334x344px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/standard-grey-667x687.png">667x687px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/standard-grey-667x687.png">667x687px</a>
             </li>
           </ul>
         </span>
@@ -223,15 +71,15 @@
                     href="//branding.okfn.org/assets/standard-white-rgb.svg">SVG</a>,
         <span class="png-toggle"><label for="show-standard-white">PNG</label>
           <input type="checkbox" id="show-standard-white">
-          <ul class="pngs nav nav-pills nav-stacked">
+          <ul class="pngs nav">
             <li>
-              <a href="//a.okfn.org/img/oki/standard-white-167x172.png">167x172px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/standard-white-167x172.png">167x172px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/standard-white-334x344.png">334x344px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/standard-white-334x344.png">334x344px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/standard-white-667x687.png">667x687px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/standard-white-667x687.png">667x687px</a>
             </li>
           </ul>
         </span>
@@ -257,18 +105,18 @@
                     href="//branding.okfn.org/assets/landscape-full-rgb.svg">SVG</a>,
         <span class="png-toggle"><label for="show-landscape-rgb">PNG</label>
           <input type="checkbox" id="show-landscape-rgb">
-          <ul class="pngs nav nav-pills nav-stacked">
+          <ul class="pngs nav">
             <li>
-              <a href="//a.okfn.org/img/oki/landscape-rgb-165x43.png">165x43px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/landscape-rgb-165x43.png">165x43px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/landscape-rgb-234x61.png">234x61px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/landscape-rgb-234x61.png">234x61px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/landscape-rgb-468x122.png">468x122px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/landscape-rgb-468x122.png">468x122px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/landscape-rgb-936x244.png">936x244px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/landscape-rgb-936x244.png">936x244px</a>
             </li>
           </ul>
         </span>
@@ -285,18 +133,18 @@
                     href="//branding.okfn.org/assets/landscape-grey-rgb.svg">SVG</a>,
         <span class="png-toggle"><label for="show-landscape-grey">PNG</label>
           <input type="checkbox" id="show-landscape-grey">
-          <ul class="pngs nav nav-pills nav-stacked">
+          <ul class="pngs nav">
             <li>
-              <a href="//a.okfn.org/img/oki/landscape-grey-165x43.png">165x43px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/landscape-grey-165x43.png">165x43px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/landscape-grey-234x61.png">234x61px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/landscape-grey-234x61.png">234x61px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/landscape-grey-468x122.png">468x122px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/landscape-grey-468x122.png">468x122px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/landscape-grey-936x244.png">936x244px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/landscape-grey-936x244.png">936x244px</a>
             </li>
           </ul>
         </span>
@@ -313,18 +161,18 @@
                     href="//branding.okfn.org/assets/landscape-white-rgb.svg">SVG</a>,
         <span class="png-toggle"><label for="show-landscape-white">PNG</label>
           <input type="checkbox" id="show-landscape-white">
-          <ul class="pngs nav nav-pills nav-stacked">
+          <ul class="pngs nav">
             <li>
-              <a href="//a.okfn.org/img/oki/landscape-white-165x43.png">165x43px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/landscape-white-165x43.png">165x43px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/landscape-white-234x61.png">234x61px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/landscape-white-234x61.png">234x61px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/landscape-white-468x122.png">468x122px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/landscape-white-468x122.png">468x122px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/landscape-white-936x244.png">936x244px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/landscape-white-936x244.png">936x244px</a>
             </li>
           </ul>
         </span>
@@ -350,15 +198,15 @@
                     href="//branding.okfn.org/assets/small-full-rgb.svg">SVG</a>,
         <span class="png-toggle"><label for="show-small-rgb">PNG</label>
           <input type="checkbox" id="show-small-rgb">
-          <ul class="pngs nav nav-pills nav-stacked">
+          <ul class="pngs nav">
             <li>
-              <a href="//a.okfn.org/img/oki/small-rgb-108x86.png">108x86px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/small-rgb-108x86.png">108x86px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/small-rgb-217x172.png">217x172px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/small-rgb-217x172.png">217x172px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/small-rgb-433x344.png">433x344px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/small-rgb-433x344.png">433x344px</a>
             </li>
           </ul>
         </span>
@@ -375,15 +223,15 @@
                     href="//branding.okfn.org/assets/small-grey-rgb.svg">SVG</a>,
         <span class="png-toggle"><label for="show-small-grey">PNG</label>
           <input type="checkbox" id="show-small-grey">
-          <ul class="pngs nav nav-pills nav-stacked">
+          <ul class="pngs nav">
             <li>
-              <a href="//a.okfn.org/img/oki/small-grey-108x86.png">108x86px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/small-grey-108x86.png">108x86px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/small-grey-216x172.png">216x172px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/small-grey-216x172.png">216x172px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/small-grey-432x344.png">432x344px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/small-grey-432x344.png">432x344px</a>
             </li>
           </ul>
         </span>
@@ -400,15 +248,15 @@
                     href="//branding.okfn.org/assets/small-white-rgb.svg">SVG</a>,
         <span class="png-toggle"><label for="show-small-white">PNG</label>
           <input type="checkbox" id="show-small-white">
-          <ul class="pngs nav nav-pills nav-stacked">
+          <ul class="pngs nav">
             <li>
-              <a href="//a.okfn.org/img/oki/small-white-108x86.png">108x86px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/small-white-108x86.png">108x86px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/small-white-217x172.png">217x172px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/small-white-217x172.png">217x172px</a>
             </li>
             <li>
-              <a href="//a.okfn.org/img/oki/small-white-433x344.png">433x344px</a>
+              <a class="nav-link" href="//a.okfn.org/img/oki/small-white-433x344.png">433x344px</a>
             </li>
           </ul>
         </span>

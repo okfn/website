@@ -1,0 +1,143 @@
+.footer-cta {
+  background-color: $color-blue-base;
+  font-weight: $font-weight-black;
+  line-height: 1.2;
+  font-size: $size-font-xl;
+  margin-top: $size-spacing-xxl;
+
+  @include media-breakpoint-up(md) {
+    font-size: $size-font-xxl;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .text {
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .link {
+    margin-left: $size-spacing-lg;
+
+    a {
+      display: block;
+      background-color: $color-gray-900;
+      color: #fff;
+      padding: $size-spacing-base $size-spacing-lg;
+      box-shadow: none;
+    }
+  }
+}
+
+.site-footer,
+html {
+  background-color: $color-gray-100;
+}
+
+.site-footer {
+  color: rgba(0, 0, 0, 0.6);
+  padding: $size-spacing-xxl 0 $size-spacing-xl 0;
+	font-size: $size-font-sm;
+
+	a {
+		color: rgba(0, 0, 0, 0.9);
+    box-shadow: none;
+
+		&:hover {
+			color: $color-gray-900;
+		}
+	}
+
+	.license {
+		display: block;
+		text-decoration: none;
+
+		@include media-breakpoint-up(md) {
+			float: left;
+			margin-right: 5px;
+		}
+
+		svg {
+			fill: currentColor;
+			width: 16px;
+			height: 16px;
+		}
+	}
+
+	.footer-primary {
+		@include make-row();
+
+    @include media-breakpoint-up(lg) {
+      align-items: center;
+    }
+
+		.footer-logo {
+		  @include make-col-ready();
+			opacity: 0.9;
+
+      @include media-breakpoint-up(lg) {
+        @include make-col(2);
+      }
+
+			&:hover {
+				opacity: 1;
+			}
+
+      svg {
+        width: 10.5rem;
+
+        .a {
+          fill: $color-gray-500;
+        }
+        .b {
+          fill: $color-gray-200;
+        }
+        .c {
+          fill: $color-gray-900;
+        }
+      }
+		}
+
+		.footer-links {
+      @include make-col-ready();
+			margin: 10px;
+
+			@include media-breakpoint-up(lg) {
+        @include make-col(10);
+				text-align: right;
+				margin: 0;
+			}
+
+			li {
+				display: block;
+
+				@include media-breakpoint-up(lg) {
+					display: inline-block;
+					padding: 7px;
+
+					&:last-child {
+						padding-right: 0;
+					}
+				}
+			}
+		}
+	}
+
+	.footer-secondary {
+		font-size: $size-font-xs;
+		border-top: solid 2px rgba(0, 0, 0, 0.4);
+		margin-top: $size-spacing-lg;
+		padding-top: $size-spacing-base;
+  }
+}
+
+#mmenu {
+  @include media-breakpoint-up(xl) {
+    display: none;
+  }
+}

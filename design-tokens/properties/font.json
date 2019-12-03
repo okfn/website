@@ -1,0 +1,14 @@
+{
+  "font": {
+    "family": {
+      "base": {
+        "value": "'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+      }
+    },
+    "weight": {
+      "black": {
+        "value": "900"
+      }
+    }
+  }
+}

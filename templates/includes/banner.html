@@ -1,0 +1,14 @@
+{% load cms_tags %}
+<div class="banner">
+  <div class="container">
+    <div class="banner_text">
+      {% block pagebanner-inner %}
+        <h2>{% page_attribute "page_title" %}</h2>
+        {% placeholder "blurb" %}
+      {% endblock %}
+    </div>
+    <div class="banner_image">
+      {% placeholder "banner image" inherit %}
+    </div>
+  </div>
+</div>

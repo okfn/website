@@ -207,7 +207,6 @@ STATICFILES_FINDERS = (
 ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
 ROOT_URLCONF = 'foundation.urls'
 WSGI_APPLICATION = 'foundation.wsgi.application'
-BOWER_COMPONENTS_ROOT = 'bower_components'
 
 # Cache configuration
 
@@ -427,14 +426,10 @@ CMS_CACHE_DURATIONS = {
 CMS_TEMPLATES = (
     ('cms_default.html', 'Default layout'),
     ('cms_twocolumn.html', 'Two columns'),
-    ('cms_threecolumn.html', 'Three columns'),
     ('cms_homepage.html', 'Homepage'),
-    ('cms_resources.html', 'Brand resources'),
-    ('cms_services.html', 'Tools and services'),
+    ('cms_landing.html', 'Landing'),
     ('cms_article.html', 'Article'),
-    ('cms_services_article.html', 'Services article'),
     ('cms_childlist.html', 'Child list'),
-    ('cms_services_childlist.html', 'Services child list'),
     ('cms_contact.html', 'Contact'),
 )
 
@@ -460,3 +455,7 @@ THUMBNAIL_DEBUG = DEBUG  # sorl.thumbnail debugging
 handler = ThumbnailLogHandler()
 handler.setLevel(logging.ERROR)
 logging.getLogger('sorl.thumbnail').addHandler(handler)
+
+QUOTE_STYLES = (
+    'carousel',
+)

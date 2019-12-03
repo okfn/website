@@ -1,0 +1,101 @@
+.cta {
+  margin-top: $size-spacing-xxl;
+
+  .about {
+    @include make-row();
+  }
+
+  .content {
+    @include make-col-ready;
+    margin-top: $size-spacing-lg;
+    font-size: $size-font-lg;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding-right: $grid-gutter-width;
+    }
+
+    h2, h3 {
+      font-size: $size-font-xxxxl;
+    }
+  }
+
+
+  .testimonials {
+    @include make-col-ready;
+    margin-top: $size-spacing-lg;
+
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding-left: $grid-gutter-width;
+    }
+
+    .carousel-inner {
+      display: flex;
+      align-items: center;
+      min-height: 100%;
+    }
+
+    blockquote {
+      padding: $size-spacing-xl;
+      background-color: $color-blue-base;
+
+      q {
+        position: relative;
+        font-size: $size-font-xl;
+        font-weight: bold;
+        display: block;
+        padding-left: $size-spacing-base;
+
+        &::before {
+          position: absolute;
+          font-size: 2em;
+          left: -0.6rem;
+          top: -1.2rem;
+          font-weight: 500;
+          font-size: $size-font-xxxxxxl;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+
+      footer {
+        margin-top: 1em;
+        padding-left: $size-spacing-base;
+      }
+
+      cite {
+        font-style: normal;
+      }
+    }
+  }
+
+  .logos {
+    margin-left: -$grid-gutter-width;
+    margin-right: -$grid-gutter-width;
+    margin-top: $size-spacing-xl;
+
+    span {
+      display: block;
+      margin: $size-spacing-base $grid-gutter-width;
+      filter: grayscale(100%);
+      opacity: 0.75;
+      display: inline-block;
+    }
+
+    img {
+      height: 80px;
+    }
+  }
+}
