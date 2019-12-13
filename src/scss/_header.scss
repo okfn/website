@@ -1,3 +1,6 @@
+$home-video-height-lg: 440px;
+$home-video-height-xl: 490px;
+
 .site-header {
   position: relative;
   z-index: 1;
@@ -356,13 +359,13 @@
 
     @include media-breakpoint-up(lg) {
       display: block;
-      width: 440px;
+      width: $home-video-height-lg;
       flex-shrink: 0;
       margin-left: $size-spacing-xl;
     }
 
     @include media-breakpoint-up(xl) {
-      width: 490px;
+      width: $home-video-height-xl;
     }
   }
 
@@ -371,5 +374,97 @@
     position: relative;
   	padding-top: 100%;
   	height: 0;
+
+    .banner_video-play,
+    .banner_video-close {
+      display: none;
+      border: none;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .plugin_picture {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .aldryn-video {
+      display: flex;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      justify-content: center;
+      background-color: $color-gray-100;
+      width: 0;
+      transition: width 0.2s;
+
+      .video-active & {
+        width: map-get($container-max-widths, lg) - $grid-gutter-width;
+
+        @include media-breakpoint-up(xl) {
+          width: map-get($container-max-widths, xl) - $grid-gutter-width;
+        }
+      }
+
+      .embed-responsive {
+        &::before {
+          padding-top: 0;
+          height: $home-video-height-lg;
+
+          @include media-breakpoint-up(xl) {
+            height: $home-video-height-xl;
+          }
+        }
+      }
+
+      .embed-responsive-16by9 {
+        width: $home-video-height-lg * (16/9);
+
+        @include media-breakpoint-up(xl) {
+          width: $home-video-height-xl * (16/9);
+        }
+      }
+
+      & ~ .banner_video-play {
+        .page:not(.video-active) & {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #fff;
+          color: $color-blue-base;
+          width: 8rem;
+          height: 8rem;
+          top: 50%;
+          left: 50%;
+          transform: translate(-4rem,-4rem);
+          font-size: 5rem;
+          text-indent: 0.4rem;
+        }
+      }
+
+      & ~ .banner_video-close {
+        .video-active & {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: $color-gray-900;
+          color: #fff;
+          top: $size-spacing-base;
+          right: $size-spacing-base;
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
   }
 }
