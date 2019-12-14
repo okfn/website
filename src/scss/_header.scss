@@ -181,6 +181,15 @@ $home-video-height-xl: 490px;
               display: none;
             }
           }
+
+          // align dropdown right for last item
+          // to prevent it going off screen
+          &:nth-last-child(2) {
+            & > ul {
+              left: auto;
+              right: -0.6rem;
+            }
+          }
         }
 
         label[for="search"] {
