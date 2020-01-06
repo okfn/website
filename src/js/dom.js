@@ -51,8 +51,10 @@ $(document).ready(function() {
   $(homeVideoIframe).attr('allow', 'autoplay');
   // edit the params
   var framesrc = $(homeVideoIframe).attr('src');
-  var newframesrc = framesrc.replace('feature=oembed', 'enablejsapi=1');
-  $(homeVideoIframe).attr('src', newframesrc);
+  if (framesrc) {
+    var newframesrc = framesrc.replace('feature=oembed', 'enablejsapi=1');
+    $(homeVideoIframe).attr('src', newframesrc);
+  }
 
   // Show video and play it
   $('#play-home-video').on('click', function () {
