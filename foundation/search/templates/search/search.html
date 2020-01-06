@@ -4,13 +4,21 @@
 
 {% block title %}{% trans 'Search' %}{% endblock %}
 
-{% block pagebanner-inner %}
-  <h2>{% trans 'Search' %}</h2>
-  {% if query %}
-    {% blocktrans with num=page.object_list|length %}
-      Your search for: "{{ query }}" returned {{ num }} results.
-    {% endblocktrans %}
-  {% endif %}
+{% block pagebanner %}
+  <div class="banner">
+    <div class="container">
+      <div class="banner_text">
+        <h2>{% trans 'Search' %}</h2>
+        {% if query %}
+          <p>
+          {% blocktrans with num=page.object_list|length %}
+            Your search for: "{{ query }}" returned {{ num }} results.
+          {% endblocktrans %}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
 {% endblock %}
 
 {% block main %}

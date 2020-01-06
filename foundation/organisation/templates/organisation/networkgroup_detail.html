@@ -1,12 +1,21 @@
 {% extends "cms_apphook.html" %}
 {% load i18n %}
 {% load markdown_deux_tags %}
-
+{% load cms_tags %}
 {% block title %}{{ object.name }}{% endblock %}
 
-{% block pagebanner-inner %}
-    <h2>{{ object.name }}</h2>
-    <p>{{ object.description|markdown }}</p>
+{% block pagebanner %}
+  <div class="banner">
+    <div class="container">
+      <div class="banner_text">
+        <h2>{{ object.name }}</h2>
+        {{ object.description|markdown }}
+      </div>
+      <div class="banner_image">
+        {% placeholder "banner image" inherit %}
+      </div>
+    </div>
+  </div>
 {% endblock %}
 
 {% block custom_sidebar %}
