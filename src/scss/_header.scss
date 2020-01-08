@@ -364,10 +364,8 @@ $home-video-height-xl: 490px;
   }
 
   .banner_video {
-    display: none;
 
     @include media-breakpoint-up(lg) {
-      display: block;
       width: $home-video-height-lg;
       flex-shrink: 0;
       margin-left: $size-spacing-xl;
@@ -418,7 +416,11 @@ $home-video-height-xl: 490px;
       transition: width 0.2s;
 
       .video-active & {
-        width: map-get($container-max-widths, lg) - $grid-gutter-width;
+        width: 100%;
+
+        @include media-breakpoint-up(lg) {
+          width: map-get($container-max-widths, lg) - $grid-gutter-width;
+        }
 
         @include media-breakpoint-up(xl) {
           width: map-get($container-max-widths, xl) - $grid-gutter-width;
@@ -437,7 +439,9 @@ $home-video-height-xl: 490px;
       }
 
       .embed-responsive-16by9 {
-        width: $home-video-height-lg * (16/9);
+        @include media-breakpoint-up(lg) {
+          width: $home-video-height-lg * (16/9);
+        }
 
         @include media-breakpoint-up(xl) {
           width: $home-video-height-xl * (16/9);

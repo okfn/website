@@ -2,8 +2,11 @@
   overflow-x: hidden;
 
   .banner .container {
+    flex-direction: column;
+
     @include media-breakpoint-up(lg) {
       position: relative;
+      flex-direction: row;
 
       &::before,
       &::after {
