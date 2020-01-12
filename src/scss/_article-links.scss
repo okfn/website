@@ -1,0 +1,7 @@
+.article-links {
+  @include docs-narrow;
+
+  &:empty {
+    margin: 0;
+  }
+}

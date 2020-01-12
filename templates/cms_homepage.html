@@ -2,7 +2,7 @@
 {% load cms_tags %}
 {% load i18n %}
 {% load staticfiles %}
-
+{% block head-scripts %}<script src="http://www.youtube.com/player_api"></script>{% endblock head-scripts %}
 {% block body-class %}home-template{% endblock %}
 {% block pagebanner %}
 <section class="banner">
@@ -12,7 +12,14 @@
     </div>
     <div class="banner_video">
       <div class="banner_video-inner">
-        <!-- video -->
+        {% placeholder "banner thumb" %}
+        {% placeholder "banner video" %}
+        <button class="banner_video-play btn" aria-label="Play video" id="play-home-video">
+          <span class="icon-arrow-right" aria-hidden="true"></span>
+        </button>
+        <button class="banner_video-close btn" aria-label="Close video" id="close-home-video">
+          <span class="icon-close" aria-hidden="true"></span>
+        </button>
       </div>
     </div>
   </div>
