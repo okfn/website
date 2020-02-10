@@ -1,0 +1,10 @@
+{
+  "input": {
+    "border": {
+      "color": {
+        "value": "{color.gray.200.value}",
+        "comment": "BS"
+      }
+    }
+  }
+}

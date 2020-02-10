@@ -1,0 +1,129 @@
+@mixin link-underline-hover($offset: $hoverOffset) {
+  box-shadow: inset 0 $offset 0 0 $color-text-decoration;
+}
+
+@mixin link-underline($hoverOffset: -2.3ex) {
+  box-shadow: inset 0 -0.3ex 0 0 $color-text-decoration;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    @include link-underline-hover($hoverOffset);
+  }
+}
+
+
+@mixin docs-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: solid 0.4rem $color-gray-900;
+  border-radius: 0.2rem;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    border-style: solid;
+  }
+
+  &::before {
+    top: 0.26rem;
+    right: 0.26rem;
+    border-width: 0 2.1rem 2.1rem 0;
+    border-color: #fff transparent;
+  }
+
+  &::after {
+    position: absolute;
+    top: -0.4rem;
+    right: -0.4rem;
+    border-width: 0 3rem 3rem 0;
+    border-color: transparent #fff;
+  }
+
+  .inner {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &::before {
+      content: '';
+      width: 3rem;
+      height: 3rem;
+      top: -0.4rem;
+      right: -0.4rem;
+      border-radius: 0.2rem;
+      background-color: $color-gray-900;
+      align-self: flex-end;
+      transform: translate(0.3rem, -0.3rem);
+    }
+  }
+
+  .text {
+    padding: $size-spacing-lg;
+    min-height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .description {
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@mixin docs {
+  display: grid;
+  grid-gap: $grid-gutter-width;
+  grid-template-columns: 1fr;
+  margin-top: $grid-gutter-width;
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: $size-spacing-xxl;
+  }
+
+  @include media-breakpoint-up(xl) {
+    grid-gap: $grid-gutter-width*2;
+  }
+
+  .article-list-item {
+    @include docs-item;
+  }
+
+  .title {
+    font-size: $size-font-xxl;
+  }
+}
+
+@mixin docs-narrow {
+  display: grid;
+  grid-gap: $grid-gutter-width;
+  grid-template-columns: 1fr;
+  margin-top: $grid-gutter-width;
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include media-breakpoint-up(xl) {
+    grid-gap: $grid-gutter-width*1.5;
+  }
+
+  .article-list-item {
+    @include docs-item;
+  }
+
+  .title {
+    font-size: $size-font-xxl;
+  }
+}

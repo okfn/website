@@ -10,27 +10,20 @@
 
 {% block head-css %}
         <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
-        <link rel="stylesheet" href="{{ STATIC_URL }}vendor/jQuery.mmenu/dist/css/jquery.mmenu.all.css">
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/simpletextrotator.css">
-    <script src="https://use.typekit.net/sew1dft.js"></script>
-    <script>try {
-        Typekit.load({async: true});
-    } catch (e) {
-    }</script>
 {% endblock %}
 
 {% block body-sheath %}
-    <div id="page">
+    <div class="page" id="page">
         <header class="site-header">
             <div class="header">
                 <div class="container">
                     <h1 class="brand">
-                        <a href="/">
-                          <img src="{{ STATIC_URL }}img/landscape-rgb-468x122.png" alt="Logo" style="margin:40px auto"/>
+                        <a class="brand_link" href="/">
+                          {% include 'includes/logo.svg' %}
                         </a>
                     </h1>
                     <a href="#mmenu" class="show-menu">
-                        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                        <span class="icon-menu" aria-hidden="true"></span>
                         <span class="sr-only">Open the menu</span>
                     </a>
 
@@ -61,7 +54,18 @@
         <main class='{% block main-class %}container {% endblock %}main'>
             {% block body %}{% endblock %}
         </main>
-        {% block pre_footer %}{% endblock %}
+        {% block pre_footer %}
+        <section class="footer-cta">
+          <div class="container">
+            <div class="text">
+              {% static_placeholder "footer call to action text" %}
+            </div>
+            <div class="link">
+              {% static_placeholder "footer call to action link" %}
+            </div>
+          </div>
+        </section>
+        {% endblock %}
         <footer class="site-footer">
             <div class='container'>
                 {% include 'includes/footer.html' %}
@@ -69,7 +73,7 @@
         </footer>
     </div>
 
-    <nav id="mmenu">
+    <nav id="mmenu" class="mobile-menu">
         <ul>
             {% include 'includes/nav.html' %}
             {% include 'includes/nav_secondary.html' %}
@@ -111,108 +115,11 @@
             </script>
         {% endif %}
 
-        <script type="text/javascript" src="{{ STATIC_URL }}vendor/jquery/dist/jquery.js"
-                charset="utf-8"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }}vendor/bootstrap/dist/js/bootstrap.js"
-                charset="utf-8"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }}vendor/bootstrap/js/dropdown.js"
-                charset="utf-8"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }}vendor/bootstrap/js/collapse.js"
-                charset="utf-8"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }}vendor/letteringjs/jquery.lettering.js"
+        <script type="text/javascript" src="{{ STATIC_URL }}js/scripts.js"
                 charset="utf-8"></script>
         {% block template-scripts %}{% endblock template-scripts %}
         <script>
             $(function () {
-                // show / hide search bar
-                $('#display-search-bar').on('click', function () {
-                    $('#main-search-bar').addClass("active");
-                });
-                $('#main-search-bar .cancel').on('click', function (event) {
-                    event.preventDefault();
-                    $('#main-search-bar').removeClass("active");
-                });
-
-                // TODO: this is only needed for pages where the member.html template is
-                // included so it should probably somehow be moved.
-                $(function () {
-                    var allTabs = $('.profile .meta');
-                    allTabs.each(function () {
-                        var active = $(this).find('.active').length;
-                        if (!active) {
-                            $(this).find('.nav li').first().addClass('active');
-                            $(this).find('.tab-content .tab-pane').first().addClass('active');
-                        }
-                    })
-                });
-
-                function loadScript(src) {
-                    var theScript = document.createElement('script');
-                    theScript.type = 'text/javascript';
-                    theScript.src = src;
-
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(theScript, s);
-                };
-
-                function resizeNavBar() {
-                    var contents = $('.mm-current .mm-listview').height();
-                    var header = $('.mm-current .mm-navbar').height();
-                    var PADDING_TOP = 40;
-                    var totalHeight = contents + header + PADDING_TOP;
-                    $('#side-nav').animate({height: totalHeight}, 400);
-                }
-
-                (function loadMenuWithScreenSizeAwareness() {
-                    var hamBurgerButton = document.getElementsByClassName('show-menu')[0];
-                    var display = window.getComputedStyle(hamBurgerButton, null).getPropertyValue("display");
-                    var bigScreen = (display === 'none');
-                    var navigationVisible = ($('#side-nav > ul').length) > 0;
-                    if (bigScreen & navigationVisible) {
-                        loadScript('{{ STATIC_URL }}vendor/jQuery.mmenu/dist/js/jquery.mmenu.oncanvas.min.js');
-                        $(window).on('load', function () {
-                            $("#side-nav").mmenu({
-                                // options
-                            }, {
-                                // configuration
-                                classNames: {
-                                    selected: "active"
-                                },
-                                "offCanvas": false
-                            });
-                            $('#side-nav').css('display', 'block');
-                            resizeNavBar();
-
-                            api = $("#side-nav").data("mmenu");
-                            api.bind('openPanel', resizeNavBar);
-                        });
-                    }
-                    else {
-                        loadScript('{{ STATIC_URL }}vendor/jQuery.mmenu/dist/js/jquery.mmenu.min.js');
-                        $(window).on('load', function () {
-                            $("#mmenu").mmenu({
-                                // options
-                                offCanvas: {
-                                    position: "right"
-                                },
-                                searchfield: true,
-                                extensions: ["theme-dark"]
-                            }, {
-                                // configuration
-                                classNames: {
-                                    selected: "active"
-                                }
-                            });
-                        });
-                    }
-                })();
-
-                //external links
-                $('a[rel*=external]').click(function () {
-                    window.open(this.href);
-                    return false;
-                });
-
                 {% block template-js %}{% endblock template-js %}
             });
         </script>

@@ -1,0 +1,26 @@
+.min-cta {
+  position: relative;
+  font-size: $size-font-xl;
+  padding: 0 $size-spacing-xxl;
+  margin: 0 $size-spacing-xxl;
+
+  & > :first-child {
+    margin-top: $size-spacing-xxl;
+    padding-top: $size-spacing-xxl;
+    font-size: $size-font-xxxl;
+
+    &::before {
+      content: url("../img/rectangle-blue.svg");
+      position: absolute;
+      width: 10rem;
+      top: 50%;
+      left: -2rem;
+      z-index: -1;
+      transform: translate(0, -5.5rem);
+    }
+  }
+
+  & > :last-child {
+    padding-bottom: $size-spacing-xl;
+  }
+}

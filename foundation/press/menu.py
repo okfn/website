@@ -24,20 +24,20 @@ class PressReleaseMenu(CMSAttachMenu):
 menu_pool.register_menu(PressReleaseMenu)
 
 
-class PressMentionMenu(CMSAttachMenu):
+#  class PressMentionMenu(CMSAttachMenu):
 
-    name = _("Press Mentions")
+    #  name = _("Press Mentions")
 
-    def get_nodes(self, request):
-        nodes = []
-        for mention in PressMention.objects.all():
-            node = NavigationNode(
-                mention.title,
-                mention.get_absolute_url(),
-                mention.pk,
-            )
-            nodes.append(node)
-        return nodes
+    #  def get_nodes(self, request):
+        #  nodes = []
+        #  for mention in PressMention.objects.all():
+            #  node = NavigationNode(
+                #  mention.title,
+                #  mention.get_absolute_url(),
+                #  mention.pk,
+            #  )
+            #  nodes.append(node)
+        #  return nodes
 
 
-menu_pool.register_menu(PressMentionMenu)
+#  menu_pool.register_menu(PressMentionMenu)

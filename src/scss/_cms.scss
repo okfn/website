@@ -1,0 +1,7 @@
+// Prevent CMS admin inheriting styles
+.cms {
+  a,
+  a:hover {
+    box-shadow: none;
+  }
+}

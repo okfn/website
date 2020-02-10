@@ -1,18 +1,8 @@
-<div id="news" class="news carousel slide" data-ride="carousel" data-interval="15000">
-  <ol class="carousel-indicators">
+<div class="featured-news">
+  <div class="featured-news_inner">
     {% for feature in feature_list %}
-      <li data-target="#news"
-          data-slide-to="{{ forloop.counter0 }}"
-          {% if forloop.first	%}
-          class="active"
-          {% endif %}></li>
-    {% endfor %}
-  </ol>
-
-  <div class="carousel-inner" role="listbox">
-    {% for feature in feature_list %}
-    <div class="project item {% if forloop.first %}active{% endif %}" data-img="{{ feature.image.url }}">
-      <a class="carousel-caption" {% if feature.link %}href="{{feature.link}}" {% endif %}>
+    <div class="featured-news_item" data-index="{{ forloop.counter }}">
+      <a class="featured-news_link" {% if feature.link %}href="{{feature.link}}" {% endif %}>
         <h3>{{feature.title}}</h3>
         <p>{{feature.text}}</p>
       </a>

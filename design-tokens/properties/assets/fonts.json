@@ -1,0 +1,12 @@
+{
+  "asset": {
+    "font": {
+      "icons": {
+        "ttf"  : { "value": "assets/fonts/icomoon.ttf" },
+        "eot"  : { "value": "assets/fonts/icomoon.eot" },
+        "woff" : { "value": "assets/fonts/icomoon.woff" },
+        "svg": { "value": "assets/fonts/icomoon.svg" }
+      }
+    }
+  }
+}

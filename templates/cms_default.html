@@ -8,14 +8,7 @@
 
 {% block body-class %}page-template{% endblock %}
 {% block pagebanner %}
-<div class='banner'>
-  <div class='container'>
-    {% block pagebanner-inner %}
-      <h2>{% page_attribute "page_title" %}</h2>
-      {% placeholder "blurb" %}
-    {% endblock %}
-  </div>
-</div>
+{% include 'includes/banner.html' %}
 {% endblock %}
 
 {% block body %}

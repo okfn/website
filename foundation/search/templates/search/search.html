@@ -4,13 +4,21 @@
 
 {% block title %}{% trans 'Search' %}{% endblock %}
 
-{% block pagebanner-inner %}
-  <h2>{% trans 'Search' %}</h2>
-  {% if query %}
-    {% blocktrans with num=page.object_list|length %}
-      Your search for: "{{ query }}" returned {{ num }} results.
-    {% endblocktrans %}
-  {% endif %}
+{% block pagebanner %}
+  <div class="banner">
+    <div class="container">
+      <div class="banner_text">
+        <h2>{% trans 'Search' %}</h2>
+        {% if query %}
+          <p>
+          {% blocktrans with num=page.object_list|length %}
+            Your search for: "{{ query }}" returned {{ num }} results.
+          {% endblocktrans %}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
 {% endblock %}
 
 {% block main %}
@@ -18,9 +26,9 @@
     <form method="get" action=".">
       <div class="input-group">
         <input type="text" name="q" class="form-control" value="{{ query }}" placeholder="Search">
-        <span class="input-group-btn">
-          <button type="submit" class="btn btn-default">
-            <span class="fa fa-search"></span>
+        <span class="input-group-append">
+          <button type="submit" class="btn btn-secondary">
+            <span class="icon-search"></span>
             <span class="sr-only">Search</span>
           </button>
         </span>

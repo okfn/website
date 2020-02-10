@@ -1,0 +1,45 @@
+{% extends "general.html" %}
+{% load cms_tags %}
+{% load menu_tags %}
+
+{% block title %}
+{% page_attribute "page_title" %}
+{% endblock %}
+
+{% block body-class %}landing page-template{% endblock %}
+{% block main-class %}{% endblock %}
+{% block template-scripts %}
+{% endblock template-scripts %}
+{% block pagebanner %}
+{% include 'includes/banner.html' %}
+{% endblock %}
+
+{% block body %}
+<section class="primary-section">
+  <div class="container">
+    <div class="features">
+      {% placeholder "section one features" %}
+    </div>
+  </div>
+</section>
+
+<section class="secondary-section">
+  <div class="container">
+    <div class="intro">
+      {% placeholder "section two intro" %}
+    </div>
+    <div class="items">
+      {% placeholder "section two items" %}
+    </div>
+  </div>
+</section>
+
+{% include 'includes/cta.html' %}
+
+{% endblock %}
+
+{% block breadcrumb %}
+{% show_breadcrumb %}
+{% endblock %}
+
+{% block template-js %}$( ".carousel-item" ).first().addClass( "active" );{% endblock template-js %}

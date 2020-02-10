@@ -1,0 +1,54 @@
+.page-template,
+[class$="-template"]:not(.home-template) {
+  overflow-x: hidden;
+
+  .main {
+
+    & > div {
+      @include make-row();
+
+      & > aside {
+        @include make-col-ready();
+        overflow: hidden;
+
+        & > div { // sidebar content
+          font-size: $size-font-sm;
+
+          & > :first-child {
+            margin-top: $grid-gutter-width;
+          }
+
+          & > :last-child {
+            margin-bottom: 0;
+          }
+
+          h2, h3, h4, h5, h6 {
+            font-size: $size-font-base;
+          }
+        }
+
+        @include media-breakpoint-up(xl) {
+          @include make-col(3);
+          padding-left: 0;
+
+          & > div { // sidebar content
+            padding-left: $grid-gutter-width /2;
+          }
+        }
+
+        & + article {
+          @include make-col-ready();
+
+          @include media-breakpoint-up(xl) {
+            @include make-col(8);
+            @include make-col-offset(1);
+          }
+
+          & > :first-child {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}

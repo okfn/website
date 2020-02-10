@@ -1,0 +1,39 @@
+{
+  "size": {
+    "font": {
+      "xs" : {
+        "value": "0.75"
+      },
+      "sm": {
+        "value": "0.875"
+      },
+      "base"  : {
+        "value": "1"
+      },
+      "lg" : {
+        "value": "1.125"
+      },
+      "xl" : {
+        "value": "1.25"
+      },
+      "xxl" : {
+        "value": "1.5"
+      },
+      "xxxl" : {
+        "value": "1.875"
+      },
+      "xxxxl" : {
+        "value": "2.25"
+      },
+      "xxxxxl" : {
+        "value": "3"
+      },
+      "xxxxxxl" : {
+        "value": "3.5"
+      },
+      "xxxxxxxl" : {
+        "value": "4.5"
+      }
+    }
+  }
+}

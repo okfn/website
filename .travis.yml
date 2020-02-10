@@ -6,9 +6,6 @@ install:
   - npm install
   - pip install -r requirements.dev.txt
   - pip install coveralls
-before_script:
-  - npm install -g bower
-  - bower install
 script:
   - coverage run manage.py test
   - flake8 .

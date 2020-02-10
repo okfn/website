@@ -4,7 +4,7 @@
 {% block body %}
 <div>
   <aside>
-    <nav id="side-nav">
+    <nav id="side-nav" class="side-nav">
       {% include 'includes/sidebar.html' %}
     </nav>
     <div>
@@ -14,6 +14,12 @@
   </aside>
   <article>
     {% placeholder "main" %}
+
+    <div class="article-links">{% placeholder "featured links" %}</div>
+
+    <aside class="min-cta">
+      {% static_placeholder "mini call to action" %}
+    </aside>
   </article>
 </div>
 {% endblock %}

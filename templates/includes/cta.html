@@ -1,0 +1,20 @@
+{% load cms_tags %}
+<section class="cta">
+  <div class="container">
+    <div class="about">
+      <div class="content">
+        {% static_placeholder "call to action" %}
+      </div>
+      <div class="testimonials carousel" data-ride="carousel">
+        <div class="carousel-inner">
+          {# placeholder "testimonials" #}
+          {% static_placeholder "testimonials" %}
+        </div>
+      </div>
+    </div>
+
+    <div class="logos">
+      {% static_placeholder "client logos" %}
+    </div>
+  </div>
+</section>
