@@ -1,5 +1,5 @@
 FROM python:2.7
-MAINTAINER Open Knowledge International
+MAINTAINER Open Knowledge Foundation
 
 WORKDIR /app
 RUN apt-get update
