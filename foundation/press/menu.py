@@ -1,3 +1,4 @@
+# flake8: noqa
 from menus.base import NavigationNode
 from menus.menu_pool import menu_pool
 from django.utils.translation import ugettext_lazy as _
