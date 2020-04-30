@@ -22,7 +22,7 @@
     "grunt-postcss": "^0.9.0",
     "grunt-sass": "^3.0.1",
     "grunt-shell": "^3.0.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jquery.mmenu": "^7.3.3",
     "node-sass": "^4.13.0"
   }
