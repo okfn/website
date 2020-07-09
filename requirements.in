@@ -31,3 +31,4 @@ requests>=2.3,<2.4 # required by django-haystack
 static
 python-dotenv>0.8
 whoosh
+jsonfield==2
