@@ -2,7 +2,7 @@
   "input": {
     "border": {
       "color": {
-        "value": "{color.gray.200.value}",
+        "value": "{color.gray.900.value}",
         "comment": "BS"
       }
     }
