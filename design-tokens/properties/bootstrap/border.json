@@ -1,0 +1,12 @@
+{
+  "border": {
+    "radius": {
+      "value": "{size.border.radius.value}",
+      "comment": "BS"
+    },
+    "width": {
+      "value": "{size.border.width.value}",
+      "comment": "BS"
+    }
+  }
+}

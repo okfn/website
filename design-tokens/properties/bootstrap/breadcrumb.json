@@ -1,0 +1,14 @@
+{
+  "breadcrumb": {
+    "padding": {
+      "x": {
+        "value": "0",
+        "comment": "BS"
+      }
+    },
+    "bg": {
+      "value": "#fff",
+      "comment": "BS"
+    }
+  }
+}

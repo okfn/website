@@ -1,0 +1,104 @@
+.campaign_intro {
+
+  @include media-breakpoint-up(lg) {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    column-gap: $size-spacing-xl;
+    margin-top: 2vh;
+  }
+}
+
+.campaign_about {
+  
+  p {
+    &:first-of-type {
+      font-weight: bold;
+      font-size: $size-font-lg;
+    }
+  }
+
+  .plugin_picture {
+    display: block;
+    height: 8rem;
+    margin-bottom: $size-spacing-lg;
+
+    @include media-breakpoint-up(lg) {
+      height: 10rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      height: 11rem;
+    }
+
+    img {
+      height: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.campaign_cta {
+  padding: 0;
+  font-weight: bold;
+  font-size: $size-font-lg;
+  padding-bottom: $size-spacing-xl;
+
+  li {
+    list-style: none;
+    margin-bottom: $size-spacing-base;
+
+    &[data-link="video"] {
+      @include media-breakpoint-up(lg) {
+        display: none;
+      }
+    }
+  }
+}
+
+
+.campaign_video {
+  .embed-responsive {
+
+    &::before {
+      padding-top: 100%;
+    }
+  }
+}
+
+
+.campaign_signup {
+  padding-top: $size-spacing-xl;
+
+  h2, h3 {
+    font-size: $size-font-xl;
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    column-gap: $size-spacing-xl;
+  }
+
+  .indicates-required {
+    font-size: $size-font-sm;
+  }
+}
+
+.campaign_form {
+  background-color: transparentize($color-blue-base, 0.9);
+  padding: $size-spacing-lg;
+  font-size: $size-font-sm;
+
+
+  form > div {
+    @include media-breakpoint-up(xl) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: $size-spacing-lg;
+    }
+  }
+
+  .mc-field-group {
+    margin-bottom: $size-spacing-base;
+  }
+}
