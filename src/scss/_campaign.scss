@@ -86,7 +86,7 @@
 
 .campaign_form {
   background-color: transparentize($color-blue-base, 0.9);
-  padding: $size-spacing-lg;
+  padding: $size-spacing-lg $size-spacing-lg ($size-spacing-lg - 1rem) $size-spacing-lg;
   font-size: $size-font-sm;
 
 
@@ -100,5 +100,18 @@
 
   .mc-field-group {
     margin-bottom: $size-spacing-base;
+  }
+
+  p {
+    margin-top: 0.25rem;
+    margin-bottom: 0;
+  }
+
+  .form-check {
+    margin-top: 0.25rem;
+  }
+
+  .btn {
+    margin-top: $size-spacing-base;
   }
 }
