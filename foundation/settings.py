@@ -374,6 +374,9 @@ if env.get('DJANGO_CSP_REPORT_URI') is not None:
                                     'https://www.google-analytics.com',
                                     'https://use.typekit.net',
                                     'https://bam.nr-data.net',
+                                    'https://downloads.mailchimp.com',
+                                    'https://s3.amazonaws.com/downloads.mailchimp.com',
+                                    '*.list-manage.com',
                                     "'unsafe-inline'", "'self'"]
     CSP_STYLE_SRC = asset_hosts + ["'unsafe-inline'",
                                    'https://use.typekit.net']
@@ -388,6 +391,7 @@ if env.get('DJANGO_CSP_REPORT_URI') is not None:
     CSP_FONT_SRC = asset_hosts + ['data:',
                                   'https://use.typekit.net',
                                   'https://themes.googleusercontent.com']
+    CSP_FORM_ACTION = ["'self'", 'https://okfn.us9.list-manage.com',]
 
     CSP_REPORT_URI = env.get('DJANGO_CSP_REPORT_URI')
 else:
