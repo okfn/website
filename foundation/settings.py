@@ -391,7 +391,7 @@ if env.get('DJANGO_CSP_REPORT_URI') is not None:
     CSP_FONT_SRC = asset_hosts + ['data:',
                                   'https://use.typekit.net',
                                   'https://themes.googleusercontent.com']
-    CSP_FORM_ACTION = ["'self'", 'https://okfn.us9.list-manage.com',]
+    CSP_FORM_ACTION = ["'self'", 'https://okfn.us9.list-manage.com']
 
     CSP_REPORT_URI = env.get('DJANGO_CSP_REPORT_URI')
 else:
