@@ -289,6 +289,8 @@ AWS_S3_CUSTOM_DOMAIN = env.get('DJANGO_AWS_S3_CUSTOM_DOMAIN')
 
 CUSTOM_ASSETS_DOMAIN = env.get('DJANGO_CUSTOM_ASSETS_DOMAIN')
 
+STATIC_URL = '/assets/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 if env.get('DJANGO_USE_AWS_STORAGE') == 'true':
     AWS_ACCESS_KEY_ID = env['AWS_ACCESS_KEY_ID']
     AWS_SECRET_ACCESS_KEY = env['AWS_SECRET_ACCESS_KEY']
@@ -298,27 +300,16 @@ if env.get('DJANGO_USE_AWS_STORAGE') == 'true':
         'Cache-Control': 'max-age=86400',
     }
 
-    STATICFILES_STORAGE = 'lib.cached_storage.CachedStaticStorage'
-    STATIC_S3_PATH = 'assets'
-    STATIC_ROOT = 'assets/'
-
     DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.DefaultStorage'
     DEFAULT_S3_PATH = 'media'
     MEDIA_ROOT = 'media/'
 
     if AWS_S3_CUSTOM_DOMAIN:
-        STATIC_URL = '//%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, STATIC_S3_PATH)
         MEDIA_URL = '//%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, DEFAULT_S3_PATH)
     else:
-        STATIC_URL = '//s3.amazonaws.com/%s/%s/' % (AWS_STORAGE_BUCKET_NAME,
-                                                    STATIC_S3_PATH)
         MEDIA_URL = '//s3.amazonaws.com/%s/%s/' % (AWS_STORAGE_BUCKET_NAME,
                                                    DEFAULT_S3_PATH)
-
 else:
-    STATIC_URL = '/assets/'
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -370,28 +361,43 @@ if env.get('DJANGO_CSP_REPORT_URI') is not None:
 
     CSP_DEFAULT_SRC = ("'none'",)
 
-    CSP_SCRIPT_SRC = asset_hosts + ['https://js-agent.newrelic.com',
-                                    'https://www.google-analytics.com',
-                                    'https://use.typekit.net',
-                                    'https://bam.nr-data.net',
-                                    'https://downloads.mailchimp.com',
-                                    'https://s3.amazonaws.com/downloads.mailchimp.com',
-                                    '*.list-manage.com',
-                                    "'unsafe-inline'", "'self'"]
-    CSP_STYLE_SRC = asset_hosts + ["'unsafe-inline'",
-                                   'https://use.typekit.net']
-    CSP_IMG_SRC = asset_hosts + ["data:",
-                                 'https://gravatar.com',
-                                 'https://1.gravatar.com',
-                                 'https://2.gravatar.com',
-                                 'https://secure.gravatar.com',
-                                 'https://p.typekit.net',
-                                 'https://ping.typekit.net',
-                                 'https://www.google-analytics.com']
-    CSP_FONT_SRC = asset_hosts + ['data:',
-                                  'https://use.typekit.net',
-                                  'https://themes.googleusercontent.com']
-    CSP_FORM_ACTION = ["'self'", 'https://okfn.us9.list-manage.com']
+    CSP_SCRIPT_SRC = asset_hosts + [
+        "'self'",
+        "'unsafe-inline'",
+        'https://js-agent.newrelic.com',
+        'https://www.google-analytics.com',
+        'https://use.typekit.net',
+        'https://bam.nr-data.net',
+        'https://downloads.mailchimp.com',
+        'https://s3.amazonaws.com/downloads.mailchimp.com',
+        '*.list-manage.com',
+    ]
+    CSP_STYLE_SRC = asset_hosts + [
+        "'self'",
+        "'unsafe-inline'",
+        'https://use.typekit.net',
+    ]
+    CSP_IMG_SRC = asset_hosts + [
+        "'self'",
+        "data:",
+        'https://gravatar.com',
+        'https://1.gravatar.com',
+        'https://2.gravatar.com',
+        'https://secure.gravatar.com',
+        'https://p.typekit.net',
+        'https://ping.typekit.net',
+        'https://www.google-analytics.com',
+    ]
+    CSP_FONT_SRC = asset_hosts + [
+        "'self'",
+        'data:',
+        'https://use.typekit.net',
+        'https://themes.googleusercontent.com'
+    ]
+    CSP_FORM_ACTION = [
+        "'self'",
+        'https://okfn.us9.list-manage.com'
+    ]
 
     CSP_REPORT_URI = env.get('DJANGO_CSP_REPORT_URI')
 else:
@@ -402,9 +408,6 @@ GOOGLE_ANALYTICS_DOMAIN = env.get('DJANGO_GOOGLE_ANALYTICS_DOMAIN')
 
 MAILCHIMP_URL = env.get('DJANGO_MAILCHIMP_URL', '')
 MAILCHIMP_TOKEN = env.get('DJANGO_MAILCHIMP_TOKEN', '')
-
-if env.get('DJANGO_USE_AWS_STORAGE') == 'true':
-    COMPRESS_STORAGE = 'lib.cached_storage.CachedStaticStorage'
 
 COMPRESS_OFFLINE = env.get('DJANGO_COMPRESS_OFFLINE') == 'true'
 COMPRESS_OFFLINE_CONTEXT = {
