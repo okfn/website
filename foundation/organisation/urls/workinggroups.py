@@ -1,8 +1,7 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 
 from ..views import WorkingGroupListView
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^$', WorkingGroupListView.as_view(), name='working-groups'),
-    )
+]

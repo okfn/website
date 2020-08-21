@@ -1,10 +1,9 @@
-from django.conf.urls import url, patterns, include
+from django.conf.urls import url, include
 from foundation.organisation.views import relatable_person
 
 from django.contrib import admin
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^login/', lambda x: x, name='login'),
     url(r'^search/', include('haystack.urls')),
@@ -22,4 +21,4 @@ urlpatterns = patterns(
     url(r'^network/', include('foundation.organisation.urls.networkgroups')),
     url(r'^api$', relatable_person, name='relatable-person'),
     url(r'^', include('cms.urls')),
-    )
+]

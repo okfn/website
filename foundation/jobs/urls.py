@@ -1,9 +1,8 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 
 from .views import JobListView, JobHelperView
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^$', JobListView.as_view(), name='jobs-list'),
     url(r'^helper/$', JobHelperView.as_view()),
-    )
+]

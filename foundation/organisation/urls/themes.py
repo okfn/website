@@ -1,9 +1,8 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 
 from ..views import ThemeDetailView
 
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^(?P<slug>[^/]+)/$', ThemeDetailView.as_view(), name='theme'),
-    )
+]
