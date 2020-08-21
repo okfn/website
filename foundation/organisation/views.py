@@ -165,7 +165,11 @@ def networkgroup_csv_output(request):
     writer.writerow(header_row)
 
     for group in NetworkGroup.objects.all():
-        row = [countries.get(group.country.code).alpha3,  # ISO3
+        if not countries.get(group.country.code, None):
+            code = ''
+        else:
+            code = countries.get(group.country.code).alpha3
+        row = [code,  # ISO3
                group.get_country_display(),  # Country
                u'{lat},{lon}'.format(
                    lat=group.position.latitude,
