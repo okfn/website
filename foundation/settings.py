@@ -101,7 +101,6 @@ INSTALLED_APPS = (
     'django.contrib.redirects',  # Provides redirects app
 
     # 3rd-party important
-    'djangosecure',
     'reversion',
     's3_folder_storage',
     'pagedown',
@@ -148,7 +147,7 @@ INSTALLED_APPS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'djangosecure.middleware.SecurityMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'csp.middleware.CSPMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -333,7 +332,7 @@ if env.get('DJANGO_SECURE') == 'true':
     SECURE_SSL_REDIRECT = True
     SECURE_HSTS_SECONDS = 7 * 86400
     SECURE_HSTS_INCLUDE_SUBDOMAINS = False
-    SECURE_FRAME_DENY = True
+    X_FRAME_OPTIONS = 'SAMEORIGIN'
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SECURE_BROWSER_XSS_FILTER = True
     SESSION_COOKIE_SECURE = True

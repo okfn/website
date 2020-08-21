@@ -15,7 +15,6 @@ django-markdown-deux
 django-pagedown
 django-reversion>=1.8
 django-s3-folder-storage
-django-secure
 django_compressor
 djangocms-file
 djangocms-googlemap
