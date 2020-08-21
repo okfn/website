@@ -177,12 +177,12 @@ TEMPLATES = [
             'context_processors':
                 (
                     'django.contrib.auth.context_processors.auth',
-                    'django.core.context_processors.debug',
-                    'django.core.context_processors.i18n',
-                    'django.core.context_processors.request',
-                    'django.core.context_processors.media',
-                    'django.core.context_processors.static',
-                    'django.core.context_processors.tz',
+                    'django.template.context_processors.debug',
+                    'django.template.context_processors.i18n',
+                    'django.template.context_processors.request',
+                    'django.template.context_processors.media',
+                    'django.template.context_processors.static',
+                    'django.template.context_processors.tz',
                     'django.contrib.messages.context_processors.messages',
                     'cms.context_processors.cms_settings',
                     'sekizai.context_processors.sekizai',
@@ -191,7 +191,7 @@ TEMPLATES = [
                     'lib.context_processors.mailchimp',
                     'django.template.context_processors.request',
                     'aldryn_boilerplates.context_processors.boilerplate',
-                    ),
+                ),
             'loaders': [
                 'django.template.loaders.filesystem.Loader',
                 'aldryn_boilerplates.template_loaders.AppDirectoriesLoader',
