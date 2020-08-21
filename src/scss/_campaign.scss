@@ -9,7 +9,7 @@
 }
 
 .campaign_about {
-  
+
   p {
     &:first-of-type {
       font-weight: bold;
@@ -17,7 +17,7 @@
     }
   }
 
-  .plugin_picture {
+  img {
     display: block;
     height: 8rem;
     margin-bottom: $size-spacing-lg;
@@ -30,10 +30,7 @@
       height: 11rem;
     }
 
-    img {
-      height: 100%;
-      max-width: 100%;
-    }
+    max-width: 100%;
   }
 }
 
