@@ -2,8 +2,11 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.views.generic import TemplateView
 from django.views.generic import RedirectView
+from django.contrib.auth import views as admin_views
+from django.views import defaults as default_views
 
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
 
 from foundation.organisation.views import relatable_person
 
@@ -26,53 +29,53 @@ urlpatterns = [
 # Allow testing of error pages in development
 if settings.DEBUG:
     urlpatterns += [
-        url(r'^400/$', 'django.views.defaults.bad_request'),
-        url(r'^403/$', 'django.views.defaults.permission_denied'),
-        url(r'^404/$', 'django.views.defaults.page_not_found'),
-        url(r'^500/$', 'django.views.defaults.server_error'),
+        url(r'^400/$', default_views.bad_request),
+        url(r'^403/$', default_views.permission_denied),
+        url(r'^404/$', default_views.page_not_found),
+        url(r'^500/$', default_views.server_error),
     ]
 
 # Login/logout, password changes and resets
 urlpatterns += [
     url(
         r'^login/$',
-        'django.contrib.auth.views.login',
+        admin_views.login,
         {'template_name': 'accounts/login.html'},
         name='login'),
     url(
         r'^logout/$',
-        'django.contrib.auth.views.logout',
+        admin_views.logout,
         {'next_page': '/'},
         name='logout'
     ),
     url(
         r'^password/change/$',
-        'django.contrib.auth.views.password_change',
+        admin_views.password_change,
         name='password_change'
     ),
     url(
         r'^password/change/done/$',
-        'django.contrib.auth.views.password_change_done',
+        admin_views.password_change_done,
         name='password_change_done'
     ),
     url(
         r'^password/reset/$',
-        'django.contrib.auth.views.password_reset',
+        admin_views.password_reset,
         name='password_reset'
     ),
     url(
         r'^password/reset/done/$',
-        'django.contrib.auth.views.password_reset_done',
+        admin_views.password_reset_done,
         name='password_reset_done'
     ),
     url(
         r'^password/reset/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$',
-        'django.contrib.auth.views.password_reset_confirm',
+        admin_views.password_reset_confirm,
         name='password_reset_confirm'
     ),
     url(
         r'^password/reset/complete/$',
-        'django.contrib.auth.views.password_reset_complete',
+        admin_views.password_reset_complete,
         name='password_reset_complete'
     ),
 ]
@@ -86,9 +89,7 @@ urlpatterns += [
 
 # CMS patterns
 urlpatterns += [
-    url(r'^sitemap\.xml$',
-        'django.contrib.sitemaps.views.sitemap',
-        {'sitemaps': {'cmspages': CMSSitemap}}),
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^sitemap/$',
         TemplateView.as_view(template_name='sitemap.html')),
 
