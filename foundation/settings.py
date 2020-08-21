@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 import sys
 import email.utils
-import logging
 from os import environ as env
 import dj_database_url
 from django.utils.translation import ugettext_lazy as _
@@ -457,15 +456,7 @@ CMS_PLACEHOLDER_CONF = {
 # Allow iframes in the cms text plugin
 TEXT_ADDITIONAL_TAGS = ('iframe',)
 
-# This import has to live here, because it has side-effects that require Django
-# to be configured already. Ugh.
-from sorl.thumbnail.log import ThumbnailLogHandler
-
-THUMBNAIL_DEBUG = DEBUG  # sorl.thumbnail debugging
-
-handler = ThumbnailLogHandler()
-handler.setLevel(logging.ERROR)
-logging.getLogger('sorl.thumbnail').addHandler(handler)
+THUMBNAIL_DEBUG = DEBUG  # easy-thumbnails debugging
 
 QUOTE_STYLES = (
     'carousel',
