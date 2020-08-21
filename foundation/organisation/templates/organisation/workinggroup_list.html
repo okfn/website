@@ -13,9 +13,11 @@
     <div class="row">
       <div class="col-md-4 {% cycle '' 'col-md-push-8' %}">
         <div class="feature-block-img">
-          {% thumbnail workinggroup.logo "250" as im %}
-          <img class="img-responsive" src="{{ im.url }}" alt="{{ workinggroup.name }}">
-          {% endthumbnail %}
+          <img
+            class="img-responsive"
+            src="{% thumbnail workinggroup.logo 250x250 %}"
+            alt="{{ workinggroup.name }}"
+          >
         </div>
       </div>
       <div class="col-md-8 {% cycle '' 'col-md-pull-4' %}">

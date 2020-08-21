@@ -4,9 +4,11 @@
 <ul class="working-groups">{% for workinggroup in workinggroups %}
 <li>
   <a href="{{ workinggroup.homepage_url }}" title="{{ workinggroup.name }}">
-    {% thumbnail workinggroup.logo "36" as im %}
-    <img class="icon" src="{{ im.url }}" alt="{{ workinggroup.name }}">
-    {% endthumbnail %}
+    <img
+      class="icon"
+      src="{% thumbnail workinggroup.logo 36x36 %}"
+      alt="{{ workinggroup.name }}"
+    >
     {{ workinggroup.name }}
 </a>
 </li>

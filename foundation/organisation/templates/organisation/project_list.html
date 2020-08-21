@@ -14,11 +14,7 @@
 {% for project in object_list %}
 <div class="row">
   <div class="profile">
-    <a class="image" href="{{ project.homepage_url | default:'#' }}" {% if project.picture %} style='background-image: url({{project.picture.url}})'{% endif %}>
-        {% thumbnail project.picture "132" as im %}
-          <img src="{{ im.url }}" alt="" />
-        {% endthumbnail %}
-    </a>
+    <img src="{% thumbnail project.picture 132x132 %}" alt="" />
     <h3 class="name">{{ project.name }}</h3>
 
     {{ project.teaser|markdown }}

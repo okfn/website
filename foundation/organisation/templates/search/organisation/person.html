@@ -4,9 +4,11 @@
 <h3>{{ person.name }}</h3>
 <div class="row">
   <div class="col-md-2">
-    {% thumbnail person.photo "116" as im %}
-    <img class="img-responsive" src="{{ im.url }}" alt="{{ person.name }}">
-    {% endthumbnail %}
+    <img
+      class="img-responsive"
+      src="{% thumbnail person.photo 116x116 %}"
+      alt="{{ person.name }}"
+    >
   </div>
   <div class="col-md-8">
     {% for membership in person.unitmembership_set.all %}

@@ -14,12 +14,11 @@
     {% endwith %}
   </div>
   <div class="sidebar col-md-3 col-md-pull-9">
-    {% thumbnail object.picture "263" format="PNG" as im %}
-      <img
-        class="img-responsive"
-        src="{{ im.url }}"
-        alt="Logo/banner for {{ object.name}}">
-    {% endthumbnail %}
+    <img
+      class="img-responsive"
+      src="{% thumbnail project.picture 263x263 %}"
+      alt="Logo/banner for {{ object.name }}"
+    >
   </div>
 {% else %}
   <div class="main col-md-12">
