@@ -303,6 +303,7 @@ if env.get('DJANGO_USE_AWS_STORAGE') == 'true':
     AWS_HEADERS = {
         'Cache-Control': 'max-age=86400',
     }
+    AWS_DEFAULT_ACL = 'public-read'
 
     DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.DefaultStorage'
     THUMBNAIL_DEFAULT_STORAGE = 's3_folder_storage.s3.DefaultStorage'
