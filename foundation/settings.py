@@ -303,6 +303,7 @@ if env.get('DJANGO_USE_AWS_STORAGE') == 'true':
     }
 
     DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.DefaultStorage'
+    THUMBNAIL_DEFAULT_STORAGE = 's3_folder_storage.s3.DefaultStorage'
     DEFAULT_S3_PATH = 'media'
     MEDIA_ROOT = 'media/'
 
