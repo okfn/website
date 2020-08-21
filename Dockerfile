@@ -14,7 +14,6 @@ COPY deployment/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY deployment/gunicorn.conf /etc/supervisor/conf.d/gunicorn.conf
 
 COPY article_list_item ./article_list_item
-COPY contrib ./contrib
 COPY docs ./docs
 COPY foundation ./foundation
 COPY lib ./lib
