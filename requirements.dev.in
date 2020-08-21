@@ -2,7 +2,6 @@
 
 WebOb
 WebTest
-beautifulsoup4
 django-webtest
 flake8
 mccabe

@@ -106,7 +106,6 @@ INSTALLED_APPS = (
     'pagedown',
     'markdown_deux',
     'haystack',
-    'sorl.thumbnail',
     'geoposition',
     'spurl',
     'standard_form',
@@ -126,6 +125,8 @@ INSTALLED_APPS = (
     'aldryn_search',
     'aldryn_video',
     'aldryn_quote',
+    'easy_thumbnails',
+    'filer',
 
     # CMS
     'cms',
