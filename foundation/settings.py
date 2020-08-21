@@ -79,10 +79,13 @@ GENERAL_EMAIL_RECEPIENTS = _parse_email_list('GENERAL_EMAIL_RECEPIENTS')
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = env.get('DJANGO_ALLOWED_HOSTS', '').split(',')
-
-DEFAULT_FROM_EMAIL = 'noreply@%s' % ALLOWED_HOSTS[0]
-SERVER_EMAIL = 'admin-noreply@%s' % ALLOWED_HOSTS[0]
+ALLOWED_HOSTS = []
+DEFAULT_FROM_EMAIL = 'noreply@localhost'
+SERVER_EMAIL = 'admin-noreply@localhost'
+if env.get('DJANGO_ALLOWED_HOSTS'):
+    ALLOWED_HOSTS = env.get('DJANGO_ALLOWED_HOSTS').split(',')
+    DEFAULT_FROM_EMAIL = 'noreply@%s' % ALLOWED_HOSTS[0]
+    SERVER_EMAIL = 'admin-noreply@%s' % ALLOWED_HOSTS[0]
 
 INSTALLED_APPS = (
     # CMS admin theme
