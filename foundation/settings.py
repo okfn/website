@@ -16,8 +16,10 @@ import dj_database_url
 from django.utils.translation import ugettext_lazy as _
 from dotenv import load_dotenv
 
+TEST_MODE = len(sys.argv) > 1 and sys.argv[1] == 'test'
+
 # Activate dotenv
-if 'test' not in sys.argv:
+if not TEST_MODE:
     load_dotenv('.env')
 
 # Silence warnings from ipython/sqlite
@@ -462,3 +464,6 @@ THUMBNAIL_DEBUG = DEBUG  # easy-thumbnails debugging
 QUOTE_STYLES = (
     'carousel',
 )
+
+if TEST_MODE:
+    from .test_settings import *  # flake8: noqa

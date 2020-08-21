@@ -16,7 +16,6 @@ from ..models import (Board, Person, Project, Unit, Theme, WorkingGroup,
                       BoardMembership, UnitMembership, NowDoing)
 
 
-@override_settings(ROOT_URLCONF='foundation.tests.urls')
 class UnitListViewTest(WebTest):
     def setUp(self):  # flake8: noqa
         self.donatello = Person.objects.create(
@@ -174,7 +173,6 @@ class UnitListViewTest(WebTest):
         self.assertTrue(masters < footclan < turtles)
 
 
-@override_settings(ROOT_URLCONF='foundation.tests.urls')
 class BoardViewTest(WebTest):
     def setUp(self):  # flake8: noqa
         self.leonardo = Person.objects.create(
@@ -275,7 +273,6 @@ class BoardViewTest(WebTest):
         self.assertTrue(leonardo < april < casey)
 
 
-@override_settings(ROOT_URLCONF='foundation.tests.urls')
 class ProjectListViewTest(WebTest):
     def setUp(self):  # flake8: noqa
         self.market_garden = Project.objects.create(
@@ -295,7 +292,6 @@ class ProjectListViewTest(WebTest):
         self.assertIn(self.barbarossa.name, response)
 
 
-@override_settings(ROOT_URLCONF='foundation.tests.urls')
 class ProjectDetailViewTest(WebTest):
     def setUp(self):  # flake8: noqa
         self.market_garden = Project.objects.create(
@@ -314,7 +310,7 @@ class ProjectDetailViewTest(WebTest):
 
         self.assertIn(self.market_garden.name, response)
 
-@override_settings(ROOT_URLCONF='foundation.tests.urls')
+
 class ThemeDetailViewTest(WebTest):
     def setUp(self):  # flake8: noqa
         self.hats = Theme.objects.create(
@@ -378,7 +374,6 @@ class ThemeDetailViewTest(WebTest):
         self.assertNotIn(self.orange.description, response)
 
 
-@override_settings(ROOT_URLCONF='foundation.tests.urls')
 class WorkingGroupListViewTest(WebTest):
     def setUp(self):  # flake8: noqa
         self.theme = Theme.objects.create(
@@ -419,7 +414,7 @@ class WorkingGroupListViewTest(WebTest):
         government = response.body.find(self.government.name)
         self.assertTrue(csv < government)
 
-@override_settings(ROOT_URLCONF='foundation.tests.urls')
+
 class NetworkGroupDetailViewTest(WebTest):
     def setUp(self):  # flake8: noqa
 
