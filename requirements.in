@@ -8,7 +8,6 @@ django-classy-tags>=0.5
 django-cms>=3.0.0,<3.1.0
 django-csp
 django-countries
-django-geoposition
 django-haystack>=2.1,<2.2
 django-redis>4.8,<4.9
 django-markdown-deux

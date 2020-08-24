@@ -152,7 +152,7 @@ def networkgroup_csv_output(request):
     response['Content-Disposition'] = 'attachment; filename="network.csv"'
 
     writer = unicodecsv.writer(response)
-    header_row = ['ISO3', 'Country', 'Geo coordinates', 'Map location',
+    header_row = ['ISO3', 'Country', 'Map location',
                   'Local Groups status', 'Community Leaders', 'Website',
                   'Mailing List', 'Twitter handle', 'Facebook page']
 
@@ -171,10 +171,6 @@ def networkgroup_csv_output(request):
             code = countries.get(group.country.code).alpha3
         row = [code,  # ISO3
                group.get_country_display(),  # Country
-               u'{lat},{lon}'.format(
-                   lat=group.position.latitude,
-                   lon=group.position.longitude
-                   ) if group.position else '',  # Geo coordinates
                u'{region}, {country}'.format(
                    region=group.region,
                    country=group.get_country_display()

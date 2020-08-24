@@ -6,7 +6,6 @@ from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.text import slugify
 from django_countries.fields import CountryField
-from geoposition.fields import GeopositionField
 
 
 class Person(models.Model):
@@ -318,8 +317,6 @@ class NetworkGroup(models.Model):
     twitter = models.CharField(max_length=18, blank=True)
     facebook_url = models.URLField(blank=True)
     forum_group_url = models.URLField(blank=True)
-
-    position = GeopositionField(blank=True, null=True)
 
     extra_information = models.TextField(blank=True, null=True)
 

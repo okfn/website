@@ -7,7 +7,6 @@ from django.test.utils import override_settings
 from django_webtest import WebTest
 from unittest import skip
 
-from geoposition import Geoposition
 from iso3166 import countries
 import unicodecsv
 
@@ -474,7 +473,6 @@ class NetworkGroupDetailViewTest(WebTest):
             description='We run the Open Palace project',
             country='GB',
             region=u'Buckingham',
-            position=Geoposition(51.501364, -0.141890),
             homepage_url='http://queen.okfn.org/',
             twitter='buckingham',
             facebook_url='http://facebook.com/queenthepersonnottheband',
@@ -609,7 +607,7 @@ class NetworkGroupDetailViewTest(WebTest):
         header_row = csv.next()
 
         # Headers need to be on a specific form
-        headers = ['ISO3', 'Country', 'Geo coordinates', 'Map location',
+        headers = ['ISO3', 'Country', 'Map location',
                    'Local Groups status', 'Community Leaders', 'Website',
                    'Mailing List', 'Twitter handle', 'Facebook page']
         for group in WorkingGroup.objects.all():
@@ -620,7 +618,8 @@ class NetworkGroupDetailViewTest(WebTest):
         germany = csv.next()
         germany_data = [countries.get(self.germany.country.code).alpha3,
                         self.germany.get_country_display(),
-                        '', '', self.germany.get_group_type_display(),
+                        '',
+                        self.germany.get_group_type_display(),
                         ', '.join([m.name for m in self.germany.members.all()]),
                         self.germany.homepage_url,
                         self.germany.mailinglist_url,
@@ -630,7 +629,8 @@ class NetworkGroupDetailViewTest(WebTest):
         britain = csv.next()
         britain_data = [countries.get(self.britain.country.code).alpha3,
                         self.britain.get_country_display(),
-                        '', '', self.britain.get_group_type_display(),
+                        '',
+                        self.britain.get_group_type_display(),
                         ', '.join([m.name for m in self.britain.members.all()]),
                         self.britain.homepage_url,
                         self.britain.mailinglist_url,
@@ -641,10 +641,6 @@ class NetworkGroupDetailViewTest(WebTest):
         buckingham_data = [
             countries.get(self.buckingham.country.code).alpha3,
             self.buckingham.get_country_display(),
-            '{lat},{lon}'.format(
-                lat=self.buckingham.position.latitude,
-                lon=self.buckingham.position.longitude
-                ),
             '{region}, {country}'.format(
                 region=self.buckingham.region,
                 country=self.buckingham.get_country_display()

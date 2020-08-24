@@ -10,8 +10,6 @@ from ..cms_plugins import (FeaturedProjectPlugin, ProjectListPlugin,
                            ThemesPlugin, NetworkGroupFlagsPlugin,
                            SignupFormPlugin)
 
-from geoposition import Geoposition
-
 
 class FeaturedProjectPluginTest(CMSTestCase):
 
@@ -126,7 +124,6 @@ class NetworkGroupPluginTest(CMSTestCase):
             description='We run the Open Palace project',
             country='GB',
             region=u'Buckingham',
-            position=Geoposition(51.501364, -0.141890),
             homepage_url='http://queen.okfn.org/',
             twitter='buckingham',
             facebook_url='http://facebook.com/queenthepersonnottheband',

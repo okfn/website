@@ -110,7 +110,6 @@ INSTALLED_APPS = (
     'pagedown',
     'markdown_deux',
     'haystack',
-    'geoposition',
     'spurl',
     'standard_form',
     'formtools',
