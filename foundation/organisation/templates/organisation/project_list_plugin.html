@@ -2,10 +2,8 @@
 {% if projects %}
 <div class="list-group">
 {% for project in projects %}
-  <a href="{% url 'project' slug=project.slug %}" class="list-group-item">
-    <h4 class="list-group-item-heading">{{ project.name }}</h4>
-    <p class="list-group-item-text">{{ project.teaser }}</p>
-  </a>
+  <h4 class="list-group-item-heading">{{ project.name }}</h4>
+  <p class="list-group-item-text">{{ project.teaser }}</p>
 {% endfor %}
 </div>
 {% else %}

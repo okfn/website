@@ -33,13 +33,15 @@
         </h4>
         <div class="row">
           <div class="col-md-3 col-sm-12">
-            {% thumbnail group.logo "64" format="PNG" as im %}
             <div class="center-block">
               <a href="{{ group.homepage_url }}">
-                <img class="img-responsive" src="{{ im.url }}" alt="Logo for {{ group.name }}">
+                <img
+                  class="img-responsive"
+                  src="{% thumbnail group.logo 64x64 %}"
+                  alt="Logo for {{ group.name }}"
+                >
               </a>
             </div>
-            {% endthumbnail %}
           </div>
           <div class="col-md-9 col-sm-12">
             {{ group.description }}
@@ -52,20 +54,16 @@
       <div class="col-md-6 col-sm-12">
         <h3>Projects</h3>
         {% for project in object.project_set.all %}
-        <h4>
-          <a href="{{ project.get_absolute_url }}">
-            {{ project.name }}
-          </a>
-        </h4>
+        <h4>{{ project.name }}</h4>
         <div class="row">
           <div class="col-md-3 col-sm-12">
-            {% thumbnail project.picture "64" format="PNG" as im %}
             <div class="center-block">
-              <a href="{{ project.get_absolute_url }}">
-                <img class="img-responsive" src="{{ im.url }}" alt="Logo/banner for {{ project.name }}">
-              </a>
+              <img
+                class="img-responsive"
+                src="{% thumbnail project.picture 64x64 %}"
+                alt="Logo/banner for {{ project.name }}"
+              >
             </div>
-            {% endthumbnail %}
           </div>
           <div class="col-md-9 col-sm-12">
             {{ project.teaser }}

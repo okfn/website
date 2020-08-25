@@ -11,14 +11,15 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 import sys
 import email.utils
-import logging
 from os import environ as env
 import dj_database_url
 from django.utils.translation import ugettext_lazy as _
 from dotenv import load_dotenv
 
+TEST_MODE = len(sys.argv) > 1 and sys.argv[1] == 'test'
+
 # Activate dotenv
-if 'test' not in sys.argv:
+if not TEST_MODE:
     load_dotenv('.env')
 
 # Silence warnings from ipython/sqlite
@@ -79,10 +80,13 @@ GENERAL_EMAIL_RECEPIENTS = _parse_email_list('GENERAL_EMAIL_RECEPIENTS')
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = env.get('DJANGO_ALLOWED_HOSTS', '').split(',')
-
-DEFAULT_FROM_EMAIL = 'noreply@%s' % ALLOWED_HOSTS[0]
-SERVER_EMAIL = 'admin-noreply@%s' % ALLOWED_HOSTS[0]
+ALLOWED_HOSTS = []
+DEFAULT_FROM_EMAIL = 'noreply@localhost'
+SERVER_EMAIL = 'admin-noreply@localhost'
+if env.get('DJANGO_ALLOWED_HOSTS'):
+    ALLOWED_HOSTS = env.get('DJANGO_ALLOWED_HOSTS').split(',')
+    DEFAULT_FROM_EMAIL = 'noreply@%s' % ALLOWED_HOSTS[0]
+    SERVER_EMAIL = 'admin-noreply@%s' % ALLOWED_HOSTS[0]
 
 INSTALLED_APPS = (
     # CMS admin theme
@@ -101,14 +105,11 @@ INSTALLED_APPS = (
     'django.contrib.redirects',  # Provides redirects app
 
     # 3rd-party important
-    'djangosecure',
     'reversion',
     's3_folder_storage',
     'pagedown',
     'markdown_deux',
     'haystack',
-    'sorl.thumbnail',
-    'geoposition',
     'spurl',
     'standard_form',
     'formtools',
@@ -127,6 +128,8 @@ INSTALLED_APPS = (
     'aldryn_search',
     'aldryn_video',
     'aldryn_quote',
+    'easy_thumbnails',
+    'filer',
 
     # CMS
     'cms',
@@ -141,7 +144,6 @@ INSTALLED_APPS = (
     'foundation.jobs',
     'foundation.press',
     'foundation.organisation',
-    'foundation.redirector',  # Provides CSV importer command for redirects
     'foundation.search',
     'article_list_item'
 )
@@ -149,11 +151,12 @@ INSTALLED_APPS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'djangosecure.middleware.SecurityMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'csp.middleware.CSPMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
@@ -174,12 +177,12 @@ TEMPLATES = [
             'context_processors':
                 (
                     'django.contrib.auth.context_processors.auth',
-                    'django.core.context_processors.debug',
-                    'django.core.context_processors.i18n',
-                    'django.core.context_processors.request',
-                    'django.core.context_processors.media',
-                    'django.core.context_processors.static',
-                    'django.core.context_processors.tz',
+                    'django.template.context_processors.debug',
+                    'django.template.context_processors.i18n',
+                    'django.template.context_processors.request',
+                    'django.template.context_processors.media',
+                    'django.template.context_processors.static',
+                    'django.template.context_processors.tz',
                     'django.contrib.messages.context_processors.messages',
                     'cms.context_processors.cms_settings',
                     'sekizai.context_processors.sekizai',
@@ -188,7 +191,7 @@ TEMPLATES = [
                     'lib.context_processors.mailchimp',
                     'django.template.context_processors.request',
                     'aldryn_boilerplates.context_processors.boilerplate',
-                    ),
+                ),
             'loaders': [
                 'django.template.loaders.filesystem.Loader',
                 'aldryn_boilerplates.template_loaders.AppDirectoriesLoader',
@@ -299,8 +302,10 @@ if env.get('DJANGO_USE_AWS_STORAGE') == 'true':
     AWS_HEADERS = {
         'Cache-Control': 'max-age=86400',
     }
+    AWS_DEFAULT_ACL = 'public-read'
 
     DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.DefaultStorage'
+    THUMBNAIL_DEFAULT_STORAGE = 's3_folder_storage.s3.DefaultStorage'
     DEFAULT_S3_PATH = 'media'
     MEDIA_ROOT = 'media/'
 
@@ -333,7 +338,7 @@ if env.get('DJANGO_SECURE') == 'true':
     SECURE_SSL_REDIRECT = True
     SECURE_HSTS_SECONDS = 7 * 86400
     SECURE_HSTS_INCLUDE_SUBDOMAINS = False
-    SECURE_FRAME_DENY = True
+    X_FRAME_OPTIONS = 'SAMEORIGIN'
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SECURE_BROWSER_XSS_FILTER = True
     SESSION_COOKIE_SECURE = True
@@ -454,16 +459,11 @@ CMS_PLACEHOLDER_CONF = {
 # Allow iframes in the cms text plugin
 TEXT_ADDITIONAL_TAGS = ('iframe',)
 
-# This import has to live here, because it has side-effects that require Django
-# to be configured already. Ugh.
-from sorl.thumbnail.log import ThumbnailLogHandler
-
-THUMBNAIL_DEBUG = DEBUG  # sorl.thumbnail debugging
-
-handler = ThumbnailLogHandler()
-handler.setLevel(logging.ERROR)
-logging.getLogger('sorl.thumbnail').addHandler(handler)
+THUMBNAIL_DEBUG = DEBUG  # easy-thumbnails debugging
 
 QUOTE_STYLES = (
     'carousel',
 )
+
+if TEST_MODE:
+    from .test_settings import *  # flake8: noqa

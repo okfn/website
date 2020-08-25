@@ -2,7 +2,6 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
-import geoposition.fields
 import django_countries.fields
 
 
@@ -74,7 +73,7 @@ class Migration(migrations.Migration):
                 ('youtube_url', models.URLField(blank=True)),
                 ('gplus_url', models.URLField(verbose_name=b'Google+ url', blank=True)),
                 ('wiki_url', models.URLField(blank=True)),
-                ('position', geoposition.fields.GeopositionField(max_length=42, null=True, blank=True)),
+                ('position', models.CharField(max_length=42, null=True, blank=True)),
                 ('extra_information', models.TextField(null=True, blank=True)),
             ],
             options={

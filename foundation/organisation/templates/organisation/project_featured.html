@@ -1,13 +1,11 @@
 {% load markdown_deux_tags %}
 {% load thumbnail %}
 <div class="featured-project col-md-4 col-sm-6">
-  <a href="{% url 'project' slug=project.slug %}" title="{{ project.name }}">
     <h3 class="sr-only">{{ project.name }}</h3>
-    {% thumbnail project.banner "375" format="PNG" as im %}
-    <img class="img-responsive"
-         src="{{ im.url }}"
-         alt="Banner for {{ project.name }}">
-    {% endthumbnail %}
-  </a>
+    <img
+      class="img-responsive"
+      src="{% thumbnail project.picture 375x375 %}"
+      alt="Banner for {{ project.name }}"
+    >
   <p class="featured-project-teaser">{{ project.teaser }}</p>
 </div>

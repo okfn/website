@@ -2,11 +2,9 @@
 {% load thumbnail %}
 <div class="featured-theme">
   <a href="{% url 'theme' slug=object.slug %}" title="{{ object.name }}">
-    {% thumbnail object.picture "375" format="PNG" as im %}
     <img class="img-responsive"
-         src="{{ im.url }}"
+         src="{% thumbnail object.picture 375x375 %}"
          alt="Image for {{ project.name }}">
-    {% endthumbnail %}
     <h4>{{ object.name }}</h4>
   </a>
   <p class="blurb">{{ object.blurb|markdown }}</p>

@@ -1,6 +1,5 @@
 from django.core.urlresolvers import reverse
 from django.utils.html import escape
-from django.test.utils import override_settings
 from django.utils import timezone
 from django.template import defaultfilters
 from django.conf import settings
@@ -12,7 +11,6 @@ from datetime import timedelta
 from ..models import PressRelease, PressMention
 
 
-@override_settings(ROOT_URLCONF='foundation.tests.urls')
 class PressReleaseViewTest(WebTest):
     def setUp(self):  # flake8: noqa
 
@@ -90,7 +88,6 @@ class PressReleaseViewTest(WebTest):
         self.assertTrue(self.in_ten_minutes.title not in response)
 
 
-@override_settings(ROOT_URLCONF='foundation.tests.urls')
 class PressMentionViewTest(WebTest):
     def setUp(self):  # flake8: noqa
 

@@ -8,21 +8,18 @@ django-classy-tags>=0.5
 django-cms>=3.0.0,<3.1.0
 django-csp
 django-countries
-django-geoposition
 django-haystack>=2.1,<2.2
 django-redis>4.8,<4.9
 django-markdown-deux
 django-pagedown
 django-reversion>=1.8
 django-s3-folder-storage
-django-secure
 django_compressor
 djangocms-file
 djangocms-googlemap
 djangocms-link
 djangocms-text-ckeditor>=2.1.4,<2.2
 iso3166
-sorl-thumbnail
 unicodecsv
 gunicorn
 psycopg2
@@ -32,3 +29,4 @@ static
 python-dotenv>0.8
 whoosh
 jsonfield==2
+beautifulsoup4

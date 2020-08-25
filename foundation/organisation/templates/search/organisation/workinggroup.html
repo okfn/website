@@ -5,9 +5,11 @@
 <div class="row">
   {% if workinggroup.logo %}
   <div class="col-md-2">
-    {% thumbnail workinggroup.logo "116" as im %}
-    <img class="img-responsive" src="{{ im.url }}" alt="{{ workinggroup.name }}">
-    {% endthumbnail %}
+    <img
+      class="img-responsive"
+      src="{% thumbnail workinggroup.logo 116x116 %}"
+      alt="{{ workinggroup.name }}"
+    >
   </div>
   {% endif %}
   <div class="col-md-8">

@@ -1,8 +1,7 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 
 from ..views import BoardView
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^$', BoardView.as_view(board='board'), name='board'),
-)
+]

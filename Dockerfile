@@ -14,7 +14,6 @@ COPY deployment/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY deployment/gunicorn.conf /etc/supervisor/conf.d/gunicorn.conf
 
 COPY article_list_item ./article_list_item
-COPY contrib ./contrib
 COPY docs ./docs
 COPY foundation ./foundation
 COPY lib ./lib
@@ -37,4 +36,8 @@ EXPOSE $PORT
 
 RUN python manage.py collectstatic --noinput
 
-CMD python manage.py migrate && python manage.py update_index && /usr/bin/supervisord
+CMD python manage.py migrate cms 0016 --settings foundation.temp_migration_settings &&\
+    python manage.py migrate easy_thumbnails &&\
+    python manage.py migrate &&\
+    python manage.py update_index &&\
+    /usr/bin/supervisord

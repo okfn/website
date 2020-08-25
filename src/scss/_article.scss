@@ -20,13 +20,10 @@
       @include intro;
     }
 
-    .plugin_picture {
+    img:not(.icon):not(.img-responsive) {
       display: block;
       margin-top: $grid-gutter-width;
-
-      img {
-        width: 100%;
-      }
+      width: 100%;
 
       &.align-left,
       &.align-right {
@@ -36,22 +33,16 @@
         margin-bottom: $grid-gutter-width;
         width: 330px;
         height: 330px;
-
-        img {
-          height: 100%;
-          object-fit: cover;
-          border-radius: 50%;
-          border: solid 6px #fff;
-        }
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: solid 6px #fff;
       }
 
       &.align-center {
         text-align: center;
-
-        img {
-          width: auto;
-          max-width: 100%;
-        }
+        width: auto;
+        max-width: 100%;
       }
 
       @include media-breakpoint-up(sm) {

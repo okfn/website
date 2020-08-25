@@ -1,7 +1,6 @@
 {% load markdown_deux_tags %}
-{% load thumbnail %}
 
-<h3><a href="{% url 'project' slug=project.slug %}">{{ project.name }}</a></h3>
+<h3>{{ project.name }}</h3>
 <div class="row">
   <div class="col-md-12">
     {{ project.description|markdown }}

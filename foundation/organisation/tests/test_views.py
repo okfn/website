@@ -7,7 +7,6 @@ from django.test.utils import override_settings
 from django_webtest import WebTest
 from unittest import skip
 
-from geoposition import Geoposition
 from iso3166 import countries
 import unicodecsv
 
@@ -16,7 +15,6 @@ from ..models import (Board, Person, Project, Unit, Theme, WorkingGroup,
                       BoardMembership, UnitMembership, NowDoing)
 
 
-@override_settings(ROOT_URLCONF='foundation.tests.urls')
 class UnitListViewTest(WebTest):
     def setUp(self):  # flake8: noqa
         self.donatello = Person.objects.create(
@@ -174,7 +172,6 @@ class UnitListViewTest(WebTest):
         self.assertTrue(masters < footclan < turtles)
 
 
-@override_settings(ROOT_URLCONF='foundation.tests.urls')
 class BoardViewTest(WebTest):
     def setUp(self):  # flake8: noqa
         self.leonardo = Person.objects.create(
@@ -275,7 +272,6 @@ class BoardViewTest(WebTest):
         self.assertTrue(leonardo < april < casey)
 
 
-@override_settings(ROOT_URLCONF='foundation.tests.urls')
 class ProjectListViewTest(WebTest):
     def setUp(self):  # flake8: noqa
         self.market_garden = Project.objects.create(
@@ -295,7 +291,6 @@ class ProjectListViewTest(WebTest):
         self.assertIn(self.barbarossa.name, response)
 
 
-@override_settings(ROOT_URLCONF='foundation.tests.urls')
 class ProjectDetailViewTest(WebTest):
     def setUp(self):  # flake8: noqa
         self.market_garden = Project.objects.create(
@@ -314,7 +309,7 @@ class ProjectDetailViewTest(WebTest):
 
         self.assertIn(self.market_garden.name, response)
 
-@override_settings(ROOT_URLCONF='foundation.tests.urls')
+
 class ThemeDetailViewTest(WebTest):
     def setUp(self):  # flake8: noqa
         self.hats = Theme.objects.create(
@@ -378,7 +373,6 @@ class ThemeDetailViewTest(WebTest):
         self.assertNotIn(self.orange.description, response)
 
 
-@override_settings(ROOT_URLCONF='foundation.tests.urls')
 class WorkingGroupListViewTest(WebTest):
     def setUp(self):  # flake8: noqa
         self.theme = Theme.objects.create(
@@ -419,7 +413,7 @@ class WorkingGroupListViewTest(WebTest):
         government = response.body.find(self.government.name)
         self.assertTrue(csv < government)
 
-@override_settings(ROOT_URLCONF='foundation.tests.urls')
+
 class NetworkGroupDetailViewTest(WebTest):
     def setUp(self):  # flake8: noqa
 
@@ -479,7 +473,6 @@ class NetworkGroupDetailViewTest(WebTest):
             description='We run the Open Palace project',
             country='GB',
             region=u'Buckingham',
-            position=Geoposition(51.501364, -0.141890),
             homepage_url='http://queen.okfn.org/',
             twitter='buckingham',
             facebook_url='http://facebook.com/queenthepersonnottheband',
@@ -614,7 +607,7 @@ class NetworkGroupDetailViewTest(WebTest):
         header_row = csv.next()
 
         # Headers need to be on a specific form
-        headers = ['ISO3', 'Country', 'Geo coordinates', 'Map location',
+        headers = ['ISO3', 'Country', 'Map location',
                    'Local Groups status', 'Community Leaders', 'Website',
                    'Mailing List', 'Twitter handle', 'Facebook page']
         for group in WorkingGroup.objects.all():
@@ -625,7 +618,8 @@ class NetworkGroupDetailViewTest(WebTest):
         germany = csv.next()
         germany_data = [countries.get(self.germany.country.code).alpha3,
                         self.germany.get_country_display(),
-                        '', '', self.germany.get_group_type_display(),
+                        '',
+                        self.germany.get_group_type_display(),
                         ', '.join([m.name for m in self.germany.members.all()]),
                         self.germany.homepage_url,
                         self.germany.mailinglist_url,
@@ -635,7 +629,8 @@ class NetworkGroupDetailViewTest(WebTest):
         britain = csv.next()
         britain_data = [countries.get(self.britain.country.code).alpha3,
                         self.britain.get_country_display(),
-                        '', '', self.britain.get_group_type_display(),
+                        '',
+                        self.britain.get_group_type_display(),
                         ', '.join([m.name for m in self.britain.members.all()]),
                         self.britain.homepage_url,
                         self.britain.mailinglist_url,
@@ -646,10 +641,6 @@ class NetworkGroupDetailViewTest(WebTest):
         buckingham_data = [
             countries.get(self.buckingham.country.code).alpha3,
             self.buckingham.get_country_display(),
-            '{lat},{lon}'.format(
-                lat=self.buckingham.position.latitude,
-                lon=self.buckingham.position.longitude
-                ),
             '{region}, {country}'.format(
                 region=self.buckingham.region,
                 country=self.buckingham.get_country_display()
