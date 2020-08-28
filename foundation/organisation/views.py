@@ -9,7 +9,7 @@ from django.http import HttpResponse, JsonResponse
 from django.conf import settings
 
 from iso3166 import countries
-import unicodecsv
+import csv
 
 from .models import (Board, Project, ProjectType, Theme, WorkingGroup,
                      NetworkGroup, NetworkGroupMembership, Person, NowDoing)
@@ -150,7 +150,7 @@ def networkgroup_csv_output(request):
     response = HttpResponse(content_type='text/csv; charset=utf-8')
     response['Content-Disposition'] = 'attachment; filename="network.csv"'
 
-    writer = unicodecsv.writer(response)
+    writer = csv.writer(response)
     header_row = ['ISO3', 'Country', 'Map location',
                   'Local Groups status', 'Community Leaders', 'Website',
                   'Mailing List', 'Twitter handle', 'Facebook page']
