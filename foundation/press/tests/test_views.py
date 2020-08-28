@@ -58,8 +58,8 @@ class PressReleaseViewTest(WebTest):
         self.assertTrue(one_day_old_url in response)
 
         # Newest should be on top
-        one_day_ago = response.body.find(self.one_day_old.title)
-        one_month_ago = response.body.find(self.one_month_old.title)
+        one_day_ago = response.text.find(self.one_day_old.title)
+        one_month_ago = response.text.find(self.one_month_old.title)
         self.assertTrue(one_day_ago < one_month_ago)
 
     def test_future_releases_not_in_response(self):
