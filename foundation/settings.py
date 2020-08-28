@@ -24,9 +24,8 @@ if not TEST_MODE:
 
 # Silence warnings from ipython/sqlite
 import warnings
-import exceptions
 warnings.filterwarnings("ignore",
-                        category=exceptions.RuntimeWarning,
+                        category=RuntimeWarning,
                         module='django.db.backends.sqlite3.base',
                         lineno=58)
 
