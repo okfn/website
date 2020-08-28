@@ -1,5 +1,3 @@
-from __future__ import unicode_literals
-
 from django.shortcuts import render
 from django.conf import settings
 from django.contrib import messages
