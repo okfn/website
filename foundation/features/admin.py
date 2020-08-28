@@ -2,7 +2,7 @@ from django.contrib import admin
 
 import reversion
 
-from models import Feature
+from .models import Feature
 
 
 class FeatureAdmin(reversion.admin.VersionAdmin):

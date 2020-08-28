@@ -14,7 +14,7 @@ import unicodecsv
 from .models import (Board, Project, ProjectType, Theme, WorkingGroup,
                      NetworkGroup, NetworkGroupMembership, Person, NowDoing)
 
-from utils import get_activity, fail_json, extract_ograph_title
+from .utils import get_activity, fail_json, extract_ograph_title
 
 
 class BoardView(DetailView):
