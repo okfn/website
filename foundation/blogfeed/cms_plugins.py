@@ -18,8 +18,7 @@ class FeedDisplayPlugin(CMSPluginBase):
         return feed.entries[:3]
 
     def render(self, context, instance, placeholder):
-        context = super(FeedDisplayPlugin, self)\
-            .render(context, instance, placeholder)
+        context = super().render(context, instance, placeholder)
         context['entries'] = self._get_three_articles()
         return context
 

@@ -14,7 +14,7 @@ from ..cms_plugins import (FeaturedProjectPlugin, ProjectListPlugin,
 class FeaturedProjectPluginTest(CMSTestCase):
 
     def setUp(self):  # flake8: noqa
-        super(FeaturedProjectPluginTest, self).setUp()
+        super().setUp()
 
         self.project = Project.objects.create(name='Project X',
             description="I could tell you, but then I'd have to kill you.")
@@ -30,7 +30,7 @@ class FeaturedProjectPluginTest(CMSTestCase):
 class ProjectListPluginTest(CMSTestCase):
 
     def setUp(self):  # flake8: noqa
-        super(ProjectListPluginTest, self).setUp()
+        super().setUp()
 
         self.cheese = Theme.objects.create(name='Cheese')
         self.programming = ProjectType.objects.create(name='Programming')
@@ -79,7 +79,7 @@ class ProjectListPluginTest(CMSTestCase):
 class ThemePluginTest(CMSTestCase):
 
     def setUp(self):  #flake8: noqa
-        super(ThemePluginTest, self).setUp()
+        super().setUp()
 
         self.hats = Theme.objects.create(
             name='Hats',
@@ -106,7 +106,7 @@ class ThemePluginTest(CMSTestCase):
 class NetworkGroupPluginTest(CMSTestCase):
 
     def setUp(self):  # flake8: noqa
-        super(NetworkGroupPluginTest, self).setUp()
+        super().setUp()
 
         self.britain = NetworkGroup.objects.create(
             name='Open Knowledge Foundation Britain',
@@ -177,7 +177,7 @@ class NetworkGroupPluginTest(CMSTestCase):
 class SignupFormPluginTest(CMSTestCase):
 
     def setUp(self):  # flake8: noqa
-        super(SignupFormPluginTest, self).setUp()
+        super().setUp()
 
         self.loveme = SignupForm.objects.create(
             title='Love me',

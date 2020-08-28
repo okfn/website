@@ -337,7 +337,7 @@ class NetworkGroup(models.Model):
         self.country_slug = slugify(self.get_country_display())
         self.region_slug = slugify(self.region)
 
-        super(NetworkGroup, self).save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
     def get_absolute_url(self):
         # Because reverse can't be smart about conditional parameters

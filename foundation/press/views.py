@@ -15,7 +15,7 @@ class PressReleaseListView(ListView):
         return PressRelease.published_objects.all()
 
     def get_context_data(self, **kwargs):
-        context = super(PressReleaseListView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
 
         context['recent_mentions'] = _recent_mentions_context()
 
@@ -29,8 +29,7 @@ class PressReleaseDetailView(DetailView):
         return PressRelease.published_objects.all()
 
     def get_context_data(self, **kwargs):
-        context = super(PressReleaseDetailView, self)\
-            .get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
 
         context['recent_releases'] = _recent_releases_context(
             context['object'].pk)
@@ -47,7 +46,7 @@ class PressMentionListView(ListView):
         return PressMention.published_objects.all()
 
     def get_context_data(self, **kwargs):
-        context = super(PressMentionListView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
 
         context['recent_releases'] = _recent_releases_context()
 
@@ -61,8 +60,7 @@ class PressMentionDetailView(DetailView):
         return PressMention.published_objects.all()
 
     def get_context_data(self, **kwargs):
-        context = super(PressMentionDetailView, self)\
-            .get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
 
         context['recent_mentions'] = _recent_mentions_context(
             context['object'].pk)

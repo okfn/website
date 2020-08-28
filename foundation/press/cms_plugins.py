@@ -14,8 +14,7 @@ class RecentPressReleasesPlugin(CMSPluginBase):
     render_template = "press/pressrelease_recent.html"
 
     def render(self, context, instance, placeholder):
-        context = super(RecentPressReleasesPlugin, self)\
-            .render(context, instance, placeholder)
+        context = super().render(context, instance, placeholder)
 
         context['recent_releases'] = {
             'objects': PressRelease.published_objects.all()[:5]
@@ -33,8 +32,7 @@ class RecentPressMentionsPlugin(CMSPluginBase):
     render_template = "press/pressmention_recent.html"
 
     def render(self, context, instance, placeholder):
-        context = super(RecentPressMentionsPlugin, self)\
-            .render(context, instance, placeholder)
+        context = super().render(context, instance, placeholder)
 
         context['recent_mentions'] = {
             'objects': PressMention.published_objects.all()[:5]

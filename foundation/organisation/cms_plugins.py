@@ -24,8 +24,7 @@ class FeaturedThemePlugin(CMSPluginBase):
         return settings.STATIC_URL + "cms/img/icons/plugins/snippet.png"
 
     def render(self, context, instance, placeholder):
-        context = super(FeaturedThemePlugin, self)\
-            .render(context, instance, placeholder)
+        context = super().render(context, instance, placeholder)
 
         context['object'] = instance.theme
         return context
@@ -41,8 +40,7 @@ class FeaturedProjectPlugin(CMSPluginBase):
     render_template = "organisation/project_featured.html"
 
     def render(self, context, instance, placeholder):
-        context = super(FeaturedProjectPlugin, self)\
-            .render(context, instance, placeholder)
+        context = super().render(context, instance, placeholder)
 
         context['project'] = instance.project
         return context
@@ -58,8 +56,7 @@ class ProjectListPlugin(CMSPluginBase):
     render_template = "organisation/project_list_plugin.html"
 
     def render(self, context, instance, placeholder):
-        context = super(ProjectListPlugin, self)\
-            .render(context, instance, placeholder)
+        context = super().render(context, instance, placeholder)
 
         results = Project.objects.all()
 
@@ -83,8 +80,7 @@ class ThemesPlugin(CMSPluginBase):
     render_template = "organisation/theme_list.html"
 
     def render(self, context, instance, placeholder):
-        context = super(ThemesPlugin, self)\
-            .render(context, instance, placeholder)
+        context = super().render(context, instance, placeholder)
         context['object_header'] = _("Themes")
         context['object_list'] = Theme.objects.all()
         return context
@@ -107,8 +103,7 @@ class NetworkGroupFlagsPlugin(CMSPluginBase):
         return settings.STATIC_URL + "cms/img/icons/plugins/snippet.png"
 
     def render(self, context, instance, placeholder):
-        context = super(NetworkGroupFlagsPlugin, self)\
-            .render(context, instance, placeholder)
+        context = super().render(context, instance, placeholder)
 
         context['title'] = instance.get_group_type_display()
         context['countries'] = NetworkGroup.objects.countries().filter(
@@ -134,8 +129,7 @@ class WorkingGroupPlugin(CMSPluginBase):
         return settings.STATIC_URL + "cms/img/icons/plugins/snippet.png"
 
     def render(self, context, instance, placeholder):
-        context = super(WorkingGroupPlugin, self)\
-            .render(context, instance, placeholder)
+        context = super().render(context, instance, placeholder)
 
         context['workinggroups'] = WorkingGroup.objects.active()
         return context
@@ -151,8 +145,7 @@ class SignupFormPlugin(CMSPluginBase):
     render_template = "organisation/signup_form.html"
 
     def render(self, context, instance, placeholder):
-        context = super(SignupFormPlugin, self)\
-            .render(context, instance, placeholder)
+        context = super().render(context, instance, placeholder)
 
         context['title'] = instance.title
         context['description'] = instance.description

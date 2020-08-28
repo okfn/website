@@ -14,8 +14,7 @@ class FeaturePlugin(CMSPluginBase):
     name = _("Featured News")
 
     def render(self, context, instance, placeholder):
-        context = super(FeaturePlugin, self)\
-            .render(context, instance, placeholder)
+        context = super().render(context, instance, placeholder)
 
         context['feature_list'] = Feature.objects.all()
         return context

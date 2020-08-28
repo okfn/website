@@ -46,7 +46,7 @@ class ProjectListView(ListView):
         return Project.objects.filter(old_project=False)
 
     def get_context_data(self, **kwargs):
-        context = super(ProjectListView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context['themes'] = Theme.objects.all()
         context['projecttypes'] = ProjectType.objects.all()
         return context
@@ -57,7 +57,7 @@ class ThemeDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         theme = self.kwargs.get('slug', None)
-        context = super(ThemeDetailView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context['themes'] = Theme.objects.exclude(slug=theme)
         return context
 
@@ -70,7 +70,7 @@ class WorkingGroupListView(ListView):
         return WorkingGroup.objects.active()
 
     def get_context_data(self, **kwargs):
-        context = super(WorkingGroupListView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context['active_list'] = WorkingGroup.objects.active()
         context['incubator_list'] = WorkingGroup.objects.incubators()
 
@@ -88,8 +88,7 @@ class NetworkGroupDetailView(DetailView):
                                  region_slug=region)
 
     def get_context_data(self, **kwargs):
-        context = super(NetworkGroupDetailView, self)\
-            .get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
 
         # For country we want all members but only regional members for regions
         country = self.kwargs.get('country', None)

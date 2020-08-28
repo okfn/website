@@ -10,7 +10,7 @@ from ..cms_plugins import RecentPressMentionsPlugin, RecentPressReleasesPlugin
 class RecentPressMentionsPluginTest(CMSTestCase):
 
     def setUp(self):  # flake8: noqa
-        super(RecentPressMentionsPluginTest, self).setUp()
+        super().setUp()
 
         self.mention = PressMention.objects.create(
             publisher='The Two Times Two',
@@ -45,7 +45,7 @@ class RecentPressMentionsPluginTest(CMSTestCase):
 class RecentPressReleasesPluginTest(CMSTestCase):
 
     def setUp(self):  # flake8: noqa
-        super(RecentPressReleasesPluginTest, self).setUp()
+        super().setUp()
 
         now = timezone.now()
 
