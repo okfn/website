@@ -1,5 +1,5 @@
 import re
-import opengraph
+from opengraph import opengraph
 
 from django.http import JsonResponse
 
