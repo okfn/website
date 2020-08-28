@@ -14,8 +14,8 @@ def extract_ograph_title(text):
     if urls:
         content = opengraph.OpenGraph(url=urls[0])
         title = content.get('title', text_without_hashtag)
-        return urls[0], title.encode('utf-8')
-    return None, text_without_hashtag.encode('utf-8')
+        return urls[0], title
+    return None, text_without_hashtag
 
 
 def get_activity(text):

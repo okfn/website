@@ -6,7 +6,7 @@ from ..views import NetworkGroupDetailView, networkgroup_csv_output
 
 
 # Generate countries list for the regular expression (it shouldn't be greedy)
-COUNTRY_SLUGS = '|'.join([slugify(unicode(name)) for code, name in countries])
+COUNTRY_SLUGS = '|'.join([slugify(str(name)) for code, name in countries])
 
 
 urlpatterns = [
