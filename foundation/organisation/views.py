@@ -148,7 +148,7 @@ def relatable_person(request):
 
 @cache_page(60 * 30)
 def networkgroup_csv_output(request):
-    response = HttpResponse(content_type='text/csv')
+    response = HttpResponse(content_type='text/csv; charset=utf-8')
     response['Content-Disposition'] = 'attachment; filename="network.csv"'
 
     writer = unicodecsv.writer(response)

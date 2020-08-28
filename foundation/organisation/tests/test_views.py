@@ -8,7 +8,7 @@ from django_webtest import WebTest
 from unittest import skip
 
 from iso3166 import countries
-import unicodecsv
+import csv
 
 from ..models import (Board, Person, Project, Unit, Theme, WorkingGroup,
                       NetworkGroup, NetworkGroupMembership,
@@ -602,9 +602,9 @@ class NetworkGroupDetailViewTest(WebTest):
 
     def test_csv_output(self):
         response = self.app.get(reverse('networkgroups-csv'))
-        csv = unicodecsv.reader(StringIO(response.body))
+        reader = csv.reader(StringIO(response.text))
 
-        header_row = csv.next()
+        header_row = next(reader)
 
         # Headers need to be on a specific form
         headers = ['ISO3', 'Country', 'Map location',
@@ -615,7 +615,7 @@ class NetworkGroupDetailViewTest(WebTest):
 
         self.assertEqual(header_row, headers)
 
-        germany = csv.next()
+        germany = next(reader)
         germany_data = [countries.get(self.germany.country.code).alpha3,
                         self.germany.get_country_display(),
                         '',
@@ -626,7 +626,7 @@ class NetworkGroupDetailViewTest(WebTest):
                         self.germany.twitter, '', 'Y', 'Y']
         self.assertEqual(germany, germany_data)
 
-        britain = csv.next()
+        britain = next(reader)
         britain_data = [countries.get(self.britain.country.code).alpha3,
                         self.britain.get_country_display(),
                         '',
@@ -637,7 +637,7 @@ class NetworkGroupDetailViewTest(WebTest):
                         self.britain.twitter, '', '', 'Y']
         self.assertEqual(britain, britain_data)
 
-        buckingham = csv.next()
+        buckingham = next(reader)
         buckingham_data = [
             countries.get(self.buckingham.country.code).alpha3,
             self.buckingham.get_country_display(),
