@@ -33,7 +33,7 @@ def contactview(request):
 
             # flatten recepients list:
             # (('name1', 'email1'), ...) -> ('email1', ...)
-            recepients = map(lambda recepient: recepient[1], recepients)
+            recepients = [recepient[1] for recepient in recepients]
 
             # all form data will originate from the same email address
             try:
