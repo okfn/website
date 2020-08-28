@@ -328,7 +328,7 @@ class NetworkGroup(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
-        if self.twitter and self.twitter.startswith(u'@'):
+        if self.twitter and self.twitter.startswith('@'):
             self.twitter = self.twitter[1:]
 
         # Slug is either the country slugified or the region

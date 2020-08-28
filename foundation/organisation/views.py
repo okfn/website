@@ -157,7 +157,7 @@ def networkgroup_csv_output(request):
 
     working_groups = []
     for group in WorkingGroup.objects.all():
-        topic = u'Topic: {0}'.format(group.name)
+        topic = 'Topic: {0}'.format(group.name)
         working_groups.append(topic)
     header_row.extend(working_groups)
 
@@ -170,12 +170,12 @@ def networkgroup_csv_output(request):
             code = countries.get(group.country.code).alpha3
         row = [code,  # ISO3
                group.get_country_display(),  # Country
-               u'{region}, {country}'.format(
+               '{region}, {country}'.format(
                    region=group.region,
                    country=group.get_country_display()
                    ) if group.region else '',  # Map location
                group.get_group_type_display(),  # Local group status
-               u', '.join([member.name
+               ', '.join([member.name
                           for member in group.members.all()]),  # Leaders
                group.homepage_url,  # Website
                group.mailinglist_url,

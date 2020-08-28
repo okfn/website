@@ -123,7 +123,7 @@ class NetworkGroupPluginTest(CMSTestCase):
             group_type=0, # local group
             description='We run the Open Palace project',
             country='GB',
-            region=u'Buckingham',
+            region='Buckingham',
             homepage_url='http://queen.okfn.org/',
             twitter='buckingham',
             facebook_url='http://facebook.com/queenthepersonnottheband',
