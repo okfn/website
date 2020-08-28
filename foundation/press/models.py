@@ -23,7 +23,7 @@ class PressRelease(models.Model):
     def get_absolute_url(self):
         return reverse('press-release', kwargs={'slug': self.slug})
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     class Meta:
@@ -56,7 +56,7 @@ class PressMention(models.Model):
     def get_absolute_url(self):
         return reverse('press-mention', kwargs={'slug': self.slug})
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     class Meta:

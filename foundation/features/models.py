@@ -10,7 +10,7 @@ class Feature(models.Model):
     # image = models.ImageField(upload_to='features/images', blank=False)
     link = models.URLField(blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     class Meta:

@@ -25,7 +25,7 @@ class Person(models.Model):
         'working', 'location', 'reading', 'listening', 'watching', 'eating'
     )
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     @property
@@ -119,7 +119,7 @@ class Unit(models.Model):
         blank=True, null=True,
         help_text="Higher numbers mean higher up in the list")
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     class Meta:
@@ -137,7 +137,7 @@ class UnitMembership(models.Model):
         blank=True, null=True,
         help_text="Higher numbers mean higher up in the list")
 
-    def __unicode__(self):
+    def __str__(self):
         return self.person.name + ' - ' + self.title
 
     class Meta:
@@ -154,7 +154,7 @@ class Board(models.Model):
 
     members = models.ManyToManyField('Person', through='BoardMembership')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -169,7 +169,7 @@ class BoardMembership(models.Model):
         blank=True, null=True,
         help_text="Higher numbers mean higher up in the list")
 
-    def __unicode__(self):
+    def __str__(self):
         return self.person.name + ' - ' + self.title
 
     class Meta:
@@ -206,7 +206,7 @@ class Project(models.Model):
     def get_absolute_url(self):
         return reverse('project', kwargs={'slug': self.slug})
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     class Meta:
@@ -220,7 +220,7 @@ class ProjectType(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -237,7 +237,7 @@ class Theme(models.Model):
         blank=True,
         help_text="A simple logo or picture to represent this theme")
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def get_absolute_url(self):
@@ -272,7 +272,7 @@ class WorkingGroup(models.Model):
     themes = models.ManyToManyField('Theme', blank=True,
                                     related_name='workinggroups')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     class Meta:
@@ -324,7 +324,7 @@ class NetworkGroup(models.Model):
                                      through='NetworkGroupMembership')
     working_groups = models.ManyToManyField('WorkingGroup', blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def save(self, *args, **kwargs):
@@ -368,7 +368,7 @@ class NetworkGroupMembership(models.Model):
     networkgroup = models.ForeignKey('NetworkGroup')
     person = models.ForeignKey('Person')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.person.name + ' - ' + self.networkgroup.name
 
     class Meta:
@@ -378,14 +378,14 @@ class NetworkGroupMembership(models.Model):
 class FeaturedTheme(CMSPlugin):
     theme = models.ForeignKey('Theme', related_name='+')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.theme.name
 
 
 class FeaturedProject(CMSPlugin):
     project = models.ForeignKey('Project', related_name='+')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.project.name
 
 
@@ -393,7 +393,7 @@ class NetworkGroupList(CMSPlugin):
     group_type = models.IntegerField(default=0,
                                      choices=NetworkGroup.GROUP_TYPES)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.get_group_type_display()
 
 
