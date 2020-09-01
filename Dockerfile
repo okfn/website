@@ -1,4 +1,4 @@
-FROM python:2.7-buster
+FROM python:3.8-buster
 MAINTAINER Open Knowledge Foundation
 
 WORKDIR /app
@@ -13,6 +13,7 @@ COPY deployment/nginx.conf /etc/nginx/conf.d/default.conf
 COPY deployment/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY deployment/gunicorn.conf /etc/supervisor/conf.d/gunicorn.conf
 
+COPY aldryn_quote ./aldryn_quote
 COPY article_list_item ./article_list_item
 COPY docs ./docs
 COPY foundation ./foundation
