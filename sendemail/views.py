@@ -1,5 +1,3 @@
-from __future__ import unicode_literals
-
 from django.shortcuts import render
 from django.conf import settings
 from django.contrib import messages
@@ -35,7 +33,7 @@ def contactview(request):
 
             # flatten recepients list:
             # (('name1', 'email1'), ...) -> ('email1', ...)
-            recepients = map(lambda recepient: recepient[1], recepients)
+            recepients = [recepient[1] for recepient in recepients]
 
             # all form data will originate from the same email address
             try:
@@ -48,9 +46,9 @@ def contactview(request):
             # pop up message once form data has been sent successfully
             messages.info(
                 request,
-                'Thank you for your message. ' +
-                'Someone from Open Knowledge Foundation' +
-                ' will be in touch soon.')
+                'Thank you for your message. '
+                + 'Someone from Open Knowledge Foundation'
+                + ' will be in touch soon.')
 
     # reload the contact page after form data has been sent successfully
     return render(request, "cms_contact.html", {'form': form})

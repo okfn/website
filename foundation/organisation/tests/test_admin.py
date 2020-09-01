@@ -1,1 +1,1 @@
-from .. import admin  # flake8: noqa
+from .. import admin  # noqa

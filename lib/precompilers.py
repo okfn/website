@@ -19,11 +19,8 @@ class CustomCssAbsoluteFilter(CssAbsoluteFilter):
 # CssAbsoluteFilter on sass files due to broken path lookups.
 class SassFilter(CompilerFilter):
     def __init__(self, content, attrs, **kwargs):
-        super(SassFilter, self).__init__(
-            content,
-            command='sassc {infile} {outfile}',
-            **kwargs)
+        super().__init__(content, command='sassc {infile} {outfile}', **kwargs)
 
     def input(self, **kwargs):
-        content = super(SassFilter, self).input(**kwargs)
+        content = super().input(**kwargs)
         return CustomCssAbsoluteFilter(content).input(**kwargs)

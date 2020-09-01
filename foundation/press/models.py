@@ -5,8 +5,7 @@ from django.db import models
 
 class PublishedPressReleaseManager(models.Manager):
     def get_queryset(self):
-        return super(PublishedPressReleaseManager, self).get_queryset().filter(
-            release_date__lt=timezone.now())
+        return super().get_queryset().filter(release_date__lt=timezone.now())
 
 
 class PressRelease(models.Model):
@@ -24,7 +23,7 @@ class PressRelease(models.Model):
     def get_absolute_url(self):
         return reverse('press-release', kwargs={'slug': self.slug})
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     class Meta:
@@ -33,8 +32,7 @@ class PressRelease(models.Model):
 
 class PublishedPressMentionMananger(models.Manager):
     def get_queryset(self):
-        return super(PublishedPressMentionMananger, self).get_queryset(). \
-            filter(published=True)
+        return super().get_queryset().filter(published=True)
 
 
 class PressMention(models.Model):
@@ -58,7 +56,7 @@ class PressMention(models.Model):
     def get_absolute_url(self):
         return reverse('press-mention', kwargs={'slug': self.slug})
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     class Meta:

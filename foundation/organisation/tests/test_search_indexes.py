@@ -5,7 +5,7 @@ from ..search_indexes import PersonIndex
 
 
 class PersonIndexTest(TestCase):
-    def setUp(self):  # flake8: noqa
+    def setUp(self):
         self.leonardo = Person.objects.create(
             name="Leonardo (Leo)",
             description='Turtle with a blue mask',

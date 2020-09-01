@@ -9,12 +9,12 @@ from django.http import HttpResponse, JsonResponse
 from django.conf import settings
 
 from iso3166 import countries
-import unicodecsv
+import csv
 
 from .models import (Board, Project, ProjectType, Theme, WorkingGroup,
                      NetworkGroup, NetworkGroupMembership, Person, NowDoing)
 
-from utils import get_activity, fail_json, extract_ograph_title
+from .utils import get_activity, fail_json, extract_ograph_title
 
 
 class BoardView(DetailView):
@@ -46,7 +46,7 @@ class ProjectListView(ListView):
         return Project.objects.filter(old_project=False)
 
     def get_context_data(self, **kwargs):
-        context = super(ProjectListView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context['themes'] = Theme.objects.all()
         context['projecttypes'] = ProjectType.objects.all()
         return context
@@ -57,7 +57,7 @@ class ThemeDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         theme = self.kwargs.get('slug', None)
-        context = super(ThemeDetailView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context['themes'] = Theme.objects.exclude(slug=theme)
         return context
 
@@ -70,7 +70,7 @@ class WorkingGroupListView(ListView):
         return WorkingGroup.objects.active()
 
     def get_context_data(self, **kwargs):
-        context = super(WorkingGroupListView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context['active_list'] = WorkingGroup.objects.active()
         context['incubator_list'] = WorkingGroup.objects.incubators()
 
@@ -88,8 +88,7 @@ class NetworkGroupDetailView(DetailView):
                                  region_slug=region)
 
     def get_context_data(self, **kwargs):
-        context = super(NetworkGroupDetailView, self)\
-            .get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
 
         # For country we want all members but only regional members for regions
         country = self.kwargs.get('country', None)
@@ -148,17 +147,17 @@ def relatable_person(request):
 
 @cache_page(60 * 30)
 def networkgroup_csv_output(request):
-    response = HttpResponse(content_type='text/csv')
+    response = HttpResponse(content_type='text/csv; charset=utf-8')
     response['Content-Disposition'] = 'attachment; filename="network.csv"'
 
-    writer = unicodecsv.writer(response)
+    writer = csv.writer(response)
     header_row = ['ISO3', 'Country', 'Map location',
                   'Local Groups status', 'Community Leaders', 'Website',
                   'Mailing List', 'Twitter handle', 'Facebook page']
 
     working_groups = []
     for group in WorkingGroup.objects.all():
-        topic = u'Topic: {0}'.format(group.name)
+        topic = 'Topic: {0}'.format(group.name)
         working_groups.append(topic)
     header_row.extend(working_groups)
 
@@ -171,12 +170,12 @@ def networkgroup_csv_output(request):
             code = countries.get(group.country.code).alpha3
         row = [code,  # ISO3
                group.get_country_display(),  # Country
-               u'{region}, {country}'.format(
+               '{region}, {country}'.format(
                    region=group.region,
                    country=group.get_country_display()
-                   ) if group.region else '',  # Map location
+               ) if group.region else '',  # Map location
                group.get_group_type_display(),  # Local group status
-               u', '.join([member.name
+               ', '.join([member.name
                           for member in group.members.all()]),  # Leaders
                group.homepage_url,  # Website
                group.mailinglist_url,

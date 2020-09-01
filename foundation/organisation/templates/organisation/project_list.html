@@ -3,7 +3,6 @@
 {% load cms_tags %}
 {% load markdown_deux_tags %}
 {% load thumbnail %}
-{% load chunks %}
 
 {% block blurb %}{% static_placeholder "projects blurb" %}{% endblock %}
 
@@ -18,7 +17,6 @@
     <h3 class="name">{{ project.name }}</h3>
 
     {{ project.teaser|markdown }}
-
 
     {% if project.twitter or project.sourcecode_url or project.homepage_url or project.forum_url %}
     <div class="meta">

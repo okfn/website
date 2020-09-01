@@ -8,7 +8,7 @@ from ..search_indexes import PressMentionIndex, PressReleaseIndex
 
 
 class PressMentionIndexTest(TestCase):
-    def setUp(self):  # flake8: noqa
+    def setUp(self):
         self.mention = PressMention.objects.create(
             publisher='The Two Times Two',
             publication_date=timezone.now(),
@@ -22,7 +22,7 @@ class PressMentionIndexTest(TestCase):
 
         self.unpublished_mention = PressMention.objects.create(
             publisher='Runway',
-            publication_date=timezone.now()- timedelta(days=1),
+            publication_date=timezone.now() - timedelta(days=1),
             url='http://www.runwaylive.com/open-fashion',
             title='Open Fashion is the way to go!',
             slug='open-fashion-is-the-new-black',
@@ -39,7 +39,7 @@ class PressMentionIndexTest(TestCase):
 
 
 class PressReleaseIndexTest(TestCase):
-    def setUp(self):  # flake8: noqa
+    def setUp(self):
         now = timezone.now()
 
         one_month_ago = now - timedelta(days=31)
@@ -48,7 +48,7 @@ class PressReleaseIndexTest(TestCase):
             slug='ground-breaking-invention',
             body='You can now turn data to real world objects',
             release_date=one_month_ago
-            )
+        )
 
         one_day_ago = now - timedelta(days=1)
         self.one_day_old = PressRelease.objects.create(
@@ -56,7 +56,7 @@ class PressReleaseIndexTest(TestCase):
             slug='april-fools',
             body='By turning food to data Open Knowledge solves world hunger',
             release_date=one_day_ago
-            )
+        )
 
         ten_minutes_from_now = now + timedelta(minutes=10)
         self.in_ten_minutes = PressRelease.objects.create(
@@ -64,7 +64,7 @@ class PressReleaseIndexTest(TestCase):
             slug='okf-fools-everyone',
             body='We are not smart enought to use the printer that way',
             release_date=ten_minutes_from_now
-            )
+        )
 
     def test_queryset_includes_published_releases(self):
         index = PressReleaseIndex()

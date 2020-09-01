@@ -11,7 +11,7 @@ class ContactForm(forms.Form):
 
     # check if filled form data is valid
     def is_valid(self):
-        valid = super(ContactForm, self).is_valid()
+        valid = super().is_valid()
 
         if not valid:
             return False

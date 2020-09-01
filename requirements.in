@@ -20,7 +20,6 @@ djangocms-googlemap
 djangocms-link
 djangocms-text-ckeditor>=2.1.4,<2.2
 iso3166
-unicodecsv
 gunicorn
 psycopg2
 pyelasticsearch>=0.6,<0.7 # required by django-haystack

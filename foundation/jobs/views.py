@@ -11,4 +11,4 @@ class JobHelperView(TemplateView):
 
     @xframe_options_exempt
     def get(self, request, *args, **kwargs):
-        return super(JobHelperView, self).get(request, *args, **kwargs)
+        return super().get(request, *args, **kwargs)

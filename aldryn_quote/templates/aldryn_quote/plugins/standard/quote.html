@@ -1,0 +1,8 @@
+<blockquote{% if url %} cite="{{ url }}"{% endif %}>
+    <q>{{ quote }}</q>
+    {% if url or footer %}<footer>
+        <cite>
+            {% if url %}<a href="{{ url }}"{% if target %} target="{{ target }}"{% endif %}>{% endif %}{{ footer }}{% if url %}</a>{% endif %}
+        </cite>
+    </footer>{% endif %}
+</blockquote>

@@ -9,8 +9,8 @@ from ..cms_plugins import RecentPressMentionsPlugin, RecentPressReleasesPlugin
 
 class RecentPressMentionsPluginTest(CMSTestCase):
 
-    def setUp(self):  # flake8: noqa
-        super(RecentPressMentionsPluginTest, self).setUp()
+    def setUp(self):
+        super().setUp()
 
         self.mention = PressMention.objects.create(
             publisher='The Two Times Two',
@@ -21,18 +21,18 @@ class RecentPressMentionsPluginTest(CMSTestCase):
             author='Rite R. von Nuus',
             notes='We are famous!',
             published=True
-            )
+        )
 
         self.unpublished_mention = PressMention.objects.create(
             publisher='Runway',
-            publication_date=timezone.now()- timedelta(days=1),
+            publication_date=timezone.now() - timedelta(days=1),
             url='http://www.runwaylive.com/open-fashion',
             title='Open Fashion is the way to go!',
             slug='open-fashion-is-the-new-black',
             author='Andrea Sachs',
             notes='Woo, open fashion!',
             published=False
-            )
+        )
 
     def test_mention_rendered(self):
         plug = RecentPressMentionsPlugin()
@@ -44,8 +44,8 @@ class RecentPressMentionsPluginTest(CMSTestCase):
 
 class RecentPressReleasesPluginTest(CMSTestCase):
 
-    def setUp(self):  # flake8: noqa
-        super(RecentPressReleasesPluginTest, self).setUp()
+    def setUp(self):
+        super().setUp()
 
         now = timezone.now()
 
@@ -55,7 +55,7 @@ class RecentPressReleasesPluginTest(CMSTestCase):
             slug='ground-breaking-invention',
             body='You can now turn data to real world objects',
             release_date=one_month_ago
-            )
+        )
 
         one_day_ago = now - timedelta(days=1)
         self.one_day_old = PressRelease.objects.create(
@@ -63,7 +63,7 @@ class RecentPressReleasesPluginTest(CMSTestCase):
             slug='april-fools',
             body='By turning food to data Open Knowledge solves world hunger',
             release_date=one_day_ago
-            )
+        )
 
         ten_minutes_from_now = now + timedelta(minutes=10)
         self.in_ten_minutes = PressRelease.objects.create(
@@ -71,7 +71,7 @@ class RecentPressReleasesPluginTest(CMSTestCase):
             slug='okf-fools-everyone',
             body='We are not smart enought to use the printer that way',
             release_date=ten_minutes_from_now
-            )
+        )
 
     def test_old_releases_rendered(self):
         plug = RecentPressReleasesPlugin()
@@ -85,5 +85,3 @@ class RecentPressReleasesPluginTest(CMSTestCase):
         releases = plug.render({}, plug, 'foo')['recent_releases']['objects']
 
         self.assertNotIn(self.in_ten_minutes, releases)
-
-

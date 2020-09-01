@@ -1,8 +1,6 @@
 from django.core.urlresolvers import reverse
-from django.utils.html import escape
 from django.utils import timezone
 from django.template import defaultfilters
-from django.conf import settings
 
 from django_webtest import WebTest
 
@@ -12,7 +10,7 @@ from ..models import PressRelease, PressMention
 
 
 class PressReleaseViewTest(WebTest):
-    def setUp(self):  # flake8: noqa
+    def setUp(self):
 
         now = timezone.now()
 
@@ -22,7 +20,7 @@ class PressReleaseViewTest(WebTest):
             slug='ground-breaking-invention',
             body='You can now turn data to real world objects',
             release_date=one_month_ago
-            )
+        )
 
         one_day_ago = now - timedelta(days=1)
         self.one_day_old = PressRelease.objects.create(
@@ -30,7 +28,7 @@ class PressReleaseViewTest(WebTest):
             slug='april-fools',
             body='By turning food to data Open Knowledge solves world hunger',
             release_date=one_day_ago
-            )
+        )
 
         ten_minutes_from_now = now + timedelta(minutes=10)
         self.in_ten_minutes = PressRelease.objects.create(
@@ -38,7 +36,7 @@ class PressReleaseViewTest(WebTest):
             slug='okf-fools-everyone',
             body='We are not smart enought to use the printer that way',
             release_date=ten_minutes_from_now
-            )
+        )
 
     def test_old_releases_in_response(self):
         response = self.app.get(reverse('press-releases'))
@@ -58,8 +56,8 @@ class PressReleaseViewTest(WebTest):
         self.assertTrue(one_day_old_url in response)
 
         # Newest should be on top
-        one_day_ago = response.body.find(self.one_day_old.title)
-        one_month_ago = response.body.find(self.one_month_old.title)
+        one_day_ago = response.text.find(self.one_day_old.title)
+        one_month_ago = response.text.find(self.one_month_old.title)
         self.assertTrue(one_day_ago < one_month_ago)
 
     def test_future_releases_not_in_response(self):
@@ -89,7 +87,7 @@ class PressReleaseViewTest(WebTest):
 
 
 class PressMentionViewTest(WebTest):
-    def setUp(self):  # flake8: noqa
+    def setUp(self):
 
         self.mention = PressMention.objects.create(
             publisher='The Two Times Two',
@@ -100,18 +98,18 @@ class PressMentionViewTest(WebTest):
             author='Rite R. von Nuus',
             notes='We are famous!',
             published=True
-            )
+        )
 
         self.unpublished_mention = PressMention.objects.create(
             publisher='Runway',
-            publication_date=timezone.now()- timedelta(days=1),
+            publication_date=timezone.now() - timedelta(days=1),
             url='http://www.runwaylive.com/open-fashion',
             title='Open Fashion is the way to go!',
             slug='open-fashion-is-the-new-black',
             author='Andrea Sachs',
             notes='Woo, open fashion!',
             published=False
-            )
+        )
 
     def test_press_mention_in_response(self):
         response = self.app.get(reverse('press-mentions'))
@@ -126,7 +124,7 @@ class PressMentionViewTest(WebTest):
         self.assertTrue(date in response)
 
         mention_url = reverse('press-mention',
-                              kwargs={'slug':self.mention.slug})
+                              kwargs={'slug': self.mention.slug})
         self.assertTrue(mention_url in response)
 
     def test_press_releases_in_response(self):
@@ -153,5 +151,5 @@ class PressMentionViewTest(WebTest):
         self.assertTrue(date not in response)
 
         mention_url = reverse('press-mention',
-                              kwargs={'slug':self.unpublished_mention.slug})
+                              kwargs={'slug': self.unpublished_mention.slug})
         self.assertTrue(mention_url not in response)

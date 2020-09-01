@@ -3,7 +3,7 @@ from cms.plugin_pool import plugin_pool
 from cms.models.pluginmodel import CMSPlugin
 from django.utils.translation import ugettext_lazy as _
 
-from models import Feature
+from .models import Feature
 
 
 class FeaturePlugin(CMSPluginBase):
@@ -14,8 +14,7 @@ class FeaturePlugin(CMSPluginBase):
     name = _("Featured News")
 
     def render(self, context, instance, placeholder):
-        context = super(FeaturePlugin, self)\
-            .render(context, instance, placeholder)
+        context = super().render(context, instance, placeholder)
 
         context['feature_list'] = Feature.objects.all()
         return context

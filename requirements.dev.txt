@@ -2,10 +2,10 @@
 WebOb==1.5.1
 WebTest==2.0.20
 django-webtest==1.9.7
-flake8==3.5.0
+flake8==3.8.3
 mccabe==0.6.0
 pep8-naming==0.4.1
 pep8==1.7.0
-pyflakes==1.6.0
+pyflakes==2.2.0
 waitress==0.8.10
 mock==2.0.0
