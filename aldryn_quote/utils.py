@@ -8,7 +8,7 @@ def get_additional_styles():
     choices = []
     raw = getattr(settings, 'QUOTE_STYLES', False)
     if raw:
-        if isinstance(raw, basestring):
+        if isinstance(raw, str):
             raw = raw.split(',')
         for choice in raw:
             clean = choice.strip()
