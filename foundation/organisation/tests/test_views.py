@@ -649,6 +649,7 @@ class NetworkGroupDetailViewTest(WebTest):
             self.buckingham.mailinglist_url,
             self.buckingham.twitter,
             self.buckingham.facebook_url, 'Y', '' '']
+        self.assertEqual(buckingham, buckingham_data)
 
     @override_settings(HUBOT_API_KEY='secretkey')
     def test_relatable_person_authentication(self):
