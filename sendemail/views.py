@@ -46,9 +46,9 @@ def contactview(request):
             # pop up message once form data has been sent successfully
             messages.info(
                 request,
-                'Thank you for your message. ' +
-                'Someone from Open Knowledge Foundation' +
-                ' will be in touch soon.')
+                'Thank you for your message. '
+                + 'Someone from Open Knowledge Foundation'
+                + ' will be in touch soon.')
 
     # reload the contact page after form data has been sent successfully
     return render(request, "cms_contact.html", {'form': form})

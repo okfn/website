@@ -18,7 +18,7 @@ class RecentPressReleasesPlugin(CMSPluginBase):
 
         context['recent_releases'] = {
             'objects': PressRelease.published_objects.all()[:5]
-            }
+        }
         return context
 
 
@@ -36,7 +36,7 @@ class RecentPressMentionsPlugin(CMSPluginBase):
 
         context['recent_mentions'] = {
             'objects': PressMention.published_objects.all()[:5]
-            }
+        }
         return context
 
 

@@ -16,7 +16,7 @@ from ..models import (Board, Person, Project, Unit, Theme, WorkingGroup,
 
 
 class UnitListViewTest(WebTest):
-    def setUp(self):  # flake8: noqa
+    def setUp(self):
         self.donatello = Person.objects.create(
             name="Donatello (Donnie)",
             description='Turtle with a purple mask',
@@ -173,7 +173,7 @@ class UnitListViewTest(WebTest):
 
 
 class BoardViewTest(WebTest):
-    def setUp(self):  # flake8: noqa
+    def setUp(self):
         self.leonardo = Person.objects.create(
             name="Leonardo (Leo)",
             description='Turtle with a blue mask',
@@ -273,7 +273,7 @@ class BoardViewTest(WebTest):
 
 
 class ProjectListViewTest(WebTest):
-    def setUp(self):  # flake8: noqa
+    def setUp(self):
         self.market_garden = Project.objects.create(
             name='Market Garden',
             slug='market-garden',
@@ -292,7 +292,7 @@ class ProjectListViewTest(WebTest):
 
 
 class ProjectDetailViewTest(WebTest):
-    def setUp(self):  # flake8: noqa
+    def setUp(self):
         self.market_garden = Project.objects.create(
             name='Market Garden',
             slug='market-garden',
@@ -311,7 +311,7 @@ class ProjectDetailViewTest(WebTest):
 
 
 class ThemeDetailViewTest(WebTest):
-    def setUp(self):  # flake8: noqa
+    def setUp(self):
         self.hats = Theme.objects.create(
             name='Hats',
             slug='hats',
@@ -374,7 +374,7 @@ class ThemeDetailViewTest(WebTest):
 
 
 class WorkingGroupListViewTest(WebTest):
-    def setUp(self):  # flake8: noqa
+    def setUp(self):
         self.theme = Theme.objects.create(
             name='World Wide Web',
             slug='world-wide-web',
@@ -415,7 +415,7 @@ class WorkingGroupListViewTest(WebTest):
 
 
 class NetworkGroupDetailViewTest(WebTest):
-    def setUp(self):  # flake8: noqa
+    def setUp(self):
 
         self.government = WorkingGroup.objects.create(
             name='Open Government',
@@ -423,7 +423,7 @@ class NetworkGroupDetailViewTest(WebTest):
             description='We work toward open governments around the world',
             homepage_url='http://opengov.org',
             incubation=False
-            )
+        )
 
         self.lobbying = WorkingGroup.objects.create(
             name='Lobbying Transparency',
@@ -431,7 +431,7 @@ class NetworkGroupDetailViewTest(WebTest):
             description='We want hotel lobbies made out of glass',
             homepage_url='http://transparent.lobby.org',
             incubation=False
-            )
+        )
 
         self.otto = Person.objects.create(
             name='Otto von Bismarck',
@@ -439,7 +439,7 @@ class NetworkGroupDetailViewTest(WebTest):
             email='bismarck@bismarck.org',
             twitter='busymark',
             url='http://betterthanwinston.de'
-            )
+        )
 
         self.winston = Person.objects.create(
             name='Sir Winston Churchill',
@@ -447,7 +447,7 @@ class NetworkGroupDetailViewTest(WebTest):
             email='winston@okfn.org',
             twitter='ftw_stn',
             url='http://forthewinston.org'
-            )
+        )
 
         self.elizabeth = Person.objects.create(
             name='Elizabeth Angela Marguerite Bowes-Lyon',
@@ -455,57 +455,56 @@ class NetworkGroupDetailViewTest(WebTest):
             email='queen@monarch.me',
             twitter='thequeen',
             url='http://monarch.me/'
-            )
+        )
 
         self.britain = NetworkGroup.objects.create(
             name='Open Knowledge Foundation Britain',
-            group_type=0, # local group
+            group_type=0,  # local group
             description='Bisquits, tea, and open data',
             country='GB',
             mailinglist_url='http://lists.okfn.org/okfn-britain',
             homepage_url='http://gb.okfn.org/',
             twitter='OKFNgb'
-            )
+        )
 
         self.buckingham = NetworkGroup.objects.create(
             name='Open Knowledge Buckingham',
-            group_type=0, # local group
+            group_type=0,  # local group
             description='We run the Open Palace project',
             country='GB',
             region='Buckingham',
             homepage_url='http://queen.okfn.org/',
             twitter='buckingham',
             facebook_url='http://facebook.com/queenthepersonnottheband',
-            )
-
+        )
 
         self.germany = NetworkGroup.objects.create(
             name='Open Knowledge Foundation Germany',
-            group_type=1, # chapter
+            group_type=1,  # chapter
             description='Haben Sie ein Kugelschreiber bitte?',
             country='DE',
             mailinglist_url='http://lists.okfn.org/okfn-de',
             homepage_url='http://de.okfn.org/',
             twitter='OKFNde'
-            )
+        )
 
         self.otto_germany = NetworkGroupMembership.objects.create(
             networkgroup=self.germany,
             person=self.otto,
             title='First chancellor'
-            )
+        )
 
         self.winston_britain = NetworkGroupMembership.objects.create(
             networkgroup=self.britain,
             person=self.winston,
             title='Prime minister with intervals'
-            )
+        )
 
         self.elizabeth_britain = NetworkGroupMembership.objects.create(
             networkgroup=self.buckingham,
             person=self.elizabeth,
             title='Regent maker'
-            )
+        )
 
         self.britain.working_groups.add(self.government)
         self.buckingham.working_groups.add(self.lobbying)
@@ -566,11 +565,10 @@ class NetworkGroupDetailViewTest(WebTest):
         self.assertNotIn(self.otto.name, response.text)
 
         self.assertIn(reverse('network-country',
-                              kwargs={'country':self.buckingham.country_slug}),
+                              kwargs={'country': self.buckingham.country_slug}),
                       response.text)
         self.assertNotIn(self.britain.description, response.text)
         self.assertNotIn(self.germany.name, response.text)
-
 
     def test_workinggroups_in_networks(self):
 
@@ -644,7 +642,7 @@ class NetworkGroupDetailViewTest(WebTest):
             '{region}, {country}'.format(
                 region=self.buckingham.region,
                 country=self.buckingham.get_country_display()
-                ),
+            ),
             self.buckingham.get_group_type_display(),
             ', '.join([m.name for m in self.buckingham.members.all()]),
             self.buckingham.homepage_url,
@@ -714,7 +712,6 @@ class NetworkGroupDetailViewTest(WebTest):
             email='donatello@tmnt.org')
         donatello.save()
 
-
         payload = {"username": "donnie",
                    "text": "#reading https://www.goodreads.com/book/show/486625.Close_to_the_Machine"
                    }
@@ -737,7 +734,7 @@ class NetworkGroupDetailViewTest(WebTest):
         self.assertTrue(donnie.nowdoing_with_latest[0].is_newest_update)
         self.assertEqual(donnie.nowdoing_with_latest[0].doing_type, "watching")
 
-    def test_NowDoing_icon_name_works(self, *args):
+    def test_NowDoing_icon_name_works(self, *args):  # noqa
         donatello = Person.objects.create(
             name="Donatello (Donnie)",
             username_on_slack="donnie",
@@ -762,7 +759,7 @@ class NetworkGroupDetailViewTest(WebTest):
         self.assertEqual(watching.icon_name, "playing")
         self.assertEqual(location.icon_name, "location")
 
-    def test_NowDoing_display_name(self, *args):
+    def test_NowDoing_display_name(self, *args):  # noqa
         donatello = Person.objects.create(
             name="Donatello (Donnie)",
             username_on_slack="donnie",

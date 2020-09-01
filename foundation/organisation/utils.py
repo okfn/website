@@ -9,7 +9,7 @@ from foundation.organisation.models import NowDoing
 def extract_ograph_title(text):
     text_without_hashtag = ' '.join(text.split(' ')[1:])
     url_pattern = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]' \
-                  + '|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+                  + r'|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
     urls = re.findall(url_pattern, text_without_hashtag)
     if urls:
         content = opengraph.OpenGraph(url=urls[0])

@@ -173,7 +173,7 @@ def networkgroup_csv_output(request):
                '{region}, {country}'.format(
                    region=group.region,
                    country=group.get_country_display()
-                   ) if group.region else '',  # Map location
+               ) if group.region else '',  # Map location
                group.get_group_type_display(),  # Local group status
                ', '.join([member.name
                           for member in group.members.all()]),  # Leaders

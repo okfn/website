@@ -10,10 +10,10 @@ from django.contrib.sitemaps.views import sitemap
 
 from foundation.organisation.views import relatable_person
 
-admin.autodiscover()
-
 from haystack.views import SearchView
 from cms.sitemaps import CMSSitemap
+
+admin.autodiscover()
 
 ARCHIVE_ROOT = 'http://webarchive.okfn.org/okfn.org/201404'
 

@@ -59,9 +59,9 @@ class Person(models.Model):
     def has_anything_to_show(self):
         """ Is there anything that we can show for this person in the
             template (other then email which is checked separately)"""
-        return (self.url or
-                self.twitter or
-                self.nowdoing_set.count())
+        return (self.url
+                or self.twitter
+                or self.nowdoing_set.count())
 
     class Meta:
         ordering = ["name"]

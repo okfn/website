@@ -39,7 +39,7 @@ class ThemeMenu(CMSAttachMenu):
                 theme.name,
                 theme.get_absolute_url(),
                 theme.pk,
-                )
+            )
             nodes.append(node)
         return nodes
 

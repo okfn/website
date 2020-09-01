@@ -15,6 +15,7 @@ from os import environ as env
 import dj_database_url
 from django.utils.translation import ugettext_lazy as _
 from dotenv import load_dotenv
+import warnings
 
 TEST_MODE = len(sys.argv) > 1 and sys.argv[1] == 'test'
 
@@ -23,7 +24,6 @@ if not TEST_MODE:
     load_dotenv('.env')
 
 # Silence warnings from ipython/sqlite
-import warnings
 warnings.filterwarnings("ignore",
                         category=RuntimeWarning,
                         module='django.db.backends.sqlite3.base',
@@ -169,42 +169,42 @@ MIDDLEWARE_CLASSES = (
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        'OPTIONS': {
-            'debug': DEBUG,
-            'context_processors':
-                (
-                    'django.contrib.auth.context_processors.auth',
-                    'django.template.context_processors.debug',
-                    'django.template.context_processors.i18n',
-                    'django.template.context_processors.request',
-                    'django.template.context_processors.media',
-                    'django.template.context_processors.static',
-                    'django.template.context_processors.tz',
-                    'django.contrib.messages.context_processors.messages',
-                    'cms.context_processors.cms_settings',
-                    'sekizai.context_processors.sekizai',
-                    'lib.context_processors.site',
-                    'lib.context_processors.google_analytics',
-                    'lib.context_processors.mailchimp',
-                    'django.template.context_processors.request',
-                    'aldryn_boilerplates.context_processors.boilerplate',
-                ),
-            'loaders': [
-                'django.template.loaders.filesystem.Loader',
-                'aldryn_boilerplates.template_loaders.AppDirectoriesLoader',
-                'django.template.loaders.app_directories.Loader',
-                ],
-            }
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
+        "OPTIONS": {
+            "debug": DEBUG,
+            "context_processors": (
+                "django.contrib.auth.context_processors.auth",
+                "django.template.context_processors.debug",
+                "django.template.context_processors.i18n",
+                "django.template.context_processors.request",
+                "django.template.context_processors.media",
+                "django.template.context_processors.static",
+                "django.template.context_processors.tz",
+                "django.contrib.messages.context_processors.messages",
+                "cms.context_processors.cms_settings",
+                "sekizai.context_processors.sekizai",
+                "lib.context_processors.site",
+                "lib.context_processors.google_analytics",
+                "lib.context_processors.mailchimp",
+                "django.template.context_processors.request",
+                "aldryn_boilerplates.context_processors.boilerplate",
+            ),
+            "loaders": [
+                "django.template.loaders.filesystem.Loader",
+                "aldryn_boilerplates.template_loaders.AppDirectoriesLoader",
+                "django.template.loaders.app_directories.Loader",
+            ],
+        },
     },
 ]
+
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    )
+)
 
 ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
 ROOT_URLCONF = 'foundation.urls'
@@ -465,4 +465,4 @@ QUOTE_STYLES = (
 )
 
 if TEST_MODE:
-    from .test_settings import *  # flake8: noqa
+    from .test_settings import *  # noqa
