@@ -20,7 +20,7 @@ ARCHIVE_ROOT = 'http://webarchive.okfn.org/okfn.org/201404'
 
 urlpatterns = [
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
     url(r'^robots.txt$', TemplateView.as_view(template_name="robots.txt",
                                               content_type="text/plain"),
         name="robots_file"),
