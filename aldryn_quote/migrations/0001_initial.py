@@ -15,7 +15,14 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Quote',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(
+                    parent_link=True,
+                    auto_created=True,
+                    primary_key=True,
+                    serialize=False,
+                    to='cms.CMSPlugin',
+                    on_delete=models.CASCADE,
+                )),
                 ('style', models.CharField(default=b'standard', max_length=50, verbose_name='Style', choices=[(b'standard', 'Standard')])),
                 ('created_at', models.DateTimeField(default=django.utils.timezone.now, verbose_name='Created at')),
                 ('content', models.TextField(default=b'', verbose_name='Quote')),

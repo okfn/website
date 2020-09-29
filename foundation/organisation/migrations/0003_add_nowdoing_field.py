@@ -28,6 +28,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='nowdoing',
             name='person',
-            field=models.ForeignKey(to='organisation.Person'),
+            field=models.ForeignKey(to='organisation.Person', on_delete=models.CASCADE),
         ),
     ]
