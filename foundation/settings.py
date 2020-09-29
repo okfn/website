@@ -123,7 +123,6 @@ INSTALLED_APPS = (
     'djangocms_picture',
     'djangocms_link',
     'djangocms_text_ckeditor',
-    'aldryn_boilerplates',
     'aldryn_search',
     'aldryn_video',
     'aldryn_quote',
@@ -188,7 +187,6 @@ TEMPLATES = [
                 "lib.context_processors.google_analytics",
                 "lib.context_processors.mailchimp",
                 "django.template.context_processors.request",
-                "aldryn_boilerplates.context_processors.boilerplate",
             ),
             "loaders": [
                 "django.template.loaders.filesystem.Loader",
@@ -202,7 +200,6 @@ TEMPLATES = [
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
-    'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
