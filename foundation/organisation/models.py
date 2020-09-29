@@ -2,7 +2,7 @@ from hashlib import md5
 
 from cms.models.pluginmodel import CMSPlugin
 from cms.extensions import PageExtension
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db import models
 from django.utils.text import slugify
 from django_countries.fields import CountryField
