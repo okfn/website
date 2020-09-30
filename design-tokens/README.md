@@ -1,4 +1,5 @@
-# OKF Design Tokens
+# Design hub
+
 
 Variables for OKF sites, generated with [style-dictionary](https://github.com/amzn/style-dictionary).
 
