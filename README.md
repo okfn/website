@@ -18,7 +18,7 @@ Also, the python packages being used require the following libraries to be insta
 - libsasl2
 - Python Imaging Library (PIL) dependencies, see [here](http://stackoverflow.com/a/21151777/3449709) for a quick ubuntu instructions.
 
-You may also wish to follow any install instructions inside a Python virtual environment. Explaining `virtualenv` is outside of the scope of this README, but [this tutorial might help](http://hackercodex.com/guide/python-development-environment-on-mac-osx/).
+You may also follow the install instructions inside the Python virtual environment. Explaining `virtualenv` is outside of the scope of this README, but [this tutorial might help](http://hackercodex.com/guide/python-development-environment-on-mac-osx/).
 
 ## Running in development
 
