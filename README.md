@@ -7,7 +7,7 @@ This is the [Django](https://www.djangoproject.com/)/[Django CMS](https://www.dj
 
 ## Prerequisites and assumptions
 
-You must have the following installed:
+You must have the following installed to Get Started :
 
 - Python 2.7
 - node
