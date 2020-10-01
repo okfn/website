@@ -4,7 +4,7 @@ from cms.models.pluginmodel import CMSPlugin
 from cms.extensions import PageExtension
 from django.urls import reverse
 from django.db import models
-from django.utils.text import slugify
+from django.utils.text import slugify, Truncator
 from django_countries.fields import CountryField
 
 
@@ -153,6 +153,10 @@ class Board(models.Model):
     description = models.TextField()
 
     members = models.ManyToManyField('Person', through='BoardMembership')
+
+    @property
+    def placeholder(self):
+        return Truncator(self.name).chars(10, truncate='...') + ' (sidebar)'
 
     def __str__(self):
         return self.name
