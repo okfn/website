@@ -1,0 +1,7 @@
+<div class="aldryn aldryn-video hidden-print">
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe src="{{ instance.oembed_data.player_url }}{% if instance.auto_play %}&amp;autoplay=1{% endif %}{% if instance.loop_video %}&amp;loop=1{% endif %}{% if instance.custom_params|escape %}&amp;{{ instance.custom_params|escape }}{% endif %}"
+            class="embed-responsive-item"
+            style="{% if instance.width %}width: {{ instance.width }}px; {% endif %}{% if instance.height %}height: {{ instance.height }}px;{% endif %}"></iframe>
+    </div>
+</div>

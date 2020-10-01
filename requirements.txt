@@ -4,7 +4,6 @@ Pillow==3.2.0
 aldryn-boilerplates==0.8.0
 aldryn-common==1.0.5
 aldryn-search==1.1.0
-git+git://github.com/aldryn/aldryn-video
 boto==2.39.0
 cssmin==0.2.0
 dj-database-url==0.4.0
