@@ -16,7 +16,14 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='OEmbedVideoPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(
+                    parent_link=True,
+                    auto_created=True,
+                    primary_key=True,
+                    serialize=False,
+                    to='cms.CMSPlugin',
+                    on_delete=models.CASCADE,
+                )),
                 ('url', models.URLField(help_text='vimeo and youtube supported.', max_length=100, verbose_name='URL')),
                 ('width', models.IntegerField(null=True, verbose_name='Width', blank=True)),
                 ('height', models.IntegerField(null=True, verbose_name='Height', blank=True)),
