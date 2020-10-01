@@ -42,10 +42,10 @@ def build_html_iframe(response, url_params=None, iframe_attrs=None):
 
         html['src'] = urlunparse(url_parts)
 
-        for key, value in iframe_attrs.iteritems():
+        for key, value in iframe_attrs.items():
             if value:
                 html[key] = value
-    return unicode(html)
+    return str(html)
 
 
 def get_player_url(response):
