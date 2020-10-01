@@ -38,4 +38,10 @@ EXPOSE $PORT
 
 RUN python manage.py collectstatic --noinput
 
-CMD python manage.py migrate && python manage.py update_index && /usr/bin/supervisord
+CMD pip install django-reversion==3.0.1 &&\
+    python manage.py migrate reversion &&\
+    pip install django-reversion==3.0.8 &&\
+    python manage.py migrate reversion &&\
+    python manage.py migrate &&\
+    python manage.py update_index &&\
+    /usr/bin/supervisord
