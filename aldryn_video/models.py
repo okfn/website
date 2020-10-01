@@ -28,10 +28,19 @@ class OEmbedVideoPlugin(CMSPlugin):
     iframe_width = models.CharField(_('iframe width'), max_length=15, blank=True)
     iframe_height = models.CharField(_('iframe height'), max_length=15, blank=True)
     auto_play = models.BooleanField(_('auto play'), default=False)
-    loop_video = models.BooleanField(_('loop'), help_text=_('when true, the video repeats itself when over.'), default=False)
+    loop_video = models.BooleanField(
+        _('loop'),
+        help_text=_('when true, the video repeats itself when over.'),
+        default=False
+    )
     # cached oembed data
     oembed_data = JSONField(null=True)
-    custom_params = models.CharField(_('custom params'), help_text=_('define custom params (e.g. "start=10&end=50")'), max_length=200, blank=True)
+    custom_params = models.CharField(
+        _('custom params'),
+        help_text=_('define custom params (e.g. "start=10&end=50")'),
+        max_length=200,
+        blank=True
+    )
 
     def __str__(self):
         return self.url
@@ -103,7 +112,9 @@ class OEmbedVideoPlugin(CMSPlugin):
         else:
             media_type = data.get('type')
             if media_type not in self.ALLOWED_MEDIA_TYPES:
-                raise ValidationError('This must be an url for a video. The "%(type)s" type is not supported.' % dict(type=media_type))
+                raise ValidationError(
+                    'This must be an url for a video. The "%(type)s" type is not supported.' % dict(type=media_type)
+                )
 
         player_url = get_player_url(data)
 

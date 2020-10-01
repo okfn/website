@@ -63,6 +63,7 @@ def get_embed_code(**kwargs):
     else:
         return data
 
+
 def rename_tables(db, table_mapping=None, reverse=False):
     """
     renames tables from source to destination name, if the source exists and the

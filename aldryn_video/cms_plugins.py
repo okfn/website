@@ -18,17 +18,18 @@ class OEmbedVideoPlugin(CMSPluginBase):
     text_enabled = True
 
     fieldsets = (
-        (None,
-         {'fields': ['url']},
-        ),
-        (_('Advanced Options'),
-         {'fields': [
-             ('width', 'height'),
-             ('iframe_width', 'iframe_height'),
-             'auto_play',
-             'loop_video',
-             'custom_params'
-         ]}
+        (None, {'fields': ['url']},),
+        (
+            _('Advanced Options'),
+            {
+                'fields': [
+                    ('width', 'height'),
+                    ('iframe_width', 'iframe_height'),
+                    'auto_play',
+                    'loop_video',
+                    'custom_params'
+                ]
+            }
         )
     )
 
@@ -40,5 +41,6 @@ class OEmbedVideoPlugin(CMSPluginBase):
         path = 'img/aldryn_video/video-32x32.png'
         prefix = PrefixNode.handle_simple("STATIC_URL") or PrefixNode.handle_simple("MEDIA_URL")
         return urljoin(prefix, path)
+
 
 plugin_pool.register_plugin(OEmbedVideoPlugin)
