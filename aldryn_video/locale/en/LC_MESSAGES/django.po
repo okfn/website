@@ -1,0 +1,66 @@
+# TRANSLATIONS
+# This file is distributed under the same license as the package.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 09:46+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+
+#: cms_plugins.py:15
+msgid "Video"
+msgstr "Video"
+
+#: cms_plugins.py:24
+msgid "Advanced Options"
+msgstr "Advanced Options"
+
+#: models.py:25
+msgid "URL"
+msgstr "URL"
+
+#: models.py:25
+msgid "vimeo and youtube supported."
+msgstr "vimeo and youtube supported."
+
+#: models.py:26
+msgid "Width"
+msgstr "Width"
+
+#: models.py:27
+msgid "Height"
+msgstr "Height"
+
+#: models.py:28
+msgid "iframe width"
+msgstr "iframe width"
+
+#: models.py:29
+msgid "iframe height"
+msgstr "iframe height"
+
+#: models.py:30
+msgid "auto play"
+msgstr "auto play"
+
+#: models.py:31
+msgid "loop"
+msgstr "loop"
+
+#: models.py:31
+msgid "when true, the video repeats itself when over."
+msgstr "when true, the video repeats itself when over."
+
+#: models.py:34
+msgid "custom params"
+msgstr "custom params"
+
+#: models.py:34
+msgid "define custom params (e.g. \"start=10&end=50\")"
+msgstr "define custom params (e.g. \"start=10&end=50\")"

@@ -2,9 +2,9 @@ from hashlib import md5
 
 from cms.models.pluginmodel import CMSPlugin
 from cms.extensions import PageExtension
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db import models
-from django.utils.text import slugify
+from django.utils.text import slugify, Truncator
 from django_countries.fields import CountryField
 
 
@@ -77,7 +77,7 @@ class NowDoing(models.Model):
         ('watching', 'watching'),
         ('eating', 'eating'),
     )
-    person = models.ForeignKey(Person)
+    person = models.ForeignKey(Person, on_delete=models.CASCADE)
     doing_type = models.CharField(
         max_length=10,
         choices=ACTIVITIES)
@@ -131,8 +131,8 @@ class UnitMembership(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     title = models.CharField(max_length=100)
-    person = models.ForeignKey('Person')
-    unit = models.ForeignKey('Unit')
+    person = models.ForeignKey('Person', on_delete=models.CASCADE)
+    unit = models.ForeignKey('Unit', on_delete=models.CASCADE)
     order = models.IntegerField(
         blank=True, null=True,
         help_text="Higher numbers mean higher up in the list")
@@ -154,6 +154,10 @@ class Board(models.Model):
 
     members = models.ManyToManyField('Person', through='BoardMembership')
 
+    @property
+    def placeholder(self):
+        return Truncator(self.name).chars(10, truncate='...') + ' (sidebar)'
+
     def __str__(self):
         return self.name
 
@@ -163,8 +167,8 @@ class BoardMembership(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     title = models.CharField(max_length=100)
-    person = models.ForeignKey('Person')
-    board = models.ForeignKey('Board')
+    person = models.ForeignKey('Person', on_delete=models.CASCADE)
+    board = models.ForeignKey('Board', on_delete=models.CASCADE)
     order = models.IntegerField(
         blank=True, null=True,
         help_text="Higher numbers mean higher up in the list")
@@ -365,8 +369,8 @@ class NetworkGroupMembership(models.Model):
         blank=True, null=True,
         help_text="The lower the number the higher on the"
                   " page this Person will be shown.")
-    networkgroup = models.ForeignKey('NetworkGroup')
-    person = models.ForeignKey('Person')
+    networkgroup = models.ForeignKey('NetworkGroup', on_delete=models.CASCADE)
+    person = models.ForeignKey('Person', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.person.name + ' - ' + self.networkgroup.name
@@ -376,14 +380,14 @@ class NetworkGroupMembership(models.Model):
 
 
 class FeaturedTheme(CMSPlugin):
-    theme = models.ForeignKey('Theme', related_name='+')
+    theme = models.ForeignKey('Theme', related_name='+', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.theme.name
 
 
 class FeaturedProject(CMSPlugin):
-    project = models.ForeignKey('Project', related_name='+')
+    project = models.ForeignKey('Project', related_name='+', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.project.name
@@ -400,10 +404,14 @@ class NetworkGroupList(CMSPlugin):
 class ProjectList(CMSPlugin):
     theme = models.ForeignKey(
         'Theme', blank=True, null=True,
-        help_text='Limit to projects with this theme')
+        help_text='Limit to projects with this theme',
+        on_delete=models.CASCADE
+    )
     project_type = models.ForeignKey(
         'ProjectType', blank=True, null=True,
-        help_text='Limit to projects with this type')
+        help_text='Limit to projects with this type',
+        on_delete=models.CASCADE
+    )
 
 
 class SignupForm(CMSPlugin):

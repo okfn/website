@@ -14,6 +14,7 @@ COPY deployment/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY deployment/gunicorn.conf /etc/supervisor/conf.d/gunicorn.conf
 
 COPY aldryn_quote ./aldryn_quote
+COPY aldryn_video ./aldryn_video
 COPY article_list_item ./article_list_item
 COPY docs ./docs
 COPY foundation ./foundation
@@ -37,4 +38,10 @@ EXPOSE $PORT
 
 RUN python manage.py collectstatic --noinput
 
-CMD python manage.py migrate && python manage.py update_index && /usr/bin/supervisord
+CMD pip install django-reversion==3.0.1 &&\
+    python manage.py migrate reversion &&\
+    pip install django-reversion==3.0.8 &&\
+    python manage.py migrate reversion &&\
+    python manage.py migrate &&\
+    python manage.py update_index &&\
+    /usr/bin/supervisord

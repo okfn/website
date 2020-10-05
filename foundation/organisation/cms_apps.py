@@ -6,7 +6,9 @@ from .cms_menus import ProjectMenu, ThemeMenu
 
 class UnitsAppHook(CMSApp):
     name = _("Units")
-    urls = ["foundation.organisation.urls.units"]
+
+    def get_urls(self, page=None, language=None, **kwargs):
+        return ["foundation.organisation.urls.units"]
 
 
 apphook_pool.register(UnitsAppHook)
@@ -14,7 +16,9 @@ apphook_pool.register(UnitsAppHook)
 
 class BoardAppHook(CMSApp):
     name = _("Board of Directors")
-    urls = ["foundation.organisation.urls.board"]
+
+    def get_urls(self, page=None, language=None, **kwargs):
+        return ["foundation.organisation.urls.board"]
 
 
 apphook_pool.register(BoardAppHook)
@@ -22,7 +26,9 @@ apphook_pool.register(BoardAppHook)
 
 class AdvisoryBoardAppHook(CMSApp):
     name = _("Advisory Board")
-    urls = ["foundation.organisation.urls.advisoryboard"]
+
+    def get_urls(self, page=None, language=None, **kwargs):
+        return ["foundation.organisation.urls.advisoryboard"]
 
 
 apphook_pool.register(AdvisoryBoardAppHook)
@@ -30,8 +36,12 @@ apphook_pool.register(AdvisoryBoardAppHook)
 
 class ProjectsAppHook(CMSApp):
     name = _("Projects")
-    urls = ["foundation.organisation.urls.projects"]
-    menus = [ProjectMenu]
+
+    def get_menus(self, page=None, language=None, **kwargs):
+        return [ProjectMenu]
+
+    def get_urls(self, page=None, language=None, **kwargs):
+        return ["foundation.organisation.urls.projects"]
 
 
 apphook_pool.register(ProjectsAppHook)
@@ -39,8 +49,12 @@ apphook_pool.register(ProjectsAppHook)
 
 class ThemesAppHook(CMSApp):
     name = _("Themes")
-    urls = ["foundation.organisation.urls.themes"]
-    menus = [ThemeMenu]
+
+    def get_menus(self, page=None, language=None, **kwargs):
+        return [ThemeMenu]
+
+    def get_urls(self, page=None, language=None, **kwargs):
+        return ["foundation.organisation.urls.themes"]
 
 
 apphook_pool.register(ThemesAppHook)
@@ -48,7 +62,9 @@ apphook_pool.register(ThemesAppHook)
 
 class WorkingGroupsAppHook(CMSApp):
     name = _("Working Groups")
-    urls = ["foundation.organisation.urls.workinggroups"]
+
+    def get_urls(self, page=None, language=None, **kwargs):
+        return ["foundation.organisation.urls.workinggroups"]
 
 
 apphook_pool.register(WorkingGroupsAppHook)
@@ -56,7 +72,9 @@ apphook_pool.register(WorkingGroupsAppHook)
 
 class NetworkGroupsAppHook(CMSApp):
     name = _("Network Groups")
-    urls = ["foundation.organisation.urls.networkgroups"]
+
+    def get_urls(self, page=None, language=None, **kwargs):
+        return ["foundation.organisation.urls.networkgroups"]
 
 
 apphook_pool.register(NetworkGroupsAppHook)

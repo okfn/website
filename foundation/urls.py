@@ -20,7 +20,7 @@ ARCHIVE_ROOT = 'http://webarchive.okfn.org/okfn.org/201404'
 
 urlpatterns = [
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
     url(r'^robots.txt$', TemplateView.as_view(template_name="robots.txt",
                                               content_type="text/plain"),
         name="robots_file"),
@@ -40,43 +40,43 @@ if settings.DEBUG:
 urlpatterns += [
     url(
         r'^login/$',
-        admin_views.login,
+        admin_views.LoginView.as_view(),
         {'template_name': 'accounts/login.html'},
         name='login'),
     url(
         r'^logout/$',
-        admin_views.logout,
+        admin_views.LogoutView.as_view(),
         {'next_page': '/'},
         name='logout'
     ),
     url(
         r'^password/change/$',
-        admin_views.password_change,
+        admin_views.PasswordChangeView.as_view(),
         name='password_change'
     ),
     url(
         r'^password/change/done/$',
-        admin_views.password_change_done,
+        admin_views.PasswordChangeDoneView.as_view(),
         name='password_change_done'
     ),
     url(
         r'^password/reset/$',
-        admin_views.password_reset,
+        admin_views.PasswordResetView.as_view(),
         name='password_reset'
     ),
     url(
         r'^password/reset/done/$',
-        admin_views.password_reset_done,
+        admin_views.PasswordResetDoneView.as_view(),
         name='password_reset_done'
     ),
     url(
         r'^password/reset/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$',
-        admin_views.password_reset_confirm,
+        admin_views.PasswordResetConfirmView.as_view(),
         name='password_reset_confirm'
     ),
     url(
         r'^password/reset/complete/$',
-        admin_views.password_reset_complete,
+        admin_views.PasswordResetCompleteView.as_view(),
         name='password_reset_complete'
     ),
 ]

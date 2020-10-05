@@ -9,8 +9,12 @@ from .cms_menus import PressReleaseMenu
 
 class PressReleaseAppHook(CMSApp):
     name = _("Press Releases")
-    urls = ["foundation.press.urls.pressreleases"]
-    menus = [PressReleaseMenu]
+
+    def get_menus(self, page=None, language=None, **kwargs):
+        return [PressReleaseMenu]
+
+    def get_urls(self, page=None, language=None, **kwargs):
+        return ["foundation.press.urls.pressreleases"]
 
 
 apphook_pool.register(PressReleaseAppHook)

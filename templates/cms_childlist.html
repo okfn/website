@@ -6,7 +6,7 @@
 {% block body %}
 <section id="more" class="primary-section">
   <div class="article-list">
-  {% for page in request.current_page.get_children %}
+  {% for page in request.current_page.get_child_pages %}
     {% page_attribute "page_title" page as child_title %}
     {% page_attribute "meta_description" page as child_description %}
     {% page_attribute "slug" page as child_slug %}

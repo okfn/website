@@ -1,7 +1,7 @@
 from io import StringIO
 
 from mock import patch
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.utils.html import escape
 from django.test.utils import override_settings
 from django_webtest import WebTest

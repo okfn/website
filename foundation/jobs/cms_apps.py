@@ -5,7 +5,9 @@ from django.utils.translation import ugettext_lazy as _
 
 class JobsAppHook(CMSApp):
     name = _("Jobs")
-    urls = ["foundation.jobs.urls"]
+
+    def get_urls(self, page=None, language=None, **kwargs):
+        return ["foundation.jobs.urls"]
 
 
 apphook_pool.register(JobsAppHook)

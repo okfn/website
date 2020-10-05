@@ -17,8 +17,14 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('enabled', models.BooleanField(default=True)),
-                ('extended_object', models.OneToOneField(editable=False, to='cms.Page')),
-                ('public_extension', models.OneToOneField(related_name='draft_extension', null=True, editable=False, to='organisation.SideBarExtension')),
+                ('extended_object', models.OneToOneField(editable=False, to='cms.Page', on_delete=models.CASCADE)),
+                ('public_extension', models.OneToOneField(
+                    related_name='draft_extension',
+                    null=True,
+                    editable=False,
+                    to='organisation.SideBarExtension',
+                    on_delete=models.CASCADE,
+                )),
             ],
             options={
                 'abstract': False,

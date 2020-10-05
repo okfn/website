@@ -123,7 +123,6 @@ INSTALLED_APPS = (
     'djangocms_picture',
     'djangocms_link',
     'djangocms_text_ckeditor',
-    'aldryn_boilerplates',
     'aldryn_search',
     'aldryn_video',
     'aldryn_quote',
@@ -147,7 +146,7 @@ INSTALLED_APPS = (
     'article_list_item'
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = [
     'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -155,7 +154,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
@@ -165,7 +163,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
-)
+]
 
 TEMPLATES = [
     {
@@ -188,7 +186,6 @@ TEMPLATES = [
                 "lib.context_processors.google_analytics",
                 "lib.context_processors.mailchimp",
                 "django.template.context_processors.request",
-                "aldryn_boilerplates.context_processors.boilerplate",
             ),
             "loaders": [
                 "django.template.loaders.filesystem.Loader",
@@ -202,7 +199,6 @@ TEMPLATES = [
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
-    'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 

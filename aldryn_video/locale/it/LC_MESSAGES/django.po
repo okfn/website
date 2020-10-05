@@ -1,0 +1,66 @@
+# TRANSLATIONS
+# This file is distributed under the same license as the package.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-15 09:46+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language-Team: Italian (https://www.transifex.com/divio/teams/58664/it/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: cms_plugins.py:15
+msgid "Video"
+msgstr ""
+
+#: cms_plugins.py:24
+msgid "Advanced Options"
+msgstr ""
+
+#: models.py:25
+msgid "URL"
+msgstr ""
+
+#: models.py:25
+msgid "vimeo and youtube supported."
+msgstr ""
+
+#: models.py:26
+msgid "Width"
+msgstr ""
+
+#: models.py:27
+msgid "Height"
+msgstr ""
+
+#: models.py:28
+msgid "iframe width"
+msgstr ""
+
+#: models.py:29
+msgid "iframe height"
+msgstr ""
+
+#: models.py:30
+msgid "auto play"
+msgstr ""
+
+#: models.py:31
+msgid "loop"
+msgstr ""
+
+#: models.py:31
+msgid "when true, the video repeats itself when over."
+msgstr ""
+
+#: models.py:34
+msgid "custom params"
+msgstr ""
+
+#: models.py:34
+msgid "define custom params (e.g. \"start=10&end=50\")"
+msgstr ""

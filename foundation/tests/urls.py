@@ -4,7 +4,7 @@ from foundation.organisation.views import relatable_person
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
     url(r'^login/', lambda x: x, name='login'),
     url(r'^search/', include('haystack.urls')),
     url(r'^jobs/', include('foundation.jobs.urls')),

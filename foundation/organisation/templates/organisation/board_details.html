@@ -13,7 +13,7 @@
   <ul>{% for membership in object.boardmembership_set.all %}
     <li><a href="#{{ membership.person.name|slugify }}">{{ membership.person.name }}</a></li>
     {% endfor %}</ul>
-    {% static_placeholder object.name|truncatechars:10|add:" (sidebar)" %}
+    {% static_placeholder object.placeholder %}
 {% endblock %}
 
 {% block main %}
