@@ -20,7 +20,7 @@ Also, the python packages being used require the following libraries to be insta
 
 You may also wish to follow any install instructions inside a Python virtual environment. Explaining `virtualenv` is outside of the scope of this README, but [this tutorial might help](http://hackercodex.com/guide/python-development-environment-on-mac-osx/).
 
-## Running in development
+## Running in development (awesom way)
 
 Prepare the database. This step can be skipped if you'd like to use dummy SQLite database:
 - Get a dump of the database
