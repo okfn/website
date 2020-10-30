@@ -8,6 +8,10 @@ install:
   - pip install coveralls
 script:
   - python manage.py makemigrations --check
+  - npx grunt sass:dist
+  - npx grunt postcss:dist
+  - npx grunt uglify:scripts
+  - git diff --exit-code static/
   - coverage run manage.py test
   - flake8 .
 after_success:
