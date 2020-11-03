@@ -47,6 +47,7 @@ If running with Postgres, you will need `DATABASE_URL="postgres://user:pass@127.
 Prepare the app:
 
 ```bash
+pip install -r requirements.txt
 pip install -r requirements.dev.txt
 npm install
 python manage.py migrate
@@ -97,3 +98,8 @@ We commit compiled static assets to the repo
 Production deployment is based on this [Dockerfile](https://github.com/okfn/website/blob/master/Dockerfile). When we want to deploy, we push a tag to this repo. Pushing a tag will trigger a DockerCloud build and publish an image on https://hub.docker.com/r/openknowledge/website/
 
 We can then use the ansible playbooks/helm charts in [okfn/devops](https://github.com/okfn/devops) (private repo) to deploy the image to Google Cloud. Further docs on this are in the devops repo.
+
+## Dependency Management
+
+Dependencies are managed with [pip-tools](https://github.com/jazzband/pip-tools).
+Add new packages to `requirements.in` / `requirements.dev.in` and compile `requirements.txt` / `requirements.dev.txt` with `pip-compile`.

@@ -4,6 +4,8 @@ python:
 install:
   - npm i -g npm
   - npm install
+  - pip install --upgrade pip
+  - pip install -r requirements.txt
   - pip install -r requirements.dev.txt
   - pip install coveralls
 script:

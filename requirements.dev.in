@@ -1,12 +1,7 @@
--r requirements.in
+# This file contains the direct requirements
+# Use pip-compile to create requirements.dev.txt from this
 
-WebOb
-WebTest
-django-webtest
-flake8
-mccabe
-pep8-naming
-pep8
-pyflakes
-waitress
-mock
+-c requirements.txt
+
+flake8==3.8.4
+django-webtest==1.9.7
