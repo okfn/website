@@ -22,7 +22,6 @@ COPY lib ./lib
 COPY sendemail ./sendemail
 COPY static ./static
 COPY templates ./templates
-COPY tools ./tools
 COPY manage.py .
 COPY package-lock.json .
 COPY package.json .
