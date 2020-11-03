@@ -713,23 +713,34 @@ class NetworkGroupDetailViewTest(WebTest):
             email='donatello@tmnt.org')
         donatello.save()
 
-        payload = {"username": "donnie",
-                   "text": "#reading https://www.goodreads.com/book/show/486625.Close_to_the_Machine"
-                   }
+        mock_values = [
+            ("Close to the machine", "https://www.goodreads.com/book/show/486625.Close_to_the_Machine"),
+            ("Video unavailable", "https://www.youtube.com/watch?v=IAISUDbjXj0")
+        ]
+        with patch('foundation.organisation.views.extract_ograph_title', side_effect=mock_values):
+            payload = {
+                "username": "donnie",
+                "text": "#reading https://www.goodreads.com/book/show/486625.Close_to_the_Machine"
+            }
 
-        self.app.post_json(reverse('relatable-person'),
-                           headers={'Authorization': 'secretkey'},
-                           status=200,
-                           params=payload)
+            self.app.post_json(
+                reverse('relatable-person'),
+                headers={'Authorization': 'secretkey'},
+                status=200,
+                params=payload
+            )
 
-        payload = {"username": "donnie",
-                   "text": "#watching https://www.youtube.com/watch?v=IAISUDbjXj0"
-                   }
+            payload = {
+                "username": "donnie",
+                "text": "#watching https://www.youtube.com/watch?v=IAISUDbjXj0"
+            }
 
-        self.app.post_json(reverse('relatable-person'),
-                           headers={'Authorization': 'secretkey'},
-                           status=200,
-                           params=payload)
+            self.app.post_json(
+                reverse('relatable-person'),
+                headers={'Authorization': 'secretkey'},
+                status=200,
+                params=payload
+            )
         donnie = Person.objects.filter(username_on_slack='donnie').first()
         self.assertEqual(donnie.nowdoing_set.count(), 2)
         self.assertTrue(donnie.nowdoing_with_latest[0].is_newest_update)
