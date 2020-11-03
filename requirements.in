@@ -30,7 +30,7 @@ djangocms-picture==3.0.0
 djangocms-text-ckeditor==4.0.0
 easy-thumbnails==2.6
 feedparser==5.2.1
-gunicorn==19.4.5
+gunicorn==20.0.4
 iso3166==0.7
 libsass==0.11.1
 psycopg2==2.8.3
