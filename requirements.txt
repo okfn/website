@@ -46,7 +46,7 @@ djangocms-picture==3.0.0  # via -r requirements.in
 djangocms-text-ckeditor==4.0.0  # via -r requirements.in
 easy-thumbnails==2.6      # via -r requirements.in, django-filer, djangocms-picture
 feedparser==5.2.1         # via -r requirements.in
-gunicorn==19.4.5          # via -r requirements.in
+gunicorn==20.0.4          # via -r requirements.in
 html5lib==1.1             # via djangocms-text-ckeditor
 iso3166==0.7              # via -r requirements.in
 jmespath==0.10.0          # via boto3, botocore
