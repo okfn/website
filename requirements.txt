@@ -45,7 +45,7 @@ djangocms-link==3.0.0     # via -r requirements.in
 djangocms-picture==3.0.0  # via -r requirements.in
 djangocms-text-ckeditor==4.0.0  # via -r requirements.in
 easy-thumbnails==2.6      # via -r requirements.in, django-filer, djangocms-picture
-feedparser==5.2.1         # via -r requirements.in
+feedparser==6.0.2         # via -r requirements.in
 gunicorn==20.0.4          # via -r requirements.in
 html5lib==1.1             # via djangocms-text-ckeditor
 iso3166==0.7              # via -r requirements.in
@@ -66,6 +66,7 @@ redis==3.5.3              # via django-redis
 requests==2.9.1           # via -r requirements.in
 rjsmin==1.1.0             # via django-compressor
 s3transfer==0.3.3         # via boto3
+sgmllib3k==1.0.0          # via feedparser
 six==1.15.0               # via aldryn-common, django-cms, django-compressor, django-sekizai, django-spurl, html5lib, libsass, pip-tools, python-dateutil
 soupsieve==2.0.1          # via beautifulsoup4
 sqlparse==0.4.1           # via django
