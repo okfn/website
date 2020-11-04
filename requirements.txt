@@ -51,7 +51,7 @@ html5lib==1.1             # via djangocms-text-ckeditor
 iso3166==0.7              # via -r requirements.in
 jmespath==0.10.0          # via boto3, botocore
 jsonfield==2              # via -r requirements.in
-libsass==0.11.1           # via -r requirements.in
+libsass==0.20.1           # via -r requirements.in
 lxml==4.6.1               # via aldryn-search
 markdown2==2.3.10         # via django-markdown-deux
 micawber==0.5.1           # via -r requirements.in
