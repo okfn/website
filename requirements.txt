@@ -44,7 +44,7 @@ djangocms-googlemap==1.4.0  # via -r requirements.in
 djangocms-link==3.0.0     # via -r requirements.in
 djangocms-picture==3.0.0  # via -r requirements.in
 djangocms-text-ckeditor==4.0.0  # via -r requirements.in
-easy-thumbnails==2.6      # via -r requirements.in, django-filer, djangocms-picture
+easy-thumbnails==2.7      # via -r requirements.in, django-filer, djangocms-picture
 feedparser==6.0.2         # via -r requirements.in
 gunicorn==20.0.4          # via -r requirements.in
 html5lib==1.1             # via djangocms-text-ckeditor
