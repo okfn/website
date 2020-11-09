@@ -27,7 +27,7 @@ django-markdown-deux==1.0.5  # via -r requirements.in
 django-mptt==0.11.0       # via -r requirements.in, django-filer
 django-pagedown==2.1.2    # via -r requirements.in
 django-polymorphic==3.0.0  # via django-filer
-django-redis==4.11.0      # via -r requirements.in
+django-redis==4.12.1      # via -r requirements.in
 django-reversion==3.0.8   # via -r requirements.in
 django-s3-folder-storage==0.5  # via -r requirements.in
 django-sekizai==1.1.0     # via -r requirements.in, django-cms
