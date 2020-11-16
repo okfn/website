@@ -24,7 +24,7 @@ django-sekizai==2.0.0
 django-treebeard==4.3.1
 djangocms-admin-style==2.0.0
 djangocms-file==3.0.0
-djangocms-googlemap==1.4.0
+djangocms-googlemap==2.0.0
 djangocms-link==3.0.0
 djangocms-picture==3.0.0
 djangocms-text-ckeditor==4.0.0
