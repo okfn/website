@@ -7,7 +7,7 @@
 aldryn-boilerplates==0.8.0  # via -r requirements.in, aldryn-common
 aldryn-common==1.0.5      # via aldryn-search
 aldryn-search==1.1.0      # via -r requirements.in
-beautifulsoup4==4.9.1     # via -r requirements.in, topicaxis-opengraph
+beautifulsoup4==4.9.3     # via -r requirements.in, topicaxis-opengraph
 boto3==1.16.10            # via django-s3-folder-storage
 botocore==1.19.10         # via boto3, s3transfer
 certifi==2020.11.8        # via requests
