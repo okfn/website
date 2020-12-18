@@ -119,7 +119,6 @@ INSTALLED_APPS = (
 
     # CMS plugins
     'djangocms_file',
-    'djangocms_googlemap',
     'djangocms_picture',
     'djangocms_link',
     'djangocms_text_ckeditor',

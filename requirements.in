@@ -1,7 +1,7 @@
 # This file contains the direct requirements
 # Use pip-compile to create requirements.txt from this
 
-pip-tools==5.3.1
+pip-tools==5.4.0
 
 Django==2.2.16
 aldryn-search==1.1.0
@@ -24,7 +24,6 @@ django-sekizai==2.0.0
 django-treebeard==4.3.1
 djangocms-admin-style==2.0.0
 djangocms-file==3.0.0
-djangocms-googlemap==1.4.0
 djangocms-link==3.0.0
 djangocms-picture==3.0.0
 djangocms-text-ckeditor==4.0.0
