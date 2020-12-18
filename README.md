@@ -1,7 +1,7 @@
 # okfn.org
 
-[![Build Status](https://travis-ci.org/okfn/website.svg?branch=master)](https://travis-ci.org/okfn/website)
-[![Coverage Status](https://coveralls.io/repos/github/okfn/website/badge.svg?branch=master)](https://coveralls.io/github/okfn/website?branch=master)
+![Run tests](https://github.com/okfn/website/workflows/Run%20tests/badge.svg?branch=master)
+[![codecov](https://codecov.io/gh/okfn/website/branch/master/graph/badge.svg?token=tYNQSAiFYu)](https://codecov.io/gh/okfn/website)
 
 This is the [Django](https://www.djangoproject.com/)/[Django CMS](https://www.django-cms.org/) project that runs <http://okfn.org>.
 
