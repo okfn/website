@@ -56,7 +56,7 @@ jsonfield==3.1.0          # via -r requirements.in
 libsass==0.20.1           # via -r requirements.in
 lxml==4.6.1               # via aldryn-search
 markdown2==2.3.10         # via django-markdown-deux
-micawber==0.5.1           # via -r requirements.in
+micawber==0.5.2           # via -r requirements.in
 pillow==8.0.1             # via django-pagedown, djangocms-text-ckeditor, easy-thumbnails
 pip-tools==5.4.0          # via -r requirements.in
 psycopg2==2.8.6           # via -r requirements.in
