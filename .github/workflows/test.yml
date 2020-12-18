@@ -1,0 +1,44 @@
+name: Run tests
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: |
+          npm install
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r requirements.dev.txt
+
+      - name: Ensure migrations are up-to-date
+        run: python manage.py makemigrations --check
+
+      - name: Ensure JS and CSS are up-to-date
+        run: |
+          npx grunt sass:dist
+          npx grunt postcss:dist
+          npx grunt uglify:scripts
+          git diff --exit-code static/
+
+      - name: Run tests
+        run: |
+          coverage run manage.py test
+          coverage xml
+
+      - name: Check coding standards
+        run: flake8 .
+
+      - name: Upload coverage report to codecov
+        uses: codecov/codecov-action@v1
+        with:
+          file: ./coverage.xml
