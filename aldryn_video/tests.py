@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from unittest import skip
 from django.test import TestCase
 from django.test.client import RequestFactory
 
@@ -19,7 +18,6 @@ class OEmbedVideoPluginTests(TestCase):
     def setUp(self):
         self.url = URL
 
-    @skip
     def test_plugin_context(self):
         placeholder = Placeholder.objects.create(slot='test')
         model_instance = add_plugin(
@@ -33,7 +31,6 @@ class OEmbedVideoPluginTests(TestCase):
         context = plugin_instance.render({}, model_instance, None)
         self.assertIn('instance', context)
 
-    @skip
     def test_plugin_html(self):
         placeholder = Placeholder.objects.create(slot='test')
         model_instance = add_plugin(
@@ -58,7 +55,6 @@ class VideoTestCase(CMSTestCase):
         self.url = URL
         self.super_user = self._create_user("test", True, True)
 
-    @skip
     def test_plugin_edit(self):
         page = create_page(title='page', template='cms_homepage.html', language='en')
         plugin = add_plugin(
