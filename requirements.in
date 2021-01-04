@@ -11,7 +11,7 @@ django-cms==3.8.0
 django-compressor==2.4
 django-csp==3.7
 django-countries==7.0
-django-haystack==2.8.0
+django-haystack==3.0
 django-redis==4.12.1
 django-filer==2.0.2
 django-formtools==2.2
