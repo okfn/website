@@ -58,7 +58,7 @@ lxml==4.6.1               # via aldryn-search
 markdown2==2.3.10         # via django-markdown-deux
 micawber==0.5.2           # via -r requirements.in
 pillow==8.0.1             # via django-pagedown, djangocms-text-ckeditor, easy-thumbnails
-pip-tools==5.4.0          # via -r requirements.in
+pip-tools==5.5.0          # via -r requirements.in
 psycopg2==2.8.6           # via -r requirements.in
 python-dateutil==2.8.1    # via botocore
 python-dotenv==0.8.2      # via -r requirements.in
@@ -69,7 +69,7 @@ requests==2.25.0          # via -r requirements.in
 rjsmin==1.1.0             # via django-compressor
 s3transfer==0.3.3         # via boto3
 sgmllib3k==1.0.0          # via feedparser
-six==1.15.0               # via aldryn-common, django-compressor, django-spurl, html5lib, libsass, pip-tools, python-dateutil
+six==1.15.0               # via aldryn-common, django-compressor, django-spurl, html5lib, libsass, python-dateutil
 soupsieve==2.0.1          # via beautifulsoup4
 sqlparse==0.4.1           # via django
 topicaxis-opengraph==0.5  # via -r requirements.in
