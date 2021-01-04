@@ -6,4 +6,4 @@ updates:
       interval: "weekly"
     ignore:
       - dependency-name: "django"
-        versions: ["3.0.x", "3.1.x"]  # don't offer to bump django until 3.2 LTS released
+        versions: [">=3.0", "<3.2"]  # don't offer to bump django until 3.2 LTS released
