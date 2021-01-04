@@ -61,7 +61,7 @@ pillow==8.0.1             # via django-pagedown, djangocms-text-ckeditor, easy-t
 pip-tools==5.5.0          # via -r requirements.in
 psycopg2==2.8.6           # via -r requirements.in
 python-dateutil==2.8.1    # via botocore
-python-dotenv==0.8.2      # via -r requirements.in
+python-dotenv==0.15.0     # via -r requirements.in
 pytz==2020.4              # via django
 rcssmin==1.0.6            # via django-compressor
 redis==3.5.3              # via django-redis
