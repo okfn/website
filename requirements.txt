@@ -65,7 +65,7 @@ python-dotenv==0.8.2      # via -r requirements.in
 pytz==2020.4              # via django
 rcssmin==1.0.6            # via django-compressor
 redis==3.5.3              # via django-redis
-requests==2.25.0          # via -r requirements.in
+requests==2.25.1          # via -r requirements.in
 rjsmin==1.1.0             # via django-compressor
 s3transfer==0.3.3         # via boto3
 sgmllib3k==1.0.0          # via feedparser
