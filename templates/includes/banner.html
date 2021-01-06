@@ -1,4 +1,30 @@
 {% load cms_tags %}
+
+{% block messages %}
+<div class="container">
+  {% if messages %}
+
+      {% for message in messages %}
+
+        {% if message.tags == 'success' %}
+            <div class="alert alert-success" role="alert">
+        {% else %}
+          {% if message.tags == 'warning' or message.tags == 'error' %}
+            <div class="alert alert-danger" role="alert">
+          {% else %}
+            <div class="alert alert-primary" role="alert">
+          {% endif %}
+        {% endif %}
+
+            {{message}}
+            </div>
+
+      {% endfor %}
+
+  {% endif %}
+</div>
+{% endblock %}
+
 <div class="banner">
   <div class="container">
     <div class="banner_text">

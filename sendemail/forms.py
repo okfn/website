@@ -3,10 +3,18 @@ from django import forms
 
 # define form fields and specify what data types to expect
 class ContactForm(forms.Form):
-    email = forms.EmailField(required=True)
     name = forms.CharField(required=True)
+    name.widget.attrs = {'class': "form-control input-lg"}
+
     organisation = forms.CharField(required=True)
-    message = forms.CharField(widget=forms.Textarea, required=True)
+    organisation.widget.attrs = {'class': "form-control input-lg"}
+
+    email = forms.EmailField(required=True, label='Email address')
+    email.widget.attrs = {'class': "form-control input-lg"}
+
+    message = forms.CharField(widget=forms.Textarea, required=True, label='How can we help?')
+    message.widget.attrs = {'class': "form-control input-lg", 'rows': 10}
+
     type = forms.CharField(widget=forms.HiddenInput(), required=True)
 
     # check if filled form data is valid

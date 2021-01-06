@@ -136,3 +136,12 @@
   margin-top: $size-spacing-xxl;
   font-weight: normal;
 }
+
+// form errors
+ul.errorlist {
+  list-style-type: none;
+}
+
+ul.errorlist > li {
+  color: $primary;
+}

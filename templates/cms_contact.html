@@ -36,17 +36,21 @@
         <div class="fieldset">
           <input id="type" type='hidden' name="type" value="Service"/>
           <label>Name
-            <input id="name" name="name" type="text" class="form-control input-lg">
+            {{ form.name }}
+            {{ form.name.errors }}
           </label>
           <label>Organisation
-            <input id="organisation" name="organisation" type="text" class="form-control input-lg">
+            {{ form.organisation }}
+            {{ form.organisation.errors }}
           </label>
           <label>Email address
-            <input id="email" name="email" type="email" class="form-control input-lg">
+            {{ form.email }}
+            {{ form.email.errors }}
           </label>
         </div>
         <label class="message">How can we help?
-          <textarea id="message" name="message" class="form-control" rows="10"></textarea>
+          {{ form.message.errors }}
+          {{ form.message }}
         </label>
         <button type="submit" class="btn btn-primary btn-lg">Send</button>
       </form>
@@ -62,17 +66,21 @@
         <div class="fieldset">
           <input id="type" type='hidden' name="type" value="Press"/>
           <label>Name
-            <input id="name" name="name" type="text" class="form-control input-lg">
+            {{ form.name }}
+            {{ form.name.errors }}
           </label>
           <label>Organisation
-            <input id="organisation" name="organisation" type="text" class="form-control input-lg">
+            {{ form.organisation }}
+            {{ form.organisation.errors }}
           </label>
           <label>Email address
-            <input id="email" name="email" type="email" class="form-control input-lg">
+            {{ form.email }}
+            {{ form.email.errors }}
           </label>
         </div>
-        <label>How can we help?
-          <textarea id="message" name="message" class="form-control" rows="10"></textarea>
+        <label class="message">How can we help?
+          {{ form.message.errors }}
+          {{ form.message }}
         </label>
         <button type="submit" class="btn btn-primary btn-lg">Send</button>
       </form>
@@ -86,11 +94,15 @@
 {% block template-scripts %}
 <script>
   $(function () {
-    // Enable link to tab
-    var url = document.location.toString();
-    if (url.match('#')) {
-      $('.tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
-    }
+    {% if form.type.value %}
+      $('.nav-tabs a[href="#{{form.type.value|lower}}"]').tab('show');
+    {% else %}
+      // Enable link to tab
+      var url = document.location.toString();
+      if (url.match('#')) {
+        $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+      }
+    {% endif %}
   });
 </script>
 {% endblock template-scripts %}
