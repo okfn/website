@@ -4,81 +4,230 @@
 #
 #    pip-compile requirements.in
 #
-aldryn-boilerplates==0.8.0  # via -r requirements.in, aldryn-common
-aldryn-common==1.0.5      # via aldryn-search
-aldryn-search==1.1.0      # via -r requirements.in
-beautifulsoup4==4.9.3     # via -r requirements.in, topicaxis-opengraph
-boto3==1.16.10            # via django-s3-folder-storage
-botocore==1.19.10         # via boto3, s3transfer
-certifi==2020.11.8        # via requests
-chardet==3.0.4            # via requests
-click==7.1.2              # via pip-tools
-cssmin==0.2.0             # via -r requirements.in
-dj-database-url==0.5.0    # via -r requirements.in
-django-appconf==1.0.4     # via aldryn-boilerplates, aldryn-search, django-compressor
-django-classy-tags==2.0.0  # via django-cms, django-sekizai, django-standard-form
-django-cms==3.8.0         # via -r requirements.in, aldryn-search, djangocms-attributes-field, djangocms-file, djangocms-link, djangocms-picture, djangocms-text-ckeditor
-django-compressor==2.4    # via -r requirements.in
-django-countries==7.0     # via -r requirements.in
-django-csp==3.7           # via -r requirements.in
-django-filer==2.0.2       # via -r requirements.in, djangocms-file, djangocms-link, djangocms-picture
-django-formtools==2.2     # via -r requirements.in, django-cms
-django-haystack==3.0      # via -r requirements.in, aldryn-search
-django-js-asset==1.2.2    # via django-mptt
-django-markdown-deux==1.0.5  # via -r requirements.in
-django-mptt==0.11.0       # via -r requirements.in, django-filer
-django-pagedown==2.2.0    # via -r requirements.in
-django-polymorphic==3.0.0  # via django-filer
-django-redis==4.12.1      # via -r requirements.in
-django-reversion==3.0.8   # via -r requirements.in
-django-s3-folder-storage==0.5  # via -r requirements.in
-django-sekizai==2.0.0     # via -r requirements.in, django-cms
-django-sortedm2m==3.0.2   # via aldryn-common
-django-spurl==0.6.7       # via aldryn-search
-django-standard-form==1.1.1  # via aldryn-search
-django-storages==1.10.1   # via django-s3-folder-storage
-django-treebeard==4.3.1   # via -r requirements.in, django-cms
-django==2.2.16            # via -r requirements.in, aldryn-boilerplates, django-appconf, django-classy-tags, django-cms, django-csp, django-filer, django-formtools, django-haystack, django-mptt, django-pagedown, django-polymorphic, django-redis, django-reversion, django-sekizai, django-standard-form, django-storages, django-treebeard, easy-thumbnails, jsonfield
-djangocms-admin-style==2.0.2  # via -r requirements.in, django-cms
-djangocms-attributes-field==2.0.0  # via djangocms-file, djangocms-link, djangocms-picture
-djangocms-file==3.0.0     # via -r requirements.in
-djangocms-link==3.0.0     # via -r requirements.in
-djangocms-picture==3.0.0  # via -r requirements.in
-djangocms-text-ckeditor==4.0.0  # via -r requirements.in
-easy-thumbnails==2.7.1    # via -r requirements.in, django-filer, djangocms-picture
-feedparser==6.0.2         # via -r requirements.in
-gunicorn==20.0.4          # via -r requirements.in
-html5lib==1.1             # via djangocms-text-ckeditor
-idna==2.10                # via requests
-iso3166==1.0.1            # via -r requirements.in
-jmespath==0.10.0          # via boto3, botocore
-jsonfield==3.1.0          # via -r requirements.in
-libsass==0.20.1           # via -r requirements.in
-lxml==4.6.1               # via aldryn-search
-markdown2==2.3.10         # via django-markdown-deux
-micawber==0.5.2           # via -r requirements.in
-pillow==8.0.1             # via django-pagedown, djangocms-text-ckeditor, easy-thumbnails
-pip-tools==5.5.0          # via -r requirements.in
-psycopg2==2.8.6           # via -r requirements.in
-python-dateutil==2.8.1    # via botocore
-python-dotenv==0.15.0     # via -r requirements.in
-pytz==2020.4              # via django
-rcssmin==1.0.6            # via django-compressor
-redis==3.5.3              # via django-redis
-requests==2.25.1          # via -r requirements.in
-rjsmin==1.1.0             # via django-compressor
-s3transfer==0.3.3         # via boto3
-sgmllib3k==1.0.0          # via feedparser
-six==1.15.0               # via aldryn-common, django-compressor, django-spurl, html5lib, libsass, python-dateutil
-soupsieve==2.0.1          # via beautifulsoup4
-sqlparse==0.4.1           # via django
-topicaxis-opengraph==0.5  # via -r requirements.in
-unidecode==1.1.1          # via django-filer
-urllib3==1.25.11          # via botocore, requests
-urlobject==2.4.3          # via django-spurl
-webencodings==0.5.1       # via html5lib
-whoosh==2.7.4             # via -r requirements.in
-yurl==1.0.0               # via aldryn-boilerplates
+aldryn-boilerplates==0.8.0
+    # via
+    #   -r requirements.in
+    #   aldryn-common
+aldryn-common==1.0.5
+    # via aldryn-search
+aldryn-search==1.1.0
+    # via -r requirements.in
+beautifulsoup4==4.9.3
+    # via
+    #   -r requirements.in
+    #   topicaxis-opengraph
+boto3==1.16.10
+    # via django-s3-folder-storage
+botocore==1.19.10
+    # via
+    #   boto3
+    #   s3transfer
+certifi==2020.11.8
+    # via requests
+chardet==3.0.4
+    # via requests
+click==7.1.2
+    # via pip-tools
+cssmin==0.2.0
+    # via -r requirements.in
+dj-database-url==0.5.0
+    # via -r requirements.in
+django-appconf==1.0.4
+    # via
+    #   aldryn-boilerplates
+    #   aldryn-search
+    #   django-compressor
+django-classy-tags==2.0.0
+    # via
+    #   django-cms
+    #   django-sekizai
+    #   django-standard-form
+django-cms==3.8.0
+    # via
+    #   -r requirements.in
+    #   aldryn-search
+    #   djangocms-attributes-field
+    #   djangocms-file
+    #   djangocms-link
+    #   djangocms-picture
+    #   djangocms-text-ckeditor
+django-compressor==2.4
+    # via -r requirements.in
+django-countries==7.0
+    # via -r requirements.in
+django-csp==3.7
+    # via -r requirements.in
+django-filer==2.0.2
+    # via
+    #   -r requirements.in
+    #   djangocms-file
+    #   djangocms-link
+    #   djangocms-picture
+django-formtools==2.2
+    # via
+    #   -r requirements.in
+    #   django-cms
+django-haystack==3.0
+    # via
+    #   -r requirements.in
+    #   aldryn-search
+django-js-asset==1.2.2
+    # via django-mptt
+django-markdown-deux==1.0.5
+    # via -r requirements.in
+django-mptt==0.11.0
+    # via
+    #   -r requirements.in
+    #   django-filer
+django-pagedown==2.2.0
+    # via -r requirements.in
+django-polymorphic==3.0.0
+    # via django-filer
+django-redis==4.12.1
+    # via -r requirements.in
+django-reversion==3.0.9
+    # via -r requirements.in
+django-s3-folder-storage==0.5
+    # via -r requirements.in
+django-sekizai==2.0.0
+    # via
+    #   -r requirements.in
+    #   django-cms
+django-sortedm2m==3.0.2
+    # via aldryn-common
+django-spurl==0.6.7
+    # via aldryn-search
+django-standard-form==1.1.1
+    # via aldryn-search
+django-storages==1.10.1
+    # via django-s3-folder-storage
+django-treebeard==4.3.1
+    # via
+    #   -r requirements.in
+    #   django-cms
+django==2.2.16
+    # via
+    #   -r requirements.in
+    #   aldryn-boilerplates
+    #   django-appconf
+    #   django-classy-tags
+    #   django-cms
+    #   django-csp
+    #   django-filer
+    #   django-formtools
+    #   django-haystack
+    #   django-mptt
+    #   django-pagedown
+    #   django-polymorphic
+    #   django-redis
+    #   django-reversion
+    #   django-sekizai
+    #   django-standard-form
+    #   django-storages
+    #   django-treebeard
+    #   easy-thumbnails
+    #   jsonfield
+djangocms-admin-style==2.0.2
+    # via
+    #   -r requirements.in
+    #   django-cms
+djangocms-attributes-field==2.0.0
+    # via
+    #   djangocms-file
+    #   djangocms-link
+    #   djangocms-picture
+djangocms-file==3.0.0
+    # via -r requirements.in
+djangocms-link==3.0.0
+    # via -r requirements.in
+djangocms-picture==3.0.0
+    # via -r requirements.in
+djangocms-text-ckeditor==4.0.0
+    # via -r requirements.in
+easy-thumbnails==2.7.1
+    # via
+    #   -r requirements.in
+    #   django-filer
+    #   djangocms-picture
+feedparser==6.0.2
+    # via -r requirements.in
+gunicorn==20.0.4
+    # via -r requirements.in
+html5lib==1.1
+    # via djangocms-text-ckeditor
+idna==2.10
+    # via requests
+iso3166==1.0.1
+    # via -r requirements.in
+jmespath==0.10.0
+    # via
+    #   boto3
+    #   botocore
+jsonfield==3.1.0
+    # via -r requirements.in
+libsass==0.20.1
+    # via -r requirements.in
+lxml==4.6.1
+    # via aldryn-search
+markdown2==2.3.10
+    # via django-markdown-deux
+micawber==0.5.2
+    # via -r requirements.in
+pillow==8.0.1
+    # via
+    #   django-pagedown
+    #   djangocms-text-ckeditor
+    #   easy-thumbnails
+pip-tools==5.5.0
+    # via -r requirements.in
+psycopg2==2.8.6
+    # via -r requirements.in
+python-dateutil==2.8.1
+    # via botocore
+python-dotenv==0.15.0
+    # via -r requirements.in
+pytz==2020.4
+    # via django
+rcssmin==1.0.6
+    # via django-compressor
+redis==3.5.3
+    # via django-redis
+requests==2.25.1
+    # via -r requirements.in
+rjsmin==1.1.0
+    # via django-compressor
+s3transfer==0.3.3
+    # via boto3
+sgmllib3k==1.0.0
+    # via feedparser
+six==1.15.0
+    # via
+    #   aldryn-common
+    #   django-compressor
+    #   django-spurl
+    #   html5lib
+    #   libsass
+    #   python-dateutil
+soupsieve==2.0.1
+    # via beautifulsoup4
+sqlparse==0.4.1
+    # via django
+topicaxis-opengraph==0.5
+    # via -r requirements.in
+unidecode==1.1.1
+    # via django-filer
+urllib3==1.25.11
+    # via
+    #   botocore
+    #   requests
+urlobject==2.4.3
+    # via django-spurl
+webencodings==0.5.1
+    # via html5lib
+whoosh==2.7.4
+    # via -r requirements.in
+yurl==1.0.0
+    # via aldryn-boilerplates
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
