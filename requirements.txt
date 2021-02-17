@@ -167,7 +167,7 @@ jsonfield==3.1.0
     # via -r requirements.in
 libsass==0.20.1
     # via -r requirements.in
-lxml==4.6.1
+lxml==4.6.2
     # via aldryn-search
 markdown2==2.3.10
     # via django-markdown-deux
