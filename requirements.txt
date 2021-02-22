@@ -101,7 +101,7 @@ django-standard-form==1.1.1
     # via aldryn-search
 django-storages==1.10.1
     # via django-s3-folder-storage
-django-treebeard==4.4
+django-treebeard==4.5
     # via
     #   -r requirements.in
     #   django-cms
