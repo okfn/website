@@ -1,7 +1,7 @@
 # This file contains the direct requirements
 # Use pip-compile to create requirements.txt from this
 
-pip-tools==5.5.0
+pip-tools==6.0.0
 
 Django==2.2.16
 aldryn-search==1.1.0

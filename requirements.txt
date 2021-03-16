@@ -178,7 +178,7 @@ pillow==8.0.1
     #   django-pagedown
     #   djangocms-text-ckeditor
     #   easy-thumbnails
-pip-tools==5.5.0
+pip-tools==6.0.0
     # via -r requirements.in
 psycopg2==2.8.6
     # via -r requirements.in
