@@ -171,7 +171,7 @@ lxml==4.6.2
     # via aldryn-search
 markdown2==2.3.10
     # via django-markdown-deux
-micawber==0.5.2
+micawber==0.5.3
     # via -r requirements.in
 pillow==8.0.1
     # via
