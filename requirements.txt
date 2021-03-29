@@ -173,7 +173,7 @@ markdown2==2.3.10
     # via django-markdown-deux
 micawber==0.5.3
     # via -r requirements.in
-pillow==8.0.1
+pillow==8.1.1
     # via
     #   django-pagedown
     #   djangocms-text-ckeditor
