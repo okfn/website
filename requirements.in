@@ -10,7 +10,7 @@ dj-database-url==0.5.0
 django-cms==3.8.0
 django-compressor==2.4
 django-csp==3.7
-django-countries==7.0
+django-countries==7.1
 django-haystack==3.0
 django-redis==4.12.1
 django-filer==2.0.2
