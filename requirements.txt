@@ -157,6 +157,8 @@ html5lib==1.1
     # via djangocms-text-ckeditor
 idna==2.10
     # via requests
+importlib-metadata==3.9.0
+    # via pep517
 iso3166==1.0.1
     # via -r requirements.in
 jmespath==0.10.0
@@ -173,12 +175,14 @@ markdown2==2.3.10
     # via django-markdown-deux
 micawber==0.5.3
     # via -r requirements.in
+pep517==0.10.0
+    # via pip-tools
 pillow==8.1.1
     # via
     #   django-pagedown
     #   djangocms-text-ckeditor
     #   easy-thumbnails
-pip-tools==6.0.0
+pip-tools==6.0.1
     # via -r requirements.in
 psycopg2==2.8.6
     # via -r requirements.in
@@ -212,8 +216,12 @@ soupsieve==2.0.1
     # via beautifulsoup4
 sqlparse==0.4.1
     # via django
+toml==0.10.2
+    # via pep517
 topicaxis-opengraph==0.5
     # via -r requirements.in
+typing-extensions==3.7.4.3
+    # via importlib-metadata
 unidecode==1.1.1
     # via django-filer
 urllib3==1.25.11
@@ -228,6 +236,10 @@ whoosh==2.7.4
     # via -r requirements.in
 yurl==1.0.0
     # via aldryn-boilerplates
+zipp==3.4.1
+    # via
+    #   importlib-metadata
+    #   pep517
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
