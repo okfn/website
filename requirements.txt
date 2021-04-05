@@ -157,8 +157,6 @@ html5lib==1.1
     # via djangocms-text-ckeditor
 idna==2.10
     # via requests
-importlib-metadata==3.9.0
-    # via pep517
 iso3166==1.0.1
     # via -r requirements.in
 jmespath==0.10.0
@@ -188,7 +186,7 @@ psycopg2==2.8.6
     # via -r requirements.in
 python-dateutil==2.8.1
     # via botocore
-python-dotenv==0.16.0
+python-dotenv==0.17.0
     # via -r requirements.in
 pytz==2020.4
     # via django
@@ -220,8 +218,6 @@ toml==0.10.2
     # via pep517
 topicaxis-opengraph==0.5
     # via -r requirements.in
-typing-extensions==3.7.4.3
-    # via importlib-metadata
 unidecode==1.1.1
     # via django-filer
 urllib3==1.25.11
@@ -236,10 +232,6 @@ whoosh==2.7.4
     # via -r requirements.in
 yurl==1.0.0
     # via aldryn-boilerplates
-zipp==3.4.1
-    # via
-    #   importlib-metadata
-    #   pep517
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
