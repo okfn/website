@@ -63,7 +63,7 @@ django-filer==2.0.2
     #   djangocms-file
     #   djangocms-link
     #   djangocms-picture
-django-formtools==2.2
+django-formtools==2.3
     # via
     #   -r requirements.in
     #   django-cms
