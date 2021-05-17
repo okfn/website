@@ -4,6 +4,7 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 10
     ignore:
       - dependency-name: "django"
         versions: [">=3.0", "<3.2"]  # don't offer to bump django until 3.2 LTS released
