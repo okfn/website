@@ -419,9 +419,9 @@ COMPRESS_PRECOMPILERS = (
     ('text/sass', 'lib.precompilers.SassFilter'),
 )
 
-COMPRESS_CSS_FILTERS = [
-    'compressor.filters.cssmin.CSSMinFilter'
-]
+COMPRESS_FILTERS = {
+    'css': ['compressor.filters.cssmin.CSSMinFilter']
+}
 
 CMS_CACHE_DURATIONS = {
     'content': 60,
