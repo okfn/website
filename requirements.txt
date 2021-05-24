@@ -165,7 +165,7 @@ jmespath==0.10.0
     #   botocore
 jsonfield==3.1.0
     # via -r requirements.in
-libsass==0.20.1
+libsass==0.21.0
     # via -r requirements.in
 lxml==4.6.3
     # via aldryn-search
