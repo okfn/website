@@ -175,7 +175,7 @@ micawber==0.5.3
     # via -r requirements.in
 pep517==0.10.0
     # via pip-tools
-pillow==8.1.1
+pillow==8.2.0
     # via
     #   django-pagedown
     #   djangocms-text-ckeditor
