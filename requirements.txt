@@ -149,7 +149,7 @@ easy-thumbnails==2.7.1
     #   -r requirements.in
     #   django-filer
     #   djangocms-picture
-feedparser==6.0.2
+feedparser==6.0.6
     # via -r requirements.in
 gunicorn==20.1.0
     # via -r requirements.in
