@@ -24,4 +24,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/website:latest
+          tags: openknowledge/website:${GITHUB_REF##*/}
