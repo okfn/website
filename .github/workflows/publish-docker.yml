@@ -9,6 +9,9 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v2
+      - name: Get tag name
+        id: get_version
+        run: echo ::set-output name=TAG_NAME::$(echo $GITHUB_REF | cut -d / -f 3)
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
@@ -24,4 +27,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/website:latest
+          tags: openknowledge/website:${{ steps.get_version.outputs.TAG_NAME }}
