@@ -169,7 +169,7 @@ libsass==0.21.0
     # via -r requirements.in
 lxml==4.6.3
     # via aldryn-search
-markdown2==2.3.10
+markdown2==2.4.0
     # via django-markdown-deux
 micawber==0.5.3
     # via -r requirements.in
