@@ -32,6 +32,28 @@ cssmin==0.2.0
     # via -r requirements.in
 dj-database-url==0.5.0
     # via -r requirements.in
+django==2.2.16
+    # via
+    #   -r requirements.in
+    #   aldryn-boilerplates
+    #   django-appconf
+    #   django-classy-tags
+    #   django-cms
+    #   django-csp
+    #   django-filer
+    #   django-formtools
+    #   django-haystack
+    #   django-mptt
+    #   django-pagedown
+    #   django-polymorphic
+    #   django-redis
+    #   django-reversion
+    #   django-sekizai
+    #   django-standard-form
+    #   django-storages
+    #   django-treebeard
+    #   easy-thumbnails
+    #   jsonfield
 django-appconf==1.0.4
     # via
     #   aldryn-boilerplates
@@ -105,28 +127,6 @@ django-treebeard==4.4
     # via
     #   -r requirements.in
     #   django-cms
-django==2.2.16
-    # via
-    #   -r requirements.in
-    #   aldryn-boilerplates
-    #   django-appconf
-    #   django-classy-tags
-    #   django-cms
-    #   django-csp
-    #   django-filer
-    #   django-formtools
-    #   django-haystack
-    #   django-mptt
-    #   django-pagedown
-    #   django-polymorphic
-    #   django-redis
-    #   django-reversion
-    #   django-sekizai
-    #   django-standard-form
-    #   django-storages
-    #   django-treebeard
-    #   easy-thumbnails
-    #   jsonfield
 djangocms-admin-style==2.0.2
     # via
     #   -r requirements.in
@@ -180,7 +180,7 @@ pillow==8.2.0
     #   django-pagedown
     #   djangocms-text-ckeditor
     #   easy-thumbnails
-pip-tools==6.1.0
+pip-tools==6.2.0
     # via -r requirements.in
 psycopg2==2.8.6
     # via -r requirements.in
@@ -228,6 +228,8 @@ urlobject==2.4.3
     # via django-spurl
 webencodings==0.5.1
     # via html5lib
+wheel==0.36.2
+    # via pip-tools
 whoosh==2.7.4
     # via -r requirements.in
 yurl==1.0.0
