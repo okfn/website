@@ -34,7 +34,7 @@ iso3166==1.0.1
 libsass==0.21.0
 psycopg2==2.8.6
 python-dotenv==0.18.0
-requests==2.25.1
+requests==2.26.0
 topicaxis-opengraph==0.5
 whoosh==2.7.4
 

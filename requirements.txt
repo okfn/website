@@ -24,7 +24,7 @@ botocore==1.19.10
     #   s3transfer
 certifi==2020.11.8
     # via requests
-chardet==3.0.4
+charset-normalizer==2.0.3
     # via requests
 click==7.1.2
     # via pip-tools
@@ -194,7 +194,7 @@ rcssmin==1.0.6
     # via django-compressor
 redis==3.5.3
     # via django-redis
-requests==2.25.1
+requests==2.26.0
     # via -r requirements.in
 rjsmin==1.1.0
     # via django-compressor
