@@ -186,7 +186,7 @@ psycopg2==2.8.6
     # via -r requirements.in
 python-dateutil==2.8.1
     # via botocore
-python-dotenv==0.18.0
+python-dotenv==0.19.0
     # via -r requirements.in
 pytz==2020.4
     # via django
