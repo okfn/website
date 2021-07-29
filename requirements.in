@@ -42,4 +42,4 @@ whoosh==2.7.4
 aldryn-boilerplates==0.8.0
 jsonfield==3.1.0
 beautifulsoup4==4.9.3
-micawber==0.5.3
+micawber==0.5.4
