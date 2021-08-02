@@ -101,7 +101,7 @@ django-mptt==0.12.0
     # via
     #   -r requirements.in
     #   django-filer
-django-pagedown==2.2.0
+django-pagedown==2.2.1
     # via -r requirements.in
 django-polymorphic==3.0.0
     # via django-filer
