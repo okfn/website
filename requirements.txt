@@ -89,7 +89,7 @@ django-formtools==2.3
     # via
     #   -r requirements.in
     #   django-cms
-django-haystack==3.0
+django-haystack==3.1.1
     # via
     #   -r requirements.in
     #   aldryn-search
