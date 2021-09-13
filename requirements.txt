@@ -43,7 +43,6 @@ django==2.2.16
     #   django-filer
     #   django-formtools
     #   django-haystack
-    #   django-mptt
     #   django-pagedown
     #   django-polymorphic
     #   django-redis
@@ -97,7 +96,7 @@ django-js-asset==1.2.2
     # via django-mptt
 django-markdown-deux==1.0.5
     # via -r requirements.in
-django-mptt==0.12.0
+django-mptt==0.13.3
     # via
     #   -r requirements.in
     #   django-filer
