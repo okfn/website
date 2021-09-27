@@ -157,7 +157,7 @@ html5lib==1.1
     # via djangocms-text-ckeditor
 idna==2.10
     # via requests
-iso3166==1.0.1
+iso3166==2.0.2
     # via -r requirements.in
 jmespath==0.10.0
     # via
