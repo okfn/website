@@ -180,7 +180,7 @@ pillow==8.2.0
     #   django-pagedown
     #   djangocms-text-ckeditor
     #   easy-thumbnails
-pip-tools==6.2.0
+pip-tools==6.3.0
     # via -r requirements.in
 psycopg2==2.8.6
     # via -r requirements.in
