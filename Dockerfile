@@ -18,6 +18,7 @@ COPY aldryn_video ./aldryn_video
 COPY article_list_item ./article_list_item
 COPY docs ./docs
 COPY foundation ./foundation
+COPY .env.base ./.env.base
 COPY lib ./lib
 COPY sendemail ./sendemail
 COPY static ./static

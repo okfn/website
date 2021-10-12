@@ -8,20 +8,38 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
+import environ
 import os
 import sys
 import email.utils
 from os import environ as env
-import dj_database_url
 from django.utils.translation import ugettext_lazy as _
-from dotenv import load_dotenv
 import warnings
+
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 TEST_MODE = len(sys.argv) > 1 and sys.argv[1] == 'test'
 
-# Activate dotenv
-if not TEST_MODE:
-    load_dotenv('.env')
+djenv = environ.Env()
+# Base settings are common to all environments
+env_file = os.path.join(BASE_DIR, ".env.base")
+djenv.read_env(env_file, overwrite=True)
+
+# try google secrets file
+google_secrets_file = '/secrets/django_settings'
+if os.path.isfile(google_secrets_file):
+    # we are in google environment
+    extra_env_file = google_secrets_file
+elif TEST_MODE:
+    # we are in test environment
+    extra_env_file = os.path.join(BASE_DIR, ".env.test")
+else:
+    # We are runnign a local instance
+    extra_env_file = os.path.join(BASE_DIR, ".env")
+
+if os.path.isfile(extra_env_file):
+    djenv.read_env(extra_env_file, overwrite=True)
 
 # Silence warnings from ipython/sqlite
 warnings.filterwarnings("ignore",
@@ -29,8 +47,6 @@ warnings.filterwarnings("ignore",
                         module='django.db.backends.sqlite3.base',
                         lineno=58)
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 SITE_ID = int(env.get('DJANGO_SITE_ID', 1))
 HUBOT_API_KEY = env.get('HUBOT_API_KEY')
@@ -224,11 +240,27 @@ else:
     }
 
 # Database configuration
+#### Create your local DB
+"""
+CREATE USER okfn WITH PASSWORD 'okfn';
+ALTER ROLE okfn SUPERUSER;
+CREATE DATABASE okfn OWNER okfn;
+"""
 
-db_config = dj_database_url.config(default='sqlite:///development.sqlite3')
 DATABASES = {
-    'default': db_config
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env.get('DB_NAME'),
+        'USER': env.get('DB_USER'),
+        'PASSWORD': env.get('DB_PASSWORD'),
+        'HOST': env.get('DB_HOST'),
+        'PORT': env.get('DB_PORT'),
+    },
 }
+# If the flag as been set, configure to use proxy
+if env.get("USE_CLOUD_SQL_AUTH_PROXY", None):
+    DATABASES["default"]["HOST"] = "127.0.0.1"
+    DATABASES["default"]["PORT"] = 5432
 
 if not DEBUG:
     # Keep database connections around for a while, reusing them when possible.
