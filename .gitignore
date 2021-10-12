@@ -35,3 +35,5 @@ whoosh_index
 .env.staging
 .env.production
 assets
+
+.vscode
