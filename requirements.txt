@@ -12,7 +12,7 @@ aldryn-common==1.0.5
     # via aldryn-search
 aldryn-search==1.1.0
     # via -r requirements.in
-beautifulsoup4==4.9.3
+beautifulsoup4==4.10.0
     # via
     #   -r requirements.in
     #   topicaxis-opengraph
@@ -41,7 +41,6 @@ django==2.2.24
     #   django-filer
     #   django-formtools
     #   django-haystack
-    #   django-mptt
     #   django-pagedown
     #   django-polymorphic
     #   django-redis
@@ -89,7 +88,7 @@ django-formtools==2.3
     # via
     #   -r requirements.in
     #   django-cms
-django-haystack==3.0
+django-haystack==3.1.1
     # via
     #   -r requirements.in
     #   aldryn-search
@@ -97,11 +96,11 @@ django-js-asset==1.2.2
     # via django-mptt
 django-markdown-deux==1.0.5
     # via -r requirements.in
-django-mptt==0.12.0
+django-mptt==0.13.4
     # via
     #   -r requirements.in
     #   django-filer
-django-pagedown==2.2.0
+django-pagedown==2.2.1
     # via -r requirements.in
 django-polymorphic==3.0.0
     # via django-filer
@@ -157,7 +156,7 @@ html5lib==1.1
     # via djangocms-text-ckeditor
 idna==2.10
     # via requests
-iso3166==1.0.1
+iso3166==2.0.2
     # via -r requirements.in
 jmespath==0.10.0
     # via
@@ -180,7 +179,7 @@ pillow==8.2.0
     #   django-pagedown
     #   djangocms-text-ckeditor
     #   easy-thumbnails
-pip-tools==6.2.0
+pip-tools==6.4.0
     # via -r requirements.in
 psycopg2==2.8.6
     # via -r requirements.in
