@@ -19,7 +19,7 @@ import warnings
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-TEST_MODE = len(sys.argv) > 1 and sys.argv[1] == 'test'
+TEST_MODE = len(sys.argv) > 1 and 'test' in sys.argv
 
 djenv = environ.Env()
 # Base settings are common to all environments
@@ -240,7 +240,7 @@ else:
     }
 
 # Database configuration
-#### Create your local DB
+# (optional) Create your local DB
 """
 CREATE USER okfn WITH PASSWORD 'okfn';
 ALTER ROLE okfn SUPERUSER;
@@ -249,7 +249,7 @@ CREATE DATABASE okfn OWNER okfn;
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': env.get('DB_ENGINE'),
         'NAME': env.get('DB_NAME'),
         'USER': env.get('DB_USER'),
         'PASSWORD': env.get('DB_PASSWORD'),
