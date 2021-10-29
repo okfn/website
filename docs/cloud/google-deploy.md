@@ -41,4 +41,5 @@ Finally, we add a CNAME record to point this new domain (ensure remove the proxy
 
 **Notes: The staging environment is using the `min-instances` setting as 0. So if no one is using it, the first request might give you a 502 error until the service starts.**
 
-Stating files are at `okfn-org-staging` AWS S3 bucket (this should be moved to Google).
+Static files are at `okfn-org-staging` AWS S3 bucket (this should be moved to Google).
+**TODO: pending to migrate to Google Cloud Storage**
