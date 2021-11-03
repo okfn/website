@@ -66,5 +66,7 @@ Note that `python manage.py update_index` runs every time we build the DockerFil
 You'll need a secret pointing to the Redis instance:
 
 ```
-SEARCH_URL=https://USER:PASSWORD@okf-elastic-stg-website.es.europe-north1.gcp.elastic-cloud.com:9243
+SEARCH_URL=https://USER:PASSWORD@okf-elastic-XX.com:92XX
 ```
+
+To see/manage Elastic indexes go [here](https://okf-elastic-stg-website.kb.europe-north1.gcp.elastic-cloud.com:9243/app/management/data/index_management/indices) (it's very difficult to find).  
