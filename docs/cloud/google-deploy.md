@@ -50,3 +50,21 @@ Google bring us [Redis through the _Memorystore_ service](https://console.cloud.
 this [requires](https://medium.com/google-cloud/using-memorystore-with-cloud-run-82e3d61df016)
 a [VPC connector](https://console.cloud.google.com/networking/connectors/list?project=melodic-keyword-303819)
 to be visible from Cloud Run.  
+
+Note that you'll need a secret pointing to the Redis instance
+Example:
+```
+CACHE_URL=redis://10.23.81.3:6379/0
+```
+
+### Elasticsearch
+
+Google allow using Elastic through a special service
+[manged by Elastic](https://cloud.elastic.co/deployments/d1bdd16cf365403fa92fdd7320a4d527)
+(external provider).  
+Note that `python manage.py update_index` runs every time we build the DockerFile.  
+You'll need a secret pointing to the Redis instance:
+
+```
+SEARCH_URL=https://USER:PASSWORD@okf-elastic-stg-website.es.europe-north1.gcp.elastic-cloud.com:9243
+```
