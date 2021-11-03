@@ -6,7 +6,7 @@
   <div class="col-md-2">
     <img
       class="img-responsive"
-      src="{% thumbnail person.photo|default:'img/avatar-none.png' 116x116 %}"
+      src="{% thumbnail person.photo|default:'/assets/img/avatar-none.png' 116x116 %}"
       alt="{{ person.name }}"
     >
   </div>
