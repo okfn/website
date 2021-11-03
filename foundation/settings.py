@@ -320,7 +320,12 @@ CUSTOM_ASSETS_DOMAIN = env.get('DJANGO_CUSTOM_ASSETS_DOMAIN')
 
 STATIC_URL = '/assets/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-if env.get('DJANGO_USE_AWS_STORAGE') == 'true':
+if env.get('DJANGO_USE_GOOGLE_STORAGE') == 'true':
+    S_BUCKET_NAME = env.get("GS_BUCKET_NAME", "django-statics-okf-website-staging")
+    DEFAULT_FILE_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
+    STATICFILES_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
+    GS_DEFAULT_ACL = "publicRead"
+elif env.get('DJANGO_USE_AWS_STORAGE') == 'true':
     AWS_ACCESS_KEY_ID = env['AWS_ACCESS_KEY_ID']
     AWS_SECRET_ACCESS_KEY = env['AWS_SECRET_ACCESS_KEY']
     AWS_STORAGE_BUCKET_NAME = env['AWS_STORAGE_BUCKET_NAME']
