@@ -43,3 +43,10 @@ Finally, we add a CNAME record to point this new domain (ensure remove the proxy
 
 Static files are at `okfn-org-staging` AWS S3 bucket (this should be moved to Google).
 **TODO: pending to migrate to Google Cloud Storage**
+
+### Redis
+
+Google bring us [Redis through the _Memorystore_ service](https://console.cloud.google.com/memorystore/redis/instances?project=melodic-keyword-303819),
+this [requires](https://medium.com/google-cloud/using-memorystore-with-cloud-run-82e3d61df016)
+a [VPC connector](https://console.cloud.google.com/networking/connectors/list?project=melodic-keyword-303819)
+to be visible from Cloud Run.  
