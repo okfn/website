@@ -23,7 +23,9 @@ botocore==1.19.10
     #   boto3
     #   s3transfer
 certifi==2020.11.8
-    # via requests
+    # via
+    #   elasticsearch
+    #   requests
 charset-normalizer==2.0.3
     # via requests
 click==7.1.2
@@ -148,6 +150,8 @@ easy-thumbnails==2.7.1
     #   -r requirements.in
     #   django-filer
     #   djangocms-picture
+elasticsearch==7.15.1
+    # via -r requirements.in
 feedparser==6.0.8
     # via -r requirements.in
 gunicorn==20.1.0
@@ -220,6 +224,7 @@ unidecode==1.1.1
 urllib3==1.25.11
     # via
     #   botocore
+    #   elasticsearch
     #   requests
 urlobject==2.4.3
     # via django-spurl
