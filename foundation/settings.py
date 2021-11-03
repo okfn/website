@@ -276,7 +276,7 @@ if SEARCH_URL:
         'default': {
             'ENGINE': 'haystack.backends.elasticsearch7_backend.Elasticsearch7SearchEngine',
             'URL': SEARCH_URL,
-            'INDEX_NAME': 'foundation',
+            'INDEX_NAME': 'foundation7',
         }
     }
 else:
