@@ -274,7 +274,7 @@ SEARCH_URL = env.get('SEARCH_URL')
 if SEARCH_URL:
     HAYSTACK_CONNECTIONS = {
         'default': {
-            'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+            'ENGINE': 'haystack.backends.elasticsearch7_backend.Elasticsearch7SearchEngine',
             'URL': SEARCH_URL,
             'INDEX_NAME': 'foundation',
         }
