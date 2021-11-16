@@ -121,7 +121,7 @@ INSTALLED_APPS = (
 
     # 3rd-party important
     'reversion',
-    's3_folder_storage',
+    # only for S3 's3_folder_storage',
     'pagedown',
     'markdown_deux',
     'haystack',
@@ -321,10 +321,14 @@ CUSTOM_ASSETS_DOMAIN = env.get('DJANGO_CUSTOM_ASSETS_DOMAIN')
 STATIC_URL = '/assets/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 if env.get('DJANGO_USE_GOOGLE_STORAGE') == 'true':
-    S_BUCKET_NAME = env.get("GS_BUCKET_NAME", "django-statics-okf-website-staging")
+    GS_BUCKET_NAME = env.get("GS_BUCKET_NAME", "django-statics-okf-website-staging")
+    # to add the "media" foler
+    GS_PROJECT_ID = env.get("GS_PROJECT_ID")
     DEFAULT_FILE_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
-    STATICFILES_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
+    THUMBNAIL_DEFAULT_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
+    GS_QUERYSTRING_AUTH = False
     GS_DEFAULT_ACL = "publicRead"
+    # We use local static files, not use STATICFILES_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
 elif env.get('DJANGO_USE_AWS_STORAGE') == 'true':
     AWS_ACCESS_KEY_ID = env['AWS_ACCESS_KEY_ID']
     AWS_SECRET_ACCESS_KEY = env['AWS_SECRET_ACCESS_KEY']
@@ -384,60 +388,61 @@ else:
     SECURE_SSL_REDIRECT = False
 
 # Content Security Policy
-if env.get('DJANGO_CSP_REPORT_URI') is not None:
-    CSP_REPORT_ONLY = True
 
-    asset_hosts = []
-    if AWS_S3_CUSTOM_DOMAIN:
-        asset_hosts.append('https://%s' % AWS_S3_CUSTOM_DOMAIN)
-    else:
-        asset_hosts.append('https://s3.amazonaws.com')
-    if CUSTOM_ASSETS_DOMAIN:
-        asset_hosts.append('https://%s' % CUSTOM_ASSETS_DOMAIN)
 
-    CSP_DEFAULT_SRC = ("'none'",)
-
-    CSP_SCRIPT_SRC = asset_hosts + [
-        "'self'",
-        "'unsafe-inline'",
-        'https://js-agent.newrelic.com',
-        'https://www.google-analytics.com',
-        'https://use.typekit.net',
-        'https://bam.nr-data.net',
-        'https://downloads.mailchimp.com',
-        'https://s3.amazonaws.com/downloads.mailchimp.com',
-        '*.list-manage.com',
-    ]
-    CSP_STYLE_SRC = asset_hosts + [
-        "'self'",
-        "'unsafe-inline'",
-        'https://use.typekit.net',
-    ]
-    CSP_IMG_SRC = asset_hosts + [
-        "'self'",
-        "data:",
-        'https://gravatar.com',
-        'https://1.gravatar.com',
-        'https://2.gravatar.com',
-        'https://secure.gravatar.com',
-        'https://p.typekit.net',
-        'https://ping.typekit.net',
-        'https://www.google-analytics.com',
-    ]
-    CSP_FONT_SRC = asset_hosts + [
-        "'self'",
-        'data:',
-        'https://use.typekit.net',
-        'https://themes.googleusercontent.com'
-    ]
-    CSP_FORM_ACTION = [
-        "'self'",
-        'https://okfn.us9.list-manage.com'
-    ]
-
-    CSP_REPORT_URI = env.get('DJANGO_CSP_REPORT_URI')
+asset_hosts = ['https://storage.googleapis.com']
+if AWS_S3_CUSTOM_DOMAIN:
+    asset_hosts.append('https://%s' % AWS_S3_CUSTOM_DOMAIN)
 else:
-    CSP_EXCLUDE_URL_PREFIXES = ('/',)
+    asset_hosts.append('https://s3.amazonaws.com')
+if CUSTOM_ASSETS_DOMAIN:
+    asset_hosts.append('https://%s' % CUSTOM_ASSETS_DOMAIN)
+
+CSP_DEFAULT_SRC = ("'none'",)
+
+CSP_SCRIPT_SRC = asset_hosts + [
+    "'self'",
+    "'unsafe-inline'",
+    'https://js-agent.newrelic.com',
+    'https://www.google-analytics.com',
+    'https://use.typekit.net',
+    'https://bam.nr-data.net',
+    'https://downloads.mailchimp.com',
+    'https://s3.amazonaws.com/downloads.mailchimp.com',
+    '*.list-manage.com',
+]
+CSP_STYLE_SRC = asset_hosts + [
+    "'self'",
+    "'unsafe-inline'",
+    'https://use.typekit.net',
+]
+CSP_IMG_SRC = asset_hosts + [
+    "'self'",
+    "data:",
+    'https://gravatar.com',
+    'https://1.gravatar.com',
+    'https://2.gravatar.com',
+    'https://secure.gravatar.com',
+    'https://p.typekit.net',
+    'https://ping.typekit.net',
+    'https://www.google-analytics.com',
+]
+CSP_FONT_SRC = asset_hosts + [
+    "'self'",
+    'data:',
+    'https://use.typekit.net',
+    'https://themes.googleusercontent.com'
+]
+CSP_FORM_ACTION = [
+    "'self'",
+    'https://okfn.us9.list-manage.com'
+]
+
+# Report-URI is no longer recommended
+# https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri
+# CSP_REPORT_URI = env.get('DJANGO_CSP_REPORT_URI')
+# CSP_REPORT_ONLY = True
+
 
 GOOGLE_ANALYTICS_TRACKING_ID = env.get('DJANGO_GOOGLE_ANALYTICS_TRACKING_ID')
 GOOGLE_ANALYTICS_DOMAIN = env.get('DJANGO_GOOGLE_ANALYTICS_DOMAIN')

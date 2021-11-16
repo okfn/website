@@ -46,7 +46,18 @@ Finally, we add a CNAME record to point this new domain (ensure remove the proxy
 We create a
 [public bucket in Google Cloud Storage](https://console.cloud.google.com/storage/browser?project=melodic-keyword-303819)
 called `django-statics-okf-website-staging` (must be unique globally).  
+All S3 files transfered to Google Cloud Storage. You can do it with the
+[Data Transfer tool](https://console.cloud.google.com/transfer/cloud/jobs?cloudshell=true&project=melodic-keyword-303819)
+or with the command:
 
+```
+gsutil cp -R s3://okfn-org-staging gs://django-statics-okf-website-staging
+# or -m for parallel
+gsutil -m cp -R s3://okfn-org-staging gs://django-statics-okf-website-staging
+```
+
+This website uses `media` files from an external bucket but use django `statics` from a local folder.  
+We are using `nginx` here just because this static files.  
 
 ### Redis
 
