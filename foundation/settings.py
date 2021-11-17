@@ -322,7 +322,6 @@ STATIC_URL = '/assets/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 if env.get('DJANGO_USE_GOOGLE_STORAGE') == 'true':
     GS_BUCKET_NAME = env.get("GS_BUCKET_NAME", "django-statics-okf-website-staging")
-    # to add the "media" foler
     GS_PROJECT_ID = env.get("GS_PROJECT_ID")
     DEFAULT_FILE_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
     THUMBNAIL_DEFAULT_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
@@ -388,8 +387,6 @@ else:
     SECURE_SSL_REDIRECT = False
 
 # Content Security Policy
-
-
 asset_hosts = ['https://storage.googleapis.com']
 if AWS_S3_CUSTOM_DOMAIN:
     asset_hosts.append('https://%s' % AWS_S3_CUSTOM_DOMAIN)
@@ -398,11 +395,12 @@ else:
 if CUSTOM_ASSETS_DOMAIN:
     asset_hosts.append('https://%s' % CUSTOM_ASSETS_DOMAIN)
 
-CSP_DEFAULT_SRC = ("'none'",)
+CSP_DEFAULT_SRC = ("'self'",)
 
 CSP_SCRIPT_SRC = asset_hosts + [
     "'self'",
     "'unsafe-inline'",
+    "'unsafe-eval'",
     'https://js-agent.newrelic.com',
     'https://www.google-analytics.com',
     'https://use.typekit.net',
@@ -410,11 +408,14 @@ CSP_SCRIPT_SRC = asset_hosts + [
     'https://downloads.mailchimp.com',
     'https://s3.amazonaws.com/downloads.mailchimp.com',
     '*.list-manage.com',
+    'https://youtube.com',
+    'https://www.youtube.com',
 ]
 CSP_STYLE_SRC = asset_hosts + [
     "'self'",
     "'unsafe-inline'",
     'https://use.typekit.net',
+    'https://downloads.mailchimp.com',
 ]
 CSP_IMG_SRC = asset_hosts + [
     "'self'",
@@ -426,6 +427,7 @@ CSP_IMG_SRC = asset_hosts + [
     'https://p.typekit.net',
     'https://ping.typekit.net',
     'https://www.google-analytics.com',
+    'https://cdn-images.mailchimp.com'
 ]
 CSP_FONT_SRC = asset_hosts + [
     "'self'",
@@ -437,7 +439,13 @@ CSP_FORM_ACTION = [
     "'self'",
     'https://okfn.us9.list-manage.com'
 ]
-
+CSP_FRAME_SRC = [
+    'https://youtube.com',
+    'https://www.youtube.com',
+]
+CSP_CONNECT_SRC = [
+    'https://www.google-analytics.com'
+]
 # Report-URI is no longer recommended
 # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri
 # CSP_REPORT_URI = env.get('DJANGO_CSP_REPORT_URI')
