@@ -440,6 +440,7 @@ CSP_FORM_ACTION = [
     'https://okfn.us9.list-manage.com'
 ]
 CSP_FRAME_SRC = [
+    "'self'",
     'https://youtube.com',
     'https://www.youtube.com',
 ]
