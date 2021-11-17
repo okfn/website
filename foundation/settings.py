@@ -444,6 +444,7 @@ CSP_FRAME_SRC = [
     'https://www.youtube.com',
 ]
 CSP_CONNECT_SRC = asset_hosts + [
+    "'self'",
     'https://www.google-analytics.com'
 ]
 # Report-URI is no longer recommended
