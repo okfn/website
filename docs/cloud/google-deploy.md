@@ -46,9 +46,10 @@ Finally, we add a CNAME record to point this new domain (ensure remove the proxy
 
 #### Static files
 
+Django requires a `media` and a `static` folder. `media` is for uploaded files, `static` is for static files (JS and CSS mainly).  
 We create a
 [public bucket in Google Cloud Storage](https://console.cloud.google.com/storage/browser?project=melodic-keyword-303819)
-called `django-statics-okf-website-staging` (must be unique globally).  
+called `django-statics-okf-website-staging` (must be unique globally) for the `media` files.  
 All S3 files transfered to Google Cloud Storage. You can do it with the
 [Data Transfer tool](https://console.cloud.google.com/transfer/cloud/jobs?cloudshell=true&project=melodic-keyword-303819)
 or with the command:
@@ -59,8 +60,8 @@ gsutil cp -R s3://okfn-org-staging gs://django-statics-okf-website-staging
 gsutil -m cp -R s3://okfn-org-staging gs://django-statics-okf-website-staging
 ```
 
-This website uses `media` files from an external bucket but use django `statics` from a local folder.  
-We are using `nginx` here just because this static files.  
+`static` files lives in a local folder (it would be better to move them
+ to Google Cloud Storage) and we serve them with `nginx`. 
 
 ### Redis
 
