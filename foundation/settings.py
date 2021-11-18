@@ -250,10 +250,6 @@ DATABASES = {
         'PORT': env.get('DB_PORT'),
     },
 }
-# If the flag as been set, configure to use proxy
-if env.get("USE_CLOUD_SQL_AUTH_PROXY", None):
-    DATABASES["default"]["HOST"] = "127.0.0.1"
-    DATABASES["default"]["PORT"] = 5432
 
 if not DEBUG:
     # Keep database connections around for a while, reusing them when possible.
