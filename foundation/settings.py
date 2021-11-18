@@ -327,7 +327,7 @@ elif env.get('DJANGO_USE_AWS_STORAGE') == 'true':
     }
     AWS_DEFAULT_ACL = 'public-read'
 
-    INSTALLED_APPS += ['s3_folder_storage']
+    INSTALLED_APPS += ('s3_folder_storage',)
     DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.DefaultStorage'
     THUMBNAIL_DEFAULT_STORAGE = 's3_folder_storage.s3.DefaultStorage'
     DEFAULT_S3_PATH = 'media'
