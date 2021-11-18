@@ -33,7 +33,10 @@ gsutil rm gs://oki-cloud-sql-snapshots/okfn-prod-dump-20211026.sql
 
 We use Google Cloud Run to run a service based on the `Dockerfile` in this repo. To deploy a new version, you only need to push to the `develop` branch (see [triggers](https://console.cloud.google.com/cloud-build/triggers?project=melodic-keyword-303819)).  
 
-The secrets are defined in [Google Secret Manager](https://console.cloud.google.com/security/secret-manager?project=melodic-keyword-303819) and this project will automatically use them when available. For local custom settings, add a local `.env` file.  
+The secrets are defined in [Google Secret Manager](https://console.cloud.google.com/security/secret-manager?project=melodic-keyword-303819) and this project will automatically use them when available.  
+Note: Google does not allow to update secrets directly, so you need to _View secret value_ (from action menu)
+then copy them, update manually and finally deploy a new secrets version.  
+For local custom settings, just add a local `.env` file.  
 
 We use Cloud Run [Domain mapping](https://console.cloud.google.com/run/domains?project=melodic-keyword-303819)
 to redirect the domain [stg.okfn.org](https://stg.okfn.org) to this application. 
