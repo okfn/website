@@ -239,12 +239,6 @@ else:
     }
 
 # Database configuration
-# (optional) Create your local DB
-"""
-CREATE USER okfn WITH PASSWORD 'okfn';
-ALTER ROLE okfn SUPERUSER;
-CREATE DATABASE okfn OWNER okfn;
-"""
 
 DATABASES = {
     'default': {
