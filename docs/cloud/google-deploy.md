@@ -55,9 +55,10 @@ DB_ENGINE=django.db.backends.postgresql_psycopg2
 DB_NAME=website
 DB_USER=okfn
 DB_PASSWORD=XXXXX
-DB_HOST=oki-website-production:us-central1:oki-website-production
+# example, the //cloudsql prefix is important
+DB_HOST=//cloudsql/oki-website-production:us-central1:oki-website-production
 DB_PORT=5432
-``
+```
 
 #### Static files
 
@@ -121,14 +122,20 @@ To deploy a new version, you only need to push to the `develop` or `main` branch
 The secrets are defined in Google Secret Manager
 ([staging](https://console.cloud.google.com/security/secret-manager?project=melodic-keyword-303819) -
  [prod](https://console.cloud.google.com/security/secret-manager?project=oki-website-production)
-You'll need to edit CloudRun _Variable & settings_ to mount them as a file at /secrets/django_settings.  
+You'll need to edit Cloud Run _Variable & settings_ to mount them as a file at /secrets/django_settings.  
 
-Note: Google does not allow to update secrets directly, so you need to _View secret value_ (from action menu)
-then copy them, update manually and finally deploy a new secrets version.  
-For local custom settings, just add a local `.env` file.  
+Cloud Run extra tasks:
+ - Google does not allow to update secrets directly, so you need to _View secret value_ (from action menu)
+then copy them, update manually and finally deploy a new secrets version (for local custom settings, 
+just add a local `.env` file.)
+ - Remember using the VPC connerctor in the Cloud Run _Connection_ settings.
+ - Add _Cluster SQL Connection_ to _Connection_ setting in the Cloud Run service. 
+   - Or with gclod: `gcloud run services update website4 --add-cloudsql-instances=oki-website-production:us-central1:oki-website-production`
 
-We use Cloud Run [Domain mapping](https://console.cloud.google.com/run/domains?project=melodic-keyword-303819)
-to redirect the domain [stg.okfn.org](https://stg.okfn.org) to this application. 
+We use Cloud Run Domain mapping
+([staging](https://console.cloud.google.com/run/domains?project=melodic-keyword-303819) - 
+ [prod](https://console.cloud.google.com/run/domains?project=oki-website-production)
+to redirect the domains okfn.org and stg.okfn.org to this application. 
 Finally, we add a CNAME record to point this new domain (ensure remove the proxy and set the record a _DNS only_ at Cloudflare).  
 
 **Notes: The staging environment is using the `min-instances` setting as 0. So if no one is using it, the first request might give you a 502 error until the service starts.**
