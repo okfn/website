@@ -1,12 +1,24 @@
 # OKF Website in the cloud
 
-## Staging
+We are using Google Cloud Platform for our infrastructure.
 
-We use Google Cloud (`oki-website-staging` project) to run the staging version for the OKFN website in the `europe-north1` region.  
+## Environments
+
+Available environments:
+ - Staging: `oki-website-staging` project in the `europe-north1` region. 
+ - Production: `oki-website-production` project in the `us-central1` region.  
+
+Changes at `develop` branch trigger a deploy to `staging` environment.  
+Changes at `main` branch trigger a deploy to `production` environment.  
+`master` branch remains with the lastest version of the old infrastructure.
 
 ### Database 
 
-We have a [SQL service](https://console.cloud.google.com/sql/instances?referrer=search&project=melodic-keyword-303819) running for the required PostgreSQL instance.  
+We have a SQL service 
+([staging](https://console.cloud.google.com/sql/instances?project=melodic-keyword-303819) - 
+ [prod](https://console.cloud.google.com/sql/instances/?project=oki-website-production))
+running for the required PostgreSQL instances.  
+
 
 This DB was started using a production copy:
 ```
@@ -21,6 +33,7 @@ You must delete previous database and then create a new one
 gcloud sql databases delete website --instance=oki-website-staging
 gcloud sql databases create website --instance=oki-website-staging
 # https://cloud.google.com/sdk/gcloud/reference/sql/import/sql
+# Note: the service account in the SQL instance must be added to the bucket permissions
 gcloud sql import sql oki-website-staging gs://oki-cloud-sql-snapshots/okfn-prod-dump-20211026.sql --database=website
 ```
 
@@ -29,28 +42,31 @@ Finally, drop the dump file:
 gsutil rm gs://oki-cloud-sql-snapshots/okfn-prod-dump-20211026.sql
 ```
 
-### Django app
+Create a DB user
 
-We use Google Cloud Run to run a service based on the `Dockerfile` in this repo. To deploy a new version, you only need to push to the `develop` branch (see [triggers](https://console.cloud.google.com/cloud-build/triggers?project=melodic-keyword-303819)).  
+```
+gcloud sql users create okfn --instance=oki-website-production --password=xxx
+# "okfn" is the user name and "oki-website-production" is the instance name
+```
 
-The secrets are defined in [Google Secret Manager](https://console.cloud.google.com/security/secret-manager?project=melodic-keyword-303819) and this project will automatically use them when available.  
-Note: Google does not allow to update secrets directly, so you need to _View secret value_ (from action menu)
-then copy them, update manually and finally deploy a new secrets version.  
-For local custom settings, just add a local `.env` file.  
-
-We use Cloud Run [Domain mapping](https://console.cloud.google.com/run/domains?project=melodic-keyword-303819)
-to redirect the domain [stg.okfn.org](https://stg.okfn.org) to this application. 
-Finally, we add a CNAME record to point this new domain (ensure remove the proxy and set the record a _DNS only_ at Cloudflare).  
-
-**Notes: The staging environment is using the `min-instances` setting as 0. So if no one is using it, the first request might give you a 502 error until the service starts.**
+To the secrets file
+```
+DB_ENGINE=django.db.backends.postgresql_psycopg2
+DB_NAME=website
+DB_USER=okfn
+DB_PASSWORD=XXXXX
+DB_HOST=oki-website-production:us-central1:oki-website-production
+DB_PORT=5432
+``
 
 #### Static files
 
 Django requires a `media` and a `static` folder. `media` is for uploaded files, `static` is for static files (JS and CSS mainly).  
-We create a
-[public bucket in Google Cloud Storage](https://console.cloud.google.com/storage/browser?project=melodic-keyword-303819)
-called `django-statics-okf-website-staging` (must be unique globally) for the `media` files.  
-All S3 files transfered to Google Cloud Storage. You can do it with the
+We create a public bucket in Google Cloud Storage
+([staging](https://console.cloud.google.com/storage/browser?project=melodic-keyword-303819) - 
+ [production](https://console.cloud.google.com/storage/browser?project=oki-website-production))
+called `django-statics-okf-website-ENV` (must be unique globally) for the `media` files.  
+All S3 files were transfered to Google Cloud Storage. You can do it with the
 [Data Transfer tool](https://console.cloud.google.com/transfer/cloud/jobs?cloudshell=true&project=melodic-keyword-303819)
 or with the command:
 
@@ -60,14 +76,19 @@ gsutil cp -R s3://okfn-org-staging gs://django-statics-okf-website-staging
 gsutil -m cp -R s3://okfn-org-staging gs://django-statics-okf-website-staging
 ```
 
-`static` files lives in a local folder (it would be better to move them
+Django `static` files lives in a local folder (it would be better to move them
  to Google Cloud Storage) and we serve them with `nginx`. 
 
 ### Redis
 
-Google bring us [Redis through the _Memorystore_ service](https://console.cloud.google.com/memorystore/redis/instances?project=melodic-keyword-303819),
+Google bring us Redis through the _Memorystore_ service
+([staging](https://console.cloud.google.com/memorystore/redis/instances?project=melodic-keyword-303819) - 
+ [prod](https://console.cloud.google.com/memorystore/redis/instances?project=oki-website-production)),
 this [requires](https://medium.com/google-cloud/using-memorystore-with-cloud-run-82e3d61df016)
-a [VPC connector](https://console.cloud.google.com/networking/connectors/list?project=melodic-keyword-303819)
+a VPC connector
+([staging](https://console.cloud.google.com/networking/connectors/list?project=melodic-keyword-303819) - 
+ [prod](https://console.cloud.google.com/networking/connectors/list?project=oki-website-production))
+
 to be visible from Cloud Run.  
 
 Note that you'll need a secret pointing to the Redis instance
@@ -82,10 +103,32 @@ Google allow using Elastic through a special service
 [manged by Elastic](https://cloud.elastic.co/deployments/d1bdd16cf365403fa92fdd7320a4d527)
 (external provider).  
 Note that `python manage.py update_index` runs every time we build the DockerFile.  
-You'll need a secret pointing to the Redis instance:
+
+You'll need a secret pointing to the Elastic instance:
 
 ```
 SEARCH_URL=https://USER:PASSWORD@okf-elastic-XX.com:92XX
 ```
 
-To see/manage Elastic indexes go [here](https://okf-elastic-stg-website.kb.europe-north1.gcp.elastic-cloud.com:9243/app/management/data/index_management/indices) (it's very difficult to find).  
+### Django app
+
+We use Google Cloud Run to run a service based on the `Dockerfile` in this repo.
+To deploy a new version, you only need to push to the `develop` or `main` branch
+(see triggers
+([staging]((https://console.cloud.google.com/cloud-build/triggers?project=melodic-keyword-303819)) - 
+ [prod](https://console.cloud.google.com/cloud-build/triggers?project=oki-website-production)).
+
+The secrets are defined in Google Secret Manager
+([staging](https://console.cloud.google.com/security/secret-manager?project=melodic-keyword-303819) -
+ [prod](https://console.cloud.google.com/security/secret-manager?project=oki-website-production)
+You'll need to edit CloudRun _Variable & settings_ to mount them as a file at /secrets/django_settings.  
+
+Note: Google does not allow to update secrets directly, so you need to _View secret value_ (from action menu)
+then copy them, update manually and finally deploy a new secrets version.  
+For local custom settings, just add a local `.env` file.  
+
+We use Cloud Run [Domain mapping](https://console.cloud.google.com/run/domains?project=melodic-keyword-303819)
+to redirect the domain [stg.okfn.org](https://stg.okfn.org) to this application. 
+Finally, we add a CNAME record to point this new domain (ensure remove the proxy and set the record a _DNS only_ at Cloudflare).  
+
+**Notes: The staging environment is using the `min-instances` setting as 0. So if no one is using it, the first request might give you a 502 error until the service starts.**
