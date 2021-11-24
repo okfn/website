@@ -139,3 +139,7 @@ to redirect the domains okfn.org and stg.okfn.org to this application.
 Finally, we add a CNAME record to point this new domain (ensure remove the proxy and set the record a _DNS only_ at Cloudflare).  
 
 **Notes: The staging environment is using the `min-instances` setting as 0. So if no one is using it, the first request might give you a 502 error until the service starts.**
+
+Final production DNS change notes:
+ - okfn.org main CNAME record from from okfn-production.openknowledge.io (proxied) to ghs.googlehosted.com (DNS only).
+ - www CNAME record from k8s-production.openknowledge.io (proxied) to ghs.googlehosted.com (DNS only).
