@@ -101,7 +101,9 @@ CACHE_URL=redis://10.23.81.3:6379/0
 ### Elasticsearch
 
 Google allow using Elastic through a special service
-[manged by Elastic](https://cloud.elastic.co/deployments/d1bdd16cf365403fa92fdd7320a4d527)
+manged by Elastic(
+[staging](https://cloud.elastic.co/deployments/d1bdd16cf365403fa92fdd7320a4d527) - 
+[prod](https://cloud.elastic.co/deployments/cecdc3ed33384418842d9cadfb2ff24c))
 (external provider).  
 Note that `python manage.py update_index` runs every time we build the DockerFile.  
 
@@ -143,3 +145,8 @@ Finally, we add a CNAME record to point this new domain (ensure remove the proxy
 Final production DNS change notes:
  - okfn.org main CNAME record from from okfn-production.openknowledge.io (proxied) to ghs.googlehosted.com (DNS only).
  - www CNAME record from k8s-production.openknowledge.io (proxied) to ghs.googlehosted.com (DNS only).
+
+## Alerts
+
+We defined Google [alert policies](https://console.cloud.google.com/monitoring/alerting/policies?project=oki-website-production)
+to be sent to the #infra-alerts Slack Channel.
