@@ -4,11 +4,11 @@
 #
 #    pip-compile requirements.dev.in
 #
-beautifulsoup4==4.9.3
+beautifulsoup4==4.10.0
     # via
     #   -c requirements.txt
     #   webtest
-coverage==5.5
+coverage==6.2
     # via -r requirements.dev.in
 django-webtest==1.9.7
     # via -r requirements.dev.in
