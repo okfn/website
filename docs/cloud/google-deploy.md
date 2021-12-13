@@ -126,6 +126,8 @@ The secrets are defined in Google Secret Manager
  [prod](https://console.cloud.google.com/security/secret-manager?project=oki-website-production)
 You'll need to edit Cloud Run _Variable & settings_ to mount them as a file at /secrets/django_settings.  
 
+Google Secrets are required to connect this application with external services like Redis, Elasticsearch, Google Analytics, etc.
+
 Cloud Run extra tasks:
  - Google does not allow to update secrets directly, so you need to _View secret value_ (from action menu)
 then copy them, update manually and finally deploy a new secrets version (for local custom settings, 
@@ -137,8 +139,8 @@ just add a local `.env` file.)
 We use Cloud Run Domain mapping
 ([staging](https://console.cloud.google.com/run/domains?project=melodic-keyword-303819) - 
  [prod](https://console.cloud.google.com/run/domains?project=oki-website-production)
-to redirect the domains okfn.org and stg.okfn.org to this application. 
-Finally, we add a CNAME record to point this new domain (ensure remove the proxy and set the record a _DNS only_ at Cloudflare).  
+to redirect the domains okfn.org and next.okfn.org to this application. 
+Finally, we add a CNAME record pointing to ghs.googlehosted.com (ensure remove the proxy and set the record a _DNS only_ at Cloudflare and).  
 
 **Notes: The staging environment is using the `min-instances` setting as 0. So if no one is using it, the first request might give you a 502 error until the service starts.**
 
