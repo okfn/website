@@ -5,7 +5,6 @@
 
 This is the [Django](https://www.djangoproject.com/)/[Django CMS](https://www.django-cms.org/) project that runs <http://okfn.org>.
 
-
 ## When do I need to modify this?
 
 http://okfn.org/ runs on Django CMS. A lot of the website content can be changed via the [admin panel](https://okfn.org/admin). If we just want to add or remove text and images on the site, it can probably be done via the admin panel. If we need to make global styling or data model changes, then we need to edit the code in this repo.
