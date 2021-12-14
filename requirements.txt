@@ -16,12 +16,6 @@ beautifulsoup4==4.10.0
     # via
     #   -r requirements.in
     #   topicaxis-opengraph
-boto3==1.16.10
-    # via django-s3-folder-storage
-botocore==1.19.10
-    # via
-    #   boto3
-    #   s3transfer
 cachetools==4.2.4
     # via google-auth
 certifi==2020.11.8
@@ -112,8 +106,6 @@ django-redis==5.0.0
     # via -r requirements.in
 django-reversion==4.0.0
     # via -r requirements.in
-django-s3-folder-storage==0.5
-    # via -r requirements.in
 django-sekizai==2.0.0
     # via
     #   -r requirements.in
@@ -125,7 +117,7 @@ django-spurl==0.6.7
 django-standard-form==1.1.1
     # via aldryn-search
 django-storages==1.10.1
-    # via django-s3-folder-storage
+    # via -r requirements.in
 django-treebeard==4.5.1
     # via
     #   -r requirements.in
@@ -184,10 +176,6 @@ idna==2.10
     # via requests
 iso3166==2.0.2
     # via -r requirements.in
-jmespath==0.10.0
-    # via
-    #   boto3
-    #   botocore
 jsonfield==3.1.0
     # via -r requirements.in
 libsass==0.21.0
@@ -201,7 +189,6 @@ micawber==0.5.4
 pep517==0.10.0
     # via pip-tools
 pillow==8.3.2
-    # hardcoded
     # via
     #   django-pagedown
     #   djangocms-text-ckeditor
@@ -212,7 +199,6 @@ protobuf==3.19.1
     # via
     #   google-api-core
     #   google-cloud-storage
-    #   googleapis-common-protos
 psycopg2-binary==2.8.6
     # via -r requirements.in
 pyasn1==0.4.8
@@ -221,8 +207,6 @@ pyasn1==0.4.8
     #   rsa
 pyasn1-modules==0.2.8
     # via google-auth
-python-dateutil==2.8.1
-    # via botocore
 pytz==2020.4
     # via django
 rcssmin==1.0.6
@@ -238,8 +222,6 @@ rjsmin==1.1.0
     # via django-compressor
 rsa==4.7.2
     # via google-auth
-s3transfer==0.3.3
-    # via boto3
 sgmllib3k==1.0.0
     # via feedparser
 six==1.15.0
@@ -251,11 +233,9 @@ six==1.15.0
     #   google-cloud-storage
     #   html5lib
     #   libsass
-    #   python-dateutil
 soupsieve==2.0.1
     # via beautifulsoup4
 sqlparse==0.4.2
-    # hardcoded
     # via django
 toml==0.10.2
     # via pep517
@@ -264,9 +244,7 @@ topicaxis-opengraph==0.5
 unidecode==1.1.1
     # via django-filer
 urllib3==1.26.5
-    # hardcoded
     # via
-    #   botocore
     #   elasticsearch
     #   requests
 urlobject==2.4.3
