@@ -34,7 +34,7 @@ click==7.1.2
     # via pip-tools
 cssmin==0.2.0
     # via -r requirements.in
-django==2.2.24
+django==2.2.25
     # via
     #   -r requirements.in
     #   aldryn-boilerplates
@@ -200,7 +200,8 @@ micawber==0.5.4
     # via -r requirements.in
 pep517==0.10.0
     # via pip-tools
-pillow==8.2.0
+pillow==8.3.2
+    # hardcoded
     # via
     #   django-pagedown
     #   djangocms-text-ckeditor
@@ -253,7 +254,8 @@ six==1.15.0
     #   python-dateutil
 soupsieve==2.0.1
     # via beautifulsoup4
-sqlparse==0.4.1
+sqlparse==0.4.2
+    # hardcoded
     # via django
 toml==0.10.2
     # via pep517
