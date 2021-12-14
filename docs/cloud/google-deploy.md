@@ -140,7 +140,7 @@ We use Cloud Run Domain mapping
 ([staging](https://console.cloud.google.com/run/domains?project=melodic-keyword-303819) - 
  [prod](https://console.cloud.google.com/run/domains?project=oki-website-production)
 to redirect the domains okfn.org and next.okfn.org to this application. 
-Finally, we add a CNAME record pointing to ghs.googlehosted.com (ensure remove the proxy and set the record a _DNS only_ at Cloudflare and).  
+Finally, we add a CNAME record pointing to ghs.googlehosted.com (ensure to remove the proxy and set the record a _DNS only_ at Cloudflare ).  
 
 **Notes: The staging environment is using the `min-instances` setting as 0. So if no one is using it, the first request might give you a 502 error until the service starts.**
 
