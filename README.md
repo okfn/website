@@ -69,17 +69,8 @@ docker run -d -p 8888:80 -e DATABASE_URL=<change_me> -e <...> okfn
 
 ### File uploads
 
-Because this is a CMS project, a lot of the site content is created via the web UI. This means a lot of the images on the site are file uploads, not static content so if you run with a dump of the production or staging DB you will have a lot of blanks where images are supposed to go. In production, the uploaded files are hosted on S3.
-
-The safe way to run the local dev environment with the file uploads corresponding to the DB content is to clone the files from the staging or production bucket(corresponding to the DB dump) to your local environment e.g:
-
-```bash
-mkdir media
-cd media
-aws s3 cp s3://okfn-org-staging/media/ . --recursive
-```
-
-Running a local dev environment connected to the prod S3 environment is not recommended.
+Because this is a CMS project, a lot of the site content is created via the web UI. This means a lot of the images on the site are file uploads.  
+In staging and production, the uploaded files are hosted on Google Cloud Storage.
 
 ## Frontend and Static Assets
 

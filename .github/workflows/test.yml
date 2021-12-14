@@ -13,18 +13,23 @@ jobs:
         with:
           python-version: 3.8
 
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: |
-          npm install
           pip install --upgrade pip
           pip install -r requirements.txt
           pip install -r requirements.dev.txt
+
+      - name: Install Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '10'
 
       - name: Ensure migrations are up-to-date
         run: python manage.py makemigrations --check
 
       - name: Ensure JS and CSS are up-to-date
         run: |
+          npm install
           npx grunt sass:dist
           npx grunt postcss:dist
           npx grunt uglify:scripts
