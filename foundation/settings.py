@@ -249,11 +249,11 @@ elif CACHE_URL.upper() == 'DB':
 elif CACHE_URL.upper() == 'FILE':
     # File system cache
     CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-        'LOCATION': '/var/tmp/django_fs_cache',
+        'default': {
+            'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+            'LOCATION': '/var/tmp/django_fs_cache',
+        }
     }
-}
 
 # Database configuration
 
