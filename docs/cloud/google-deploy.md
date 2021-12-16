@@ -83,7 +83,7 @@ Django `static` files lives in a local folder (it would be better to move them
 ### Redis
 
 Google bring us Redis through the _Memorystore_ service
-([staging](https://console.cloud.google.com/memorystore/redis/instances?project=melodic-keyword-303819) - 
+(staging: deleted) - 
  [prod](https://console.cloud.google.com/memorystore/redis/instances?project=oki-website-production)),
 this [requires](https://medium.com/google-cloud/using-memorystore-with-cloud-run-82e3d61df016)
 a VPC connector
@@ -101,8 +101,7 @@ CACHE_URL=redis://10.23.81.3:6379/0
 ### Elasticsearch
 
 Google allow using Elastic through a special service
-manged by Elastic(
-[staging](https://cloud.elastic.co/deployments/d1bdd16cf365403fa92fdd7320a4d527) - 
+manged by Elastic (staging: deleted - 
 [prod](https://cloud.elastic.co/deployments/cecdc3ed33384418842d9cadfb2ff24c))
 (external provider).  
 Note that `python manage.py update_index` runs every time we build the DockerFile.  
