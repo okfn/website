@@ -36,6 +36,5 @@ RUN . /root/.nvm/nvm.sh && nvm use 10
 ENV PORT 80
 EXPOSE $PORT
 
-RUN python manage.py collectstatic --noinput
-
-CMD python manage.py migrate && python manage.py update_index && /usr/bin/supervisord
+COPY ./docker-entrypoint.sh /
+ENTRYPOINT ["/docker-entrypoint.sh"]
