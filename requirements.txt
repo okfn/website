@@ -68,7 +68,7 @@ django-cms==3.9.0
     #   djangocms-link
     #   djangocms-picture
     #   djangocms-text-ckeditor
-django-compressor==2.4.1
+django-compressor==3.1
     # via -r requirements.in
 django-countries==7.2.1
     # via -r requirements.in
@@ -209,7 +209,7 @@ pyasn1-modules==0.2.8
     # via google-auth
 pytz==2020.4
     # via django
-rcssmin==1.0.6
+rcssmin==1.1.0
     # via django-compressor
 redis==3.5.3
     # via django-redis
@@ -218,7 +218,7 @@ requests==2.26.0
     #   -r requirements.in
     #   google-api-core
     #   google-cloud-storage
-rjsmin==1.1.0
+rjsmin==1.2.0
     # via django-compressor
 rsa==4.7.2
     # via google-auth
@@ -227,7 +227,6 @@ sgmllib3k==1.0.0
 six==1.15.0
     # via
     #   aldryn-common
-    #   django-compressor
     #   django-spurl
     #   google-auth
     #   google-cloud-storage
