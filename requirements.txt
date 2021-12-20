@@ -104,7 +104,7 @@ django-polymorphic==3.0.0
     # via django-filer
 django-redis==5.0.0
     # via -r requirements.in
-django-reversion==4.0.0
+django-reversion==4.0.1
     # via -r requirements.in
 django-sekizai==2.0.0
     # via
