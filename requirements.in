@@ -11,7 +11,7 @@ django-compressor==2.4.1
 django-csp==3.7
 django-countries==7.2.1
 django-haystack==3.1.1
-django-redis==5.0.0
+django-redis==5.1.0
 django-filer==2.0.2
 django-formtools==2.3
 django-markdown-deux==1.0.5
