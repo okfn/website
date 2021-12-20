@@ -116,7 +116,7 @@ django-spurl==0.6.7
     # via aldryn-search
 django-standard-form==1.1.1
     # via aldryn-search
-django-storages==1.10.1
+django-storages==1.12.3
     # via -r requirements.in
 django-treebeard==4.5.1
     # via
