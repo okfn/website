@@ -48,4 +48,4 @@ google-cloud-storage==1.42.3
 google-auth==2.3.3
 
 # search engine
-elasticsearch==7.15.1
+elasticsearch==7.16.1
