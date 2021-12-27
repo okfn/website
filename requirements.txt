@@ -102,7 +102,7 @@ django-pagedown==2.2.1
     # via -r requirements.in
 django-polymorphic==3.0.0
     # via django-filer
-django-redis==5.0.0
+django-redis==5.2.0
     # via -r requirements.in
 django-reversion==4.0.0
     # via -r requirements.in
