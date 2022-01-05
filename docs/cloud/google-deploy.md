@@ -82,14 +82,10 @@ Django `static` files lives in a local folder (it would be better to move them
 
 ### Redis
 
-Google bring us Redis through the _Memorystore_ service
-(staging: deleted) - 
- [prod](https://console.cloud.google.com/memorystore/redis/instances?project=oki-website-production)),
-this [requires](https://medium.com/google-cloud/using-memorystore-with-cloud-run-82e3d61df016)
-a VPC connector
-([staging](https://console.cloud.google.com/networking/connectors/list?project=melodic-keyword-303819) - 
- [prod](https://console.cloud.google.com/networking/connectors/list?project=oki-website-production))
-
+Google bring us Redis through the _Memorystore_ service. We are not using this service now.  
+To activate it: Create an [instance](https://console.cloud.google.com/memorystore/redis/instances?project=oki-website-production)
+This [requires](https://medium.com/google-cloud/using-memorystore-with-cloud-run-82e3d61df016)
+a [VPC connector](https://console.cloud.google.com/networking/connectors/list?project=oki-website-production) 
 to be visible from Cloud Run.  
 
 Note that you'll need a secret pointing to the Redis instance
@@ -98,19 +94,21 @@ Example:
 CACHE_URL=redis://10.23.81.3:6379/0
 ```
 
-### Elasticsearch
+### Search engine
 
-Google allow using Elastic through a special service
-manged by Elastic (staging: deleted - 
-[prod](https://cloud.elastic.co/deployments/cecdc3ed33384418842d9cadfb2ff24c))
-(external provider).  
+We are using [Django Haystack](https://django-haystack.readthedocs.io/en/master/) 
+to set up the application search engine (you can pick different technologies).  
+
+Google Cloud allows you to use Elasticsearch through a special service manged by Elastic.  
+We are not using this service anymore, to use it, you will need to create an instance 
+and set up the `SEARCH_URL=https://USER:PASSWORD@okf-elastic-XX.com:92XX`.  
+
+We are now using a simpler Haystack solution:  
+[Whoos](https://django-haystack.readthedocs.io/en/v2.3.2/tutorial.html#whoosh) (just 
+removing the `SEARCH_URL` config value from _Google secrets_).  
+
 Note that `python manage.py update_index` runs every time we build the DockerFile.  
 
-You'll need a secret pointing to the Elastic instance:
-
-```
-SEARCH_URL=https://USER:PASSWORD@okf-elastic-XX.com:92XX
-```
 
 ### Django app
 

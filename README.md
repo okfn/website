@@ -1,6 +1,6 @@
 # okfn.org
 
-![Run tests](https://github.com/okfn/website/workflows/Run%20tests/badge.svg?branch=master)
+![Run tests](https://github.com/okfn/website/workflows/Run%20tests/badge.svg?branch=main)
 [![codecov](https://codecov.io/gh/okfn/website/branch/master/graph/badge.svg?token=tYNQSAiFYu)](https://codecov.io/gh/okfn/website)
 
 This is the [Django](https://www.djangoproject.com/)/[Django CMS](https://www.django-cms.org/) project that runs <http://okfn.org>.
@@ -14,22 +14,23 @@ http://okfn.org/ runs on Django CMS. A lot of the website content can be changed
 
 You must have the following installed:
 
-- Python 3
+- Python 3.8
 - Node JS
 
-Also, the python packages being used require the following libraries to be installed:
-- libxml - `sudo apt-get install libxml2-dev`
-- libxslt - `sudo apt-get install libxslt1-dev`
-- libsasl2 - `sudo apt-get install libsasl2-dev`
-- Python Imaging Library (PIL) dependencies, see [here](http://stackoverflow.com/a/21151777/3449709) for quick ubuntu instructions.
+The [/Dockerfile](/Dockerfile) (used for staging/production) and the [requirements file](/requirements.txt)
+(built with `pip-tools`) in this repo shows you the application dependencies.
 
-You should also follow any install instructions inside a Python virtual environment. Explaining `virtualenv` is outside of the scope of this README, but [this tutorial might help](http://hackercodex.com/guide/python-development-environment-on-mac-osx/).
+## Running in staging or production
+
+Read this [doc](/docs/cloud/google-deploy.md).  
 
 ## Running in development
 
 ### Database
 
-It is possible to run the app with no database content. If `DATABASE_URL` is not set, we fall back to a blank SQLite database so this step can be skipped for a minimal case.
+It is possible to run the app with no database content. If databaset settings are not set,
+we fall back to a blank SQLite database (defined in the [.env.base](/.env.base) file)
+so this step can be skipped for a minimal case.
 
 To run with a database, you will need a local Postgres server.
 
@@ -40,11 +41,22 @@ To run with a database, you will need a local Postgres server.
 ### Running the application
 
 Cherry-pick environment variables from `.env.example` you'd like to set and add it to the `.env` file.
-If no env vars are set, we will fall back to default values for development.
+If no env vars are set, we will fall back to default [.env.base](/.env.base) file.
 
-If running with Postgres, you will need `DATABASE_URL="postgres://user:pass@127.0.0.1:5432/okfn"` set as a minimum.
+If running with Postgres, you will need to set:
+
+```
+DB_ENGINE=django.db.backends.postgresql_psycopg2
+DB_NAME=okfn
+DB_USER=user
+DB_PASSWORD=pass
+DB_HOST=localhost
+DB_PORT=5432
+```
 
 Prepare the app:
+
+Create a Python 3.8 local environment (e.g. `python3.8 -m venv ~/okf-website-env`)
 
 ```bash
 pip install -r requirements.txt
@@ -60,16 +72,17 @@ Start the server:
 python manage.py runserver
 ```
 
-Another option is to use Docker. For this one you should configure your database to work with remote connections using a proper IP address in the connection string or you should use default SQLite database (omit `DATABASE_URL`):
+Another option is to use Docker.
 
 ```bash
 docker build -t okfn .
-docker run -d -p 8888:80 -e DATABASE_URL=<change_me> -e <...> okfn
+docker run -d -p 8888:80 okfn
 ```
 
 ### File uploads
 
-Because this is a CMS project, a lot of the site content is created via the web UI. This means a lot of the images on the site are file uploads.  
+Because this is a CMS project, a lot of the site content is created via the web UI.  
+This means a lot of the images on the site are file uploads.  
 In staging and production, the uploaded files are hosted on Google Cloud Storage.
 
 ## Frontend and Static Assets
@@ -86,11 +99,10 @@ We commit compiled static assets to the repo
 
 ## Deployment
 
-Production deployment is based on this [Dockerfile](https://github.com/okfn/website/blob/master/Dockerfile). When we want to deploy, we push a tag to this repo. Pushing a tag will trigger a DockerCloud build and publish an image on https://hub.docker.com/r/openknowledge/website/
-
-We can then use the ansible playbooks/helm charts in [okfn/devops](https://github.com/okfn/devops) (private repo) to deploy the image to Google Cloud. Further docs on this are in the devops repo.
-
+Production deployment is based on this [Dockerfile](/Dockerfile). When we want to deploy,
+we just push to `main` branch (or `develop` branch for staging environment).
 ## Dependency Management
 
 Dependencies are managed with [pip-tools](https://github.com/jazzband/pip-tools).
-Add new packages to `requirements.in` / `requirements.dev.in` and compile `requirements.txt` / `requirements.dev.txt` with `pip-compile`.
+Add new packages to `requirements.in` / `requirements.dev.in` 
+and compile `requirements.txt` / `requirements.dev.txt` with `pip-compile`.
