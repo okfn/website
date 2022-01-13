@@ -7,32 +7,32 @@ Django==2.2.26
 aldryn-search==1.1.0
 cssmin==0.2.0
 django-cms==3.9.0
-django-compressor==2.4.1
+django-compressor==3.1
 django-csp==3.7
 django-countries==7.2.1
 django-haystack==3.1.1
-django-redis==5.0.0
+django-redis==5.2.0
 django-filer==2.0.2
 django-formtools==2.3
 django-markdown-deux==1.0.5
 django-mptt==0.13.4
 django-pagedown==2.2.1
-django-reversion==4.0.0
+django-reversion==4.0.1
 django-sekizai==2.0.0
-django-storages==1.10.1
+django-storages==1.12.3
 django-treebeard==4.5.1
 djangocms-admin-style==2.0.2
 djangocms-file==3.0.0
 djangocms-link==3.0.0
 djangocms-picture==3.0.0
 djangocms-text-ckeditor==4.0.0
-easy-thumbnails==2.7.1
+easy-thumbnails==2.8
 feedparser==6.0.8
 gunicorn==20.1.0
 iso3166==2.0.2
 libsass==0.21.0
 psycopg2-binary==2.8.6
-requests==2.26.0
+requests==2.27.1
 topicaxis-opengraph==0.5
 whoosh==2.7.4
 
@@ -48,7 +48,7 @@ google-cloud-storage==1.44.0
 google-auth==2.3.3
 
 # search engine
-elasticsearch==7.15.1
+elasticsearch==7.16.2
 
 # django-pagedown, djangocms-text-ckeditor and easy-thumbnails
 # use it but don't specify the version
