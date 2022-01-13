@@ -28,6 +28,8 @@ click==7.1.2
     # via pip-tools
 cssmin==0.2.0
     # via -r requirements.in
+cssselect2==0.4.1
+    # via svglib
 django==2.2.25
     # via
     #   -r requirements.in
@@ -139,7 +141,7 @@ djangocms-picture==3.0.0
     # via -r requirements.in
 djangocms-text-ckeditor==4.0.0
     # via -r requirements.in
-easy-thumbnails==2.7.1
+easy-thumbnails==2.8
     # via
     #   -r requirements.in
     #   django-filer
@@ -181,7 +183,9 @@ jsonfield==3.1.0
 libsass==0.21.0
     # via -r requirements.in
 lxml==4.6.5
-    # via aldryn-search
+    # via
+    #   aldryn-search
+    #   svglib
 markdown2==2.4.0
     # via django-markdown-deux
 micawber==0.5.4
@@ -194,12 +198,14 @@ pillow==9.0.0
     #   django-pagedown
     #   djangocms-text-ckeditor
     #   easy-thumbnails
+    #   reportlab
 pip-tools==6.4.0
     # via -r requirements.in
 protobuf==3.19.1
     # via
     #   google-api-core
     #   google-cloud-storage
+    #   googleapis-common-protos
 psycopg2-binary==2.8.6
     # via -r requirements.in
 pyasn1==0.4.8
@@ -214,6 +220,10 @@ rcssmin==1.0.6
     # via django-compressor
 redis==3.5.3
     # via django-redis
+reportlab==3.6.5
+    # via
+    #   easy-thumbnails
+    #   svglib
 requests==2.26.0
     # via
     #   -r requirements.in
@@ -238,6 +248,12 @@ soupsieve==2.0.1
     # via beautifulsoup4
 sqlparse==0.4.2
     # via django
+svglib==1.1.0
+    # via easy-thumbnails
+tinycss2==1.1.1
+    # via
+    #   cssselect2
+    #   svglib
 toml==0.10.2
     # via pep517
 topicaxis-opengraph==0.5
@@ -251,7 +267,10 @@ urllib3==1.26.5
 urlobject==2.4.3
     # via django-spurl
 webencodings==0.5.1
-    # via html5lib
+    # via
+    #   cssselect2
+    #   html5lib
+    #   tinycss2
 wheel==0.36.2
     # via pip-tools
 whoosh==2.7.4
