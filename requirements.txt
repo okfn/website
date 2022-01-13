@@ -78,7 +78,7 @@ django-csp==3.7
     # via -r requirements.in
 django-environ==0.8.1
     # via -r requirements.in
-django-filer==2.0.2
+django-filer==2.1.2
     # via
     #   -r requirements.in
     #   djangocms-file
@@ -162,7 +162,7 @@ google-auth==2.3.3
     #   google-cloud-storage
 google-cloud-core==2.2.1
     # via google-cloud-storage
-google-cloud-storage==1.44.0
+google-cloud-storage==2.0.0
     # via -r requirements.in
 google-crc32c==1.3.0
     # via google-resumable-media
@@ -224,7 +224,7 @@ reportlab==3.6.5
     # via
     #   easy-thumbnails
     #   svglib
-requests==2.26.0
+requests==2.27.1
     # via
     #   -r requirements.in
     #   google-api-core
@@ -240,7 +240,6 @@ six==1.15.0
     #   aldryn-common
     #   django-spurl
     #   google-auth
-    #   google-cloud-storage
     #   html5lib
     #   libsass
 soupsieve==2.0.1
