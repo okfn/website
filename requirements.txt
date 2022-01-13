@@ -28,6 +28,8 @@ click==7.1.2
     # via pip-tools
 cssmin==0.2.0
     # via -r requirements.in
+cssselect2==0.4.1
+    # via svglib
 django==2.2.26
     # via
     #   -r requirements.in
@@ -68,7 +70,7 @@ django-cms==3.9.0
     #   djangocms-link
     #   djangocms-picture
     #   djangocms-text-ckeditor
-django-compressor==2.4.1
+django-compressor==3.1
     # via -r requirements.in
 django-countries==7.2.1
     # via -r requirements.in
@@ -76,7 +78,7 @@ django-csp==3.7
     # via -r requirements.in
 django-environ==0.8.1
     # via -r requirements.in
-django-filer==2.0.2
+django-filer==2.1.2
     # via
     #   -r requirements.in
     #   djangocms-file
@@ -102,9 +104,9 @@ django-pagedown==2.2.1
     # via -r requirements.in
 django-polymorphic==3.0.0
     # via django-filer
-django-redis==5.0.0
+django-redis==5.2.0
     # via -r requirements.in
-django-reversion==4.0.0
+django-reversion==4.0.1
     # via -r requirements.in
 django-sekizai==2.0.0
     # via
@@ -116,7 +118,7 @@ django-spurl==0.6.7
     # via aldryn-search
 django-standard-form==1.1.1
     # via aldryn-search
-django-storages==1.10.1
+django-storages==1.12.3
     # via -r requirements.in
 django-treebeard==4.5.1
     # via
@@ -139,12 +141,12 @@ djangocms-picture==3.0.0
     # via -r requirements.in
 djangocms-text-ckeditor==4.0.0
     # via -r requirements.in
-easy-thumbnails==2.7.1
+easy-thumbnails==2.8
     # via
     #   -r requirements.in
     #   django-filer
     #   djangocms-picture
-elasticsearch==7.15.1
+elasticsearch==7.16.2
     # via -r requirements.in
 feedparser==6.0.8
     # via -r requirements.in
@@ -181,7 +183,9 @@ jsonfield==3.1.0
 libsass==0.21.0
     # via -r requirements.in
 lxml==4.6.5
-    # via aldryn-search
+    # via
+    #   aldryn-search
+    #   svglib
 markdown2==2.4.0
     # via django-markdown-deux
 micawber==0.5.4
@@ -194,12 +198,14 @@ pillow==9.0.0
     #   django-pagedown
     #   djangocms-text-ckeditor
     #   easy-thumbnails
+    #   reportlab
 pip-tools==6.4.0
     # via -r requirements.in
 protobuf==3.19.1
     # via
     #   google-api-core
     #   google-cloud-storage
+    #   googleapis-common-protos
 psycopg2-binary==2.8.6
     # via -r requirements.in
 pyasn1==0.4.8
@@ -210,16 +216,20 @@ pyasn1-modules==0.2.8
     # via google-auth
 pytz==2020.4
     # via django
-rcssmin==1.0.6
+rcssmin==1.1.0
     # via django-compressor
 redis==3.5.3
     # via django-redis
+reportlab==3.6.5
+    # via
+    #   easy-thumbnails
+    #   svglib
 requests==2.26.0
     # via
     #   -r requirements.in
     #   google-api-core
     #   google-cloud-storage
-rjsmin==1.1.0
+rjsmin==1.2.0
     # via django-compressor
 rsa==4.7.2
     # via google-auth
@@ -228,7 +238,6 @@ sgmllib3k==1.0.0
 six==1.15.0
     # via
     #   aldryn-common
-    #   django-compressor
     #   django-spurl
     #   google-auth
     #   google-cloud-storage
@@ -238,6 +247,12 @@ soupsieve==2.0.1
     # via beautifulsoup4
 sqlparse==0.4.2
     # via django
+svglib==1.1.0
+    # via easy-thumbnails
+tinycss2==1.1.1
+    # via
+    #   cssselect2
+    #   svglib
 toml==0.10.2
     # via pep517
 topicaxis-opengraph==0.5
@@ -251,7 +266,10 @@ urllib3==1.26.5
 urlobject==2.4.3
     # via django-spurl
 webencodings==0.5.1
-    # via html5lib
+    # via
+    #   cssselect2
+    #   html5lib
+    #   tinycss2
 wheel==0.36.2
     # via pip-tools
 whoosh==2.7.4
