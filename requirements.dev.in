@@ -3,6 +3,6 @@
 
 -c requirements.txt
 
-flake8==3.9.2
-django-webtest==1.9.7
+flake8==4.0.1
+django-webtest==1.9.9
 coverage==6.0.2
