@@ -146,7 +146,7 @@ easy-thumbnails==2.8
     #   -r requirements.in
     #   django-filer
     #   djangocms-picture
-elasticsearch==7.16.2
+elasticsearch==7.16.3
     # via -r requirements.in
 feedparser==6.0.8
     # via -r requirements.in
