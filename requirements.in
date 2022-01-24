@@ -3,8 +3,7 @@
 
 pip-tools==6.4.0
 
-Django==2.2.26
-aldryn-search==1.1.0
+Django==3.2.11
 cssmin==0.2.0
 django-cms==3.9.0
 django-compressor==3.1
@@ -18,37 +17,35 @@ django-markdown-deux==1.0.5
 django-mptt==0.13.4
 django-pagedown==2.2.1
 django-reversion==4.0.1
-django-sekizai==2.0.0
+django-sekizai==3.0.0
 django-storages==1.12.3
 django-treebeard==4.5.1
-djangocms-admin-style==2.0.2
+djangocms-admin-style==3.0.0
 djangocms-file==3.0.0
 djangocms-link==3.0.0
 djangocms-picture==3.0.0
 djangocms-text-ckeditor==4.0.0
-easy-thumbnails==2.8
+easy-thumbnails==2.8.1
 feedparser==6.0.8
 gunicorn==20.1.0
 iso3166==2.0.2
 libsass==0.21.0
-psycopg2-binary==2.8.6
+psycopg2-binary==2.9.3
 requests==2.27.1
 topicaxis-opengraph==0.5
 whoosh==2.7.4
 
-# needed by aldryn-video
-aldryn-boilerplates==0.8.0
 jsonfield==3.1.0
 beautifulsoup4==4.10.0
 micawber==0.5.4
 
 # for google
 django-environ==0.8.1
-google-cloud-storage==2.0.0
+google-cloud-storage==2.1.0
 google-auth==2.3.3
 
 # search engine
-elasticsearch==7.16.2
+elasticsearch==7.16.3
 
 # django-pagedown, djangocms-text-ckeditor and easy-thumbnails
 # use it but don't specify the version
