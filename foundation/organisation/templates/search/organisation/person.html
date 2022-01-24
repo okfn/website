@@ -1,5 +1,6 @@
 {% load markdown_deux_tags %}
 {% load thumbnail %}
+{% load static %}
 
 <h3>{{ person.name }}</h3>
 <div class="row">
@@ -7,8 +8,14 @@
     {# TODO this fallback image it's not working if an error occurs with the desired image #}
     <img
       class="img-responsive"
-      src="{% thumbnail person.photo|default:'assets/img/avatar-none.png' 116x116 %}"
+      src="
+      {% if person.photo.href %}
+        {% thumbnail person.photo 116x116 %}
+      {% else %}
+        {% static 'img/avatar-none.png' %}
+      {% endif %}"
       alt="{{ person.name }}"
+      {% if not person.photo %}style="width: 116px; height: 116px;"{% endif %}
     >
   </div>
   <div class="col-md-8">
