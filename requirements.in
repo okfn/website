@@ -21,7 +21,7 @@ django-reversion==4.0.1
 django-sekizai==2.0.0
 django-storages==1.12.3
 django-treebeard==4.5.1
-djangocms-admin-style==2.0.2
+djangocms-admin-style==3.0.0
 djangocms-file==3.0.0
 djangocms-link==3.0.0
 djangocms-picture==3.0.0
