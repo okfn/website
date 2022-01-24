@@ -137,7 +137,6 @@ INSTALLED_APPS = (
     'djangocms_picture',
     'djangocms_link',
     'djangocms_text_ckeditor',
-    'aldryn_search',
     'aldryn_video',
     'aldryn_quote',
     'easy_thumbnails',
@@ -203,7 +202,6 @@ TEMPLATES = [
             ),
             "loaders": [
                 "django.template.loaders.filesystem.Loader",
-                "aldryn_boilerplates.template_loaders.AppDirectoriesLoader",
                 "django.template.loaders.app_directories.Loader",
             ],
         },
@@ -216,7 +214,6 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
-ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
 ROOT_URLCONF = 'foundation.urls'
 WSGI_APPLICATION = 'foundation.wsgi.application'
 
