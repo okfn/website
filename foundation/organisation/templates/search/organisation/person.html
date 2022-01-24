@@ -9,7 +9,7 @@
     <img
       class="img-responsive"
       src="
-      {% if person.photo.href %}
+      {% if person.photo %}
         {% thumbnail person.photo 116x116 %}
       {% else %}
         {% static 'img/avatar-none.png' %}
