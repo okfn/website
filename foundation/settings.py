@@ -124,7 +124,6 @@ INSTALLED_APPS = (
     'pagedown',
     'markdown_deux',
     'haystack',
-    'spurl',
     'standard_form',
     'formtools',
     'sendemail',
@@ -514,6 +513,8 @@ THUMBNAIL_DEBUG = DEBUG  # easy-thumbnails debugging
 QUOTE_STYLES = (
     'carousel',
 )
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 if TEST_MODE:
     from .test_settings import *  # noqa
