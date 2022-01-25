@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-from django.utils.six.moves.urllib.parse import urljoin
+from urllib.parse import urljoin
 
 from django.templatetags.static import PrefixNode
 from django.utils.translation import ugettext_lazy as _

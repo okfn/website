@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import re
-from django.utils.six.moves.urllib.parse import urlparse
+from urllib.parse import urlparse
 
 from django.core.exceptions import ValidationError
 from django.db import models
@@ -12,10 +12,7 @@ from jsonfield import JSONField
 
 from .utils import build_html_iframe, get_embed_code, get_player_url
 
-from django.utils.encoding import python_2_unicode_compatible
 
-
-@python_2_unicode_compatible
 class OEmbedVideoPlugin(CMSPlugin):
     # exact provide name from youtube oembed response
     YOUTUBE = 'YouTube'
