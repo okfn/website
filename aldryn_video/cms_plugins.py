@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from urllib.parse import urljoin
 
 from django.templatetags.static import PrefixNode
