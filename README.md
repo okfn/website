@@ -85,6 +85,9 @@ Because this is a CMS project, a lot of the site content is created via the web 
 This means a lot of the images on the site are file uploads.  
 In staging and production, the uploaded files are hosted on Google Cloud Storage.
 
+If you want to get all production/staging media files you can download them from Google
+Cloud Storage and put them in a local `media` directory (`MEDIA_ROOT` from settings).
+
 ## Frontend and Static Assets
 
 Javscript and SCSS files live in `/src` and are compiled to `/static`. We use grunt for running front-end tasks.
@@ -106,3 +109,7 @@ we just push to `main` branch (or `develop` branch for staging environment).
 Dependencies are managed with [pip-tools](https://github.com/jazzband/pip-tools).
 Add new packages to `requirements.in` / `requirements.dev.in` 
 and compile `requirements.txt` / `requirements.dev.txt` with `pip-compile`.
+
+## Changelog
+
+All changes must be documented at the [CHANGELOG](CHANGELOG.md) file
