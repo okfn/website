@@ -124,7 +124,6 @@ INSTALLED_APPS = (
     'pagedown',
     'markdown_deux',
     'haystack',
-    'standard_form',
     'formtools',
     'sendemail',
 
