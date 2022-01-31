@@ -16,7 +16,7 @@ django-formtools==2.3
 django-markdown-deux==1.0.5
 django-mptt==0.13.4
 django-pagedown==2.2.1
-django-reversion==4.0.1
+django-reversion==4.0.2
 django-sekizai==3.0.0
 django-storages==1.12.3
 django-treebeard==4.5.1
