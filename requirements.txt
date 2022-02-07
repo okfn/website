@@ -93,7 +93,7 @@ django-redis==5.2.0
     # via -r requirements.in
 django-reversion==4.0.1
     # via -r requirements.in
-django-sekizai==3.0.0
+django-sekizai==3.0.1
     # via
     #   -r requirements.in
     #   django-cms
