@@ -1,7 +1,7 @@
 # This file contains the direct requirements
 # Use pip-compile to create requirements.txt from this
 
-pip-tools==6.4.0
+pip-tools==6.5.0
 
 Django==3.2.11
 cssmin==0.2.0
