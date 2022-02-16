@@ -450,7 +450,8 @@ CSP_FRAME_SRC = [
 ]
 CSP_CONNECT_SRC = asset_hosts + [
     "'self'",
-    'https://www.google-analytics.com'
+    'https://www.google-analytics.com',
+    'https://plausible.io',
 ]
 # Report-URI is no longer recommended
 # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri
