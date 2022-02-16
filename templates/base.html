@@ -29,7 +29,11 @@
         {% endblock %}
     {% endblock %}
     {% block head-scripts %}{% endblock head-scripts %}
-    <script defer data-domain="next.okfn.org" src="https://plausible.io/js/plausible.js"></script>
+
+    {% if environment == 'STAGING' %}
+    <script defer data-domain="{{ host }}" src="https://plausible.io/js/plausible.js"></script>
+    {% endif %}
+
 </head>
 <body {% block body-attributes %}{% endblock %} class='{% block body-class %}{% endblock %}'>
 {# django-cms toolbar injector -- this must remain in base #}
