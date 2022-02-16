@@ -413,6 +413,7 @@ CSP_SCRIPT_SRC = asset_hosts + [
     '*.list-manage.com',
     'https://youtube.com',
     'https://www.youtube.com',
+    'https://plausible.io',
 ]
 CSP_STYLE_SRC = asset_hosts + [
     "'self'",
