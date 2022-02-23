@@ -123,7 +123,7 @@ The secrets are defined in Google Secret Manager
  [prod](https://console.cloud.google.com/security/secret-manager?project=oki-website-production)
 You'll need to edit Cloud Run _Variable & settings_ to mount them as a file at /secrets/django_settings.  
 
-Google Secrets are required to connect this application with external services like Redis, Elasticsearch, Google Analytics, etc.
+Google Secrets are required to connect this application with external services like Redis, Elasticsearch, etc.
 
 Cloud Run extra tasks:
  - Google does not allow to update secrets directly, so you need to _View secret value_ (from action menu)
