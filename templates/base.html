@@ -30,7 +30,7 @@
     {% endblock %}
     {% block head-scripts %}{% endblock head-scripts %}
 
-    {% if environment == 'STAGING' %}
+    {% if environment == 'PRODUCTION' %}
     <script defer data-domain="{{ host }}" src="https://plausible.io/js/plausible.js"></script>
     {% endif %}
 
