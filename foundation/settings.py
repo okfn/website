@@ -404,7 +404,6 @@ CSP_SCRIPT_SRC = asset_hosts + [
     "'unsafe-inline'",
     "'unsafe-eval'",
     'https://js-agent.newrelic.com',
-    'https://www.google-analytics.com',
     'https://use.typekit.net',
     'https://bam.nr-data.net',
     'https://downloads.mailchimp.com',
@@ -429,7 +428,6 @@ CSP_IMG_SRC = asset_hosts + [
     'https://secure.gravatar.com',
     'https://p.typekit.net',
     'https://ping.typekit.net',
-    'https://www.google-analytics.com',
     'https://cdn-images.mailchimp.com'
 ]
 CSP_FONT_SRC = asset_hosts + [
@@ -449,7 +447,6 @@ CSP_FRAME_SRC = [
 ]
 CSP_CONNECT_SRC = asset_hosts + [
     "'self'",
-    'https://www.google-analytics.com',
     'https://plausible.io',
 ]
 # Report-URI is no longer recommended
