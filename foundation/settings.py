@@ -194,7 +194,6 @@ TEMPLATES = [
                 "cms.context_processors.cms_settings",
                 "sekizai.context_processors.sekizai",
                 "lib.context_processors.site",
-                "lib.context_processors.google_analytics",
                 "lib.context_processors.mailchimp",
                 "django.template.context_processors.request",
             ),
@@ -458,18 +457,12 @@ CSP_CONNECT_SRC = asset_hosts + [
 # CSP_REPORT_URI = env.get('DJANGO_CSP_REPORT_URI')
 # CSP_REPORT_ONLY = True
 
-
-GOOGLE_ANALYTICS_TRACKING_ID = env.get('DJANGO_GOOGLE_ANALYTICS_TRACKING_ID')
-GOOGLE_ANALYTICS_DOMAIN = env.get('DJANGO_GOOGLE_ANALYTICS_DOMAIN')
-
 MAILCHIMP_URL = env.get('DJANGO_MAILCHIMP_URL', '')
 MAILCHIMP_TOKEN = env.get('DJANGO_MAILCHIMP_TOKEN', '')
 
 COMPRESS_OFFLINE = env.get('DJANGO_COMPRESS_OFFLINE') == 'true'
 COMPRESS_OFFLINE_CONTEXT = {
     'STATIC_URL': STATIC_URL,
-    'GOOGLE_ANALYTICS_TRACKING_ID': GOOGLE_ANALYTICS_TRACKING_ID,
-    'GOOGLE_ANALYTICS_DOMAIN': GOOGLE_ANALYTICS_DOMAIN,
 }
 
 COMPRESS_PRECOMPILERS = (
