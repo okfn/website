@@ -194,7 +194,6 @@ TEMPLATES = [
                 "cms.context_processors.cms_settings",
                 "sekizai.context_processors.sekizai",
                 "lib.context_processors.site",
-                "lib.context_processors.google_analytics",
                 "lib.context_processors.mailchimp",
                 "django.template.context_processors.request",
             ),
@@ -405,7 +404,6 @@ CSP_SCRIPT_SRC = asset_hosts + [
     "'unsafe-inline'",
     "'unsafe-eval'",
     'https://js-agent.newrelic.com',
-    'https://www.google-analytics.com',
     'https://use.typekit.net',
     'https://bam.nr-data.net',
     'https://downloads.mailchimp.com',
@@ -413,6 +411,7 @@ CSP_SCRIPT_SRC = asset_hosts + [
     '*.list-manage.com',
     'https://youtube.com',
     'https://www.youtube.com',
+    'https://plausible.io',
 ]
 CSP_STYLE_SRC = asset_hosts + [
     "'self'",
@@ -429,7 +428,6 @@ CSP_IMG_SRC = asset_hosts + [
     'https://secure.gravatar.com',
     'https://p.typekit.net',
     'https://ping.typekit.net',
-    'https://www.google-analytics.com',
     'https://cdn-images.mailchimp.com'
 ]
 CSP_FONT_SRC = asset_hosts + [
@@ -449,16 +447,12 @@ CSP_FRAME_SRC = [
 ]
 CSP_CONNECT_SRC = asset_hosts + [
     "'self'",
-    'https://www.google-analytics.com'
+    'https://plausible.io',
 ]
 # Report-URI is no longer recommended
 # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri
 # CSP_REPORT_URI = env.get('DJANGO_CSP_REPORT_URI')
 # CSP_REPORT_ONLY = True
-
-
-GOOGLE_ANALYTICS_TRACKING_ID = env.get('DJANGO_GOOGLE_ANALYTICS_TRACKING_ID')
-GOOGLE_ANALYTICS_DOMAIN = env.get('DJANGO_GOOGLE_ANALYTICS_DOMAIN')
 
 MAILCHIMP_URL = env.get('DJANGO_MAILCHIMP_URL', '')
 MAILCHIMP_TOKEN = env.get('DJANGO_MAILCHIMP_TOKEN', '')
@@ -466,8 +460,6 @@ MAILCHIMP_TOKEN = env.get('DJANGO_MAILCHIMP_TOKEN', '')
 COMPRESS_OFFLINE = env.get('DJANGO_COMPRESS_OFFLINE') == 'true'
 COMPRESS_OFFLINE_CONTEXT = {
     'STATIC_URL': STATIC_URL,
-    'GOOGLE_ANALYTICS_TRACKING_ID': GOOGLE_ANALYTICS_TRACKING_ID,
-    'GOOGLE_ANALYTICS_DOMAIN': GOOGLE_ANALYTICS_DOMAIN,
 }
 
 COMPRESS_PRECOMPILERS = (
