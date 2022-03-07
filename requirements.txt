@@ -59,7 +59,7 @@ django-cms==3.9.0
     #   djangocms-text-ckeditor
 django-compressor==3.1
     # via -r requirements.in
-django-countries==7.2.1
+django-countries==7.3.2
     # via -r requirements.in
 django-csp==3.7
     # via -r requirements.in
@@ -231,6 +231,8 @@ toml==0.10.2
     # via pep517
 topicaxis-opengraph==0.5
     # via -r requirements.in
+typing-extensions==4.1.1
+    # via django-countries
 unidecode==1.1.1
     # via django-filer
 urllib3==1.26.5
