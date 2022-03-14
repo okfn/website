@@ -14,7 +14,7 @@ cachetools==4.2.4
     # via google-auth
 certifi==2020.11.8
     # via
-    #   elasticsearch
+    #   elastic-transport
     #   requests
 charset-normalizer==2.0.3
     # via requests
@@ -125,7 +125,9 @@ easy-thumbnails==2.8.1
     #   -r requirements.in
     #   django-filer
     #   djangocms-picture
-elasticsearch==7.16.3
+elastic-transport==8.1.0
+    # via elasticsearch
+elasticsearch==8.1.0
     # via -r requirements.in
 feedparser==6.0.8
     # via -r requirements.in
@@ -235,7 +237,7 @@ unidecode==1.1.1
     # via django-filer
 urllib3==1.26.5
     # via
-    #   elasticsearch
+    #   elastic-transport
     #   requests
 webencodings==0.5.1
     # via
