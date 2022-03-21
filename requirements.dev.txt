@@ -28,7 +28,7 @@ soupsieve==2.0.1
     # via
     #   -c requirements.txt
     #   beautifulsoup4
-waitress==1.4.4
+waitress==2.1.1
     # via webtest
 webob==1.8.6
     # via webtest
