@@ -169,7 +169,7 @@ micawber==0.5.4
     # via -r requirements.in
 pep517==0.10.0
     # via pip-tools
-pillow==9.0.0
+pillow==9.1.0
     # via
     #   -r requirements.in
     #   django-pagedown
