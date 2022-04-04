@@ -45,7 +45,7 @@ google-cloud-storage==2.1.0
 google-auth==2.3.3
 
 # search engine
-elasticsearch==7.16.3
+elasticsearch==8.1.2
 
 # django-pagedown, djangocms-text-ckeditor and easy-thumbnails
 # use it but don't specify the version
