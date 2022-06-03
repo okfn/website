@@ -1,23 +1,23 @@
 # This file contains the direct requirements
 # Use pip-compile to create requirements.txt from this
 
-pip-tools==6.4.0
+pip-tools==6.6.2
 
 Django==3.2.12
 cssmin==0.2.0
 django-cms==3.9.0
 django-compressor==3.1
 django-csp==3.7
-django-countries==7.2.1
+django-countries==7.3.2
 django-haystack==3.1.1
 django-redis==5.2.0
-django-filer==2.1.2
+django-filer==2.2
 django-formtools==2.3
 django-markdown-deux==1.0.5
 django-mptt==0.13.4
 django-pagedown==2.2.1
-django-reversion==4.0.1
-django-sekizai==3.0.0
+django-reversion==5.0.0
+django-sekizai==3.0.1
 django-storages==1.12.3
 django-treebeard==4.5.1
 djangocms-admin-style==3.0.0
@@ -41,13 +41,13 @@ micawber==0.5.4
 
 # for google
 django-environ==0.8.1
-google-cloud-storage==2.1.0
-google-auth==2.3.3
+google-cloud-storage==2.3.0
+google-auth==2.6.6
 
 # search engine
-elasticsearch==7.16.3
+elasticsearch==8.2.0
 
 # django-pagedown, djangocms-text-ckeditor and easy-thumbnails
 # use it but don't specify the version
 # this is a secure version
-pillow==9.0.0
+pillow==9.1.1
