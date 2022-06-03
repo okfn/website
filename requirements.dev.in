@@ -4,5 +4,5 @@
 -c requirements.txt
 
 flake8==4.0.1
-django-webtest==1.9.9
+django-webtest==1.9.10
 coverage==6.4
