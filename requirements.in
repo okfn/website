@@ -11,7 +11,7 @@ django-csp==3.7
 django-countries==7.3.2
 django-haystack==3.1.1
 django-redis==5.2.0
-django-filer==2.1.2
+django-filer==2.2.1
 django-formtools==2.3
 django-markdown-deux==1.0.5
 django-mptt==0.13.4
