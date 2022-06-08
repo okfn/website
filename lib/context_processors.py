@@ -18,14 +18,3 @@ def site(request):
         'environment': environment,
         'host': host
     }
-
-
-def mailchimp(request):
-    """
-    Add the Mailchimp mailing list url and token to the context for use when
-    rendering signup forms.
-    """
-    return {
-        'MAILCHIMP_URL': settings.MAILCHIMP_URL,
-        'MAILCHIMP_TOKEN': settings.MAILCHIMP_TOKEN,
-    }
