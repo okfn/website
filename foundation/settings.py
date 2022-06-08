@@ -49,7 +49,6 @@ warnings.filterwarnings("ignore",
 
 
 SITE_ID = int(env.get('DJANGO_SITE_ID', 1))
-HUBOT_API_KEY = env.get('HUBOT_API_KEY')
 
 
 def _parse_email_list(varname):

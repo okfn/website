@@ -1,5 +1,4 @@
 from django.conf.urls import url, include
-from foundation.organisation.views import relatable_person
 
 from django.contrib import admin
 
@@ -19,6 +18,5 @@ urlpatterns = [
     url(r'^get-involved/working-groups',
         include('foundation.organisation.urls.workinggroups')),
     url(r'^network/', include('foundation.organisation.urls.networkgroups')),
-    url(r'^api$', relatable_person, name='relatable-person'),
     url(r'^', include('cms.urls')),
 ]
