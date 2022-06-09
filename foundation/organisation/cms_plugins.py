@@ -7,7 +7,7 @@ from cms.extensions.extension_pool import extension_pool
 
 from .models import (Project, Theme, FeaturedTheme, FeaturedProject,
                      ProjectList, NetworkGroup, NetworkGroupList, WorkingGroup,
-                     SignupForm, SideBarExtension)
+                     SideBarExtension)
 
 
 class FeaturedThemePlugin(CMSPluginBase):

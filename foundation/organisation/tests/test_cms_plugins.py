@@ -3,7 +3,7 @@ from cms.models.pluginmodel import CMSPlugin
 
 from ..models import (Project, ProjectType, Theme, NetworkGroup,
                       NetworkGroupList)
-from ..models import FeaturedProject, ProjectList, SignupForm
+from ..models import FeaturedProject, ProjectList
 from ..cms_plugins import (FeaturedProjectPlugin, ProjectListPlugin,
                            ThemesPlugin, NetworkGroupFlagsPlugin)
 
