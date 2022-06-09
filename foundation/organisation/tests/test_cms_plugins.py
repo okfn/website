@@ -3,10 +3,9 @@ from cms.models.pluginmodel import CMSPlugin
 
 from ..models import (Project, ProjectType, Theme, NetworkGroup,
                       NetworkGroupList)
-from ..models import FeaturedProject, ProjectList, SignupForm
+from ..models import FeaturedProject, ProjectList
 from ..cms_plugins import (FeaturedProjectPlugin, ProjectListPlugin,
-                           ThemesPlugin, NetworkGroupFlagsPlugin,
-                           SignupFormPlugin)
+                           ThemesPlugin, NetworkGroupFlagsPlugin)
 
 
 class FeaturedProjectPluginTest(CMSTestCase):
@@ -181,20 +180,3 @@ class NetworkGroupPluginTest(CMSTestCase):
         self.assertNotIn(self.britain, result['countries'])
         self.assertIn(self.germany, result['countries'])
         self.assertNotIn(self.buckingham, result['countries'])
-
-
-class SignupFormPluginTest(CMSTestCase):
-
-    def setUp(self):
-        super().setUp()
-
-        self.loveme = SignupForm.objects.create(
-            title='Love me',
-            description='Tell me, do.')
-
-    def test_title_description_added_to_signupform_plugin(self):
-        plug = SignupFormPlugin()
-        result = plug.render({}, self.loveme, 'foo')
-
-        self.assertEqual('Love me', result['title'])
-        self.assertEqual('Tell me, do.', result['description'])
