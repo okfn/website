@@ -9,8 +9,6 @@ from django.views import defaults as default_views
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 
-from foundation.organisation.views import relatable_person
-
 from haystack.views import SearchView
 from cms.sitemaps import CMSSitemap
 
@@ -108,11 +106,6 @@ urlpatterns += [
     url(r'^wp-includes/(?P<remain>.+)$',
         RedirectView.as_view(url=ARCHIVE_ROOT + '/wp-includes/%(remain)s',
                              permanent=True)),
-
-    # we would like to properly do this from within the cms
-    # but it does not work with `csrf_exempt`. See
-    # https://github.com/divio/django-cms/issues/4599
-    url(r'^api$', relatable_person, name='relatable-person'),
 
     # Fallthrough for CMS managed pages
     url(r'^', include('cms.urls'))
