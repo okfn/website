@@ -1,9 +1,7 @@
 from io import StringIO
 
-from unittest.mock import patch
 from django.urls import reverse
 from django.utils.html import escape
-from django.test.utils import override_settings
 from django_webtest import WebTest
 from unittest import skip
 

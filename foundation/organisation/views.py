@@ -1,20 +1,14 @@
-import json
-
 from django.views.decorators.cache import cache_page
-from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.shortcuts import get_object_or_404
-from django.http import HttpResponse, JsonResponse
-from django.conf import settings
+from django.http import HttpResponse
 
 from iso3166 import countries
 import csv
 
 from .models import (Board, Project, ProjectType, Theme, WorkingGroup,
-                     NetworkGroup, NetworkGroupMembership, Person, NowDoing)
-
-from .utils import get_activity, fail_json, extract_ograph_title
+                     NetworkGroup, NetworkGroupMembership)
 
 
 class BoardView(DetailView):
