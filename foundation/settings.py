@@ -49,7 +49,6 @@ warnings.filterwarnings("ignore",
 
 
 SITE_ID = int(env.get('DJANGO_SITE_ID', 1))
-HUBOT_API_KEY = env.get('HUBOT_API_KEY')
 
 
 def _parse_email_list(varname):
@@ -194,7 +193,6 @@ TEMPLATES = [
                 "cms.context_processors.cms_settings",
                 "sekizai.context_processors.sekizai",
                 "lib.context_processors.site",
-                "lib.context_processors.mailchimp",
                 "django.template.context_processors.request",
             ),
             "loaders": [
@@ -453,9 +451,6 @@ CSP_CONNECT_SRC = asset_hosts + [
 # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri
 # CSP_REPORT_URI = env.get('DJANGO_CSP_REPORT_URI')
 # CSP_REPORT_ONLY = True
-
-MAILCHIMP_URL = env.get('DJANGO_MAILCHIMP_URL', '')
-MAILCHIMP_TOKEN = env.get('DJANGO_MAILCHIMP_TOKEN', '')
 
 COMPRESS_OFFLINE = env.get('DJANGO_COMPRESS_OFFLINE') == 'true'
 COMPRESS_OFFLINE_CONTEXT = {

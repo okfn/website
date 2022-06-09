@@ -1,4 +1,3 @@
-from django.conf import settings
 from django.contrib.sites.models import Site
 
 
@@ -17,15 +16,4 @@ def site(request):
         'site': Site.objects.get_current(),
         'environment': environment,
         'host': host
-    }
-
-
-def mailchimp(request):
-    """
-    Add the Mailchimp mailing list url and token to the context for use when
-    rendering signup forms.
-    """
-    return {
-        'MAILCHIMP_URL': settings.MAILCHIMP_URL,
-        'MAILCHIMP_TOKEN': settings.MAILCHIMP_TOKEN,
     }

@@ -1,9 +1,7 @@
 from io import StringIO
 
-from unittest.mock import patch
 from django.urls import reverse
 from django.utils.html import escape
-from django.test.utils import override_settings
 from django_webtest import WebTest
 from unittest import skip
 
@@ -650,101 +648,6 @@ class NetworkGroupDetailViewTest(WebTest):
             self.buckingham.twitter,
             self.buckingham.facebook_url, 'Y', '' '']
         self.assertEqual(buckingham, buckingham_data)
-
-    @override_settings(HUBOT_API_KEY='secretkey')
-    def test_relatable_person_authentication(self):
-        response = self.app.post(reverse('relatable-person'),
-                                 status=403)
-        self.assertEqual(response.json['message'], "Not authorized")
-
-    @override_settings(HUBOT_API_KEY='secretkey')
-    def test_relatable_person_json_deocding(self):
-        response = self.app.post(reverse('relatable-person'),
-                                 headers={'Authorization': 'secretkey'},
-                                 status=400)
-        self.assertEqual(response.json['message'], "Could not decode JSON data.")
-
-    @override_settings(HUBOT_API_KEY='secretkey')
-    def test_relatable_person_without_username(self):
-        response = self.app.post_json(reverse('relatable-person'),
-                                      headers={'Authorization': 'secretkey'},
-                                      status=400,
-                                      params={"text": "#reading this should not happend"})
-        self.assertEqual("You need to supply a field `username`",
-                         response.json['message'])
-
-    @override_settings(HUBOT_API_KEY='secretkey')
-    def test_relatable_person_username_not_found(self):
-        response = self.app.post_json(reverse('relatable-person'),
-                                      headers={'Authorization': 'secretkey'},
-                                      status=400,
-                                      params={"username": "knut"})
-        self.assertIn("No person with", response.json['message'])
-
-    @patch('foundation.organisation.views.extract_ograph_title',
-           return_value=('Close to the machine',
-                         "https://www.goodreads.com/book/show/486625.Close_to_the_Machine")
-           )
-    @override_settings(HUBOT_API_KEY='secretkey')
-    def test_relatable_person_updates_entries(self, *args):
-        donatello = Person.objects.create(
-            name="Donatello (Donnie)",
-            username_on_slack="donnie",
-            description='Turtle with a purple mask',
-            email='donatello@tmnt.org')
-        donatello.save()
-        payload = {"username": "donnie",
-                   "text": "#reading https://www.goodreads.com/book/show/486625.Close_to_the_Machine"
-                   }
-
-        self.app.post_json(reverse('relatable-person'),
-                           headers={'Authorization': 'secretkey'},
-                           status=200,
-                           params=payload)
-        donnie = Person.objects.filter(username_on_slack='donnie').first()
-        self.assertEqual(donnie.nowdoing_set.count(), 1)
-
-    @override_settings(HUBOT_API_KEY='secretkey')
-    def test_relatable_person_updates_entries_with_last_updated_flag(self, *args):
-        donatello = Person.objects.create(
-            name="Donatello (Donnie)",
-            username_on_slack="donnie",
-            description='Turtle with a purple mask',
-            email='donatello@tmnt.org')
-        donatello.save()
-
-        mock_values = [
-            ("Close to the machine", "https://www.goodreads.com/book/show/486625.Close_to_the_Machine"),
-            ("Video unavailable", "https://www.youtube.com/watch?v=IAISUDbjXj0")
-        ]
-        with patch('foundation.organisation.views.extract_ograph_title', side_effect=mock_values):
-            payload = {
-                "username": "donnie",
-                "text": "#reading https://www.goodreads.com/book/show/486625.Close_to_the_Machine"
-            }
-
-            self.app.post_json(
-                reverse('relatable-person'),
-                headers={'Authorization': 'secretkey'},
-                status=200,
-                params=payload
-            )
-
-            payload = {
-                "username": "donnie",
-                "text": "#watching https://www.youtube.com/watch?v=IAISUDbjXj0"
-            }
-
-            self.app.post_json(
-                reverse('relatable-person'),
-                headers={'Authorization': 'secretkey'},
-                status=200,
-                params=payload
-            )
-        donnie = Person.objects.filter(username_on_slack='donnie').first()
-        self.assertEqual(donnie.nowdoing_set.count(), 2)
-        self.assertTrue(donnie.nowdoing_with_latest[0].is_newest_update)
-        self.assertEqual(donnie.nowdoing_with_latest[0].doing_type, "watching")
 
     def test_NowDoing_icon_name_works(self, *args):  # noqa
         donatello = Person.objects.create(

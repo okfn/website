@@ -7,7 +7,7 @@ from cms.extensions.extension_pool import extension_pool
 
 from .models import (Project, Theme, FeaturedTheme, FeaturedProject,
                      ProjectList, NetworkGroup, NetworkGroupList, WorkingGroup,
-                     SignupForm, SideBarExtension)
+                     SideBarExtension)
 
 
 class FeaturedThemePlugin(CMSPluginBase):
@@ -136,23 +136,5 @@ class WorkingGroupPlugin(CMSPluginBase):
 
 
 plugin_pool.register_plugin(WorkingGroupPlugin)
-
-
-class SignupFormPlugin(CMSPluginBase):
-    model = SignupForm
-    module = "OKF"
-    name = _("Signup Form")
-    render_template = "organisation/signup_form.html"
-
-    def render(self, context, instance, placeholder):
-        context = super().render(context, instance, placeholder)
-
-        context['title'] = instance.title
-        context['description'] = instance.description
-        return context
-
-
-plugin_pool.register_plugin(SignupFormPlugin)
-
 
 extension_pool.register(SideBarExtension)

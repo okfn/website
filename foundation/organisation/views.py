@@ -1,20 +1,14 @@
-import json
-
 from django.views.decorators.cache import cache_page
-from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.shortcuts import get_object_or_404
-from django.http import HttpResponse, JsonResponse
-from django.conf import settings
+from django.http import HttpResponse
 
 from iso3166 import countries
 import csv
 
 from .models import (Board, Project, ProjectType, Theme, WorkingGroup,
-                     NetworkGroup, NetworkGroupMembership, Person, NowDoing)
-
-from .utils import get_activity, fail_json, extract_ograph_title
+                     NetworkGroup, NetworkGroupMembership)
 
 
 class BoardView(DetailView):
@@ -104,45 +98,6 @@ class NetworkGroupDetailView(DetailView):
 
         context['group_members'] = members.order_by('order', 'person__name')
         return context
-
-
-@csrf_exempt
-def relatable_person(request):
-    auth = request.META.get('HTTP_AUTHORIZATION')
-
-    if auth != settings.HUBOT_API_KEY:
-        return fail_json('Not authorized', status_code=403)
-
-    try:
-        data = json.loads(request.body)
-    except ValueError:
-        return fail_json('Could not decode JSON data.')
-
-    username = data.get('username')
-    if not username:
-        return fail_json('You need to supply a field `username`')
-
-    person = Person.objects.filter(username_on_slack=username).first()
-    if not person:
-        message = 'No person with `username_on_slack` {}'.format(username)
-        return fail_json(message)
-
-    activity = get_activity(data.get('text'))
-
-    activities_of_this_type = person.nowdoing_set.filter(doing_type=activity)
-    for old_activity in activities_of_this_type:
-        old_activity.delete()
-
-    link, title = extract_ograph_title(data.get('text', ''))
-    now_doing = NowDoing(person=person,
-                         doing_type=activity,
-                         text=title,
-                         link=link)
-    now_doing.save()
-
-    message = 'You are consuming: {}'.format(now_doing.text)
-    return JsonResponse({'success': True,
-                         'message': message})
 
 
 @cache_page(60 * 30)
