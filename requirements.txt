@@ -24,7 +24,7 @@ cssmin==0.2.0
     # via -r requirements.in
 cssselect2==0.4.1
     # via svglib
-django==3.2.12
+django==3.2.14
     # via
     #   -r requirements.in
     #   django-appconf
