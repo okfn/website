@@ -127,7 +127,7 @@ easy-thumbnails==2.8.1
     #   djangocms-picture
 elastic-transport==8.1.2
     # via elasticsearch
-elasticsearch==8.2.0
+elasticsearch==8.3.3
     # via -r requirements.in
 feedparser==6.0.8
     # via -r requirements.in
