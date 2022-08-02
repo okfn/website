@@ -1,5 +1,10 @@
 # Changelog
 
+## 2022-08-02 - Upgrade dependencies
+
+ - Update packages.
+
+
 ## 2022-01-25 - Upgrade to Django 3.2
 
  - Update Django and all packages. Drop deprecated packages [#635](https://github.com/okfn/website/pull/635)
