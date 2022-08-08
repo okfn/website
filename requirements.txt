@@ -99,7 +99,7 @@ django-sekizai==4.0.0
     # via
     #   -r requirements.in
     #   django-cms
-django-storages==1.12.3
+django-storages==1.13.1
     # via -r requirements.in
 django-treebeard==4.5.1
     # via

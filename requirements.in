@@ -18,7 +18,7 @@ django-mptt==0.13.4
 django-pagedown==2.2.1
 django-reversion==5.0.1
 django-sekizai==4.0.0
-django-storages==1.12.3
+django-storages==1.13.1
 django-treebeard==4.5.1
 djangocms-admin-style==3.2.0
 djangocms-file==3.0.0
