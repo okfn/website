@@ -1,5 +1,9 @@
 # Changelog
 
+## 2022-08-09 - Fix PayPal donate button
+
+ - Allow PayPal image and for to fix the _Donate_ button [#721](https://github.com/okfn/website/pull/721)
+
 ## 2022-08-02 - Upgrade dependencies
 
  - Update packages.
