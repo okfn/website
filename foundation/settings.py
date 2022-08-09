@@ -426,7 +426,9 @@ CSP_IMG_SRC = asset_hosts + [
     'https://secure.gravatar.com',
     'https://p.typekit.net',
     'https://ping.typekit.net',
-    'https://cdn-images.mailchimp.com'
+    'https://cdn-images.mailchimp.com',
+    'https://paypal.com',
+    'https://paypalobjects.com',
 ]
 CSP_FONT_SRC = asset_hosts + [
     "'self'",
@@ -436,7 +438,8 @@ CSP_FONT_SRC = asset_hosts + [
 ]
 CSP_FORM_ACTION = [
     "'self'",
-    'https://okfn.us9.list-manage.com'
+    'https://okfn.us9.list-manage.com',
+    'https://paypal.com',
 ]
 CSP_FRAME_SRC = [
     "'self'",
