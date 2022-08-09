@@ -428,7 +428,9 @@ CSP_IMG_SRC = asset_hosts + [
     'https://ping.typekit.net',
     'https://cdn-images.mailchimp.com',
     'https://paypal.com',
+    'https://www.paypal.com',
     'https://paypalobjects.com',
+    'https://www.paypalobjects.com',
 ]
 CSP_FONT_SRC = asset_hosts + [
     "'self'",
@@ -440,6 +442,7 @@ CSP_FORM_ACTION = [
     "'self'",
     'https://okfn.us9.list-manage.com',
     'https://paypal.com',
+    'https://www.paypal.com',
 ]
 CSP_FRAME_SRC = [
     "'self'",
