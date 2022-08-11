@@ -5,7 +5,7 @@ pip-tools==6.8.0
 
 Django==3.2.15
 cssmin==0.2.0
-django-cms==3.10.1
+django-cms==3.11.0
 django-compressor==4.0
 django-csp==3.7
 django-countries==7.3.2
