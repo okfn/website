@@ -59,7 +59,7 @@ django-cms==3.10.1
     #   djangocms-link
     #   djangocms-picture
     #   djangocms-text-ckeditor
-django-compressor==4.0
+django-compressor==4.1
     # via -r requirements.in
 django-countries==7.3.2
     # via -r requirements.in
