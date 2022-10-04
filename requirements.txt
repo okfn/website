@@ -26,7 +26,7 @@ cssmin==0.2.0
     # via -r requirements.in
 cssselect2==0.4.1
     # via svglib
-django==3.2.15
+django==3.2.16
     # via
     #   -r requirements.in
     #   django-appconf
@@ -51,7 +51,7 @@ django-classy-tags==3.0.1
     # via
     #   django-cms
     #   django-sekizai
-django-cms==3.10.1
+django-cms==3.11.0
     # via
     #   -r requirements.in
     #   djangocms-attributes-field
@@ -59,7 +59,7 @@ django-cms==3.10.1
     #   djangocms-link
     #   djangocms-picture
     #   djangocms-text-ckeditor
-django-compressor==4.0
+django-compressor==4.1
     # via -r requirements.in
 django-countries==7.3.2
     # via -r requirements.in
@@ -67,23 +67,23 @@ django-csp==3.7
     # via -r requirements.in
 django-environ==0.9.0
     # via -r requirements.in
-django-filer==2.2.2
+django-filer==2.2.3
     # via
     #   -r requirements.in
     #   djangocms-file
     #   djangocms-link
     #   djangocms-picture
-django-formtools==2.3
+django-formtools==2.4
     # via
     #   -r requirements.in
     #   django-cms
-django-haystack==3.1.1
+django-haystack==3.2.1
     # via -r requirements.in
 django-js-asset==1.2.2
     # via django-mptt
 django-markdown-deux==1.0.5
     # via -r requirements.in
-django-mptt==0.13.4
+django-mptt==0.14.0
     # via
     #   -r requirements.in
     #   django-filer
@@ -93,18 +93,19 @@ django-polymorphic==3.0.0
     # via django-filer
 django-redis==5.2.0
     # via -r requirements.in
-django-reversion==5.0.1
+django-reversion==5.0.3
     # via -r requirements.in
 django-sekizai==4.0.0
     # via
     #   -r requirements.in
     #   django-cms
-django-storages==1.12.3
+django-storages==1.13.1
     # via -r requirements.in
-django-treebeard==4.5.1
+django-treebeard==4.4
     # via
     #   -r requirements.in
     #   django-cms
+    #   djangocms-link
 djangocms-admin-style==3.2.0
     # via
     #   -r requirements.in
@@ -116,20 +117,20 @@ djangocms-attributes-field==2.0.0
     #   djangocms-picture
 djangocms-file==3.0.0
     # via -r requirements.in
-djangocms-link==3.0.0
+djangocms-link==3.1.0
     # via -r requirements.in
 djangocms-picture==4.0.0
     # via -r requirements.in
 djangocms-text-ckeditor==5.1.1
     # via -r requirements.in
-easy-thumbnails[svg]==2.8.2
+easy-thumbnails[svg]==2.8.3
     # via
     #   -r requirements.in
     #   django-filer
     #   djangocms-picture
 elastic-transport==8.1.2
     # via elasticsearch
-elasticsearch==8.3.3
+elasticsearch==8.4.2
     # via -r requirements.in
 feedparser==6.0.10
     # via -r requirements.in
@@ -137,7 +138,7 @@ google-api-core==2.8.1
     # via
     #   google-cloud-core
     #   google-cloud-storage
-google-auth==2.9.1
+google-auth==2.12.0
     # via
     #   -r requirements.in
     #   google-api-core
@@ -145,7 +146,7 @@ google-auth==2.9.1
     #   google-cloud-storage
 google-cloud-core==2.3.0
     # via google-cloud-storage
-google-cloud-storage==2.4.0
+google-cloud-storage==2.5.0
     # via -r requirements.in
 google-crc32c==1.3.0
     # via google-resumable-media
