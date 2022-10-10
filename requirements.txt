@@ -183,7 +183,7 @@ pillow==9.2.0
     #   djangocms-text-ckeditor
     #   easy-thumbnails
     #   reportlab
-pip-tools==6.8.0
+pip-tools==6.9.0
     # via -r requirements.in
 protobuf==3.19.1
     # via
