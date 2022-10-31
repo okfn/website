@@ -51,4 +51,4 @@ elasticsearch==8.4.2
 # django-pagedown, djangocms-text-ckeditor and easy-thumbnails
 # use it but don't specify the version
 # this is a secure version
-pillow==9.2.0
+pillow==9.3.0
