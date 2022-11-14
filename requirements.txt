@@ -183,7 +183,7 @@ pillow==9.2.0
     #   djangocms-text-ckeditor
     #   easy-thumbnails
     #   reportlab
-pip-tools==6.8.0
+pip-tools==6.10.0
     # via -r requirements.in
 protobuf==3.19.1
     # via
@@ -237,8 +237,6 @@ tinycss2==1.1.1
     #   svglib
 toml==0.10.2
     # via pep517
-tomli==2.0.1
-    # via build
 topicaxis-opengraph==0.5
     # via -r requirements.in
 typing-extensions==4.2.0
