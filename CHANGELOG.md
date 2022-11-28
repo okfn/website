@@ -1,6 +1,9 @@
 # Changelog
 
-## 2022-11-25 - Fix PayPal donate button
+## 2022-11-25 - Allow order features
+ - Allow order and hide features [#746](https://github.com/okfn/website/pull/746)
+
+## 2022-11-25 - Hide network groups
  - Manually hide hibernated network groups [#744](https://github.com/okfn/website/pull/744)
 
 ## 2022-08-09 - Fix PayPal donate button
