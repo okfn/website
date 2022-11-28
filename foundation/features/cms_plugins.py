@@ -16,7 +16,7 @@ class FeaturePlugin(CMSPluginBase):
     def render(self, context, instance, placeholder):
         context = super().render(context, instance, placeholder)
 
-        context['feature_list'] = Feature.objects.all()
+        context['feature_list'] = Feature.objects.filter(published=True).order_by('order', 'title')
         return context
 
 

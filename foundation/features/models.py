@@ -9,10 +9,12 @@ class Feature(models.Model):
     text = models.CharField(max_length=200)
     # image = models.ImageField(upload_to='features/images', blank=False)
     link = models.URLField(blank=True)
+    order = models.PositiveIntegerField(default=100, blank=False, null=False)
+    published = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
 
     class Meta:
-        ordering = ["title"]
+        ordering = ["order", "title"]
         verbose_name_plural = "features"
