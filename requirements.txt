@@ -166,7 +166,7 @@ jsonfield==3.1.0
     # via -r requirements.in
 libsass==0.22.0
     # via -r requirements.in
-lxml==4.6.5
+lxml==4.9.1
     # via svglib
 markdown2==2.4.0
     # via django-markdown-deux
@@ -236,8 +236,6 @@ tinycss2==1.1.1
     #   svglib
 toml==0.10.2
     # via pep517
-tomli==2.0.1
-    # via build
 topicaxis-opengraph==0.5
     # via -r requirements.in
 typing-extensions==4.2.0
