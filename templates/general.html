@@ -10,6 +10,7 @@
 
 {% block head-css %}
         <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/style.new.css">
 {% endblock %}
 
 {% block body-sheath %}
@@ -66,11 +67,7 @@
           </div>
         </section>
         {% endblock %}
-        <footer class="site-footer">
-            <div class='container'>
-                {% include 'includes/footer.html' %}
-            </div>
-        </footer>
+        {% include 'includes/footer.html' %}
     </div>
 
     <nav id="mmenu" class="mobile-menu">
