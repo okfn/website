@@ -15,17 +15,17 @@
         z-index: -1;
       }
 
-      &::before {
-        content: url("../img/rectangle-blue.svg");
-        top: -30px;
-        left: -160px;
-      }
+      // &::before {
+      //   content: url("../img/rectangle-blue.svg");
+      //   top: -30px;
+      //   left: -160px;
+      // }
 
-      &::after {
-        content: url("../img/rectangle-grey.svg");
-        bottom: -125px;
-        right: 120px;
-      }
+      // &::after {
+      //   content: url("../img/rectangle-grey.svg");
+      //   bottom: -125px;
+      //   right: 120px;
+      // }
     }
   }
 
@@ -64,15 +64,15 @@
         width: 440px;
         margin-right: $size-spacing-xxl;
 
-        &::before {
-          width: 500px;
-          position: absolute;
-          z-index: -1;
-          content: url("../img/rectangle-blue.svg");
-          bottom: -110px;
-          left: 30px;
-          opacity: 0.5;
-        }
+        // &::before {
+        //   width: 500px;
+        //   position: absolute;
+        //   z-index: -1;
+        //   content: url("../img/rectangle-blue.svg");
+        //   bottom: -110px;
+        //   left: 30px;
+        //   opacity: 0.5;
+        // }
       }
 
       @include media-breakpoint-up(xl) {
@@ -108,11 +108,11 @@
           margin-right: 0;
           margin-left: $size-spacing-xxl;
 
-          &::before {
-            content: url("../img/rectangle-grey.svg");
-            left: auto;
-            right: 30px;
-          }
+          //&::before {
+          //  content: url("../img/rectangle-grey.svg");
+          //  left: auto;
+          //  right: 30px;
+          //}
         }
       }
 
