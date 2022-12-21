@@ -81,9 +81,9 @@
     justify-content: space-between;
     width: 136px;
     &-link {
-      opacity: 100%;
+      opacity: 1;
       &:hover {
-        opacity: 70%;
+        opacity: 0.7;
       }
     }
   }
