@@ -10,7 +10,6 @@
 
 {% block head-css %}
         <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/style.new.css">
 {% endblock %}
 
 {% block body-sheath %}
@@ -123,6 +122,7 @@
               </span>
             </button>
           </nav>
+
           <div class="header__additional">
             <div class="header__social">
               <a href="https://twitter.com/okfn" target="_blank" class="header__social-link">
@@ -176,6 +176,7 @@
             class="circle-blue-img"
           />
         </div>
+
       </header>
 
       <!--- 
@@ -213,11 +214,10 @@
                 </div>
             </div>
 
-            {% block pagebanner %}{% endblock %}
             </header> --->
 
         <main class='{% block main-class %}container {% endblock %}main'>
- 
+            {% block pagebanner %}{% endblock %}
             {% block body %}{% endblock %}
         </main>
         {% block pre_footer %}

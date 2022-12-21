@@ -1,0 +1,56 @@
+.link {
+  cursor: pointer;
+  display: block;
+  margin-top: 10px;
+  position: relative;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+  &:hover,
+  &:active,
+  &:visited {
+    color: #000;
+    text-decoration: none;
+  }
+  &::after {
+    content: "";
+    margin-left: 5px;
+    transition: all 0.5s;
+    transform: translateY(-50%);
+    top: 50%;
+    width: 10px;
+    height: 8px;
+    position: absolute;
+    background-image: url("../assets/2 in practice/arrow-right.svg");
+  }
+  &:hover {
+    &::after {
+      margin-left: 7px;
+      transition: all 0.5s;
+    }
+  }
+  @media (min-width: 992px) {
+    margin-top: 25px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  &_tools {
+    display: block;
+    align-self: flex-end;
+    transform: translateX(-15px);
+    margin-top: 35px;
+    line-height: 22px;
+    position: relative;
+    font-weight: 700;
+    color: #000;
+    @media (min-width: 768px) {
+      margin-top: 8px;
+      align-self: flex-start;
+      transform: translateX(0);
+    }
+  }
+  &_movement {
+    margin: 0;
+  }
+}

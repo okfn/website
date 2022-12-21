@@ -1,0 +1,49 @@
+.button {
+  display: block;
+  background: rgba(255, 101, 228, 0.2);
+  border: 2px solid #000000;
+  padding: 5px 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  &:hover {
+    background: rgba(255, 101, 228, 0.5);
+    transition: background 0.5s;
+  }
+  &_movement {
+    margin: 25px auto 0;
+    width: 190px;
+    height: 51px;
+    margin-top: 25px;
+    color: black;
+    @media (min-width: 992px) {
+      margin: 25px 0;
+      width: 101px;
+      height: 45px;
+      transform: translateX(0);
+    }
+  }
+  &_library {
+    margin: 30px auto 0;
+    background: #d0ffde;
+    color: black;
+
+    &:hover {
+      background: #79f79f;
+    }
+  }
+  &_newsletter {
+    margin-top: 25px;
+    width: 212px;
+    height: 47px;
+    color: black;
+
+    background: rgba(0, 209, 255, 0.2);
+    &:hover {
+      background: rgba(0, 209, 255, 0.9);
+    }
+  }
+}

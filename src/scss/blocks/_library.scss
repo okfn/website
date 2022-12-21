@@ -1,0 +1,101 @@
+.library {
+  margin-top: 100px;
+  &__img {
+    margin: 60px auto 0;
+    width: 238px;
+    height: 238px;
+    @media (min-width: 992px) {
+      margin-top: 80px;
+      width: 339px;
+      height: 339px;
+    }
+    &-inner {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__desc {
+    display: block;
+    width: minmax(280px, 340px);
+    margin: 16px auto 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    @media (min-width: 992px) {
+      width: 520px;
+      margin-top: 30px;
+    }
+  }
+  &__grid {
+    &-item {
+      display: flex;
+      flex-direction: column;
+      padding: 50px 0;
+      @media (min-width: 768px) {
+        flex-direction: row;
+        padding: 70px 0;
+      }
+      &:not(:last-child) {
+        border-bottom: 0.5px solid #000000;
+      }
+      &:nth-child(1) img {
+        width: calc(413px * 0.7);
+        height: calc(166px * 0.7);
+        @media (min-width: 992px) {
+          width: 413px;
+          height: 166px;
+        }
+      }
+      &:nth-child(2) img {
+        width: calc(413px * 0.7);
+        height: calc(190px * 0.7);
+        @media (min-width: 992px) {
+          width: 413px;
+          height: 190px;
+        }
+      }
+      &:nth-child(3) img {
+        width: calc(413px * 0.7);
+        height: calc(166px * 0.7);
+        @media (min-width: 992px) {
+          width: 413px;
+          height: 166px;
+        }
+      }
+    }
+    &-title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 29px;
+    }
+    &-img {
+      display: block;
+      margin: auto;
+    }
+    &-text {
+      width: 100%;
+      margin-top: 35px;
+      padding: 0 38px;
+      display: flex;
+      flex-direction: column;
+      @media (min-width: 768px) {
+        width: 50%;
+        margin-top: 0;
+        padding: 0;
+      }
+    }
+    &-descr {
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 22px;
+      color: #000000;
+      @media (min-width: 768px) {
+        margin-right: 20px;
+      }
+      @media (min-width: 1200px) {
+        margin-right: 85px;
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+.header {
+  position: relative;
+  padding-top: 15px;
+  margin-bottom: 60px;
+  .circle-blue {
+    position: absolute;
+    right: 0;
+    top: -6px;
+    height: 405px;
+    width: 380px;
+    z-index: -1;
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &__nav {
+    padding-top: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__menu {
+    list-style-type: none;
+    display: none;
+    flex-direction: row;
+    width: 617px;
+    justify-content: space-between;
+    @media (min-width: 1200px) {
+      display: flex;
+    }
+    &-item {
+      position: relative;
+      &:hover .header__dropdown {
+        display: block;
+        z-index: 20;
+        width: 200px;
+      }
+    }
+    &-link {
+      color: #000;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 17px;
+      &:hover,
+      &:active,
+      &:visited {
+        color: #000;
+        text-decoration: none;
+      }
+    }
+  }
+  &__logo {
+    height: calc(84px * 0.8);
+    width: calc(300px * 0.8);
+    @media (min-width: 575px) {
+      height: 84px;
+      width: 300px;
+    }
+    &-img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &__additional {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 216px;
+    @media (min-width: 1200px) {
+      display: flex;
+    }
+  }
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 136px;
+    &-link {
+      opacity: 100%;
+      &:hover {
+        opacity: 70%;
+      }
+    }
+  }
+  &__dropdown {
+    position: absolute;
+    list-style-type: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #000;
+    text-align: left;
+    left: -0.6rem;
+    z-index: 2;
+    padding: 10px 0;
+    box-sizing: content-box;
+    z-index: 1;
+    text-transform: none;
+    font-size: 1rem;
+    border-radius: 0.4rem;
+    display: none;
+    &-item {
+      display: block;
+    }
+    &-link {
+      display: block;
+      padding: 0.25rem 1rem;
+      text-decoration: none;
+      font-size: 17px;
+      color: #000;
+      &:hover,
+      &:active,
+      &:visited {
+        color: #000;
+        text-decoration: none;
+      }
+    }
+  }
+}
