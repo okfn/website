@@ -72,6 +72,22 @@ $font-path-lato: "../fonts/LatoLatin/";
 //     font-weight: 300;
 // }
 
+@font-face {
+    font-family: 'DM Sans';
+    src: url(../fonts/DMSans-Regular.woff) format('woff'),
+         url(../fonts/DMSans-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Miriam Libre';
+    src: url(../fonts/MiriamLibre-Regular.woff) format('woff'),
+         url(../fonts/MiriamLibre-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Webfont: LatoLatin-Regular */
 @font-face {
     font-family: 'Lato';
