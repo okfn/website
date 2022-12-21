@@ -1,0 +1,76 @@
+.tools {
+  position: relative;
+  margin-top: 70px;
+  &__grid {
+    &-item {
+      display: flex;
+      flex-direction: column;
+      padding: 50px 0;
+      @media (min-width: 768px) {
+        flex-direction: row;
+        padding: 70px 0;
+      }
+      &:not(:last-child) {
+        border-bottom: 0.5px solid #000000;
+      }
+      &:nth-child(1) img {
+        width: 232px;
+        height: 64px;
+      }
+      &:nth-child(2) img {
+        width: 262px;
+        height: 87px;
+        @media (min-width: 576px) {
+          width: 288px;
+          height: 95px;
+        }
+      }
+      &:nth-child(3) img {
+        width: 175px;
+        height: 60px;
+      }
+    }
+    &-img {
+      display: block;
+      margin: auto;
+    }
+    &-text {
+      width: 100%;
+      margin-top: 60px;
+      padding: 0 38px;
+      display: flex;
+      flex-direction: column;
+      @media (min-width: 768px) {
+        width: 50%;
+        margin-top: 0;
+        padding: 0;
+      }
+    }
+    &-descr {
+      font-size: 16px;
+      line-height: 22px;
+      color: #000000;
+      @media (min-width: 768px) {
+        margin-right: 20px;
+      }
+      @media (min-width: 1200px) {
+        margin-right: 85px;
+      }
+    }
+  }
+  .circle-orange {
+    position: absolute;
+    left: 0;
+    transform: rotate(180deg);
+    top: -248px;
+    z-index: -1;
+    width: calc(124px * 2);
+    height: calc(248px * 2);
+    @media (min-width: 992px) {
+      display: none;
+    }
+    &-img {
+      height: 100%;
+    }
+  }
+}

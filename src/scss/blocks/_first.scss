@@ -1,0 +1,121 @@
+.first {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    mix-blend-mode: multiply;
+    margin: 0 auto;
+    @media (min-width: 768px) {
+      margin-left: auto;
+    }
+    @media (min-width: 992px) {
+      width: calc(468px * 0.7);
+      height: calc(468px * 0.7);
+    }
+    @media (min-width: 1200px) {
+      width: 468px;
+      height: 468px;
+    }
+  }
+  &__description {
+    font-family: "Miriam Libre";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    color: #000;
+    @media (min-width: 992px) {
+      flex-direction: column;
+      font-size: 35px;
+      line-height: 55px;
+    }
+    @media (min-width: 1200px) {
+      flex-direction: column;
+      font-size: 46px;
+      line-height: 55px;
+    }
+  }
+  &__values {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: 768px) {
+      margin-top: 30px;
+    }
+    @media (min-width: 992px) {
+      margin-top: 40px;
+    }
+    &:nth-child(even) .first__values-wrap {
+      flex-direction: row;
+    }
+    &:nth-child(even) .first__values-wrap h2 {
+      margin-left: 20px;
+    }
+    &-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      width: 100%;
+      &:nth-child(even) {
+        flex-direction: row;
+      }
+    }
+    &-img {
+      width: 159px;
+      height: 132px;
+      @media (min-width: 992px) {
+        width: 232px;
+        height: 194px;
+      }
+    }
+    &-title {
+      width: 204px;
+      font-weight: 700;
+      font-size: 19px;
+      line-height: 23px;
+      text-align: left;
+      color: #000000;
+      @media (min-width: 576px) {
+        width: 260px;
+      }
+      @media (min-width: 992px) {
+        text-align: center;
+        margin-top: 17px;
+        font-size: 24px;
+        line-height: 29px;
+      }
+    }
+    &-descr {
+      display: inline-block;
+      width: 100%;
+      margin-top: 18px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      text-align: left;
+      color: #000000;
+      @media (min-width: 992px) {
+        margin-top: 40px;
+        text-align: center;
+        width: 300px;
+        height: 114px;
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  .first__values:nth-child(even) .first__values-wrap {
+    flex-direction: column;
+  }
+  .first__values:nth-child(odd) .first__values-wrap {
+    flex-direction: column;
+  }
+}

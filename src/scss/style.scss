@@ -1,4 +1,6 @@
 @import '../../design-tokens/build/scss/variables';
+@import 'variables';
+@import 'new_design';
 @import '../../design-tokens/build/scss/fonts';
 @import 'fonts';
 @import '../../node_modules/bootstrap/scss/bootstrap';
@@ -25,3 +27,24 @@
 @import 'press-resources';
 @import 'search';
 @import 'cms';
+
+// New Homepage Design
+
+//sections//
+@import "blocks/header";
+@import "blocks/hamburger";
+@import "blocks/first";
+@import "blocks/practice";
+@import "blocks/tools";
+@import "blocks/movement";
+@import "blocks/carousel";
+@import "blocks/updates";
+@import "blocks/library";
+@import "blocks/newsletter";
+@import "blocks/footer";
+
+//UI kit//
+@import "blocks/divider";
+@import "blocks/titles";
+@import "blocks/buttons";
+@import "blocks/links";

@@ -1,0 +1,44 @@
+.title {
+  font-family: "Miriam Libre";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 50px;
+  text-align: center;
+  color: #000;
+  @media (min-width: 992px) {
+    font-size: 40px;
+    line-height: 48px;
+    margin-top: 60px;
+  }
+  &_practice {
+    margin-top: 60px;
+  }
+  &_tools {
+    margin-top: 70px;
+  }
+  &_movement {
+    margin-top: 0;
+    @media (min-width: 992px) {
+      text-align: left;
+      width: 233px;
+    }
+  }
+  &_updates {
+    margin-top: 44;
+    text-align: center;
+    @media (min-width: 992px) {
+      text-align: left;
+      width: 233px;
+      margin-top: 70px;
+    }
+  }
+  &_newsletter {
+    margin-top: 0;
+    text-align: left;
+    @media (min-width: 992px) {
+      width: 233px;
+    }
+  }
+}
