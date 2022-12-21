@@ -12,6 +12,8 @@ from aldryn_video.cms_plugins import OEmbedVideoPlugin
 
 URL = "https://www.youtube.com/watch?v=31KMjdC6DxE"
 
+# We don't have the banner_video anymore in the homepage redesign
+
 
 class OEmbedVideoPluginTests(TestCase):
 
