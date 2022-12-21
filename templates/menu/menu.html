@@ -1,10 +1,10 @@
 {% load menu_tags %}
 {% for child in children %}
 {# child properties: selected, ancestor, sibling, descendant, children #}
-<li class="{% if child.selected %}active{% endif %}{% if child.children %} has-children{% endif %}">
-  <a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}</a>
+<li class="header__menu-item {% if child.selected %}active{% endif %}{% if child.children %}has-children{% else %}{% endif %}">
+  <a class="{% if child.children or child.level == 1 %}header__menu-link{% else %}header__dropdown-link{% endif %}" href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}</a>
     {% if child.children %}
-    <ul>
+    <ul class="header__dropdown">
       {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
    </ul>
    {% endif %}
