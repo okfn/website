@@ -1,5 +1,9 @@
 # Changelog
 
+## 2022-12-22 - New design
+ - New design [#760](https://github.com/okfn/website/pull/760) + [#761](https://github.com/okfn/website/pull/761)
+ - Fix blocked content [#763](https://github.com/okfn/website/pull/763)
+
 ## 2022-11-25 - Allow order features
  - Allow order and hide features [#746](https://github.com/okfn/website/pull/746)
 
