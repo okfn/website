@@ -1,12 +1,13 @@
-<div class="featured-news">
-  <div class="featured-news_inner">
-    {% for feature in feature_list %}
-    <div class="featured-news_item" data-index="{{ forloop.counter }}">
-      <a class="featured-news_link" {% if feature.link %}href="{{feature.link}}" {% endif %}>
-        <h3>{{feature.title}}</h3>
-        <p>{{feature.text}}</p>
-      </a>
+<div class="row updates__grid">
+  {% for feature in feature_list %}
+    <div class="col-12 col-sm-6 col-md updates__item">
+      <h2 class="updates__item-title">
+        {{ feature.title }}
+      </h2>
+      <p class="updates__item-descr">
+        {{ feature.text}}
+      </p>
+      <a {% if feature.link %}href="{{ feature.link }}" {% endif %}class="link link_updates">Learn more</a>
     </div>
     {% endfor %}
-  </div>
 </div>

@@ -1,0 +1,72 @@
+.updates {
+  position: relative;
+  margin-top: 60px;
+  @media (min-width: 992px) {
+    margin-top: 150px;
+  }
+  .circle-green {
+    position: absolute;
+    transform: rotate(180deg);
+    top: -248px;
+    right: 0;
+    z-index: -1;
+    width: calc(124px * 2);
+    height: calc(248px * 2);
+    @media (min-width: 992px) {
+      transform: rotate(0deg);
+      right: auto;
+      left: 0;
+      top: -350px;
+      height: 700px;
+      width: 448px;
+    }
+    &-img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__grid {
+    margin-top: 37px;
+    @media (min-width: 992px) {
+      margin-top: 96px;
+    }
+  }
+  &__item {
+    padding: 15px;
+    @media (min-width: 992px) {
+      &:not(:first-child) {
+        margin-left: 80px;
+      }
+    }
+    &-title {
+      position: relative;
+      z-index: 1;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 29px;
+      @media (min-width: 992px) {
+        font-size: 24px;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 0;
+        z-index: -4;
+        width: 100%;
+        height: 100%;
+        transition: box-shadow 0.5s ease-in-out;
+      }
+      &:hover {
+        &::after {
+          box-shadow: inset 340px 0 0 0 $OKF-yellow;
+        }
+      }
+    }
+    &-descr {
+      margin-top: 30px;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+}

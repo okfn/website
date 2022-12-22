@@ -1,0 +1,30 @@
+* {
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  position: relative;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  @media (min-width: 576px) {
+    max-width: 100%;
+  }
+  @media (min-width: 768px) {
+    max-width: 720px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1280px;
+  }
+}

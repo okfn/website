@@ -4,38 +4,427 @@
 {% load static %}
 {% block head-scripts %}<script src="https://www.youtube.com/player_api"></script>{% endblock head-scripts %}
 {% block body-class %}home-template{% endblock %}
+{% block main-class %}{% endblock %}
 {% block pagebanner %}
-<section class="banner">
-  <div class="container">
-    <div class="banner_text">
-      {% placeholder "blurb" %}
-    </div>
-    <div class="banner_video">
-      <div class="banner_video-inner">
-        <span class="plugin_picture">
-          {% placeholder "banner thumb" %}
-        </span>
-        {% placeholder "banner video" %}
-        <button class="banner_video-play btn" aria-label="Play video" id="play-home-video">
-          <span class="icon-arrow-right" aria-hidden="true"></span>
-        </button>
-        <button class="banner_video-close btn" aria-label="Close video" id="close-home-video">
-          <span class="icon-close" aria-hidden="true"></span>
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
 {% endblock %}
 
 {% block body %}
-<section class="features">
-  {% placeholder "features" %}
-</section>
-
+          <section class="first">
+            <div class="container">
+              <div class="first__wrapper row">
+                <div
+                  class="col-sm-5 col-12 order-sm-2 justify-content-center align-items-center"
+                >
+                  <img
+                    class="first__img"
+                    src="/assets/img/homepage/compo_data-tools_1.png"
+                    alt="scientific tools"
+                  />
+                </div>
+                <div class="col-sm-7 col-12 order-sm-1">
+                  <h1 class="first__description">
+                    We are part of a global movement using advocacy, technology and
+                    training to unlock information, create and share open knowledge.
+                  </h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="first__values col-12 col-md-6 col-lg-4">
+                  <div class="first__values-wrap">
+                    <img
+                      src="/assets/img/homepage/icon_create-data_1.png"
+                      alt="growing flower"
+                      class="first__values-img"
+                    />
+                    <h2 class="first__values-title">
+                      We enable <br />open data creation
+                    </h2>
+                  </div>
+                  <p class="first__values-descr">
+                    We support the creation of open data for institutions,
+                    organisations and communities that want to make the best
+                    decisions based on evidence.
+                  </p>
+                </div>
+                <div class="first__values col-12 col-md-6 col-lg-4">
+                  <div class="first__values-wrap">
+                    <img
+                      src="/assets/img/homepage/icon_reproducible-research_1.png"
+                      alt="copy of research tools"
+                      class="first__values-img"
+                    />
+                    <h2 class="first__values-title">
+                      We simplify <br />reproducible research
+                    </h2>
+                  </div>
+                  <p class="first__values-descr">
+                    We work to ensure that knowledge reaches all communities in a
+                    collaborative, open, and standardised way, making crucial data
+                    used and useful for the public interest.
+                  </p>
+                </div>
+                <div
+                  class="first__values col-12 offset-md-3 col-md-6 offset-lg-0 col-lg-4"
+                >
+                  <div class="first__values-wrap">
+                    <img
+                      src="/assets/img/homepage/icon_connect_2.png"
+                      alt="connected people"
+                      class="first__values-img"
+                    />
+                    <h2 class="first__values-title">
+                      We are building <br />a global movement
+                    </h2>
+                  </div>
+                  <p class="first__values-descr">
+                    We equip people with data tools and capabilities and connect
+                    them with open knowledge communities worldwide.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+      <section class="practice">
+        <div class="circle-blue-practice">
+          <img
+            src="/assets/img/homepage/semi-circle-blue.svg"
+            alt="decorative blue circle"
+            class="circle-blue-practice-img"
+          />
+        </div>
+        <div class="container">
+          <img
+            class="divider"
+            src="/assets/img/homepage/line-blue.png"
+            alt="blue decorative line"
+          />
+          <h2 class="title title_practice">Open Knowledge in practice</h2>
+          <div class="practice__grid row no-gutters">
+            <div class="col-12 col-lg-6">
+              <div class="practice__first">
+                <div class="practice__first-wrap">
+                  <img
+                    src="/assets/img/practice/1 - RF1130705_DRIVE_-_PCM_-_Peshawar_Credit_Zikrea_Saleah_.jpeg"
+                    alt="children in medical masks"
+                    class="practice__img"
+                  />
+                </div>
+                <div class="practice__first-text">
+                  <h2 class="practice__descr">
+                    Working with UNHCR to better collect, archive and re-use
+                    data about some of the world’s most vulnerable people
+                  </h2>
+                  <a href="https://blog.okfn.org/2022/01/07/working-with-unhcr-to-better-collect-archive-and-re-use-data-about-some-of-the-worlds-most-vulnerable-people/" class="link">Learn more</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="practice__second">
+                <div class="practice__second-wrap">
+                  <img
+                    src="/assets/img/practice/2 - gabriel-mccallin-RZ2hf-iUWLs-unsplash 1.png"
+                    alt="children in medical masks"
+                    class="practice__img"
+                  />
+                </div>
+                <div class="practice__second-text">
+                  <h2 class="practice__descr">
+                    Frictionless Planet: Activating the power of Open Knowledge
+                    and Data to fight the Climate Crisis
+                  </h2>
+                  <a href="https://blog.okfn.org/2022/01/10/frictionless-planet-save-the-date/" class="link">Learn more</a>
+                </div>
+              </div>
+              <div class="practice__third">
+                <div class="practice__third-wrap">
+                  <img
+                    src="/assets/img/practice/3 - national-cancer-institute-lTlB51-XGP4-unsplash 1.png"
+                    alt="children in medical masks"
+                    class="practice__img"
+                  />
+                </div>
+                <div class="practice__third-text">
+                  <h2 class="practice__descr">
+                    Open Science in action! Making it easier for science
+                    researchers to share their data
+                  </h2>
+                  <a href="https://blog.okfn.org/2021/08/16/open-science-in-action-making-it-easier-for-science-researchers-to-share-their-data/" class="link">Learn more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="tools">
+        <div class="circle-orange">
+          <img
+            src="/assets/img/homepage/orange-circle.svg"
+            alt="decorative orange circle"
+            class="circle-orange-img"
+          />
+        </div>
+        <div class="container">
+          <img
+            class="divider"
+            src="/assets/img/homepage/line-orange.png"
+            alt="blue decorative line"
+          />
+          <h2 class="title title_tools">Open Knowledge data tools</h2>
+          <div class="tools__grid">
+            <div class="tools__grid-item">
+              <img
+                src="./assets/img/tools/CKAN-logo 1.png"
+                alt="CKAN"
+                class="tools__grid-img"
+              />
+              <div class="tools__grid-text">
+                <div class="tools__grid-descr">
+                  The world's leading open source data management system. CKAN
+                  makes it easy to publish, share and discover data. It powers
+                  hundreds of data portals worldwide including governments,
+                  NGOs, research centers and enterprises.
+                </div>
+                <a href="https://www.ckan.org" target="_blank" class="link link_tools">Learn more</a>
+              </div>
+            </div>
+            <div class="tools__grid-item">
+              <img
+                src="./assets/img/tools/frictionless-color-full-logo 1.png"
+                alt="frictionless"
+                class="tools__grid-img"
+              />
+              <div class="tools__grid-text">
+                <div class="tools__grid-descr">
+                  For anyone who works with complex data or across tools or
+                  teams (researchers, data scientists, engineers, and
+                  decision-makers), this open-source toolkit brings simplicity
+                  to the data experience through software and standards.
+                </div>
+                <a href="https://frictionlessdata.org" target="_blank" class="link link_tools">Learn more</a>
+              </div>
+            </div>
+            <div class="tools__grid-item">
+              <img
+                src="/assets/img/tools/Open Data Commons.png"
+                alt="Open Data Common"
+                class="tools__grid-img"
+              />
+              <div class="tools__grid-text">
+                <div class="tools__grid-descr">
+                  The home of a set of legal tools and licenses to help you
+                  publish, provide and use open data: Open Data Commons Open
+                  Database License (ODbL), Open Data Commons Attribution
+                  License, and Open Data Commons Public Domain Dedication and
+                  License (PDDL).
+                </div>
+                <a href="https://opendatacommons.org/" target="_blank" class="link link_tools">Learn more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="movement">
+        <div class="circle-pink">
+          <img
+            src="/assets/img/homepage/semi-circle-pink.svg"
+            alt="decorative pink circle"
+            class="circle-pink-img"
+          />
+        </div>
+        <div class="container">
+          <img
+            class="divider"
+            src="/assets/img/homepage/line-pink.png"
+            alt="pink decorative line"
+          />
+          <div class="movement__wrap">
+            <div class="movement__text">
+              <h2 class="title title_movement">Global movement in action</h2>
+              <div class="movement__desc">
+                Open Knowledge Foundation is part of a worldwide movement
+                working together for a fair, free and open future.
+              </div>
+              <button class="button button_movement">Join us!</button>
+            </div>
+            <div class="movement__img">
+              <img
+                src="/assets/img/global_movement/compo_global-movement_1.png"
+                alt="map"
+                class="movement__img-inner"
+              />
+            </div>
+          </div>
+          <h3 class="movement__subtitle">
+            Open Knowledge established chapters
+          </h3>
+          <div class="movement__affiliates">
+            <a class="link" href="https://openknowledge.be/" target="_blank"><img src="/assets/img/global_movement/BE-logo.svg" alt="Belgium" /></a>
+            <a class="link" href="https://ok.org.br/" target="_blank"><img src="/assets/img/global_movement/BR-logo.svg" alt="Brasil" /></a>
+            <a class="link" href="https://okfn.de/" target="_blank"><img src="/assets/img/global_movement/DE-logo.svg" alt="Germany" /></a>
+            <a class="link" href="https://www.okf.fi/" target="_blank"><img src="/assets/img/global_movement/FI-logo.svg" alt="Finland" /></a>
+            <a class="link" href="https://okfn.gr/en/" target="_blank"><img src="/assets/img/global_movement/GR-logo.svg" alt="Greece" /></a>
+            <a class="link" href="https://okfn.jp/" target="_blank"><img src="/assets/img/global_movement/JP-logo.svg" alt="Japan" /></a>
+            <a class="link" href="https://oknp.org/" target="_blank"><img src="/assets/img/global_movement/NP-logo.svg" alt="Nepal" /></a>
+            <a class="link" href="https://okfn.se/en/" target="_blank"><img src="/assets/img/global_movement/SE-logo.svg" alt="Sweden" /></a>
+            <a class="link" href="https://opendata.ch/" target="_blank"><img src="/assets/img/global_movement/CH-logo.svg" alt="CH" /></a>
+            <a href="https://okfn.org/network/" class="link link_movement">More countries</a>
+          </div>
+        </div>
+      </section>
+      <section class="carousel">
+        <div class="carousel__inner">
+          <div class="carousel__item">
+            <div class="carousel__img">
+              <img
+                src="/assets/img/global_movement/image gallery/OKFestival2014.jpg"
+                alt="Open Knowledge Festival"
+                class="carousel__img-inner"
+              />
+            </div>
+            <p class="carousel__descr">
+              Open Knowledge Festival 2014. Credit: Gregor Fischer.
+            </p>
+          </div>
+          <div class="carousel__item">
+            <div class="carousel__img">
+              <img
+                src="/assets/img/global_movement/image gallery/networkmeeting-bcn-2022.jpeg"
+                alt="Barcelona meeting"
+                class="carousel__img-inner"
+              />
+            </div>
+            <p class="carousel__descr">
+              Network 2022 meeting in Barcelona. Credit: Florin Hasler.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="updates">
+        <div class="circle-green">
+          <img
+            src="/assets/img/homepage/semi-circle-green.svg"
+            alt="decorative green circle"
+            class="circle-green-img"
+          />
+        </div>
+        <div class="container">
+          <img
+            class="divider"
+            src="/assets/img/homepage/line-yellow.png"
+            alt="green decorative line"
+          />
+          <h2 class="title title_updates">Latest updates</h2>
+          {% placeholder featured_news %}
+        </div>
+      </section>
+      <section class="library">
+        <div class="container">
+          <img
+            class="divider"
+            src="/assets/img/homepage/line-green.png"
+            alt="green decorative line"
+          />
+          <div class="library__img">
+            <img
+              src="/assets/img/library/open knowledge 1.svg"
+              alt="book"
+              class="library__img-inner"
+            />
+          </div>
+          <div class="library__text">
+            <h2 class="title title_library">Open Knowledge library</h2>
+            <div class="library__desc">
+              Free resources to enable organizations, governments and
+              initiatives to be #OpenByDesign.
+            </div>
+            <!-- <button class="button button_library">Find out more</button> -->
+          </div>
+          <div class="library__grid">
+            <div class="library__grid-item">
+              <img
+                src="/assets/img/library/handbook-thumb.png"
+                alt="Handbook"
+                class="library__grid-img"
+              />
+              <div class="library__grid-text">
+                <h3 class="library__grid-title">Open Data Handbook</h3>
+                <div class="library__grid-descr">
+                  For anyone who works with complex data or across tools or
+                  teams (researchers, data scientists, engineers, and
+                  decision-makers), this open-source toolkit brings simplicity.
+                </div>
+                <a href="https://opendatahandbook.org/" target="_blank" class="link link_library">Learn more</a>
+              </div>
+            </div>
+            <div class="library__grid-item">
+              <img
+                src="/assets/img/library/repository-thumb.png"
+                alt="repository"
+                class="library__grid-img"
+              />
+              <div class="library__grid-text">
+                <h3 class="library__grid-title">Global Project Repository</h3>
+                <div class="library__grid-descr">
+                  Discover dozens of projects carried out by the open community
+                  around the world, indexed in 14 languages and 24 categories,
+                  from Civic Tech to Web Archive.
+                </div>
+                <a href="https://network.okfn.org/project/" target="_blank" class="link link_library">Learn more</a>
+              </div>
+            </div>
+            <div class="library__grid-item">
+              <img
+                src="/assets/img/library/un-report-thumb.png"
+                alt="Open Data Common"
+                class="library__grid-img"
+              />
+              <div class="library__grid-text">
+                <h3 class="library__grid-title">
+                  AI and Digital Transformation Report
+                </h3>
+                <div class="library__grid-descr">
+                  A report by the UN Broadband Commission Working Group on AI
+                  Capacity Building, leveraging a multi-stakeholder leadership
+                  model to assess the critical needs for public sector digital
+                  transformation.
+                </div>
+                <a href="https://www.broadbandcommission.org/working-groups/ai-capacity-building/" target="_blank" class="link link_library">Learn more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="newsletter">
+        <div class="container">
+          <img
+            class="divider"
+            src="/assets/img/homepage/line-blue.png"
+            alt="blue decorative line"
+          />
+          <div class="newsletter__wrap">
+            <div class="newsletter__text">
+              <h2 class="title title_newsletter">Don’t miss a thing</h2>
+              <div class="newsletter__desc">
+                Stay on top of what's happening in the #OpenMovement around the
+                world. (We will never spam you!)
+              </div>
+                <a href="https://us9.list-manage.com/subscribe?u=73f922f8e68e21a10efa21f02&id=32d370a7fc" target="_blank"><input
+                  type="button"
+                  class="button button_newsletter"
+                  value="Suscribe to our Newsletter"
+                  /></a>
+            </div>
+            <div class="newsletter__img">
+              <img
+                src="/assets/img/newsletter/contact 2.png"
+                alt="map"
+                class="newsletter__img-inner"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 <section>
-  <h2 class="home_section-heading">Latest updates</h2>
-  {% placeholder featured_news %}
 </section>
 
 {% endblock %}

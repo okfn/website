@@ -4,6 +4,203 @@
 
   .main {
 
+    & > .banner {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+  
+      @include media-breakpoint-up(xl) {
+        padding-top: $size-spacing-lg;
+        padding-bottom: $size-spacing-lg;
+      }
+  
+      .container {
+        display: flex;
+        flex-grow: 1;
+        align-items: stretch;
+    & > .banner_text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  
+      & > * {
+        font-size: $size-font-lg;
+  
+        @include media-breakpoint-up(lg) {
+          max-width: 40ch;
+        }
+  
+        @include media-breakpoint-up(xl) {
+          font-size: $size-font-xl;
+        }
+  
+        &:first-child {
+          font-size: $size-font-xxxxl;
+          line-height: 1.1;
+          margin-bottom: $size-spacing-base;
+  
+          @include media-breakpoint-up(md) {
+            font-size: $size-font-xxxxxl;
+          }
+  
+          @include media-breakpoint-up(lg) {
+            max-width: 16ch;
+            font-size: $size-font-xxxxxxl;
+          }
+          @include media-breakpoint-up(xl) {
+            font-size: $size-font-xxxxxxxl;
+          }
+        }
+      }
+    }
+  
+    & > .banner_image {
+      display: none;
+  
+      @include media-breakpoint-up(lg) {
+        display: block;
+        position: relative;
+        flex-grow: 1;
+        margin: $size-spacing-base 0;
+      }
+  
+      .plugin_picture {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+      }
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center right;
+      }
+    }
+  
+    & > .banner_video {
+  
+      @include media-breakpoint-up(lg) {
+        width: $home-video-height-lg;
+        flex-shrink: 0;
+        margin-left: $size-spacing-xl;
+      }
+  
+      @include media-breakpoint-up(xl) {
+        width: $home-video-height-xl;
+      }
+    }
+  
+    .banner_video-inner {
+      background-color: $color-gray-100;
+      position: relative;
+    	padding-top: 100%;
+    	height: 0;
+  
+      .banner_video-play,
+      .banner_video-close {
+        display: none;
+        border: none;
+        border-radius: 50%;
+        position: absolute;
+      }
+  
+      .plugin_picture {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+  
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+  
+      .aldryn-video {
+        display: flex;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        justify-content: center;
+        background-color: $color-gray-100;
+        width: 0;
+        transition: width 0.2s;
+  
+        .video-active & {
+          width: 100%;
+  
+          @include media-breakpoint-up(lg) {
+            width: map-get($container-max-widths, lg) - $grid-gutter-width;
+          }
+  
+          @include media-breakpoint-up(xl) {
+            width: map-get($container-max-widths, xl) - $grid-gutter-width;
+          }
+        }
+  
+        .embed-responsive {
+          &::before {
+            padding-top: 0;
+            height: $home-video-height-lg;
+  
+            @include media-breakpoint-up(xl) {
+              height: $home-video-height-xl;
+            }
+          }
+        }
+  
+        .embed-responsive-16by9 {
+          @include media-breakpoint-up(lg) {
+            width: $home-video-height-lg * (16/9);
+          }
+  
+          @include media-breakpoint-up(xl) {
+            width: $home-video-height-xl * (16/9);
+          }
+        }
+  
+        & ~ .banner_video-play {
+          .page:not(.video-active) & {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            color: $color-blue-base;
+            width: 8rem;
+            height: 8rem;
+            top: 50%;
+            left: 50%;
+            transform: translate(-4rem,-4rem);
+            font-size: 5rem;
+            text-indent: 0.4rem;
+          }
+        }
+  
+        & ~ .banner_video-close {
+          .video-active & {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $color-gray-900;
+            color: #fff;
+            top: $size-spacing-base;
+            right: $size-spacing-base;
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+      }
+
+      }
+    }
+  
+    }
+
     & > div {
       @include make-row();
 

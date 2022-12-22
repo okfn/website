@@ -14,6 +14,88 @@
 
 {% block body-sheath %}
     <div class="page" id="page">
+      <header class="header">
+                <div class="search-bar" id="main-search-bar">
+                    {% include 'includes/search.html' %}
+                </div>
+
+
+        <div class="container">
+          <nav class="header__nav">
+            <a href="/" class="header__logo">
+              <img
+                src="/assets/img/header/okfn-logo-landscape-full-rgb-468x131.png"
+                alt="Open Knowledge Foundation logo"
+                class="header__logo-img"
+              />
+            </a>
+            <ul class="header__menu">
+              {% show_menu_below_id "home" 0 1 1 100 "menu/menu.html" %}
+            </ul>
+            <button class="hamburger hamburger--boring" type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+          </nav>
+
+          <div class="header__additional">
+            <div class="header__social">
+              <a href="https://twitter.com/okfn" target="_blank" class="header__social-link">
+                <img
+                  src="/assets/img/header/icon-twitter.png"
+                  alt="twitter"
+                  class="header__social-icon"
+                />
+              </a>
+              <a href="https://facebook.com/OKFNetwork" target="_blank" class="header__social-link">
+                <img
+                  src="/assets/img/header/icon-facebook.png"
+                  alt="facebook"
+                  class="header__social-icon"
+                />
+              </a>
+              <a href="https://www.linkedin.com/company/open-knowledge-foundation/" target="_blank" class="header__social-link">
+                <img
+                  src="/assets/img/header/icon-linkedin.png"
+                  alt="linkedin"
+                  class="header__social-icon"
+                />
+              </a>
+              <a href="https://www.youtube.com/@OpenKnowledgeFoundation/videos" target="_blank" class="header__social-link">
+                <img
+                  src="/assets/img/header/icon-youtube.png"
+                  alt="youtube"
+                  class="header__social-icon"
+                />
+              </a>
+              <a href="/contact" class="header__social-link">
+                <img
+                  src="/assets/img/header/icon-email.png"
+                  alt="email"
+                  class="header__social-icon"
+                />
+              </a>
+            </div>
+            <img
+              class="header__search"
+              src="/assets/img/header/icon-search.png"
+              alt="search"
+              id="display-search-bar"
+            />
+          </div>
+        </div>
+        <div class="circle-blue">
+          <img
+            src="/assets/img/circle-blue.png"
+            alt="decorative blue circle"
+            class="circle-blue-img"
+          />
+        </div>
+
+      </header>
+
+      <!--- 
         <header class="site-header">
             <div class="header">
                 <div class="container">
@@ -48,10 +130,10 @@
                 </div>
             </div>
 
-            {% block pagebanner %}{% endblock %}
-        </header>
+            </header> --->
 
         <main class='{% block main-class %}container {% endblock %}main'>
+            {% block pagebanner %}{% endblock %}
             {% block body %}{% endblock %}
         </main>
         {% block pre_footer %}
@@ -66,11 +148,7 @@
           </div>
         </section>
         {% endblock %}
-        <footer class="site-footer">
-            <div class='container'>
-                {% include 'includes/footer.html' %}
-            </div>
-        </footer>
+        {% include 'includes/footer.html' %}
     </div>
 
     <nav id="mmenu" class="mobile-menu">
