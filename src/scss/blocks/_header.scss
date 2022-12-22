@@ -2,6 +2,72 @@
   position: relative;
   padding-top: 15px;
   margin-bottom: 60px;
+
+    .search-bar {
+      background-color: $color-gray-100;
+      height: 150px;
+      position: absolute;
+      bottom: 150px;
+      width: 100%;
+      transition: bottom 0.3s ease-out;
+      z-index: 30;
+
+      &.active {
+        bottom: 0;
+      }
+
+      .container {
+        padding-top: 40px;
+        padding-left: 360px;
+        position: relative;
+
+        .input {
+          padding-right: 115px;
+
+          input[type="text"] {
+            height: 60px;
+            font-size: 30px;
+            border: none;
+            border-bottom: solid 2px $color-gray-900;
+            background-color: inherit;
+            width: 100%;
+            color: black;
+            outline: none;
+            float: left;
+          }
+        }
+
+        .buttons {
+          position: absolute;
+          right: 15px;
+          top: 50px;
+
+          button {
+            border: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            outline: none;
+            background-color: $color-blue-base;
+            color: #fff;
+            margin-left: 10px;
+            line-height: 40px;
+            vertical-align: middle;
+            padding: 2px;
+
+            @-moz-document url-prefix() {
+              line-height: 42px;
+            }
+
+            &.cancel {
+              background-color: inherit;
+              color: inherit;
+              box-shadow: inset 0px 0px 0px 2px $color-text-base;
+            }
+          }
+        }
+      }
+    }
   .circle-blue {
     position: absolute;
     right: 0;

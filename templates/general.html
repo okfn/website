@@ -15,6 +15,11 @@
 {% block body-sheath %}
     <div class="page" id="page">
       <header class="header">
+                <div class="search-bar" id="main-search-bar">
+                    {% include 'includes/search.html' %}
+                </div>
+
+
         <div class="container">
           <nav class="header__nav">
             <a href="/" class="header__logo">
@@ -76,7 +81,7 @@
               class="header__search"
               src="/assets/img/header/icon-search.png"
               alt="search"
-              id="search"
+              id="display-search-bar"
             />
           </div>
         </div>
