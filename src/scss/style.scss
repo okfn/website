@@ -1,10 +1,10 @@
 @import '../../design-tokens/build/scss/variables';
 @import 'variables';
-@import 'new_design';
 @import '../../design-tokens/build/scss/fonts';
 @import 'fonts';
 @import '../../node_modules/bootstrap/scss/bootstrap';
 @import '../../node_modules/jquery.mmenu/dist/jquery.mmenu.all';
+@import 'new_design';
 @import 'mixins';
 @import 'elements';
 @import 'icons';
@@ -26,6 +26,7 @@
 @import 'press-resources';
 @import 'search';
 @import 'cms';
+
 
 // New Homepage Design
 
