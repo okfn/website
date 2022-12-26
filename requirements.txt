@@ -236,8 +236,6 @@ tinycss2==1.1.1
     #   svglib
 toml==0.10.2
     # via pep517
-tomli==2.0.1
-    # via build
 topicaxis-opengraph==0.5
     # via -r requirements.in
 typing-extensions==4.2.0
@@ -253,7 +251,7 @@ webencodings==0.5.1
     #   cssselect2
     #   html5lib
     #   tinycss2
-wheel==0.36.2
+wheel==0.38.1
     # via pip-tools
 whoosh==2.7.4
     # via -r requirements.in
