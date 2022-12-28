@@ -22,7 +22,7 @@ class HelpersTest(TestCase):
         self.assertEqual(get_activity(text), None)
 
     def test_extract_ograph_title(self):
-        link = 'http://www.goodreads.com/book/show/486625.Close_to_the_Machine'
+        link = 'https://www.goodreads.com/book/show/486625.Close_to_the_Machine'
         text = '#reading {}'.format(link)
         url, title = extract_ograph_title(text)
         self.assertEqual(url, link)
