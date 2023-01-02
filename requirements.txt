@@ -121,7 +121,7 @@ djangocms-link==3.1.0
     # via -r requirements.in
 djangocms-picture==4.0.0
     # via -r requirements.in
-djangocms-text-ckeditor==5.1.1
+djangocms-text-ckeditor==5.1.2
     # via -r requirements.in
 easy-thumbnails[svg]==2.8.3
     # via
@@ -173,7 +173,9 @@ markdown2==2.4.0
 micawber==0.5.4
     # via -r requirements.in
 packaging==21.3
-    # via build
+    # via
+    #   build
+    #   djangocms-text-ckeditor
 pep517==0.10.0
     # via build
 pillow==9.3.0
@@ -236,8 +238,6 @@ tinycss2==1.1.1
     #   svglib
 toml==0.10.2
     # via pep517
-tomli==2.0.1
-    # via build
 topicaxis-opengraph==0.5
     # via -r requirements.in
 typing-extensions==4.2.0
