@@ -1,5 +1,10 @@
 # Changelog
 
+## 2023-03-21 - New design
+ - Remove unused library Opengraph [here](https://github.com/okfn/website/pull/794/commits/2448e5b801ddfb3c31cede0db06b0f1e058544e8)
+ - Stop publishing docker images [#781](https://github.com/okfn/website/issues/781) and [here](https://github.com/okfn/website/pull/794/commits/a2b907ed05dd6c9bc08afcbeda4efd8f729bf095)
+ - Update packages [#793](https://github.com/okfn/website/pull/793)
+
 ## 2022-12-22 - New design
  - New design [#760](https://github.com/okfn/website/pull/760) + [#761](https://github.com/okfn/website/pull/761)
  - Fix blocked content [#763](https://github.com/okfn/website/pull/763)
