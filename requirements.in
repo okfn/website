@@ -43,7 +43,7 @@ beautifulsoup4==4.11.1
 micawber==0.5.4
 
 # for google
-django-environ==0.9.0
+django-environ==0.10.0
 google-cloud-storage==2.6.0
 google-auth==2.15.0
 

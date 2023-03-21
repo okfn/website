@@ -63,7 +63,7 @@ django-countries==7.4.2
     # via -r requirements.in
 django-csp==3.7
     # via -r requirements.in
-django-environ==0.9.0
+django-environ==0.10.0
     # via -r requirements.in
 django-filer==2.2.3
     # via
@@ -234,8 +234,6 @@ tinycss2==1.1.1
     #   svglib
 toml==0.10.2
     # via pep517
-tomli==2.0.1
-    # via build
 typing-extensions==4.2.0
     # via django-countries
 unidecode==1.1.1
