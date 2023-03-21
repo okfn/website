@@ -21,7 +21,7 @@ django-mptt==0.14.0
 django-pagedown==2.2.1
 django-reversion==5.0.4
 django-sekizai==4.0.0
-django-storages==1.13.1
+django-storages==1.13.2
 # https://github.com/django-cms/djangocms-link/issues/209
 django-treebeard==4.4  # 4.5.1
 djangocms-admin-style==3.2.0
