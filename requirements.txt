@@ -57,7 +57,7 @@ django-cms==3.11.0
     #   djangocms-link
     #   djangocms-picture
     #   djangocms-text-ckeditor
-django-compressor==4.1
+django-compressor==4.3.1
     # via -r requirements.in
 django-countries==7.4.2
     # via -r requirements.in
@@ -199,7 +199,7 @@ pyparsing==3.0.9
     # via packaging
 pytz==2020.4
     # via django
-rcssmin==1.1.0
+rcssmin==1.1.1
     # via django-compressor
 redis==3.5.3
     # via django-redis
@@ -212,7 +212,7 @@ requests==2.28.1
     #   -r requirements.in
     #   google-api-core
     #   google-cloud-storage
-rjsmin==1.2.0
+rjsmin==1.2.1
     # via django-compressor
 rsa==4.7.2
     # via google-auth
@@ -234,8 +234,6 @@ tinycss2==1.1.1
     #   svglib
 toml==0.10.2
     # via pep517
-tomli==2.0.1
-    # via build
 typing-extensions==4.2.0
     # via django-countries
 unidecode==1.1.1

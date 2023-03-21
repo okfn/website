@@ -9,7 +9,7 @@ wheel==0.38.4
 Django==3.2.16
 cssmin==0.2.0
 django-cms==3.11.0
-django-compressor==4.1
+django-compressor==4.3.1
 django-csp==3.7
 django-countries==7.4.2
 django-haystack==3.2.1
