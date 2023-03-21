@@ -4,7 +4,7 @@
 pip-tools==6.12.1
 # wheel is required for pip-tool but ver <= 0.37.1 is vulnerable.
 # Remove once pip-tools update wheel version
-wheel==0.38.4
+wheel==0.40.0
 
 Django==3.2.16
 cssmin==0.2.0
