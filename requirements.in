@@ -1,7 +1,7 @@
 # This file contains the direct requirements
 # Use pip-compile to create requirements.txt from this
 
-pip-tools==6.12.1
+pip-tools==6.12.3
 # wheel is required for pip-tool but ver <= 0.37.1 is vulnerable.
 # Remove once pip-tools update wheel version
 wheel==0.38.4
