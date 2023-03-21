@@ -103,7 +103,6 @@ django-treebeard==4.4
     # via
     #   -r requirements.in
     #   django-cms
-    #   djangocms-link
 djangocms-admin-style==3.2.0
     # via
     #   -r requirements.in
@@ -115,7 +114,7 @@ djangocms-attributes-field==2.0.0
     #   djangocms-picture
 djangocms-file==3.0.0
     # via -r requirements.in
-djangocms-link==3.1.0
+djangocms-link==3.1.1
     # via -r requirements.in
 djangocms-picture==4.0.0
     # via -r requirements.in
@@ -234,8 +233,6 @@ tinycss2==1.1.1
     #   svglib
 toml==0.10.2
     # via pep517
-tomli==2.0.1
-    # via build
 typing-extensions==4.2.0
     # via django-countries
 unidecode==1.1.1

@@ -26,7 +26,7 @@ django-storages==1.13.1
 django-treebeard==4.4  # 4.5.1
 djangocms-admin-style==3.2.0
 djangocms-file==3.0.0
-djangocms-link==3.1.0
+djangocms-link==3.1.1
 djangocms-picture==4.0.0
 djangocms-text-ckeditor==5.1.1
 easy-thumbnails==2.8.3
