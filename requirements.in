@@ -1,54 +1,54 @@
 # This file contains the direct requirements
 # Use pip-compile to create requirements.txt from this
 
-pip-tools==6.8.0
-
-Django==3.2.16
+pip-tools==6.12.3
+# wheel is required for pip-tool but ver <= 0.37.1 is vulnerable.
+# Remove once pip-tools update wheel version
+wheel==0.40.0
+Django==3.2.18
 cssmin==0.2.0
-django-cms==3.11.0
-django-compressor==4.1
+django-cms==3.11.1
+django-compressor==4.3.1
 django-csp==3.7
-django-countries==7.3.2
+django-countries==7.5.1
 django-haystack==3.2.1
 django-redis==5.2.0
-django-filer==2.2.3
+django-filer==2.2.4
 django-formtools==2.4
 django-markdown-deux==1.0.5
 django-mptt==0.14.0
 django-pagedown==2.2.1
-django-reversion==5.0.3
+django-reversion==5.0.4
 django-sekizai==4.0.0
-django-storages==1.13.1
+django-storages==1.13.2
 # https://github.com/django-cms/djangocms-link/issues/209
 django-treebeard==4.4  # 4.5.1
-djangocms-admin-style==3.2.0
+djangocms-admin-style==3.2.3
 djangocms-file==3.0.0
-djangocms-link==3.1.0
+djangocms-link==3.1.1
 djangocms-picture==4.0.0
-djangocms-text-ckeditor==5.1.1
-easy-thumbnails==2.8.3
+djangocms-text-ckeditor==5.1.2
+easy-thumbnails==2.8.5
 feedparser==6.0.10
 gunicorn==20.1.0
 iso3166==2.1.1
-libsass==0.21.0
-psycopg2-binary==2.9.3
-requests==2.28.1
-topicaxis-opengraph==0.5
+libsass==0.22.0
+psycopg2-binary==2.9.5
+requests==2.28.2
 whoosh==2.7.4
 
 jsonfield==3.1.0
-beautifulsoup4==4.11.1
+beautifulsoup4==4.12.0
 micawber==0.5.4
 
 # for google
-django-environ==0.9.0
-google-cloud-storage==2.5.0
-google-auth==2.12.0
+django-environ==0.10.0
+google-cloud-storage==2.7.0
+google-auth==2.16.2
 
 # search engine
-elasticsearch==8.4.2
+elasticsearch==8.6.2
 
-# django-pagedown, djangocms-text-ckeditor and easy-thumbnails
-# use it but don't specify the version
+# django-pagedown, djangocms-text-ckeditor and easy-thumbnails use it but don't specify the version
 # this is a secure version
-pillow==9.2.0
+pillow==9.4.0

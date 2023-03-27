@@ -436,7 +436,8 @@ CSP_FONT_SRC = asset_hosts + [
     "'self'",
     'data:',
     'https://use.typekit.net',
-    'https://themes.googleusercontent.com'
+    'https://themes.googleusercontent.com',
+    'https://fonts.gstatic.com',
 ]
 CSP_FORM_ACTION = [
     "'self'",
