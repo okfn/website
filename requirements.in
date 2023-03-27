@@ -22,7 +22,7 @@ django-reversion==5.0.4
 django-sekizai==4.0.0
 django-storages==1.13.2
 # https://github.com/django-cms/djangocms-link/issues/209
-django-treebeard==4.4  # 4.5.1
+django-treebeard==4.6.1  # 4.5.1
 djangocms-admin-style==3.2.3
 djangocms-file==3.0.0
 djangocms-link==3.1.1
