@@ -1,11 +1,16 @@
+import logging
 from hashlib import md5
 
 from cms.models.pluginmodel import CMSPlugin
 from cms.extensions import PageExtension
 from django.urls import reverse
+from django.urls.exceptions import NoReverseMatch
 from django.db import models
 from django.utils.text import slugify, Truncator
 from django_countries.fields import CountryField
+
+
+logger = logging.getLogger(__name__)
 
 
 class Person(models.Model):
@@ -348,12 +353,26 @@ class NetworkGroup(models.Model):
         # we have to have two different urls depending on if it is a
         # country or a region group
         if self.region:
-            return reverse('network-region',
-                           kwargs={'country': self.country_slug,
-                                   'region': self.region_slug})
+            try:
+                url = reverse(
+                    'network-region',
+                    kwargs={
+                        'country': self.country_slug,
+                        'region': self.region_slug
+                    }
+                )
+            except NoReverseMatch:
+                logger.error(f'NetworkGroup.get_absolute_url ERROR: {self.region} :: {self.country}')
+                url = '/'
         else:
-            return reverse('network-country',
-                           kwargs={'country': self.country_slug})
+            # Some countries are missing (?)
+            try:
+                url = reverse('network-country', kwargs={'country': self.country_slug})
+            except NoReverseMatch:
+                logger.error(f'NetworkGroup.get_absolute_url ERROR: {self.country}')
+                url = '/'
+
+        return url
 
     class Meta:
         unique_together = ('country', 'region')
