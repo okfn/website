@@ -13,7 +13,7 @@ django-csp==3.7
 django-countries==7.5.1
 django-haystack==3.2.1
 # include redis until django-redis is updated
-redis==4.5.3
+redis==4.5.4
 django-redis==5.2.0
 django-filer==2.2.4
 django-formtools==2.4
