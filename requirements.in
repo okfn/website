@@ -46,7 +46,7 @@ micawber==0.5.4
 # for google
 django-environ==0.10.0
 google-cloud-storage==2.7.0
-google-auth==2.16.2
+google-auth==2.17.1
 
 # search engine
 elasticsearch==8.6.2
