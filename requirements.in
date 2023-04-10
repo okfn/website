@@ -49,7 +49,7 @@ google-cloud-storage==2.7.0
 google-auth==2.16.2
 
 # search engine
-elasticsearch==8.6.2
+elasticsearch==8.7.0
 
 # django-pagedown, djangocms-text-ckeditor and easy-thumbnails use it but don't specify the version
 # this is a secure version
