@@ -4,7 +4,7 @@
 #
 #    pip-compile --output-file=requirements.dev.txt requirements.dev.in
 #
-beautifulsoup4==4.12.0
+beautifulsoup4==4.12.2
     # via
     #   -c requirements.txt
     #   webtest
