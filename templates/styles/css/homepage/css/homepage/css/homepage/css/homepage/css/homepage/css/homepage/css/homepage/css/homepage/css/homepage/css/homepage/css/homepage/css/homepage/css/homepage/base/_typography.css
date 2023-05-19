@@ -1,0 +1,26 @@
+.title {
+  &-h0 {
+    @apply text-h0 leading-none font-bold;
+  }
+
+  &-h1 {
+    @apply text-h1 leading-none font-bold;
+  }
+
+  &-h2 {
+    @apply text-h2 leading-none font-bold;
+  }
+
+  &-h3 {
+    @apply text-h3 leading-[120%] font-bold;
+  }
+
+  &-h4 {
+    @apply text-h3 leading-[120%] font-bold;
+  }
+
+  &-h5 {
+    @apply text-h3 leading-[120%] font-bold;
+  }
+}
+

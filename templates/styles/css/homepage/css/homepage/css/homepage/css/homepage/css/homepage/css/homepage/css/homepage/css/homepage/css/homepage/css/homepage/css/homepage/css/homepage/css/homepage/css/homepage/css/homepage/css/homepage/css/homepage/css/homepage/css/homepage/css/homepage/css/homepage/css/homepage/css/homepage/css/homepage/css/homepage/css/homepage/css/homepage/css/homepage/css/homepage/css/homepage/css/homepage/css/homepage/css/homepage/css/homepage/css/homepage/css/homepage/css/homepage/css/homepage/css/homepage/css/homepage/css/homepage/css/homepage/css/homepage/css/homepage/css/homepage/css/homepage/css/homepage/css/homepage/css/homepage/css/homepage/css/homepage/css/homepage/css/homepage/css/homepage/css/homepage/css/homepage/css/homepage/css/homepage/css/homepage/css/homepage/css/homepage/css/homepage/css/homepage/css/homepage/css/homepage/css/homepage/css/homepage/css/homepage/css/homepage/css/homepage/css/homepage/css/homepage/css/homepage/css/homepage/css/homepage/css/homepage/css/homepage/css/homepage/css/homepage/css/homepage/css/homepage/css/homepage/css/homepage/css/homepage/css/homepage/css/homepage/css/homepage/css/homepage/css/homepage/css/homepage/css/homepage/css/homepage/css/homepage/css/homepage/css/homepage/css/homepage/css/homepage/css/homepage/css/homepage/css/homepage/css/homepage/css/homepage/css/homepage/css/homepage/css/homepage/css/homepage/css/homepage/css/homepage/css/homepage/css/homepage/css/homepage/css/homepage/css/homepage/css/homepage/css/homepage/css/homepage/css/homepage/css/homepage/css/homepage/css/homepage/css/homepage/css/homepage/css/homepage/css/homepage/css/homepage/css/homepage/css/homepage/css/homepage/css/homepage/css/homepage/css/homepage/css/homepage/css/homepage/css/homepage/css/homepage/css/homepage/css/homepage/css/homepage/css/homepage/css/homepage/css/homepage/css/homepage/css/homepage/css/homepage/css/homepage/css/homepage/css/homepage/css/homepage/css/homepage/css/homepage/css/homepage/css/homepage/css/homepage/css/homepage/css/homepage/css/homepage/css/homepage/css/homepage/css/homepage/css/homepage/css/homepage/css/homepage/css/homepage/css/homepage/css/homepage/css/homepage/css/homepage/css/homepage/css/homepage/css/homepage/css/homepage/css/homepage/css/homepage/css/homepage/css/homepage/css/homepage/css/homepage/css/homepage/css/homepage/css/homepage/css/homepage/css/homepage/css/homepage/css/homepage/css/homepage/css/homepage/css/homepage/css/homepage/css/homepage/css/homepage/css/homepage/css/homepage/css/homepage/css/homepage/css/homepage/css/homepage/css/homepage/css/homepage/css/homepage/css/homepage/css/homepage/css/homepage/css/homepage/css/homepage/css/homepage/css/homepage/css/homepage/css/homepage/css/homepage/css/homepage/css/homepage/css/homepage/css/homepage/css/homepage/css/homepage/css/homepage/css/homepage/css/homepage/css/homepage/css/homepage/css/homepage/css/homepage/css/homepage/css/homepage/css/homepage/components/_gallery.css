@@ -1,0 +1,13 @@
+.gallery {
+  &__item {
+    @apply px-5;
+
+    .img-set {
+      @apply w-min;
+
+      img {
+        @apply max-w-none;
+      }
+    }
+  }
+}
