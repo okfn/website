@@ -9,76 +9,87 @@
 {% endblock %}
 
 {% block head-css %}
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="/assets/assets/general.css">
 {% endblock %}
 
 {% block body-sheath %}
-    <div class="page" id="page">
-        <header class="site-header">
-            <div class="header">
-                <div class="container">
-                    <h1 class="brand">
-                        <a class="brand_link" href="/">
-                          {% include 'includes/logo.svg' %}
-                        </a>
-                    </h1>
-                    <a href="#mmenu" class="show-menu">
-                        <span class="icon-menu" aria-hidden="true"></span>
-                        <span class="sr-only">Open the menu</span>
-                    </a>
+    <input type="checkbox" class="main-nav__switcher-indicator" id="main-nav__switcher-indicator">
+    <div class="root">
+      <div class="master -has-bg-circle -bg-circle-lg before:left-1/2 before:-translate-y-1/2">
+        <div class="container">
+          <!-- header -->
+          <header class="main-header {{ className }}">
+            <div class="flex justify-between items-center">
+              <a href="/" class="lg">
+                <img src="/assets/images/lg-okfn.svg" class="h-[4.375rem] md:h-[5.625rem]" alt="Open Knowledge Foundation">
+              </a>
+          
+              <nav class="main-nav">
+                <label for="main-nav__switcher-indicator" class="icon relative z-50 lg:hidden cursor-pointer">
+                  <img src="/images/icons/menu.svg" class="icon-menu" alt="Menu">
+                  <img src="/images/icons/close.svg" class="icon-close" alt="Menu">
+                </label>
+                <div class="main-nav__container">
+                  <a href="/" class="lg">
+                    <img src="/images/lg-okfn-black.svg" class="h-20" alt="Open Knowledge Foundation">
+                  </a>
+          
 
-                    <nav>
-                        <ul class="secondary nav">
-                            {% include 'includes/nav_secondary.html' %}
-                        </ul>
-                        <ul class="primary nav">
-                            {% show_menu_below_id "home" 0 1 1 100 "menu/menu.html" %}
-                            <li class="search">
-                                <label for="search">
-                                    <span class="icon-search" aria-hidden="true" id="display-search-bar"></span>
-                                    <span class="sr-only">Search</span>
-                                </label>
-                            </li>
-                        </ul>
-                    </nav>
+<ul class="main-nav__menu">
+  {% show_menu_below_id "home" 0 1 1 100 "menu/menu.html" %}
+
+                    <li class="main-nav__item -search switcher">
+                      <input type="checkbox" id="switch-search" class="switcher__indicator">
+                      <label for="switch-search" class="switcher__trigger icon">
+                        <span>
+                          <!-- <img src="/images/icons/header-search.svg" class="-search__open" alt="Search"> -->
+                          <!-- <img src="/images/icons/close.svg" class="-search__close" alt="Close search"> -->
+                        </span>
+                      </label>
+                      <form action="/search" class="switcher__target form main-header__search">
+                        <div class="input-fake flex">
+                          <input class="form-control flex-grow" name="q" type="text" />
+                          <button class="flex-shrink-0">
+                            <img src="/assets/images/icons/header-search.svg" class="max-w-none" alt="Search">
+                          </button>
+                        </div>
+                      </form>
+                    </li>
+                    <li class="main-nav__item -language" data-current-language="English">
+                      <label class="icon">
+                        <span></span>
+                      </label>
+                      <ul class="submenu -simple">
+                        <li><a href="">English</a></li>
+                        <li><a href="">Español</a></li>
+                        <li><a href="">Português (Brasil)</a></li>
+                        <li><a href="">Français</a></li>
+                      </ul>
+                    </li>
+                  </ul>
                 </div>
-
-                <div class="search-bar" id="main-search-bar">
-                    {% include 'includes/search.html' %}
-                </div>
+              </nav>
             </div>
-
-            {% block pagebanner %}{% endblock %}
-        </header>
-
-        <main class='{% block main-class %}container {% endblock %}main'>
-            {% block body %}{% endblock %}
-        </main>
-        {% block pre_footer %}
-        <section class="footer-cta">
-          <div class="container">
-            <div class="text">
-              {% static_placeholder "footer call to action text" %}
+          </header>
+          <!-- /header -->
+          {% block body %}{% endblock %}
+          {% block pre_footer %}
+          <section class="footer-cta">
+            <div class="container">
+              <div class="text">
+                {% static_placeholder "footer call to action text" %}
+              </div>
+              <div class="link">
+                {% static_placeholder "footer call to action link" %}
+              </div>
             </div>
-            <div class="link">
-              {% static_placeholder "footer call to action link" %}
-            </div>
-          </div>
-        </section>
-        {% endblock %}
-        <footer class="site-footer">
-            <div class='container'>
-                {% include 'includes/footer.html' %}
-            </div>
-        </footer>
+          </section>
+          {% endblock %}
+        </div>
+      </div>
+      {% include 'includes/footer.html' %}
     </div>
-
-    <nav id="mmenu" class="mobile-menu">
-        <ul>
-            {% include 'includes/nav.html' %}
-            {% include 'includes/nav_secondary.html' %}
-        </ul>
-    </nav>
 {% endblock %}
 
 {% block javascript-libraries %}
@@ -102,5 +113,4 @@
                 {% block template-js %}{% endblock template-js %}
             });
         </script>
-
 {% endblock %}

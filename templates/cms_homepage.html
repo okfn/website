@@ -5,7 +5,7 @@
 {% block head-scripts %}<script src="https://www.youtube.com/player_api"></script>{% endblock head-scripts %}
 {% block body-class %}home-template{% endblock %}
 {% block pagebanner %}
-<section class="banner">
+  <section class="banner">
   <div class="container">
     <div class="banner_text">
       {% placeholder "blurb" %}
@@ -29,20 +29,368 @@
 {% endblock %}
 
 {% block body %}
-<section class="features">
-  {% placeholder "features" %}
+<!-- hero -->
+<section class="sect sect-hero mb-20">
+  <div class="sect__content">
+    <div class="lg:flex lg:gap-x-8 lg:items-center md:flex-row-reverse">
+      <div class="flex-shrink-0">
+        <div class="mb-10 lg:mb-0 flex-shrink-0">
+          <img class="mx-auto" src="/assets/images/home-hero-image.svg" alt="Home Hero">
+        </div>
+      </div>
+      <div class="flex-grow">
+        <h1 class="text-h1 !leading-tight">
+          <strong>We are building a world open by design where all knowledge is</strong>
+          <span class="font-mono">accessible to everyone.</span>
+        </h1>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /hero -->
+
+<!-- sect-features -->
+<section class="sect sect-features -tighten-1 mb-20">
+  <div class="sect__content">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16 mx-auto">
+
+<!-- feature-item -->
+<a href="" class="feature-item -center">
+  <figure class="flex items-center justify-center md:aspect-[272/227]">
+    <img src="/assets/images/home-features-open-data.svg" alt="">
+  </figure>
+
+  <strong class="title">We enable open data creation</strong>
+
+  <span class="description">We are the technology arm of institutions, organizations and communities, so they can create, manage and publish open data with our tools.</span>
+  <em class="link-arrow-curved">
+    Learn more
+  </em>
+</a>
+<!-- /feature-item -->
+
+<!-- feature-item -->
+<a href="" class="feature-item -center">
+  <figure class="flex items-center justify-center md:aspect-[272/227]">
+    <img src="/assets/images/home-features-knowledge.svg" alt="">
+  </figure>
+
+  <strong class="title">We are knowledge spreaders</strong>
+
+  <span class="description">We are knowledge spreaders' description='We offer capacity-building training on data literacies for individuals, teams and communities so they can understand transformative power of openness.</span>
+  <em class="link-arrow-curved">
+    Learn more
+  </em>
+</a>
+<!-- /feature-item -->
+
+<!-- feature-item -->
+<a href="" class="feature-item -center">
+  <figure class="flex items-center justify-center md:aspect-[272/227]">
+    <img src="/assets/images/home-features-global-movement.svg" alt="">
+  </figure>
+
+  <strong class="title">We are global movement builders</strong>
+  <span class="description">We equip people with data tools and capabilities and connect them with open knowledge communities worldwide.</span>
+  <em class="link-arrow-curved">
+    Learn more
+  </em>
+</a>
+<!-- /feature-item -->
+
+    </div>
+  </div>
+</section>
+<!-- /sect-features -->
+
+<!-- section practice -->
+<section class="sect sect-highlights mb-24">
+  <div class="sect__content">
+    <h2 class="mb-20 text-h1 text-center font-bold leading-none">Open Knowledge in <br> practice</h2>
+
+    <div class="flex flex-col gap-y-20">
+      <a href="https://blog.okfn.org/2022/01/10/frictionless-planet-save-the-date/" class="highlight sm:text-white">
+        <!-- img-set -->
+        <figure class="img-set">
+          <img src="/assets/images/home-highlight-1.png" alt="">
+          <figcaption class="text">
+            <span class="tag">Advocacy</span>
+            <strong class="title">Frictionless Planet: Activating the power of Open Knowledge and Data to fight the Climate Crisis</strong>
+            <span class="link-arrow-curved">Learn more</span>
+          </figcaption>
+        </figure>
+        <!-- /img-set -->
+      </a>
+
+      <a href="https://blog.okfn.org/2021/08/16/open-science-in-action-making-it-easier-for-science-researchers-to-share-their-data/" class="highlight">
+        <!-- img-set -->
+        <figure class="img-set">
+          <img src="/assets/images/home-highlight-2.png" alt="">
+          <figcaption class="text">
+            <span class="tag">Science</span>
+            <strong class="title">Open Science in action! Making it easier for science researchers to share their data</strong>
+            <span class="link-arrow-curved">Learn more</span>
+          </figcaption>
+        </figure>
+        <!-- /img-set -->
+      </a>
+
+      <a href="https://blog.okfn.org/2022/01/07/working-with-unhcr-to-better-collect-archive-and-re-use-data-about-some-of-the-worlds-most-vulnerable-people/" class="highlight sm:text-white">
+        <!-- img-set -->
+        <figure class="img-set">
+          <img src="/assets/images/home-highlight-3.png" alt="">
+          <figcaption class="text">
+            <span class="tag">Data</span>
+            <strong class="title">Working with UNHCR to better collect, archive and re-use data about some of the world’s most vulnerable people</strong>
+            <span class="link-arrow-curved">Learn more</span>
+          </figcaption>
+        </figure>
+        <!-- /img-set -->
+      </a>
+    </div>
+  </div>
+</section>
+<!-- /section practice -->
+
+<!-- section data tools -->
+
+<section class="sect sect-features -tighten-1 mb-20">
+  <div class="sect__content">
+    <h2 class="mb-20 text-h1 text-center font-bold leading-none">Open Knowledge <br> data tools</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16 mx-auto">
+
+<!-- feature-item -->
+<a href="https://ckan.org" class="feature-item">
+  <figure class="{{figureClassName}}">
+    <img src="/assets/images/home-tools-ckan.png" alt="">
+  </figure>
+
+  <span class="description">The world's leading open source data management system. CKAN makes it easy to publish, share and discover data. It powers hundreds of data portals worldwide including governments, NGOs, research centers and enterprises.</span>
+  <em class="link-arrow-curved">
+    Learn more
+  </em>
+</a>
+<!-- /feature-item -->
+
+
+<!-- feature-item -->
+<a href="https://frictionlessdata.io/" target="_blank" class="feature-item ">
+  <figure class="">
+    <img src="/assets/images/home-tools-frictionless-data.png" alt="">
+  </figure>
+
+  <span class="description">For anyone who works with complex data or across tools or teams (researchers, data scientists, engineers, and decision-makers), this open-source toolkit brings simplicity to the data experience through software and standards.</span>
+  <em class="link-arrow-curved">
+    Learn more
+  </em>
+</a>
+<!-- /feature-item -->
+
+<!-- feature-item -->
+<a href="https://opendatacommons.org/"  target="_blank" class="feature-item">
+  <figure class="">
+    <img src="/assets/images/home-tools-open-data-commons.png" alt="">
+  </figure>
+
+  <span class="description">The home of a set of legal tools and licenses to help you publish, provide and use open data: Open Database License (ODbL), Open Data Commons Attribution License, and Open Data Commons Public Domain Dedication and License (PDDL).</span>
+  <em class="link-arrow-curved">
+    Learn more
+  </em>
+</a>
+<!-- /feature-item -->
+    </div>
+  </div>
 </section>
 
-<section>
-  <h2 class="home_section-heading">Latest updates</h2>
-  {% placeholder featured_news %}
+
+<!-- /section data tools -->
+
+<!-- section global network -->
+<section class="sect sect-hero -tighten-1 mx-auto -has-bg-circle -bg-circle-okfn-purple -bg-circle-lg mb-20">
+  <div class="sect__content">
+    <div class="lg:flex lg:gap-x-8 lg:items-center md:flex-row-reverse md:!gap-x-28">
+      <div class="flex-shrink-0">
+        <div class="flex-shrink-0 mb-10 lg:mb-0">
+          <img src="/assets/images/home-hero-global-movement.svg" class="mx-auto" alt="Home Hero">
+        </div>
+      </div>
+      <div class="flex-grow">
+        <h2 class="mb-8 font-bold text-h1 leading-none">Global <br class="md-no-break"> movement in <br class="md-no-break"> action</h2>
+        <span class="block mb-16 text-2xl">Open Knowledge Foundation is part of a worldwide movement working together for a fair, free and open future.</span>
+        <a href="/network" class="btn">Join us!</a>
+      </div>
+    </div>
+  </div>
 </section>
+
+<section class="sect sect-generic -tighten-1 mx-auto mb-20 text-center">
+  <div class="sect__content">
+    <h3 class="py-6 mb-20 text-2xl font-bold">Open Knowledge established chapters</h3>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 items-center gap-x-2.5 gap-y-10 mb-20">
+      <a href="https://openknowledge.be/">
+        <figure>
+          <img src="/assets/img/network/BE-logo.svg" alt="Belgium">
+        </figure>
+      </a>
+      <a href="https://ok.org.br/">
+        <figure>
+          <img src="/assets/img/network/BR-logo.svg" alt="Brazil">
+        </figure>
+      </a>
+      <a href="https://okfn.de/">
+        <figure>
+          <img src="/assets/img/network/DE-logo.svg" alt="Germany">
+        </figure>
+      </a>
+      <a href="https://www.okf.fi/">
+        <figure>
+          <img src="/assets/img/network/FI-logo.svg" alt="Finland">
+        </figure>
+      </a>
+      <a href="https://okfn.gr/en/">
+        <figure>
+          <img src="/assets/img/network/GR-logo.svg" alt="Greece">
+        </figure>
+      </a>
+      <a href="https://okfn.jp/">
+        <figure>
+          <img src="/assets/img/network/JP-logo.svg" alt="Japan">
+        </figure>
+      </a>
+      <a href="https://oknp.org/">
+        <figure>
+          <img src="/assets/img/network/NP-logo.svg" alt="Nepal">
+        </figure>
+      </a>
+      <a href="https://okfn.se/en/">
+        <figure>
+          <img src="/assets/img/network/SE-logo.svg" alt="Sweden">
+        </figure>
+      </a>
+      <a href="https://opendata.ch/">
+        <figure>
+          <img src="/assets/img/network/CH-logo.svg" alt="Swtzerland">
+        </figure>
+      </a>
+    </div>
+
+    <a href="https://okfn.org/network/" class="font-mono">More countries</a>
+
+  </div>
+</section>
+
+
+<!-- /section global network -->
+
+          <section class="sect sect-gallery true-w-full -mt-20 mb-20">
+            <div class="sect__content overflow-hidden">
+              <div class="slider-wrapper">
+                <div class="slider -is-width-auto" data-slider="{ autoplay: true, autoplaySpeed: 0, arrows: false, cssEase: 'linear', slidesToShow: 1, slidesToScroll: 1, speed: 9000, variableWidth: true }" data-slider-mobile="{ autoplay: true, autoplaySpeed: 0, arrows: false, cssEase: 'linear', slidesToShow: 1, slidesToScroll: 1, speed: 9000, variableWidth: true }">
+                  <div class="gallery__item pt-20">
+                    <figure class="img-set">
+                      <img src="/assets/images/home-highlight-1.png" class="h-[24rem] aspect-square" alt="">
+                      <figcaption class="text">
+                        <strong class="title">Open Science in action! Making it easier for science researchers to share their data</strong>
+                      </figcaption>
+                    </figure>
+                  </div>
+                  <div class="gallery__item pt-20">
+                    <figure class="img-set">
+                      <img src="/assets/images/home-highlight-2.png" class="" alt="">
+                      <figcaption class="text">
+                        <strong class="title">Open Science in action! Making it easier for science researchers to share their data</strong>
+                      </figcaption>
+                    </figure>
+                  </div>
+                  <div class="gallery__item pt-20">
+                    <figure class="img-set">
+                      <img src="/assets/images/home-highlight-3.png" class="h-[28rem]" alt="">
+                      <figcaption class="text">
+                        <strong class="title">Open Science in action! Making it easier for science researchers to share their data</strong>
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+
+      {% placeholder featured_news %}
+
+          <section class="sect sect-library md:!col-start-5 md:!col-end-9 -has-bg-circle -bg-circle-lg -bg-circle-okfn-green before:top-1/2 before:left-1/2 before:-translate-y-1/2 mb-20 text-center">
+            <div class="sect__content">
+              <img src="/assets/images/home-sect-library.png" alt="" class="mx-auto mb-12">
+              <h2 class="mb-8 font-bold text-h1 leading-none">Open Knowledge library</h2>
+              <p class="mb-10 text-2xl">
+                Free resources to enable organizations, governments and initiatives to be #OpenByDesign.
+              </p>
+              <a href="" class="btn">Find out more</a>
+            </div>
+          </section>
+
+          <section class="sect sect-library-items -tighten-1 -has-bg-circles mb-20">
+            <div class="sect__content">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+                <a href="" class="relative block px-4 lg:px-8 pt-5 lg:pt-10 pb-28 border-3 border-black bg-white/30">
+                  <h3 class="title block mb-14 font-bold text-2xl"> Open Data Handbook </h3>
+                  <p>For anyone who works with complex data or across tools or teams (researchers, data scientists, engineers, and decision-makers), this open-source toolkit brings simplicity. </p>
+                  <span class="link-arrow-curved absolute left-8 bottom-8" date-time="2022-10-30">Learn more</span>
+                </a>
+                <a href="" class="relative flex items-center px-4 lg:px-8 py-5 lg:py-10 pb-28 border-3 border-black bg-white/30">
+                  <h3 class="title block font-bold text-lg text-center"> Open Knowledge Project Repository </h3>
+                  <span class="link-arrow-curved absolute left-8 bottom-8" date-time="2022-10-30">Learn more</span>
+                </a>
+                <a href="" class="relative block px-4 lg:px-8 pt-5 lg:pt-10 pb-28 border-3 border-black bg-white/30">
+                  <h3 class="title block mb-14 font-bold text-2xl"> AI and Digital Transformation Report </h3>
+                  <p>A report by the UN Broadband Commission Working Group on AI Capacity Building, leveraging a multi-stakeholder leadership model to assess the critical needs for public sector digital transformation.</p>
+                  <span class="link-arrow-curved absolute left-8 bottom-8" date-time="2022-10-30">Learn more</span>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <section class="sect sect-newsletter -tighten-1 mb-20 -has-bg-circle -bg-circle-lg before:top-full before:left-full before:-translate-y-1/2 before:-translate-x-1/2">
+            <div class="sect__content">
+              <div class="lg:flex lg:flex-row-reverse lg:items-center lg:gap-16">
+                <img class="mx-auto lg:flex-shrink-0" src="/assets/images/section-newsletter.png" alt="">
+                <div class="lg:flex-grow">
+                  <h2 class="mb-5 text-h1 leading-none font-bold">Don't miss <br class="md-no-break"> a thing</h2>
+                  <p class="mb-8 text-2xl leading-normal">
+                    Stay on top of what's happening in the <br class="md-no-break">
+                    #OpenMovement around the world. <br class="md-no-break">
+                    (We will never spam you!)
+                  </p>
+                  <form action="" class="form">
+                    <div class="input-fake flex">
+                      <input class="form-control flex-grow" type="email" placeholder="Your email" />
+                      <button class="btn flex-shrink-0">Subscribe</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
 
 {% endblock %}
 
 {% block pre_footer %}{% endblock %}
 
 {% block javascript-asynchronous %}
+
+  <script type="module" src="/assets/js/homepage/libs.js"></script>
+  <script type="module" src="/assets/js/homepage/main.js"></script>
 {% endblock %}
 
 {# Don't display the breadcrumb on the homepage #}
