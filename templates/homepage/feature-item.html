@@ -1,0 +1,15 @@
+<!-- feature-item -->
+<a href="" class="feature-item {{ className }}">
+  <figure class="{{ figureClassName }}">
+    <img src="/images/{{ image }}" alt="">
+  </figure>
+
+  {% if title %}
+    <strong class="title"> {{ title }} </strong>
+  {% endif %}
+  <span class="description"> {{ description }} </span>
+  <em class="link-arrow-curved">
+    Learn more
+  </em>
+</a>
+<!-- /feature-item -->
