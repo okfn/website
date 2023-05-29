@@ -8,8 +8,6 @@ asgiref==3.5.0
     # via
     #   django
     #   django-countries
-async-timeout==4.0.2
-    # via redis
 beautifulsoup4==4.12.0
     # via -r requirements.in
 build==0.8.0
@@ -139,7 +137,7 @@ google-api-core==2.8.1
     # via
     #   google-cloud-core
     #   google-cloud-storage
-google-auth==2.16.2
+google-auth==2.19.0
     # via
     #   -r requirements.in
     #   google-api-core
@@ -241,8 +239,6 @@ tinycss2==1.1.1
     #   svglib
 toml==0.10.2
     # via pep517
-tomli==2.0.1
-    # via build
 typing-extensions==4.2.0
     # via django-countries
 unidecode==1.1.1
@@ -250,6 +246,7 @@ unidecode==1.1.1
 urllib3==1.26.5
     # via
     #   elastic-transport
+    #   google-auth
     #   requests
 webencodings==0.5.1
     # via
