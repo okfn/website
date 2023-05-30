@@ -1,13 +1,13 @@
 {% load cms_tags %}
 {% load sekizai_tags %}
-
+{% load static %}
 <!DOCTYPE html>
 <html lang='en-gb'>
 <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <title>{% block title %}SET A TITLE{% endblock %}</title>
-    <link rel="stylesheet" href="./styles/main.css">
+
     {% block head-icons %}{% endblock %}
     {% block head-links %}{% endblock %}
     {% block head-alternate %}{% endblock %}
@@ -23,7 +23,7 @@
             <meta property="og:description"
                   content="{% page_attribute 'meta_description' %}"/>
             <meta property="og:image"
-                  content="{{ STATIC_URL }}img/OKF-logo-white-background.png"/>
+                  content="{% static 'img/OKF-logo-white-background.png' %}"/>
 
             {% block head-meta-fb-open-graph-extra %}{% endblock %}
         {% endblock %}

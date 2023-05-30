@@ -3,9 +3,10 @@
 {% load compress %}
 {% load cms_tags %}
 {% load menu_tags %}
+{% load static %}
 
 {% block head-icons %}
-    <link rel="icon" href="{{ STATIC_URL }}favicon.ico">
+    <link rel="icon" href="{% static 'favicon.ico' %}">
 {% endblock %}
 
 {% block head-css %}
@@ -22,17 +23,17 @@
           <header class="main-header {{ className }}">
             <div class="flex justify-between items-center">
               <a href="/" class="lg">
-                <img src="/assets/images/lg-okfn.svg" class="h-[4.375rem] md:h-[5.625rem]" alt="Open Knowledge Foundation">
+                <img src="{% static 'images/lg-okfn.svg' %}" class="h-[4.375rem] md:h-[5.625rem]" alt="Open Knowledge Foundation">
               </a>
           
               <nav class="main-nav">
                 <label for="main-nav__switcher-indicator" class="icon relative z-50 lg:hidden cursor-pointer">
-                  <img src="/images/icons/menu.svg" class="icon-menu" alt="Menu">
-                  <img src="/images/icons/close.svg" class="icon-close" alt="Menu">
+                  <img src="{% static '/images/icons/menu.svg' %}" class="icon-menu" alt="Menu">
+                  <img src="{% static '/images/icons/close.svg' %}" class="icon-close" alt="Menu">
                 </label>
                 <div class="main-nav__container">
                   <a href="/" class="lg">
-                    <img src="/images/lg-okfn-black.svg" class="h-20" alt="Open Knowledge Foundation">
+                    <img src="{% static '/images/lg-okfn-black.svg' %}" class="h-20" alt="Open Knowledge Foundation">
                   </a>
           
                   <ul class="main-nav__menu">
@@ -94,7 +95,7 @@
   attacks.
 {% endcomment %}
 
-        <script type="text/javascript" src="{{ STATIC_URL }}js/scripts.js"
+        <script type="text/javascript" src="{% static 'js/scripts.js' %}"
                 charset="utf-8"></script>
         {% block template-scripts %}{% endblock template-scripts %}
         <script>
