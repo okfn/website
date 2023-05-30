@@ -12,11 +12,14 @@
 {% endblock %}
 
 {% block body %}
-<section class="sect">
-    {% placeholder "main" %}
+<section class="sect sect-features -tighten-1 mb-20">
+  <div class="sect__content">
+    <div class="grid grid-cols-1 mx-auto">
+      {% placeholder "page content" %}
+    </div>
+  </div>
 </section>
 {% endblock %}
 
 {% block breadcrumb %}
-{% show_breadcrumb %}
 {% endblock %}

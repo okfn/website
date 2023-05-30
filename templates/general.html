@@ -11,7 +11,6 @@
 {% block head-css %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/homepage/general.css' %}">
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock %}
 
 {% block body-sheath %}
@@ -36,55 +35,46 @@
                     <img src="/images/lg-okfn-black.svg" class="h-20" alt="Open Knowledge Foundation">
                   </a>
           
-              <ul class="main-nav__menu">
-                {% show_menu_below_id "home" 0 1 1 100 "menu/menu.html" %}
-                <li class="main-nav__item -search switcher">
-                  <input type="checkbox" id="switch-search" class="switcher__indicator">
-                  <label for="switch-search" class="switcher__trigger icon">
-                    <span>
-                      <!-- <img src="/images/icons/header-search.svg" class="-search__open" alt="Search"> -->
-                      <!-- <img src="/images/icons/close.svg" class="-search__close" alt="Close search"> -->
-                    </span>
-                  </label>
-                  <form action="/search" class="switcher__target form main-header__search">
-                    <div class="input-fake flex">
-                      <input class="form-control flex-grow" name="q" type="text" />
-                      <button class="flex-shrink-0">
-                        <img src="/assets/images/icons/header-search.svg" class="max-w-none" alt="Search">
-                      </button>
-                    </div>
-                  </form>
-                </li>
-                <li class="main-nav__item -language" data-current-language="English">
-                  <label class="icon">
-                    <span></span>
-                  </label>
-                  <ul class="submenu -simple">
-                    <li><a href="">English</a></li>
-                    <li><a href="">Español</a></li>
-                    <li><a href="">Português (Brasil)</a></li>
-                    <li><a href="">Français</a></li>
+                  <ul class="main-nav__menu">
+                    {% show_menu_below_id "home" 0 1 1 100 "menu/menu.html" %}
+                    <li class="main-nav__item -search switcher">
+                      <input type="checkbox" id="switch-search" class="switcher__indicator">
+                      <label for="switch-search" class="switcher__trigger icon">
+                        <span>
+                          <!-- <img src="/images/icons/header-search.svg" class="-search__open" alt="Search"> -->
+                          <!-- <img src="/images/icons/close.svg" class="-search__close" alt="Close search"> -->
+                        </span>
+                      </label>
+                      <form action="/search" class="switcher__target form main-header__search">
+                        <div class="input-fake flex">
+                          <input class="form-control flex-grow" name="q" type="text" />
+                          <button class="flex-shrink-0">
+                            <img src="/assets/images/icons/header-search.svg" class="max-w-none" alt="Search">
+                          </button>
+                        </div>
+                      </form>
+                    </li>
+                    <li class="main-nav__item -language" data-current-language="English">
+                      <label class="icon">
+                        <span></span>
+                      </label>
+                      <ul class="submenu -simple">
+                        <li><a href="">English</a></li>
+                        <li><a href="">Español</a></li>
+                        <li><a href="">Português (Brasil)</a></li>
+                        <li><a href="">Français</a></li>
+                      </ul>
+                    </li>
                   </ul>
                 </li>
               </ul>
                 </div>
               </nav>
             </div>
+
           </header>
           <!-- /header -->
           {% block body %}{% endblock %}
-          {% block pre_footer %}
-          <section class="footer-cta">
-            <div class="container">
-              <div class="text">
-                {% static_placeholder "footer call to action text" %}
-              </div>
-              <div class="link">
-                {% static_placeholder "footer call to action link" %}
-              </div>
-            </div>
-          </section>
-          {% endblock %}
         </div>
       </div>
       {% include 'includes/footer.html' %}
