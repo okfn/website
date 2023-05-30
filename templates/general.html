@@ -9,7 +9,6 @@
 {% endblock %}
 
 {% block head-css %}
-        <link rel="stylesheet" href="/assets/css/style.css">
         <link rel="stylesheet" href="/assets/assets/general.css">
 {% endblock %}
 
@@ -36,9 +35,8 @@
                   </a>
           
 
-<ul class="main-nav__menu">
-  {% show_menu_below_id "home" 0 1 1 100 "menu/menu.html" %}
-
+                  <ul class="main-nav__menu">
+                    {% show_menu_below_id "home" 0 1 1 100 "menu/menu.html" %}
                     <li class="main-nav__item -search switcher">
                       <input type="checkbox" id="switch-search" class="switcher__indicator">
                       <label for="switch-search" class="switcher__trigger icon">
@@ -71,21 +69,10 @@
                 </div>
               </nav>
             </div>
+
           </header>
           <!-- /header -->
           {% block body %}{% endblock %}
-          {% block pre_footer %}
-          <section class="footer-cta">
-            <div class="container">
-              <div class="text">
-                {% static_placeholder "footer call to action text" %}
-              </div>
-              <div class="link">
-                {% static_placeholder "footer call to action link" %}
-              </div>
-            </div>
-          </section>
-          {% endblock %}
         </div>
       </div>
       {% include 'includes/footer.html' %}

@@ -2,7 +2,9 @@
 {% load cms_tags %}
 
 {% block body %}
-<div>
+<section class="sect sect-generic -tighten-1 mx-auto mb-20 text-center">
+  <div class="sect__content">
+
   <aside>
     <nav id="side-nav" class="side-nav">
       {% include 'includes/sidebar.html' %}
@@ -21,5 +23,6 @@
       {% static_placeholder "mini call to action" %}
     </aside>
   </article>
-</div>
+  </div>
+</section>
 {% endblock %}

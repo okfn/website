@@ -3,7 +3,8 @@
 {% block body-class %}article-template{% endblock %}
 
 {% block body %}
-<div>
+<section class="sect sect-generic -tighten-1 mx-auto mb-20 text-center">
+  <div class="sect__content">
   <aside>
     <nav id="side-nav" class="side-nav">
       {% include 'includes/sidebar.html' %}
@@ -18,7 +19,8 @@
     {% placeholder "main" %}
     {% endblock %}
   </article>
-</div>
+  </div>
+</section>
 
 {% include 'includes/cta.html' %}
 {% endblock %}
