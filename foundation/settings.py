@@ -153,6 +153,7 @@ INSTALLED_APPS = (
     'foundation.press',
     'foundation.organisation',
     'foundation.search',
+    'okfplugins.header',
     'article_list_item'
 )
 
