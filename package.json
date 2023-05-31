@@ -12,6 +12,7 @@
     "url": "https://github.com/okfn/website/issues"
   },
   "scripts": {
+    "watch": "vite build --watch",
     "build": "vite build"
   },
   "homepage": "https://github.com/okfn/website#readme",
