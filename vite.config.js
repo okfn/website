@@ -126,11 +126,16 @@ export default {
   root: 'templates',
   build: {
     outDir: '../static/',
-    assetsDir: 'assets/',
+    assetsDir: '.',
     rollupOptions: {
+      output: {
+        entryFileNames: `js/[name].js`,
+        chunkFileNames: `js/[name].js`,
+        assetFileNames: `css/[name].[ext]`
+      },
       input: {
-        main: resolve(__dirname, 'templates/general.html'),
-        styles: resolve(__dirname, 'templates/styles.html')
+        main: resolve(__dirname, 'templates/styles.html'),
+
       },
     }
   },
