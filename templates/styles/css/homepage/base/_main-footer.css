@@ -1,18 +1,6 @@
 .main-footer {
   @apply py-12 bg-okfn-blue;
 
-  a {
-    @apply transition-colors duration-500 ease-in-out;
-
-    &:hover {
-      @apply text-white;
-    }
-
-    &:active {
-      @apply text-okfn-purple duration-150;
-    }
-  }
-
   &__head {
     @apply col-span-12 mb-12 md:mb-0;
 

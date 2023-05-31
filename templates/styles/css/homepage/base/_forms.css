@@ -1,7 +1,7 @@
 .form {
   .input {
     &-fake {
-      @apply w-full p-2 pl-5 border-2 border-black bg-white rounded-[1.25rem] text-xl text-black;
+      @apply p-2 pl-5 border-2 border-black bg-white rounded-[1.25rem] text-xl text-black;
 
       .btn {
         @apply px-6 py-[0.6875rem] text-xl rounded-2xl;

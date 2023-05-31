@@ -1,0 +1,15 @@
+<!-- heading -->
+{% if instance.heading_type == 'h1' %}
+<h1 class="px-3 py-5 font-bold text-center text-h0 border border-gray-300">{{ instance.title }}</h1>
+{% elif instance.heading_type == 'h2' %}
+<h2 class="px-3 py-5 font-bold text-center text-h1 border border-gray-300">{{ instance.title }}</h2>
+{% elif instance.heading_type == 'h3' %}
+<h3 class="px-3 py-5 font-bold text-center text-h2 border border-gray-300">{{ instance.title }}</h3>
+{% elif instance.heading_type == 'h4' %}
+<h4 class="px-3 py-5 font-bold text-center text-h3 border border-gray-300">{{ instance.title }}</h4>
+{% elif instance.heading_type == 'h5' %}
+<h5 class="px-3 py-5 font-bold text-center text-h4 border border-gray-300">{{ instance.title }}</h5>
+{% elif instance.heading_type == 'h6' %}
+<h6 class="px-3 py-5 font-bold text-center text-h5 border border-gray-300">{{ instance.title }}</h6>
+{% endif %}
+<!-- /heading -->

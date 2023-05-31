@@ -69,14 +69,10 @@
   }
 
   a {
-    @apply text-okfn-link transition-colors duration-500 ease-in-out;
+    @apply underline text-okfn-link;
 
     &:hover {
-      @apply text-okfn-purple;
-    }
-
-    &:active {
-      @apply text-current duration-150;
+      @apply text-okfn-link/80;
     }
   }
 

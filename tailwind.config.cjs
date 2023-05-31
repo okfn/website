@@ -5,6 +5,35 @@ module.exports = {
   ],
   theme: {
     extend: {
+      borderWidth: {
+        '3': '3px',
+      },
+      colors: {
+        'okfn-blue': {
+          DEFAULT: '#00d1ff', // pastel blue light
+        },
+        'okfn-green': {
+          DEFAULT: '#adffed' // pastel green light
+        },
+        'okfn-purple': {
+          DEFAULT: '#e077ff' // purple
+        },
+        'okfn-yellow': {
+          DEFAULT: '#e4ff36' // yellow
+        },
+        'okfn-light-gray': {
+          DEFAULT: '#f8f8f8' // light-gray
+        },
+        'okfn-link': {
+          DEFAULT: '#00a9e0' // link
+        },
+        'okfn-content': {
+          DEFAULT: '#e4ff36' // content
+        },
+      },
+      dropShadow: {
+        'okfn': '0 4px 4px rgba(0, 0, 0, 0.4)',
+      },
       fontFamily: {
         'sans': '"HK Grotesk", sans-serif',
         'mono': '"Necto Mono", monospace',
@@ -64,32 +93,6 @@ module.exports = {
       gridColumnEnd: {
         '14': '14',
         '15': '15',
-      },
-      borderWidth: {
-        '3': '3px',
-      },
-      colors: {
-        'okfn-blue': {
-          DEFAULT: '#00d1ff', // pastel blue light
-        },
-        'okfn-green': {
-          DEFAULT: '#adffed' // pastel green light
-        },
-        'okfn-purple': {
-          DEFAULT: '#e077ff' // purple
-        },
-        'okfn-yellow': {
-          DEFAULT: '#e4ff36' // yellow
-        },
-        'okfn-light-gray': {
-          DEFAULT: '#f8f8f8' // light-gray
-        },
-        'okfn-link': {
-          DEFAULT: '#00a9e0' // link
-        },
-        'okfn-content': {
-          DEFAULT: '#e4ff36' // content
-        },
       },
       spacing: {
         '3': '0.75rem',

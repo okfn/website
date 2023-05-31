@@ -4,7 +4,7 @@
   label {
     &.icon {
       &:active {
-        @apply text-okfn-purple duration-150;
+        @apply text-okfn-purple;
       }
     }
   }
@@ -13,18 +13,18 @@
     @apply block pt-3 pl-12 font-display text-left;
 
     @screen lg {
-      @apply hidden absolute top-full left-1/2 px-14 py-5 -translate-x-1/2 -translate-y-4 rounded-[3.75rem] whitespace-nowrap text-center font-bold border-2 border-okfn-blue bg-white bg-opacity-90;
+      @apply hidden absolute top-full left-1/2 px-14 py-5 -translate-x-1/2 -translate-y-4 rounded-[3.75rem] whitespace-nowrap text-center font-bold border-2 border-okfn-blue bg-white/90;
     }
 
     a {
-      @apply block py-3 transition-colors duration-500 ease-in-out;
+      @apply block py-3;
 
       &:hover {
         @apply text-okfn-blue;
       }
 
       &:active {
-        @apply text-okfn-purple duration-150;
+        @apply text-okfn-purple;
       }
     }
 
@@ -211,10 +211,10 @@
 
       > a,
       > label {
-        @apply relative flex justify-start items-center text-2xl leading-none font-bold text-black transition-colors duration-500 ease-in-out;
+        @apply relative flex justify-start items-center text-2xl font-bold text-black;
 
         @screen lg {
-          @apply justify-center min-h-[4.375rem] text-base leading-none;
+          @apply justify-center min-h-[4.375rem] text-base;
         }
 
         border-radius: 2.1875rem;
@@ -231,10 +231,6 @@
 
             &:hover {
               @apply bg-okfn-blue;
-            }
-
-            &:active {
-              @apply bg-okfn-purple duration-150;
             }
           }
 
@@ -273,7 +269,7 @@
           }
 
           &:active {
-            @apply text-okfn-purple duration-150;
+            @apply text-okfn-purple;
           }
 
           &.labeled {

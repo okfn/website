@@ -1,3 +1,23 @@
 .btn {
-  @apply inline-block px-12 py-[1.1875rem] bg-black text-white text-2xl font-bold rounded-[1.25rem];
+  @apply inline-block px-12 py-[1.1875rem] bg-black text-white text-2xl font-bold rounded-[1.25rem] transition-colors duration-500 ease-in-out;
+
+  &:hover {
+    @apply text-okfn-purple;
+  }
+
+  &:active {
+    @apply bg-okfn-purple text-white duration-150;
+  }
+
+  &.-white{
+    @apply bg-white text-black;
+
+    &:hover {
+      @apply text-okfn-purple;
+    }
+
+    &:active {
+      @apply bg-okfn-purple text-white duration-150;
+    }
+  }
 }

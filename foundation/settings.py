@@ -154,6 +154,7 @@ INSTALLED_APPS = (
     'foundation.organisation',
     'foundation.search',
     'foundation.okfplugins.header',
+    'foundation.okfplugins.heading',
     'article_list_item'
 )
 
@@ -478,6 +479,9 @@ CMS_CACHE_DURATIONS = {
     'menus': 3600,
     'permissions': 3600,
 }
+
+CMS_COLOR_SCHEME = "light"
+CMS_COLOR_SCHEME_TOGGLE = True
 
 CMS_TEMPLATES = (
     ('cms_default.html', 'Default layout'),
