@@ -7,7 +7,7 @@
 {% endif %}
 
 {# start render figure/figcaption #}
-    <figure class="img-set">
+    <figure class="img-set text-center">
 {# end render figure/figcaption #}
 
 
@@ -31,12 +31,13 @@
         "
     {% endif %}
     {{ instance.attributes_str }}
+  class="mx-auto"
 >
 {% endlocalize %}
 
 {# start render figure/figcaption #}
 {% if instance.caption_text %}
-        <figcaption class="text content-center">{{ instance.caption_text }}</figcaption>
+        <figcaption class="text">{{ instance.caption_text }}</figcaption>
     </figure>
 {% endif %}
 {# end render figure/figcaption #}
