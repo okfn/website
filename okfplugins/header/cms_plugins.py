@@ -8,6 +8,7 @@ from .models import Header
 @plugin_pool.register_plugin
 class PageHeaderPlugin(CMSPluginBase):
     model = Header
+    module = "OKF v2"
     render_template = "header_plugin.html"
     cache = False
     name = _("Page Header")
