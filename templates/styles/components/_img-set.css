@@ -1,9 +1,13 @@
 .img-set {
+
+  @apply mt-10;
+
   img {
     @apply rounded-3xl object-cover drop-shadow-[0_10px_20px_rgba(0,0,0,0.25)];
   }
 
   .text {
-    @apply mt-5 text-xl;
+    @apply mt-5 px-10 text-xl;
+    font-weight: 700;
   }
 }
