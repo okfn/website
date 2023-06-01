@@ -1,7 +1,7 @@
 <!-- hero -->
 {% if instance.header_type == 'h1' %}
 <section class="sect sect-hero">
-<div class="page-opening mb-20">
+<div class="page-opening mb-20 mt-20">
   <h1 class="title">{{ instance.title }}</h1>
   <div class="image">
     <img src="{% if instance.image %}{{ instance.image.url }}{% endif %}" alt="{{ instance.image_alt }}" class="mx-auto mb-10 md:mb-0" alt="{{ title }}">

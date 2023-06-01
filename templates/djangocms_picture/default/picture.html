@@ -11,7 +11,7 @@
 {# end render figure/figcaption #}
 
 {% localize off %}
-<div class="image">
+<div class="image mb-20">
   <img src="{{ instance.img_src }}"
       alt="{% if instance.attributes.alt %}{{ instance.attributes.alt }}{% elif instance.picture.default_alt_text %}{{ instance.picture.default_alt_text }}{% endif %}"
       {% if instance.width %} width="{{ instance.width }}"{% endif %}
