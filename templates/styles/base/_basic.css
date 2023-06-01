@@ -16,10 +16,8 @@ img {
 }
 
 .true-w-full {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
+  @apply relative left-1/2 right-1/2 w-screen;
+
   margin-left: -50vw;
   margin-right: -50vw;
 }

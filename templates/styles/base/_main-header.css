@@ -1,5 +1,5 @@
 .main-header {
-  @apply relative z-[100] col-span-12 py-5 md:pt-8 md:pb-12;
+  @apply relative z-[100] col-span-full py-5 md:pt-8 md:pb-12;
 
   label {
     &.icon {

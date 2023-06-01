@@ -1,10 +1,23 @@
 <!-- hero -->
+{% if instance.header_type == 'h1' %}
+<section class="sect sect-hero">
+<div class="page-opening mb-20">
+  <h1 class="title">{{ instance.title }}</h1>
+  <div class="image">
+    <img src="{% if instance.image %}{{ instance.image.url }}{% endif %}" alt="{{ instance.image_alt }}" class="mx-auto mb-10 md:mb-0" alt="{{ title }}">
+  </div>
+  <div class="description">
+    {{ instance.text }}
+  </div>
+</div>
+</section>
+{% else %}
 <section class="sect sect-hero">
   <div class="sect__content">
     <div class="lg:flex lg:gap-x-8 lg:items-center">
       <div class="flex-shrink-0">
          <div class="mb-10 lg:mb-0 flex-shrink-0">
-           <img class="mx-auto" src="{{ instance.image.url }}" alt="{{ instance.image_alt }}">
+           <img class="mx-auto" src="{% if instance.image %}{{ instance.image.url }}{% endif %}" alt="{{ instance.image_alt }}">
          </div>
       </div>
       <div class="flex-grow">
@@ -15,4 +28,5 @@
     </div>
   </div>
 </section>
+{% endif %}
 <!-- /hero -->

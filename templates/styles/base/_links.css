@@ -1,11 +1,29 @@
 .link {
+  @apply cursor-pointer transition duration-500 ease-in-out;
+
+  &:hover {
+    @apply text-okfn-blue;
+  }
+
+  &:active {
+    @apply text-okfn-purple;
+  }
+
   &-arrow-curved {
-    @apply inline-flex items-center font-mono whitespace-nowrap;
+    @apply inline-flex items-center font-mono whitespace-nowrap transition duration-500 ease-in-out;
 
     &::before {
       content: '';
       mask: url(/images/icons/arrow-curved.svg) no-repeat center;
       @apply w-4 h-4 mr-3 bg-current;
+    }
+
+    &:hover {
+      @apply drop-shadow-okfn;
+    }
+
+    &:active {
+      @apply text-okfn-purple;
     }
   }
 }

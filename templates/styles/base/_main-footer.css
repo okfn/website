@@ -14,7 +14,7 @@
   }
 
   &__head {
-    @apply col-span-12 mb-12 md:mb-0;
+    @apply col-span-full mb-12 md:mb-0;
 
     .lg {
       img {
@@ -48,6 +48,6 @@
   }
 
   &__disclaimers {
-    @apply col-span-12 md:col-start-10 md:col-span-4;
+    @apply col-span-full md:col-start-10 md:col-span-4;
   }
 }

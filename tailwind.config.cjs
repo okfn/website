@@ -41,51 +41,48 @@ module.exports = {
       },
       fontSize: {
         '2xs': '.6875rem',
-        'h0': ['6.25rem', {
+        'base-h0': ['6.25rem', {
           lineHeight: '100%',
         }],
-        'h1': ['3.4375rem', {
+        'base-h1': ['3.4375rem', {
           lineHeight: '100%',
         }],
-        'h2': ['2.5rem', {
+        'base-h2': ['2.5rem', {
           lineHeight: '100%',
         }],
-        'h3': ['1.5rem', {
+        'base-h3': ['1.5rem', {
           lineHeight: '120%',
         }],
-        'h4': ['1.25rem', {
+        'base-h4': ['1.25rem', {
           lineHeight: '120%',
         }],
-        'h5': ['1rem', {
+        'base-h5': ['1rem', {
           lineHeight: '120%',
         }],
-        'hl-h0': ['6.25rem', {
-          lineHeight: '100%',
-          fontFamily: '"Necto Mono", monospace',
+        'base-m-h0': ['3.125rem', {
+          lineHeight: '111%',
         }],
-        'hl-h1': ['3.4375rem', {
-          lineHeight: '100%',
-          fontFamily: '"Necto Mono", monospace',
+        'base-m-h1': ['2.0625rem', {
+          lineHeight: '107%',
         }],
-        'hl-h2': ['2.5rem', {
-          lineHeight: '100%',
-          fontFamily: '"Necto Mono", monospace',
-        }],
-        'hl-h3': ['1.5rem', {
+        'base-m-h2': ['1.6875rem', {
           lineHeight: '120%',
-          fontFamily: '"Necto Mono", monospace',
         }],
-        'hl-h4': ['1.25rem', {
+        'base-m-h3': ['1.375rem', {
           lineHeight: '120%',
-          fontFamily: '"Necto Mono", monospace',
         }],
-        'hl-h5': ['1rem', {
+        'base-m-h4': ['0.875rem', {
           lineHeight: '120%',
-          fontFamily: '"Necto Mono", sans-serif',
         }],
-        'okfn-lg': ['2.5rem', '120%'],
-        'okfn-md': ['1.375rem', '140%'],
-        'okfn-sm': ['1rem', '140%'],
+        'base-m-h5': ['0.75rem', {
+          lineHeight: '120%',
+        }],
+        'base-okfn-lg': ['2.5rem', '120%'],
+        'base-okfn-md': ['1.375rem', '140%'],
+        'base-okfn-sm': ['1rem', '140%'],
+        'base-m-okfn-lg': ['2rem', '130%'],
+        'base-m-okfn-md': ['1.1875rem', '150%'],
+        'base-m-okfn-sm': ['1rem', '140%'],
       },
       gridTemplateColumns: {
         '14': 'repeat(14, minmax(0, 1fr))',

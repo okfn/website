@@ -4,7 +4,7 @@
 
   h1,
   .h1 {
-    @apply text-h1 font-bold leading-none;
+    @apply text-base-h1 font-bold leading-none;
 
     &:first-child {
       @apply mt-0;
@@ -209,6 +209,14 @@
         float: right;
         margin-left: 1.25rem;
       }
+    }
+  }
+
+  /* CENTERED */
+  &.text-center {
+    ol,
+    ul {
+      @apply inline-block text-left;
     }
   }
 }

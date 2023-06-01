@@ -22,11 +22,13 @@
 @import './components/_switcher.css';
 
 @import './components/_sect-highlights.css';
+@import './components/_blog-opening.css';
+@import './components/_content-grid.css';
 @import './components/_feature-item.css';
+@import './components/_headline.css';
+@import './components/_page-opening.css';
 @import './components/_gallery.css';
 @import './components/_img-set.css';
-
-
 
 :root {
  color-scheme: light !important;
@@ -56,5 +58,88 @@
   @font-face {
     font-family: 'Necto Mono';
     src: url('/assets/fonts/nectomono-regular.otf') format('opentype');
+  }
+}
+
+@layer utilities {
+  .true-w-full {
+    @apply relative left-1/2 right-1/2 w-screen;
+
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+  .text {
+    &-h0 {
+      @apply text-base-m-h0 md:text-base-h0;
+    }
+
+    &-h1 {
+      @apply text-base-m-h1 md:text-base-h1;
+    }
+
+    &-h2 {
+      @apply text-base-m-h2 md:text-base-h2;
+    }
+
+    &-h3 {
+      @apply text-base-m-h3 md:text-base-h3;
+    }
+
+    &-h4 {
+      @apply text-base-m-h4 md:text-base-h4;
+    }
+
+    &-h5 {
+      @apply text-base-m-h5 md:text-base-h5;
+    }
+
+    &-hl-h0 {
+      @apply font-mono text-base-m-h0 md:text-base-h0;
+    }
+
+    &-hl-h1 {
+      @apply font-mono text-base-m-h1 md:text-base-h1;
+    }
+
+    &-hl-h2 {
+      @apply font-mono text-base-m-h2 md:text-base-h2;
+    }
+
+    &-hl-h3 {
+      @apply font-mono text-base-m-h3 md:text-base-h3;
+    }
+
+    &-hl-h4 {
+      @apply font-mono text-base-m-h4 md:text-base-h4;
+    }
+
+    &-hl-h5 {
+      @apply font-mono text-base-m-h5 md:text-base-h5;
+    }
+
+    &-okfn-lg {
+      @apply text-base-m-okfn-lg md:text-base-okfn-lg;
+    }
+
+    &-okfn-md {
+      @apply text-base-m-okfn-md md:text-base-okfn-md;
+    }
+
+    &-okfn-sm {
+      @apply text-base-m-okfn-sm md:text-base-okfn-sm;
+    }
+
+    &-hl-okfn-lg {
+      @apply font-mono text-base-m-okfn-lg md:text-base-okfn-lg;
+    }
+
+    &-hl-okfn-md {
+      @apply font-mono text-base-m-okfn-md md:text-base-okfn-md;
+    }
+
+    &-hl-okfn-sm {
+      @apply font-mono text-base-m-okfn-sm md:text-base-okfn-sm;
+    }
   }
 }
