@@ -1,0 +1,10 @@
+{% load cms_tags %}
+<div class="sect sect-generic mb-20">
+  <div class="sect__content">
+    <div class="grid md:grid-cols-{{ instance.columns }} gap-10 md:gap-3">
+      {% for plugin in instance.child_plugin_instances %}
+          {% render_plugin plugin %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

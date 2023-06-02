@@ -157,6 +157,7 @@ INSTALLED_APPS = (
     'foundation.okfplugins.heading',
     'foundation.okfplugins.just_text',
     'foundation.okfplugins.article_link',
+    'foundation.okfplugins.grid_columns',
     'article_list_item'
 )
 
