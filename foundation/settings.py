@@ -162,6 +162,7 @@ INSTALLED_APPS = (
     'foundation.okfplugins.pills_menu',
     'foundation.okfplugins.banner',
     'foundation.okfplugins.video',
+    'foundation.okfplugins.full_banner',
     'article_list_item'
 )
 
