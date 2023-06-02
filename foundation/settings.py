@@ -155,6 +155,7 @@ INSTALLED_APPS = (
     'foundation.search',
     'foundation.okfplugins.header',
     'foundation.okfplugins.heading',
+    'foundation.okfplugins.just_text',
     'article_list_item'
 )
 
