@@ -4,7 +4,7 @@
 
     &::before {
       content: '';
-      mask: url(/images/icons/arrow-curved.svg) no-repeat center;
+      mask: url(/assets/img/icons/arrow-curved.svg) no-repeat center;
       @apply w-4 h-4 mr-3 bg-current;
     }
   }

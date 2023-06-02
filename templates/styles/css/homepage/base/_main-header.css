@@ -99,7 +99,7 @@
             &::before {
               @apply w-5 h-5 bg-okfn-blue;
 
-              mask: url(/images/icons/close.svg) no-repeat center;
+              mask: url(/assets/img/icons/close.svg) no-repeat center;
               mask-size: contain;
             }
           }

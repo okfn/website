@@ -158,6 +158,8 @@ INSTALLED_APPS = (
     'foundation.okfplugins.just_text',
     'foundation.okfplugins.article_link',
     'foundation.okfplugins.grid_columns',
+    'foundation.okfplugins.pill_button',
+    'foundation.okfplugins.pills_menu',
     'article_list_item'
 )
 
