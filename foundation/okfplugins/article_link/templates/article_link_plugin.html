@@ -1,0 +1,9 @@
+<a class="article mb-20">
+    <div class="image">
+        <img src="{% if instance.image %}{{ instance.image.url }}{% endif %}" alt="{{ instance.author }}">
+    </div>
+    <div class="description">
+        <strong class="block mb-5 text-h3">{{ instance.title }}</strong>
+        <span class="font-mono text-okfn-sm">{{ instance.author }}</span>
+    </div>
+</a>

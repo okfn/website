@@ -135,7 +135,6 @@ export default {
       },
       input: {
         main: resolve(__dirname, 'templates/styles.html'),
-
       },
     }
   },
