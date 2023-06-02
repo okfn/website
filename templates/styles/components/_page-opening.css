@@ -1,0 +1,15 @@
+.page-opening {
+  @apply col-span-full grid grid-cols-12 gap-2.5 items-center text-center;
+
+  .title {
+    @apply col-span-full md:col-start-2 md:col-span-10 mb-10 text-h0 font-bold;
+  }
+
+  .image {
+    @apply col-span-full md:col-span-5 lg:col-start-2 lg:col-span-4;
+  }
+
+  .description {
+    @apply col-span-full md:col-span-7 lg:col-span-6 text-h2 leading-tight;
+  }
+}

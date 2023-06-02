@@ -2,67 +2,24 @@
 {% load static %}
 
 {% with person=member.person %}
-    <div class="row">
-        <div class="profile col-md-12" id="{{ person.name|slugify }}">
-            <span class="image" style="background-image: url(
-            {% if person.photo %}{{ person.photo.url }}{% else %}{{ person.gravatar_url }}{% endif %});"><img
-                    src="{% static 'img/blank.png' %}" alt=""/></span>
-            <h3 class="name">{{ person.name }}</h3>
-            {% if member.title %}
-                <p class="job-title">{{ member.title }}</p>
-            {% endif %}
-            {{ person.description|markdown }}
-            {% with a=person.all_now_doing_by_type %}
-                <p>{% if a.watching %}{{ a.watching }}{% endif %}</p>
-            {% endwith %}
-            {% if person.has_anything_to_show or person.email and not skip_email %}
-                <div class="meta">
-                    <div class="tab-content">
-                        {% if person.email and not skip_email %}
-                            <div role="tabpanel"
-                                 class="tab-pane active"
-                                 id="{{ person.name|slugify }}-email">
-                                <h4>Email:</h4>
-                                {{ person.email }}
-                            </div>
-                        {% endif %}
-
-                        {% if person.twitter %}
-                            <div role="tabpanel" class="tab-pane{% if skip_email %} active{% endif %}" id="{{ person.name|slugify }}-twitter">
-                                <h4>Twitter:</h4>
-                                <a href="https://twitter.com/{{ person.twitter }}"> {{ person.twitter }} </a>
-                            </div>
-                        {% endif %}
-
-                        {# TODO: Add location #}
-                    </div>
-
-                    <ul class="nav nav-tabs" role="tablist">
-                        {% if person.email and not skip_email %}
-                            <li role="presentation">
-                                <a class="nav-link active" href="#{{ person.name|slugify }}-email"
-                                   aria-controls="{{ person.name|slugify }}-email"
-                                   role="tab"
-                                   data-toggle="tab">
-                                    <span class="icon-mail" aria-hidden="true"></span>
-                                    <span class="sr-only">Email</span>
-                                </a>
-                            </li>
-                        {% endif %}
-
-                        {% if person.twitter %}
-                            <li role="presentation">
-                              <a class="nav-link{% if skip_email %} active{% endif %}" href="#{{ person.name|slugify }}-twitter"
-                                                       aria-controls="{{ person.name|slugify }}-twitter" role="tab"
-                                                       data-toggle="tab"><span class="icon-twitter"
-                                                                               aria-hidden="true"></span>
-                                <span class="sr-only">Twitter</span></a></li>
-                        {% endif %}
-
-                        {# TODO: Add location - use .icon-map-pin #}
-                    </ul>
+<div class="card-person {{ className }}" id="{{ person.name|slugify }}">
+    <div class="card-person__content">
+        <div class="intro">
+            <div class="image flex-shrink-0">
+                <img src="{% if person.photo %}{{ person.photo.url }}{% else %}{{ person.gravatar_url }}{% endif %}" alt="{{ person.name }}">
+            </div>
+            <div class="content">
+                <h2 class="name">{{ person.name }}</h2>
+                <div class="font-mono">
+                    <span class="position">{{ member.title }}</span>
+                    <a href="mailto:{{ person.email }}" class="block mb-3">{{ person.email }}</a>
+                    <a href="javascript:;" class="block">{{ person.twitter }}</a>
                 </div>
-            {% endif %}
+            </div>
+        </div>
+        <div class="block-txt">
+            {{ person.description|markdown }}
         </div>
     </div>
+</div>
 {% endwith %}

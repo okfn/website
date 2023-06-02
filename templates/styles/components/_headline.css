@@ -1,0 +1,23 @@
+.headline {
+  @apply col-span-full grid grid-cols-12 gap-2.5 items-center;
+
+  .title {
+    @apply col-span-full md:col-start-2 md:col-span-10 mb-10 font-bold;
+  }
+
+  &.-tighten-1 {
+    .title {
+      @screen lg {
+        @apply col-start-2 col-end-12 col-span-10;
+      }
+    }
+  }
+
+  &.-tighten-2 {
+    .title {
+      @screen lg {
+        @apply col-start-3 col-end-11 col-span-8;
+      }
+    }
+  }
+}

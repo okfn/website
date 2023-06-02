@@ -2,17 +2,6 @@
 {% load cms_tags %}
 
 {% block body %}
-<div>
-  <aside>
-    <nav id="side-nav" class="side-nav">
-      {% include 'includes/sidebar.html' %}
-    </nav>
-    <div>
-      {% block custom_sidebar %}{% endblock %}
-    </div>
-  </aside>
-  <article>
     {% block main %}{% endblock %}
-  </article>
 </div>
 {% endblock %}

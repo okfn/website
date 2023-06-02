@@ -6,10 +6,7 @@
 {% page_attribute "page_title" %}
 {% endblock %}
 
-{% block body-class %}landing page-template{% endblock %}
-{% block main-class %}{% endblock %}
-{% block template-scripts %}
-{% endblock template-scripts %}
+{% block body-class %}page-template{% endblock %}
 {% block pagebanner %}
 {% include 'includes/banner.html' %}
 {% endblock %}
@@ -17,29 +14,12 @@
 {% block body %}
 <section class="sect sect-features -tighten-1 mb-20">
   <div class="sect__content">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16 mx-auto">
-      {% placeholder "section one features" %}
+    <div class="grid grid-cols-1 mx-auto">
+      {% placeholder "page content" %}
     </div>
   </div>
 </section>
-
-<section class="secondary-section">
-  <div class="container">
-    <div class="intro">
-      {% placeholder "section two intro" %}
-    </div>
-    <div class="items">
-      {% placeholder "section two items" %}
-    </div>
-  </div>
-</section>
-
-{% include 'includes/cta.html' %}
-
 {% endblock %}
 
 {% block breadcrumb %}
-{% show_breadcrumb %}
 {% endblock %}
-
-{% block template-js %}$( ".carousel-item" ).first().addClass( "active" );{% endblock template-js %}

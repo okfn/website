@@ -29,6 +29,13 @@
 @import './components/_page-opening.css';
 @import './components/_gallery.css';
 @import './components/_img-set.css';
+@import './components/_article.css';
+@import './components/_banner.css';
+@import './components/_card-author.css';
+@import './components/_card-person.css';
+@import './components/_list.css';
+@import './components/_page-closing.css';
+
 
 :root {
  color-scheme: light !important;
