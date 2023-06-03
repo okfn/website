@@ -164,6 +164,7 @@ INSTALLED_APPS = (
     'foundation.okfplugins.video',
     'foundation.okfplugins.full_banner',
     'foundation.okfplugins.image',
+    'foundation.okfplugins.feature_block',
     'article_list_item'
 )
 

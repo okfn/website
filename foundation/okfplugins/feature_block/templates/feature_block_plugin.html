@@ -1,0 +1,24 @@
+{% if instance.block_type == 'white'%}
+<a href="{{ instance.url }}" class="relative block px-4 lg:px-8 pt-5 lg:pt-10 pb-28 border-3 border-black bg-white bg-opacity-30 group">
+  <h3 class="title block mb-8 font-bold text-2xl">{{ instance.title }}</h3>
+  <p>{{ instance.text }}</p>
+  <span class="link-arrow-curved absolute left-8 bottom-8 group-hover:drop-shadow-okfn" date-time="{{ instance.date_number}}">Learn more</span>
+</a>
+{% elif instance.block_type == 'transparent' %}
+<a href="{{ instance.url }}" class="feature-item">
+   <figure class="">
+     <img src="{% if instance.image %}{{ instance.image.url}}{% endif %}" alt="">
+   </figure>
+ 
+   <span class="description">{{ instance.text}}</span>
+   <em class="link-arrow-curved">
+     Learn more
+   </em>
+</a>
+{% else %}
+<a href="{{ instance.url }}" class="content-grid__item">
+  <h3 class="title block mb-8 font-bold text-2xl">{{ instance.title }}</h3>
+  <p>{{ instance.text }}</p>
+  <time class="date" date-time="{{ instance.date_number }}">{{ instance.date }}</time>
+</a>
+{% endif %}
