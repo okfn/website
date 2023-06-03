@@ -1,11 +1,11 @@
 <section class="sect sect-updates -tighten-1 -has-bg-circle -bg-circle-okfn-yellow before:-translate-x-1/2 before:-translate-y-1/2 mb-20">
   <div class="sect__content">
     <h2 class="mb-8 font-bold text-h1 leading-none">Latest <br> updates</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
+    <div class="content-grid">
     {% for feature in feature_list %}
       <!-- feature-item -->
 
-      <a {% if feature.link %}href="{{feature.link}}" {% endif %} class="relative block px-8 pt-10 pb-32 bg-okfn-yellow/25">
+      <a {% if feature.link %}href="{{feature.link}}" {% endif %} class="content-grid__item">
         <figure class="{{ figureClassName }}">
           <img src="/images/{{ image }}" alt="">
         </figure>
