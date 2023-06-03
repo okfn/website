@@ -2,7 +2,7 @@
 {% load thumbnail %}
 {% load static %}
 
-<h3>{{ person.name }}</h3>
+<h3 class="title text-h2">{{ person.name }}</h3>
 <div class="row">
   <div class="col-md-2">
     {# TODO this fallback image it's not working if an error occurs with the desired image #}
@@ -10,8 +10,10 @@
       class="img-responsive"
       src="
       {% if person.photo %}
-        {% thumbnail person.photo 116x116 %}
+
+        {% static 'img/avatar-none.png' %}
       {% else %}
+
         {% static 'img/avatar-none.png' %}
       {% endif %}"
       alt="{{ person.name }}"

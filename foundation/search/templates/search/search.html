@@ -22,23 +22,17 @@
 {% endblock %}
 
 {% block main %}
-  <nav>
-    <form method="get" action=".">
-      <div class="input-group">
-        <input type="text" name="q" class="form-control" value="{{ query }}" placeholder="Search">
-        <span class="input-group-append">
-          <button type="submit" class="btn btn-secondary">
-            <span class="icon-search"></span>
-            <span class="sr-only">Search</span>
-          </button>
-        </span>
+    <form action="." method="get" class="form">
+      <div class="input-fake flex items-center">
+        <input class="form-control flex-grow w-auto min-w-0 mr-2" name="q" type="text" placeholder="Your search keywords..." value="{{ query }}" />
+        <button class="btn flex-shrink-0">
+          <span>Search</span>
+        </button>
       </div>
     </form>
-    <hr/>
-  </nav>
-  <article>
+    <hr class="mb-10"/>
   {% if query %}
-    <h3>{% trans 'Results' %}</h3>
+    <h1 class="title text-h1 mb-10">{% trans 'Results' %}</h1>
     {% for search_result in page.object_list %}
       {% include "search/results.html" %}
       <hr/>
