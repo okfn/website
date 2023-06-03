@@ -14,7 +14,7 @@ class FeatureBlock(CMSPlugin):
     date_number = models.CharField(max_length=200, default='')
     block_type = models.CharField(max_length=20, choices=BLOCK_CHOICES, default='yellow')
     image = models.ImageField(upload_to='feature_block/images', blank=True)
-    url = models.CharField(max_length=400)
+    url = models.CharField(max_length=400, blank=True)
 
     def __str__(self):
         return self.title
