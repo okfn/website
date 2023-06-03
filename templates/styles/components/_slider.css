@@ -83,7 +83,7 @@
     @apply text-transparent bg-transparent outline-none;
 
     &::before {
-      @apply bg-okfn-purple duration-150;
+      @apply bg-okfn-purple duration-75;
     }
   }
 

@@ -6,8 +6,10 @@
   }
 
   .image {
+    @apply w-[6.875] h-[7.5rem] mx-auto;
+
     img {
-      @apply mx-auto;
+      @apply w-full h-full mx-auto object-cover;
     }
   }
 

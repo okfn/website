@@ -9,10 +9,10 @@
     @apply flex flex-col md:flex-row-reverse md:justify-between items-center md:items-start mb-8;
 
     .image {
-      @apply mb-8 md:mb-0;
+      @apply w-[10rem] h-[11.25rem] mb-8 md:mb-0 mx-auto;
 
       img {
-        @apply mx-auto;
+        @apply w-full h-full mx-auto object-cover;
       }
     }
 

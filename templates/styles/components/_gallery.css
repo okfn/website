@@ -6,7 +6,7 @@
       @apply w-min;
 
       img {
-        @apply max-w-none;
+        @apply max-w-none object-cover;
       }
     }
   }

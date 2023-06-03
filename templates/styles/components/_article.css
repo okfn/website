@@ -1,5 +1,5 @@
 .article {
-  @apply col-span-full grid grid-cols-12 gap-2.5 items-start md:items-center;
+  @apply col-span-full grid grid-cols-12 gap-2.5 items-start md:items-center transition duration-200 ease-in-out cursor-pointer;
 
   .image {
     @apply col-start-2 col-span-4 pr-5 md:col-start-4 md:col-span-2 md:pr-5;
@@ -11,5 +11,25 @@
 
   .description {
     @apply col-start-6 col-span-6 md:col-start-6 md:col-span-4 md:pl-10;
+  }
+
+  .title {
+    @apply block mb-5 text-h3;
+  }
+
+  .author {
+    @apply font-mono text-okfn-sm;
+  }
+
+  &:hover {
+    .title {
+      @apply text-okfn-blue;
+    }
+  }
+
+  &:active {
+    .title {
+      @apply text-okfn-purple duration-75;
+    }
   }
 }
