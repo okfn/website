@@ -16,7 +16,7 @@
       @apply absolute top-1/2 left-1/2 z-10 w-[6.3125rem] h-[6.125rem] border-8 border-white transition-colors duration-200 ease-in-out -translate-x-1/2 -translate-y-1/2 rounded-[2rem] bg-no-repeat bg-center;
 
       content: '';
-      background-image: url(../images/icons/arrow-rounded-right.svg);
+      background-image: url(/assets/img/icons/arrow-rounded-right.svg);
     }
 
     &:hover {

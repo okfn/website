@@ -4,7 +4,7 @@
   label {
     &.icon {
       &:active {
-        @apply text-okfn-purple duration-150;
+        @apply text-okfn-purple duration-75;
       }
     }
   }
@@ -17,14 +17,14 @@
     }
 
     a {
-      @apply block py-3 transition-colors duration-500 ease-in-out;
+      @apply block py-3 transition-colors duration-200 ease-in-out;
 
       &:hover {
         @apply text-okfn-blue;
       }
 
       &:active {
-        @apply text-okfn-purple duration-150;
+        @apply text-okfn-purple duration-75;
       }
     }
 
@@ -211,7 +211,7 @@
 
       > a,
       > label {
-        @apply relative flex justify-start items-center text-2xl leading-none font-bold text-black transition-colors duration-500 ease-in-out;
+        @apply relative flex justify-start items-center text-2xl leading-none font-bold text-black transition-colors duration-200 ease-in-out;
 
         @screen lg {
           @apply justify-center min-h-[4.375rem] text-base leading-none;
@@ -234,7 +234,7 @@
             }
 
             &:active {
-              @apply bg-okfn-purple duration-150;
+              @apply bg-okfn-purple duration-75;
             }
           }
 
@@ -273,7 +273,7 @@
           }
 
           &:active {
-            @apply text-okfn-purple duration-150;
+            @apply text-okfn-purple duration-75;
           }
 
           &.labeled {

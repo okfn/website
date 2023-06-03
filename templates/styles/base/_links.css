@@ -1,5 +1,5 @@
 .link {
-  @apply cursor-pointer transition duration-500 ease-in-out;
+  @apply cursor-pointer transition duration-200 ease-in-out;
 
   &:hover {
     @apply text-okfn-blue;
@@ -10,7 +10,7 @@
   }
 
   &-arrow-curved {
-    @apply inline-flex items-center font-mono whitespace-nowrap transition duration-500 ease-in-out;
+    @apply inline-flex items-center font-mono whitespace-nowrap transition duration-200 ease-in-out;
 
     &::before {
       content: '';

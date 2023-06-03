@@ -1,12 +1,12 @@
 .btn {
-  @apply inline-block px-12 py-[1.1875rem] bg-black text-white text-2xl font-bold rounded-[1.25rem] transition-colors duration-500 ease-in-out;
+  @apply inline-block px-12 py-[1.1875rem] bg-black text-white text-2xl font-bold rounded-[1.25rem] transition-colors duration-200 ease-in-out;
 
   &:hover {
     @apply text-okfn-purple;
   }
 
   &:active {
-    @apply bg-okfn-purple text-white duration-150;
+    @apply bg-okfn-purple text-white duration-75;
   }
 
   &.-white{
@@ -17,19 +17,19 @@
     }
 
     &:active {
-      @apply bg-okfn-purple text-white duration-150;
+      @apply bg-okfn-purple text-white duration-75;
     }
   }
 
   &-subtitle {
-    @apply inline-block px-4 py-[1.3125rem] text-2xl leading-none border-2 border-current text-center rounded-2xl transition duration-500 ease-in-out;
+    @apply inline-block px-4 py-[1.3125rem] text-2xl leading-none border-2 border-current text-center rounded-2xl transition duration-200 ease-in-out;
 
     &:hover {
       @apply bg-okfn-blue text-white border-transparent;
     }
 
     &:active {
-      @apply bg-okfn-purple text-white border-transparent duration-150;
+      @apply bg-okfn-purple text-white border-transparent duration-75;
     }
 
     &.-lg {
@@ -38,14 +38,14 @@
   }
 
   &-pill {
-    @apply inline-block px-6 py-[1.5625rem] text-base leading-none border-2 border-current text-center rounded-[2.1875rem] transition duration-500 ease-in-out;
+    @apply inline-block px-6 py-[1.5625rem] text-base leading-none border-2 border-current text-center rounded-[2.1875rem] transition duration-200 ease-in-out;
 
     &:hover {
       @apply bg-okfn-blue text-white border-transparent;
     }
 
     &:active {
-      @apply bg-okfn-purple text-white border-transparent duration-150;
+      @apply bg-okfn-purple text-white border-transparent duration-75;
     }
 
     &.-lg {
@@ -55,17 +55,17 @@
 }
 
 .tag {
-  @apply inline-block px-8 py-2 text-xl font-bold leading-none border-2 border-current text-center rounded-2xl transition duration-500 ease-in-out;
+  @apply inline-block px-8 py-2 text-xl font-bold leading-none border-2 border-current text-center rounded-2xl transition duration-200 ease-in-out;
 }
 
 a.tag {
-  @apply transition duration-500 ease-in-out;
+  @apply transition duration-200 ease-in-out;
 
   &:hover {
     @apply bg-okfn-blue text-white border-transparent;
   }
 
   &:active {
-    @apply bg-okfn-purple text-white border-transparent duration-150;
+    @apply bg-okfn-purple text-white border-transparent duration-75;
   }
 }
