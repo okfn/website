@@ -1,17 +1,18 @@
 {% load thumbnail l10n %}
-
+<div class="sect -tighten-2 sect-generic mb-20">
+  <div class="sect__content">
 {% if picture_link %}
-    <a href="{{ picture_link }}"
+    <a class="highlight" href="{{ picture_link }}"
     {% if instance.link_target %} target="{{ instance.link_target }}"{% endif %}
     {{ instance.link_attributes_str }}>
 {% endif %}
 
 {# start render figure/figcaption #}
-    <figure class="img-set text-center">
+    <figure class="img-set text-center mb-20">
 {# end render figure/figcaption #}
 
 {% localize off %}
-<div class="image mb-20">
+<div class="image">
   <img src="{{ instance.img_src }}"
       alt="{% if instance.attributes.alt %}{{ instance.attributes.alt }}{% elif instance.picture.default_alt_text %}{{ instance.picture.default_alt_text }}{% endif %}"
       {% if instance.width %} width="{{ instance.width }}"{% endif %}
@@ -31,7 +32,6 @@
           "
       {% endif %}
       {{ instance.attributes_str }}
-    class="mx-auto"
   >
 </div>
 {% endlocalize %}
@@ -46,7 +46,8 @@
 {% if picture_link %}
     </a>
 {% endif %}
-
+  </div>
+</div>
 {% comment %}
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure
