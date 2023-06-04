@@ -6,6 +6,7 @@
 {% if title != 'Hibernated group' %}
 <div class="sect -tighten-2 sect-generic mb-20">
     <h1 class="title text-h1 mb-5">{{ title }}{{ countries|length|pluralize }}</h1>
+    <div class="block-txt">
     <ul class="network-countries">{% for networkgroup in countries %}
         <li>
             <a href="{{ networkgroup.get_absolute_url }}" title="{{ networkgroup.name }}">
@@ -14,5 +15,6 @@
             </a>
         </li>
     {% endfor %}</ul>
+    </div>
 </div>
 {% endif %}
