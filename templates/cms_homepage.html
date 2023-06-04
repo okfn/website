@@ -30,74 +30,14 @@
 
 {% block body %}
 <!-- hero -->
-<section class="sect sect-hero mb-20">
-  <div class="sect__content">
-    <div class="lg:flex lg:gap-x-8 lg:items-center md:flex-row-reverse">
-      <div class="flex-shrink-0">
-        <div class="mb-10 lg:mb-0 flex-shrink-0">
-          <img class="mx-auto" src="/assets/images/home-hero-image.svg" alt="Home Hero">
-        </div>
-      </div>
-      <div class="flex-grow">
-        <h1 class="text-h1 !leading-tight">
-          <strong>We are building a world open by design where all knowledge is</strong>
-          <span class="font-mono">accessible to everyone.</span>
-        </h1>
-      </div>
-    </div>
-  </div>
-</section>
+{% placeholder "Header Banner" %}
 <!-- /hero -->
 
 <!-- sect-features -->
 <section class="sect sect-features -tighten-1 mb-20">
   <div class="sect__content">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16 mx-auto">
-
-<!-- feature-item -->
-<a href="" class="feature-item -center">
-  <figure class="flex items-center justify-center md:aspect-[272/227]">
-    <img src="/assets/images/home-features-open-data.svg" alt="">
-  </figure>
-
-  <strong class="title">{% placeholder "first block title" %}</strong>
-
-  <span class="description">{% placeholder "first block" %}</span>
-  <em class="link-arrow-curved">
-    Learn more
-  </em>
-</a>
-<!-- /feature-item -->
-
-<!-- feature-item -->
-<a href="" class="feature-item -center">
-  <figure class="flex items-center justify-center md:aspect-[272/227]">
-    <img src="/assets/images/home-features-knowledge.svg" alt="">
-  </figure>
-
-  <strong class="title">{% placeholder "second block title" %}</strong>
-
-  <span class="description">{% placeholder "second block" %}</span>
-  <em class="link-arrow-curved">
-    Learn more
-  </em>
-</a>
-<!-- /feature-item -->
-
-<!-- feature-item -->
-<a href="" class="feature-item -center">
-  <figure class="flex items-center justify-center md:aspect-[272/227]">
-    <img src="/assets/images/home-features-global-movement.svg" alt="">
-  </figure>
-
-  <strong class="title">{% placeholder "third block title" %}</strong>
-  <span class="description">{% placeholder "third block" %}</span>
-  <em class="link-arrow-curved">
-    Learn more
-  </em>
-</a>
-<!-- /feature-item -->
-
+      {% placeholder "First Featured blocks" %}
     </div>
   </div>
 </section>
@@ -296,7 +236,9 @@
                 <div class="slider -is-width-auto" data-slider="{ autoplay: true, autoplaySpeed: 0, arrows: false, cssEase: 'linear', slidesToShow: 1, slidesToScroll: 1, speed: 9000, variableWidth: true }" data-slider-mobile="{ autoplay: true, autoplaySpeed: 0, arrows: false, cssEase: 'linear', slidesToShow: 1, slidesToScroll: 1, speed: 9000, variableWidth: true }">
                   <div class="gallery__item pt-20">
                     <figure class="img-set">
-                      <img src="/assets/images/home-highlight-1.png" class="h-[24rem] aspect-square" alt="">
+                      <div class="image">
+                        <img src="/assets/images/home-highlight-1.png" class="h-[24rem] aspect-square" alt="">
+                      </div>
                       <figcaption class="text">
                         <strong class="title">Open Science in action! Making it easier for science researchers to share their data</strong>
                       </figcaption>
@@ -304,7 +246,11 @@
                   </div>
                   <div class="gallery__item pt-20">
                     <figure class="img-set">
+                     <div class="image">
+
                       <img src="/assets/images/home-highlight-2.png" class="" alt="">
+                      </div>
+
                       <figcaption class="text">
                         <strong class="title">Open Science in action! Making it easier for science researchers to share their data</strong>
                       </figcaption>
@@ -312,7 +258,9 @@
                   </div>
                   <div class="gallery__item pt-20">
                     <figure class="img-set">
+                     <div class="image">
                       <img src="/assets/images/home-highlight-3.png" class="h-[28rem]" alt="">
+                      </div>
                       <figcaption class="text">
                         <strong class="title">Open Science in action! Making it easier for science researchers to share their data</strong>
                       </figcaption>

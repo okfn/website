@@ -13,6 +13,32 @@
 
 {% block body %}
       {% placeholder "page content" %}
+          <!-- sect-newsletter -->
+          <section class="sect sect-newsletter -tighten-1 mb-20 -has-bg-circle -bg-circle-lg before:top-full before:left-full before:-translate-y-1/2 before:-translate-x-1/2">
+            <div class="sect__content">
+              <div class="lg:flex lg:flex-row-reverse lg:items-center lg:gap-16">
+                <img class="mx-auto lg:flex-shrink-0" src="/assets/img/section-newsletter.png" alt="">
+                <div class="lg:flex-grow">
+                  <h2 class="mb-5 text-h1 leading-none font-bold">Don't miss <br class="md-no-break"> a thing</h2>
+                  <p class="mb-8 text-2xl leading-normal">
+                    Stay on top of what's happening in the <br class="md-no-break">
+                    #OpenMovement around the world. <br class="md-no-break">
+                    (We will never spam you!)
+                  </p>
+                  <form action="https://us9.list-manage.com/subscribe?u=73f922f8e68e21a10efa21f02&id=32d370a7fc" method="get" class="form">
+                    <div class="input-fake flex items-center">
+                      <input class="form-control flex-grow w-auto min-w-0 mr-2" type="email" name="MERGE0" placeholder="Your email" />
+                      <a href="https://us9.list-manage.com/subscribe?u=73f922f8e68e21a10efa21f02&id=32d370a7fc" class="btn flex-shrink-0">
+                        <span>Subscribe</span>
+                        </a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- /sect-newsletter -->
+
 {% endblock %}
 
 {% block breadcrumb %}
