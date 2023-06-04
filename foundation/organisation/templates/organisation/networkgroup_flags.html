@@ -4,12 +4,12 @@
 {% endcomment %}
 
 {% if title != 'Hibernated group' %}
-<div class="col-md-4 col-xs-12">
-    <h3>{{ title }}{{ countries|length|pluralize }}</h3>
+<div class="col-md-4 col-xs-12 block-txt">
+    <h1 class="title text-h1 mb-5">{{ title }}{{ countries|length|pluralize }}</h1>
     <ul class="network-countries">{% for networkgroup in countries %}
         <li>
             <a href="{{ networkgroup.get_absolute_url }}" title="{{ networkgroup.name }}">
-                <img class="flag" src="{{ networkgroup.country.flag }}" alt="{{ networkgroup.name }}">
+                <img class="flag float-left pr-5" src="{{ networkgroup.country.flag }}" alt="{{ networkgroup.name }}">
                 {{ networkgroup.get_country_display }}
             </a>
         </li>

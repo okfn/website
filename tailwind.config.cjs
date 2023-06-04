@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     './templates/**/*.{html,js}',
+    './foundation/okfplugins/**/*.html'
   ],
   theme: {
     extend: {
