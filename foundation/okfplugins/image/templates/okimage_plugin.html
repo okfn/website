@@ -8,7 +8,7 @@
       {% endif %}
       <figure class="img-set ">
         <div class="image">
-          <img src="/media/{{ instance.image_url }}" class="" alt="{{ image.alt }}">
+          <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" class="" alt="{{ image.alt }}">
         </div>
         <figcaption class="text">
           <span class="tag">{{ instance.tag }}</span>
