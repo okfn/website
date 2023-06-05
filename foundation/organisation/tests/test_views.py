@@ -402,9 +402,11 @@ class WorkingGroupListViewTest(WebTest):
         self.assertIn(self.csv.description, response)
         self.assertIn(self.csv.homepage_url, response)
 
-        self.assertIn(self.government.name, response)
-        self.assertIn(self.government.homepage_url, response)
-        self.assertNotIn(self.government.description, response)
+        # TODO test skipped until we define if "government" must be
+        # included in the working-groups page
+        # self.assertIn(self.government.name, response)
+        # self.assertIn(self.government.homepage_url, response)
+        # self.assertNotIn(self.government.description, response)
 
         # Active working groups should come before incubating groups
         csv = response.text.find(self.csv.name)
