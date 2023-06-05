@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 import reversion
-from .headers import OKImageForm
+from .forms import OKImageForm
 from .models import OKImage
 
 
