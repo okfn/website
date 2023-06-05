@@ -5,104 +5,59 @@
 
 {% block body %}
 
-<div>
-  <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item" role="presentation">
-      <a class="nav-link active" href="#general" aria-controls="general" role="tab" data-toggle="tab">General enquiries</a>
-    </li>
-    <li class="nav-item" role="presentation">
-      <a class="nav-link" href="#service" aria-controls="service" role="tab" data-toggle="tab">Service enquiries</a>
-    </li>
-    <li class="nav-item" role="presentation">
-      <a class="nav-link" href="#press" aria-controls="press" role="tab" data-toggle="tab">Press enquiries</a>
-    </li>
-  </ul>
+<section class="sect sect-features -tighten-1 mb-20">
+  <div class="sect__content">
 
-  <div class="tab-content">
-
-    <div role="tabpanel" class="tab-pane active" id="general">
+    <div id="general">
       <div class="intro">
         {% placeholder "general" %}
       </div>
     </div>
 
-    <div role="tabpanel" class="tab-pane" id="service">
+    <div id="service">
       <div class="intro">
         {% placeholder "service" %}
       </div>
 
-      <form id="service_form" class="contact" method="post">
+      <form id="service_form" class="form" method="post">
         {% csrf_token %}
-        <div class="fieldset">
+          <div class="input-fake flex items-center mb-5">
           <input id="type" type='hidden' name="type" value="Service"/>
-          <label>Name
+          <label class="font-bold mr-10">Name:
+          </label>
             {{ form.name }}
             {{ form.name.errors }}
+
+          </div>
+          <div class="input-fake flex items-center mb-5">
+          <label class="font-bold mr-10">Organisation:
           </label>
-          <label>Organisation
             {{ form.organisation }}
             {{ form.organisation.errors }}
+          </div>
+          <div class="input-fake flex items-center mb-5">
+          <label class="font-bold mr-10">Email address:
           </label>
-          <label>Email address
             {{ form.email }}
             {{ form.email.errors }}
-          </label>
-        </div>
-        <label class="message">How can we help?
+
+          </div>
+          <div class="input-fake flex items-left flex-col mb-5">
+        <label class="message font-bold">How can we help?
+        </label>
           {{ form.message.errors }}
           {{ form.message }}
-        </label>
-        <button type="submit" class="btn btn-primary btn-lg">Send</button>
-      </form>
-    </div>
 
-    <div role="tabpanel" class="tab-pane" id="press">
-      <div class="intro">
-        {% placeholder "press" %}
-      </div>
-
-      <form id="press_form" class="contact" method="post">
-        {% csrf_token %}
-        <div class="fieldset">
-          <input id="type" type='hidden' name="type" value="Press"/>
-          <label>Name
-            {{ form.name }}
-            {{ form.name.errors }}
-          </label>
-          <label>Organisation
-            {{ form.organisation }}
-            {{ form.organisation.errors }}
-          </label>
-          <label>Email address
-            {{ form.email }}
-            {{ form.email.errors }}
-          </label>
-        </div>
-        <label class="message">How can we help?
-          {{ form.message.errors }}
-          {{ form.message }}
-        </label>
+          </div>
         <button type="submit" class="btn btn-primary btn-lg">Send</button>
       </form>
     </div>
 
   </div>
 </div>
+</section>
 
 {% endblock %}
 
 {% block template-scripts %}
-<script>
-  $(function () {
-    {% if form.type.value %}
-      $('.nav-tabs a[href="#{{form.type.value|lower}}"]').tab('show');
-    {% else %}
-      // Enable link to tab
-      var url = document.location.toString();
-      if (url.match('#')) {
-        $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
-      }
-    {% endif %}
-  });
-</script>
 {% endblock template-scripts %}
