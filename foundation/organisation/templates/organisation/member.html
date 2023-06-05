@@ -13,7 +13,9 @@
                 <div class="font-mono">
                     <span class="position">{{ member.title }}</span>
                     <a href="mailto:{{ person.email }}" class="block mb-3">{{ person.email }}</a>
-                    <a href="javascript:;" class="block">{{ person.twitter }}</a>
+                    {% if person.twitter %}
+                    <a href="https://twitter.com/{{ person.twitter }}"> {{ person.twitter }} </a>
+                    {% endif %}
                 </div>
             </div>
         </div>
