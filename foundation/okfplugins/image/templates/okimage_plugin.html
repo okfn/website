@@ -4,7 +4,7 @@
 {% endif %}
     <!-- img-set -->
       {% if instance.url %}
-      <a href="{{ instance.url }}" class="highlight sm:text-white">
+      <a href="{{ instance.url }}" class="highlight {% if not instance.show_caption %}sm:text-white{% endif %}">
       {% endif %}
       <figure class="img-set ">
         <div class="image">
