@@ -1,6 +1,7 @@
 from django.db import models
 from cms.models.pluginmodel import CMSPlugin
 
+
 class OKImage(CMSPlugin):
     tag = models.CharField(max_length=200)
     image_url = models.ImageField(upload_to='video/images')
@@ -12,4 +13,3 @@ class OKImage(CMSPlugin):
 
     def __str__(self):
         return self.text
-
