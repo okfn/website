@@ -1,9 +1,15 @@
 import reversion
 
 from django.contrib import admin
-from .models import (Person, Unit, Board, Theme, Project, ProjectType,
-                     WorkingGroup, NetworkGroup, UnitMembership,
-                     BoardMembership, NetworkGroupMembership, SideBarExtension)
+from .forms import (
+    PersonForm, ProjectForm,
+    ThemeForm, WorkingGroupForm
+)
+from .models import (
+    Person, Unit, Board, Theme, Project, ProjectType,
+    WorkingGroup, NetworkGroup, UnitMembership,
+    BoardMembership, NetworkGroupMembership, SideBarExtension
+)
 
 from cms.extensions import PageExtensionAdmin
 
@@ -12,6 +18,7 @@ class PersonAdmin(reversion.admin.VersionAdmin):
     list_display = ('name', 'email', 'twitter', 'username_on_slack')
     ordering = ('name',)
     search_fields = ('name', 'email')
+    form = PersonForm
 
 
 admin.site.register(Person, PersonAdmin)
@@ -49,6 +56,7 @@ admin.site.register(Board, BoardAdmin)
 class ProjectAdmin(reversion.admin.VersionAdmin):
     list_display = ('name',)
     prepopulated_fields = {"slug": ("name",)}
+    form = ProjectForm
 
 
 admin.site.register(Project, ProjectAdmin)
@@ -64,6 +72,7 @@ admin.site.register(ProjectType, ProjectTypeAdmin)
 class ThemeAdmin(reversion.admin.VersionAdmin):
     list_display = ('name',)
     prepopulated_fields = {"slug": ("name",)}
+    form = ThemeForm
 
 
 admin.site.register(Theme, ThemeAdmin)
@@ -73,6 +82,7 @@ class WorkingGroupAdmin(reversion.admin.VersionAdmin):
     list_display = ('name',)
 
     prepopulated_fields = {"slug": ("name",)}
+    form = WorkingGroupForm
 
 
 admin.site.register(WorkingGroup, WorkingGroupAdmin)
