@@ -1,7 +1,11 @@
+{% if not instance.in_column %}
 <div class="sect -tighten-2 sect-highlights mb-20">
   <div class="sect__content">
+{% endif %}
     <!-- img-set -->
+      {% if instance.url %}
       <a href="{{ instance.url }}" class="highlight sm:text-white">
+      {% endif %}
       <figure class="img-set ">
         <div class="image">
           <img src="/media/{{ instance.image_url }}" class="" alt="{{ image.alt }}">
@@ -12,7 +16,12 @@
           <span class="link-arrow-curved"> {{instance.more_text }}</span>
         </figcaption>
       </figure>
+      {% if instance.url %}
       </a>
+      {% endif %}
     <!-- /img-set -->            
+{% if not instance.in_column %}
   </div>
 </div>
+{% endif %}
+
