@@ -11,7 +11,7 @@
           <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" class="" alt="{{ image.alt }}">
         </div>
         <figcaption class="text">
-          {% if not instance.in_column %}
+          {% if not instance.show_caption %}
           <span class="tag">{{ instance.tag }}</span>
           <strong class="title">{{ instance.text }}</strong>
           <span class="link-arrow-curved"> {{instance.more_text }}</span>
