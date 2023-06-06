@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from core.svg import SvgAndImageFormField
+from foundation.core.svg import SvgAndImageFormField
 
 
 class FeatureBlockForm(ModelForm):
