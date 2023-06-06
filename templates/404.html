@@ -1,39 +1,58 @@
 {% extends "general.html" %}
-{% load i18n %}
+{% load cms_tags %}
+{% load menu_tags %}
 
-{% block title %}{% trans 'Page not found' %}{% endblock %}
+{% block title %}
+{% page_attribute "page_title" %}
+{% endblock %}
 
+{% block body-class %}page-template{% endblock %}
 {% block pagebanner %}
-<div class='banner'>
-  <div class='container'>
-    <h2>404: {% trans 'Page not found' %}</h2>
-  </div>
-</div>
 {% endblock %}
 
 {% block body %}
-<div class='row'>
-  <div class='main col-md-12'>
-    <form action="{% url 'haystack_search' %}" method="get" role="search">
-      <p>
-        {% blocktrans %}
-        We're sorry, but the requested page could not be found. If you think there
-        should have been something here, you can try searching for it:
-        {% endblocktrans %}
-
-        <div class="form-group">
-          <div class="input-group">
-            <input type="text" name="q" class="form-control" placeholder="Search">
-            <span class="input-group-append">
-              <button type="submit" class="btn btn-secondary">
-                <span class="icon-search"></span>
-                <span class="sr-only">Submit</span>
-              </button>
-            </span>
-          </div>
-        </div>
-      </p>
-    </form>
-  </div>
+<div class="headline -tighten-1 text-center mb-20">
+<h1 class="col-span-full px-3 py-5 font-bold text-center text-h1">We&#x27;re sorry, but the requested page could not be found. If you think there should have been something here, you can try searching for it:</h1>
 </div>
+<section class="sect sect-features -tighten-1 mb-20">
+  <div class="sect__content">
+    <form action="." method="get" class="form">
+      <div class="input-fake flex items-center">
+        <input class="form-control flex-grow w-auto min-w-0 mr-2" name="q" type="text" placeholder="Your search keywords..." value="" />
+        <button class="btn flex-shrink-0">
+          <span>Search</span>
+        </button>
+      </div>
+    </form>
+    <hr class="mb-10"/>
+  </div>
+</section>
+          <!-- sect-newsletter -->
+          <section class="sect sect-newsletter -tighten-1 mb-20 -has-bg-circle -bg-circle-lg before:top-full before:left-full before:-translate-y-1/2 before:-translate-x-1/2">
+            <div class="sect__content">
+              <div class="lg:flex lg:flex-row-reverse lg:items-center lg:gap-16">
+                <img class="mx-auto lg:flex-shrink-0" src="/assets/img/section-newsletter.png" alt="">
+                <div class="lg:flex-grow">
+                  <h2 class="mb-5 text-h1 leading-none font-bold">Don't miss <br class="md-no-break"> a thing</h2>
+                  <p class="mb-8 text-2xl leading-normal">
+                    Stay on top of what's happening in the <br class="md-no-break">
+                    #OpenMovement around the world. <br class="md-no-break">
+                    (We will never spam you!)
+                  </p>
+                  <form action="https://us9.list-manage.com/subscribe?u=73f922f8e68e21a10efa21f02&id=32d370a7fc" method="get" class="form">
+                    <div class="input-fake flex items-center">
+                      <input class="form-control flex-grow w-auto min-w-0 mr-2" type="email" name="MERGE0" placeholder="Your email" />
+                      <a href="https://us9.list-manage.com/subscribe?u=73f922f8e68e21a10efa21f02&id=32d370a7fc" class="btn flex-shrink-0">
+                        <span>Subscribe</span>
+                        </a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- /sect-newsletter -->
+
 {% endblock %}
+
+
