@@ -13,7 +13,11 @@
   </div>
   {% endif %}
 {% elif instance.block_type == 'transparent_title' %}
+  {% if instance.url and instance.url != '' %}
 <a href="{{ instance.url }}" class="feature-item -center">
+  {% else %}
+  <div class="feature-item -center">
+  {% endif %}
     <figure class="flex items-center justify-center md:aspect-[272/227]">
       <img src="{% if instance.image %}{{ instance.image.url}}{% endif %}" alt="">
     </figure>
@@ -23,10 +27,15 @@
   
     <span class="description">{{  instance.text}}
     </span>
+
+  {% if instance.url and instance.url != '' %}
     <em class="link-arrow-curved">
       Learn more
     </em>
-  </a>
+  </a> 
+  {% else %}
+  </div>
+  {% endif %}
 {% elif instance.block_type == 'transparent' %}
   {% if instance.url and instance.url != '' %}
   <a href="{{ instance.url }}" class="feature-item">
