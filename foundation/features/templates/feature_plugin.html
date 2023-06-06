@@ -15,7 +15,7 @@
 
         {% endif %}
         <p> {{ feature.text }} </p>
-        <time class="absolute left-8 bottom-8 font-mono text-sm" date-time="{{ feature.date }}">{{ feature.date }}</time>
+        <time class="absolute left-8 bottom-8 font-mono text-sm" date-time="{{ feature.date }}">{{ feature.date |date:"M d, Y"}}</time>
       </a>
       <!-- /feature-item -->
     {% endfor %}
