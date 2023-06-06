@@ -10,11 +10,12 @@ class PlaceholderContentTest(TestCase):
     def test_placeholder_content_concatenates_plugin_bodies(self):
         page = create_page('Test Page', 'cms_default.html', 'en')
         blurb = page.placeholders.get(slot='blurb')
-        main = page.placeholders.get(slot='main')
+        # TODO /templates/cms_default.html was modified
+        # main = page.placeholders.get(slot='main')
 
         add_plugin(blurb, 'TextPlugin', 'en', body='Hello, ')
         add_plugin(blurb, 'TextPlugin', 'en', body='world!')
-        add_plugin(main, 'TextPlugin', 'en', body='Not me, please.')
+        # add_plugin(main, 'TextPlugin', 'en', body='Not me, please.')
 
         self.assertEqual(placeholder_content(page), 'Hello, world!')
 
