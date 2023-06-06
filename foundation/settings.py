@@ -153,6 +153,18 @@ INSTALLED_APPS = (
     'foundation.press',
     'foundation.organisation',
     'foundation.search',
+    'foundation.okfplugins.header',
+    'foundation.okfplugins.heading',
+    'foundation.okfplugins.just_text',
+    'foundation.okfplugins.article_link',
+    'foundation.okfplugins.grid_columns',
+    'foundation.okfplugins.pill_button',
+    'foundation.okfplugins.pills_menu',
+    'foundation.okfplugins.banner',
+    'foundation.okfplugins.video',
+    'foundation.okfplugins.full_banner',
+    'foundation.okfplugins.image',
+    'foundation.okfplugins.feature_block',
     'article_list_item'
 )
 
@@ -477,6 +489,9 @@ CMS_CACHE_DURATIONS = {
     'menus': 3600,
     'permissions': 3600,
 }
+
+CMS_COLOR_SCHEME = "light"
+CMS_COLOR_SCHEME_TOGGLE = True
 
 CMS_TEMPLATES = (
     ('cms_default.html', 'Default layout'),

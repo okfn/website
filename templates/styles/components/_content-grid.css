@@ -1,0 +1,23 @@
+.content-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16;
+
+  &__item {
+    @apply relative block px-8 pt-10 pb-32 bg-okfn-yellow bg-opacity-25 transition-colors duration-200 ease-in-out;
+
+    &:hover {
+      @apply bg-okfn-yellow;
+    }
+
+    &:active {
+      @apply bg-okfn-blue duration-75;
+    }
+
+    .title {
+      @apply block mb-8 font-bold text-2xl;
+    }
+
+    .date {
+      @apply absolute left-8 bottom-8 font-mono text-sm;
+    }
+  }
+}

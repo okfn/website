@@ -3,22 +3,9 @@
 {% block body-class %}article-template{% endblock %}
 
 {% block body %}
-<div>
-  <aside>
-    <nav id="side-nav" class="side-nav">
-      {% include 'includes/sidebar.html' %}
-    </nav>
-    <div>
-      {% static_placeholder "sitewide sidebar" %}
-      {% placeholder "sidebar" inherit %}
-    </div>
-  </aside>
-  <article>
-    {% block article %}
+<section class="sect sect-generic -tighten-1 mx-auto mb-20 text-center">
     {% placeholder "main" %}
-    {% endblock %}
-  </article>
-</div>
+</section>
 
 {% include 'includes/cta.html' %}
 {% endblock %}

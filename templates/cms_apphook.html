@@ -2,17 +2,11 @@
 {% load cms_tags %}
 
 {% block body %}
-<div>
-  <aside>
-    <nav id="side-nav" class="side-nav">
-      {% include 'includes/sidebar.html' %}
-    </nav>
-    <div>
-      {% block custom_sidebar %}{% endblock %}
-    </div>
-  </aside>
-  <article>
+{% placeholder "page content" %}
+<section class="sect sect-features -tighten-1 mb-20">
+  <div class="sect__content">
     {% block main %}{% endblock %}
-  </article>
-</div>
+  </div>
+</section>
+{% include 'includes/newsletter.html' %}
 {% endblock %}

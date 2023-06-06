@@ -1,12 +1,24 @@
-<div class="featured-news">
-  <div class="featured-news_inner">
+<section class="sect sect-updates -tighten-1 -has-bg-circle -bg-circle-okfn-yellow before:-translate-x-1/2 before:-translate-y-1/2 mb-20">
+  <div class="sect__content">
+    <h2 class="mb-8 font-bold text-h1 leading-none">Latest <br> updates</h2>
+    <div class="content-grid">
     {% for feature in feature_list %}
-    <div class="featured-news_item" data-index="{{ forloop.counter }}">
-      <a class="featured-news_link" {% if feature.link %}href="{{feature.link}}" {% endif %}>
-        <h3>{{feature.title}}</h3>
-        <p>{{feature.text}}</p>
+      <!-- feature-item -->
+
+      <a {% if feature.link %}href="{{feature.link}}" {% endif %} class="content-grid__item">
+        <figure class="{{ figureClassName }}">
+          <img src="/images/{{ image }}" alt="">
+        </figure>
+      
+        {% if feature.title %}
+          <h3 class="title block mb-8 font-bold text-2xl">{{ feature.title }}</h3>
+
+        {% endif %}
+        <p> {{ feature.text }} </p>
+        <time class="absolute left-8 bottom-8 font-mono text-sm" date-time="{{ feature.date }}">{{ feature.date |date:"M d, Y"}}</time>
       </a>
-    </div>
+      <!-- /feature-item -->
     {% endfor %}
+    </div>
   </div>
-</div>
+</section>

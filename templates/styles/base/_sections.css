@@ -1,0 +1,19 @@
+.sect {
+  @apply col-span-full;
+
+  &.-tighten-1 {
+    @screen lg {
+      @apply col-start-2 col-end-12 col-span-10;
+    }
+  }
+
+  &.-tighten-2 {
+    @screen lg {
+      @apply col-start-3 col-end-11 col-span-8;
+    }
+  }
+
+  &__content {
+    @apply relative z-10;
+  }
+}

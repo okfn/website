@@ -1,0 +1,31 @@
+.card-person {
+  @apply col-span-full grid grid-cols-12 gap-2.5 items-start;
+
+  &__content {
+    @apply col-span-full md:col-start-3 md:col-span-8 p-8 md:p-10 text-okfn-md bg-okfn-yellow bg-opacity-25;
+  }
+
+  .intro {
+    @apply flex flex-col md:flex-row-reverse md:justify-between items-center md:items-start mb-8;
+
+    .image {
+      @apply w-[10rem] h-[11.25rem] mb-8 md:mb-0 mx-auto;
+
+      img {
+        @apply w-full h-full mx-auto object-cover;
+      }
+    }
+
+    .content {
+      @apply w-full md:w-auto;
+    }
+
+    .name {
+      @apply mb-5 font-bold text-h2;
+    }
+
+    .position {
+      @apply block mb-8 md:mb-14 text-hl-h3;
+    }
+  }
+}

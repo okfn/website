@@ -1,0 +1,27 @@
+.page-closing {
+  @apply col-span-full;
+
+  &__content {
+    @apply true-w-full py-20 bg-center bg-no-repeat bg-cover text-center;
+  }
+
+  .content {
+    @apply col-start-2 col-span-10 md:col-start-3 md:col-span-8;
+  }
+
+  .image {
+    @apply mb-10 md:mb-14;
+
+    img {
+      @apply mx-auto;
+    }
+  }
+
+  .description {
+    @apply mb-10 md:mb-20 text-h1 font-bold;
+
+    strong {
+      @apply font-mono font-normal;
+    }
+  }
+}

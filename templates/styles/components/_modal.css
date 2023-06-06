@@ -1,0 +1,31 @@
+.blocker {
+  z-index: 10000;
+}
+
+.modal {
+  @apply p-16 pt-32 bg-white drop-shadow-okfn rounded-3xl;
+
+  a.close-modal {
+    @apply absolute top-12 right-16 bg-none w-9 h-9;
+
+    &::before {
+      @apply absolute top-1/2 left-1/2 z-10 w-9 h-9 transition-colors duration-200 ease-in-out -translate-x-1/2 -translate-y-1/2 bg-black;
+
+      content: '';
+      mask: url(/assets/img/icons/close.svg) no-repeat center;
+      mask-size: contain;
+    }
+
+    &:hover {
+      &::before {
+        @apply bg-okfn-blue;
+      }
+    }
+
+    &:active {
+      &::before {
+        @apply bg-okfn-purple duration-75;
+      }
+    }
+  }
+}

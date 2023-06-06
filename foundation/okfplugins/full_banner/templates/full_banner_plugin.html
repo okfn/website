@@ -1,0 +1,18 @@
+<!-- page-closing -->
+<div class="page-closing mb-20">
+  <div class="page-closing__content" style="background-image: url({% if instance.banner_background %}{{ instance.banner_background.url }}{% endif %})">
+        <div class="container">
+            <div class="content">
+                <div class="image">
+                  <img src="{% if instance.banner_picture %}{{ instance.banner_picture.url }}{% endif %}" alt="{{ instance.banner_alt }}">
+                </div>
+                <div class="description">
+                                 {{ instance.banner_text }}<br>
+                                 <strong>{{ instance.banner_text_strong}}</strong>
+                </div>
+                <a href="{{ instance.banner_link }}" class="btn">{{instance.banner_button_text}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /page-closing -->

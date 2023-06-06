@@ -1,0 +1,11 @@
+.link {
+  &-arrow-curved {
+    @apply inline-flex items-center font-mono whitespace-nowrap;
+
+    &::before {
+      content: '';
+      mask: url(/assets/img/icons/arrow-curved.svg) no-repeat center;
+      @apply w-4 h-4 mr-3 bg-current;
+    }
+  }
+}

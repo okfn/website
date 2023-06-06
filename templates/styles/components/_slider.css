@@ -1,0 +1,110 @@
+.slick-slider {
+  .slider-item {
+    @apply relative;
+  }
+
+  .slick-track {
+    @apply flex items-stretch;
+  }
+
+  &:not(.-no-set-slides-height):not(.-is-width-auto) {
+    .slick-slide {
+      @apply flex-1 h-auto;
+    }
+  }
+}
+
+.slick-dots {
+  @apply w-full z-10 text-center;
+
+  li {
+    @apply inline-flex items-center justify-center w-8 h-8 text-transparent;
+
+    font-size: 1px;
+
+    button {
+      @apply w-3 h-3 rounded-full bg-gray-200;
+    }
+
+    &.slick-active {
+      button {
+        @apply bg-okfn-blue;
+      }
+    }
+  }
+}
+
+/* rules to avoid selection when scrolling the slides */
+.slick-slide:active,
+.slick-slide:focus {
+  @apply outline-none;
+}
+
+/* Arrows */
+.slick-prev {
+  @apply left-8;
+
+  &::before {
+    @apply -rotate-180;
+  }
+}
+
+.slick-next {
+  @apply right-8;
+}
+
+.slick-arrow {
+  @apply absolute top-1/2 z-10 p-0 cursor-pointer bg-transparent text-transparent outline-none -translate-y-1/2 drop-shadow-okfn;
+
+  font-size: 0;
+  line-height: 0;
+
+  @screen md {
+    @apply block !important;
+  }
+
+  &::before {
+    @apply block w-6 h-[2.375rem];
+
+    content: "";
+    mask: url(/assets/img/icons/arrow-rounded-right.svg) no-repeat center;
+    background-color: #fff;
+  }
+
+  &:hover {
+    @apply text-transparent bg-transparent outline-none;
+
+    &::before {
+      @apply bg-okfn-blue;
+    }
+  }
+
+  &:active {
+    @apply text-transparent bg-transparent outline-none;
+
+    &::before {
+      @apply bg-okfn-purple duration-75;
+    }
+  }
+
+  &.slick-disabled {
+    @apply invisible;
+  }
+}
+
+.-mobile-hide-arrows .slick-prev,
+.-mobile-hide-arrows .slick-next {
+  @apply hidden !important;
+}
+
+.slider-wrapper {
+  &.-mx-12 {
+    .slick-prev {
+      @apply left-20;
+    }
+
+    .slick-next {
+      @apply right-20;
+    }
+  }
+}

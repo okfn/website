@@ -1,0 +1,29 @@
+.banner {
+  @apply col-span-full;
+
+  &__content {
+    @apply true-w-full p-14 md:p-5 bg-okfn-yellow bg-opacity-25 text-okfn-md;
+  }
+
+  .title {
+    @apply font-mono block md:inline mb-8 md:mb-0 text-okfn-lg md:text-okfn-md font-normal md:font-bold;
+  }
+
+  &.-success {
+    .banner__content {
+      @apply bg-okfn-green bg-opacity-25;
+    }
+  }
+
+  &.-error {
+    .banner__content {
+      @apply bg-okfn-purple bg-opacity-25;
+    }
+  }
+
+  &.-info {
+    .banner__content {
+      @apply bg-okfn-blue bg-opacity-25;
+    }
+  }
+}

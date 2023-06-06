@@ -1,0 +1,47 @@
+.feature-item {
+  @apply relative block pb-10;
+
+  figure {
+    @apply block mb-8;
+
+    img {
+      @apply max-h-full;
+    }
+  }
+
+  .title {
+    @apply block mb-5 text-2xl;
+  }
+
+  .description {
+    @apply block;
+  }
+
+  .link-arrow-curved {
+    @apply absolute bottom-0 left-0;
+  }
+
+  &.-center {
+    @apply text-center;
+
+    img {
+      @apply mx-auto;
+    }
+
+    .link-arrow-curved {
+      @apply left-1/2 -translate-x-1/2;
+    }
+  }
+
+  &:hover {
+    .link-arrow-curved {
+      @apply drop-shadow-okfn;
+    }
+  }
+
+  &:active {
+    .link-arrow-curved {
+      @apply text-okfn-purple;
+    }
+  }
+}

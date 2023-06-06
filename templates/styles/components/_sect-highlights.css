@@ -1,0 +1,41 @@
+.sect-highlights {
+  .container {
+    @apply flex flex-col gap-24;
+  }
+
+  .highlight {
+    @apply relative block flex-1 mx-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.25)];
+
+    figure {
+      @apply relative;
+
+      img {
+        @apply relative z-0;
+      }
+    }
+
+    @screen sm {
+      .text {
+        @apply absolute left-12 bottom-12 z-10 right-1 pointer-events-none text-left;
+
+        max-width: 26.875rem;
+      }
+    }
+
+    .tag {
+      @apply mb-8;
+
+      @screen sm {
+        @apply drop-shadow-[1px_1px_1px_rgba(0,0,0,0.4)];
+      }
+    }
+
+    .title {
+      @apply block mb-10 text-2xl;
+
+      @screen sm {
+        @apply drop-shadow-[1px_1px_1px_rgba(0,0,0,0.4)];
+      }
+    }
+  }
+}

@@ -22,17 +22,20 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v2
         with:
-          node-version: '10'
+          node-version: '16'
 
       - name: Ensure migrations are up-to-date
         run: python manage.py makemigrations --check
 
       - name: Ensure JS and CSS are up-to-date
         run: |
+          echo "Runnign npm install"
           npm install
-          npx grunt sass:dist
-          npx grunt postcss:dist
+          echo "Running grunt"
           npx grunt uglify:scripts
+          echo "Running npm run build"
+          npm run build
+          echo "Running git diff"
           git diff --exit-code static/
 
       - name: Run tests

@@ -1,0 +1,19 @@
+<div class="sect -tighten-2 sect-generic mb-20">
+  <div class="sect__content">
+    <!-- img-set-video -->
+    <figure class="img-set -video -is-video" data-play-video="{{ instance.video_id }}">
+      <div class="image">
+        <img src="{% if instance.video_image %}{{ instance.video_image.url }}{% endif %}" class="" alt="{{ instance.video_alt }}">
+        <div class="iframe-video w-full !mb-0">
+          <div class="iframe-video__wrapper">
+            <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <figcaption class="text">
+        {{ instance.video_caption }}
+      </figcaption>
+    </figure>
+    <!-- /img-set-video -->
+  </div>
+</div>

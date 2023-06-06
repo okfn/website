@@ -1,0 +1,94 @@
+.img-set {
+  .image {
+    @apply relative rounded-3xl object-cover drop-shadow-[0_10px_20px_rgba(0,0,0,0.25)] overflow-hidden;
+
+    img {
+      @apply object-cover;
+    }
+  }
+
+  .text {
+    @apply mt-5 text-xl font-bold text-center;
+  }
+
+  &.-is-video {
+    &::after {
+      @apply absolute top-1/2 left-1/2 z-10 w-[6.3125rem] h-[6.125rem] border-8 border-white transition-colors duration-200 ease-in-out -translate-x-1/2 -translate-y-1/2 rounded-[2rem] bg-no-repeat bg-center;
+
+      content: '';
+      background-image: url(/assets/img/icons/arrow-rounded-right.svg);
+    }
+
+    &:hover {
+      &::after {
+        @apply bg-okfn-blue border-transparent;
+      }
+    }
+
+    &:active {
+      &::after {
+        @apply bg-okfn-purple border-transparent duration-75;
+      }
+    }
+  }
+
+  &.-video {
+    @apply cursor-pointer;
+
+    .iframe-video {
+      @apply hidden;
+    }
+
+    &.-active {
+      &::after {
+        @apply hidden;
+      }
+
+      .image {
+        img {
+          @apply hidden;
+        }
+      }
+
+      .iframe-video {
+        @apply block;
+      }
+    }
+  }
+
+  &.-full {
+    @apply true-w-full;
+
+    .image {
+      @apply rounded-none;
+    }
+
+    img {
+      @apply w-full;
+    }
+  }
+}
+
+a {
+  .img-set {
+    .image {
+      &::before {
+        @apply absolute inset-0 z-[5] transition-colors duration-200 ease-in-out;
+
+        content: '';
+      }
+
+      &:hover {
+        &::before {
+          @apply bg-okfn-blue bg-opacity-70;
+        }
+      }
+
+      &:active {
+        &::before {
+          @apply bg-okfn-purple bg-opacity-70 duration-75;
+        }
+      }
+    }
+  }
+}

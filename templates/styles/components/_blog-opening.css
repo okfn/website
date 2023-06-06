@@ -1,0 +1,11 @@
+.blog-opening {
+  @apply col-span-full grid grid-cols-12 gap-2.5 items-center;
+
+  .title {
+    @apply col-span-full md:col-span-5 mb-8 md:mb-0 text-base-h1 font-bold;
+  }
+
+  .description {
+    @apply col-span-full md:col-start-7 md:col-span-6 text-okfn-md;
+  }
+}

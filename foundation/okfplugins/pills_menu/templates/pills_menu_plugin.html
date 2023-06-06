@@ -1,0 +1,10 @@
+{% load cms_tags %}
+<div class="sect mb-20">
+  <div class="sect__content">
+    <div class="flex items-center md:flex-row flex-col justify-center gap-2 mb-10">
+      {% for plugin in instance.child_plugin_instances %}
+          {% render_plugin plugin %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

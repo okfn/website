@@ -1,3 +1,4 @@
+<div class="mb-20">
 {% if search_result.content_type == 'cms.title' %}
   {% with cms=search_result.object result=search_result %}
     {% include "search/cms/page.html" %}
@@ -38,3 +39,4 @@
     {% include "search/press/pressmention.html" %}
   {% endwith %}
 {% endif %}
+</div>
