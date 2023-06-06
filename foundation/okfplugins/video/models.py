@@ -1,6 +1,7 @@
 from django.db import models
 from cms.models.pluginmodel import CMSPlugin
 
+
 class Video(CMSPlugin):
     title = models.CharField(max_length=200)
     video_image = models.ImageField(upload_to='video/images')
@@ -10,4 +11,3 @@ class Video(CMSPlugin):
 
     def __str__(self):
         return self.title
-

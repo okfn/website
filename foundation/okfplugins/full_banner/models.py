@@ -1,6 +1,7 @@
 from django.db import models
 from cms.models.pluginmodel import CMSPlugin
 
+
 class FullBanner(CMSPlugin):
     title = models.CharField(max_length=200)
     banner_background = models.ImageField(upload_to='banner/images', blank=True)
@@ -13,4 +14,3 @@ class FullBanner(CMSPlugin):
 
     def __str__(self):
         return self.title
-
