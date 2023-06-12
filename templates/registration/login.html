@@ -3,17 +3,35 @@
 {% block title %}Login{% endblock %}
 
 {% block body %}
-  <h1>Login</h1>
+<section class="sect sect-features -tighten-1 mb-20">
+    <div class="headline -tighten-1 text-center mb-20">
+      <h1 class="col-span-full px-3 py-5 font-bold text-center text-h1">Login</h1>
+    </div>
+    <div class="sect__content">
+    <div class="block-txt">
+      <div class="flex-col items-center">
   <form action='' method='POST' class='login'>
     {% csrf_token %}
     {% for field in form %}
+    <div class="flex flex-row mb-5">
+      <div>
       {{ field.label_tag }}
+      </div>
+      <div class="border-2 border-black bg-white rounded-[1.25rem]">
       {{ field }}
+      </div>
       {{ field.errors }}
+      <p/>
+    </div>
     {% endfor %}
     {{form.non_field_errors}}
     <button type='submit' class='btn btn-default'>Log in</button>
   </form>
+  </div>
 
   <a href="{% url 'password_reset' %}">Forgotten password?</a>
+  </div>
+  </div>
+  </div>
+</section>
 {% endblock %}
