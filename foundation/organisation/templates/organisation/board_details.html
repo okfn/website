@@ -17,6 +17,8 @@
 {% endblock %}
 
 {% block main %}
+  {% static_placeholder "page content" %}
+
       {% with skip_email=True %}
       {% for member in object.boardmembership_set.all %}
         {% include "organisation/member.html" %}
