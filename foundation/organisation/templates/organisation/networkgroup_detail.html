@@ -13,7 +13,7 @@
     <div class="lg:flex lg:gap-x-8 lg:items-center md:flex-row-reverse">
       <div class="flex-shrink-0">
                       <div class="mb-10 lg:mb-0 flex-shrink-0">
-                        <img class="mx-auto" src="{{ object.country_flag.url }}" alt="Home Hero">
+                        <img class="mx-auto" src="{% if object.country_flag %}{{ object.country_flag.url }}{% endif %}" alt="{{ object.country.name }} Flag">
                       </div>
       </div>
       <div class="flex-grow">
