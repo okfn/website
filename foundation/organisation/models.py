@@ -318,6 +318,9 @@ class NetworkGroup(models.Model):
 
     country = CountryField()
     country_slug = models.SlugField()
+    country_flag = models.ImageField(upload_to='organisation/network/chapter',
+                              blank=True)
+
     region = models.CharField(max_length=100, blank=True)
     region_slug = models.SlugField(default=None)
 
@@ -325,6 +328,8 @@ class NetworkGroup(models.Model):
     homepage_url = models.URLField(blank=True)
     twitter = models.CharField(max_length=18, blank=True)
     facebook_url = models.URLField(blank=True)
+    linkedin_url = models.URLField(blank=True)
+    mastodon_url = models.URLField(blank=True)
     forum_group_url = models.URLField(blank=True)
 
     extra_information = models.TextField(blank=True, null=True)
