@@ -30,14 +30,6 @@
     <div class="block-txt">
       <p>{{ object.description }}</p>
     </div>
-    {% if object.extra_information %}
-      <h1 class="col-span-full px-3 py-5 font-mono text-center text-h4 mb-5">More Information</h1>
-
-      <div class="block-txt">
-        {{ object.extra_information|markdown }}
-      </div>
-    {% endif %}
-
   </div>
 
   <div class="flex items-center md:flex-row flex-col justify-center gap-2 mb-10">
