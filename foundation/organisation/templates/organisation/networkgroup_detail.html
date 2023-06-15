@@ -81,6 +81,17 @@
   {% endfor %}
 
 
+  {% if object.extra_information %}
+  <div class="sect__content mb-20">
+      <h1 class="col-span-full px-3 py-5 font-mono text-center text-h4 mb-5">More Information</h1>
+
+      <div class="block-txt">
+        {{ object.extra_information|markdown }}
+      </div>
+  </div>
+  {% endif %}
+
+
 {% static_placeholder "Network Group Footer" %}
 
 {% endblock %}
