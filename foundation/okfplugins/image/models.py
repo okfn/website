@@ -12,6 +12,7 @@ class OKImage(CMSPlugin):
     alt = models.CharField(max_length=400, default='', blank=True)
     show_caption = models.BooleanField(default=False)
     in_column = models.BooleanField(default=False)
+    in_gallery = models.BooleanField(default=False)
 
     def __str__(self):
         return self.text
