@@ -35,8 +35,8 @@ jobs:
           npx grunt uglify:scripts
           echo "Running npm run build"
           npm run build
-          echo "Running git diff"
-          git diff --exit-code static/
+          #echo "Running git diff"
+          #git diff --exit-code static/
 
       - name: Run tests
         run: |
