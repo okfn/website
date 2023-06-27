@@ -28,6 +28,13 @@ on the file templates/styles.html, otherwise the class will not work when used o
 
 The css build is done by vite and the configuration files for it are vite.config.js, tailwind.config.cjs and postcss.config.cjs.
 
+# JS
+
+1. Clone the repository https://github.com/ishigami/okfn_front
+2. npm i
+3. npm run build
+4. copy ../dist/assets/main-[HASH].js to okfn/website/static/js as scripts.js
+
 # References for new design and components
 
  * Components: https://ishigami.github.io/okfn_front/components
