@@ -1,6 +1,6 @@
 {% if instance.in_gallery %}
    <div class="gallery__item pt-20">
-     <figure class="img-set">
+     <figure class="img-set {% if instance.text_black %}text-black{% endif %}">
        <div class="image">
          <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" class="h-[28rem]" alt="">
        </div>
@@ -18,7 +18,7 @@
         {% if instance.url %}
         <a href="{{ instance.url }}" class="highlight {% if not instance.show_caption %}sm:text-white{% endif %}">
         {% endif %}
-        <figure class="img-set ">
+        <figure class="img-set  {% if instance.text_black %}text-black{% endif %}">
           <div class="image">
             <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" class="" alt="{{ image.alt }}">
           </div>
