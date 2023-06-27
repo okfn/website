@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('feature_block', '0002_auto_20230603_1714'),
+        ("feature_block", "0002_auto_20230603_1714"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='featureblock',
-            name='url',
+            model_name="featureblock",
+            name="url",
             field=models.CharField(blank=True, max_length=400),
         ),
     ]

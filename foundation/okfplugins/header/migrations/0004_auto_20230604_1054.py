@@ -4,20 +4,27 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('header', '0003_header_header_type'),
+        ("header", "0003_header_header_type"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='header',
-            name='second_text',
+            model_name="header",
+            name="second_text",
             field=models.CharField(blank=True, max_length=200),
         ),
         migrations.AlterField(
-            model_name='header',
-            name='header_type',
-            field=models.CharField(choices=[('h1', 'Text top / Image left / Long text right'), ('h2', 'Image right / Two part text left'), ('h3', 'Image left / Text right')], default='h1', max_length=3),
+            model_name="header",
+            name="header_type",
+            field=models.CharField(
+                choices=[
+                    ("h1", "Text top / Image left / Long text right"),
+                    ("h2", "Image right / Two part text left"),
+                    ("h3", "Image left / Text right"),
+                ],
+                default="h1",
+                max_length=3,
+            ),
         ),
     ]

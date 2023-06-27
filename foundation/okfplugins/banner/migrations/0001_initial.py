@@ -5,25 +5,47 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('cms', '0022_auto_20180620_1551'),
+        ("cms", "0022_auto_20180620_1551"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Banner',
+            name="Banner",
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, related_name='banner_banner', serialize=False, to='cms.cmsplugin')),
-                ('title', models.CharField(max_length=200)),
-                ('text', models.TextField()),
-                ('banner_type', models.CharField(choices=[('warning', ''), ('success', 'success'), ('error', 'error'), ('info', 'info')], default='', max_length=20)),
+                (
+                    "cmsplugin_ptr",
+                    models.OneToOneField(
+                        auto_created=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        parent_link=True,
+                        primary_key=True,
+                        related_name="banner_banner",
+                        serialize=False,
+                        to="cms.cmsplugin",
+                    ),
+                ),
+                ("title", models.CharField(max_length=200)),
+                ("text", models.TextField()),
+                (
+                    "banner_type",
+                    models.CharField(
+                        choices=[
+                            ("warning", ""),
+                            ("success", "success"),
+                            ("error", "error"),
+                            ("info", "info"),
+                        ],
+                        default="",
+                        max_length=20,
+                    ),
+                ),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
-            bases=('cms.cmsplugin',),
+            bases=("cms.cmsplugin",),
         ),
     ]

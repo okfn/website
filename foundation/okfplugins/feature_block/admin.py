@@ -6,7 +6,7 @@ from .models import FeatureBlock
 
 
 class FeatureBlockAdmin(reversion.admin.VersionAdmin):
-    list_display = ('title',)
+    list_display = ("title",)
     form = FeatureBlockForm
 
 

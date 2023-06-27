@@ -6,7 +6,7 @@ from .models import Video
 
 
 class VideoAdmin(reversion.admin.VersionAdmin):
-    list_display = ('title',)
+    list_display = ("title",)
     form = VideoForm
 
 

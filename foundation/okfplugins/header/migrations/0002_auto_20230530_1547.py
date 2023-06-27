@@ -6,27 +6,34 @@ import django.utils.timezone
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('cms', '0022_auto_20180620_1551'),
-        ('header', '0001_initial'),
+        ("cms", "0022_auto_20180620_1551"),
+        ("header", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='header',
-            name='image_alt',
+            model_name="header",
+            name="image_alt",
             field=models.CharField(default=django.utils.timezone.now, max_length=200),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name='header',
-            name='cmsplugin_ptr',
-            field=models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, related_name='header_header', serialize=False, to='cms.cmsplugin'),
+            model_name="header",
+            name="cmsplugin_ptr",
+            field=models.OneToOneField(
+                auto_created=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                parent_link=True,
+                primary_key=True,
+                related_name="header_header",
+                serialize=False,
+                to="cms.cmsplugin",
+            ),
         ),
         migrations.AlterField(
-            model_name='header',
-            name='image',
-            field=models.ImageField(blank=True, upload_to='headers/images'),
+            model_name="header",
+            name="image",
+            field=models.ImageField(blank=True, upload_to="headers/images"),
         ),
     ]

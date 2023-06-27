@@ -5,7 +5,7 @@ from .models import ArticleLink
 
 
 class ArticleLinkAdmin(reversion.admin.VersionAdmin):
-    list_display = ('title',)
+    list_display = ("title",)
     form = ArticleLinkForm
 
 

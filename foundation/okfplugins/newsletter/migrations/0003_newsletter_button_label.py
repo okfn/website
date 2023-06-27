@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('newsletter', '0002_auto_20230615_1313'),
+        ("newsletter", "0002_auto_20230615_1313"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='newsletter',
-            name='button_label',
-            field=models.CharField(blank=True, default='Subscribe', max_length=200),
+            model_name="newsletter",
+            name="button_label",
+            field=models.CharField(blank=True, default="Subscribe", max_length=200),
         ),
     ]
