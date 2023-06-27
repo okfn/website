@@ -10,6 +10,14 @@
 <a href="{{ instance.url }}" {% if instance.another_window %}target="_blank"{% endif %} class="link-arrow-curved">
   {{ instance.text }}
 </a>
+{% elif instance.button_type == 'subtitle' %}
+<a href="{{ instance.url }}" {% if instance.another_window %}target="_blank"{% endif %} class="btn-subtitle">
+  {{ instance.text }}
+</a>
+{% elif instance.button_type == 'subtitle_large' %}
+<a href="{{ instance.url }}" {% if instance.another_window %}target="_blank"{% endif %} class="btn-subtitle -lg">
+  {{ instance.text }}
+</a>
 {% else %}
 <a href="{{ instance.url }}" {% if instance.another_window %}target="_blank"{% endif %} class="btn-pill">
   {{ instance.text }}
