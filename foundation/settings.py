@@ -167,6 +167,7 @@ INSTALLED_APPS = (
     'foundation.okfplugins.feature_block',
     'foundation.okfplugins.newsletter',
     'foundation.okfplugins.gallery',
+    'foundation.okfplugins.hero_punch',
     'article_list_item'
 )
 
