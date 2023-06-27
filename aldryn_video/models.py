@@ -15,28 +15,30 @@ from .utils import build_html_iframe, get_embed_code, get_player_url
 
 class OEmbedVideoPlugin(CMSPlugin):
     # exact provide name from youtube oembed response
-    YOUTUBE = 'YouTube'
+    YOUTUBE = "YouTube"
 
-    ALLOWED_MEDIA_TYPES = ['video']
+    ALLOWED_MEDIA_TYPES = ["video"]
 
-    url = models.URLField(_('URL'), max_length=100, help_text=_('vimeo and youtube supported.'))
-    width = models.IntegerField(_('Width'), null=True, blank=True)
-    height = models.IntegerField(_('Height'), null=True, blank=True)
-    iframe_width = models.CharField(_('iframe width'), max_length=15, blank=True)
-    iframe_height = models.CharField(_('iframe height'), max_length=15, blank=True)
-    auto_play = models.BooleanField(_('auto play'), default=False)
+    url = models.URLField(
+        _("URL"), max_length=100, help_text=_("vimeo and youtube supported.")
+    )
+    width = models.IntegerField(_("Width"), null=True, blank=True)
+    height = models.IntegerField(_("Height"), null=True, blank=True)
+    iframe_width = models.CharField(_("iframe width"), max_length=15, blank=True)
+    iframe_height = models.CharField(_("iframe height"), max_length=15, blank=True)
+    auto_play = models.BooleanField(_("auto play"), default=False)
     loop_video = models.BooleanField(
-        _('loop'),
-        help_text=_('when true, the video repeats itself when over.'),
-        default=False
+        _("loop"),
+        help_text=_("when true, the video repeats itself when over."),
+        default=False,
     )
     # cached oembed data
     oembed_data = JSONField(null=True)
     custom_params = models.CharField(
-        _('custom params'),
+        _("custom params"),
         help_text=_('define custom params (e.g. "start=10&end=50")'),
         max_length=200,
-        blank=True
+        blank=True,
     )
 
     def __str__(self):
@@ -46,13 +48,13 @@ class OEmbedVideoPlugin(CMSPlugin):
         extra = {}
 
         if self.width:
-            extra['maxwidth'] = self.width
+            extra["maxwidth"] = self.width
         if self.height:
-            extra['maxheight'] = self.height
+            extra["maxheight"] = self.height
         if self.auto_play:
-            extra['autoplay'] = 1
+            extra["autoplay"] = 1
         if self.loop_video:
-            extra['loop'] = 1
+            extra["loop"] = 1
         if self.custom_params:
             for param in self.custom_params.split("&"):
                 key, value = param.split("=")
@@ -61,13 +63,10 @@ class OEmbedVideoPlugin(CMSPlugin):
 
     @property
     def html(self):
-        if not hasattr(self, '_html'):
+        if not hasattr(self, "_html"):
             params = self.get_oembed_params()
-            attrs = {
-                'width': self.iframe_width,
-                'height': self.iframe_height
-            }
-            provider_name = self.oembed_data.get('provider_name', '')
+            attrs = {"width": self.iframe_width, "height": self.iframe_height}
+            provider_name = self.oembed_data.get("provider_name", "")
             video_url = get_player_url(self.oembed_data)
 
             if video_url and provider_name == self.YOUTUBE and self.loop_video:
@@ -77,26 +76,24 @@ class OEmbedVideoPlugin(CMSPlugin):
                 url = urlparse(video_url)
                 # We assume that youtube's embed format is consistent
                 # and looks like http://www.youtube.com/embed/-UUx10KOWIE?feature=oembed
-                params['playlist'] = url.path.split('/')[2]
+                params["playlist"] = url.path.split("/")[2]
 
             html = build_html_iframe(
-                self.oembed_data,
-                url_params=params,
-                iframe_attrs=attrs
+                self.oembed_data, url_params=params, iframe_attrs=attrs
             )
 
-            self._html = re.sub('(https?://)', '//', html)
+            self._html = re.sub("(https?://)", "//", html)
         return self._html
 
     def clean(self):
         params = self.get_oembed_params()
 
-        if self.url.startswith('https'):
+        if self.url.startswith("https"):
             # scheme usually only affects youtube
             # but we don't know the provider at this point.
             # also I add this here because if added to get_oembed_params
             # the parameter stays when requesting the video.
-            params['scheme'] = 'https'
+            params["scheme"] = "https"
 
         try:
             data = get_embed_code(url=self.url, **params)
@@ -107,15 +104,16 @@ class OEmbedVideoPlugin(CMSPlugin):
                 msg = e.args[0]
             raise ValidationError(msg)
         else:
-            media_type = data.get('type')
+            media_type = data.get("type")
             if media_type not in self.ALLOWED_MEDIA_TYPES:
                 raise ValidationError(
-                    'This must be an url for a video. The "%(type)s" type is not supported.' % dict(type=media_type)
+                    'This must be an url for a video. The "%(type)s" type is not supported.'
+                    % dict(type=media_type)
                 )
 
         player_url = get_player_url(data)
 
         if player_url:
-            data['player_url'] = player_url
+            data["player_url"] = player_url
 
         self.oembed_data = data

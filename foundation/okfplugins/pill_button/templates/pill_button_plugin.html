@@ -1,3 +1,17 @@
+{% if instance.button_type == 'black' %}
+<a href="{{ instance.url }}" {% if instance.another_window %}target="_blank"{% endif %} class="btn">
+  {{ instance.text }}
+</a>
+{% elif instance.button_type == 'white' %}
+<a href="{{ instance.url }}" {% if instance.another_window %}target="_blank"{% endif %} class="btn -white">
+  {{ instance.text }}
+</a>
+{% elif instance.button_type == 'arrow' %}
+<a href="{{ instance.url }}" {% if instance.another_window %}target="_blank"{% endif %} class="link-arrow-curved">
+  {{ instance.text }}
+</a>
+{% else %}
 <a href="{{ instance.url }}" {% if instance.another_window %}target="_blank"{% endif %} class="btn-pill">
   {{ instance.text }}
 </a>
+{% endif %}
