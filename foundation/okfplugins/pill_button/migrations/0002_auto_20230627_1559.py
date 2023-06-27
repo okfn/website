@@ -4,20 +4,23 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('pill_button', '0001_initial'),
+        ("pill_button", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='pillbutton',
-            name='button_type',
-            field=models.CharField(choices=[('black', 'Black'), ('white', 'White'), ('arrow', 'Arrow')], default='white', max_length=6),
+            model_name="pillbutton",
+            name="button_type",
+            field=models.CharField(
+                choices=[("black", "Black"), ("white", "White"), ("arrow", "Arrow")],
+                default="white",
+                max_length=6,
+            ),
         ),
         migrations.AlterField(
-            model_name='pillbutton',
-            name='url',
+            model_name="pillbutton",
+            name="url",
             field=models.CharField(blank=True, max_length=200),
         ),
     ]

@@ -5,6 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from .models import BlogOpening
 
+
 @plugin_pool.register_plugin
 class BlogOpeningPlugin(CMSPluginBase):
     model = BlogOpening
@@ -12,4 +13,3 @@ class BlogOpeningPlugin(CMSPluginBase):
     render_template = "blog_opening_plugin.html"
     cache = False
     name = _("BlogOpening")
-
