@@ -1,6 +1,6 @@
 <!-- page-closing -->
 <div class="page-closing mb-20">
-  <div class="page-closing__content" style="background-image: url({% if instance.banner_background %}{{ instance.banner_background.url }}{% endif %})">
+  <div class="page-closing__content" {% if instance.banner_background %}style="background-image: url({{ instance.banner_background.url }}"{% endif %})>
         <div class="container">
             <div class="content">
                 <div class="image">

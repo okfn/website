@@ -6,7 +6,7 @@ from .models import FullBanner
 
 
 class FullBannerAdmin(reversion.admin.VersionAdmin):
-    list_display = ('title',)
+    list_display = ("title",)
     form = FullBannerForm
 
 

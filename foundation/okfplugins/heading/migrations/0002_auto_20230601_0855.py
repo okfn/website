@@ -5,26 +5,44 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('cms', '0022_auto_20180620_1551'),
-        ('heading', '0001_initial'),
+        ("cms", "0022_auto_20180620_1551"),
+        ("heading", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='heading',
-            name='highlighted',
+            model_name="heading",
+            name="highlighted",
             field=models.BooleanField(default=True),
         ),
         migrations.AlterField(
-            model_name='heading',
-            name='cmsplugin_ptr',
-            field=models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, related_name='heading_heading', serialize=False, to='cms.cmsplugin'),
+            model_name="heading",
+            name="cmsplugin_ptr",
+            field=models.OneToOneField(
+                auto_created=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                parent_link=True,
+                primary_key=True,
+                related_name="heading_heading",
+                serialize=False,
+                to="cms.cmsplugin",
+            ),
         ),
         migrations.AlterField(
-            model_name='heading',
-            name='heading_type',
-            field=models.CharField(choices=[('h1', 'h0'), ('h2', 'h1'), ('h3', 'h2'), ('h4', 'h3'), ('h5', 'h4'), ('h6', 'h5')], default='h1', max_length=3),
+            model_name="heading",
+            name="heading_type",
+            field=models.CharField(
+                choices=[
+                    ("h1", "h0"),
+                    ("h2", "h1"),
+                    ("h3", "h2"),
+                    ("h4", "h3"),
+                    ("h5", "h4"),
+                    ("h6", "h5"),
+                ],
+                default="h1",
+                max_length=3,
+            ),
         ),
     ]

@@ -4,15 +4,25 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('heading', '0003_alter_heading_highlighted'),
+        ("heading", "0003_alter_heading_highlighted"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='heading',
-            name='heading_type',
-            field=models.CharField(choices=[('h0', 'h1'), ('h1', 'h2'), ('h2', 'h3'), ('h3', 'h4'), ('h4', 'h5'), ('h5', 'h6')], default='h1', max_length=3),
+            model_name="heading",
+            name="heading_type",
+            field=models.CharField(
+                choices=[
+                    ("h0", "h1"),
+                    ("h1", "h2"),
+                    ("h2", "h3"),
+                    ("h3", "h4"),
+                    ("h4", "h5"),
+                    ("h5", "h6"),
+                ],
+                default="h1",
+                max_length=3,
+            ),
         ),
     ]

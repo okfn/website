@@ -13,13 +13,13 @@ class FeedDisplayPlugin(CMSPluginBase):
     name = _("Latest Blogposts")
 
     def _get_three_articles(self):
-        feed_url = 'https://blog.okfn.org/?feed=enclosure'
+        feed_url = "https://blog.okfn.org/?feed=enclosure"
         feed = feedparser.parse(feed_url)
         return feed.entries[:3]
 
     def render(self, context, instance, placeholder):
         context = super().render(context, instance, placeholder)
-        context['entries'] = self._get_three_articles()
+        context["entries"] = self._get_three_articles()
         return context
 
 

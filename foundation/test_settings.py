@@ -1,2 +1,2 @@
 THUMBNAIL_DEBUG = False
-ROOT_URLCONF = 'foundation.tests.urls'
+ROOT_URLCONF = "foundation.tests.urls"

@@ -5,7 +5,7 @@ from .models import Header
 
 
 class HeaderAdmin(reversion.admin.VersionAdmin):
-    list_display = ('title', 'header_type')
+    list_display = ("title", "header_type")
     form = HeaderForm
 
 

@@ -5,27 +5,37 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('cms', '0022_auto_20180620_1551'),
+        ("cms", "0022_auto_20180620_1551"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='FeatureBlock',
+            name="FeatureBlock",
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, related_name='feature_block_featureblock', serialize=False, to='cms.cmsplugin')),
-                ('title', models.CharField(max_length=200)),
-                ('text', models.CharField(max_length=400)),
-                ('date', models.CharField(default='', max_length=200)),
-                ('date_number', models.CharField(default='', max_length=200)),
-                ('url', models.CharField(max_length=400)),
+                (
+                    "cmsplugin_ptr",
+                    models.OneToOneField(
+                        auto_created=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        parent_link=True,
+                        primary_key=True,
+                        related_name="feature_block_featureblock",
+                        serialize=False,
+                        to="cms.cmsplugin",
+                    ),
+                ),
+                ("title", models.CharField(max_length=200)),
+                ("text", models.CharField(max_length=400)),
+                ("date", models.CharField(default="", max_length=200)),
+                ("date_number", models.CharField(default="", max_length=200)),
+                ("url", models.CharField(max_length=400)),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
-            bases=('cms.cmsplugin',),
+            bases=("cms.cmsplugin",),
         ),
     ]

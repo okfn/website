@@ -4,15 +4,18 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('heading', '0004_alter_heading_heading_type'),
+        ("heading", "0004_alter_heading_heading_type"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='heading',
-            name='alignment',
-            field=models.CharField(choices=[('center', 'Center'), ('left', 'Left'), ('right', 'Right')], default='center', max_length=6),
+            model_name="heading",
+            name="alignment",
+            field=models.CharField(
+                choices=[("center", "Center"), ("left", "Left"), ("right", "Right")],
+                default="center",
+                max_length=6,
+            ),
         ),
     ]
