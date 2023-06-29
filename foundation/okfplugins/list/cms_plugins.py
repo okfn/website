@@ -14,8 +14,7 @@ class ListPlugin(CMSPluginBase):
     name = _("List")
 
     def render(self, context, instance, placeholder):
-        instance.list_items = instance.items.splitlines()  
+        instance.list_items = instance.items.splitlines()
         context = super().render(context, instance, placeholder)
 
         return context
-
