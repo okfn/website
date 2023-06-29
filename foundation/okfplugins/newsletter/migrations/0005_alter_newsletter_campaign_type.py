@@ -4,15 +4,23 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('newsletter', '0004_auto_20230629_1222'),
+        ("newsletter", "0004_auto_20230629_1222"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='newsletter',
-            name='campaign_type',
-            field=models.CharField(choices=[('newsletter', 'Newsletter'), ('campaign', 'Campaign'), ('medium', 'Medium'), ('small', 'Small')], default='newsletter', max_length=20),
+            model_name="newsletter",
+            name="campaign_type",
+            field=models.CharField(
+                choices=[
+                    ("newsletter", "Newsletter"),
+                    ("campaign", "Campaign"),
+                    ("medium", "Medium"),
+                    ("small", "Small"),
+                ],
+                default="newsletter",
+                max_length=20,
+            ),
         ),
     ]
