@@ -14,6 +14,7 @@ class OKImage(CMSPlugin):
     in_column = models.BooleanField(default=False)
     in_gallery = models.BooleanField(default=False)
     text_black = models.BooleanField(default=False)
+    full_width = models.BooleanField(default=False)
 
     def __str__(self):
         return self.text
