@@ -1,8 +1,10 @@
-<div class="sect sect-spotlight true-w-full mb-20">
+<div class="sect sect-spotlight {% if instance.color == 'white'%}-white{% endif %} {% if instance.alignment == 'right' or instance.alignment == 'center' %}-{{instance.alignment}} {% endif %}true-w-full mb-20">
   <div class="sect__content">
     <div class="sect-spotlight__image">
-      <img src="{% if instance.image %}{{ instance.image.url }}{% endif %}" alt="{{ instance.image_alt }}">
-    </div
+      {% if instance.image %}
+      <img src="{{ instance.image.url }}" alt="{{ instance.image_alt }}">
+      {% endif %}
+    </div>
     <div class="container z-10">
       <div class="content">
         <h2 class="mb-12 text-base-m-h0 lg:text-h1 font-bold">{{ instance.title }}</h2>
