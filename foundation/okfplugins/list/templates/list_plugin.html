@@ -1,0 +1,10 @@
+<div class="list {% if instance.list_type != 'long' %}-{{instance.list_type}}{% endif %} mb-20">
+  <h1 class="title">{{ instance.title }}</h1>
+    <div class="content block-txt">
+                    <ul>
+                      {% for item in instance.list_items %}
+                      <li>{{ item }}
+                      {% endfor %}
+                    </ul>
+    </div>
+</div>
