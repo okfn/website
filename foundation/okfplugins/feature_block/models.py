@@ -7,7 +7,7 @@ BLOCK_CHOICES = (
     ("white", "White"),
     ("transparent_title", "Transparent with Title"),
     ("transparent", "Transparent"),
-    ("background_rounded","Rounded corners"),
+    ("background_rounded", "Rounded corners"),
     ("blue", "Blue Background"),
     ("yellow", "Yellow Background"),
     ("purple", "Purple Background"),

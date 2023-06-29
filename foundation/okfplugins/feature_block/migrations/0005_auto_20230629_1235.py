@@ -4,25 +4,34 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('feature_block', '0004_auto_20230604_1112'),
+        ("feature_block", "0004_auto_20230604_1112"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='featureblock',
-            name='block_type',
-            field=models.CharField(choices=[('yellow', 'Yellow'), ('white', 'White'), ('transparent_title', 'Transparent with Title'), ('transparent', 'Transparent'), ('background_rounded', 'Rounded corners')], default='yellow', max_length=20),
+            model_name="featureblock",
+            name="block_type",
+            field=models.CharField(
+                choices=[
+                    ("yellow", "Yellow"),
+                    ("white", "White"),
+                    ("transparent_title", "Transparent with Title"),
+                    ("transparent", "Transparent"),
+                    ("background_rounded", "Rounded corners"),
+                ],
+                default="yellow",
+                max_length=20,
+            ),
         ),
         migrations.AlterField(
-            model_name='featureblock',
-            name='text',
+            model_name="featureblock",
+            name="text",
             field=models.CharField(blank=True, max_length=400),
         ),
         migrations.AlterField(
-            model_name='featureblock',
-            name='title',
+            model_name="featureblock",
+            name="title",
             field=models.CharField(blank=True, max_length=200),
         ),
     ]
