@@ -7,9 +7,9 @@
     </div>
     <div class="container z-10">
       <div class="content">
-        <h2 class="mb-12 text-base-m-h0 lg:text-h1 font-bold">{{ instance.title }}</h2>
-        <div class="mb-14 text-okfn-md">{{ instance.text }}</div>
-        <a href="{{ instance.url }}" class="btn !px-20">{{ instance.button_text }}</a>
+        {% if instance.title %}<h2 class="mb-12 text-base-m-h0 lg:text-h1 font-bold">{{ instance.title }}</h2>{% endif %}
+        {% if instance.text %}<div class="mb-14 text-okfn-md">{{ instance.text }}</div>{% endif %}
+        {% if instance.button_text and instance.url %}<a href="{{ instance.url }}" class="btn !px-20">{{ instance.button_text }}</a>{% endif %}
       </div>
     </div>
   </div>
