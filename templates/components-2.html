@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{> head }}
+  <body class="bg-gray-200">
+    <input type="checkbox" class="main-nav__switcher-indicator" id="main-nav__switcher-indicator">
+    <div class="root">
+      <div class="master">
+        <div class="container">
+          <header class="col-span-full flex justify-between items-center py-5 mb-20 border-b border-gray-300">
+            <img src="/images/lg-okfn.svg" class="h-[5.625rem]" alt="Open Knowledge Foundation">
+            <h1 class="text-h1">Components</h1>
+          </header>
+
+          <!-- AUTHOR -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="author">Author</h2>
+          <div class="sect mb-20">
+            <div class="sect__content">
+              <div class="author text-center text-okfn-md">
+                By Nikesh Balami
+                <time class="date block text-okfn-sm font-mono" date-time="2022-10-30">On October 30, 2022</time>
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOG HEADLINE -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="blog-headline">Blog Headline</h2>
+          <div class="sect -tighten-2 mb-20">
+            <div class="sect__content">
+              <div class="blog-headline">
+                <h1 class="mb-10 text-h1 text-center font-bold">Open Knowledge in practice</h1>
+                <p class="excerpt text-h3 font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit in laoreet molestie pulvinar in ut neque felis duis ut fringilla ante</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOG TAGS -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="blog-headline">Blog Tags</h2>
+          <div class="sect -tighten-2 mb-20">
+            <div class="sect__content">
+              <div class="blog-tags text-h4 font-mono">
+                <strong class="font-sans">Archived in:</strong> <a href="">Tag1</a>, <a href="">Tag1</a>, <a href="">Tag2</a>, <a href="">Tag3</a>, <a href="">Tag4</a>, <a href="">Tag5</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- CALL-TO-ACTION -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="call-to-action">Call-to-Action</h2>
+
+          <!-- CALL-TO-ACTION: NEWSLETTER -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="call-to-action-newsletter">Newsletter</h3>
+          <section class="sect sect-newsletter -tighten-1 mb-20">
+            <div class="sect__content">
+              <div class="lg:flex lg:flex-row-reverse lg:items-center lg:gap-16">
+                <img class="mx-auto mb-10 lg:mb-0 lg:flex-shrink-0 max-w-[15rem] lg:max-w-[31.625rem]" src="/images/call-to-action-newsletter.svg" alt="">
+                <div class="lg:flex-grow">
+                  <h2 class="mb-5 text-h1 leading-none font-bold">Don't miss <br class="md-no-break"> a thing</h2>
+                  <p class="mb-8 text-2xl leading-normal">
+                    Stay on top of what's happening in the <br class="md-no-break">
+                    #OpenMovement around the world. <br class="md-no-break">
+                    (We will never spam you!)
+                  </p>
+                  <form action="" class="form">
+                    <div class="input-fake flex items-center">
+                      <input class="form-control flex-grow w-auto min-w-0 mr-2" type="email" placeholder="Your email" />
+                      <button class="btn flex-shrink-0">
+                        <span>Subscribe</span>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- CALL-TO-ACTION: CAMPAIGN -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="call-to-action-campaign">Campaign</h3>
+          <section class="sect sect-campaign -tighten-1 mb-20">
+            <div class="sect__content">
+              <div class="lg:flex lg:items-center lg:gap-16">
+                <img class="mx-auto mb-10 lg:mb-0 lg:flex-shrink-0 max-w-[15rem] lg:max-w-[31.625rem]" src="/images/call-to-action-campaign.svg" alt="">
+                <div class="lg:flex-grow">
+                  <h2 class="mb-5 text-h1 leading-none font-bold">Support our campaign for open climate in the UN</h2>
+                  <p class="mb-8 text-2xl leading-normal">
+                    Stay on top of what's happening in the <br class="md-no-break">
+                    #OpenMovement around the world. <br class="md-no-break">
+                    (We will never spam you!)
+                  </p>
+                  <form action="" class="form">
+                    <div class="input-fake flex items-center">
+                      <input class="form-control flex-grow w-auto min-w-0 mr-2" type="email" placeholder="Your email" />
+                      <button class="btn flex-shrink-0">
+                        <span>Add my name</span>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- CALL-TO-ACTION: MEDIUM -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="call-to-action-medium">Medium</h3>
+          <section class="sect sect-call-to-action-medium -tighten-3 mb-20">
+            <div class="sect__content">
+              <div class="flex flex-col justify-center">
+                <img class="max-w-[15rem] lg:max-w-xs mx-auto mb-10 lg:mb-3" src="/images/call-to-action-newsletter.svg" alt="">
+                <h2 class="mb-10 text-h1 leading-none font-bold text-center">Don't miss a thing</h2>
+                <form action="" class="form">
+                  <div class="input-fake flex items-center">
+                    <input class="form-control flex-grow w-auto min-w-0 mr-2" type="email" placeholder="Your email" />
+                    <button class="btn flex-shrink-0">
+                      <span>Subscribe</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
+
+
+          <!-- CALL-TO-ACTION: SMALL -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="call-to-action-small">Small</h3>
+          <section class="sect sect-call-to-action-medium mb-20">
+            <div class="sect__content">
+              <div class="grid grid-cols-12 gap-y-10 lg:gap-y-0">
+                <div class="col-span-full lg:col-start-2 lg:col-end-8 flex items-center lg:pr-4">
+                  <h2 class="mr-4 text-okfn-lg leading-none font-mono">Don't miss a thing</h2>
+                  <img class="flex-shrink-0 max-w-[6.25rem] lg:max-w-[10rem] mx-auto" src="/images/call-to-action-newsletter.svg" alt="">
+                </div>
+                <form action="" class="col-span-full lg:col-start-8 lg:col-end-12 form">
+                  <div class="input-fake flex items-center">
+                    <input class="form-control flex-grow w-auto min-w-0 mr-2" type="email" placeholder="Your email" />
+                    <button class="btn flex-shrink-0">
+                      <span>Subscribe</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
+
+
+          <!-- CARDS -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="card">Card</h2>
+
+          <!-- CARDS: GRID 3 CENTER -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="card-grid-3-center">Grid 3: Center</h3>
+          <div class="sect -tighten-1 mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16 mx-auto">
+              {{> feature-item className="-center" figureClassName="flex items-center justify-center md:aspect-[272/227]" image='home-features-open-data.svg' title='We enable open data creation' description='We are the technology arm of institutions, organizations and communities, so they can create, manage and publish open data with our tools.'}}
+              {{> feature-item className="-center" figureClassName="flex items-center justify-center md:aspect-[272/227]" image='home-features-knowledge.svg' title='We are knowledge spreaders' description='We offer capacity-building training on data literacies for individuals, teams and communities so they can understand transformative power of openness.'}}
+              {{> feature-item className="-center" figureClassName="flex items-center justify-center md:aspect-[272/227]" image='home-features-global-movement.svg' title='We are global movement builders' description='We equip people with data tools and capabilities and connect them with open knowledge communities worldwide.'}}
+            </div>
+          </div>
+
+          <!-- CARDS: GRID 3 LEFT -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="card-grid-3-left">Grid 3: Left</h3>
+          <div class="sect -tighten-1 mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16 mx-auto">
+              {{> feature-item className='' image='home-tools-ckan.png' description='The world\'s leading open source data management system. CKAN makes it easy to publish, share and discover data. It powers hundreds of data portals worldwide including governments, NGOs, research centers and enterprises.'}}
+              {{> feature-item className='' image='home-tools-frictionless-data.png' description='For anyone who works with complex data or across tools or teams (researchers, data scientists, engineers, and decision-makers), this open-source toolkit brings simplicity to the data experience through software and standards.'}}
+              {{> feature-item className='' image='home-tools-open-data-commons.png' description='The home of a set of legal tools and licenses to help you publish, provide and use open data: Open Database License (ODbL), Open Data Commons Attribution License, and Open Data Commons Public Domain Dedication and License (PDDL).'}}
+            </div>
+          </div>
+
+          <!-- CARDS: GRID 2 LEFT -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="card-grid-2-left">Grid 2: Left</h3>
+          <div class="sect -tighten-2 mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-28 mx-auto">
+              {{> feature-item className='' image='home-tools-ckan.png' description='The world\'s leading open source data management system. CKAN makes it easy to publish, share and discover data. It powers hundreds of data portals worldwide including governments, NGOs, research centers and enterprises.'}}
+              {{> feature-item className='' image='home-tools-frictionless-data.png' description='For anyone who works with complex data or across tools or teams (researchers, data scientists, engineers, and decision-makers), this open-source toolkit brings simplicity to the data experience through software and standards.'}}
+            </div>
+          </div>
+
+
+          <!-- CARDS: GRID 2 -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="card-grid-2">Grid 2</h3>
+          <div class="sect -tighten-2 mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-3 mx-auto">
+              <div class="block p-10 border-3 border-black">
+                <strong class="title block mb-10 text-h3">
+                  AI and Digital Transformation
+                </strong>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies eget neque posuere rhoncus. Suspendisse imperdiet ligula ultrices elit porta scelerisque in ut lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+              </div>
+
+              <div class="block p-10 border-3 border-black">
+                <strong class="title block mb-10 text-h3">
+                  AI and Digital Transformation
+                </strong>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies eget neque posuere rhoncus. Suspendisse imperdiet ligula ultrices elit porta scelerisque in ut lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTENT GRID -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="content-grids">Content Grid</h2>
+
+          <!-- CONTENT GRID: GRID 6 -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="content-grids-grid-6">Grid 6</h3>
+          <div class="sect -tighten-1 mb-20">
+            <div class="sect__content">
+              <div class="content-grid">
+                <a href="" class="content-grid__item">
+                  <h3 class="title block mb-8 font-bold text-2xl"> 100+ Conversations to inspire our new Direction </h3>
+                  <p>We are talking to 100 thinkers and doers to define our digital future, understand better our role and work together to make open knowledge a verb, beyond words.</p>
+                  <time class="date" date-time="2022-10-30">October 30, 2022</time>
+                </a>
+                <a href="" class="content-grid__item">
+                  <h3 class="title"> Better together than alone: say hello again to the Open Knowledge Network </h3>
+                  <p>Join the movement! Today we are launching two projects to shine a light on the tremendous work the Network has been doing in the past decade.</p>
+                  <time class="date" date-time="2022-10-30">October 30, 2022</time>
+                </a>
+                <a href="" class="content-grid__item">
+                  <h3 class="title"> 100+ Conversations to inspire our new Direction </h3>
+                  <p>We are talking to 100 thinkers and doers to define our digital future, understand better our role and work together to make open knowledge a verb, beyond words.</p>
+                  <time class="date" date-time="2022-10-30">October 30, 2022</time>
+                </a>
+                <a href="" class="content-grid__item">
+                  <h3 class="title block mb-8 font-bold text-2xl"> 100+ Conversations to inspire our new Direction </h3>
+                  <p>We are talking to 100 thinkers and doers to define our digital future, understand better our role and work together to make open knowledge a verb, beyond words.</p>
+                  <time class="date" date-time="2022-10-30">October 30, 2022</time>
+                </a>
+                <a href="" class="content-grid__item">
+                  <h3 class="title"> Better together than alone: say hello again to the Open Knowledge Network </h3>
+                  <p>Join the movement! Today we are launching two projects to shine a light on the tremendous work the Network has been doing in the past decade.</p>
+                  <time class="date" date-time="2022-10-30">October 30, 2022</time>
+                </a>
+                <a href="" class="content-grid__item">
+                  <h3 class="title"> 100+ Conversations to inspire our new Direction </h3>
+                  <p>We are talking to 100 thinkers and doers to define our digital future, understand better our role and work together to make open knowledge a verb, beyond words.</p>
+                  <time class="date" date-time="2022-10-30">October 30, 2022</time>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTENT GRID: GRID 3 -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="content-grids-grid-3">Grid 3</h3>
+          <div class="sect -tighten-1 mb-20">
+            <div class="sect__content">
+              <div class="content-grid">
+                <a href="" class="content-grid__item">
+                  <h3 class="title block mb-8 font-bold text-2xl"> 100+ Conversations to inspire our new Direction </h3>
+                  <p>We are talking to 100 thinkers and doers to define our digital future, understand better our role and work together to make open knowledge a verb, beyond words.</p>
+                  <time class="date" date-time="2022-10-30">October 30, 2022</time>
+                </a>
+                <a href="" class="content-grid__item">
+                  <h3 class="title"> Better together than alone: say hello again to the Open Knowledge Network </h3>
+                  <p>Join the movement! Today we are launching two projects to shine a light on the tremendous work the Network has been doing in the past decade.</p>
+                  <time class="date" date-time="2022-10-30">October 30, 2022</time>
+                </a>
+                <a href="" class="content-grid__item">
+                  <h3 class="title"> 100+ Conversations to inspire our new Direction </h3>
+                  <p>We are talking to 100 thinkers and doers to define our digital future, understand better our role and work together to make open knowledge a verb, beyond words.</p>
+                  <time class="date" date-time="2022-10-30">October 30, 2022</time>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTENT GRID: LIST -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="content-grid-list">List</h3>
+          <div class="sect -tighten-2 mb-20">
+            <div class="sect__content">
+              <div class="grid grid-cols-1 gap-10">
+                <a href="" class="block text-okfn-sm group">
+                  <h3 class="mb-3 text-h3 font-bold group-hover:text-okfn-blue group-active:text-okfn-purple transition-colors duration-100"> 100+ Conversations to inspire our new Direction </h3>
+                  <p>We are talking to 100 thinkers and doers to define our digital future, understand better our role and work together to make open knowledge a verb, beyond words.</p>
+                  <time class="date block mt-3 font-mono" date-time="2022-10-30">October 30, 2022</time>
+                </a>
+                <a href="" class="block text-okfn-sm group">
+                  <h3 class="mb-3 text-h3 font-bold group-hover:text-okfn-blue group-active:text-okfn-purple transition-colors duration-100"> 100+ Conversations to inspire our new Direction </h3>
+                  <p>We are talking to 100 thinkers and doers to define our digital future, understand better our role and work together to make open knowledge a verb, beyond words.</p>
+                  <time class="date block mt-3 font-mono" date-time="2022-10-30">October 30, 2022</time>
+                </a>
+                <a href="" class="block text-okfn-sm group">
+                  <h3 class="mb-3 text-h3 font-bold group-hover:text-okfn-blue group-active:text-okfn-purple transition-colors duration-100"> 100+ Conversations to inspire our new Direction </h3>
+                  <p>We are talking to 100 thinkers and doers to define our digital future, understand better our role and work together to make open knowledge a verb, beyond words.</p>
+                  <time class="date block mt-3 font-mono" date-time="2022-10-30">October 30, 2022</time>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- FEATURED CONTENT -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="featured-content">Featured Content</h2>
+
+          <!-- FEATURED CONTENT: DEFAULT -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="featured-content-default">Default</h3>
+          <div class="sect -tighten-1 mb-20">
+            <div class="sect-content">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+                <a href="" class="relative block px-4 lg:px-8 pt-5 lg:pt-10 pb-28 border-3 border-black bg-white bg-opacity-30 group">
+                  <h3 class="title block mb-14 font-bold text-2xl"> Open Data Handbook </h3>
+                  <p>For anyone who works with complex data or across tools or teams (researchers, data scientists, engineers, and decision-makers), this open-source toolkit brings simplicity. </p>
+                  <span class="link-arrow-curved absolute left-8 bottom-8 group-hover:drop-shadow-okfn">Learn more</span>
+                </a>
+                <a href="" class="relative flex items-center -has-bg-circles min-h-[25rem] px-4 lg:px-8 py-5 lg:py-10 pb-28 border-3 border-black bg-white bg-opacity-30 group">
+                  <h3 class="title block w-full font-bold text-lg text-center">
+                    Open Knowledge
+                    <span class="block font-mono">Project Repository</span>
+                  </h3>
+                  <span class="link-arrow-curved absolute left-8 bottom-8 group-hover:drop-shadow-okfn">Learn more</span>
+                </a>
+                <a href="" class="relative block px-4 lg:px-8 pt-5 lg:pt-10 pb-28 border-3 border-black bg-white bg-opacity-30 group">
+                  <h3 class="title block mb-14 font-bold text-2xl"> AI and Digital Transformation Report </h3>
+                  <p>A report by the UN Broadband Commission Working Group on AI Capacity Building, leveraging a multi-stakeholder leadership model to assess the critical needs for public sector digital transformation.</p>
+                  <span class="link-arrow-curved absolute left-8 bottom-8 group-hover:drop-shadow-okfn">Learn more</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FEATURED CONTENT: VARIANT 2 -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="featured-content-variant-2">Variant 2</h3>
+          <div class="sect -tighten-1 mb-20">
+            <div class="sect-content">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+                <a href="" class="relative block px-4 lg:px-8 pt-5 lg:pt-10 pb-28 border-3 border-black bg-white bg-opacity-30 group">
+                  <h3 class="title block mb-14 font-bold text-2xl"> Open Data Handbook </h3>
+                  <p>For anyone who works with complex data or across tools or teams (researchers, data scientists, engineers, and decision-makers), this open-source toolkit brings simplicity. </p>
+                  <span class="link-arrow-curved absolute left-8 bottom-8 group-hover:drop-shadow-okfn">Learn more</span>
+                </a>
+                <a href="" class="relative block px-4 lg:px-8 pt-5 lg:pt-10 pb-28 border-3 border-black bg-white bg-opacity-30 group">
+                  <h3 class="title block mb-14 font-bold text-2xl"> Open Data Handbook </h3>
+                  <p>For anyone who works with complex data or across tools or teams (researchers, data scientists, engineers, and decision-makers), this open-source toolkit brings simplicity. </p>
+                  <span class="link-arrow-curved absolute left-8 bottom-8 group-hover:drop-shadow-okfn">Learn more</span>
+                </a>
+                <a href="" class="relative block px-4 lg:px-8 pt-5 lg:pt-10 pb-28 border-3 border-black bg-white bg-opacity-30 group">
+                  <h3 class="title block mb-14 font-bold text-2xl"> AI and Digital Transformation Report </h3>
+                  <p>A report by the UN Broadband Commission Working Group on AI Capacity Building, leveraging a multi-stakeholder leadership model to assess the critical needs for public sector digital transformation.</p>
+                  <span class="link-arrow-curved absolute left-8 bottom-8 group-hover:drop-shadow-okfn">Learn more</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FEATURED CONTENT: VARIANT 3 -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="featured-content-variant-3">Variant 3</h3>
+          <div class="sect -tighten-1 mb-20">
+            <div class="sect-content">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+                <a href="" class="relative flex items-center justify-center p-4 group aspect-square rounded-[2rem] overflow-hidden">
+                  <h3 class="relative z-10 title block font-bold text-2xl"> Open Data Handbook </h3>
+                  <div class="image absolute inset-0 z-0">
+                    <img src="/images/featured-content-variant-3-bg.png" alt="OKFN" class="w-full h-full object-cover">
+                  </div>
+                </a>
+                <a href="" class="relative flex items-center justify-center p-4 group aspect-square rounded-[2rem] overflow-hidden">
+                  <h3 class="relative z-10 title block font-bold text-2xl"> Open Data Handbook </h3>
+                  <div class="image absolute inset-0 z-0">
+                    <img src="/images/featured-content-variant-3-bg.png" alt="OKFN" class="w-full h-full object-cover">
+                  </div>
+                </a>
+                <a href="" class="relative flex items-center justify-center p-4 group aspect-square rounded-[2rem] overflow-hidden">
+                  <h3 class="relative z-10 title block font-bold text-2xl"> Open Data Handbook </h3>
+                  <div class="image absolute inset-0 z-0">
+                    <img src="/images/featured-content-variant-3-bg.png" alt="OKFN" class="w-full h-full object-cover">
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FEATURED CONTENT: VARIANT 4 -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="featured-content-variant-4">Variant 4</h3>
+          <div class="sect -tighten-1 mb-20">
+            <div class="sect-content">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+                <a href="" class="relative flex items-center justify-center p-4 group aspect-square -has-bg-circle -bg-circle-full">
+                  <h3 class="relative z-10 title block font-bold text-2xl"> Open Data Handbook </h3>
+                </a>
+                <a href="" class="relative flex items-center justify-center p-4 group aspect-square -has-bg-circle -bg-circle-full -bg-circle-okfn-yellow">
+                  <h3 class="relative z-10 title block font-bold text-2xl"> Open Data Handbook </h3>
+                </a>
+                <a href="" class="relative flex items-center justify-center p-4 group aspect-square -has-bg-circle -bg-circle-full -bg-circle-okfn-purple">
+                  <h3 class="relative z-10 title block font-bold text-2xl"> Open Data Handbook </h3>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FORM -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="form">Form</h2>
+          <div class="sect mb-20">
+            <div class="sect__content">
+              <div class="flex items-center justify-center gap-10">
+                <a href="javascript:;" class="btn" data-modal-message="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard." data-modal-title="Modal tiempo" data-modal-type="warning">
+                  Default
+                </a>
+
+                <div id="modal-message" class="hidden w-full md:max-w-xl lg:max-w-5xl">
+                  <strong class="flex -mt-20 mb-14 text-h2">Title Loren Ipsum</strong>
+                  <form action="" class="form">
+                    <div class="mb-14">
+                      <input class="form-control" placeholder="Name">
+                    </div>
+                    <div class="mb-14">
+                      <input class="form-control" placeholder="Email" type="email">
+                    </div>
+                    <div class="mb-14">
+                      <textarea class="form-control" placeholder="Type here"></textarea>
+                    </div>
+                    <div class="mb-2">
+                      <label for="" class="input-checkbox">
+                        <input type="checkbox" name="" id=""> Checkbox
+                      </label>
+                    </div>
+                    <div class="text-right">
+                      <button class="btn">
+                        <span>Subscribe</span>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- IMAGE GRID -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="image-grid">Image Grid</h2>
+
+          <!-- IMAGE GRID: GRID 3 -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="image-grid-grid-3">Grid 3</h3>
+          <div class="sect -tighten-3 mb-20">
+            <div class="sect-content">
+              <div class="grid grid-cols-6 gap-2.5 gap-y-12">
+                <a href="" class="grid-image col-span-full lg:col-span-2 block px-3 aspect-[181/79]" style="--grid-image: url(/images/lg-okfn-country-deustch.svg);"> </a>
+                <a href="" class="grid-image col-span-full lg:col-span-2 block px-3 aspect-[181/79]" style="--grid-image: url(/images/lg-okfn-country-deustch.svg);"> </a>
+                <a href="" class="grid-image col-span-full lg:col-span-2 block px-3 aspect-[181/79]" style="--grid-image: url(/images/lg-okfn-country-deustch.svg);"> </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- IMAGE GRID: GRID 5 -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="image-grid-grid-5">Grid 5</h3>
+          <div class="sect -tighten-1 mb-20">
+            <div class="sect-content">
+              <div class="grid grid-cols-10 gap-2.5 gap-y-12">
+                <a href="" class="grid-image col-span-full lg:col-span-2 block px-3 aspect-[181/79]" style="--grid-image: url(/images/lg-okfn-country-deustch.svg);"> </a>
+                <a href="" class="grid-image col-span-full lg:col-span-2 block px-3 aspect-[181/79]" style="--grid-image: url(/images/lg-okfn-country-deustch.svg);"> </a>
+                <a href="" class="grid-image col-span-full lg:col-span-2 block px-3 aspect-[181/79]" style="--grid-image: url(/images/lg-okfn-country-deustch.svg);"> </a>
+                <a href="" class="grid-image col-span-full lg:col-span-2 block px-3 aspect-[181/79]" style="--grid-image: url(/images/lg-okfn-country-deustch.svg);"> </a>
+                <a href="" class="grid-image col-span-full lg:col-span-2 block px-3 aspect-[181/79]" style="--grid-image: url(/images/lg-okfn-country-deustch.svg);"> </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- IMAGE GRID: GRID 5 plus -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="image-grid-grid-5-plus">Grid 5 plus</h3>
+          <div class="sect -tighten-1 mb-20">
+            <div class="sect-content">
+              <div class="grid grid-cols-10 gap-2.5 gap-y-12">
+                <a href="" class="grid-image col-span-full lg:col-span-2 block px-3 aspect-[181/79]" style="--grid-image: url(/images/lg-okfn-country-deustch.svg);"> </a>
+                <a href="" class="grid-image col-span-full lg:col-span-2 block px-3 aspect-[181/79]" style="--grid-image: url(/images/lg-okfn-country-deustch.svg);"> </a>
+                <a href="" class="grid-image col-span-full lg:col-span-2 block px-3 aspect-[181/79]" style="--grid-image: url(/images/lg-okfn-country-deustch.svg);"> </a>
+                <a href="" class="grid-image col-span-full lg:col-span-2 block px-3 aspect-[181/79]" style="--grid-image: url(/images/lg-okfn-country-deustch.svg);"> </a>
+                <a href="" class="grid-image col-span-full lg:col-span-2 block px-3 aspect-[181/79]" style="--grid-image: url(/images/lg-okfn-country-deustch.svg);"> </a>
+                <a href="" class="grid-image col-span-full lg:col-span-2 block px-3 aspect-[181/79]" style="--grid-image: url(/images/lg-okfn-country-deustch.svg);"> </a>
+                <a href="" class="grid-image col-span-full lg:col-span-2 block px-3 aspect-[181/79]" style="--grid-image: url(/images/lg-okfn-country-deustch.svg);"> </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- MODAL -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="modal">Modal</h2>
+          <div class="sect mb-20">
+            <div class="sect__content">
+              <div class="flex items-center justify-center gap-10">
+                <a href="javascript:;" class="btn" data-modal-message="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard." data-modal-title="Modal tiempo" data-modal-type="warning">
+                  Alert
+                </a>
+                <a href="javascript:;" class="btn" data-modal-message="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s," data-modal-title="Lorem Ipsum is simply dummy text of the printing and typesetting industry.">
+                  Message
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- NUMBER STATS -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="number-stats">Number Stats</h2>
+
+          <!-- NUMBER STATS: GRID 1 -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="number-stats-grid-1">Grid 1</h3>
+          <div class="sect -tighten-2 mb-20">
+            <div class="flex flex-col md:flex-row items-center md:items-start text-okfn-md group">
+              <div class="mb-8 lg:mb-0 lg:mr-14 text-h0 font-mono">35%</div>
+              <div class="relative pb-12">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla malesuada</p>
+                <span class="link-arrow-curved absolute left-1/2 md:left-0 bottom-0 -translate-x-1/2 md:translate-x-0 group-hover:drop-shadow-okfn text-okfn-sm" date-time="2022-10-30">Learn more</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- NUMBER STATS: GRID 2 -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="number-stats-grid-2">Grid 2</h3>
+          <div class="sect -tighten-2 mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-28 text-center text-okfn-md group">
+              <div class="relative pb-12 md:pb-16">
+                <div class="mb-8 text-h0 font-mono">35%</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla malesuada</p>
+                <span class="link-arrow-curved absolute left-1/2 bottom-0 -translate-x-1/2 group-hover:drop-shadow-okfn text-okfn-sm" date-time="2022-10-30">Learn more</span>
+              </div>
+              <div class="relative pb-12 md:pb-16">
+                <div class="mb-8 text-h0 font-mono">1,200</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla malesuada</p>
+                <span class="link-arrow-curved absolute left-1/2 bottom-0 -translate-x-1/2 group-hover:drop-shadow-okfn text-okfn-sm" date-time="2022-10-30">Learn more</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- NUMBER STATS: GRID 3 -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="number-stats-grid-3">Grid 3</h3>
+          <div class="sect -tighten-1 mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-center text-okfn-md group">
+              <div class="relative pb-12 md:pb-16">
+                <div class="mb-8 text-h0 font-mono">35%</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla malesuada</p>
+                <span class="link-arrow-curved absolute left-1/2 bottom-0 -translate-x-1/2 group-hover:drop-shadow-okfn text-okfn-sm" date-time="2022-10-30">Learn more</span>
+              </div>
+              <div class="relative pb-12 md:pb-16">
+                <div class="mb-8 text-h0 font-mono">1,200</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla malesuada</p>
+                <span class="link-arrow-curved absolute left-1/2 bottom-0 -translate-x-1/2 group-hover:drop-shadow-okfn text-okfn-sm" date-time="2022-10-30">Learn more</span>
+              </div>
+              <div class="relative pb-12 md:pb-16">
+                <div class="mb-8 text-h0 font-mono">+170%</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla malesuada</p>
+                <span class="link-arrow-curved absolute left-1/2 bottom-0 -translate-x-1/2 group-hover:drop-shadow-okfn text-okfn-sm" date-time="2022-10-30">Learn more</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- QUOTES -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="card">Quotes</h2>
+
+          <!-- QUOTES: LEFT -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="card-person">Left</h3>
+          <div class="sect -mb-tighten-1 -tighten-2 mb-20">
+            <blockquote class="quote">
+              <div class="quote__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In laoreet molestie pulvinar. In ut neque felis. Duis ut fringilla ante.</div>
+            </blockquote>
+          </div>
+
+          <!-- QUOTES: CENTER -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="card-person">Center</h3>
+          <div class="sect -mb-tighten-1 -tighten-2 mb-20 text-center">
+            <blockquote class="quote">
+              <div class="quote__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In laoreet molestie pulvinar. In ut neque felis. Duis ut fringilla ante.</div>
+            </blockquote>
+          </div>
+
+          <!-- QUOTES: LEFT AUTHOR -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="card-person">Left Author</h3>
+          <div class="sect -mb-tighten-1 -tighten-2 mb-20">
+            <blockquote class="quote">
+              <div class="quote__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In laoreet molestie pulvinar. In ut neque felis. Duis ut fringilla ante.</div>
+              <div class="quote__author">Renata Ávila, CEO</div>
+            </blockquote>
+          </div>
+
+          <!-- QUOTES: CENTER AUTHOR -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="card-person">Center Author</h3>
+          <div class="sect -mb-tighten-1 -tighten-2 mb-20 text-center">
+            <blockquote class="quote">
+              <div class="quote__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In laoreet molestie pulvinar. In ut neque felis. Duis ut fringilla ante.</div>
+              <div class="quote__author">Renata Ávila, CEO</div>
+            </blockquote>
+          </div>
+
+
+          <!-- SPLASH -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="splash">Splash</h2>
+
+          <!-- SPLASH: HERO -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="splash-hero">Hero (Default)</h3>
+          <section class="sect sect-splash-hero mb-20">
+            <div class="sect__content">
+              <div class="flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-2.5">
+                <div class="lg:w-8/12">
+                  <h1 class="text-h1 !leading-tight">
+                    <strong>We are building a world open by design where all knowledge is</strong>
+                    <span class="font-mono">accessible to everyone.</span>
+                  </h1>
+                </div>
+                <div class="w-6/12 lg:w-4/12 flex">
+                  <img class="w-full mx-auto" src="/images/home-hero-image.svg" alt="Home Hero">
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SPLASH: HERO PUNCH -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="splash-hero-punch">Hero Punch</h3>
+          <section class="sect sect-splash-hero mb-20">
+            <div class="sect__content">
+              <div class="flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-2.5">
+                <div class="lg:w-8/12">
+                  <h1 class="text-h0 !leading-tight">
+                    <strong>#OpenByDesign</strong>
+                  </h1>
+                </div>
+                <div class="w-6/12 lg:w-4/12 flex">
+                  <img class="w-full mx-auto" src="/images/home-hero-image.svg" alt="Home Hero">
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SPOTLIGHT -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="spotlight">Spotlight</h2>
+
+          <!-- SPOTLIGHT: LEFT -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="spotlight-left">Left (Default)</h3>
+          <div class="sect sect-spotlight true-w-full mb-20">
+            <div class="sect__content">
+              <div class="sect-spotlight__image">
+                <img src="/images/spotlight-bg.png" alt="OKFN">
+              </div>
+              <div class="container z-10">
+                <div class="content">
+                  <h2 class="mb-12 text-base-m-h0 lg:text-h1 font-bold"> Global movement in action </h2>
+                  <div class="mb-14 text-okfn-md">Open Knowledge Foundation is part of a worldwide movement working together for a fair, free and open future.</div>
+                  <a href="" class="btn !px-20">Join us!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SPOTLIGHT: LEFT WHITE -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="spotlight-left-white">Left White</h3>
+          <div class="sect sect-spotlight -white true-w-full mb-20">
+            <div class="sect__content">
+              <div class="sect-spotlight__image">
+                <img src="/images/spotlight-bg.png" alt="OKFN">
+              </div>
+              <div class="container z-10">
+                <div class="content">
+                  <h2 class="mb-12 text-base-m-h0 lg:text-base-h1 font-bold"> Global movement in action </h2>
+                  <div class="mb-14 text-okfn-md">Open Knowledge Foundation is part of a worldwide movement working together for a fair, free and open future.</div>
+                  <a href="" class="btn !px-20">Join us!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- SPOTLIGHT: RIGHT WHITE -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="spotlight-right-white">Right White</h3>
+          <div class="sect sect-spotlight -white -right true-w-full mb-20">
+            <div class="sect__content">
+              <div class="sect-spotlight__image">
+                <img src="/images/spotlight-bg.png" alt="OKFN">
+              </div>
+              <div class="container z-10">
+                <div class="content">
+                  <h2 class="mb-12 text-base-m-h0 lg:text-base-h1 font-bold"> Global movement in action </h2>
+                  <div class="mb-14 text-okfn-md">Open Knowledge Foundation is part of a worldwide movement working together for a fair, free and open future.</div>
+                  <a href="" class="btn !px-20">Join us!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SPOTLIGHT: CENTER -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="spotlight-center">Center</h3>
+          <div class="sect sect-spotlight -center true-w-full mb-20">
+            <div class="sect__content">
+              <div class="sect-spotlight__image">
+                <img src="/images/spotlight-bg-2.png" alt="OKFN">
+              </div>
+              <div class="container z-10">
+                <div class="content">
+                  <h2 class="mb-12 text-base-m-h0 lg:text-base-h1 font-bold"> Global movement in action </h2>
+                  <div class="mb-14 text-okfn-md">Open Knowledge Foundation is part of a worldwide movement working together for a fair, free and open future.</div>
+                  <a href="" class="btn !px-20">Join us!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- /CONTAINER -->
+        </div>
+      </div>
+      {{> footer }}
+      {{> foot }}
+    </div>
+  </body>
+</html>

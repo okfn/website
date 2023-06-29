@@ -12,22 +12,32 @@
   }
 
   &.-is-video {
-    &::after {
-      @apply absolute top-1/2 left-1/2 z-10 w-[6.3125rem] h-[6.125rem] border-8 border-white transition-colors duration-200 ease-in-out -translate-x-1/2 -translate-y-1/2 rounded-[2rem] bg-no-repeat bg-center;
+    .image {
+      &::after {
+        @apply absolute top-1/2 left-1/2 z-10 w-[6.3125rem] h-[6.125rem] border-8 border-white transition-colors duration-200 ease-in-out -translate-x-1/2 -translate-y-1/2 rounded-[2rem] bg-no-repeat bg-center;
 
-      content: '';
-      background-image: url(/assets/img/icons/arrow-rounded-right.svg);
+        content: '';
+        background-image: url(../images/icons/arrow-rounded-right.svg);
+      }
+
+      img {
+        @apply aspect-video;
+      }
     }
 
     &:hover {
-      &::after {
-        @apply bg-okfn-blue border-transparent;
+      .image {
+        &::after {
+          @apply bg-okfn-blue border-transparent;
+        }
       }
     }
 
     &:active {
-      &::after {
-        @apply bg-okfn-purple border-transparent duration-75;
+      .image {
+        &::after {
+          @apply bg-okfn-purple border-transparent duration-75;
+        }
       }
     }
   }
