@@ -1,0 +1,23 @@
+.grid-image {
+  @apply relative z-0 overflow-hidden;
+
+  &::before {
+    @apply absolute top-0 bottom-0 left-3 right-3 block bg-black transition-colors duration-150;
+
+    content: '';
+    mask: var(--grid-image) no-repeat center;
+    mask-size: contain;
+  }
+
+  &:hover {
+    &::before {
+      @apply bg-okfn-blue;
+    }
+  }
+
+  &:active {
+    &::before {
+      @apply bg-okfn-purple duration-75;
+    }
+  }
+}

@@ -17,7 +17,7 @@
     }
 
     .content {
-      @apply w-full md:w-auto;
+      @apply w-full md:w-auto md:flex-grow;
     }
 
     .name {
