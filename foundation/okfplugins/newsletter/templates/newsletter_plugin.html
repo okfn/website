@@ -1,4 +1,46 @@
 <!-- sect-newsletter -->
+{% if instance.campaign_type == 'campaign' %}
+<section class="sect sect-campaign -tighten-1 mb-20">
+  <div class="sect__content">
+    <div class="lg:flex lg:items-center lg:gap-16">
+      <img class="mx-auto mb-10 lg:mb-0 lg:flex-shrink-0 max-w-[15rem] lg:max-w-[31.625rem]" src="{% if instance.image %}{{ instance.image.url }}{% else %}/assets/img/call-to-action-newsletter.svg{% endif %}" alt="{{ instance.image_alt }}">
+      <div class="lg:flex-grow">
+        <h2 class="mb-5 text-h1 leading-none font-bold">{{ instance.heading|safe}}</h2>
+        <p class="mb-8 text-2xl leading-normal">
+          {{ instance.text | safe }}
+        </p>
+        <form action="https://us9.list-manage.com/subscribe?u=73f922f8e68e21a10efa21f02&id=32d370a7fc" method="get" class="form">
+          <div class="input-fake flex items-center">
+            <input class="form-control flex-grow w-auto min-w-0 mr-2" type="email" placeholder="Your email" />
+            <button class="btn flex-shrink-0">
+              <span>{{ instance.button_label }}</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% elif instance.campaign_type == 'small' %}
+<section class="sect sect-call-to-action-medium mb-20">
+  <div class="sect__content">
+    <div class="grid grid-cols-12 gap-y-10 lg:gap-y-0">
+      <div class="col-span-full lg:col-start-2 lg:col-end-8 flex items-center lg:pr-4">
+        <h2 class="mr-4 text-okfn-lg leading-none font-mono">Don't miss a thing</h2>
+        <img class="flex-shrink-0 max-w-[6.25rem] lg:max-w-[10rem] mx-auto" src="{% if instance.image %}{{ instance.image.url }}{% else %}/assets/img/call-to-action-newsletter.svg{% endif %}" alt="{{ instance.image_alt }}">
+      </div>
+      <form action="https://us9.list-manage.com/subscribe?u=73f922f8e68e21a10efa21f02&id=32d370a7fc" method="get" class="col-span-full lg:col-start-8 lg:col-end-12 form">
+        <div class="input-fake flex items-center">
+          <input class="form-control flex-grow w-auto min-w-0 mr-2" type="email" placeholder="Your email" />
+          <button class="btn flex-shrink-0">
+            <span>{{ instance.button_label }}</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+{% else %}
 <section class="sect sect-newsletter -tighten-1 mb-20 -has-bg-circle -bg-circle-lg before:top-full before:left-full before:-translate-y-1/2 before:-translate-x-1/2">
   <div class="sect__content">
     <div class="lg:flex lg:flex-row-reverse lg:items-center lg:gap-16">
@@ -20,4 +62,5 @@
     </div>
   </div>
 </section>
+{% endif %}
 <!-- /sect-newsletter -->
