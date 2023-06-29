@@ -13,6 +13,7 @@ class OKImage(CMSPlugin):
     show_caption = models.BooleanField(default=False)
     in_column = models.BooleanField(default=False)
     in_gallery = models.BooleanField(default=False)
+    in_carousel = models.BooleanField(default=False)
     text_black = models.BooleanField(default=False)
     full_width = models.BooleanField(default=False)
 
