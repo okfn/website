@@ -4,6 +4,7 @@ from cms.models.pluginmodel import CMSPlugin
 CAMPAIGN_TYPES = (
     ('newsletter', 'Newsletter'),
     ('campaign', 'Campaign'),
+    ('medium', 'Medium'),
     ('small', 'Small')
 )
 
