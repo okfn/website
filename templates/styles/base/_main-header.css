@@ -116,7 +116,7 @@
         @apply absolute top-1/2 right-4 w-5 h-3 -translate-y-1/2 bg-current;
 
         content: '';
-        mask: url(/assets/img/icons/arrow-solid-down.svg) no-repeat center;
+        mask: url(/images/icons/arrow-solid-down.svg) no-repeat center;
       }
 
       &::after {
@@ -138,7 +138,7 @@
           @apply block w-7 h-7 bg-black;
 
           content: '';
-          mask: url(/assets/img/icons/header-globe.svg) no-repeat center;
+          mask: url(/images/icons/header-globe.svg) no-repeat center;
         }
       }
     }
@@ -226,7 +226,7 @@
             @apply w-4 h-4 mr-4 bg-black;
 
             content: '';
-            mask: url(/assets/img/icons/arrow-right.svg) no-repeat center;
+            mask: url(/images/icons/arrow-right.svg) no-repeat center;
             mask-size: contain;
 
             &:hover {
@@ -305,7 +305,7 @@
           @apply block w-6 h-6 bg-black;
 
           content: '';
-          mask: url(/assets/img/icons/header-search.svg) no-repeat center;
+          mask: url(/images/icons/header-search.svg) no-repeat center;
         }
       }
 
@@ -367,7 +367,7 @@
     &.-has-submenu {
       .labeled {
         &::before {
-          mask-image: url(/assets/img/icons/arrow-bottom-right.svg) !important;
+          mask-image: url(/images/icons/arrow-bottom-right.svg) !important;
         }
       }
     }

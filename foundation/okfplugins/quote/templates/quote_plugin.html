@@ -1,0 +1,8 @@
+<div class="sect -mb-tighten-1 -tighten-2 mb-20 text{% if instance.alignment == 'center' %}-center{% endif %}">
+  <blockquote class="quote">
+    <div class="quote__content">{{ instance.text }}</div>
+    {% if instance.author %}
+    <div class="quote__author">{{ instance.author }}</div>
+    {% endif %}
+  </blockquote>
+</div>

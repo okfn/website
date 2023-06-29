@@ -1,0 +1,17 @@
+.quote {
+  @apply text-[2rem] md:text-[2.5rem] leading-tight;
+
+  &__content {
+    &::before {
+      content: '”';
+    }
+
+      &::after {
+      content: '”';
+    }
+  }
+
+  &__author {
+    @apply mt-5 md:mt-8 text-base-m-h3 md:text-base-h3 font-mono;
+  }
+}

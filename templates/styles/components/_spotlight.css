@@ -1,0 +1,53 @@
+.sect-spotlight {
+  @apply  h-[40rem];
+
+  .sect__content {
+    @apply flex items-center h-full;
+  }
+
+  &__image {
+    @apply absolute inset-0 z-0 w-full;
+
+    img {
+      @apply w-full h-full object-cover drop-shadow-[0_10px_20px_rgba(0,0,0,0.25)];
+    }
+  }
+
+  .content {
+    @apply col-start-2 col-span-10 lg:col-start-2 lg:col-span-4 2xl:col-start-1;
+
+    text-shadow: 0 4px 4px rgba(0,0,0,0.25);
+  }
+
+  .btn {
+    @apply  drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]
+  }
+
+  &.-white {
+    @apply text-white;
+
+    .btn {
+      @apply bg-white text-black;
+
+      &:hover {
+        @apply text-okfn-purple;
+      }
+
+      &:active {
+        @apply bg-okfn-purple text-white duration-75;
+      }
+    }
+  }
+
+  &.-right {
+    .content {
+      @apply col-start-2 col-span-10 lg:col-start-8 lg:col-span-4 2xl:col-start-9 text-right;
+    }
+  }
+
+  &.-center {
+    .content {
+      @apply col-start-2 col-span-10 lg:col-start-4 lg:col-span-6 text-center;
+    }
+  }
+}

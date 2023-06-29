@@ -170,6 +170,7 @@ INSTALLED_APPS = (
     'foundation.okfplugins.blog_opening',
     'foundation.okfplugins.hero_punch',
     'foundation.okfplugins.spotlight',
+    'foundation.okfplugins.quote',
     'article_list_item'
 )
 
