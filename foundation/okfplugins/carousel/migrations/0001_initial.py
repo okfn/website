@@ -5,23 +5,33 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('cms', '0022_auto_20180620_1551'),
+        ("cms", "0022_auto_20180620_1551"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Carousel',
+            name="Carousel",
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, related_name='carousel_carousel', serialize=False, to='cms.cmsplugin')),
-                ('title', models.CharField(max_length=500)),
+                (
+                    "cmsplugin_ptr",
+                    models.OneToOneField(
+                        auto_created=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        parent_link=True,
+                        primary_key=True,
+                        related_name="carousel_carousel",
+                        serialize=False,
+                        to="cms.cmsplugin",
+                    ),
+                ),
+                ("title", models.CharField(max_length=500)),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
-            bases=('cms.cmsplugin',),
+            bases=("cms.cmsplugin",),
         ),
     ]
