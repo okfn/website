@@ -67,7 +67,7 @@
     @apply block w-6 h-[2.375rem];
 
     content: "";
-    mask: url(../images/icons/arrow-rounded-right.svg) no-repeat center;
+    mask: url(/assets/img/icons/arrow-rounded-right.svg) no-repeat center;
     background-color: #fff;
   }
 
