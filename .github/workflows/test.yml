@@ -24,9 +24,6 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Ensure migrations are up-to-date
-        run: python manage.py makemigrations --check
-
       - name: Ensure JS and CSS are up-to-date
         run: |
           echo "Runnign npm install"
@@ -35,8 +32,14 @@ jobs:
           npx grunt uglify:scripts
           echo "Running npm run build"
           npm run build
-          #echo "Running git diff"
-          #git diff --exit-code static/
+          # echo "Running git diff"
+          # git diff --exit-code static/
+
+      - name: Django check
+        run: python manage.py check --settings=foundation.settings
+
+      - name: Ensure migrations are up-to-date
+        run: python manage.py makemigrations --check
 
       - name: Run tests
         run: |
