@@ -15,6 +15,7 @@
       <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" class="" alt="">
     </div>
     <figcaption class="text">
+        <strong class="title">{{ instance.text }}</strong>
     </figcaption>
   </figure>
 {% else %}
