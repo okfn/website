@@ -1,7 +1,7 @@
-from django.conf.urls import url
+from django.urls import re_path
 
 from ..views import WorkingGroupListView
 
 urlpatterns = [
-    url(r'^$', WorkingGroupListView.as_view(), name='working-groups'),
+    re_path(r'^$', WorkingGroupListView.as_view(), name='working-groups'),
 ]

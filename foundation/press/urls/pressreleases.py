@@ -1,10 +1,10 @@
-from django.conf.urls import url
+from django.urls import re_path
 
 from ..views import PressReleaseListView, PressReleaseDetailView
 
 
 urlpatterns = [
-    url(r'^$', PressReleaseListView.as_view(), name='press-releases'),
-    url(r'^(?P<slug>[^/]+)/$', PressReleaseDetailView.as_view(),
+    re_path(r'^$', PressReleaseListView.as_view(), name='press-releases'),
+    re_path(r'^(?P<slug>[^/]+)/$', PressReleaseDetailView.as_view(),
         name='press-release'),
 ]
