@@ -1,12 +1,11 @@
 # This file contains the direct requirements
 # Use pip-compile to create requirements.txt from this
+# Maintain the alphabetical order
+# Use pip list -o to check for outdated packages
 
-pip-tools==6.12.3
-# wheel is required for pip-tool but ver <= 0.37.1 is vulnerable.
-# Remove once pip-tools update wheel version
-wheel==0.40.0
-Django==3.2.18
 cssmin==0.2.0
+
+Django==3.2.18
 django-cms==3.11.1
 django-compressor==4.3.1
 django-csp==3.7
@@ -40,7 +39,7 @@ requests==2.28.2
 whoosh==2.7.4
 
 jsonfield==3.1.0
-beautifulsoup4==4.12.0
+beautifulsoup4==4.12.2
 micawber==0.5.4
 
 # for google
