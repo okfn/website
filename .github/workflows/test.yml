@@ -39,7 +39,11 @@ jobs:
         run: python manage.py check --settings=foundation.settings
 
       - name: Ensure migrations are up-to-date
-        run: python manage.py makemigrations --check
+        run: |
+          # show migrations
+          python manage.py makemigrations --dry-run
+          # check migrations
+          python manage.py makemigrations --check
 
       - name: Run tests
         run: |
