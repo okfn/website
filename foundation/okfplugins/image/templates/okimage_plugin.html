@@ -9,6 +9,15 @@
        </figcaption>
      </figure>
    </div>
+{% elif instance.in_carousel %}
+  <figure class="img-set ">
+    <div class="image">
+      <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" class="" alt="">
+    </div>
+    <figcaption class="text">
+        <strong class="title">{{ instance.text }}</strong>
+    </figcaption>
+  </figure>
 {% else %}
   {% if not instance.in_column %}
   <div class="sect -tighten-2 sect-highlights mb-20">
