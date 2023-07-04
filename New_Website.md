@@ -23,6 +23,15 @@ New plugins for blocks of content are located on foundation/okfplugins.
 
 # CSS
 
+## Node version 
+
+```
+nvm install 16
+nvm use 16
+```
+
+## Build
+
 To build the css on static/css/styles.css just run `npm run build`. If you use a new tailwind class in some plugin, this class must be added somewhere 
 on the file templates/styles.html, otherwise the class will not work when used on the plugin.
 
