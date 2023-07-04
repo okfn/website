@@ -1,7 +1,7 @@
 # flake8: noqa
 from menus.base import NavigationNode
 from menus.menu_pool import menu_pool
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from cms.menu_bases import CMSAttachMenu
 from .models import PressRelease, PressMention
 
