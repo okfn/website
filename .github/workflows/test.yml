@@ -41,7 +41,8 @@ jobs:
       - name: Ensure migrations are up-to-date
         run: |
           # show migrations
-          python manage.py makemigrations --dry-run
+          python manage.py makemigrations --dry-run --verbosity 3
+          python manage.py migrate
           # check migrations
           python manage.py makemigrations --check
 
