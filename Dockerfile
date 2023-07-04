@@ -30,8 +30,8 @@ COPY requirements.txt .
 COPY deployment/gunicorn.config.py .
 
 RUN pip install -r requirements.txt
-RUN . /root/.nvm/nvm.sh && nvm install 10
-RUN . /root/.nvm/nvm.sh && nvm use 10
+RUN . /root/.nvm/nvm.sh && nvm install 16
+RUN . /root/.nvm/nvm.sh && nvm use 16
 
 ENV PORT 80
 EXPOSE $PORT
