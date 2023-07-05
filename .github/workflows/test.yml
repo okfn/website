@@ -38,13 +38,14 @@ jobs:
       - name: Django check
         run: python manage.py check --settings=foundation.settings
 
-      # - name: Ensure migrations are up-to-date
-      #   run: |
-      #     # show migrations
-      #     python manage.py makemigrations --dry-run --verbosity 3
-      #     python manage.py migrate
-      #     # check migrations
-      #     python manage.py makemigrations --check
+      - name: Ensure migrations are up-to-date
+        run: |
+          # show migrations
+          python manage.py makemigrations --dry-run --verbosity 3
+          # run manually a migration for plugin
+          python manage.py makemigrations djangocms_picture
+          # check migrations
+          python manage.py makemigrations --check
 
       - name: Run tests
         run: |
