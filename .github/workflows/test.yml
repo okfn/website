@@ -43,6 +43,7 @@ jobs:
           # show migrations
           python manage.py makemigrations --dry-run --verbosity 3
           # run manually a migration for plugin
+          # See https://github.com/django-cms/djangocms-picture/issues/122
           python manage.py makemigrations djangocms_picture
           # check migrations
           python manage.py makemigrations --check
