@@ -10,11 +10,15 @@ COUNTRY_SLUGS = '|'.join([slugify(str(name)) for code, name in countries])
 
 
 urlpatterns = [
-    re_path(r'^(?P<country>' + COUNTRY_SLUGS + r')/$',
+    re_path(
+        r'^(?P<country>' + COUNTRY_SLUGS + r')/$',
         NetworkGroupDetailView.as_view(),
-        name='network-country'),
-    re_path(r'^(?P<country>' + COUNTRY_SLUGS + r')/(?P<region>[^/]+)/$',
+        name='network-country'
+    ),
+    re_path(
+        r'^(?P<country>' + COUNTRY_SLUGS + r')/(?P<region>[^/]+)/$',
         NetworkGroupDetailView.as_view(),
-        name='network-region'),
+        name='network-region'
+    ),
     re_path(r'^csv$', networkgroup_csv_output, name='networkgroups-csv'),
 ]
