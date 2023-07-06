@@ -13,7 +13,7 @@ import os
 import sys
 import email.utils
 from os import environ as env
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 import warnings
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)

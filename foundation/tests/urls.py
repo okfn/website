@@ -1,25 +1,25 @@
-from django.conf.urls import url, include
+from django.urls import re_path, include
 
 from django.contrib import admin
 
 urlpatterns = [
-    url(r"^admin/", admin.site.urls),
-    url(r"^login/", lambda x: x, name="login"),
-    url(r"^search/", include("haystack.urls")),
-    url(r"^jobs/", include("foundation.jobs.urls")),
-    url(r"^press/releases", include("foundation.press.urls.pressreleases")),
-    url(r"^press/mentions", include("foundation.press.urls.pressmentions")),
-    url(r"^about/team", include("foundation.organisation.urls.units")),
-    url(r"^about/board", include("foundation.organisation.urls.board")),
-    url(
+    re_path(r"^admin/", admin.site.urls),
+    re_path(r"^login/", lambda x: x, name="login"),
+    re_path(r"^search/", include("haystack.urls")),
+    re_path(r"^jobs/", include("foundation.jobs.urls")),
+    re_path(r"^press/releases", include("foundation.press.urls.pressreleases")),
+    re_path(r"^press/mentions", include("foundation.press.urls.pressmentions")),
+    re_path(r"^about/team", include("foundation.organisation.urls.units")),
+    re_path(r"^about/board", include("foundation.organisation.urls.board")),
+    re_path(
         r"^about/advisory-board", include("foundation.organisation.urls.advisoryboard")
     ),
-    url(r"^projects/", include("foundation.organisation.urls.projects")),
-    url(r"^themes/", include("foundation.organisation.urls.themes")),
-    url(
+    re_path(r"^projects/", include("foundation.organisation.urls.projects")),
+    re_path(r"^themes/", include("foundation.organisation.urls.themes")),
+    re_path(
         r"^get-involved/working-groups",
         include("foundation.organisation.urls.workinggroups"),
     ),
-    url(r"^network/", include("foundation.organisation.urls.networkgroups")),
-    url(r"^", include("cms.urls")),
+    re_path(r"^network/", include("foundation.organisation.urls.networkgroups")),
+    re_path(r"^", include("cms.urls")),
 ]

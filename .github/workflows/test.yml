@@ -6,10 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: 3.8
 
@@ -24,9 +24,6 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Ensure migrations are up-to-date
-        run: python manage.py makemigrations --check
-
       - name: Ensure JS and CSS are up-to-date
         run: |
           echo "Runnign npm install"
@@ -35,8 +32,21 @@ jobs:
           npx grunt uglify:scripts
           echo "Running npm run build"
           npm run build
-          #echo "Running git diff"
-          #git diff --exit-code static/
+          # echo "Running git diff"
+          # git diff --exit-code static/
+
+      - name: Django check
+        run: python manage.py check --settings=foundation.settings
+
+      - name: Ensure migrations are up-to-date
+        run: |
+          # show migrations
+          python manage.py makemigrations --dry-run --verbosity 3
+          # run manually a migration for plugin
+          # See https://github.com/django-cms/djangocms-picture/issues/122
+          python manage.py makemigrations djangocms_picture
+          # check migrations
+          python manage.py makemigrations --check
 
       - name: Run tests
         run: |

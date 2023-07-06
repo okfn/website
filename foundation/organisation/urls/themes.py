@@ -1,8 +1,8 @@
-from django.conf.urls import url
+from django.urls import re_path
 
 from ..views import ThemeDetailView
 
 
 urlpatterns = [
-    url(r'^(?P<slug>[^/]+)/$', ThemeDetailView.as_view(), name='theme'),
+    re_path(r'^(?P<slug>[^/]+)/$', ThemeDetailView.as_view(), name='theme'),
 ]
