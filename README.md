@@ -14,7 +14,7 @@ http://okfn.org/ runs on Django CMS. A lot of the website content can be changed
 
 You must have the following installed:
 
-- Python 3.8
+- Python 3.10
 - Node JS
 
 The [/Dockerfile](/Dockerfile) (used for staging/production) and the [requirements file](/requirements.txt)
@@ -56,7 +56,7 @@ DB_PORT=5432
 
 Prepare the app:
 
-Create a Python 3.8 local environment (e.g. `python3.8 -m venv ~/okf-website-env`)
+Create a Python 3.10 local environment (e.g. `python3.10 -m venv ~/okf-website-env`)
 
 ```bash
 pip install -r requirements.txt
