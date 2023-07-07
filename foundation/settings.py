@@ -332,8 +332,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-AWS_S3_CUSTOM_DOMAIN = env.get('DJANGO_AWS_S3_CUSTOM_DOMAIN')
-
 CUSTOM_ASSETS_DOMAIN = env.get('DJANGO_CUSTOM_ASSETS_DOMAIN')
 
 STATIC_URL = '/assets/'
@@ -346,28 +344,6 @@ if env.get('DJANGO_USE_GOOGLE_STORAGE') == 'true':
     GS_QUERYSTRING_AUTH = False
     GS_DEFAULT_ACL = "publicRead"
     # We use local static files, not use STATICFILES_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
-elif env.get('DJANGO_USE_AWS_STORAGE') == 'true':
-    AWS_ACCESS_KEY_ID = env['AWS_ACCESS_KEY_ID']
-    AWS_SECRET_ACCESS_KEY = env['AWS_SECRET_ACCESS_KEY']
-    AWS_STORAGE_BUCKET_NAME = env['AWS_STORAGE_BUCKET_NAME']
-    AWS_QUERYSTRING_AUTH = False
-    AWS_HEADERS = {
-        'Cache-Control': 'max-age=86400',
-    }
-    AWS_DEFAULT_ACL = 'public-read'
-
-    # django-s3-folder-storage is no longer maintained
-    # INSTALLED_APPS += ('s3_folder_storage',)
-    DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.DefaultStorage'
-    THUMBNAIL_DEFAULT_STORAGE = 's3_folder_storage.s3.DefaultStorage'
-    DEFAULT_S3_PATH = 'media'
-    MEDIA_ROOT = 'media/'
-
-    if AWS_S3_CUSTOM_DOMAIN:
-        MEDIA_URL = '//%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, DEFAULT_S3_PATH)
-    else:
-        MEDIA_URL = '//s3.amazonaws.com/%s/%s/' % (AWS_STORAGE_BUCKET_NAME,
-                                                   DEFAULT_S3_PATH)
 else:
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -408,10 +384,6 @@ else:
 
 # Content Security Policy
 asset_hosts = ['https://storage.googleapis.com']
-if AWS_S3_CUSTOM_DOMAIN:
-    asset_hosts.append('https://%s' % AWS_S3_CUSTOM_DOMAIN)
-else:
-    asset_hosts.append('https://s3.amazonaws.com')
 if CUSTOM_ASSETS_DOMAIN:
     asset_hosts.append('https://%s' % CUSTOM_ASSETS_DOMAIN)
 
