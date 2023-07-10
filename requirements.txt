@@ -8,8 +8,6 @@ asgiref==3.7.2
     # via
     #   django
     #   django-countries
-async-timeout==4.0.2
-    # via redis
 beautifulsoup4==4.12.2
     # via -r requirements.in
 cachetools==4.2.4
@@ -128,7 +126,7 @@ easy-thumbnails[svg]==2.8.5
     #   djangocms-picture
 elastic-transport==8.1.2
     # via elasticsearch
-elasticsearch==8.8.0
+elasticsearch==8.8.2
     # via -r requirements.in
 feedparser==6.0.10
     # via -r requirements.in
@@ -229,9 +227,7 @@ tinycss2==1.1.1
     #   cssselect2
     #   svglib
 typing-extensions==4.2.0
-    # via
-    #   asgiref
-    #   django-countries
+    # via django-countries
 unidecode==1.1.1
     # via django-filer
 urllib3==1.26.5
