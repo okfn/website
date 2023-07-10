@@ -8,8 +8,6 @@ asgiref==3.7.2
     # via
     #   django
     #   django-countries
-async-timeout==4.0.2
-    # via redis
 beautifulsoup4==4.12.2
     # via -r requirements.in
 cachetools==4.2.4
@@ -197,7 +195,7 @@ pyparsing==3.0.9
     # via packaging
 rcssmin==1.1.1
     # via django-compressor
-redis==4.5.3
+redis==4.6.0
     # via django-redis
 reportlab==3.6.5
     # via
@@ -229,9 +227,7 @@ tinycss2==1.1.1
     #   cssselect2
     #   svglib
 typing-extensions==4.2.0
-    # via
-    #   asgiref
-    #   django-countries
+    # via django-countries
 unidecode==1.1.1
     # via django-filer
 urllib3==1.26.5
