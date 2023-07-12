@@ -26,7 +26,6 @@
           <label class="font-bold mr-10">{{form.name.label}}:</label>
             {{ form.name }}
             {{ form.name.errors }}
-
           </div>
           <div class="input-fake flex items-center mb-5">
           <label class="font-bold mr-10">{{form.organisation.label}}:</label>
@@ -57,6 +56,10 @@
             <label class="message font-bold">{{form.telephone.label}}:</label>
               {{ form.telephone }}
               {{ form.telephone.errors }}
+          </div>
+          <div class="input-fake flex items-left flex-col mb-5">
+              {{ form.captcha }}
+              {{ form.captcha.errors }}
           </div>
         <button type="submit" class="btn btn-primary btn-lg">Send</button>
       </form>

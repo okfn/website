@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.urls import include, re_path
+from django.urls import include, re_path, path
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from django.views.generic import RedirectView
@@ -34,7 +34,9 @@ if settings.DEBUG:
         re_path(r"^403/$", default_views.permission_denied),
         re_path(r"^404/$", default_views.page_not_found),
         re_path(r"^500/$", default_views.server_error),
+        path("__debug__/", include("debug_toolbar.urls")),
     ]
+
 
 # Login/logout, password changes and resets
 urlpatterns += [
@@ -87,6 +89,10 @@ urlpatterns += [
 # because of django-cms-search)
 urlpatterns += [
     re_path(r"^search/", SearchView(), name="haystack_search"),
+]
+
+urlpatterns += [
+    re_path(r"^captcha/", include("captcha.urls")),
 ]
 
 # CMS patterns

@@ -113,6 +113,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'django.contrib.redirects',  # Provides redirects app
+    'django.forms',  # Required to override django-simple-captcha template
 
     # 3rd-party important
     'reversion',
@@ -121,6 +122,7 @@ INSTALLED_APPS = (
     'haystack',
     'formtools',
     'sendemail',
+    'captcha',
 
     # Asset pipeline
     'compressor',
@@ -499,6 +501,9 @@ QUOTE_STYLES = (
 )
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+CAPTCHA_IMAGE_SIZE = (100, 50)
+
 
 if TEST_MODE:
     from .test_settings import *  # noqa

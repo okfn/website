@@ -1,3 +1,4 @@
+from captcha.fields import CaptchaField, CaptchaTextInput
 from django import forms
 
 HELP_CHOICES = [
@@ -11,9 +12,14 @@ HELP_CHOICES = [
     ('open-knowledge-network', 'Open Knowledge Network (local services)'),
 ]
 
+class CustomCaptchaTextInput(CaptchaTextInput):
+    """Styles captcha's fields with our theme."""
+
+    template_name = 'captcha_field.html'
+
 
 class ContactForm(forms.Form):
-    name = forms.CharField(label='Name/Last name *')
+    name = forms.CharField(label='Name')
     name.widget.attrs = {'class': "form-control input-lg"}
 
     organisation = forms.CharField(required=False, label='Organization')
@@ -22,7 +28,7 @@ class ContactForm(forms.Form):
     website = forms.URLField(required=False, label='Website')
     website.widget.attrs = {'class': "form-control input-lg"}
 
-    email = forms.EmailField(label='Email address *')
+    email = forms.EmailField(label='Email')
     email.widget.attrs = {'class': "form-control input-lg"}
 
     how_can_we_help = forms.ChoiceField(label='How can we help?', choices=HELP_CHOICES)
@@ -33,3 +39,6 @@ class ContactForm(forms.Form):
 
     telephone = forms.CharField(required=False, label='Telephone')
     telephone.widget.attrs = {'class': "form-control input-lg"}
+
+    captcha = CaptchaField(widget=CustomCaptchaTextInput)
+    captcha.widget.attrs = {'class': "form-control input-lg"}
