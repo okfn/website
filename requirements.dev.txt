@@ -24,7 +24,7 @@ packaging==21.3
     # via
     #   -c requirements.txt
     #   build
-pip-tools==6.13.0
+pip-tools==6.14.0
     # via -r requirements.dev.in
 pycodestyle==2.10.0
     # via flake8
@@ -47,6 +47,7 @@ soupsieve==2.0.1
 tomli==2.0.1
     # via
     #   build
+    #   pip-tools
     #   pyproject-hooks
 waitress==1.4.4
     # via webtest
