@@ -83,7 +83,7 @@ urlpatterns += [
 ]
 
 urlpatterns += [
-    re_path(r"^'search/", include("haystack.urls")),
+    re_path(r"^search/", include("haystack.urls")),
 ]
 
 # CMS patterns
