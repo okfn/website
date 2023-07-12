@@ -34,6 +34,7 @@ if settings.DEBUG:
         re_path(r"^404/$", default_views.page_not_found),
         re_path(r"^500/$", default_views.server_error),
     ]
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Login/logout, password changes and resets
 urlpatterns += [
@@ -114,7 +115,3 @@ urlpatterns += [
     # Fallthrough for CMS managed pages
     re_path(r"^", include("cms.urls")),
 ]
-
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
