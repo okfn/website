@@ -14,7 +14,6 @@ django-csp==3.7
 django-environ==0.10.0
 django-haystack==3.2.1
 django-filer==2.2.6
-django-formtools==2.4.1
 django-markdown-deux==1.0.6
 django-mptt==0.14.0
 django-pagedown==2.2.1

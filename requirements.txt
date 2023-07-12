@@ -70,9 +70,7 @@ django-filer==2.2.6
     #   djangocms-link
     #   djangocms-picture
 django-formtools==2.4.1
-    # via
-    #   -r requirements.in
-    #   django-cms
+    # via django-cms
 django-haystack==3.2.1
     # via -r requirements.in
 django-js-asset==1.2.2

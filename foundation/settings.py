@@ -123,7 +123,6 @@ INSTALLED_APPS = (
     'pagedown',
     'markdown_deux',
     'haystack',
-    'formtools',
     'sendemail',
 
     # Asset pipeline
