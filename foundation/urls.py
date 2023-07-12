@@ -34,7 +34,6 @@ if settings.DEBUG:
         re_path(r"^403/$", default_views.permission_denied),
         re_path(r"^404/$", default_views.page_not_found),
         re_path(r"^500/$", default_views.server_error),
-        path("__debug__/", include("debug_toolbar.urls")),
     ]
 
 
