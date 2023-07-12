@@ -15,9 +15,7 @@ beautifulsoup4==4.12.2
 cachetools==4.2.4
     # via google-auth
 certifi==2020.11.8
-    # via
-    #   elastic-transport
-    #   requests
+    # via requests
 charset-normalizer==2.0.3
     # via requests
 cssmin==0.2.0
@@ -126,10 +124,6 @@ easy-thumbnails[svg]==2.8.5
     #   -r requirements.in
     #   django-filer
     #   djangocms-picture
-elastic-transport==8.1.2
-    # via elasticsearch
-elasticsearch==8.8.0
-    # via -r requirements.in
 feedparser==6.0.10
     # via -r requirements.in
 google-api-core==2.8.1
@@ -236,7 +230,6 @@ unidecode==1.1.1
     # via django-filer
 urllib3==1.26.5
     # via
-    #   elastic-transport
     #   google-auth
     #   requests
 webencodings==0.5.1
