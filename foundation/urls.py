@@ -9,7 +9,6 @@ from django.views import defaults as default_views
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 
-from haystack.views import SearchView
 from cms.sitemaps import CMSSitemap
 
 admin.autodiscover()
@@ -82,11 +81,8 @@ urlpatterns += [
     ),
 ]
 
-# Search patterns (do not use haystack.url
-# since we're using an older version of haystack
-# because of django-cms-search)
 urlpatterns += [
-    re_path(r"^search/", SearchView(), name="haystack_search"),
+    re_path(r"^'search/", include("haystack.urls")),
 ]
 
 # CMS patterns
