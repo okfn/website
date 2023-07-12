@@ -12,7 +12,7 @@ build==0.10.0
     # via pip-tools
 click==8.1.4
     # via pip-tools
-coverage==6.4
+coverage==7.2.7
     # via -r requirements.dev.in
 django-webtest==1.9.10
     # via -r requirements.dev.in
