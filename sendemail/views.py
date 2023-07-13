@@ -22,6 +22,7 @@ def contactview(request):
     email_message = f"""
 Name: {form.cleaned_data['name']}
 From: {form.cleaned_data['organisation']}
+Website: {form.cleaned_data['website']}
 Email: {form.cleaned_data['email']}
 Telephone: {form.cleaned_data['telephone']}
 Message: {form.cleaned_data['message']}
