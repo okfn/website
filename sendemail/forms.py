@@ -12,6 +12,7 @@ HELP_CHOICES = [
     ('open-knowledge-network', 'Open Knowledge Network (local services)'),
 ]
 
+
 class CustomCaptchaTextInput(CaptchaTextInput):
     """Styles captcha's fields with our theme."""
 

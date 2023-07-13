@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.urls import include, re_path, path
+from django.urls import include, re_path
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from django.views.generic import RedirectView
