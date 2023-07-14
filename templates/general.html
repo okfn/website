@@ -72,11 +72,9 @@
                 </div>
               </nav>
             </div>
-            {% block messages %}
-              {% include 'includes/messages.html' %}
-            {% endblock %}
           </header>
           <!-- /header -->
+          {% include 'includes/messages.html' %}
           {% block body %}{% endblock %}
         </div>
       </div>
