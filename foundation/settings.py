@@ -502,7 +502,7 @@ QUOTE_STYLES = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
-CAPTCHA_IMAGE_SIZE = (100, 50)
+CAPTCHA_IMAGE_SIZE = (200, 100)
 
 
 if TEST_MODE:
