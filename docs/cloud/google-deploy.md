@@ -5,19 +5,19 @@ We are using Google Cloud Platform for our infrastructure.
 ## Environments
 
 Available environments:
- - Staging: `oki-website-staging` project in the `europe-north1` region. 
- - Production: `oki-website-production` project in the `us-central1` region.  
+ - Staging: `oki-website-staging` project in the `europe-north1` region.
+ - Production: `oki-website-production` project in the `us-central1` region.
 
-Changes at `develop` branch trigger a deploy to `staging` environment.  
-Changes at `main` branch trigger a deploy to `production` environment.  
+Changes at `develop` branch trigger a deploy to `staging` environment.
+Changes at `main` branch trigger a deploy to `production` environment.
 `master` branch remains with the lastest version of the old infrastructure.
 
-### Database 
+### Database
 
-We have a SQL service 
-([staging](https://console.cloud.google.com/sql/instances?project=melodic-keyword-303819) - 
+We have a SQL service
+([staging](https://console.cloud.google.com/sql/instances?project=melodic-keyword-303819) -
  [prod](https://console.cloud.google.com/sql/instances/?project=oki-website-production))
-running for the required PostgreSQL instances.  
+running for the required PostgreSQL instances.
 
 
 This DB was started using a production copy:
@@ -62,11 +62,11 @@ DB_PORT=5432
 
 #### Static files
 
-Django requires a `media` and a `static` folder. `media` is for uploaded files, `static` is for static files (JS and CSS mainly).  
+Django requires a `media` and a `static` folder. `media` is for uploaded files, `static` is for static files (JS and CSS mainly).
 We create a public bucket in Google Cloud Storage
-([staging](https://console.cloud.google.com/storage/browser?project=melodic-keyword-303819) - 
+([staging](https://console.cloud.google.com/storage/browser?project=melodic-keyword-303819) -
  [production](https://console.cloud.google.com/storage/browser?project=oki-website-production))
-called `django-statics-okf-website-ENV` (must be unique globally) for the `media` files.  
+called `django-statics-okf-website-ENV` (must be unique globally) for the `media` files.
 All S3 files were transfered to Google Cloud Storage. You can do it with the
 [Data Transfer tool](https://console.cloud.google.com/transfer/cloud/jobs?cloudshell=true&project=melodic-keyword-303819)
 or with the command:
@@ -78,15 +78,15 @@ gsutil -m cp -R s3://okfn-org-staging gs://django-statics-okf-website-staging
 ```
 
 Django `static` files lives in a local folder (it would be better to move them
- to Google Cloud Storage) and we serve them with `nginx`. 
+ to Google Cloud Storage) and we serve them with `nginx`.
 
 ### Redis
 
-Google bring us Redis through the _Memorystore_ service. We are not using this service now.  
+Google bring us Redis through the _Memorystore_ service. We are not using this service now.
 To activate it: Create an [instance](https://console.cloud.google.com/memorystore/redis/instances?project=oki-website-production)
 This [requires](https://medium.com/google-cloud/using-memorystore-with-cloud-run-82e3d61df016)
-a [VPC connector](https://console.cloud.google.com/networking/connectors/list?project=oki-website-production) 
-to be visible from Cloud Run.  
+a [VPC connector](https://console.cloud.google.com/networking/connectors/list?project=oki-website-production)
+to be visible from Cloud Run.
 
 Note that you'll need a secret pointing to the Redis instance
 Example:
@@ -96,18 +96,11 @@ CACHE_URL=redis://10.23.81.3:6379/0
 
 ### Search engine
 
-We are using [Django Haystack](https://django-haystack.readthedocs.io/en/master/) 
-to set up the application search engine (you can pick different technologies).  
+We are using [Django Haystack](https://django-haystack.readthedocs.io/en/master/) and
+[Whoosh](https://django-haystack.readthedocs.io/en/v2.3.2/tutorial.html#whoosh) for
+our search solution.
 
-Google Cloud allows you to use Elasticsearch through a special service manged by Elastic.  
-We are not using this service anymore, to use it, you will need to create an instance 
-and set up the `SEARCH_URL=https://USER:PASSWORD@okf-elastic-XX.com:92XX`.  
-
-We are now using a simpler Haystack solution:  
-[Whoos](https://django-haystack.readthedocs.io/en/v2.3.2/tutorial.html#whoosh) (just 
-removing the `SEARCH_URL` config value from _Google secrets_).  
-
-Note that `python manage.py update_index` runs every time we build the DockerFile.  
+Note that `python manage.py update_index` runs every time we build the DockerFile.
 
 
 ### Django app
@@ -115,29 +108,29 @@ Note that `python manage.py update_index` runs every time we build the DockerFil
 We use Google Cloud Run to run a service based on the `Dockerfile` in this repo.
 To deploy a new version, you only need to push to the `develop` or `main` branch
 (see triggers
-([staging]((https://console.cloud.google.com/cloud-build/triggers?project=melodic-keyword-303819)) - 
+([staging]((https://console.cloud.google.com/cloud-build/triggers?project=melodic-keyword-303819)) -
  [prod](https://console.cloud.google.com/cloud-build/triggers?project=oki-website-production)).
 
 The secrets are defined in Google Secret Manager
 ([staging](https://console.cloud.google.com/security/secret-manager?project=melodic-keyword-303819) -
  [prod](https://console.cloud.google.com/security/secret-manager?project=oki-website-production)
-You'll need to edit Cloud Run _Variable & settings_ to mount them as a file at /secrets/django_settings.  
+You'll need to edit Cloud Run _Variable & settings_ to mount them as a file at /secrets/django_settings.
 
-Google Secrets are required to connect this application with external services like Redis, Elasticsearch, etc.
+Google Secrets are required to connect this application with external services like Redis, etc.
 
 Cloud Run extra tasks:
  - Google does not allow to update secrets directly, so you need to _View secret value_ (from action menu)
-then copy them, update manually and finally deploy a new secrets version (for local custom settings, 
+then copy them, update manually and finally deploy a new secrets version (for local custom settings,
 just add a local `.env` file.)
  - Remember using the VPC connerctor in the Cloud Run _Connection_ settings.
- - Add _Cluster SQL Connection_ to _Connection_ setting in the Cloud Run service. 
+ - Add _Cluster SQL Connection_ to _Connection_ setting in the Cloud Run service.
    - Or with gclod: `gcloud run services update website4 --add-cloudsql-instances=oki-website-production:us-central1:oki-website-production`
 
 We use Cloud Run Domain mapping
-([staging](https://console.cloud.google.com/run/domains?project=melodic-keyword-303819) - 
+([staging](https://console.cloud.google.com/run/domains?project=melodic-keyword-303819) -
  [prod](https://console.cloud.google.com/run/domains?project=oki-website-production)
-to redirect the domains okfn.org and next.okfn.org to this application. 
-Finally, we add a CNAME record pointing to ghs.googlehosted.com (ensure to remove the proxy and set the record a _DNS only_ at Cloudflare ).  
+to redirect the domains okfn.org and next.okfn.org to this application.
+Finally, we add a CNAME record pointing to ghs.googlehosted.com (ensure to remove the proxy and set the record a _DNS only_ at Cloudflare ).
 
 **Notes: The staging environment is using the `min-instances` setting as 0. So if no one is using it, the first request might give you a 502 error until the service starts.**
 
