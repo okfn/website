@@ -3,9 +3,7 @@
 {% block messages %}
 <div class="container">
   {% if messages %}
-
       {% for message in messages %}
-
         {% if message.tags == 'success' %}
             <div class="alert alert-success" role="alert">
         {% else %}
@@ -15,28 +13,9 @@
             <div class="alert alert-primary" role="alert">
           {% endif %}
         {% endif %}
-
             {{message}}
             </div>
-
       {% endfor %}
-
   {% endif %}
 </div>
 {% endblock %}
-
-<div class="banner">
-  <div class="container">
-    <div class="banner_text">
-      {% block pagebanner-inner %}
-        <h2>{% page_attribute "page_title" %}</h2>
-        {% placeholder "blurb" %}
-      {% endblock %}
-    </div>
-    <div class="banner_image">
-      <span class="plugin_picture">
-        {% placeholder "banner image" inherit %}
-      </span>
-    </div>
-  </div>
-</div>
