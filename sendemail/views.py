@@ -13,7 +13,9 @@ def contactview(request):
 
     form = ContactForm(request.POST)
     if not form.is_valid():
-        messages.error(request, 'Required information is missing')
+        fields = [field for field in form.errors.keys()]
+        msg = f'Required information is missing: {", ".join(fields)}'
+        messages.error(request, msg)
         return render(request, "cms_contact.html", {'form': form})
 
     name = form.cleaned_data['name']
