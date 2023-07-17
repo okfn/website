@@ -1,5 +1,5 @@
 from haystack import indexes
-from .models import Person, Project, WorkingGroup, NetworkGroup
+from .models import Person, WorkingGroup, NetworkGroup
 
 
 class PersonIndex(indexes.SearchIndex, indexes.Indexable):
@@ -9,20 +9,6 @@ class PersonIndex(indexes.SearchIndex, indexes.Indexable):
 
     def get_model(self):
         return Person
-
-    def get_updated_field(self):
-        return 'updated_at'
-
-
-class ProjectIndex(indexes.SearchIndex, indexes.Indexable):
-    text = indexes.CharField(document=True, use_template=True)
-    twitter = indexes.CharField(model_attr='twitter')
-    homepage_url = indexes.CharField(model_attr='homepage_url')
-    forum_url = indexes.CharField(model_attr='forum_url')
-    sourcecode_url = indexes.CharField(model_attr='sourcecode_url')
-
-    def get_model(self):
-        return Project
 
     def get_updated_field(self):
         return 'updated_at'
