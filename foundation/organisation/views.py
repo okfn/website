@@ -7,7 +7,7 @@ from django.http import HttpResponse
 from iso3166 import countries
 import csv
 
-from .models import (Board, Project, ProjectType, Theme, WorkingGroup,
+from .models import (Board, Project, ProjectType, WorkingGroup,
                      NetworkGroup, NetworkGroupMembership)
 
 
@@ -25,35 +25,6 @@ class ProjectDetailView(DetailView):
     model = Project
     template_name = 'organisation/project_detail.html'
 
-
-class ProjectListView(ListView):
-    model = Project
-    paginate_by = 15
-    template_name = 'organisation/project_list.html'
-
-    def get_queryset(self):
-        # Do we want to show old projects?
-        show_old = self.request.path.endswith("old")
-        if show_old:
-            return Project.objects.filter(old_project=True)
-
-        return Project.objects.filter(old_project=False)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['themes'] = Theme.objects.all()
-        context['projecttypes'] = ProjectType.objects.all()
-        return context
-
-
-class ThemeDetailView(DetailView):
-    model = Theme
-
-    def get_context_data(self, **kwargs):
-        theme = self.kwargs.get('slug', None)
-        context = super().get_context_data(**kwargs)
-        context['themes'] = Theme.objects.exclude(slug=theme)
-        return context
 
 
 class WorkingGroupListView(ListView):

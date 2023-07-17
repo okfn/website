@@ -3,7 +3,6 @@ from menus.menu_pool import menu_pool
 from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
 from cms.menu_bases import CMSAttachMenu
-from .models import Theme
 
 
 class ProjectMenu(CMSAttachMenu):
@@ -26,22 +25,3 @@ class ProjectMenu(CMSAttachMenu):
 
 
 menu_pool.register_menu(ProjectMenu)
-
-
-class ThemeMenu(CMSAttachMenu):
-
-    name = _("Themes")
-
-    def get_nodes(self, request):
-        nodes = []
-        for theme in Theme.objects.all():
-            node = NavigationNode(
-                theme.name,
-                theme.get_absolute_url(),
-                theme.pk,
-            )
-            nodes.append(node)
-        return nodes
-
-
-menu_pool.register_menu(ThemeMenu)

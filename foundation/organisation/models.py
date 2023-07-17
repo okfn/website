@@ -210,7 +210,6 @@ class Project(models.Model):
     sourcecode_url = models.URLField(blank=True)
     forum_url = models.URLField(blank=True)
 
-    themes = models.ManyToManyField("Theme", blank=True)
     types = models.ManyToManyField("ProjectType", blank=True)
 
     def get_absolute_url(self):
@@ -232,27 +231,6 @@ class ProjectType(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class Theme(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=100, unique=True)
-    blurb = models.TextField(help_text="Blurb for theme page")
-    description = models.TextField()
-    picture = models.ImageField(
-        upload_to="themes/pictures",
-        blank=True,
-        help_text="A simple logo or picture to represent this theme",
-    )
-
-    def __str__(self):
-        return self.name
-
-    def get_absolute_url(self):
-        return reverse("theme", kwargs={"slug": self.slug})
 
 
 class WorkingGroupManager(models.Manager):
@@ -279,8 +257,6 @@ class WorkingGroup(models.Model):
     incubation = models.BooleanField(
         default=True, help_text="Is this group in incubation?"
     )
-
-    themes = models.ManyToManyField("Theme", blank=True, related_name="workinggroups")
 
     def __str__(self):
         return self.name
@@ -406,42 +382,11 @@ class NetworkGroupMembership(models.Model):
         ordering = ["-order", "person__name"]
 
 
-class FeaturedTheme(CMSPlugin):
-    theme = models.ForeignKey("Theme", related_name="+", on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.theme.name
-
-
-class FeaturedProject(CMSPlugin):
-    project = models.ForeignKey("Project", related_name="+", on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.project.name
-
-
 class NetworkGroupList(CMSPlugin):
     group_type = models.IntegerField(default=0, choices=NetworkGroup.GROUP_TYPES)
 
     def __str__(self):
         return self.get_group_type_display()
-
-
-class ProjectList(CMSPlugin):
-    theme = models.ForeignKey(
-        "Theme",
-        blank=True,
-        null=True,
-        help_text="Limit to projects with this theme",
-        on_delete=models.CASCADE,
-    )
-    project_type = models.ForeignKey(
-        "ProjectType",
-        blank=True,
-        null=True,
-        help_text="Limit to projects with this type",
-        on_delete=models.CASCADE,
-    )
 
 
 class SignupForm(CMSPlugin):

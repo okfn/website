@@ -10,9 +10,5 @@ class ProjectForm(ModelForm):
     picture = SvgAndImageFormField()
 
 
-class ThemeForm(ModelForm):
-    picture = SvgAndImageFormField()
-
-
 class WorkingGroupForm(ModelForm):
     logo = SvgAndImageFormField()
