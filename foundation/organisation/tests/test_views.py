@@ -11,7 +11,6 @@ import csv
 from ..models import (
     Board,
     Person,
-    Project,
     Unit,
     WorkingGroup,
     NetworkGroup,
@@ -278,26 +277,6 @@ class BoardViewTest(WebTest):
         leonardo = response.text.find(self.leonardo.name)
         casey = response.text.find(self.casey.name)
         self.assertTrue(leonardo < april < casey)
-
-
-class ProjectDetailViewTest(WebTest):
-    def setUp(self):
-        self.market_garden = Project.objects.create(
-            name="Market Garden",
-            slug="market-garden",
-            description="Just some guys in a glider",
-        )
-
-        self.barbarossa = Project.objects.create(
-            name="Barbarossa",
-            slug="barbarossa",
-            description="This could get cold quickly.",
-        )
-
-    def test_project_detail(self):
-        response = self.app.get(reverse("project", kwargs={"slug": "market-garden"}))
-
-        self.assertIn(self.market_garden.name, response)
 
 
 class NetworkGroupDetailViewTest(WebTest):

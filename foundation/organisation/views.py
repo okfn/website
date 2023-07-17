@@ -7,7 +7,7 @@ from django.http import HttpResponse
 from iso3166 import countries
 import csv
 
-from .models import (Board, Project, ProjectType, WorkingGroup,
+from .models import (Board, WorkingGroup,
                      NetworkGroup, NetworkGroupMembership)
 
 
@@ -19,12 +19,6 @@ class BoardView(DetailView):
     def get_object(self, *args, **kwargs):
         # Try to find the board based on the slug or 404
         return get_object_or_404(Board, slug=self.board)
-
-
-class ProjectDetailView(DetailView):
-    model = Project
-    template_name = 'organisation/project_detail.html'
-
 
 
 class WorkingGroupListView(ListView):

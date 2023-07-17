@@ -185,54 +185,6 @@ class BoardMembership(models.Model):
         ordering = ["-order", "person__name"]
 
 
-class Project(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    old_project = models.BooleanField(
-        default=False, help_text="Is this an old/archived project?"
-    )
-
-    name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=100, unique=True)
-    teaser = models.CharField(
-        max_length=400, help_text="A single line description for list views"
-    )
-    description = models.TextField()
-    picture = models.ImageField(
-        upload_to="projects/pictures",
-        blank=True,
-        help_text="A simple logo or picture to represent this project",
-    )
-
-    twitter = models.CharField(max_length=18, blank=True)
-    homepage_url = models.URLField(blank=True)
-    sourcecode_url = models.URLField(blank=True)
-    forum_url = models.URLField(blank=True)
-
-    types = models.ManyToManyField("ProjectType", blank=True)
-
-    def get_absolute_url(self):
-        return reverse("project", kwargs={"slug": self.slug})
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        ordering = ("name",)
-
-
-class ProjectType(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=100, unique=True)
-
-    def __str__(self):
-        return self.name
-
-
 class WorkingGroupManager(models.Manager):
     def active(self):
         return self.get_queryset().filter(incubation=False)
