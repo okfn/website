@@ -3,11 +3,6 @@
 
 {% block title %}{{ object.name }}{% endblock %}
 
-{% block pagebanner-inner %}
-<h2>{{ object.name }}</h2>
-<p>{{ object.description }}</p>
-{% endblock %}
-
 {% block custom_sidebar %}
   <h3>Members</h3>
   <ul>{% for membership in object.boardmembership_set.all %}

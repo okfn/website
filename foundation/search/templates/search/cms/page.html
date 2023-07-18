@@ -4,6 +4,4 @@
 <p><a class="search_url" href="{{ cms.page.get_absolute_url }}">{{ cms.page.get_absolute_url }}</a></p>
 {% if result.summary %}
 {% highlight result.summary with query %}
-{% else %}
-{{ cms.page|placeholder_content }}
 {% endif %}

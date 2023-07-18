@@ -6,7 +6,7 @@
   }
 
   .title {
-    @apply font-mono block md:inline mb-8 md:mb-0 text-okfn-lg md:text-okfn-md font-normal md:font-bold;
+    @apply block md:inline mb-8 md:mb-0 text-okfn-lg md:text-okfn-md font-normal md:font-bold;
   }
 
   &.-success {

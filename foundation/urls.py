@@ -9,7 +9,6 @@ from django.views import defaults as default_views
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 
-from haystack.views import SearchView
 from cms.sitemaps import CMSSitemap
 
 admin.autodiscover()
@@ -35,6 +34,7 @@ if settings.DEBUG:
         re_path(r"^404/$", default_views.page_not_found),
         re_path(r"^500/$", default_views.server_error),
     ]
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 # Login/logout, password changes and resets
@@ -83,11 +83,8 @@ urlpatterns += [
     ),
 ]
 
-# Search patterns (do not use haystack.url
-# since we're using an older version of haystack
-# because of django-cms-search)
 urlpatterns += [
-    re_path(r"^search/", SearchView(), name="haystack_search"),
+    re_path(r"^search/", include("haystack.urls")),
 ]
 
 urlpatterns += [
@@ -123,7 +120,3 @@ urlpatterns += [
     # Fallthrough for CMS managed pages
     re_path(r"^", include("cms.urls")),
 ]
-
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

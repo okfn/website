@@ -2,8 +2,6 @@
 {% load i18n %}
 {% load cms_tags %}
 
-{% block blurb %}{% static_placeholder "press releases blurb" %}{% endblock %}
-
 {% block main %}
   {% with headerlinks=True %}
     {% if object_list and not page_obj.has_previous %}

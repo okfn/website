@@ -51,8 +51,6 @@ class PressMention(models.Model):
     notes = models.TextField()
     published = models.BooleanField()
 
-    # TODO: add a projects FK.
-
     def get_absolute_url(self):
         return reverse('press-mention', kwargs={'slug': self.slug})
 
