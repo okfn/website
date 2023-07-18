@@ -23,7 +23,7 @@
         {% csrf_token %}
           <div class="input-fake flex items-center mb-5">
           <input id="type" type='hidden' name="type" value="Service"/>
-          <label class="font-bold mr-10">{{form.name.label}}</label>
+          <label class="font-bold mr-10">{{form.name.label}}*</label>
             {{ form.name }}
             {{ form.name.errors }}
           </div>
@@ -38,7 +38,7 @@
               {{ form.website.errors }}
           </div>
           <div class="input-fake flex items-center mb-5">
-          <label class="font-bold mr-10">{{form.email.label}}</label>
+          <label class="font-bold mr-10">{{form.email.label}}*</label>
             {{ form.email }}
             {{ form.email.errors }}
           </div>
