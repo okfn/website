@@ -84,12 +84,8 @@ else:
     EMAIL_HOST_PASSWORD = env.get('DJANGO_EMAIL_HOST_PASSWORD', 'mail')
     EMAIL_PORT = env.get('DJANGO_EMAIL_PORT', '25')
 
-# set default email sender account for contact form enquiries
+# Contact Form (sendemail app)
 CONTACT_EMAIL_SENDER = env.get('CONTACT_EMAIL_SENDER')
-
-# accounts that receive various enquiries from contact forms
-PRESS_EMAIL_RECEPIENTS = _parse_email_list('PRESS_EMAIL_RECEPIENTS')
-SERVICE_EMAIL_RECEPIENTS = _parse_email_list('SERVICE_EMAIL_RECEPIENTS')
 GENERAL_EMAIL_RECEPIENTS = _parse_email_list('GENERAL_EMAIL_RECEPIENTS')
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
@@ -117,6 +113,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'django.contrib.redirects',  # Provides redirects app
+    'django.forms',  # Required to override django-simple-captcha template
 
     # 3rd-party important
     'reversion',
@@ -124,6 +121,7 @@ INSTALLED_APPS = (
     'markdown_deux',
     'haystack',
     'sendemail',
+    'captcha',
 
     # Asset pipeline
     'compressor',
@@ -482,6 +480,10 @@ QUOTE_STYLES = (
 )
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+CAPTCHA_IMAGE_SIZE = (150, 75)
+CAPTCHA_FONT_SIZE = 44
+
 
 if TEST_MODE:
     from .test_settings import *  # noqa

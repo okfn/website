@@ -36,6 +36,7 @@ if settings.DEBUG:
     ]
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+
 # Login/logout, password changes and resets
 urlpatterns += [
     re_path(
@@ -84,6 +85,10 @@ urlpatterns += [
 
 urlpatterns += [
     re_path(r"^search/", include("haystack.urls")),
+]
+
+urlpatterns += [
+    re_path(r"^captcha/", include("captcha.urls")),
 ]
 
 # CMS patterns
