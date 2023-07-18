@@ -145,7 +145,6 @@ INSTALLED_APPS = (
 
     # Custom apps
     'foundation.jobs',
-    'foundation.press',
     'foundation.organisation',
     'foundation.search',
     'foundation.okfplugins.header',

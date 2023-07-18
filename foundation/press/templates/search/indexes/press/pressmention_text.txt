@@ -1,4 +1,0 @@
-{{ object.title }}
-{{ object.notes }}
-{{ object.publisher }}
-{{ object.author }}
