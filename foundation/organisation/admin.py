@@ -2,11 +2,10 @@ import reversion
 
 from django.contrib import admin
 from .forms import (
-    PersonForm, ProjectForm,
-    ThemeForm, WorkingGroupForm
+    PersonForm, WorkingGroupForm
 )
 from .models import (
-    Person, Unit, Board, Theme, Project, ProjectType,
+    Person, Unit, Board,
     WorkingGroup, NetworkGroup, UnitMembership,
     BoardMembership, NetworkGroupMembership, SideBarExtension
 )
@@ -51,31 +50,6 @@ class BoardAdmin(reversion.admin.VersionAdmin):
 
 
 admin.site.register(Board, BoardAdmin)
-
-
-class ProjectAdmin(reversion.admin.VersionAdmin):
-    list_display = ('name',)
-    prepopulated_fields = {"slug": ("name",)}
-    form = ProjectForm
-
-
-admin.site.register(Project, ProjectAdmin)
-
-
-class ProjectTypeAdmin(reversion.admin.VersionAdmin):
-    list_display = ('name',)
-
-
-admin.site.register(ProjectType, ProjectTypeAdmin)
-
-
-class ThemeAdmin(reversion.admin.VersionAdmin):
-    list_display = ('name',)
-    prepopulated_fields = {"slug": ("name",)}
-    form = ThemeForm
-
-
-admin.site.register(Theme, ThemeAdmin)
 
 
 class WorkingGroupAdmin(reversion.admin.VersionAdmin):

@@ -25,7 +25,7 @@
               <a href="/" class="lg">
                 <img src="{% static 'images/lg-okfn.svg' %}" class="h-[4.375rem] md:h-[5.625rem]" alt="Open Knowledge Foundation">
               </a>
-          
+
               <nav class="main-nav">
                 <label for="main-nav__switcher-indicator" class="icon relative z-50 lg:hidden cursor-pointer">
                   <img src="{% static '/images/icons/menu.svg' %}" class="icon-menu" alt="Menu">
@@ -35,7 +35,7 @@
                   <a href="/" class="lg">
                     <img src="{% static '/images/lg-okfn-black.svg' %}" class="h-20" alt="Open Knowledge Foundation">
                   </a>
-          
+
                   <ul class="main-nav__menu">
                     {% show_menu_below_id "home" 0 1 1 100 "menu/menu.html" %}
                     <li class="main-nav__item -search switcher">
@@ -72,9 +72,9 @@
                 </div>
               </nav>
             </div>
-
           </header>
           <!-- /header -->
+          {% include 'includes/messages.html' %}
           {% block body %}{% endblock %}
         </div>
       </div>

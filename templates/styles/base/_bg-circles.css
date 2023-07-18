@@ -20,6 +20,13 @@
     }
   }
 
+  /* full */
+  &.-bg-circle-full {
+    &::before {
+      @apply w-full h-auto aspect-square blur-[3rem];
+    }
+  }
+
   /* 500px more blur */
   &.-bg-circle-xs {
     &::before {
@@ -49,13 +56,17 @@
 .-has-bg-circles {
   @apply relative;
 
+  > * {
+    @apply z-10;
+  }
+
   &::before {
     content: '';
-    @apply absolute top-1/2 right-1/2 w-[8.75rem] h-[8.75rem] bg-okfn-blue rounded-full blur-[2rem] translate-x-4 -translate-y-1/2;
+    @apply absolute top-1/2 right-1/2 z-0 w-[8.75rem] h-[8.75rem] bg-okfn-blue rounded-full blur-[2rem] translate-x-4 -translate-y-1/2;
   }
 
   &::after {
     content: '';
-    @apply absolute top-1/2 left-1/2 w-[9.375rem] h-[9.375rem] bg-okfn-green rounded-full blur-[2.25rem] mix-blend-multiply -translate-x-4 -translate-y-1/2;
+    @apply absolute top-1/2 left-1/2 z-0 w-[9.375rem] h-[9.375rem] bg-okfn-green rounded-full blur-[2.25rem] mix-blend-multiply -translate-x-4 -translate-y-1/2;
   }
 }

@@ -1,4 +1,4 @@
-<a class="article mb-20" href="{{ instance.url }}">
+<a class="article mb-20" href="{% if instance.url %}{{ instance.url }}{% else %}#{% endif %}">
     <div class="image">
         <img src="{% if instance.image %}{{ instance.image.url }}{% endif %}" alt="{{ instance.author }}">
     </div>

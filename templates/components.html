@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{> head }}
+  <body class="bg-gray-200">
+    <input type="checkbox" class="main-nav__switcher-indicator" id="main-nav__switcher-indicator">
+    <div class="root">
+      <div class="master">
+        <div class="container">
+          <header class="col-span-full flex justify-between items-center py-5 mb-20 border-b border-gray-300">
+            <img src="/images/lg-okfn.svg" class="h-[5.625rem]" alt="Open Knowledge Foundation">
+            <h1 class="text-h1">Components</h1>
+          </header>
+
+          <!-- ARTICLE -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="article">Article</h2>
+          {{> article href='javascript:;' className='mb-20' image='_author-renata.png' title='Open Knowledge as an essential design principle for a free, fair and sustainable future' author='Renata Ávila, CEO' }}
+
+          <!-- BANNER -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="banners">Banner</h2>
+          {{> banner className='mb-20' title='Warning message' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit in laoreet molestie pulvinar in ut neque felis duis ut fringilla ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit in laoreet molestie pulvinar in ut neque felis.' }}
+          {{> banner className='-success mb-20' title='Success message' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit in laoreet molestie pulvinar in ut neque felis duis ut fringilla ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit in laoreet molestie pulvinar in ut neque felis.' }}
+          {{> banner className='-error mb-20' title='Error message' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit in laoreet molestie pulvinar in ut neque felis duis ut fringilla ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit in laoreet molestie pulvinar in ut neque felis.' }}
+          {{> banner className='-info mb-20' title='Info message' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit in laoreet molestie pulvinar in ut neque felis duis ut fringilla ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit in laoreet molestie pulvinar in ut neque felis.' }}
+
+          <!-- BUTTONS -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="buttons">Buttons</h2>
+
+          <!-- BUTTONS: DEFAULT -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="buttons-default">Black (Default)</h3>
+          <div class="sect mb-20">
+            <div class="sect__content">
+              <div class="flex items-center justify-center gap-10">
+                <a href="javascript:;" class="btn">
+                  Button default
+                </a>
+                <a href="javascript:;" class="btn -white">
+                  Button white
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- BUTTONS: ARROW -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="buttons-arrow">Arrow</h3>
+          <div class="sect mb-20">
+            <div class="sect__content">
+              <div class="flex items-center justify-center gap-10">
+                <a href="javascript:;" class="link-arrow-curved">
+                  Learn more
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- BUTTONS: POST DATE -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="buttons-post-date">Post date</h3>
+          <div class="sect mb-20">
+            <div class="sect__content">
+              <div class="flex items-center justify-center gap-10">
+                <a href="javascript:;" class="link inline-block text-sm font-mono">
+                  September 20, 2023
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- BUTTONS: CATEGORY -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="buttons-category">Category</h3>
+          <div class="sect mb-20">
+            <div class="sect__content">
+              <div class="flex items-center justify-center gap-10">
+                <a href="javascript:;" class="tag">
+                  With Link
+                </a>
+                <span class="tag">
+                  Without Link
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BUTTONS: SUBTITLE -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="buttons-subtitle">Subtitle</h3>
+          <div class="sect mb-20">
+            <div class="sect__content">
+              <div class="flex items-center justify-center gap-10">
+                <a href="javascript:;" class="btn-subtitle">
+                  Subtitle button M (Default)
+                </a>
+                <a href="javascript:;" class="btn-subtitle -lg">
+                  Subtitle button L
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- BUTTONS: MENU BUTTONS (PILLS) -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="buttons-pills">Menu buttons (Pills)</h3>
+          <div class="sect mb-20">
+            <div class="sect__content">
+              <div class="flex items-center justify-center gap-2 mb-10">
+                <a href="javascript:;" class="btn-pill">
+                  Our Team
+                </a>
+                <a href="javascript:;" class="btn-pill">
+                  Our Team
+                </a>
+                <a href="javascript:;" class="btn-pill">
+                  Our Team
+                </a>
+                <a href="javascript:;" class="btn-pill">
+                  Our Team
+                </a>
+                <a href="javascript:;" class="btn-pill">
+                  Our Team
+                </a>
+              </div>
+              <div class="flex items-center justify-center gap-2 mb-10">
+                <a href="javascript:;" class="btn-pill">
+                  Our Team
+                </a>
+                <a href="javascript:;" class="btn-pill">
+                  Our Team
+                </a>
+                <a href="javascript:;" class="btn-pill">
+                  Our Team
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARDS -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="card">Card</h2>
+
+          <!-- CARDS: PERSON -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="card-person">Person</h3>
+          {{#> card-person className='mb-20' image='_person-renata.png' name='Renata Ávila' position='CEO' email='renata.avila@okfn.org' socialAt='@avilarenata' }}
+            {{#* inline 'description'}}
+              <p>Renata is an international lawyer, author and advocate. She brings nearly 20 years of experience in access to knowledge, freedom of expression, policymaking and global digital rights. Renata is an Affiliate with the Stanford Institute of Human-Centered Artificial Intelligence. Renata is part of the World Economic Forum Expert Network on Digital Technologies and a member of the Global Board of Trustees of ​Digital Future Society, among other affiliations in a vast professional network extending across Europe, Latin America and North America. She co-founded the <A+> Alliance for Inclusive Algorithms, the Progressive International and the Polylateral Association - an international platform cooperative for knowledge workers.</p>
+            {{/inline}}
+          {{/card-person}}
+
+          <!-- CARDS: AUTHOR -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="card-author">Author</h3>
+          {{#> card-author className='mb-20' image='_author-blog-renata.png' name='Renata Ávila' }}
+            {{#* inline 'description'}}
+              <p>Renata is an international lawyer, author and advocate. She brings nearly 20 years of experience in access to knowledge, freedom of expression, policymaking and global digital rights. Renata is an Affiliate with the Stanford Institute of Human-Centered Artificial Intelligence. Renata is part of the World Economic Forum Expert Network on Digital Technologies and a member of the Global Board of Trustees of ​Digital Future Society, among other affiliations in a vast professional network extending across Europe, Latin America and North America. She co-founded the <A+> Alliance for Inclusive Algorithms, the Progressive International and the Polylateral Association - an international platform cooperative for knowledge workers.</p>
+            {{/inline}}
+          {{/card-author}}
+
+          <!-- CONTENT GRID -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="content-grids">Content Grid</h2>
+          <div class="sect -tighten-1 mb-20">
+            <div class="sect__content">
+              <div class="content-grid content-around justify-center justify-self-center mx-auto bg">
+                <a href="" class="content-grid__item col-start-1">
+                  <h3 class="title block mb-8 font-bold text-2xl"> 100+ Conversations to inspire our new Direction </h3>
+                  <p>We are talking to 100 thinkers and doers to define our digital future, understand better our role and work together to make open knowledge a verb, beyond words.</p>
+                  <time class="date" date-time="2022-10-30">October 30, 2022</time>
+                </a>
+                <a href="" class="content-grid__item">
+                  <h3 class="title"> Better together than alone: say hello again to the Open Knowledge Network </h3>
+                  <p>Join the movement! Today we are launching two projects to shine a light on the tremendous work the Network has been doing in the past decade.</p>
+                  <time class="date" date-time="2022-10-30">October 30, 2022</time>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- HEADLINES -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="headlines">Headlines</h2>
+
+          <!-- HEADLINES: CENTER -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="headlines-center">Center</h3>
+          {{#> headline className='-tighten-1 text-center mb-20' }}
+            {{#* inline 'title'}}
+              Open Knowledge in <br> practice
+            {{/inline}}
+          {{/headline}}
+
+          <!-- HEADLINES: CENTER HIGHLIGHT -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="headlines-center-highlight">Center Highlight</h3>
+          {{#> headline className='-tighten-1 text-center mb-20' titleClass='text-h1' }}
+            {{#* inline 'title'}}
+              Open Knowledge in <br>
+              <span class="font-mono font-normal">practice</span>
+            {{/inline}}
+          {{/headline}}
+
+          <!-- HEADLINES: LEFT -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="headlines-left">Left</h3>
+          {{#> headline className='-tighten-1 mb-20' titleClass='text-h1' }}
+            {{#* inline 'title'}}
+              Open Knowledge in <br> practice
+            {{/inline}}
+          {{/headline}}
+
+          <!-- HEADLINES: LEFT HIGHLIGHT -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="headlines-left-highlight">Left Highlight</h3>
+          {{#> headline className='-tighten-1 mb-20' titleClass='text-h1' }}
+            {{#* inline 'title'}}
+              Open Knowledge in <br>
+              <span class="font-mono font-normal">practice</span>
+            {{/inline}}
+          {{/headline}}
+
+          <!-- HEADLINES: LEFT TEXT TITLE -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="headlines-left-text-tile">Left Text Title</h3>
+          {{#> headline className='-tighten-2 mb-20' titleClass='text-h1' }}
+            {{#* inline 'title'}}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla malesuada
+            {{/inline}}
+          {{/headline}}
+
+          <!-- HEADLINES: ALTERNATE -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="headlines-alternate">Alternate</h3>
+          {{#> headline className='-tighten-1 mb-20 text-center' titleClass='text-hl-h0' }}
+            {{#* inline 'title'}}
+              Annual Report
+            {{/inline}}
+          {{/headline}}
+
+          <!-- HEADLINES 3 -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="headlines-3">Headlines 3</h2>
+
+          <!-- HEADLINES 3: CENTER -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="headlines-3-center">Center</h3>
+          {{#> headline className='-tighten-1 text-center mb-20' titleClass='text-h3' }}
+            {{#* inline 'title'}}
+              Open Knowledge in practice
+            {{/inline}}
+          {{/headline}}
+
+          <!-- HEADLINES 3: LEFT -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="headlines-3-left">Left - Section subtitle</h3>
+          {{#> headline className='-tighten-1 !text-h3 mb-20' titleClass='text-h3' }}
+            {{#* inline 'title'}}
+              Open Knowledge in practice
+            {{/inline}}
+          {{/headline}}
+
+          <!-- HEADLINES 3: LEFT -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="headlines-3-left">Left - Text subtitle</h3>
+          {{#> headline className='-tighten-2 !text-h3 mb-20' titleClass='text-h3' }}
+            {{#* inline 'title'}}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit in laoreet molestie pulvinar in ut neque felis duis ut fringilla ante
+            {{/inline}}
+          {{/headline}}
+
+          <!-- IMAGES -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="images">Images</h2>
+
+          <!-- IMAGES: DEFAULT -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="images-default">Default</h3>
+          <div class="sect -tighten-2 sect-generic mb-20">
+            <div class="sect__content">
+              {{#> img-set image='home-highlight-1.png' imgClass=''}}
+                {{#* inline 'imgText'}}
+                {{/inline}}
+              {{/img-set}}
+            </div>
+          </div>
+
+          <!-- IMAGES: DEFAULT GRID 2 -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="images-caption-grid-2">Default (Grid 2)</h3>
+          <div class="sect -tighten-1 sect-generic mb-20">
+            <div class="sect__content">
+              <div class="grid md:grid-cols-2 gap-10 md:gap-3">
+                {{#> img-set image='home-highlight-1.png' imgClass=''}}
+                  {{#* inline 'imgText'}}
+                  {{/inline}}
+                {{/img-set}}
+
+                {{#> img-set image='home-highlight-1.png' imgClass=''}}
+                  {{#* inline 'imgText'}}
+                  {{/inline}}
+                {{/img-set}}
+              </div>
+            </div>
+          </div>
+
+          <!-- IMAGES: FULL WIDTH -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="images-full-width">Full width</h3>
+          <div class="sect sect-generic mb-20">
+            <div class="sect__content">
+              {{#> img-set image='home-highlight-1.png' className='-full' imgClass=''}}
+                {{#* inline 'imgText'}}
+                {{/inline}}
+              {{/img-set}}
+            </div>
+          </div>
+
+          <!-- IMAGES: CAPTION -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="images-caption">Caption</h3>
+          <div class="sect -tighten-2 sect-generic mb-20">
+            <div class="sect__content">
+              {{#> img-set image='home-highlight-1.png' imgClass=''}}
+                {{#* inline 'imgText'}}
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In laoreet molestie pulvinar
+                {{/inline}}
+              {{/img-set}}
+            </div>
+          </div>
+
+          <!-- IMAGES: CAPTION GRID 2 -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="images-caption-grid-2">Caption (Grid 2)</h3>
+          <div class="sect -tighten-1 sect-generic mb-20">
+            <div class="sect__content">
+              <div class="grid md:grid-cols-2 gap-10 md:gap-3">
+                {{#> img-set image='home-highlight-1.png' imgClass=''}}
+                  {{#* inline 'imgText'}}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In laoreet molestie pulvinar
+                  {{/inline}}
+                {{/img-set}}
+
+                {{#> img-set image='home-highlight-1.png' imgClass=''}}
+                  {{#* inline 'imgText'}}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In laoreet molestie pulvinar
+                  {{/inline}}
+                {{/img-set}}
+              </div>
+            </div>
+          </div>
+
+          <!-- IMAGES: CAPTION FULL WIDTH -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="images-full-width">Full width</h3>
+          <div class="sect sect-generic mb-20">
+            <div class="sect__content">
+              {{#> img-set image='home-highlight-1.png' className='-full' imgClass=''}}
+                {{#* inline 'imgText'}}
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In laoreet molestie pulvinar
+                {{/inline}}
+              {{/img-set}}
+            </div>
+          </div>
+
+          <!-- IMAGES: HIGHLIGHT -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="images-highlights">Highlights (Section)</h3>
+          <div class="sect -tighten-2 sect-highlights mb-20">
+            <div class="sect__content">
+              {{#> img-set image='home-highlight-1.png' imgClass='' href='javascript:;' linkClass='highlight sm:text-white' }}
+                {{#* inline 'imgText'}}
+                  <span class="tag">Advocacy</span>
+                  <strong class="title">Frictionless Planet: Activating the power of Open Knowledge and Data to fight the Climate Crisis</strong>
+                  <span class="link-arrow-curved">Learn more</span>
+                {{/inline}}
+              {{/img-set}}
+            </div>
+          </div>
+
+          <!-- IMAGES: CAROUSEL -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="images-carousel">Carousel</h3>
+          <div class="sect -tighten-2 sect-generic mb-20">
+            <div class="sect__content">
+              <div class="slider-wrapper -mx-12">
+                <div class="slider" data-slider="{ cssEase: 'linear', slidesToShow: 1, slidesToScroll: 1 }" data-slider-mobile="{ cssEase: 'linear', slidesToShow: 1, slidesToScroll: 1 }">
+                  <div class="slider-item px-12 py-10">
+                    {{#> img-set image='home-highlight-1.png' imgClass=''}}
+                      {{#* inline 'imgText'}}
+                      {{/inline}}
+                    {{/img-set}}
+                  </div>
+                  <div class="slider-item p-10">
+                    {{#> img-set image='home-highlight-1.png' imgClass=''}}
+                      {{#* inline 'imgText'}}
+                      {{/inline}}
+                    {{/img-set}}
+                  </div>
+                  <div class="slider-item p-10">
+                    {{#> img-set image='home-highlight-1.png' imgClass=''}}
+                      {{#* inline 'imgText'}}
+                      {{/inline}}
+                    {{/img-set}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- IMAGES: GALLERY -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="images-gallery">Running Gallery</h3>
+          <section class="sect sect-gallery true-w-full -mt-20 mb-20">
+            <div class="sect__content overflow-hidden">
+              <div class="slider-wrapper">
+                <div class="slider -is-width-auto" data-slider="{ autoplay: true, autoplaySpeed: 0, arrows: false, cssEase: 'linear', slidesToShow: 1, slidesToScroll: 1, speed: 9000, variableWidth: true }" data-slider-mobile="{ autoplay: true, autoplaySpeed: 0, arrows: false, cssEase: 'linear', slidesToShow: 1, slidesToScroll: 1, speed: 9000, variableWidth: true }">
+                  <div class="gallery__item pt-20">
+                    {{#> img-set image='home-highlight-1.png' imgClass='h-[24rem] aspect-square'}}
+                      {{#* inline 'imgText'}}
+                        <strong class="title">Open Science in action! Making it easier for science researchers to share their data</strong>
+                      {{/inline}}
+                    {{/img-set}}
+                  </div>
+                  <div class="gallery__item pt-20">
+                    {{#> img-set image='home-highlight-2.png' imgClass=''}}
+                      {{#* inline 'imgText'}}
+                        <strong class="title">Open Science in action! Making it easier for science researchers to share their data</strong>
+                      {{/inline}}
+                    {{/img-set}}
+                  </div>
+                  <div class="gallery__item pt-20">
+                    {{#> img-set image='home-highlight-3.png' imgClass='h-[28rem]'}}
+                      {{#* inline 'imgText'}}
+                        <strong class="title">Open Science in action! Making it easier for science researchers to share their data</strong>
+                      {{/inline}}
+                    {{/img-set}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <!-- IMAGES: VIDEO MODAL -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="images-video-modal">Video (Modal)</h3>
+          <div class="sect -tighten-2 sect-generic mb-20">
+            <div class="sect__content">
+              <span class="highlight cursor-pointer" data-open-video="t3byQ873C5w">
+                {{#> img-set image='home-highlight-1.png' className='-is-video' imgClass=''}}
+                  {{#* inline 'imgText'}}
+                  {{/inline}}
+                {{/img-set}}
+              </span>
+            </div>
+          </div>
+
+          <!-- IMAGES: VIDEO INSIDE -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="images-video">Video (Inside)</h3>
+          <div class="sect -tighten-2 sect-generic mb-20">
+            <div class="sect__content">
+              {{> img-set-video image='home-highlight-1.png' className='-is-video' imgClass='' videoId='t3byQ873C5w' imgText='' }}
+            </div>
+          </div>
+
+          <!-- LISTS -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="lists">Lists</h2>
+
+          <!-- LISTS: LONG -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="lists-long">Long (Default)</h3>
+          {{#> list className='mb-20' title='Long List Title' }}
+            {{#* inline 'content'}}
+              <ul>
+                <li>Podcasting operational change management inside of workflows to establish a framework.</li>
+                <li>Taking seamless key performance indicators offline to maximise the long tail.</li>
+                <li>Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</li>
+                <li>Collaboratively administrate empowered markets via plug-and-play networks.</li>
+                <li>Dynamically procrastinate B2C users after installed base benefits.</li>
+                <li>Dramatically visualize customer directed convergence without revolutionary ROI.</li>
+              </ul>
+            {{/inline}}
+          {{/list}}
+
+          <!-- LISTS: SHORT -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="lists-short">Short</h3>
+          {{#> list className='-short mb-20' title='Short List Title' }}
+            {{#* inline 'content'}}
+              <ul>
+                <li>Podcasting operational change</li>
+                <li>Taking seamless key</li>
+                <li>Keeping your eye on the ball</li>
+                <li>Collaboratively administrate</li>
+                <li>Dynamically procrastinate B2C</li>
+                <li>Dramatically visualize customer</li>
+              </ul>
+            {{/inline}}
+          {{/list}}
+
+          <!-- LISTS: XL -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="lists-xl">XL</h3>
+          {{#> list className='-xl mb-20' title='' }}
+            {{#* inline 'content'}}
+              <ul>
+                <li>Podcasting operational change management inside of workflows to establish a framework.</li>
+                <li>Taking seamless key performance indicators offline to maximise the long tail.</li>
+                <li>Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</li>
+                <li>Collaboratively administrate empowered markets via plug-and-play networks.</li>
+                <li>Dynamically procrastinate B2C users after installed base benefits.</li>
+                <li>Dramatically visualize customer directed convergence without revolutionary ROI.</li>
+              </ul>
+            {{/inline}}
+          {{/list}}
+
+          <!-- PAGE CLOSING -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="page-closing">Page Closing</h2>
+
+          <!-- PAGE CLOSING: GET IN TOUCH -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="page-closing-get-in-touch">Get in touch</h3>
+          {{#> page-closing className='mb-20' bgImage='bg-get-in-touch.svg' image='page-closing-get-in-touch.svg' buttonLabel='Get in touch' buttonHref='javascript:;' }}
+            {{#* inline 'description'}}
+              Let's build together a world where all knowledge is <br>
+              <strong>accessible to everyone</strong>
+            {{/inline}}
+          {{/page-closing}}
+
+          <!-- PAGE CLOSING: REQUEST A QUOTE -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="page-closing-request-a-quote">Request a quote</h3>
+          {{#> page-closing className='mb-20' bgImage='bg-request-a-quote.svg' image='page-closing-request-a-quote.svg' buttonLabel='Request a quote' buttonHref='javascript:;' }}
+            {{#* inline 'description'}}
+              Let's build together a world where all knowledge is <br>
+              <strong>accessible to everyone</strong>
+            {{/inline}}
+          {{/page-closing}}
+
+          <!-- PAGE OPENING -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="page-opening">Page Opening</h2>
+
+          <!-- PAGE OPENING: DEFAULT -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="page-opening-default">Default</h3>
+          {{> page-opening className='mb-20' image='who-we-are-hero-illust.svg' title='We are open advocates' description='‘Open knowledge’ is any content, information or data that people are free to use, re-use and redistribute — without any legal or social restriction.' }}
+
+          <!-- PAGE OPENING: BLOG -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="page-opening-blog">Blog</h3>
+          {{> blog-opening className='mb-20' title='All About Openness' description='Open Knowledge Foundation is part of a worldwide movement working together for a fair and open future.' }}
+
+          <!-- TEXT BLOCK -->
+          <h2 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h2" id="text-block">Text block</h2>
+
+          <!-- TEXT BLOCK: LEFT (DEFAULT) -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="text-block-default">Left (Default)</h3>
+          <div class="sect -tighten-2 sect-generic mb-20">
+            <div class="sect__content">
+              <div class="block-txt">
+                <p>Leverage agile frameworks to provide a robust synopsis for <a href="">high level overviews</a>. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
+                <blockquote>
+                  <p><strong>Bring to the table win-win survival strategies</strong> to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+                </blockquote>
+                <p><em>Capitalize on low hanging fruit to identify</em> a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
+                <ul>
+                  <li>Podcasting operational change management inside of workflows to establish a framework.</li>
+                  <li>Taking seamless key performance indicators offline to maximise the long tail.</li>
+                  <li>Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</li>
+                </ul>
+                <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
+                <ol>
+                  <li>Robusta, cultivar fair trade robust, dark flavour rich and turkish.</li>
+                  <li>Organic café au lait, americano dark single shot kopi-luwak saucer, half and half french press strong fair trade siphon.</li>
+                  <li>Chicory single shot, that, brewed as grounds skinny medium dripper seasonal.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- TEXT BLOCK: CENTER -->
+          <h3 class="col-span-full mb-8 pb-4 border-b border-gray-300 text-h3" id="text-block-center">Center</h3>
+          <div class="sect -tighten-2 sect-highlights mb-20">
+            <div class="sect__content">
+              <div class="block-txt text-center">
+                <p>Leverage agile frameworks to provide a robust synopsis for <a href="">high level overviews</a>. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
+                <blockquote>
+                  <p><strong>Bring to the table win-win survival strategies</strong> to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+                </blockquote>
+                <p><em>Capitalize on low hanging fruit to identify</em> a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
+                <ul>
+                  <li>Podcasting operational change management inside of workflows to establish a framework.</li>
+                  <li>Taking seamless key performance indicators offline to maximise the long tail.</li>
+                  <li>Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</li>
+                </ul>
+                <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
+                <ol>
+                  <li>Robusta, cultivar fair trade robust, dark flavour rich and turkish.</li>
+                  <li>Organic café au lait, americano dark single shot kopi-luwak saucer, half and half french press strong fair trade siphon.</li>
+                  <li>Chicory single shot, that, brewed as grounds skinny medium dripper seasonal.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- /CONTAINER -->
+        </div>
+      </div>
+      {{> footer }}
+      {{> foot }}
+    </div>
+  </body>
+</html>

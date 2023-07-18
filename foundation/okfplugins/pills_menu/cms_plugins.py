@@ -1,9 +1,9 @@
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
-from cms.models.pluginmodel import CMSPlugin
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .models import PillsMenu
+
 
 @plugin_pool.register_plugin
 class PillsMenuPlugin(CMSPluginBase):
@@ -18,4 +18,3 @@ class PillsMenuPlugin(CMSPluginBase):
         context = super().render(context, instance, placeholder)
 
         return context
-

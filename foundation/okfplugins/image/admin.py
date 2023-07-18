@@ -6,7 +6,7 @@ from .models import OKImage
 
 
 class OKImageAdmin(reversion.admin.VersionAdmin):
-    list_display = ('text',)
+    list_display = ("text",)
     form = OKImageForm
 
 

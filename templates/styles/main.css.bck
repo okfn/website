@@ -1,0 +1,60 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import 'slick-carousel/slick/slick.scss';
+@import 'jquery-modal/jquery.modal.css';
+
+@import './base/_basic.css';
+@import './base/_bg-circles.css';
+@import './base/_buttons.css';
+@import './base/_forms.css';
+@import './base/_iframe-video.css';
+@import './base/_links.css';
+
+@import './base/_sections.css';
+@import './base/_main-header.css';
+@import './base/_main-footer.css';
+
+@import './components/_block-txt.css';
+@import './components/_modal.css';
+@import './components/_slider.css';
+@import './components/_switcher.css';
+
+@import './components/_sect-highlights.css';
+@import './components/_feature-item.css';
+@import './components/_gallery.css';
+@import './components/_img-set.css';
+
+
+
+:root {
+ color-scheme: light !important;
+}
+
+@layer base {
+  @font-face {
+    font-family: 'HK Grotesk';
+    src: url('/assets/fonts/hkgrotesk-regular.otf') format('opentype');
+  }
+  @font-face {
+    font-family: 'HK Grotesk';
+    src: url('/assets/fonts/hkgrotesk-bold.otf') format('opentype');
+    font-weight: bold;
+  }
+  @font-face {
+    font-family: 'HK Grotesk';
+    src: url('/assets/fonts/hkgrotesk-italic.otf') format('opentype');
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'HK Grotesk';
+    src: url('/assets/fonts/hkgrotesk-bolditalic.otf') format('opentype');
+    font-weight: bold;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Necto Mono';
+    src: url('/assets/fonts/nectomono-regular.otf') format('opentype');
+  }
+}

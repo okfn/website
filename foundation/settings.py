@@ -13,7 +13,7 @@ import os
 import sys
 import email.utils
 from os import environ as env
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 import warnings
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -84,12 +84,8 @@ else:
     EMAIL_HOST_PASSWORD = env.get('DJANGO_EMAIL_HOST_PASSWORD', 'mail')
     EMAIL_PORT = env.get('DJANGO_EMAIL_PORT', '25')
 
-# set default email sender account for contact form enquiries
+# Contact Form (sendemail app)
 CONTACT_EMAIL_SENDER = env.get('CONTACT_EMAIL_SENDER')
-
-# accounts that receive various enquiries from contact forms
-PRESS_EMAIL_RECEPIENTS = _parse_email_list('PRESS_EMAIL_RECEPIENTS')
-SERVICE_EMAIL_RECEPIENTS = _parse_email_list('SERVICE_EMAIL_RECEPIENTS')
 GENERAL_EMAIL_RECEPIENTS = _parse_email_list('GENERAL_EMAIL_RECEPIENTS')
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
@@ -117,14 +113,15 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'django.contrib.redirects',  # Provides redirects app
+    'django.forms',  # Required to override django-simple-captcha template
 
     # 3rd-party important
     'reversion',
     'pagedown',
     'markdown_deux',
     'haystack',
-    'formtools',
     'sendemail',
+    'captcha',
 
     # Asset pipeline
     'compressor',
@@ -167,6 +164,12 @@ INSTALLED_APPS = (
     'foundation.okfplugins.feature_block',
     'foundation.okfplugins.newsletter',
     'foundation.okfplugins.gallery',
+    'foundation.okfplugins.blog_opening',
+    'foundation.okfplugins.hero_punch',
+    'foundation.okfplugins.spotlight',
+    'foundation.okfplugins.quote',
+    'foundation.okfplugins.carousel',
+    'foundation.okfplugins.list',
     'article_list_item'
 )
 
@@ -282,22 +285,12 @@ if not DEBUG:
 
 # Use realtime updates (synchronously update the index on model save/delete)
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
-SEARCH_URL = env.get('SEARCH_URL')
-if SEARCH_URL:
-    HAYSTACK_CONNECTIONS = {
-        'default': {
-            'ENGINE': 'haystack.backends.elasticsearch7_backend.Elasticsearch7SearchEngine',
-            'URL': SEARCH_URL,
-            'INDEX_NAME': 'foundation7',
-        }
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
     }
-else:
-    HAYSTACK_CONNECTIONS = {
-        'default': {
-            'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
-            'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
-        }
-    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -326,8 +319,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-AWS_S3_CUSTOM_DOMAIN = env.get('DJANGO_AWS_S3_CUSTOM_DOMAIN')
-
 CUSTOM_ASSETS_DOMAIN = env.get('DJANGO_CUSTOM_ASSETS_DOMAIN')
 
 STATIC_URL = '/assets/'
@@ -340,28 +331,6 @@ if env.get('DJANGO_USE_GOOGLE_STORAGE') == 'true':
     GS_QUERYSTRING_AUTH = False
     GS_DEFAULT_ACL = "publicRead"
     # We use local static files, not use STATICFILES_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
-elif env.get('DJANGO_USE_AWS_STORAGE') == 'true':
-    AWS_ACCESS_KEY_ID = env['AWS_ACCESS_KEY_ID']
-    AWS_SECRET_ACCESS_KEY = env['AWS_SECRET_ACCESS_KEY']
-    AWS_STORAGE_BUCKET_NAME = env['AWS_STORAGE_BUCKET_NAME']
-    AWS_QUERYSTRING_AUTH = False
-    AWS_HEADERS = {
-        'Cache-Control': 'max-age=86400',
-    }
-    AWS_DEFAULT_ACL = 'public-read'
-
-    # django-s3-folder-storage is no longer maintained
-    # INSTALLED_APPS += ('s3_folder_storage',)
-    DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.DefaultStorage'
-    THUMBNAIL_DEFAULT_STORAGE = 's3_folder_storage.s3.DefaultStorage'
-    DEFAULT_S3_PATH = 'media'
-    MEDIA_ROOT = 'media/'
-
-    if AWS_S3_CUSTOM_DOMAIN:
-        MEDIA_URL = '//%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, DEFAULT_S3_PATH)
-    else:
-        MEDIA_URL = '//s3.amazonaws.com/%s/%s/' % (AWS_STORAGE_BUCKET_NAME,
-                                                   DEFAULT_S3_PATH)
 else:
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -402,10 +371,6 @@ else:
 
 # Content Security Policy
 asset_hosts = ['https://storage.googleapis.com']
-if AWS_S3_CUSTOM_DOMAIN:
-    asset_hosts.append('https://%s' % AWS_S3_CUSTOM_DOMAIN)
-else:
-    asset_hosts.append('https://s3.amazonaws.com')
 if CUSTOM_ASSETS_DOMAIN:
     asset_hosts.append('https://%s' % CUSTOM_ASSETS_DOMAIN)
 
@@ -505,16 +470,6 @@ CMS_TEMPLATES = (
     ('cms_contact.html', 'Contact'),
 )
 
-CMS_PLACEHOLDER_CONF = {
-    # The 'blurb' placeholder is only intended to take text. To minimise the
-    # chance of screwing up page layout, restrict the placeholder to only
-    # accept the text plugin.
-    'blurb': {
-        'plugins': ['TextPlugin'],
-        'text_only_plugins': ['LinkPlugin']
-    },
-}
-
 # Allow iframes in the cms text plugin
 TEXT_ADDITIONAL_TAGS = ('iframe',)
 
@@ -525,6 +480,10 @@ QUOTE_STYLES = (
 )
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+CAPTCHA_IMAGE_SIZE = (150, 75)
+CAPTCHA_FONT_SIZE = 44
+
 
 if TEST_MODE:
     from .test_settings import *  # noqa

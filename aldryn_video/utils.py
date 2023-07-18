@@ -12,12 +12,12 @@ providers = micawber.bootstrap_basic()
 
 default_cms_plugin_table_mapping = (
     # (old_name, new_name),
-    ('cmsplugin_oembedvideoplugin', 'aldryn_video_oembedvideoplugin'),
+    ("cmsplugin_oembedvideoplugin", "aldryn_video_oembedvideoplugin"),
 )
 
 
 def build_html_iframe(response, url_params=None, iframe_attrs=None):
-    html = response.get('html', '')
+    html = response.get("html", "")
 
     if url_params is None:
         url_params = {}
@@ -31,7 +31,7 @@ def build_html_iframe(response, url_params=None, iframe_attrs=None):
         # and so for these we need to add them manually to the iframe.
         html = BeautifulSoup(html).iframe
 
-        data_url = response.get('player_url', html['src'])
+        data_url = response.get("player_url", html["src"])
         player_url = urlparse(data_url)
 
         queries = parse_qs(player_url.query)
@@ -40,7 +40,7 @@ def build_html_iframe(response, url_params=None, iframe_attrs=None):
         url_parts = list(player_url)
         url_parts[4] = urlencode(url_params, True)
 
-        html['src'] = urlunparse(url_parts)
+        html["src"] = urlunparse(url_parts)
 
         for key, value in iframe_attrs.items():
             if value:
@@ -49,9 +49,9 @@ def build_html_iframe(response, url_params=None, iframe_attrs=None):
 
 
 def get_player_url(response):
-    html = BeautifulSoup(markup=response.get('html', ''))
+    html = BeautifulSoup(markup=response.get("html", ""))
     if html.iframe:
-        return html.iframe.attrs['src']
+        return html.iframe.attrs["src"]
     return None
 
 
@@ -81,8 +81,10 @@ def rename_tables(db, table_mapping=None, reverse=False):
     table_names = connection.introspection.table_names()
     for source, destination in table_mapping:
         if source in table_names and destination in table_names:
-            print("    WARNING: not renaming {0} to {1}, because both tables "
-                  "already exist.".format(source, destination))
+            print(
+                "    WARNING: not renaming {0} to {1}, because both tables "
+                "already exist.".format(source, destination)
+            )
         elif source in table_names and destination not in table_names:
             print("     - renaming {0} to {1}".format(source, destination))
             db.rename_table(source, destination)

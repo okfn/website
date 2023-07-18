@@ -16,39 +16,55 @@
 
     <div id="service">
       <div class="intro">
-        {% placeholder "service" %}
+        {% static_placeholder "another service" %}
       </div>
 
       <form id="service_form" class="form" method="post">
         {% csrf_token %}
           <div class="input-fake flex items-center mb-5">
           <input id="type" type='hidden' name="type" value="Service"/>
-          <label class="font-bold mr-10">Name:
-          </label>
+          <label class="font-bold mr-10">{{form.name.label}}*</label>
             {{ form.name }}
             {{ form.name.errors }}
-
           </div>
           <div class="input-fake flex items-center mb-5">
-          <label class="font-bold mr-10">Organisation:
-          </label>
+          <label class="font-bold mr-10">{{form.organisation.label}}</label>
             {{ form.organisation }}
             {{ form.organisation.errors }}
           </div>
           <div class="input-fake flex items-center mb-5">
-          <label class="font-bold mr-10">Email address:
-          </label>
+            <label class="font-bold mr-10">{{form.website.label}}</label>
+              {{ form.website }}
+              {{ form.website.errors }}
+          </div>
+          <div class="input-fake flex items-center mb-5">
+          <label class="font-bold mr-10">{{form.email.label}}*</label>
             {{ form.email }}
             {{ form.email.errors }}
-
           </div>
           <div class="input-fake flex items-left flex-col mb-5">
-        <label class="message font-bold">How can we help?
-        </label>
-          {{ form.message.errors }}
-          {{ form.message }}
-
+            <label class="message font-bold">{{form.how_can_we_help.label}}</label>
+              {{ form.how_can_we_help }}
+              {{ form.how_can_we_help.errors }}
           </div>
+          <div class="input-fake flex items-left flex-col mb-5">
+          <label class="message font-bold">{{form.message.label}}</label>
+            {{ form.message.errors }}
+            {{ form.message }}
+          </div>
+          <div class="input-fake flex items-left flex-col mb-5">
+            <label class="message font-bold">{{form.telephone.label}}</label>
+              {{ form.telephone }}
+              {{ form.telephone.errors }}
+          </div>
+          <div class="input-fake flex items-left flex-col mb-5">
+              {{ form.captcha }}
+              {{ form.captcha.errors }}
+          </div>
+          <div>
+            By submitting this form you agree to our <a class="font-mono" href="/privacy-policy/">Privacy Policy</a>.
+          </div>
+          <br>
         <button type="submit" class="btn btn-primary btn-lg">Send</button>
       </form>
     </div>

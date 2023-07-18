@@ -1,9 +1,9 @@
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
-from cms.models.pluginmodel import CMSPlugin
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .models import GridColumns
+
 
 @plugin_pool.register_plugin
 class GridColumnsPlugin(CMSPluginBase):
@@ -18,4 +18,3 @@ class GridColumnsPlugin(CMSPluginBase):
         context = super().render(context, instance, placeholder)
 
         return context
-

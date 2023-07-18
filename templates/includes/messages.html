@@ -1,0 +1,17 @@
+{% load cms_tags %}
+
+{% block messages %}
+{% if messages %}
+{% for message in messages %}
+<div class="banner -{{message.tags}} mb-20">
+  <div class="banner__content">
+    <div class="container">
+      <div class="col-span-full">
+        <span class="title">{{message}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endif %}
+{% endblock %}
