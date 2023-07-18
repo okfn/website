@@ -23,7 +23,7 @@ class ContactForm(forms.Form):
     name = forms.CharField(label='Name')
     name.widget.attrs = {'class': "form-control input-lg"}
 
-    organisation = forms.CharField(required=False, label='Organization')
+    organisation = forms.CharField(required=False, label='Organisation')
     organisation.widget.attrs = {'class': "form-control input-lg"}
 
     website = forms.URLField(required=False, label='Website')
