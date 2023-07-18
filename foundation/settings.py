@@ -167,7 +167,6 @@ INSTALLED_APPS = (
     'foundation.okfplugins.quote',
     'foundation.okfplugins.carousel',
     'foundation.okfplugins.list',
-    'article_list_item'
 )
 
 MIDDLEWARE = [
