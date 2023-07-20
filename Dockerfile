@@ -36,5 +36,6 @@ RUN . /root/.nvm/nvm.sh && nvm use 16
 ENV PORT 80
 EXPOSE $PORT
 
+COPY docker-entrypoint.d /
 COPY ./docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
