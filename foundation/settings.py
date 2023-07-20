@@ -147,7 +147,6 @@ INSTALLED_APPS = (
     'foundation.blogfeed',
     'foundation.features',
     'foundation.jobs',
-    'foundation.press',
     'foundation.organisation',
     'foundation.search',
     'foundation.okfplugins.header',
