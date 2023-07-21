@@ -184,39 +184,6 @@ class BoardMembership(models.Model):
     class Meta:
         ordering = ["-order", "person__name"]
 
-
-class WorkingGroupManager(models.Manager):
-    def active(self):
-        return self.get_queryset().filter(incubation=False)
-
-    def incubators(self):
-        return self.get_queryset().filter(incubation=True)
-
-
-class WorkingGroup(models.Model):
-    objects = WorkingGroupManager()
-
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=100, unique=True)
-
-    description = models.TextField()
-    homepage_url = models.URLField(blank=True)
-    logo = models.ImageField(upload_to="organisation/working-groups/logos", blank=True)
-
-    incubation = models.BooleanField(
-        default=True, help_text="Is this group in incubation?"
-    )
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        ordering = ("name",)
-
-
 class NetworkGroupManager(models.Manager):
     def countries(self):
         return self.get_queryset().filter(region_slug="")
@@ -266,7 +233,6 @@ class NetworkGroup(models.Model):
     extra_information = models.TextField(blank=True, null=True)
 
     members = models.ManyToManyField("Person", through="NetworkGroupMembership")
-    working_groups = models.ManyToManyField("WorkingGroup", blank=True)
 
     def __str__(self):
         return self.name

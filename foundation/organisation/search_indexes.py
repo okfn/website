@@ -1,5 +1,5 @@
 from haystack import indexes
-from .models import Person, WorkingGroup, NetworkGroup
+from .models import Person, NetworkGroup
 
 
 class PersonIndex(indexes.SearchIndex, indexes.Indexable):
@@ -9,17 +9,6 @@ class PersonIndex(indexes.SearchIndex, indexes.Indexable):
 
     def get_model(self):
         return Person
-
-    def get_updated_field(self):
-        return 'updated_at'
-
-
-class WorkingGroupIndex(indexes.SearchIndex, indexes.Indexable):
-    text = indexes.CharField(document=True, use_template=True)
-    incubation = indexes.BooleanField(model_attr='incubation')
-
-    def get_model(self):
-        return WorkingGroup
 
     def get_updated_field(self):
         return 'updated_at'

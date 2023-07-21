@@ -7,8 +7,7 @@ from django.http import HttpResponse
 from iso3166 import countries
 import csv
 
-from .models import (Board, WorkingGroup,
-                     NetworkGroup, NetworkGroupMembership)
+from .models import Board, NetworkGroup, NetworkGroupMembership
 
 
 class BoardView(DetailView):
@@ -19,21 +18,6 @@ class BoardView(DetailView):
     def get_object(self, *args, **kwargs):
         # Try to find the board based on the slug or 404
         return get_object_or_404(Board, slug=self.board)
-
-
-class WorkingGroupListView(ListView):
-    model = WorkingGroup
-    template_name = 'organisation/workinggroup_list.html'
-
-    def get_queryset(self):
-        return WorkingGroup.objects.active()
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['active_list'] = WorkingGroup.objects.active()
-        context['incubator_list'] = WorkingGroup.objects.incubators()
-
-        return context
 
 
 class NetworkGroupDetailView(DetailView):
@@ -75,12 +59,6 @@ def networkgroup_csv_output(request):
                   'Local Groups status', 'Community Leaders', 'Website',
                   'Mailing List', 'Twitter handle', 'Facebook page']
 
-    working_groups = []
-    for group in WorkingGroup.objects.all():
-        topic = 'Topic: {0}'.format(group.name)
-        working_groups.append(topic)
-    header_row.extend(working_groups)
-
     writer.writerow(header_row)
 
     for group in NetworkGroup.objects.all():
@@ -101,14 +79,6 @@ def networkgroup_csv_output(request):
                group.mailinglist_url,
                group.twitter if group.twitter else '',
                group.facebook_url]
-
-        # Find topics of working group
-        group_working_groups = [g.name for g in group.working_groups.all()]
-        for working_group in working_groups:
-            if working_group[len('Topic: '):] in group_working_groups:
-                row.append('Y')
-            else:
-                row.append('')
 
         writer.writerow(row)
 

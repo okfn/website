@@ -12,10 +12,6 @@ urlpatterns = [
     re_path(
         r"^about/advisory-board", include("foundation.organisation.urls.advisoryboard")
     ),
-    re_path(
-        r"^get-involved/working-groups",
-        include("foundation.organisation.urls.workinggroups"),
-    ),
     re_path(r"^network/", include("foundation.organisation.urls.networkgroups")),
     re_path(r"^", include("cms.urls")),
 ]
