@@ -144,7 +144,6 @@ INSTALLED_APPS = (
     'sekizai',
 
     # Custom apps
-    'foundation.blogfeed',
     'foundation.features',
     'foundation.jobs',
     'foundation.organisation',
