@@ -1,5 +1,4 @@
 from django.views.decorators.cache import cache_page
-from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse

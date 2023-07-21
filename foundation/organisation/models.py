@@ -184,6 +184,7 @@ class BoardMembership(models.Model):
     class Meta:
         ordering = ["-order", "person__name"]
 
+
 class NetworkGroupManager(models.Manager):
     def countries(self):
         return self.get_queryset().filter(region_slug="")
