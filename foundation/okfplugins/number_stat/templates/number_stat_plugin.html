@@ -1,0 +1,3 @@
+{% with "stat_"|add:instance.columns|add:".html" as template %}
+    {% include template  with instances=instance.child_plugin_instances column=instance.columns %}
+{% endwith %}

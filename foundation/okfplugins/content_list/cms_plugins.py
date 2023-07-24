@@ -11,6 +11,7 @@ class ContentListPlugin(CMSPluginBase):
     render_template = "content_list_plugin.html"
     cache = False
     name = _("Content List")
+
     def render(self, context, instance, placeholder):
         context = super().render(context, instance, placeholder)
 

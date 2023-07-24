@@ -1,0 +1,15 @@
+{% for instance in instances %}
+<div class="sect -tighten-2 mb-20">
+    <div class="flex flex-col md:flex-row items-center md:items-start text-okfn-md group">        
+        <div class="mb-8 lg:mb-0 lg:mr-14 text-h0 font-mono">{{ instance.stat }}</div>
+        <div class="relative pb-12">
+            <p>{{ instance.text }}</p>
+            <a href="{% if instance.url %}{{ instance.url }}{% else %}#{% endif %}">
+                <span class="link-arrow-curved absolute left-1/2 md:left-0 bottom-0 -translate-x-1/2 md:translate-x-0 group-hover:drop-shadow-okfn text-okfn-sm" date-time="{{ instance.date_number }}">
+                    Learn more
+                <span>
+            </a>
+        </div>
+    </div>
+</div>
+{% endfor %}
