@@ -1,0 +1,7 @@
+<a class="block text-okfn-sm group" href="{% if instance.url %}{{ instance.url }}{% else %}#{% endif %}">
+    <div class="description">
+        <h3 class="mb-3 text-h3 font-bold group-hover:text-okfn-blue group-active:text-okfn-purple transition-colors duration-100">{{ instance.title }}</h3>
+        <p>{{ instance.text }}</p>
+        <time class="date block mt-3 font-mono" date-time="{{ instance.date_number }}">{{ instance.date }}</time>
+    </div>
+</a>
