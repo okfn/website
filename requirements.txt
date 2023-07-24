@@ -8,8 +8,6 @@ asgiref==3.7.2
     # via
     #   django
     #   django-countries
-async-timeout==4.0.2
-    # via redis
 beautifulsoup4==4.12.2
     # via -r requirements.in
 cachetools==4.2.4
@@ -150,7 +148,7 @@ google-resumable-media==2.3.3
     # via google-cloud-storage
 googleapis-common-protos==1.56.2
     # via google-api-core
-gunicorn==20.1.0
+gunicorn==21.2.0
     # via -r requirements.in
 html5lib==1.1
     # via djangocms-text-ckeditor
@@ -172,6 +170,7 @@ packaging==21.3
     # via
     #   django-cms
     #   djangocms-text-ckeditor
+    #   gunicorn
 pillow==10.0.0
     # via
     #   -r requirements.in
@@ -228,9 +227,7 @@ tinycss2==1.1.1
     #   cssselect2
     #   svglib
 typing-extensions==4.2.0
-    # via
-    #   asgiref
-    #   django-countries
+    # via django-countries
 unidecode==1.1.1
     # via django-filer
 urllib3==1.26.5
@@ -244,6 +241,3 @@ webencodings==0.5.1
     #   tinycss2
 whoosh==2.7.4
     # via -r requirements.in
-
-# The following packages are considered to be unsafe in a requirements file:
-# setuptools
