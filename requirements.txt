@@ -8,8 +8,6 @@ asgiref==3.7.2
     # via
     #   django
     #   django-countries
-async-timeout==4.0.2
-    # via redis
 beautifulsoup4==4.12.2
     # via -r requirements.in
 cachetools==4.2.4
@@ -65,7 +63,7 @@ django-csp==3.7
     # via -r requirements.in
 django-environ==0.10.0
     # via -r requirements.in
-django-filer==2.2.6
+django-filer==3.0.3
     # via
     #   -r requirements.in
     #   djangocms-file
@@ -80,9 +78,7 @@ django-js-asset==1.2.2
 django-markdown-deux==1.0.6
     # via -r requirements.in
 django-mptt==0.14.0
-    # via
-    #   -r requirements.in
-    #   django-filer
+    # via -r requirements.in
 django-pagedown==2.2.1
     # via -r requirements.in
 django-polymorphic==3.0.0
@@ -228,11 +224,7 @@ tinycss2==1.1.1
     #   cssselect2
     #   svglib
 typing-extensions==4.2.0
-    # via
-    #   asgiref
-    #   django-countries
-unidecode==1.1.1
-    # via django-filer
+    # via django-countries
 urllib3==1.26.5
     # via
     #   google-auth
