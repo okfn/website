@@ -72,6 +72,7 @@ DEBUG = env.get('DJANGO_DEBUG', 'true') == 'true'
 
 if DEBUG:
     SECRET_KEY = 'f8pqx#@_x-nv+$m7q7lt^lrmby4ixjms#x*2_sskn9)%t36(!q'
+    X_FRAME_OPTIONS = "SAMEORIGIN"
 else:
     SECRET_KEY = env.get('DJANGO_SECRET_KEY')
 
