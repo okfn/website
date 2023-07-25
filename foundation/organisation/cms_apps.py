@@ -33,16 +33,6 @@ class AdvisoryBoardAppHook(CMSApp):
 apphook_pool.register(AdvisoryBoardAppHook)
 
 
-class WorkingGroupsAppHook(CMSApp):
-    name = _("Working Groups")
-
-    def get_urls(self, page=None, language=None, **kwargs):
-        return ["foundation.organisation.urls.workinggroups"]
-
-
-apphook_pool.register(WorkingGroupsAppHook)
-
-
 class NetworkGroupsAppHook(CMSApp):
     name = _("Network Groups")
 
