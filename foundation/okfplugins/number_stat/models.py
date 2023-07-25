@@ -1,7 +1,7 @@
 from django.db import models
 from cms.models.pluginmodel import CMSPlugin
 
-LIST_TYPES = (("1", "One Column"), ("2", "Two Columns"), ("3", "Three Columns"))
+LIST_TYPES = (("single", "Single"), ("multiple", "Multiple"))
 
 
 class NumberStat(CMSPlugin):
