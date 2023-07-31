@@ -8,6 +8,6 @@ pip-tools==6.14.0
 # Remove once pip-tools update wheel version
 wheel==0.40.0
 
-flake8==6.0.0
+flake8==6.1.0
 django-webtest==1.9.10
 coverage==7.2.7
