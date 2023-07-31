@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.urls import include, re_path
+from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from django.views.generic import RedirectView
@@ -83,12 +84,16 @@ urlpatterns += [
     ),
 ]
 
-urlpatterns += [
+urlpatterns += i18n_patterns(
     re_path(r"^search/", include("haystack.urls")),
-]
+)
 
 urlpatterns += [
     re_path(r"^captcha/", include("captcha.urls")),
+]
+
+urlpatterns += [
+    re_path(r"^i18n/", include("django.conf.urls.i18n")),
 ]
 
 # CMS patterns
@@ -117,6 +122,9 @@ urlpatterns += [
             url=ARCHIVE_ROOT + "/wp-includes/%(remain)s", permanent=True
         ),
     ),
-    # Fallthrough for CMS managed pages
-    re_path(r"^", include("cms.urls")),
 ]
+
+
+urlpatterns += i18n_patterns(
+    re_path(r"^", include("cms.urls")),
+)
