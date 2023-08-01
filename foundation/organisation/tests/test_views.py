@@ -12,7 +12,6 @@ from ..models import (
     Board,
     Person,
     Unit,
-    WorkingGroup,
     NetworkGroup,
     NetworkGroupMembership,
     BoardMembership,
@@ -281,22 +280,6 @@ class BoardViewTest(WebTest):
 
 class NetworkGroupDetailViewTest(WebTest):
     def setUp(self):
-        self.government = WorkingGroup.objects.create(
-            name="Open Government",
-            slug="open-government",
-            description="We work toward open governments around the world",
-            homepage_url="http://opengov.org",
-            incubation=False,
-        )
-
-        self.lobbying = WorkingGroup.objects.create(
-            name="Lobbying Transparency",
-            slug="lobbying-transparency",
-            description="We want hotel lobbies made out of glass",
-            homepage_url="http://transparent.lobby.org",
-            incubation=False,
-        )
-
         self.otto = Person.objects.create(
             name="Otto von Bismarck",
             description="The oldest member and Duke of Lauenburg",
@@ -365,11 +348,6 @@ class NetworkGroupDetailViewTest(WebTest):
         self.elizabeth_britain = NetworkGroupMembership.objects.create(
             networkgroup=self.buckingham, person=self.elizabeth, title="Regent maker"
         )
-
-        self.britain.working_groups.add(self.government)
-        self.buckingham.working_groups.add(self.lobbying)
-        self.germany.working_groups.add(self.government)
-        self.germany.working_groups.add(self.lobbying)
 
     def test_country_group(self):
         response = self.app.get(
@@ -443,44 +421,6 @@ class NetworkGroupDetailViewTest(WebTest):
         self.assertNotIn(self.britain.description, response.text)
         self.assertNotIn(self.germany.name, response.text)
 
-    def test_workinggroups_in_networks(self):
-        britain = self.app.get(
-            reverse("network-country", kwargs={"country": self.britain.country_slug})
-        )
-
-        # Britain is a single working group country and should not show
-        # regional group working groups
-        # TODO test skipped until we define if "government" must be
-        # included here
-        # self.assertIn(self.government.name, britain.text)
-        self.assertNotIn(self.lobbying.name, britain.text)
-
-        buckingham = self.app.get(
-            reverse(
-                "network-region",
-                kwargs={
-                    "country": self.buckingham.country_slug,
-                    "region": self.buckingham.region_slug,
-                },
-            )
-        )
-
-        # Regional groups should not inherit working groups of country group
-        # TODO test skipped until we define if "lobbying" must be
-        # included here
-        # self.assertIn(self.lobbying.name, buckingham.text)
-        self.assertNotIn(self.government.name, buckingham.text)
-
-        # germany = self.app.get(
-        #    reverse("network-country", kwargs={"country": self.germany.country_slug})
-        # )
-
-        # Germany has many groups and they should all be shown
-        # TODO test skipped until we define if "government" and "lobbyng" must be
-        # included here
-        # self.assertIn(self.government.name, germany.text)
-        # self.assertIn(self.lobbying.name, germany.text)
-
     def test_csv_output(self):
         response = self.app.get(reverse("networkgroups-csv"))
         reader = csv.reader(StringIO(response.text))
@@ -499,8 +439,6 @@ class NetworkGroupDetailViewTest(WebTest):
             "Twitter handle",
             "Facebook page",
         ]
-        for group in WorkingGroup.objects.all():
-            headers.append("Topic: {0}".format(group.name))
 
         self.assertEqual(header_row, headers)
 
@@ -515,8 +453,6 @@ class NetworkGroupDetailViewTest(WebTest):
             self.germany.mailinglist_url,
             self.germany.twitter,
             "",
-            "Y",
-            "Y",
         ]
         self.assertEqual(germany, germany_data)
 
@@ -531,8 +467,6 @@ class NetworkGroupDetailViewTest(WebTest):
             self.britain.mailinglist_url,
             self.britain.twitter,
             "",
-            "",
-            "Y",
         ]
         self.assertEqual(britain, britain_data)
 
@@ -550,8 +484,6 @@ class NetworkGroupDetailViewTest(WebTest):
             self.buckingham.mailinglist_url,
             self.buckingham.twitter,
             self.buckingham.facebook_url,
-            "Y",
-            "" "",
         ]
         self.assertEqual(buckingham, buckingham_data)
 

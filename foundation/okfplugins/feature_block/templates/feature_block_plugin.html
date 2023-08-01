@@ -61,7 +61,21 @@
     <img src="{% if instance.image %}{{ instance.image.url}}{% endif %}" alt="OKFN" class="w-full h-full object-cover">
   </div>
 </a>
-{% elif instance.block_type == 'blue' or instance.block_type == 'yellow' or instance.block_type == 'purple' %}
+{% elif instance.block_type == 'yellow' %}
+  {% if instance.url and instance.url != '' %}
+  <a href="{{ instance.url }}" class="content-grid__item">
+  {% else %}
+  <div  class="content-grid__item">
+  {% endif %}
+    <h3 class="title block mb-8 font-bold text-2xl">{{ instance.title }}</h3>
+    <p>{{ instance.text }}</p>
+    <time class="date" date-time="{{ instance.date_number }}">{{ instance.date }}</time>
+  {% if instance.url and instance.url != '' %}
+  </a>
+  {% else %}
+  </div>
+  {% endif %}
+{% elif instance.block_type == 'blue' or instance.block_type == 'purple' %}
 <a href="{{ instance.url }}" class="relative flex items-center justify-center p-4 group aspect-square -has-bg-circle -bg-circle-full {% if instance.block_type != 'blue'%}-bg-circle-okfn-{{ instance.block_type }} {% endif %}}">
   <h3 class="relative z-10 title block font-bold text-2xl"> {{ instance.title }} </h3>
 </a>

@@ -72,6 +72,7 @@ DEBUG = env.get('DJANGO_DEBUG', 'true') == 'true'
 
 if DEBUG:
     SECRET_KEY = 'f8pqx#@_x-nv+$m7q7lt^lrmby4ixjms#x*2_sskn9)%t36(!q'
+    X_FRAME_OPTIONS = "SAMEORIGIN"
 else:
     SECRET_KEY = env.get('DJANGO_SECRET_KEY')
 
@@ -144,10 +145,8 @@ INSTALLED_APPS = (
     'sekizai',
 
     # Custom apps
-    'foundation.blogfeed',
     'foundation.features',
     'foundation.jobs',
-    'foundation.press',
     'foundation.organisation',
     'foundation.search',
     'foundation.okfplugins.header',
@@ -170,6 +169,8 @@ INSTALLED_APPS = (
     'foundation.okfplugins.quote',
     'foundation.okfplugins.carousel',
     'foundation.okfplugins.list',
+    'foundation.okfplugins.content_list',
+    'foundation.okfplugins.number_stat',
     'article_list_item'
 )
 

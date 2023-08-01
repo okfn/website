@@ -1,12 +1,10 @@
 import reversion
 
 from django.contrib import admin
-from .forms import (
-    PersonForm, WorkingGroupForm
-)
+from .forms import PersonForm
 from .models import (
     Person, Unit, Board,
-    WorkingGroup, NetworkGroup, UnitMembership,
+    NetworkGroup, UnitMembership,
     BoardMembership, NetworkGroupMembership, SideBarExtension
 )
 
@@ -52,30 +50,16 @@ class BoardAdmin(reversion.admin.VersionAdmin):
 admin.site.register(Board, BoardAdmin)
 
 
-class WorkingGroupAdmin(reversion.admin.VersionAdmin):
-    list_display = ('name',)
-
-    prepopulated_fields = {"slug": ("name",)}
-    form = WorkingGroupForm
-
-
-admin.site.register(WorkingGroup, WorkingGroupAdmin)
-
-
 class NetworkGroupMembershipInline(admin.TabularInline):
     model = NetworkGroupMembership
-
-
-class WorkingGroupInNetworksInline(admin.TabularInline):
-    model = NetworkGroup.working_groups.through
 
 
 class NetworkGroupAdmin(reversion.admin.VersionAdmin):
     list_display = ('name', 'country',)
     ordering = ('country', 'name')
-    exclude = ('country_slug', 'region_slug', 'working_groups')
+    exclude = ('country_slug', 'region_slug')
 
-    inlines = [NetworkGroupMembershipInline, WorkingGroupInNetworksInline]
+    inlines = [NetworkGroupMembershipInline]
 
 
 admin.site.register(NetworkGroup, NetworkGroupAdmin)

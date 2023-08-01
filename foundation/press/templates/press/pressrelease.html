@@ -1,8 +1,0 @@
-{% load markdown_deux_tags %}
-{% load press %}
-
-<div class="press-release{% if pressrelease.release_date|active_release %} active{% endif %}">
-  <h3>{% include "press/pressrelease_title.html" %}</h3>
-  {% include "press/pressrelease_date.html" %}
-  {{ pressrelease.body|markdown }}
-</div>
