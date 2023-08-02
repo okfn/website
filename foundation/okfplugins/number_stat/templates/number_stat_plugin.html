@@ -5,11 +5,13 @@
             <div class="mb-8 lg:mb-0 lg:mr-14 text-h0 font-mono">{{ plugin_instance.stat }}</div>
             <div class="relative pb-12">
                 <p>{{ plugin_instance.text }}</p>
+                {% if plugin_instance.url != '' %}
                 <a href="{% if plugin_instance.url %}{{ plugin_instance.url }}{% else %}#{% endif %}">
                     <span class="link-arrow-curved absolute left-1/2 md:left-0 bottom-0 -translate-x-1/2 md:translate-x-0 group-hover:drop-shadow-okfn text-okfn-sm" date-time="{{ plugin_instance.date_number }}">
                         Learn more
                     <span>
                 </a>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -21,11 +23,13 @@
                 <div class="relative pb-12 md:pb-16">
                     <div class="mb-8 text-h0 font-mono">{{ plugin_instance.stat }}</div>
                     <p>{{ plugin_instance.text }}</p>
+                    {% if plugin_instance.url != '' %}
                     <a href="{% if plugin_instance.url %}{{ plugin_instance.url }}{% else %}#{% endif %}">
                         <span class="link-arrow-curved absolute left-1/2 bottom-0 -translate-x-1/2 group-hover:drop-shadow-okfn text-okfn-sm" date-time="{{ plugin_instance.date_number }}">
                             Learn more
                         </span>
                     </a>
+                    {% endif %}
                 </div>
             {% endfor %}
         </div>
