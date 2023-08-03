@@ -145,13 +145,4 @@ export default {
       exclude: [ 'node_modules', 'dist' ],
     }),
   ],
-  // css: {
-  //   preprocessorOptions: {
-  //     scss: {
-  //       imports: [
-  //         `${pathSrc}/styles/basic/index`,
-  //       ],
-  //     },
-  //   },
-  // },
 }
