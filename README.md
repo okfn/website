@@ -106,16 +106,17 @@ Same for staging.
 
 ### CSS
 
-Currently we are using Tailwind, PostCSS and Vite as our CSS stack. Please check the documentation to get a sense
+Currently we are using Tailwind, PostCSS as our CSS stack. Please check the documentation to get a sense
 of how it works: [Installing Tailwind CSS as a PostCSS plugin](https://tailwindcss.com/docs/installation/using-postcss)
 
-The css build is done by `vite` and the configuration files for it are `vite.config.js`, `tailwind.config.cjs` and `postcss.config.cjs`.
+The css build is done by `PostCSS` and the configuration files for it are `tailwind.config.cjs` and `postcss.config.cjs`.
 
 Running `npm run build` will compile our main `styles.css` file and place it in `static/css/styles.css`. (It then will be collected by 
 Django when building the Dockerfile)
 
-**Important: ** If you use a new tailwind class in some plugin, this class must be added somewhere on the file `templates/styles.html`, 
-otherwise the class will not work when used on the plugin.
+**Remember:** Tailwind CSS works by scanning all of our HTML files, JavaScript components, and any other templates
+ for class names to generate `styles.css`. If you ar adding new files, make sure to update the `content` field `tailwind.config.cjs`. 
+ (If required)
 
 
 ### Javascript
