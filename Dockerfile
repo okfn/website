@@ -15,7 +15,6 @@ COPY deployment/gunicorn.conf /etc/supervisor/conf.d/gunicorn.conf
 
 COPY aldryn_quote ./aldryn_quote
 COPY aldryn_video ./aldryn_video
-COPY article_list_item ./article_list_item
 COPY docs ./docs
 COPY foundation ./foundation
 COPY .env.base ./.env.base
