@@ -3,7 +3,7 @@ module.exports = {
   content: [
     './templates/**/*.{html,js}',
     './foundation/okfplugins/**/*.html',
-    './foundation/sendemail/**/*.html',
+    './sendemail/**/*.{html,py}',
   ],
   theme: {
     extend: {
