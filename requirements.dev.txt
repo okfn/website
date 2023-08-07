@@ -44,18 +44,13 @@ soupsieve==2.0.1
     # via
     #   -c requirements.txt
     #   beautifulsoup4
-tomli==2.0.1
-    # via
-    #   build
-    #   pip-tools
-    #   pyproject-hooks
 waitress==1.4.4
     # via webtest
 webob==1.8.6
     # via webtest
 webtest==2.0.35
     # via django-webtest
-wheel==0.40.0
+wheel==0.41.1
     # via
     #   -r requirements.dev.in
     #   pip-tools

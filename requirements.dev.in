@@ -6,7 +6,7 @@
 pip-tools==6.14.0
 # wheel is required for pip-tool but ver <= 0.37.1 is vulnerable.
 # Remove once pip-tools update wheel version
-wheel==0.40.0
+wheel==0.41.1
 
 flake8==6.0.0
 django-webtest==1.9.10
