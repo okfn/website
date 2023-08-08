@@ -305,7 +305,7 @@
           @apply block w-6 h-6 bg-black;
 
           content: '';
-          mask: url(/images/icons/header-search.svg) no-repeat center;
+          mask: url(/assets/img/icons/header-search.svg) no-repeat center;
         }
       }
 
