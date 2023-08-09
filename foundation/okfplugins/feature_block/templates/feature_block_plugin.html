@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 {% if instance.block_type == 'white_box'%}
+=======
+<!-- White-->
+{% if instance.block_type == 'white'%}
+>>>>>>> Add new types to feature plugin
   {% if instance.url and instance.url != '' %}
   <a href="{{ instance.url }}" class="relative block px-4 lg:px-8 pt-5 lg:pt-10 pb-28 border-3 border-black bg-white bg-opacity-30 group">
   {% else %}
@@ -12,6 +17,8 @@
   {% else %}
   </div>
   {% endif %}
+
+<!-- Transparent title -->
 {% elif instance.block_type == 'transparent_title' %}
   {% if instance.url and instance.url != '' %}
 <a href="{{ instance.url }}" class="feature-item -center">
@@ -36,24 +43,28 @@
   {% else %}
   </div>
   {% endif %}
-{% elif instance.block_type == 'transparent' %}
+
+<!-- Transparent without Title -->
+{% elif instance.block_type == 'transparent_no_title' %}
   {% if instance.url and instance.url != '' %}
   <a href="{{ instance.url }}" class="feature-item">
   {% else %}
   <div class="feature-item">
   {% endif %}
-   <figure class="">
-     <img src="{% if instance.image %}{{ instance.image.url}}{% endif %}" alt="">
-   </figure>
-   <span class="description">{{ instance.text}}</span>
+  <figure class="">
+    <img src="{% if instance.image %}{{ instance.image.url}}{% endif %}" alt="">
+  </figure>
+  <span class="description">{{ instance.text}}</span>
   {% if instance.url and instance.url != '' %}
-     <em class="link-arrow-curved">
-       Learn more
-     </em>
+    <em class="link-arrow-curved">
+      Learn more
+    </em>
   </a>
   {% else %}
   </div>
   {% endif %}
+
+<!-- Background Rounded -->
 {% elif instance.block_type == 'background_rounded' %}
 <a href="{{ instance.url }}" class="content-grid__item-rounded relative flex items-center justify-center p-4 group aspect-square rounded-[2rem] overflow-hidden">
   <h3 class="relative z-10 title block font-bold text-2xl"> {{ instance.title }} </h3>
@@ -61,7 +72,13 @@
     <img src="{% if instance.image %}{{ instance.image.url}}{% endif %}" alt="OKFN" class="w-full h-full object-cover">
   </div>
 </a>
+<<<<<<< HEAD
 {% elif instance.block_type == 'yellow_box' %}
+=======
+
+<!-- Yellow -->
+{% elif instance.block_type == 'yellow' %}
+>>>>>>> Add new types to feature plugin
   {% if instance.url and instance.url != '' %}
   <a href="{{ instance.url }}" class="content-grid__item">
   {% else %}
@@ -75,10 +92,30 @@
   {% else %}
   </div>
   {% endif %}
+<<<<<<< HEAD
 {% elif instance.block_type == 'blue' or instance.block_type == 'purple' or instance.block_type == 'yellow'%}
 <a href="{{ instance.url }}" class="content-grid__item-background relative flex items-center justify-center p-4 group aspect-square -has-bg-circle -bg-circle-full {% if instance.block_type != 'blue'%}-bg-circle-okfn-{{ instance.block_type }} {% endif %} text-{{ instance.text_color }}">
   <h3 class="title relative z-10 title block font-bold text-2xl"> {{ instance.title }} </h3>
+=======
+
+<!-- Blue or Purple -->
+{% elif instance.block_type == 'blue' or instance.block_type == 'purple' %}
+<a href="{{ instance.url }}" class="relative flex items-center justify-center p-4 group aspect-square -has-bg-circle -bg-circle-full {% if instance.block_type != 'blue'%}-bg-circle-okfn-{{ instance.block_type }} {% endif %}">
+  <h3 class="relative z-10 title block font-bold text-2xl"> {{ instance.title }} </h3>
+>>>>>>> Add new types to feature plugin
 </a>
+
+<!-- Header Only with Blue Background -->
+{% elif instance.block_type == 'header_background' %}
+<a href="{{ instance.url }}" class="relative flex items-center -has-bg-circles min-h-[25rem] px-4 lg:px-8 py-5 lg:py-10 pb-28 border-3 border-black bg-white bg-opacity-30 group">
+  <h3 class="title block w-full font-bold text-lg text-center">
+    {{ instance.title }}
+    <span class="block font-mono">{{ instance.text }}</span>
+  </h3>
+  <span class="link-arrow-curved absolute left-8 bottom-8 group-hover:drop-shadow-okfn">Learn more</span>
+</a>
+
+<!-- Default -->
 {% else %}
   {% if instance.url and instance.url != '' %}
   <a href="{{ instance.url }}" class="content-grid__item">

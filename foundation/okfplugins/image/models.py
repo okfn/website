@@ -10,9 +10,14 @@ class OKImage(CMSPlugin):
     url = models.CharField(max_length=400, default="", blank=True)
     caption = models.CharField(max_length=400, default="", blank=True)
     alt = models.CharField(max_length=400, default="", blank=True)
+<<<<<<< HEAD
     show_caption = models.BooleanField(
         default=False, verbose_name="Use caption instead of text"
     )
+=======
+    show_caption = models.BooleanField(default=False)
+    show_caption = models.BooleanField(default=False)
+>>>>>>> Add new types to feature plugin
     in_column = models.BooleanField(default=False)
     in_gallery = models.BooleanField(default=False)
     in_carousel = models.BooleanField(default=False)

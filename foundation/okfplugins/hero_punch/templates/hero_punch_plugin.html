@@ -1,16 +1,71 @@
-<!-- hero punch -->
-<section class="sect sect-splash-hero mb-20">
-  <div class="sect__content">
-    <div class="flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-2.5">
-      <div class="lg:w-8/12">
-        <h1 class="text-h0 !leading-tight">
-          <strong>{{ instance.title }}</strong>
-        </h1>
-      </div>
-      <div class="w-6/12 lg:w-4/12 flex">
-        <img class="w-full mx-auto" src="{{ instance.image.url }}" alt="{{ instance.image_alt }}">
+<!-- default-->
+{% if instance.banner_type == 'default' %}
+  <section class="sect sect-splash-hero mb-20">
+    <div class="sect__content">
+      <div class="flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-2.5">
+        <div class="lg:w-8/12">
+          <h1 class="text-h0 !leading-tight">
+            <strong>{{ instance.title }}</strong>
+          </h1>
+        </div>
+        <div class="w-6/12 lg:w-4/12 flex">
+          <img class="w-full mx-auto" src="{{ instance.image.url }}" alt="{{ instance.image_alt }}">
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- /hero unch -->
+  </section>
+
+<!-- section default-->
+{% elif instance.banner_type == 'opening_default' %}
+  <section class="sect sect-hero -tighten-1 mx-auto -has-bg-circle -bg-circle-okfn-purple -bg-circle-lg mb-20">
+    <div class="sect__content">
+      <div class="lg:flex lg:gap-x-8 lg:items-center md:flex-row-reverse md:!gap-x-28">
+        <div class="flex-shrink-0">
+          <div class="flex-shrink-0 mb-10 lg:mb-0">
+            <img  src="{{ instance.image.url }}" alt="{{ instance.image_alt }}" class="mx-auto" alt="Home Hero">
+          </div>
+        </div>
+        <div class="flex-grow">
+          <h2 class="mb-8 font-bold text-h1 leading-none">{{ instance.title | safe}}</h2>
+          <span class="block mb-16 text-2xl">{{ instance.text | safe }}</span>
+          <a href="{{ instance.url }}" class="btn">{{ instance.url_text }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- section center-->
+{% elif instance.banner_type == 'opening_center' %}
+  <section class="sect sect-library md:!col-start-5 md:!col-end-9 -has-bg-circle -bg-circle-lg -bg-circle-okfn-green before:top-1/2 before:left-1/2 before:-translate-y-1/2 mb-20 text-center">
+    <div class="sect__content">
+      <img src="/assets/images/home-sect-library.png"  src="{{ instance.image.url }}" alt="{{ instance.image_alt }}">
+      <h2 class="mb-8 font-bold text-h1 leading-none">{{ instance.title | safe }}</h2>
+      <p class="mb-10 text-2xl">
+        {{ instance.text | safe}}
+      </p>
+      <a href="{{ instance.url }}" class="btn">{{ instance.url_text }}</a>
+    </div>
+  </section>
+
+<!-- section cta newsletter-->
+{% elif instance.banner_type == 'cta_newsletter' %}
+  <section class="sect sect-newsletter -tighten-1 mb-20 -has-bg-circle -bg-circle-lg before:top-full before:left-full before:-translate-y-1/2 before:-translate-x-1/2">
+    <div class="sect__content">
+      <div class="lg:flex lg:flex-row-reverse lg:items-center lg:gap-16">
+        <img class="mx-auto lg:flex-shrink-0" src="/assets/img/section-newsletter.png" alt="">
+        <div class="lg:flex-grow">
+          <h2 class="mb-5 text-h1 leading-none font-bold">{{ instance.title | safe }}</h2>
+          <p class="mb-8 text-2xl leading-normal">{{ instance.text | safe }}</p>
+          <form action="https://us9.list-manage.com/subscribe?u=73f922f8e68e21a10efa21f02&id=32d370a7fc" method="get" class="form">
+            <div class="input-fake flex items-center">
+              <input class="form-control flex-grow w-auto min-w-0 mr-2" type="email" name="MERGE0" placeholder="Your email" />
+              <a href="https://us9.list-manage.com/subscribe?u=73f922f8e68e21a10efa21f02&id=32d370a7fc" class="btn flex-shrink-0" type="submit">
+                <span>Subscribe</span>
+                </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
