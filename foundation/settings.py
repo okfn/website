@@ -171,7 +171,6 @@ INSTALLED_APPS = (
     'foundation.okfplugins.list',
     'foundation.okfplugins.content_list',
     'foundation.okfplugins.number_stat',
-    'article_list_item'
 )
 
 MIDDLEWARE = [
