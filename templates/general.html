@@ -41,16 +41,13 @@
                     <li class="main-nav__item -search switcher">
                       <input type="checkbox" id="switch-search" class="switcher__indicator">
                       <label for="switch-search" class="switcher__trigger icon">
-                        <span>
-                          <!-- <img src="/images/icons/header-search.svg" class="-search__open" alt="Search"> -->
-                          <!-- <img src="/images/icons/close.svg" class="-search__close" alt="Close search"> -->
-                        </span>
+                        <span></span>
                       </label>
                       <form action="/search" class="switcher__target form main-header__search">
                         <div class="input-fake flex">
                           <input class="form-control flex-grow" name="q" type="text" />
                           <button class="flex-shrink-0">
-                            <img src="/assets/images/icons/header-search.svg" class="max-w-none" alt="Search">
+                            <img src="{% static '/img/icons/header-search.svg' %}" class="max-w-none" alt="Search">
                           </button>
                         </div>
                       </form>
