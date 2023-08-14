@@ -15,10 +15,18 @@ BLOCK_CHOICES = (
 )
 
 
+<<<<<<< HEAD
 TEXT_COLOR_CHOICES = (
     ("black", "Black"),
     ("white", "White")
 )
+=======
+class FeatureBlockContainer(CMSPlugin):
+    title = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.title
+>>>>>>> Added feature block container plugin
 
 
 class FeatureBlock(CMSPlugin):

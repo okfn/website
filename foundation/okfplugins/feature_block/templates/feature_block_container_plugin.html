@@ -1,0 +1,10 @@
+<section class="sect sect-features -tighten-1 mb-20">
+  <div class="sect__content">
+    <h2 class="mb-20 text-h1 text-center font-bold leading-none">{{ instance.title | safe }}</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16 mx-auto">
+      {% for instance in instance.child_plugin_instances %}
+        {% include 'feature_block_plugin.html'  with instance=instance %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
