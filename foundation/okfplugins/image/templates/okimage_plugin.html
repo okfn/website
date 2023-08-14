@@ -2,7 +2,7 @@
    <div class="gallery__item pt-20">
      <figure class="img-set {% if instance.text_black %}text-black{% endif %}">
        <div class="image">
-         <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" class="h-[28rem]" alt="">
+         <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" class="h-[28rem]" alt="{{ instance.alt }}" title="{{ instance.alt }}">
        </div>
        <figcaption class="text">
          <strong class="title">{{ instance.text }}</strong>
@@ -12,7 +12,7 @@
 {% elif instance.in_carousel %}
   <figure class="img-set ">
     <div class="image">
-      <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" class="" alt="">
+      <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" alt="{{ instance.alt }}" title="{{ instance.alt }}">
     </div>
     <figcaption class="text">
         <strong class="title">{{ instance.text }}</strong>
@@ -29,7 +29,7 @@
         {% endif %}
         <figure class="img-set {% if instance.full_width %}-full{% endif %} {% if instance.text_black %}text-black{% endif %}">
           <div class="image">
-            <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" class="" alt="{{ image.alt }}">
+            <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" alt="{{ instance.alt }}" title="{{ instance.alt }}">
           </div>
           <figcaption class="text">
             {% if not instance.show_caption %}

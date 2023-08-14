@@ -2,7 +2,7 @@ from django.db import models
 from cms.models.pluginmodel import CMSPlugin
 
 BANNER_CHOICES = (
-    ("warning", ""),
+    ("warning", "warning"),
     ("success", "success"),
     ("error", "error"),
     ("info", "info"),
