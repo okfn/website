@@ -16,8 +16,11 @@ class OKImage(CMSPlugin):
     )
 =======
     show_caption = models.BooleanField(default=False)
+<<<<<<< HEAD
     show_caption = models.BooleanField(default=False)
 >>>>>>> Add new types to feature plugin
+=======
+>>>>>>> Removed duplicate line
     in_column = models.BooleanField(default=False)
     in_gallery = models.BooleanField(default=False)
     in_carousel = models.BooleanField(default=False)
