@@ -1,10 +1,14 @@
 {% load cms_tags %}
 <div class="sect -tighten-1 sect-generic mb-20">
     <div class="sect__content">
-      <div class="grid {{ grid_cols_class }} gap-10 md:gap-3">
-      {% for plugin in instance.child_plugin_instances %}
-          {% render_plugin plugin %}
-      {% endfor %}
+      <div class="grid md:grid-cols-{{ instance.columns }} gap-10 md:gap-3">
+        <!--TODO: col-span-{n} did not work, so forloop is used instead-as a quick fix -->
+        {% for _ in skip_columns %}
+          <div></div>
+        {% endfor %}
+        {% for plugin in instance.child_plugin_instances %}
+            {% render_plugin plugin %}
+        {% endfor %}
     </div>
   </div>
 </div>
