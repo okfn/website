@@ -3,8 +3,8 @@ from cms.models.pluginmodel import CMSPlugin
 
 
 BLOCK_CHOICES = (
-    ("yellow", "Yellow"),
-    ("white", "White"),
+    ("yellow_box", "Yellow Box"),
+    ("white_box", "White Box"),
     ("transparent_title", "Transparent with Title"),
     ("transparent", "Transparent"),
     ("background_rounded", "Rounded corners"),
