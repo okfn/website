@@ -1,8 +1,10 @@
-<div class="banner {{ instance.banner_type }} mb-20">
+{% load markdown_deux_tags %}
+<div class="banner -{{ instance.banner_type }} mb-20">
     <div class="banner__content">
         <div class="container">
             <div class="col-span-full">
-              <span class="title">{{ instance.title }}</span> {{ instance.text }}
+              <span class="title">{{ instance.title }}</span> 
+              {{ instance.text|markdown }}
             </div>
         </div>
     </div>

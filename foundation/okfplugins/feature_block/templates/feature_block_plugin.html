@@ -1,4 +1,4 @@
-{% if instance.block_type == 'white'%}
+{% if instance.block_type == 'white_box'%}
   {% if instance.url and instance.url != '' %}
   <a href="{{ instance.url }}" class="relative block px-4 lg:px-8 pt-5 lg:pt-10 pb-28 border-3 border-black bg-white bg-opacity-30 group">
   {% else %}
@@ -55,13 +55,13 @@
   </div>
   {% endif %}
 {% elif instance.block_type == 'background_rounded' %}
-<a href="{{ instance.url }}" class="relative flex items-center justify-center p-4 group aspect-square rounded-[2rem] overflow-hidden">
+<a href="{{ instance.url }}" class="content-grid__item-rounded relative flex items-center justify-center p-4 group aspect-square rounded-[2rem] overflow-hidden">
   <h3 class="relative z-10 title block font-bold text-2xl"> {{ instance.title }} </h3>
   <div class="image absolute inset-0 z-0">
     <img src="{% if instance.image %}{{ instance.image.url}}{% endif %}" alt="OKFN" class="w-full h-full object-cover">
   </div>
 </a>
-{% elif instance.block_type == 'yellow' %}
+{% elif instance.block_type == 'yellow_box' %}
   {% if instance.url and instance.url != '' %}
   <a href="{{ instance.url }}" class="content-grid__item">
   {% else %}
@@ -75,9 +75,9 @@
   {% else %}
   </div>
   {% endif %}
-{% elif instance.block_type == 'blue' or instance.block_type == 'purple' %}
-<a href="{{ instance.url }}" class="relative flex items-center justify-center p-4 group aspect-square -has-bg-circle -bg-circle-full {% if instance.block_type != 'blue'%}-bg-circle-okfn-{{ instance.block_type }} {% endif %}}">
-  <h3 class="relative z-10 title block font-bold text-2xl"> {{ instance.title }} </h3>
+{% elif instance.block_type == 'blue' or instance.block_type == 'purple' or instance.block_type == 'yellow'%}
+<a href="{{ instance.url }}" class="content-grid__item-background relative flex items-center justify-center p-4 group aspect-square -has-bg-circle -bg-circle-full {% if instance.block_type != 'blue'%}-bg-circle-okfn-{{ instance.block_type }} {% endif %} text-{{ instance.text_color }}">
+  <h3 class="title relative z-10 title block font-bold text-2xl"> {{ instance.title }} </h3>
 </a>
 {% else %}
   {% if instance.url and instance.url != '' %}

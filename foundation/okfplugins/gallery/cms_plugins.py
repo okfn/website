@@ -11,7 +11,7 @@ class GalleryPlugin(CMSPluginBase):
     module = "OKF v2"
     render_template = "gallery_plugin.html"
     allow_children = True
-    name = _("Gallery")
+    name = _("Running Gallery")
 
     def render(self, context, instance, placeholder):
         context = super().render(context, instance, placeholder)
