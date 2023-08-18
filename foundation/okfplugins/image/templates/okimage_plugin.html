@@ -6,7 +6,9 @@
          <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" class="h-[28rem]" alt="{{ instance.alt }}" title="{{ instance.alt }}">
        </div>
        <figcaption class="text">
-         <strong class="title">{{ instance.caption }}</strong>
+        <strong class="title">
+          {% if instance.show_caption %} {{ instance.caption }} {% else %} {{ instance.text }} {% endif %}
+        </strong>
        </figcaption>
      </figure>
    </div>
@@ -18,7 +20,9 @@
       <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" alt="{{ instance.alt }}" title="{{ instance.alt }}">
     </div>
     <figcaption class="text">
-        <strong class="title">{{ instance.text }}</strong>
+      <strong class="title">
+        {% if instance.show_caption %} {{ instance.caption }} {% else %} {{ instance.text }} {% endif %}
+      </strong>
     </figcaption>
   </figure>
 
