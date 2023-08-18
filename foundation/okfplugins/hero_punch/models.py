@@ -5,7 +5,6 @@ LIST_TYPES = (
     ("default", "Default"),
     ("opening_default", "Opening Default"),
     ("opening_center", "Opening Center"),
-    ("cta_newsletter", "Newsletter"),
 )
 
 
