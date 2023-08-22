@@ -20,4 +20,25 @@
       @apply absolute left-8 bottom-8 font-mono text-sm;
     }
   }
+
+  &__item-rounded {
+    &:hover {
+      @apply bg-okfn-yellow;
+    }
+
+    &:active {
+      @apply bg-okfn-blue duration-75;
+    }
+  }
+
+  &__item-background {
+    &:hover::before {
+      @apply bg-okfn-yellow;
+    }
+
+    &:active::before {
+      @apply bg-okfn-blue duration-75;
+    }
+  }
+  
 }
