@@ -4,7 +4,7 @@ from cms.models.pluginmodel import CMSPlugin
 LIST_TYPES = (
     ("long", "Long"),
     ("short", "Short"),
-    ("xl", "XL"),
+    ("xl", "XL no title"),
 )
 
 
