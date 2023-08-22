@@ -11,7 +11,7 @@ HEADER_CHOICES = (
 class Header(CMSPlugin):
     title = models.CharField(max_length=100)
     text = models.CharField(max_length=200)
-    second_text = models.CharField(max_length=200, blank=True)
+    second_text = models.CharField(max_length=200, blank=True, verbose_name="Highlight text")
     image_alt = models.CharField(max_length=200)
     image = models.ImageField(upload_to="headers/images", blank=True)
     header_type = models.CharField(max_length=3, choices=HEADER_CHOICES, default="h1")
