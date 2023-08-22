@@ -5,7 +5,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("cms", "0022_auto_20180620_1551"),
         ("gallery", "0001_initial"),

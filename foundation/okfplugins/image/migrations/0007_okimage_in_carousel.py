@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('image', '0006_okimage_full_width'),
+        ("image", "0006_okimage_full_width"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='okimage',
-            name='in_carousel',
+            model_name="okimage",
+            name="in_carousel",
             field=models.BooleanField(default=False),
         ),
     ]
