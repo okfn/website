@@ -14,7 +14,7 @@ class FeatureBlockContainerPlugin(CMSPluginBase):
     allow_children = True
     render_template = "feature_block_container_plugin.html"
     name = _("Feature Block Container")
-    child_classes = ["FeatureBlock"]
+    child_classes = ["FeatureBlockPlugin"]
 
     def render(self, context, instance, placeholder):
         context = super().render(context, instance, placeholder)
@@ -30,7 +30,6 @@ class FeatureBlockPlugin(CMSPluginBase):
     cache = False
     name = _("Feature Block")
     form = FeatureBlockForm
-    parent_classes = ["FeatureBlockContainerPlugin"]
 
     def render(self, context, instance, placeholder):
         context = super().render(context, instance, placeholder)
