@@ -8,8 +8,6 @@ asgiref==3.7.2
     # via
     #   django
     #   django-countries
-async-timeout==4.0.2
-    # via redis
 beautifulsoup4==4.12.2
     # via -r requirements.in
 cachetools==4.2.4
@@ -101,7 +99,7 @@ django-treebeard==4.7
     # via
     #   -r requirements.in
     #   django-cms
-djangocms-admin-style==3.2.4
+djangocms-admin-style==3.2.5
     # via
     #   -r requirements.in
     #   django-cms
@@ -218,9 +216,7 @@ tinycss2==1.1.1
     #   cssselect2
     #   svglib
 typing-extensions==4.2.0
-    # via
-    #   asgiref
-    #   django-countries
+    # via django-countries
 unidecode==1.1.1
     # via django-filer
 urllib3==1.26.5
