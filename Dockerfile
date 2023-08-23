@@ -13,8 +13,6 @@ COPY deployment/nginx.conf /etc/nginx/conf.d/default.conf
 COPY deployment/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY deployment/gunicorn.conf /etc/supervisor/conf.d/gunicorn.conf
 
-COPY aldryn_quote ./aldryn_quote
-COPY aldryn_video ./aldryn_video
 COPY docs ./docs
 COPY foundation ./foundation
 COPY .env.base ./.env.base
