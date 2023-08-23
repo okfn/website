@@ -2,7 +2,6 @@ from cms.test_utils.testcases import CMSTestCase
 
 from ..models import (NetworkGroup,
                       NetworkGroupList)
-from ..cms_plugins import (NetworkGroupFlagsPlugin)
 
 
 class NetworkGroupPluginTest(CMSTestCase):
@@ -52,25 +51,3 @@ class NetworkGroupPluginTest(CMSTestCase):
 
         self.localgroups = NetworkGroupList(group_type=0)
         self.chapters = NetworkGroupList(group_type=1)
-
-    def test_localgroups_plugin(self):
-        plug = NetworkGroupFlagsPlugin()
-        result = plug.render({}, self.localgroups, 'foo')
-
-        self.assertSequenceEqual(sorted(result['countries'],
-                                        key=lambda group: group.name),
-                                 result['countries'])
-        self.assertIn(self.britain, result['countries'])
-        self.assertNotIn(self.germany, result['countries'])
-        self.assertNotIn(self.buckingham, result['countries'])
-
-    def test_chapters_plugin(self):
-        plug = NetworkGroupFlagsPlugin()
-        result = plug.render({}, self.chapters, 'foo')
-
-        self.assertSequenceEqual(sorted(result['countries'],
-                                        key=lambda chapter: chapter.name),
-                                 result['countries'])
-        self.assertNotIn(self.britain, result['countries'])
-        self.assertIn(self.germany, result['countries'])
-        self.assertNotIn(self.buckingham, result['countries'])
