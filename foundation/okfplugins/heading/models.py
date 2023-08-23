@@ -20,7 +20,6 @@ class Heading(CMSPlugin):
         max_length=6, choices=HEADINGS_CHOICES, default="h1"
     )
     highlighted = models.BooleanField(default=False)
-    is_anchor = models.BooleanField(default=False)
     anchor_id = models.CharField(max_length=200, blank=True)
     alignment = models.CharField(
         max_length=6, choices=HEADINGS_ALIGNMENTS, default="center"

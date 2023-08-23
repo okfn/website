@@ -2,12 +2,10 @@
 <!-- heading -->
 <div class="headline -tighten-1 text-center mb-20">
   <h1 class="col-span-full px-3 py-5 font-{% if instance.highlighted %}mono{% else %}bold{% endif %} text-{{ instance.alignment }} text-{{ instance.heading_type }}">
-    {% if instance.is_anchor %}
-    <a id="{{ instance.anchor_id }}">
-    {% endif %}
+    {% if instance.anchor_id != '' %}
+      <a id="{{ instance.anchor_id }}"> {{ instance.title | markdown }} </a>
+    {% else %}
       {{ instance.title | markdown }}
-    {% if instance.is_anchor %}
-    </a>
     {% endif %}
   </h1>
 </div>
