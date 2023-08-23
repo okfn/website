@@ -2,7 +2,7 @@
 <section class="sect sect-gallery true-w-full -mt-20 mb-20">
   <div class="sect__content overflow-hidden">
     <div class="slider-wrapper">
-      <div class="slider -is-width-auto" data-slider="{ autoplay: true, autoplaySpeed: 0, arrows: false, cssEase: 'linear', slidesToShow: 1, slidesToScroll: 1, speed: 9000, variableWidth: true }" data-slider-mobile="{ autoplay: true, autoplaySpeed: 0, arrows: false, cssEase: 'linear', slidesToShow: 1, slidesToScroll: 1, speed: 9000, variableWidth: true }">
+      <div class="slider -is-width-auto" data-slider="{ autoplay: true, autoplaySpeed: 0, draggable: true, arrows: false, cssEase: 'linear', slidesToShow: 1, slidesToScroll: 1, speed: 9000, variableWidth: true, pauseOnHover: true }" data-slider-mobile="{ autoplay: true, autoplaySpeed: 0, draggable: true, arrows: false, cssEase: 'linear', slidesToShow: 1, slidesToScroll: 1, speed: 9000, variableWidth: true, pauseOnHover: true }">
       {% for plugin in instance.child_plugin_instances %}
           {% render_plugin plugin %}
       {% endfor %}

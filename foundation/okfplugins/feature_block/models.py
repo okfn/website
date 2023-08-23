@@ -3,14 +3,20 @@ from cms.models.pluginmodel import CMSPlugin
 
 
 BLOCK_CHOICES = (
-    ("yellow", "Yellow"),
-    ("white", "White"),
+    ("yellow_box", "Yellow Box"),
+    ("white_box", "White Box"),
     ("transparent_title", "Transparent with Title"),
     ("transparent", "Transparent"),
     ("background_rounded", "Rounded corners"),
     ("blue", "Blue Background"),
     ("yellow", "Yellow Background"),
     ("purple", "Purple Background"),
+)
+
+
+TEXT_COLOR_CHOICES = (
+    ("black", "Black"),
+    ("white", "White")
 )
 
 
@@ -24,6 +30,9 @@ class FeatureBlock(CMSPlugin):
     )
     image = models.ImageField(upload_to="feature_block/images", blank=True)
     url = models.CharField(max_length=400, blank=True)
+    text_color = models.CharField(
+        max_length=10, choices=TEXT_COLOR_CHOICES, default="black"
+    )
 
     def __str__(self):
         return self.title

@@ -33,4 +33,5 @@ class GridColumnsPlugin(CMSPluginBase):
     def render(self, context, instance, placeholder):
         context = super().render(context, instance, placeholder)
         context['grid_cols_class'] = self._class_mapping[instance.columns]
+        context['skip_columns'] = range(instance.skip_columns)
         return context
