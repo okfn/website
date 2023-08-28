@@ -1,5 +1,4 @@
 from django.contrib import admin
-from django import forms
 import reversion
 from .models import FooterModel
 
