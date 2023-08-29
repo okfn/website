@@ -13,3 +13,9 @@ class CarouselPlugin(CMSPluginBase):
     cache = False
     allow_children = True
     name = _("Carousel")
+
+    def render(self, context, instance, placeholder):
+        instance.add_background_variables(context)
+        context = super().render(context, instance, placeholder)
+
+        return context

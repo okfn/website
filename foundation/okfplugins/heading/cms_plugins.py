@@ -14,6 +14,7 @@ class PageHeadingPlugin(CMSPluginBase):
     name = _("Heading")
 
     def render(self, context, instance, placeholder):
+        instance.add_background_variables(context)
         context = super().render(context, instance, placeholder)
 
         return context
