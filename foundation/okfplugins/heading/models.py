@@ -1,5 +1,5 @@
 from django.db import models
-from cms.models.pluginmodel import CMSPlugin
+from ..background.models import AbstractBackgroundPlugin
 
 HEADINGS_CHOICES = (
     ("h0", "h1"),
@@ -14,7 +14,7 @@ HEADINGS_CHOICES = (
 HEADINGS_ALIGNMENTS = (("center", "Center"), ("left", "Left"), ("right", "Right"))
 
 
-class Heading(CMSPlugin):
+class Heading(AbstractBackgroundPlugin):
     title = models.CharField(max_length=200)
     heading_type = models.CharField(
         max_length=6, choices=HEADINGS_CHOICES, default="h1"

@@ -1,8 +1,8 @@
 from django.db import models
-from cms.models.pluginmodel import CMSPlugin
+from ..background.models import AbstractBackgroundPlugin
 
 
-class Carousel(CMSPlugin):
+class Carousel(AbstractBackgroundPlugin):
     title = models.CharField(max_length=500)
 
     def __str__(self):
