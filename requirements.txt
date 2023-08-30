@@ -53,8 +53,6 @@ django-cms==3.11.3
     # via
     #   -r requirements.in
     #   djangocms-attributes-field
-    #   djangocms-file
-    #   djangocms-link
     #   djangocms-picture
     #   djangocms-text-ckeditor
 django-compressor==4.4
@@ -68,8 +66,6 @@ django-environ==0.10.0
 django-filer==2.2.6
     # via
     #   -r requirements.in
-    #   djangocms-file
-    #   djangocms-link
     #   djangocms-picture
 django-formtools==2.4.1
     # via django-cms
@@ -112,13 +108,7 @@ djangocms-admin-style==3.2.4
 djangocms-attributes-field==3.0.0
     # via
     #   -r requirements.in
-    #   djangocms-file
-    #   djangocms-link
     #   djangocms-picture
-djangocms-file==3.0.1
-    # via -r requirements.in
-djangocms-link==3.1.1
-    # via -r requirements.in
 djangocms-picture==4.0.0
     # via -r requirements.in
 djangocms-text-ckeditor==5.1.3

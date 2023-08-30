@@ -1,10 +1,10 @@
 from django.db import models
-from cms.models.pluginmodel import CMSPlugin
+from ..background.models import AbstractBackgroundPlugin
 
 GALLERY_TYPES = (("image_slider", "Image Slider"), ("logo_static", "Static Logo"))
 
 
-class Gallery(CMSPlugin):
+class Gallery(AbstractBackgroundPlugin):
     title = models.CharField(max_length=200, blank=True)
     gallery_type = models.CharField(
         max_length=20, choices=GALLERY_TYPES, default="image_slider"

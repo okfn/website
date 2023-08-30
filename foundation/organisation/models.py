@@ -315,3 +315,4 @@ class SignupForm(CMSPlugin):
 
 class SideBarExtension(PageExtension):
     enabled = models.BooleanField(default=True)
+    image = models.ImageField(upload_to="organisation/sidebar/images", blank=True)

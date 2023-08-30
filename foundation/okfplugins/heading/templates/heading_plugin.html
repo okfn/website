@@ -1,6 +1,12 @@
 {% load markdown_deux_tags %}
 <!-- heading -->
-<div class="headline -tighten-1 text-center mb-20">
-  <h1 class="col-span-full px-3 py-5 font-{% if instance.highlighted %}mono{% else %}bold{% endif %} text-{{ instance.alignment }} text-{{ instance.heading_type }}">{{ instance.title | markdown }}</h1>
+<div class="headline -tighten-1 text-center {{ has_bg_circle }} {{ instance.size }} {{ instance.color }} {{ css_translate }} mb-20">
+  <h1 class="col-span-full px-3 py-5 font-{% if instance.highlighted %}mono{% else %}bold{% endif %} text-{{ instance.alignment }} text-{{ instance.heading_type }}">
+    {% if instance.anchor_id != '' %}
+      <a id="{{ instance.anchor_id }}"> {{ instance.title | markdown }} </a>
+    {% else %}
+      {{ instance.title | markdown }}
+    {% endif %}
+  </h1>
 </div>
 <!-- /heading -->

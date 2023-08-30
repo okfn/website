@@ -128,12 +128,8 @@ INSTALLED_APPS = (
     'compressor',
 
     # CMS plugins
-    'djangocms_file',
     'djangocms_picture',
-    'djangocms_link',
     'djangocms_text_ckeditor',
-    'aldryn_video',
-    'aldryn_quote',
     'easy_thumbnails',
     'filer',
 
@@ -171,6 +167,7 @@ INSTALLED_APPS = (
     'foundation.okfplugins.list',
     'foundation.okfplugins.content_list',
     'foundation.okfplugins.number_stat',
+    'foundation.okfplugins.background'
 )
 
 MIDDLEWARE = [

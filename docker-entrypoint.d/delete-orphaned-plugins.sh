@@ -1,10 +1,8 @@
 # !/bin/sh
 
-# Clean remaining AppHooks left from previous removals.
+# Code to clean Plugins or AppHooks.
 # python3 manage.py cms uninstall apphooks <AppHook> --noinput
-
-# Clean CMSPlugin objects that are not attached to a page.
-python manage.py cms uninstall plugins FilePlugin LinkPlugin QuotePlugin NetworkGroupFlagsPlugin OEmbedVideoPlugin --noinput
+# python3 manage.py cms uninstall plugins <Plugin> --noinput
 
 # This will remove data in cms_cmsplugins table from all non-longer-existing plugins
 python3 manage.py cms delete-orphaned-plugins --noinput
