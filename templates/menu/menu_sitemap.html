@@ -1,12 +1,12 @@
 {% load menu_tags %}
 {% for child in children %}
 <li>
-  <a
+  <a class="font-bold"
     href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">
     {{ child.get_menu_title }}
   </a>
   {% if child.children %}
-  <ul>
+  <ul class="submenu">
     {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
   </ul>
   {% endif %}
