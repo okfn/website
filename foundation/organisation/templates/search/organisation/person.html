@@ -23,12 +23,12 @@
   <div class="col-md-8">
     {% for membership in person.unitmembership_set.all %}
     <p>
-      <i class="fa fa-hand-o-right fa-large"></i> <a href="{% url 'units' %}">{{ membership.unit.name }} ({{ membership.title }})</a>
+      <i class="fa fa-hand-o-right fa-large"></i> <a href="{% url 'units' %}">{{ membership.unit.name }} ({{ membership.title }}) ddddd</a>
     </p>
     {% endfor %}
     {% for membership in person.boardmembership_set.all %}
     <p>
-      <i class="fa fa-hand-o-right fa-large"></i> <a href="{% url membership.board.slug %}">{{ membership.board.name }} ({{ membership.title }})</a>
+      <i class="fa fa-hand-o-right fa-large"></i> <a href="{{ membership.board.get_absolute_url }}">{{ membership.board.name }} ({{ membership.title }})</a>
     </p>
     {% endfor %}
     {% for membership in person.networkgroupmembership_set.all %}
