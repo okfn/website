@@ -1,36 +1,45 @@
 {% load markdown_deux_tags %}
+{% load static %}
 
-<h3>
-  <a href="{{ networkgroup.get_absolute_url }}">
+<a class="block text-okfn-sm group" href="{{ networkgroup.get_absolute_url }}">
+  <h3 class="mt-3 mb-3 text-h3 font-bold group-hover:text-okfn-blue group-active:text-okfn-purple transition-colors duration-100">
     {{networkgroup.get_group_type_display }}: {{ networkgroup.name }}
-  </a>
-</h3>
-<div class="row">
-  <div class="col-md-8">
-    {{ networkgroup.description|markdown }}
-    <p>
-      <i class="fa fa-globe fa-large"></i>
-      {% if networkgroup.region %}{{ networkgroup.region }}, {% endif %}{{ networkgroup.get_country_display }}
-      {% if networkgroup.homepage_url %}
-      <i class="fa fa-link fa-large"></i>
-      <a href="{{ networkgroup.homepage_url }}">{{ networkgroup.homepage_url }}</a>
-      {% endif %}
-      {% if networkgroup.mailinglist_url %}
-      <i class="fa fa-envelope fa-large"></i>
-      <a href="{{ networkgroup.mailinglist_url }}">Mailing list</a>
-      {% endif %}
-      {% if networkgroup.twitter %}
-      <i class="fa fa-twitter fa-large"></i>
-      <a href="http://twitter.com/{{ networkgroup.twitter}}">
-        @{{ networkgroup.twitter }}
-      </a>
-      {% endif %}
-      {% if object.facebook_url %}
-      <i class="fa fa-facebook-square fa-large"></i>
-      <a href="{{ object.facebook_url }}">
-        Facebook page
-      </a>
-      {% endif %}
-    </p>
-  </div>
-</div>
+  </h3>
+</a>
+
+<p>{{ networkgroup.description|markdown }}</p>
+
+<p class="social-icons mt-3 flex items-center gap-4">
+  <span class="flex items-center gap-2">
+    <img src="{% static '/images/icons/country.svg' %}">
+    {% if networkgroup.region %}{{ networkgroup.region }}, {% endif %}{{ networkgroup.get_country_display }}
+  </span>
+  
+  {% if networkgroup.homepage_url %}
+    <a href="{{ networkgroup.homepage_url }}" class="flex items-center gap-2">
+      <img src="{% static '/images/icons/link.svg' %}">
+      {{ networkgroup.homepage_url }}
+    </a>
+  {% endif %}
+
+  {% if networkgroup.mailinglist_url %}
+    <a href="{{ networkgroup.mailinglist_url }}" class="flex items-center gap-2">
+      <img src="{% static '/images/icons/envelope.svg' %}">
+      Mailing list
+    </a>
+  {% endif %}
+
+  {% if networkgroup.twitter %}
+    <a href="http://twitter.com/{{ networkgroup.twitter}}" class="flex items-center gap-2">
+      <img src="{% static '/images/icons/twitter.svg' %}">
+      @{{ networkgroup.twitter }}
+    </a>
+  {% endif %}
+
+  {% if object.facebook_url %}
+    <a href="{{ object.facebook_url }}">
+      <img src="{% static '/images/icons/facebook.svg' %}">
+      Facebook page
+    </a>
+  {% endif %}
+</p>

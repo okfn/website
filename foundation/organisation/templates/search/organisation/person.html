@@ -2,24 +2,26 @@
 {% load thumbnail %}
 {% load static %}
 
-<h3 class="title text-h2">{{ person.name }}</h3>
-<div class="row">  
-  <div class="col-md-8">
-    {% for membership in person.unitmembership_set.all %}
-      <p>
-        <i class="fa fa-hand-o-right fa-large"></i> <a href="{% url 'units' %}">{{ membership.unit.name }} ({{ membership.title }})</a>
-      </p>
-    {% endfor %}
-    {% for membership in person.boardmembership_set.all %}
-      <p>
-        <i class="fa fa-hand-o-right fa-large"></i> <a href="{{ membership.board.get_absolute_url }}">{{ membership.board.name }} ({{ membership.title }})</a>
-      </p>
-    {% endfor %}
-    {% for membership in person.networkgroupmembership_set.all %}
-      <p>
-        <i class="fa fa-hand-o-right fa-large"></i> <a href="{{ membership.networkgroup.get_absolute_url }}">{{ membership.networkgroup.name }} ({{ membership.title }})</a>
-      </p>
-    {% endfor %}
-    {{ person.description|markdown|truncatewords_html:80 }}
-  </div>
-</div>
+<a class="block text-okfn-sm group" href="#">
+  <h3 class="mt-3 mb-3 text-h3 font-bold group-hover:text-okfn-blue group-active:text-okfn-purple transition-colors duration-100">{{ person.name }}</h3>
+</a>
+
+{% for membership in person.unitmembership_set.all %}
+  <a href="{% url 'units' %}" class="block text-okfn-blue mb-3">
+    <i class="fa fa-hand-o-right fa-large"></i> {{ membership.unit.name }} ({{ membership.title }})
+  </a>
+{% endfor %}
+
+{% for membership in person.boardmembership_set.all %}
+  <a href="{{ membership.board.get_absolute_url }}" class="block text-okfn-blue mb-3">
+    <i class="fa fa-hand-o-right fa-large"></i> {{ membership.board.name }} ({{ membership.title }})
+  </a>
+{% endfor %}
+
+{% for membership in person.networkgroupmembership_set.all %}
+  <a href="{{ membership.networkgroup.get_absolute_url }}" class="block text-okfn-blue mb-3">
+    <i class="fa fa-hand-o-right fa-large"></i> {{ membership.networkgroup.name }} ({{ membership.title }})
+  </a>
+{% endfor %}
+
+<p>{{ person.description|markdown|truncatewords_html:50 }}</p>
