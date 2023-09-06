@@ -27,5 +27,9 @@
     .position {
       @apply block mb-8 md:mb-14 text-hl-h3;
     }
+
+    .link {
+      @apply break-all;
+    }
   }
 }
