@@ -1,0 +1,46 @@
+{% extends 'cms_apphook.html' %}
+{% load markdown_deux_tags %}
+{% load static %}
+
+{% load i18n %}
+
+{% block main %}
+    <h2 class="mb-20 px-3 py-5 font-bold text-center text-h1 border border-gray-300 cms-plugin cms-plugin-12871">
+        {{ person.name }}
+    </h2>
+    <div class="card-person mb-20" id="{{ person.name|slugify }}">    
+        <div class="card-person__content">
+            <div class="intro">
+                <div class="image flex-shrink-0">
+                    <img src="{% if person.photo %}{{ person.photo.url }}{% else %}{{ person.gravatar_url }}{% endif %}" alt="{{ person.name }}">
+                </div>
+                <div class="content">
+                    <div class="font-mono">
+                        <span class="position">{{ member.title }}</span>
+                        {% if person.url %}
+                            <a href="{{ person.url }}" class="flex items-center gap-2 mb-3">
+                                <img src="{% static '/images/icons/link.svg' %}">
+                                {{ person.url }}
+                            </a>
+                        {% endif %}
+                        {% if person.email %}
+                            <a href="mailto:{{ person.email }}" class="flex items-center gap-2 mb-3">
+                                <img src="{% static '/images/icons/envelope.svg' %}">
+                                {{ person.email }}
+                            </a>
+                        {% endif %}
+                        {% if person.twitter %}
+                            <a href="https://twitter.com/{{ person.twitter }}" class="flex items-center gap-2"> 
+                                <img src="{% static '/images/icons/twitter.svg' %}">
+                                {{ person.twitter }} 
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="block-txt">
+                {{ person.description|markdown }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
