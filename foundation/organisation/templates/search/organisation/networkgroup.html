@@ -7,7 +7,7 @@
   </h3>
 </a>
 
-<p>{{ networkgroup.description|markdown }}</p>
+<p>{{ networkgroup.description|markdown|truncatewords_html:50 }}</p>
 
 <p class="social-icons mt-3 flex items-center gap-4">
   <span class="flex items-center gap-2">
@@ -43,3 +43,5 @@
     </a>
   {% endif %}
 </p>
+<time class="date block mt-3 font-mono" date-time="{{ networkgroup.updated_at }}">{{ networkgroup.updated_at |date:"M d, Y"}}</time>
+

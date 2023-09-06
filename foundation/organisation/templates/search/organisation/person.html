@@ -25,3 +25,4 @@
 {% endfor %}
 
 <p>{{ person.description|markdown|truncatewords_html:50 }}</p>
+<time class="date block mt-3 font-mono" date-time="{{ person.updated_at }}">{{ person.updated_at |date:"M d, Y"}}</time>
