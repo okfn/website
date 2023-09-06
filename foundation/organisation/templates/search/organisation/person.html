@@ -8,19 +8,19 @@
 
 {% for membership in person.unitmembership_set.all %}
   <a href="{% url 'units' %}" class="block text-okfn-blue mb-3">
-    <i class="fa fa-hand-o-right fa-large"></i> {{ membership.unit.name }} ({{ membership.title }})
+    <i class="fa fa-hand-o-right fa-large"></i> {{ membership.unit.name }} {% if membership.title %} ({{ membership.title }}) {% endif %}
   </a>
 {% endfor %}
 
 {% for membership in person.boardmembership_set.all %}
   <a href="{{ membership.board.get_absolute_url }}" class="block text-okfn-blue mb-3">
-    <i class="fa fa-hand-o-right fa-large"></i> {{ membership.board.name }} ({{ membership.title }})
+    <i class="fa fa-hand-o-right fa-large"></i> {{ membership.board.name }} {% if membership.title %} ({{ membership.title }}) {% endif %}
   </a>
 {% endfor %}
 
 {% for membership in person.networkgroupmembership_set.all %}
   <a href="{{ membership.networkgroup.get_absolute_url }}" class="block text-okfn-blue mb-3">
-    <i class="fa fa-hand-o-right fa-large"></i> {{ membership.networkgroup.name }} ({{ membership.title }})
+    <i class="fa fa-hand-o-right fa-large"></i> {{ membership.networkgroup.name }} {% if membership.title %} ({{ membership.title }}) {% endif %}
   </a>
 {% endfor %}
 
