@@ -2,39 +2,27 @@
 {% load thumbnail %}
 {% load static %}
 
-<h3 class="title text-h2">{{ person.name }}</h3>
-<div class="row">
-  <div class="col-md-2">
-    {# TODO this fallback image it's not working if an error occurs with the desired image #}
-    <img
-      class="img-responsive"
-      src="
-      {% if person.photo %}
+<a class="block text-okfn-sm group" href="{% url 'person' person_id=person.id %}">
+  <h3 class="mt-3 mb-3 text-h3 font-bold group-hover:text-okfn-blue group-active:text-okfn-purple transition-colors duration-100">{{ person.name }}</h3>
+</a>
 
-        {% static 'img/avatar-none.png' %}
-      {% else %}
+{% for membership in person.unitmembership_set.all %}
+  <a href="{% url 'units' %}" class="block text-okfn-blue mb-3">
+    <i class="fa fa-hand-o-right fa-large"></i> {{ membership.unit.name }} {% if membership.title %} ({{ membership.title }}) {% endif %}
+  </a>
+{% endfor %}
 
-        {% static 'img/avatar-none.png' %}
-      {% endif %}"
-      alt="{{ person.name }}"
-      {% if not person.photo %}style="width: 116px; height: 116px;"{% endif %}
-    >
-  </div>
-  <div class="col-md-8">
-    {% for membership in person.unitmembership_set.all %}
-    <p>
-      <i class="fa fa-hand-o-right fa-large"></i> <a href="{% url 'units' %}">{{ membership.unit.name }} ({{ membership.title }})</a>
-    </p>
-    {% endfor %}
-    {% for membership in person.boardmembership_set.all %}
-    <p>
-      <i class="fa fa-hand-o-right fa-large"></i> <a href="{% url membership.board.slug %}">{{ membership.board.name }} ({{ membership.title }})</a>
-    </p>
-    {% endfor %}
-    {% for membership in person.networkgroupmembership_set.all %}
-    <p>
-      <i class="fa fa-hand-o-right fa-large"></i> <a href="{{ membership.networkgroup.get_absolute_url }}">{{ membership.networkgroup.name }} ({{ membership.title }})</a>
-    {% endfor %}
-    {{ person.description|markdown|truncatewords_html:80 }}
-  </div>
-</div>
+{% for membership in person.boardmembership_set.all %}
+  <a href="{{ membership.board.get_absolute_url }}" class="block text-okfn-blue mb-3">
+    <i class="fa fa-hand-o-right fa-large"></i> {{ membership.board.name }} {% if membership.title %} ({{ membership.title }}) {% endif %}
+  </a>
+{% endfor %}
+
+{% for membership in person.networkgroupmembership_set.all %}
+  <a href="{{ membership.networkgroup.get_absolute_url }}" class="block text-okfn-blue mb-3">
+    <i class="fa fa-hand-o-right fa-large"></i> {{ membership.networkgroup.name }} {% if membership.title %} ({{ membership.title }}) {% endif %}
+  </a>
+{% endfor %}
+
+<p>{{ person.description|markdown|truncatewords_html:50 }}</p>
+<time class="date block mt-3 font-mono" date-time="{{ person.updated_at }}">{{ person.updated_at |date:"M d, Y"}}</time>

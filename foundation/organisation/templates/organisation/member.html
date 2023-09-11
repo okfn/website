@@ -12,9 +12,23 @@
                 <h2 class="name">{{ person.name }}</h2>
                 <div class="font-mono">
                     <span class="position">{{ member.title }}</span>
-                    <a href="mailto:{{ person.email }}" class="block mb-3">{{ person.email }}</a>
+                    {% if person.url %}
+                        <a href="{{ person.url }}" class="flex items-center gap-2 mb-3">
+                            <img src="{% static '/images/icons/link.svg' %}">
+                            {{ person.url }}
+                        </a>
+                    {% endif %}
+                    {% if person.email %}
+                        <a href="mailto:{{ person.email }}" class="flex items-center gap-2 mb-3">
+                            <img src="{% static '/images/icons/envelope.svg' %}">
+                            {{ person.email }}
+                        </a>
+                    {% endif %}
                     {% if person.twitter %}
-                    <a href="https://twitter.com/{{ person.twitter }}"> {{ person.twitter }} </a>
+                        <a href="https://twitter.com/{{ person.twitter }}" class="flex items-center gap-2"> 
+                            <img src="{% static '/images/icons/twitter.svg' %}">
+                            {{ person.twitter }} 
+                        </a>
                     {% endif %}
                 </div>
             </div>
