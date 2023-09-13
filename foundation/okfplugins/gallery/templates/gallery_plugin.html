@@ -1,8 +1,7 @@
 {% load cms_tags %}
-
 <!-- Slider-->
-{% if instance.gallery_type == 'image_slider'%}
-  <section class="sect sect-gallery true-w-full {{ has_bg_circle }} {{ instance.size }} {{ instance.color }} {{ css_translate }} mt-20 mb-20">
+{% if instance.gallery_type == 'image_slider' %}
+  <section class="sect sect-gallery true-w-full {{ has_bg_circle }} {{ instance.size }} {{ instance.color }} {{ css_translate }} -mt-20 mb-20">
     <div class="sect__content overflow-hidden">
       <div class="slider-wrapper">
         <div class="slider -is-width-auto" data-slider="{ autoplay: true, autoplaySpeed: 0, arrows: false, cssEase: 'linear', slidesToShow: 1, slidesToScroll: 1, speed: 9000, variableWidth: true, draggable: true, pauseOnHover: true }" data-slider-mobile="{ autoplay: true, autoplaySpeed: 0, arrows: false, cssEase: 'linear', slidesToShow: 1, slidesToScroll: 1, speed: 9000, variableWidth: true, draggable: true, pauseOnHover: true }">
@@ -14,7 +13,7 @@
     </div>
   </section>
 <!-- Static Logo-->
-{% elif instance.gallery_type == 'logo_static'%}
+{% elif instance.gallery_type == 'logo_static' %}
   <section class="sect sect-generic -tighten-1 {{ has_bg_circle }} {{ instance.size }} {{ instance.color }} {{ css_translate }} mx-auto mb-20 text-center">
     <div class="sect__content">
       <h3 class="py-6 mb-20 text-2xl font-bold">{{instance.title}}</h3>
@@ -26,4 +25,19 @@
       <a href="{{instance.url}}" class="font-mono">{{instance.url_text}}</a>
     </div>
   </section>
+<!-- In Column-->
+{% elif instance.gallery_type == 'in_column' %}
+  <section class="sect sect-highlights mb-24">
+    <div class="sect__content">
+      {% if instance.title %}
+        <h2 class="mb-20 text-h1 text-center font-bold leading-none">{{instance.title | safe}}</h2>
+      {% endif %}
+      <div class="flex flex-col gap-y-10">
+        {% for plugin in instance.child_plugin_instances %}
+            {% render_plugin plugin %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
 {% endif %}
+

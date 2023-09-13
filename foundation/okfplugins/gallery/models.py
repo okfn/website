@@ -1,7 +1,7 @@
 from django.db import models
 from ..background.models import AbstractBackgroundPlugin
 
-GALLERY_TYPES = (("image_slider", "Image Slider"), ("logo_static", "Static Logo"))
+GALLERY_TYPES = (("image_slider", "Image Slider"), ("logo_static", "Static Logo"), ("in_column", "In Column"))
 
 
 class Gallery(AbstractBackgroundPlugin):
