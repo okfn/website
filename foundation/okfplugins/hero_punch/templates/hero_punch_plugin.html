@@ -1,16 +1,49 @@
-<!-- hero punch -->
-<section class="sect sect-splash-hero mb-20">
-  <div class="sect__content">
-    <div class="flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-2.5">
-      <div class="lg:w-8/12">
-        <h1 class="text-h0 !leading-tight">
-          <strong>{{ instance.title }}</strong>
-        </h1>
-      </div>
-      <div class="w-6/12 lg:w-4/12 flex">
-        <img class="w-full mx-auto" src="{{ instance.image.url }}" alt="{{ instance.image_alt }}">
+<!-- default-->
+{% if instance.banner_type == 'default' %}
+  <section class="sect sect-splash-hero mb-20">
+    <div class="sect__content">
+      <div class="flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-2.5">
+        <div class="lg:w-8/12">
+          <h1 class="text-h0 !leading-tight">
+            <strong>{{ instance.title }}</strong>
+          </h1>
+        </div>
+        <div class="w-6/12 lg:w-4/12 flex">
+          <img class="w-full mx-auto" src="{{ instance.image.url }}" alt="{{ instance.image_alt }}">
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- /hero unch -->
+  </section>
+
+<!-- section default-->
+{% elif instance.banner_type == 'opening_default' %}
+  <section class="sect sect-hero -tighten-1 mx-auto -has-bg-circle -bg-circle-okfn-purple -bg-circle-lg mb-20">
+    <div class="sect__content">
+      <div class="lg:flex lg:gap-x-8 lg:items-center md:flex-row-reverse md:!gap-x-28">
+        <div class="flex-shrink-0">
+          <div class="flex-shrink-0 mb-10 lg:mb-0">
+            <img  src="{{ instance.image.url }}" alt="{{ instance.image_alt }}" class="mx-auto" alt="Home Hero">
+          </div>
+        </div>
+        <div class="flex-grow">
+          <h2 class="mb-8 font-bold text-h1 leading-none">{{ instance.title | safe}}</h2>
+          <span class="block mb-16 text-2xl">{{ instance.text | safe }}</span>
+          <a href="{{ instance.url }}" class="btn">{{ instance.url_text }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- section center-->
+{% elif instance.banner_type == 'opening_center' %}
+  <section class="sect sect-library md:!col-start-5 md:!col-end-9 -has-bg-circle -bg-circle-lg -bg-circle-okfn-green before:top-1/2 before:left-1/2 before:-translate-y-1/2 mb-20 text-center">
+    <div class="sect__content">
+      <img src="/assets/images/home-sect-library.png"  src="{{ instance.image.url }}" alt="{{ instance.image_alt }}">
+      <h2 class="mb-8 font-bold text-h1 leading-none">{{ instance.title | safe }}</h2>
+      <p class="mb-10 text-2xl">
+        {{ instance.text | safe}}
+      </p>
+      <a href="{{ instance.url }}" class="btn">{{ instance.url_text }}</a>
+    </div>
+  </section>
+{% endif %}
