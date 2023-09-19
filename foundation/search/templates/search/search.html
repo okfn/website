@@ -5,32 +5,54 @@
 {% block title %}{% trans 'Search' %}{% endblock %}
 
 {% block main %}
-    <form action="." method="get" class="form">
-      <div class="input-fake flex items-center">
-        <input class="form-control flex-grow w-auto min-w-0 mr-2" name="q" type="text" placeholder="Your search keywords..." value="{{ query }}" />
-        <button class="btn flex-shrink-0">
-          <span>Search</span>
-        </button>
-      </div>
-    </form>
-    <hr class="mb-10"/>
-  {% if query %}
-    <h1 class="title text-h1 mb-10">{% trans 'Results' %}</h1>
-    {% for search_result in page.object_list %}
-      {% include "search/results.html" %}
-      <hr/>
-    {% empty %}
-      <p>{% trans 'No results found.' %}</p>
-    {% endfor %}
+  <form action="." method="get" class="form">
+    <div class="input-fake flex items-center">
+      <input class="form-control flex-grow w-auto min-w-0 mr-2" name="q" type="text" placeholder="Your search keywords..." value="{{ query }}" />
+      <button class="btn flex-shrink-0">
+        <span>Search</span>
+      </button>
+    </div>
+  </form>
 
-    {% if page.has_previous or page.has_next %}
-      {% trans 'Previous' as previous %}
-      {% trans 'Next' as next %}
-      <div>
-        {% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; {{ previous }}{% if page.has_previous %}</a>{% endif %}
-        |
-        {% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}{{ next }} &raquo;{% if page.has_next %}</a>{% endif %}
+  <hr class="mb-10"/>
+
+  <div class="search">
+    {% if query %}
+
+      {% if page.object_list %}
+      <div class="flex justify-center items-center" >
+        <button class="btn-result mb-10">Is this what you are looking for ?</button>
       </div>
+      <h1 class="title text-h1 mb-10 text-center font-mono">
+        <q>{% trans query %}</q>
+      </h1>
+      {% endif %}
+
+      {% for search_result in page.object_list %}
+        {% include "search/results.html" %}
+        <hr class="mb-5"/>
+      {% empty %}
+        <div class="text-h1 mb-10 text-center font-mono">
+          <q>{% trans 'No results found.' %}</q>
+        </div>
+      {% endfor %}
+
+      {% if page.has_previous or page.has_next %}
+      <ul class="flex justify-center items-center gap-4">
+        <li class="previous{% if not page.has_previous %} disabled{% endif %}">
+          <a class="pointer-events-none cursor-not-allowed" href="{% if page.has_previous %}?q={{ query }}&amp;page={{ page.previous_page_number }}{% else %}#{% endif %}">
+            &laquo; {% if timeless %}Previous{% else %}Newer{% endif %}
+          </a>
+        </li>|
+        <li class="next{% if not page.has_next %} disabled{% endif %}">
+          <a href="{% if page.has_next %}?q={{ query }}&amp;page={{ page.next_page_number }}{% else %}#{% endif %}">
+            {% if timeless %}Next{% else %}Older{% endif %} &raquo;
+          </a>
+        </li>
+      </ul>
+      {% endif %}
+
     {% endif %}
-  {% endif %}
+
+  </div>
 {% endblock %}
