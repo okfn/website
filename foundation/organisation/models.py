@@ -163,6 +163,9 @@ class Board(models.Model):
     def placeholder(self):
         return Truncator(self.name).chars(10, truncate="...") + " (sidebar)"
 
+    def get_absolute_url(self):
+        return reverse("board")
+
     def __str__(self):
         return self.name
 
@@ -315,3 +318,4 @@ class SignupForm(CMSPlugin):
 
 class SideBarExtension(PageExtension):
     enabled = models.BooleanField(default=True)
+    image = models.ImageField(upload_to="organisation/sidebar/images", blank=True)

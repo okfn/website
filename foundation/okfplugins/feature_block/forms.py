@@ -3,4 +3,4 @@ from foundation.core.svg import SvgAndImageFormField
 
 
 class FeatureBlockForm(ModelForm):
-    image = SvgAndImageFormField()
+    image = SvgAndImageFormField(required=False)

@@ -20,10 +20,12 @@
             <meta property="og:type" content="website"/>
             <meta property="og:url"
                   content="{% if request.is_secure %}https://{% else %}http://{% endif %}{{ request.get_host }}{{ request.get_absolute_url }}"/>
-            <meta property="og:description"
-                  content="{% page_attribute 'meta_description' %}"/>
-            <meta property="og:image"
-                  content="{% static 'img/OKF-logo-white-background.png' %}"/>
+            <meta property="og:description" content="{% page_attribute 'meta_description' %}"/>            
+            {% if request.current_page.sidebarextension.image.url != '' %}
+                <meta property="og:image" content="{{ request.current_page.sidebarextension.image.url }}"/>
+            {% else %}
+                <meta property="og:image" content="{% static 'img/OKF-logo-white-background.png' %}"/>
+            {% endif %}
 
             {% block head-meta-fb-open-graph-extra %}{% endblock %}
         {% endblock %}

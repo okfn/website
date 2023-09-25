@@ -1,0 +1,5 @@
+.search {
+    .btn-result {
+        @apply border-2 border-black text-black bg-white hover:text-black px-10 py-5 rounded-lg;
+    }
+}

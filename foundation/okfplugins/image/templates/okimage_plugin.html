@@ -1,14 +1,31 @@
+<!-- In Gallery-->
 {% if instance.in_gallery %}
-   <div class="gallery__item pt-20">
-     <figure class="img-set {% if instance.text_black %}text-black{% endif %}">
-       <div class="image">
-         <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" class="h-[28rem]" alt="{{ instance.alt }}" title="{{ instance.alt }}">
-       </div>
-       <figcaption class="text">
-         <strong class="title">{{ instance.text }}</strong>
-       </figcaption>
-     </figure>
-   </div>
+
+  <!-- Is a Logo-->
+  {% if instance.is_logo %}
+    {% if instance.url %}
+    <a href="{{ instance.url }}">
+    {% endif %}
+      <figure>
+        <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" alt="{{ instance.alt }}" title="{{ instance.alt }}">
+      </figure>
+    {% if instance.url %}
+    </a>
+    {% endif %}
+  {% else %}
+    <div class="gallery__item pt-20">
+      <figure class="img-set {% if instance.text_black %}text-black{% endif %}">
+        <div class="image">
+          <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" class="h-[28rem]" alt="{{ instance.alt }}" title="{{ instance.alt }}">
+        </div>
+        <figcaption class="text">
+          <strong class="title">{{ instance.text }}</strong>
+        </figcaption>
+      </figure>
+    </div>
+  {% endif %}
+
+<!-- In Carousel-->
 {% elif instance.in_carousel %}
   <figure class="img-set ">
     <div class="image">
@@ -18,50 +35,39 @@
         <strong class="title">{{ instance.text }}</strong>
     </figcaption>
   </figure>
+
+<!-- Default-->
 {% else %}
+
+  <!-- Not In Column-->
   {% if not instance.in_column %}
-    <div class="sect -tighten-2 mb-20">
-      <div class="sect__content">
-        {% if instance.url %}
-        <a href="{{ instance.url }}" class="highlight {% if not instance.show_caption %}sm:text-white{% endif %}">
-        {% endif %}
-        <figure class="img-set {% if instance.full_width %}-full{% endif %} text-black">
-          <div class="image">
-            <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" alt="{{ instance.alt }}" title="{{ instance.alt }}">
-          </div>
-          <figcaption class="text">
-            {% if not instance.show_caption %}
-              {{ instance.text }}
-            {% else %}
-              {{ instance.caption }}
-            {% endif %}
-          </figcaption>
-        </figure>
-        {% if instance.url %}
-        </a>
-        {% endif %}
-      </div>
-    </div>
-  {% else %}
+  <div class="sect -tighten-2 sect-highlights mb-20">
+    <div class="sect__content">
+  {% endif %}
+    <!-- img-set -->
     {% if instance.url %}
     <a href="{{ instance.url }}" class="highlight {% if not instance.show_caption %}sm:text-white{% endif %}">
     {% endif %}
-    <figure class="img-set {% if instance.full_width %}-full{% endif %} {% if instance.text_black %}text-black{% endif %}">
-      <div class="image">
-        <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" alt="{{ instance.alt }}" title="{{ instance.alt }}">
-      </div>
-      <figcaption class="text">
-        {% if not instance.show_caption %}
+      <figure class="img-set {% if instance.full_width %}-full{% endif %} {% if instance.text_black %}text-black{% endif %}">
+        <div class="image">
+          <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" alt="{{ instance.alt }}" title="{{ instance.alt }}">
+        </div>
+        <figcaption class="text">
+          {% if not instance.show_caption %}
           <span class="tag">{{ instance.tag }}</span>
           <strong class="title">{{ instance.text }}</strong>
           <span class="link-arrow-curved"> {{instance.more_text }}</span>
-        {% else %}
+          {% else %}
           {{ instance.caption }}
-        {% endif %}
-      </figcaption>
-    </figure>
+          {% endif %}
+        </figcaption>
+      </figure>
     {% if instance.url %}
     </a>
     {% endif %}
+    <!-- /img-set -->            
+  {% if not instance.in_column %}
+    </div>
+  </div>
   {% endif %}
 {% endif %}
