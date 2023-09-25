@@ -14,7 +14,7 @@ click==8.1.4
     # via pip-tools
 coverage==7.2.7
     # via -r requirements.dev.in
-django-webtest==1.9.10
+django-webtest==1.9.11
     # via -r requirements.dev.in
 flake8==6.1.0
     # via -r requirements.dev.in
@@ -44,11 +44,6 @@ soupsieve==2.0.1
     # via
     #   -c requirements.txt
     #   beautifulsoup4
-tomli==2.0.1
-    # via
-    #   build
-    #   pip-tools
-    #   pyproject-hooks
 waitress==1.4.4
     # via webtest
 webob==1.8.6
