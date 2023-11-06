@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from iso3166 import countries
 import csv
 
-from .models import Board, NetworkGroup, NetworkGroupMembership
+from .models import Board, NetworkGroup, NetworkGroupMembership, Person
 
 
 class BoardView(DetailView):
@@ -82,3 +82,12 @@ def networkgroup_csv_output(request):
         writer.writerow(row)
 
     return response
+
+
+class PersonView(DetailView):
+    model = Person
+    template_name = 'organisation/member_detail.html'
+
+    def get_object(self, *args, **kwargs):
+        person_id = self.kwargs.get('person_id', '')
+        return get_object_or_404(Person, id=person_id)

@@ -1,14 +1,31 @@
+<!-- In Gallery-->
 {% if instance.in_gallery %}
-   <div class="gallery__item pt-20">
-     <figure class="img-set {% if instance.text_black %}text-black{% endif %}">
-       <div class="image">
-         <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" class="h-[28rem]" alt="{{ instance.alt }}" title="{{ instance.alt }}">
-       </div>
-       <figcaption class="text">
-         <strong class="title">{{ instance.text }}</strong>
-       </figcaption>
-     </figure>
-   </div>
+
+  <!-- Is a Logo-->
+  {% if instance.is_logo %}
+    {% if instance.url %}
+    <a href="{{ instance.url }}">
+    {% endif %}
+      <figure>
+        <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" alt="{{ instance.alt }}" title="{{ instance.alt }}">
+      </figure>
+    {% if instance.url %}
+    </a>
+    {% endif %}
+  {% else %}
+    <div class="gallery__item pt-20">
+      <figure class="img-set {% if instance.text_black %}text-black{% endif %}">
+        <div class="image">
+          <img src="{% if instance.image_url %}{{ instance.image_url.url }}{% endif %}" class="h-[28rem]" alt="{{ instance.alt }}" title="{{ instance.alt }}">
+        </div>
+        <figcaption class="text">
+          <strong class="title">{{ instance.text }}</strong>
+        </figcaption>
+      </figure>
+    </div>
+  {% endif %}
+
+<!-- In Carousel-->
 {% elif instance.in_carousel %}
   <figure class="img-set ">
     <div class="image">
@@ -18,7 +35,11 @@
         <strong class="title">{{ instance.text }}</strong>
     </figcaption>
   </figure>
+
+<!-- Default-->
 {% else %}
+
+  <!-- Not In Column-->
   {% if not instance.in_column %}
   <div class="sect -tighten-2 sect-highlights mb-20">
     <div class="sect__content">

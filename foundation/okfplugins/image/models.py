@@ -16,6 +16,7 @@ class OKImage(CMSPlugin):
     in_column = models.BooleanField(default=False)
     in_gallery = models.BooleanField(default=False)
     in_carousel = models.BooleanField(default=False)
+    is_logo = models.BooleanField(default=False)
     text_black = models.BooleanField(default=False)
     full_width = models.BooleanField(default=False)
 
