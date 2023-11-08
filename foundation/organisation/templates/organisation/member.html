@@ -25,9 +25,9 @@
                         </a>
                     {% endif %}
                     {% if person.twitter %}
-                        <a href="https://twitter.com/{{ person.twitter }}" class="flex items-center gap-2"> 
+                        <a href="https://twitter.com/{{ person.twitter }}" class="flex items-center gap-2">
                             <img src="{% static '/images/icons/twitter.svg' %}">
-                            {{ person.twitter }} 
+                            @{{ person.twitter }}
                         </a>
                     {% endif %}
                 </div>
