@@ -6,13 +6,11 @@
     <img src="{% static '/img/icons/header-globe.svg' %}" class="max-w-none" alt="Language">
   </label>
   <ul class="submenu">
-    {# We filter Portuguese until all translations are finished. #}
-    {% for language in languages %}
-    {% if language.0 != "pt" %}
-    <li class="lang{% if current_language == language.0 %} active{% endif %}">
-      <a href="{% page_language_url language.0 %}" title="{% trans " Change to language:" %} {{ language.1 }}">{{language.1 }}</a>
+    <li>
+      <a href="{% page_language_url 'en' %}">English</a>
     </li>
-    {% endif %}
-    {% endfor %}
+    <li>
+      <a href="{% page_language_url 'es' %}">Español</a>
+    </li>
   </ul>
 {% endif %}
