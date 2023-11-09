@@ -1,0 +1,16 @@
+{% load i18n menu_tags static %}
+
+{% if languages|length > 1 %}
+<li class="main-nav__item -has-submenu has-children">
+  <label>
+    <img src="{% static '/img/icons/header-globe.svg' %}" class="max-w-none" alt="Language">
+  </label>
+  <ul class="submenu">
+    <li>
+      <a href="{% page_language_url 'en' %}">English</a>
+    </li>
+    <li>
+      <a href="{% page_language_url 'es' %}">Español</a>
+    </li>
+  </ul>
+{% endif %}
