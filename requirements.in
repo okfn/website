@@ -22,8 +22,8 @@ django-reversion==5.0.4
 django-sekizai==4.1.0
 django-storages==1.13.2
 django-treebeard==4.7
-django-simple-captcha==0.5.18
-djangocms-admin-style==3.2.4
+django-simple-captcha==0.5.20
+djangocms-admin-style==3.2.6
 # djangocms-attributes-field could be removed when other deps updates to 3.0.0
 djangocms-attributes-field==3.0.0
 djangocms-picture==4.0.0
@@ -41,6 +41,6 @@ micawber==0.5.5
 # django-pagedown, djangocms-text-ckeditor and easy-thumbnails use it but don't specify the version
 # this is a secure version
 pillow==10.0.0
-psycopg2-binary==2.9.6
+psycopg2-binary==2.9.9
 requests==2.31.0
 whoosh==2.7.4
