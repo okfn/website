@@ -2,6 +2,7 @@ from cms.models.pluginmodel import CMSPlugin
 
 from django.db import models
 
+
 class CardPerson(CMSPlugin):
     name = models.CharField(max_length=100)
     role = models.CharField(max_length=100, null=True, blank=True)
