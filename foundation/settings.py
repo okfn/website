@@ -297,7 +297,7 @@ LANGUAGE_CODE = 'en'
 LANGUAGES = [
     ('en', 'English'),
     ('es', 'Spanish'),
-    ('pt', 'Portuguese'),
+    ('fr', 'French'),
 ]
 
 TIME_ZONE = 'UTC'
