@@ -1,0 +1,39 @@
+{% load markdown_deux_tags %}
+{% load static %}
+
+<div class="card-person mb-20 {{ className }}" id="{{ instance.name|slugify }}">
+    <div class="card-person__content">
+        <div class="intro">
+            <div class="image flex-shrink-0">
+                <img src="{% if instance.photo %}{{ instance.photo.url }}{% else %}{{ instance.gravatar_url }}{% endif %}" alt="{{ instance.name }}">
+            </div>
+            <div class="content">
+                <h2 class="name">{{ instance.name }}</h2>
+                <div class="font-mono block-txt">
+                    <span class="position">{% if instance.role %}{{ instance.role }}{% endif %}</span>
+                    {% if instance.url %}
+                        <a href="{{ instance.url }}" class="flex items-center gap-2 mb-3">
+                            <img src="{% static '/images/icons/link.svg' %}">
+                            {{ instance.url }}
+                        </a>
+                    {% endif %}
+                    {% if instance.email %}
+                        <a href="mailto:{{ instance.email }}" class="flex items-center gap-2 mb-3">
+                            <img src="{% static '/images/icons/envelope.svg' %}">
+                            {{ instance.email }}
+                        </a>
+                    {% endif %}
+                    {% if instance.x_account %}
+                        <a href="https://twitter.com/{{ instance.x_account }}" class="flex items-center gap-2">
+                            <img src="{% static '/images/icons/twitter.svg' %}">
+                            @{{ instance.x_account }}
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="block-txt">
+            {{ instance.description|markdown }}
+        </div>
+    </div>
+</div>
