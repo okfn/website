@@ -12,7 +12,3 @@ class CardPersonPlugin(CMSPluginBase):
     name = _("Card Person Plugin")
     render_template = "card_person.html"
     cache = False
-
-    def render(self, context, instance, placeholder):
-        context = super().render(context, instance, placeholder)
-        return context
