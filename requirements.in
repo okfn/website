@@ -40,7 +40,7 @@ libsass==0.22.0
 micawber==0.5.5
 # django-pagedown, djangocms-text-ckeditor and easy-thumbnails use it but don't specify the version
 # this is a secure version
-pillow==10.0.0
+pillow==10.1.0
 psycopg2-binary==2.9.9
 requests==2.31.0
 whoosh==2.7.4
