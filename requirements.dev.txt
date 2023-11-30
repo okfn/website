@@ -12,9 +12,9 @@ build==0.10.0
     # via pip-tools
 click==8.1.4
     # via pip-tools
-coverage==7.2.7
+coverage==7.3.2
     # via -r requirements.dev.in
-django-webtest==1.9.10
+django-webtest==1.9.11
     # via -r requirements.dev.in
 flake8==6.1.0
     # via -r requirements.dev.in
@@ -24,7 +24,7 @@ packaging==21.3
     # via
     #   -c requirements.txt
     #   build
-pip-tools==7.1.0
+pip-tools==7.3.0
     # via -r requirements.dev.in
 pycodestyle==2.11.0
     # via flake8
