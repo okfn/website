@@ -16,7 +16,7 @@ django-filer==2.2.6
 django-markdown-deux==1.0.6
 django-mptt==0.14.0
 django-pagedown==2.2.1
-django-redis==5.3.0
+django-redis==5.4.0
 django-reversion==5.0.4
 django-sekizai==4.1.0
 django-storages==1.13.2

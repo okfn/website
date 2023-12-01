@@ -81,7 +81,7 @@ django-polymorphic==3.0.0
     # via django-filer
 django-ranged-response==0.2.0
     # via django-simple-captcha
-django-redis==5.3.0
+django-redis==5.4.0
     # via -r requirements.in
 django-reversion==5.0.4
     # via -r requirements.in
