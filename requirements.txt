@@ -25,7 +25,6 @@ cssselect2==0.4.1
 django==4.2.3
     # via
     #   -r requirements.in
-    #   django-appconf
     #   django-classy-tags
     #   django-cms
     #   django-csp
@@ -44,8 +43,6 @@ django==4.2.3
     #   djangocms-admin-style
     #   easy-thumbnails
     #   jsonfield
-django-appconf==1.0.4
-    # via django-compressor
 django-classy-tags==3.0.1
     # via
     #   django-cms
@@ -56,8 +53,6 @@ django-cms==3.11.4
     #   djangocms-attributes-field
     #   djangocms-picture
     #   djangocms-text-ckeditor
-django-compressor==4.4
-    # via -r requirements.in
 django-countries==7.5.1
     # via -r requirements.in
 django-csp==3.7
@@ -186,8 +181,6 @@ pyasn1-modules==0.2.8
     # via google-auth
 pyparsing==3.0.9
     # via packaging
-rcssmin==1.1.1
-    # via django-compressor
 redis==4.5.3
     # via django-redis
 reportlab==3.6.5
@@ -199,8 +192,6 @@ requests==2.31.0
     #   -r requirements.in
     #   google-api-core
     #   google-cloud-storage
-rjsmin==1.2.1
-    # via django-compressor
 rsa==4.7.2
     # via google-auth
 sgmllib3k==1.0.0
