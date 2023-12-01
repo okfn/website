@@ -457,10 +457,6 @@ TEXT_ADDITIONAL_TAGS = ('iframe',)
 
 THUMBNAIL_DEBUG = DEBUG  # easy-thumbnails debugging
 
-QUOTE_STYLES = (
-    'carousel',
-)
-
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 CAPTCHA_IMAGE_SIZE = (150, 75)
