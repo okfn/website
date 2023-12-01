@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-{% load compress %}
 {% load cms_tags %}
 {% load menu_tags %}
 {% load static %}
@@ -10,7 +9,6 @@
 {% endblock %}
 
 {% block head-css %}
-{% load static %}
 <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 {% endblock %}
 
@@ -70,24 +68,5 @@
 {% endblock %}
 
 {% block javascript-libraries %}
-
-        {% comment %}
-  NB: The inline script tags here get compiled into the single JavaScript file
-  for the page, so changes to these *will only show up* if the application is
-  redeployed.
-
-  The reason for this is simple. If we excise all inline script tags from our
-  pages, then we can serve in production with a Content-Security-Policy which
-  includes `unsafe-inline`, thus protecting ourselves from a wide range of XSS
-  attacks.
-{% endcomment %}
-
-        <script type="text/javascript" src="{% static 'js/scripts.js' %}"
-                charset="utf-8"></script>
-        {% block template-scripts %}{% endblock template-scripts %}
-        <script>
-            $(function () {
-                {% block template-js %}{% endblock template-js %}
-            });
-        </script>
+  <script type="text/javascript" src="{% static 'js/scripts.js' %}" charset="utf-8"></script>
 {% endblock %}
