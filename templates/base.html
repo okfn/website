@@ -20,7 +20,7 @@
             <meta property="og:type" content="website"/>
             <meta property="og:url"
                   content="{% if request.is_secure %}https://{% else %}http://{% endif %}{{ request.get_host }}{{ request.get_absolute_url }}"/>
-            <meta property="og:description" content="{% page_attribute 'meta_description' %}"/>            
+            <meta property="og:description" content="{% page_attribute 'meta_description' %}"/>
             {% if request.current_page.sidebarextension.image.url != '' %}
                 <meta property="og:image" content="{{ request.current_page.sidebarextension.image.url }}"/>
             {% else %}
@@ -37,7 +37,7 @@
     {% endif %}
 
 </head>
-<body {% block body-attributes %}{% endblock %} class='{% block body-class %}{% endblock %}'>
+<body class='{% block body-class %}{% endblock %}'>
 {# django-cms toolbar injector -- this must remain in base #}
 {% cms_toolbar %}
 
