@@ -11,7 +11,6 @@
     {% block head-icons %}{% endblock %}
     {% block head-links %}{% endblock %}
     {% block head-alternate %}{% endblock %}
-    {% render_block "css" %}
     {% block head-css %}{% endblock %}
     {% block head-meta %}
         {% block head-meta-fb-open-graph %}
@@ -30,12 +29,12 @@
             {% block head-meta-fb-open-graph-extra %}{% endblock %}
         {% endblock %}
     {% endblock %}
-    {% block head-scripts %}{% endblock head-scripts %}
 
     {% if environment == 'PRODUCTION' %}
     <script defer data-domain="{{ host }}" src="https://plausible.io/js/plausible.js"></script>
     {% endif %}
-
+    <!-- block "css" is django-cms requirement -->
+    {% render_block "css" %}
 </head>
 <body>
 {# django-cms toolbar injector -- this must remain in base #}
@@ -43,6 +42,7 @@
 
 {% block body-sheath %}{% endblock %}
 
+<!-- block "js" is django-cms requirement -->
 {% render_block "js" %}
 {% block javascript-libraries %}{% endblock %}
 </body>
