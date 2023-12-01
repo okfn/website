@@ -31,16 +31,11 @@
     {% if environment == 'PRODUCTION' %}
     <script defer data-domain="{{ host }}" src="https://plausible.io/js/plausible.js"></script>
     {% endif %}
-    <!-- block "css" is django-cms requirement -->
     {% render_block "css" %}
 </head>
 <body>
-{# django-cms toolbar injector -- this must remain in base #}
 {% cms_toolbar %}
-
 {% block body-sheath %}{% endblock %}
-
-<!-- block "js" is django-cms requirement -->
 {% render_block "js" %}
 {% block javascript-libraries %}{% endblock %}
 </body>
