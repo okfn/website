@@ -8,8 +8,6 @@ asgiref==3.7.2
     # via
     #   django
     #   django-countries
-async-timeout==4.0.2
-    # via redis
 beautifulsoup4==4.12.2
     # via -r requirements.in
 cachetools==4.2.4
@@ -34,7 +32,6 @@ django==4.2.3
     #   django-pagedown
     #   django-polymorphic
     #   django-ranged-response
-    #   django-redis
     #   django-reversion
     #   django-sekizai
     #   django-simple-captcha
@@ -79,8 +76,6 @@ django-polymorphic==3.0.0
     # via django-filer
 django-ranged-response==0.2.0
     # via django-simple-captcha
-django-redis==5.3.0
-    # via -r requirements.in
 django-reversion==5.0.4
     # via -r requirements.in
 django-sekizai==4.1.0
@@ -179,8 +174,6 @@ pyasn1-modules==0.2.8
     # via google-auth
 pyparsing==3.0.9
     # via packaging
-redis==4.5.3
-    # via django-redis
 reportlab==3.6.5
     # via
     #   easy-thumbnails
