@@ -59,7 +59,7 @@ django-csp==3.7
     # via -r requirements.in
 django-environ==0.10.0
     # via -r requirements.in
-django-filer==2.2.6
+django-filer==3.1.1
     # via
     #   -r requirements.in
     #   djangocms-picture
@@ -72,9 +72,7 @@ django-js-asset==1.2.2
 django-markdown-deux==1.0.6
     # via -r requirements.in
 django-mptt==0.14.0
-    # via
-    #   -r requirements.in
-    #   django-filer
+    # via -r requirements.in
 django-pagedown==2.2.1
     # via -r requirements.in
 django-polymorphic==3.0.0
@@ -214,8 +212,6 @@ typing-extensions==4.2.0
     # via
     #   asgiref
     #   django-countries
-unidecode==1.1.1
-    # via django-filer
 urllib3==1.26.5
     # via
     #   google-auth
