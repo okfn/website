@@ -118,7 +118,7 @@ google-api-core==2.8.1
     # via
     #   google-cloud-core
     #   google-cloud-storage
-google-auth==2.22.0
+google-auth==2.24.0
     # via
     #   -r requirements.in
     #   google-api-core
@@ -195,9 +195,7 @@ rsa==4.7.2
 sgmllib3k==1.0.0
     # via feedparser
 six==1.15.0
-    # via
-    #   google-auth
-    #   html5lib
+    # via html5lib
 soupsieve==2.0.1
     # via beautifulsoup4
 sqlparse==0.4.2
@@ -213,9 +211,7 @@ typing-extensions==4.2.0
     #   asgiref
     #   django-countries
 urllib3==1.26.5
-    # via
-    #   google-auth
-    #   requests
+    # via requests
 webencodings==0.5.1
     # via
     #   cssselect2
