@@ -8,9 +8,9 @@ This is the [Django](https://www.djangoproject.com/)/[Django CMS](https://www.dj
 
 ## When do I need to modify this?
 
-http://okfn.org/ runs on Django CMS. 
+http://okfn.org/ runs on Django CMS.
 
-Most of the contents are provided via plugins and our communication person is currently responsible to edit the content or add new stuff 
+Most of the contents are provided via plugins and our communication person is currently responsible to edit the content or add new stuff
 to the site. It is the idea, and the goal of the development that **all content** is dinamically handled by plugins. This means that we
 are aiming to have templates with placeholders instead of text. So, if you need to modify content, probably you can already do it using
 Django CMS built in capabilities.
@@ -91,8 +91,8 @@ docker run -d -p 8888:80 okfn
 
 ## File uploads
 
-Because this is a CMS project, a lot of the site content is created via the web UI.  
-This means a lot of the images on the site are file uploads.  
+Because this is a CMS project, a lot of the site content is created via the web UI.
+This means a lot of the images on the site are file uploads.
 In staging and production, the uploaded files are hosted on Google Cloud Storage.
 
 If you want to get all production/staging media files you can download them from Google
@@ -111,20 +111,18 @@ of how it works: [Installing Tailwind CSS as a PostCSS plugin](https://tailwindc
 
 The css build is done by `PostCSS` and the configuration files for it are `tailwind.config.cjs` and `postcss.config.cjs`.
 
-Running `npm run build` will compile our main `styles.css` file and place it in `static/css/styles.css`. (It then will be collected by 
+Running `npm run build` will compile our main `styles.css` file and place it in `static/css/styles.css`. (It then will be collected by
 Django when building the Dockerfile)
 
 **Remember:** Tailwind CSS works by scanning all of our HTML files, JavaScript components, and any other templates
- for class names to generate `styles.css`. If you ar adding new files, make sure to update the `content` field `tailwind.config.cjs`. 
+ for class names to generate `styles.css`. If you ar adding new files, make sure to update the `content` field `tailwind.config.cjs`.
  (If required)
 
 
 ### Javascript
 
-1. Clone the repository https://github.com/ishigami/okfn_front
-2. `npm i`
-3. `npm run build`
-4. copy `../dist/assets/main-[HASH].js` to `/static/js/scripts.js`
+We have some minimal Javascript features in the website. Our dependencies are in `js/vendor/*` and our main script in `js/main.js`.
+
 
 ### Backend (Django and `django-cms`)
 
@@ -160,12 +158,12 @@ New plugins for blocks of content are located on `foundation/okfplugins`.
 Production deployment is based on this [Dockerfile](/Dockerfile). When we want to deploy,
 we just push to `main` branch (or `develop` branch for staging environment).
 
-For more info read this [doc](/docs/cloud/google-deploy.md).  
+For more info read this [doc](/docs/cloud/google-deploy.md).
 
 ## Dependency Management
 
 Dependencies are managed with [pip-tools](https://github.com/jazzband/pip-tools).
-Add new packages to `requirements.in` / `requirements.dev.in` 
+Add new packages to `requirements.in` / `requirements.dev.in`
 and compile `requirements.txt` / `requirements.dev.txt` with `pip-compile`.
 
 You can run `pip list --outdated` to see outdated packages.
