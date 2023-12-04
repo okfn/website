@@ -19,7 +19,6 @@ function sleep(ms) {
 /** Main Javascript function */
 const okfnMain = {
     init () {
-      okfnMain.applyModalMessage();
       okfnMain.applyPlayVideo();
       okfnMain.applyOpenVideo();
       okfnMain.applySlider();
@@ -55,41 +54,6 @@ const okfnMain = {
           self.doSlider('#' + sliderId, sliderOptions);
         })
       }
-    },
-
-    applyModalMessage () {
-      const modalMessage = $('[data-modal-message]');
-
-      if (!modalMessage.length) {
-        return;
-      }
-
-      modalMessage.each(function () {
-        const thisModal = $(this);
-
-        thisModal.on('click', function () {
-          const message = thisModal.attr('data-modal-message');
-          const title = thisModal.attr('data-modal-title');
-          const type = thisModal.attr('data-modal-type') || null; // warning
-
-          if (!$('#modal-message').length) {
-            $('body').append($('<div id="modal-message" class="hidden w-full md:max-w-xl lg:max-w-3xl text-h4"> <strong class="flex items-center pr-14 -mt-20 mb-10 text-h2 uppercase"> <img src="images/icons/warning.svg" alt="Alert" id="modal-message__icon"> <span class="block ml-2" id="modal-message__title"></span> </strong> <p id="modal-message__description"></p> </div>'));
-            sleep(500);
-          }
-
-          $('#modal-message__title').text(title);
-          $('#modal-message__description').removeClass('text-okfn-lg').text(message);
-          $('#modal-message__icon').hide();
-
-          if (type) {
-            $('#modal-message__description').addClass('text-okfn-lg');
-            $('#modal-message__icon').show();
-            $('#modal-message__icon').attr('src', 'images/icons/' + type + '.svg');
-          }
-
-          $('#modal-message').modal();
-        });
-      });
     },
 
     /**
