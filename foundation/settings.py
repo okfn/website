@@ -226,7 +226,7 @@ WSGI_APPLICATION = 'foundation.wsgi.application'
 
 # Cache configuration
 CACHE_URL = env.get('CACHE_URL')
-if CACHE_URL.upper() == 'FILE':
+if CACHE_URL and CACHE_URL.upper() == 'FILE':
     CACHES = {
         'default': {
             'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
