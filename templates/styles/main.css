@@ -3,8 +3,6 @@
 @import 'tailwindcss/utilities';
 
 @import 'slick-carousel/slick/slick.scss';
-@import 'jquery-modal/jquery.modal.css';
-
 @import './base/_basic.css';
 @import './base/_bg-circles.css';
 @import './base/_buttons.css';
