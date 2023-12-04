@@ -100,7 +100,7 @@ djangocms-attributes-field==3.0.0
     #   djangocms-picture
 djangocms-picture==4.0.0
     # via -r requirements.in
-djangocms-text-ckeditor==5.1.4
+djangocms-text-ckeditor==5.1.5
     # via -r requirements.in
 easy-thumbnails[svg]==2.8.5
     # via

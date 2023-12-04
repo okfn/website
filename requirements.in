@@ -25,7 +25,7 @@ djangocms-admin-style==3.2.6
 # djangocms-attributes-field could be removed when other deps updates to 3.0.0
 djangocms-attributes-field==3.0.0
 djangocms-picture==4.0.0
-djangocms-text-ckeditor==5.1.4
+djangocms-text-ckeditor==5.1.5
 
 easy-thumbnails==2.8.5
 feedparser==6.0.10
