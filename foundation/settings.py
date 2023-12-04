@@ -225,39 +225,12 @@ ROOT_URLCONF = 'foundation.urls'
 WSGI_APPLICATION = 'foundation.wsgi.application'
 
 # Cache configuration
-
-CACHE_URL = env.get('CACHE_URL')
-if not CACHE_URL:
-    CACHES = {
-        'default': {'BACKEND': 'django.core.cache.backends.dummy.DummyCache'}
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/var/tmp/django_fs_cache',
     }
-elif CACHE_URL.startswith('redis://'):
-    CACHES = {
-        "default": {
-            "BACKEND": "django_redis.cache.RedisCache",
-            "LOCATION": CACHE_URL,
-            "OPTIONS": {
-                "CLIENT_CLASS": "django_redis.client.DefaultClient",
-            }
-        }
-    }
-elif CACHE_URL.upper() == 'DB':
-    # Database cache
-    # Requires python manage.py createcachetable
-    CACHES = {
-        "default": {
-            "BACKEND": "django.core.cache.backends.db.DatabaseCache",
-            "LOCATION": env.get('CACHE_DB_TABLE_NAME', 'django_cache_table'),
-        }
-    }
-elif CACHE_URL.upper() == 'FILE':
-    # File system cache
-    CACHES = {
-        'default': {
-            'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-            'LOCATION': '/var/tmp/django_fs_cache',
-        }
-    }
+}
 
 # Database configuration
 
