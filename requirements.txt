@@ -84,7 +84,7 @@ django-sekizai==4.1.0
     #   django-cms
 django-simple-captcha==0.5.20
     # via -r requirements.in
-django-storages==1.13.2
+django-storages==1.14.2
     # via -r requirements.in
 django-treebeard==4.7
     # via
