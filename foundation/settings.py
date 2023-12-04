@@ -225,12 +225,20 @@ ROOT_URLCONF = 'foundation.urls'
 WSGI_APPLICATION = 'foundation.wsgi.application'
 
 # Cache configuration
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-        'LOCATION': '/var/tmp/django_fs_cache',
+CACHE_URL = env.get('CACHE_URL')
+if CACHE_URL.upper() == 'FILE':
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+            'LOCATION': '/var/tmp/django_fs_cache',
+        }
     }
-}
+else:
+    # Dummy cache for development
+    CACHES = {
+        'default': {'BACKEND': 'django.core.cache.backends.dummy.DummyCache'}
+    }
+
 
 # Database configuration
 
