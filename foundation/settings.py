@@ -426,9 +426,6 @@ CMS_COLOR_SCHEME_TOGGLE = True
 
 CMS_TEMPLATES = (
     ('cms_default.html', 'Default layout'),
-    ('cms_twocolumn.html', 'Two columns'),
-    ('cms_article.html', 'Article'),
-    ('cms_childlist.html', 'Child list'),
     ('cms_contact.html', 'Contact'),
 )
 
