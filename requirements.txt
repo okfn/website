@@ -98,7 +98,7 @@ djangocms-attributes-field==3.0.0
     # via
     #   -r requirements.in
     #   djangocms-picture
-djangocms-picture==4.0.0
+djangocms-picture==4.1.1
     # via -r requirements.in
 djangocms-text-ckeditor==5.1.5
     # via -r requirements.in
