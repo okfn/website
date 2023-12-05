@@ -54,7 +54,7 @@ django-countries==7.5.1
     # via -r requirements.in
 django-csp==3.7
     # via -r requirements.in
-django-environ==0.10.0
+django-environ==0.11.2
     # via -r requirements.in
 django-filer==3.1.1
     # via
