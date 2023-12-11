@@ -29,7 +29,7 @@ djangocms-text-ckeditor==5.1.5
 
 easy-thumbnails==2.8.5
 feedparser==6.0.10
-google-auth==2.24.0
+google-auth==2.25.2
 google-cloud-storage==2.13.0
 gunicorn==21.2.0
 iso3166==2.1.1
