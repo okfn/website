@@ -44,7 +44,7 @@ django-classy-tags==3.0.1
     # via
     #   django-cms
     #   django-sekizai
-django-cms==3.11.4
+django-cms==4.1.0
     # via
     #   -r requirements.in
     #   djangocms-attributes-field
