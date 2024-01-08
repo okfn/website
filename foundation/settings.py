@@ -383,10 +383,6 @@ CSP_IMG_SRC = asset_hosts + [
     'https://p.typekit.net',
     'https://ping.typekit.net',
     'https://cdn-images.mailchimp.com',
-    'https://paypal.com',
-    'https://www.paypal.com',
-    'https://paypalobjects.com',
-    'https://www.paypalobjects.com',
 ]
 CSP_FONT_SRC = asset_hosts + [
     "'self'",
@@ -398,13 +394,12 @@ CSP_FONT_SRC = asset_hosts + [
 CSP_FORM_ACTION = [
     "'self'",
     'https://okfn.us9.list-manage.com',
-    'https://paypal.com',
-    'https://www.paypal.com',
 ]
 CSP_FRAME_SRC = [
     "'self'",
     'https://youtube.com',
     'https://www.youtube.com',
+    'https://timemapper.okfnlabs.org',
 ]
 CSP_CONNECT_SRC = asset_hosts + [
     "'self'",
