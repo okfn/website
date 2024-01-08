@@ -154,7 +154,7 @@ packaging==21.3
     #   django-cms
     #   djangocms-text-ckeditor
     #   gunicorn
-pillow==10.1.0
+pillow==10.2.0
     # via
     #   -r requirements.in
     #   django-pagedown
