@@ -113,7 +113,7 @@ google-api-core==2.8.1
     # via
     #   google-cloud-core
     #   google-cloud-storage
-google-auth==2.25.2
+google-auth==2.26.1
     # via
     #   -r requirements.in
     #   google-api-core
