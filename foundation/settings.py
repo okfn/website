@@ -405,6 +405,7 @@ CSP_FRAME_SRC = [
     "'self'",
     'https://youtube.com',
     'https://www.youtube.com',
+    'https://timemapper.okfnlabs.org',
 ]
 CSP_CONNECT_SRC = asset_hosts + [
     "'self'",
