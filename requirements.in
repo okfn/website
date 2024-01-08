@@ -34,7 +34,7 @@ google-cloud-storage==2.14.0
 gunicorn==21.2.0
 iso3166==2.1.1
 jsonfield==3.1.0
-libsass==0.22.0
+libsass==0.23.0
 micawber==0.5.5
 # django-pagedown, djangocms-text-ckeditor and easy-thumbnails use it but don't specify the version
 # this is a secure version
