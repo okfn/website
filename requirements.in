@@ -21,7 +21,7 @@ django-sekizai==4.1.0
 django-storages==1.14.2
 django-treebeard==4.7
 django-simple-captcha==0.6.0
-djangocms-admin-style==3.2.6
+djangocms-admin-style==3.2.7
 # djangocms-attributes-field could be removed when other deps updates to 3.0.0
 djangocms-attributes-field==3.0.0
 djangocms-picture==4.1.1
