@@ -1,6 +1,6 @@
 <!-- sect-newsletter -->
 {% if instance.campaign_type == 'campaign' %}
-<section class="sect sect-campaign -tighten-1 mb-20">
+<section class="sect -tighten-1 mb-20">
   <div class="sect__content">
     <div class="lg:flex lg:items-center lg:gap-16">
       <img class="mx-auto mb-10 lg:mb-0 lg:flex-shrink-0 max-w-[15rem] lg:max-w-[31.625rem]" src="{% if instance.image %}{{ instance.image.url }}{% else %}/assets/img/call-to-action-newsletter.svg{% endif %}" alt="{{ instance.image_alt }}">
@@ -22,7 +22,7 @@
   </div>
 </section>
 {% elif instance.campaign_type == 'small' %}
-<section class="sect sect-call-to-action-medium mb-20">
+<section class="sect mb-20">
   <div class="sect__content">
     <div class="grid grid-cols-12 gap-y-10 lg:gap-y-0">
       <div class="col-span-full lg:col-start-2 lg:col-end-8 flex items-center lg:pr-4">
@@ -41,7 +41,7 @@
   </div>
 </section>
 {% elif instance.campaign_type == 'medium' %}
-<section class="sect sect-call-to-action-medium -tighten-3 mb-20">
+<section class="sect -tighten-3 mb-20">
   <div class="sect__content">
     <div class="flex flex-col justify-center">
       <img class="max-w-[15rem] lg:max-w-xs mx-auto mb-10 lg:mb-3"  src="{% if instance.image %}{{ instance.image.url }}{% else %}/assets/img/call-to-action-newsletter.svg{% endif %}" alt="{{ instance.image_alt }}">
@@ -58,7 +58,7 @@
   </div>
 </section>
 {% else %}
-<section class="sect sect-newsletter -tighten-1 mb-20 -has-bg-circle -bg-circle-lg before:top-full before:left-full before:-translate-y-1/2 before:-translate-x-1/2">
+<section class="sect -tighten-1 mb-20 -has-bg-circle -bg-circle-lg before:top-full before:left-full before:-translate-y-1/2 before:-translate-x-1/2">
   <div class="sect__content">
     <div class="lg:flex lg:flex-row-reverse lg:items-center lg:gap-16">
       <img class="mx-auto lg:flex-shrink-0" src="/assets/img/section-newsletter.png" alt="">
