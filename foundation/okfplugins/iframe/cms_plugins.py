@@ -3,6 +3,7 @@ from cms.plugin_pool import plugin_pool
 
 from .models import IFramePlugin
 
+
 @plugin_pool.register_plugin
 class IFramePlugin(CMSPluginBase):
     model = IFramePlugin
