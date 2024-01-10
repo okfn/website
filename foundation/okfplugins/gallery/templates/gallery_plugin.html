@@ -1,7 +1,7 @@
 {% load cms_tags %}
 <!-- Slider-->
 {% if instance.gallery_type == 'image_slider' %}
-  <section class="sect sect-gallery true-w-full {{ has_bg_circle }} {{ instance.size }} {{ instance.color }} {{ css_translate }} -mt-20 mb-20">
+  <section class="sect true-w-full {{ has_bg_circle }} {{ instance.size }} {{ instance.color }} {{ css_translate }} -mt-20 mb-20">
     <div class="sect__content overflow-hidden">
       <div class="slider-wrapper">
         <div class="slider -is-width-auto" data-slider="{ autoplay: true, autoplaySpeed: 0, arrows: false, cssEase: 'linear', slidesToShow: 1, slidesToScroll: 1, speed: 9000, variableWidth: true, draggable: true, pauseOnHover: true }" data-slider-mobile="{ autoplay: true, autoplaySpeed: 0, arrows: false, cssEase: 'linear', slidesToShow: 1, slidesToScroll: 1, speed: 9000, variableWidth: true, draggable: true, pauseOnHover: true }">
@@ -14,7 +14,7 @@
   </section>
 <!-- Static Logo-->
 {% elif instance.gallery_type == 'logo_static' %}
-  <section class="sect sect-generic -tighten-1 {{ has_bg_circle }} {{ instance.size }} {{ instance.color }} {{ css_translate }} mx-auto mb-20 text-center">
+  <section class="sect -tighten-1 {{ has_bg_circle }} {{ instance.size }} {{ instance.color }} {{ css_translate }} mx-auto mb-20 text-center">
     <div class="sect__content">
       <h3 class="py-6 mb-20 text-2xl font-bold">{{instance.title}}</h3>
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 items-center gap-x-2.5 gap-y-10 mb-20">
