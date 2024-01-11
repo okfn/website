@@ -124,9 +124,6 @@ INSTALLED_APPS = (
     'sendemail',
     'captcha',
 
-    # Asset pipeline
-    'compressor',
-
     # CMS plugins
     'djangocms_picture',
     'djangocms_text_ckeditor',
@@ -169,6 +166,7 @@ INSTALLED_APPS = (
     'foundation.okfplugins.number_stat',
     'foundation.okfplugins.background',
     'foundation.okfplugins.card_person',
+    'foundation.okfplugins.iframe',
 )
 
 MIDDLEWARE = [
@@ -228,39 +226,20 @@ ROOT_URLCONF = 'foundation.urls'
 WSGI_APPLICATION = 'foundation.wsgi.application'
 
 # Cache configuration
-
 CACHE_URL = env.get('CACHE_URL')
-if not CACHE_URL:
-    CACHES = {
-        'default': {'BACKEND': 'django.core.cache.backends.dummy.DummyCache'}
-    }
-elif CACHE_URL.startswith('redis://'):
-    CACHES = {
-        "default": {
-            "BACKEND": "django_redis.cache.RedisCache",
-            "LOCATION": CACHE_URL,
-            "OPTIONS": {
-                "CLIENT_CLASS": "django_redis.client.DefaultClient",
-            }
-        }
-    }
-elif CACHE_URL.upper() == 'DB':
-    # Database cache
-    # Requires python manage.py createcachetable
-    CACHES = {
-        "default": {
-            "BACKEND": "django.core.cache.backends.db.DatabaseCache",
-            "LOCATION": env.get('CACHE_DB_TABLE_NAME', 'django_cache_table'),
-        }
-    }
-elif CACHE_URL.upper() == 'FILE':
-    # File system cache
+if CACHE_URL and CACHE_URL.upper() == 'FILE':
     CACHES = {
         'default': {
             'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
             'LOCATION': '/var/tmp/django_fs_cache',
         }
     }
+else:
+    # Dummy cache for development
+    CACHES = {
+        'default': {'BACKEND': 'django.core.cache.backends.dummy.DummyCache'}
+    }
+
 
 # Database configuration
 
@@ -311,7 +290,6 @@ USE_TZ = True
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder',
 )
 
 # Where else to find static files
@@ -406,10 +384,6 @@ CSP_IMG_SRC = asset_hosts + [
     'https://p.typekit.net',
     'https://ping.typekit.net',
     'https://cdn-images.mailchimp.com',
-    'https://paypal.com',
-    'https://www.paypal.com',
-    'https://paypalobjects.com',
-    'https://www.paypalobjects.com',
 ]
 CSP_FONT_SRC = asset_hosts + [
     "'self'",
@@ -421,13 +395,12 @@ CSP_FONT_SRC = asset_hosts + [
 CSP_FORM_ACTION = [
     "'self'",
     'https://okfn.us9.list-manage.com',
-    'https://paypal.com',
-    'https://www.paypal.com',
 ]
 CSP_FRAME_SRC = [
     "'self'",
     'https://youtube.com',
     'https://www.youtube.com',
+    'https://timemapper.okfnlabs.org',
 ]
 CSP_CONNECT_SRC = asset_hosts + [
     "'self'",
@@ -437,19 +410,6 @@ CSP_CONNECT_SRC = asset_hosts + [
 # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri
 # CSP_REPORT_URI = env.get('DJANGO_CSP_REPORT_URI')
 # CSP_REPORT_ONLY = True
-
-COMPRESS_OFFLINE = env.get('DJANGO_COMPRESS_OFFLINE') == 'true'
-COMPRESS_OFFLINE_CONTEXT = {
-    'STATIC_URL': STATIC_URL,
-}
-
-COMPRESS_PRECOMPILERS = (
-    ('text/sass', 'lib.precompilers.SassFilter'),
-)
-
-COMPRESS_FILTERS = {
-    'css': ['compressor.filters.cssmin.CSSMinFilter']
-}
 
 CMS_CACHE_DURATIONS = {
     'content': 60,
@@ -462,11 +422,6 @@ CMS_COLOR_SCHEME_TOGGLE = True
 
 CMS_TEMPLATES = (
     ('cms_default.html', 'Default layout'),
-    ('cms_twocolumn.html', 'Two columns'),
-    ('cms_homepage.html', 'Homepage'),
-    ('cms_landing.html', 'Landing'),
-    ('cms_article.html', 'Article'),
-    ('cms_childlist.html', 'Child list'),
     ('cms_contact.html', 'Contact'),
 )
 
@@ -474,10 +429,6 @@ CMS_TEMPLATES = (
 TEXT_ADDITIONAL_TAGS = ('iframe',)
 
 THUMBNAIL_DEBUG = DEBUG  # easy-thumbnails debugging
-
-QUOTE_STYLES = (
-    'carousel',
-)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 

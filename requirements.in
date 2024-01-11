@@ -8,31 +8,29 @@ cssmin==0.2.0
 
 Django==4.2.3
 django-cms==3.11.4
-django-compressor==4.4
 django-countries==7.5.1
 django-csp==3.7
-django-environ==0.10.0
+django-environ==0.11.2
 django-haystack==3.2.1
-django-filer==2.2.6
+django-filer==3.1.1
 django-markdown-deux==1.0.6
-django-mptt==0.14.0
+django-mptt==0.15.0
 django-pagedown==2.2.1
-django-redis==5.3.0
-django-reversion==5.0.4
+django-reversion==5.0.10
 django-sekizai==4.1.0
-django-storages==1.13.2
+django-storages==1.14.2
 django-treebeard==4.7
-django-simple-captcha==0.5.20
+django-simple-captcha==0.6.0
 djangocms-admin-style==3.2.6
 # djangocms-attributes-field could be removed when other deps updates to 3.0.0
 djangocms-attributes-field==3.0.0
-djangocms-picture==4.0.0
-djangocms-text-ckeditor==5.1.4
+djangocms-picture==4.1.1
+djangocms-text-ckeditor==5.1.5
 
 easy-thumbnails==2.8.5
-feedparser==6.0.10
-google-auth==2.22.0
-google-cloud-storage==2.10.0
+feedparser==6.0.11
+google-auth==2.25.2
+google-cloud-storage==2.14.0
 gunicorn==21.2.0
 iso3166==2.1.1
 jsonfield==3.1.0

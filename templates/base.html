@@ -9,9 +9,6 @@
     <title>{% block title %}SET A TITLE{% endblock %}</title>
 
     {% block head-icons %}{% endblock %}
-    {% block head-links %}{% endblock %}
-    {% block head-alternate %}{% endblock %}
-    {% render_block "css" %}
     {% block head-css %}{% endblock %}
     {% block head-meta %}
         {% block head-meta-fb-open-graph %}
@@ -20,7 +17,7 @@
             <meta property="og:type" content="website"/>
             <meta property="og:url"
                   content="{% if request.is_secure %}https://{% else %}http://{% endif %}{{ request.get_host }}{{ request.get_absolute_url }}"/>
-            <meta property="og:description" content="{% page_attribute 'meta_description' %}"/>            
+            <meta property="og:description" content="{% page_attribute 'meta_description' %}"/>
             {% if request.current_page.sidebarextension.image.url != '' %}
                 <meta property="og:image" content="{{ request.current_page.sidebarextension.image.url }}"/>
             {% else %}
@@ -30,24 +27,16 @@
             {% block head-meta-fb-open-graph-extra %}{% endblock %}
         {% endblock %}
     {% endblock %}
-    {% block head-scripts %}{% endblock head-scripts %}
 
     {% if environment == 'PRODUCTION' %}
     <script defer data-domain="{{ host }}" src="https://plausible.io/js/plausible.js"></script>
     {% endif %}
-
+    {% render_block "css" %}
 </head>
-<body {% block body-attributes %}{% endblock %} class='{% block body-class %}{% endblock %}'>
-{# django-cms toolbar injector -- this must remain in base #}
+<body>
 {% cms_toolbar %}
-
 {% block body-sheath %}{% endblock %}
-
 {% render_block "js" %}
-<script>
-    {% block javascript-variables %}{% endblock %}
-</script>
 {% block javascript-libraries %}{% endblock %}
-{% block javascript-asynchronous %}{% endblock %}
 </body>
 </html>
