@@ -8,7 +8,7 @@ asgiref==3.7.2
     # via
     #   django
     #   django-countries
-beautifulsoup4==4.12.2
+beautifulsoup4==4.12.3
     # via -r requirements.in
 cachetools==4.2.4
     # via google-auth
