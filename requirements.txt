@@ -90,7 +90,7 @@ django-treebeard==4.7
     # via
     #   -r requirements.in
     #   django-cms
-djangocms-admin-style==3.2.6
+djangocms-admin-style==3.3.0
     # via
     #   -r requirements.in
     #   django-cms
