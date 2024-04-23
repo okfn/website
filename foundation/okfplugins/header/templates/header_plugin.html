@@ -1,6 +1,6 @@
 <!-- hero -->
 {% if instance.header_type == 'h1' %}
-<section class="sect sect-hero {{ has_bg_circle }} {{ instance.size }} {{ instance.color }} {{ css_translate }}">
+<section class="sect {{ has_bg_circle }} {{ instance.size }} {{ instance.color }} {{ css_translate }}">
 <div class="page-opening mb-20 mt-20">
   <h1 class="title">{{ instance.title }}</h1>
   <div class="image">
@@ -12,7 +12,7 @@
 </div>
 </section>
 {% elif instance.header_type == 'h2' %}
-<section class="sect sect-hero mb-20 {{ has_bg_circle }} {{ instance.size }} {{ instance.color }} {{ css_translate }}">
+<section class="sect mb-20 {{ has_bg_circle }} {{ instance.size }} {{ instance.color }} {{ css_translate }}">
   <div class="sect__content">
     <div class="lg:flex lg:gap-x-8 lg:items-center md:flex-row-reverse">
       <div class="flex-shrink-0">
@@ -30,7 +30,7 @@
   </div>
 </section>
 {% else %}
-<section class="sect sect-hero mb-20 {{ has_bg_circle }} {{ instance.size }} -{{ instance.color }} {{ css_translate }}">
+<section class="sect mb-20 {{ has_bg_circle }} {{ instance.size }} -{{ instance.color }} {{ css_translate }}">
   <div class="sect__content">
     <div class="lg:flex lg:gap-x-8 lg:items-center">
       <div class="flex-shrink-0">
