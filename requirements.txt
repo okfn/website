@@ -135,7 +135,7 @@ gunicorn==21.2.0
     # via -r requirements.in
 html5lib==1.1
     # via djangocms-text-ckeditor
-idna==2.10
+idna==3.7
     # via requests
 iso3166==2.1.1
     # via -r requirements.in
