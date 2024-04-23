@@ -131,7 +131,7 @@ google-resumable-media==2.6.0
     # via google-cloud-storage
 googleapis-common-protos==1.56.2
     # via google-api-core
-gunicorn==21.2.0
+gunicorn==22.0.0
     # via -r requirements.in
 html5lib==1.1
     # via djangocms-text-ckeditor
