@@ -3,7 +3,7 @@
 # Maintain the alphabetical order
 # Use pip list -o to check for outdated packages
 
-beautifulsoup4==4.12.2
+beautifulsoup4==4.12.3
 cssmin==0.2.0
 
 Django==4.2.3
@@ -14,14 +14,14 @@ django-environ==0.11.2
 django-haystack==3.2.1
 django-filer==3.1.1
 django-markdown-deux==1.0.6
-django-mptt==0.15.0
+django-mptt==0.16.0
 django-pagedown==2.2.1
-django-reversion==5.0.10
+django-reversion==5.0.12
 django-sekizai==4.1.0
 django-storages==1.14.2
 django-treebeard==4.7
 django-simple-captcha==0.6.0
-djangocms-admin-style==3.2.6
+djangocms-admin-style==3.3.1
 # djangocms-attributes-field could be removed when other deps updates to 3.0.0
 djangocms-attributes-field==3.0.0
 djangocms-picture==4.1.1
@@ -29,16 +29,16 @@ djangocms-text-ckeditor==5.1.5
 
 easy-thumbnails==2.8.5
 feedparser==6.0.11
-google-auth==2.25.2
+google-auth==2.29.0
 google-cloud-storage==2.14.0
-gunicorn==21.2.0
+gunicorn==22.0.0
 iso3166==2.1.1
 jsonfield==3.1.0
-libsass==0.22.0
+libsass==0.23.0
 micawber==0.5.5
 # django-pagedown, djangocms-text-ckeditor and easy-thumbnails use it but don't specify the version
 # this is a secure version
-pillow==10.1.0
+pillow==10.3.0
 psycopg2-binary==2.9.9
 requests==2.31.0
 whoosh==2.7.4
