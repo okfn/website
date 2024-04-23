@@ -4,6 +4,6 @@
 -c requirements.txt
 
 pip-tools==7.3.0
-flake8==6.1.0
+flake8==7.0.0
 django-webtest==1.9.11
 coverage==7.4.4
