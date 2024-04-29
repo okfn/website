@@ -89,7 +89,7 @@ django-simple-captcha==0.6.0
     # via -r requirements.in
 django-storages==1.14.2
     # via -r requirements.in
-django-treebeard==4.7
+django-treebeard==4.7.1
     # via
     #   -r requirements.in
     #   django-cms
