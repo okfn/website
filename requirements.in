@@ -40,5 +40,5 @@ micawber==0.5.5
 # this is a secure version
 pillow==10.3.0
 psycopg2-binary==2.9.9
-requests==2.31.0
+requests==2.32.2
 whoosh==2.7.4

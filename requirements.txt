@@ -184,7 +184,7 @@ reportlab==4.2.0
     # via
     #   easy-thumbnails
     #   svglib
-requests==2.31.0
+requests==2.32.2
     # via
     #   -r requirements.in
     #   google-api-core
