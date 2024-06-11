@@ -3,16 +3,6 @@ from cms.apphook_pool import apphook_pool
 from django.utils.translation import gettext_lazy as _
 
 
-class UnitsAppHook(CMSApp):
-    name = _("Units")
-
-    def get_urls(self, page=None, language=None, **kwargs):
-        return ["foundation.organisation.urls.units"]
-
-
-apphook_pool.register(UnitsAppHook)
-
-
 class BoardAppHook(CMSApp):
     name = _("Board of Directors")
 
