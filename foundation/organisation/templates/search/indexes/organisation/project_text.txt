@@ -1,9 +1,0 @@
-{{ object.name }}
-{{ object.description }}
-{{ object.twitter }}
-{{ object.homepage_url }}
-{{ object.forum_url }}
-{{ object.sourcecode_url }}
-{% for type in object.types.all %}
-{{ type.name }}
-{% endfor %}
