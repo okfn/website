@@ -114,45 +114,6 @@ class NowDoing(models.Model):
         return "<NowDoing: {}, {}>".format(self.person.name, self.doing_type)
 
 
-class Board(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=100, unique=True)
-    description = models.TextField()
-
-    members = models.ManyToManyField("Person", through="BoardMembership")
-
-    @property
-    def placeholder(self):
-        return Truncator(self.name).chars(10, truncate="...") + " (sidebar)"
-
-    def get_absolute_url(self):
-        return reverse("board")
-
-    def __str__(self):
-        return self.name
-
-
-class BoardMembership(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    title = models.CharField(max_length=100)
-    person = models.ForeignKey("Person", on_delete=models.CASCADE)
-    board = models.ForeignKey("Board", on_delete=models.CASCADE)
-    order = models.IntegerField(
-        blank=True, null=True, help_text="Higher numbers mean higher up in the list"
-    )
-
-    def __str__(self):
-        return self.person.name + " - " + self.title
-
-    class Meta:
-        ordering = ["-order", "person__name"]
-
-
 class NetworkGroupManager(models.Manager):
     def countries(self):
         return self.get_queryset().filter(region_slug="")
