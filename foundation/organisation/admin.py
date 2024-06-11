@@ -3,8 +3,8 @@ import reversion
 from django.contrib import admin
 from .forms import PersonForm
 from .models import (
-    Person, Board, NetworkGroup,
-    BoardMembership, NetworkGroupMembership, SideBarExtension
+    Person, NetworkGroup,
+    NetworkGroupMembership, SideBarExtension
 )
 
 from cms.extensions import PageExtensionAdmin
@@ -18,21 +18,6 @@ class PersonAdmin(reversion.admin.VersionAdmin):
 
 
 admin.site.register(Person, PersonAdmin)
-
-
-class BoardMembershipInline(admin.TabularInline):
-    model = BoardMembership
-
-
-class BoardAdmin(reversion.admin.VersionAdmin):
-    list_display = ('name',)
-    ordering = ('name',)
-
-    prepopulated_fields = {"slug": ("name",)}
-    inlines = [BoardMembershipInline]
-
-
-admin.site.register(Board, BoardAdmin)
 
 
 class NetworkGroupMembershipInline(admin.TabularInline):

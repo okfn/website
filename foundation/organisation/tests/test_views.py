@@ -1,124 +1,17 @@
 from io import StringIO
 
 from django.urls import reverse
-from django.utils.html import escape
 from django_webtest import WebTest
-from unittest import skip
 
 from iso3166 import countries
 import csv
 
 from ..models import (
-    Board,
     Person,
     NetworkGroup,
     NetworkGroupMembership,
-    BoardMembership,
     NowDoing,
 )
-
-
-class BoardViewTest(WebTest):
-    def setUp(self):
-        self.leonardo = Person.objects.create(
-            name="Leonardo (Leo)",
-            description="Turtle with a blue mask",
-            email="leonardo@tmnt.org",
-        )
-        self.april = Person.objects.create(
-            name="April O'Neil",
-            description="Computer Programmer",
-            email="april@oneil.me",
-            twitter="april",
-            url="http://oneil.me",
-        )
-        self.casey = Person.objects.create(
-            name="Casey Jones",
-            description="Hockey mask wearing vigilante",
-            email="casey.jones@newyorkcricketclub.com",
-            twitter="arnold",
-        )
-        self.splinter = Person.objects.create(
-            name="Splinter", description="Ninja rat", email="splinter@tmnt.org"
-        )
-
-        self.board = Board.objects.create(
-            name="Board of directors",
-            slug="board",
-            description="The board consists of a rat",
-        )
-        self.council = Board.objects.create(
-            name="Advisory Council",
-            slug="advisory-board",
-            description="Get a room you two!",
-        )
-
-        self.rat_board = BoardMembership.objects.create(
-            title="Director", person=self.splinter, board=self.board
-        )
-
-        self.april_council = BoardMembership.objects.create(
-            title="Technical consultant", person=self.april, board=self.council, order=2
-        )
-        self.casey_council = BoardMembership.objects.create(
-            title="Sport utilities consultant",
-            person=self.casey,
-            board=self.council,
-            order=1,
-        )
-        self.leonardo_council = BoardMembership.objects.create(
-            title="Medical consultant",
-            person=self.leonardo,
-            board=self.council,
-            order=3,
-        )
-
-    @skip("Broken after the 2019 update")
-    def test_board(self):
-        response = self.app.get(reverse("board"))
-        self.assertTrue(self.board.name in response.text)
-        self.assertTrue(self.board.description in response.text)
-
-        self.assertTrue(self.council.name not in response.text)
-
-        self.assertTrue(self.splinter.name in response.text)
-        self.assertTrue(self.rat_board.title in response.text)
-        self.assertTrue(self.splinter.description in response.text)
-        self.assertTrue(self.splinter.email not in response.text)
-
-        self.assertTrue(self.casey.name not in response.text)
-        self.assertTrue(self.april.name not in response.text)
-
-    @skip("Broken after the 2019 update")
-    def test_advisory_council(self):
-        response = self.app.get(reverse("advisory-board"))
-        self.assertTrue(self.council.name in response.text)
-        self.assertTrue(self.council.description in response.text)
-
-        self.assertTrue(self.board.name not in response.text)
-
-        # April's name must be escaped because of the single quote in O'Neil
-        self.assertTrue(escape(self.april.name) in response.text)
-        self.assertTrue(self.april_council.title in response.text)
-        self.assertTrue(self.april.description in response.text)
-        self.assertTrue(self.april.email not in response.text)
-        self.assertTrue(self.april.twitter in response.text)
-        self.assertTrue(self.april.url in response.text)
-
-        self.assertTrue(self.casey.name in response.text)
-        self.assertTrue(self.casey_council.title in response.text)
-        self.assertTrue(self.casey.description in response.text)
-        self.assertTrue(self.casey.email not in response.text)
-        self.assertTrue(self.casey.twitter in response.text)
-
-        self.assertTrue(self.splinter.name not in response.text)
-
-    def test_manual_order_of_units(self):
-        response = self.app.get(reverse("advisory-board"))
-        april = response.text.find(escape(self.april.name))
-        leonardo = response.text.find(self.leonardo.name)
-        casey = response.text.find(self.casey.name)
-        self.assertTrue(leonardo < april < casey)
 
 
 class NetworkGroupDetailViewTest(WebTest):
