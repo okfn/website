@@ -114,41 +114,6 @@ class NowDoing(models.Model):
         return "<NowDoing: {}, {}>".format(self.person.name, self.doing_type)
 
 
-class Unit(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    name = models.CharField(max_length=100)
-    members = models.ManyToManyField("Person", through="UnitMembership")
-    order = models.IntegerField(
-        blank=True, null=True, help_text="Higher numbers mean higher up in the list"
-    )
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        ordering = ["-order", "name"]
-
-
-class UnitMembership(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    title = models.CharField(max_length=100)
-    person = models.ForeignKey("Person", on_delete=models.CASCADE)
-    unit = models.ForeignKey("Unit", on_delete=models.CASCADE)
-    order = models.IntegerField(
-        blank=True, null=True, help_text="Higher numbers mean higher up in the list"
-    )
-
-    def __str__(self):
-        return self.person.name + " - " + self.title
-
-    class Meta:
-        ordering = ["-order", "person__name"]
-
-
 class Board(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
