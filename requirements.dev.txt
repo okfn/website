@@ -12,14 +12,12 @@ build==1.2.1
     # via pip-tools
 click==8.1.7
     # via pip-tools
-coverage==7.4.4
+coverage==7.5.3
     # via -r requirements.dev.in
 django-webtest==1.9.11
     # via -r requirements.dev.in
 flake8==7.0.0
     # via -r requirements.dev.in
-importlib-metadata==7.1.0
-    # via build
 mccabe==0.7.0
     # via flake8
 packaging==24.0
@@ -51,8 +49,6 @@ webtest==3.0.0
     # via django-webtest
 wheel==0.43.0
     # via pip-tools
-zipp==3.18.1
-    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip

@@ -59,7 +59,7 @@ django-csp==3.7
     # via -r requirements.in
 django-environ==0.11.2
     # via -r requirements.in
-django-filer==3.1.1
+django-filer==3.1.3
     # via
     #   -r requirements.in
     #   djangocms-picture
@@ -87,7 +87,7 @@ django-sekizai==4.1.0
     #   django-cms
 django-simple-captcha==0.6.0
     # via -r requirements.in
-django-storages==1.14.2
+django-storages==1.14.3
     # via -r requirements.in
 django-treebeard==4.7
     # via
@@ -184,7 +184,7 @@ reportlab==4.2.0
     # via
     #   easy-thumbnails
     #   svglib
-requests==2.31.0
+requests==2.32.3
     # via
     #   -r requirements.in
     #   google-api-core
