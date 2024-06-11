@@ -3,11 +3,7 @@ from hashlib import md5
 
 from cms.models.pluginmodel import CMSPlugin
 from cms.extensions import PageExtension
-from django.urls import reverse
-from django.urls.exceptions import NoReverseMatch
 from django.db import models
-from django.utils.text import slugify
-from django_countries.fields import CountryField
 
 
 logger = logging.getLogger(__name__)
@@ -112,129 +108,6 @@ class NowDoing(models.Model):
 
     def __repr__(self):
         return "<NowDoing: {}, {}>".format(self.person.name, self.doing_type)
-
-
-class NetworkGroupManager(models.Manager):
-    def countries(self):
-        return self.get_queryset().filter(region_slug="")
-
-    def regions(self, country):
-        return self.get_queryset().exclude(region_slug="").filter(country_slug=country)
-
-
-class NetworkGroup(models.Model):
-    objects = NetworkGroupManager()
-
-    GROUP_TYPES = (
-        (0, "Local group"),
-        (1, "Chapter"),
-        (2, "Established group"),
-        (3, "Incubating group"),
-        (4, "Hibernated group"),
-        (5, "Affiliate"),
-    )
-
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    name = models.CharField(max_length=100)
-
-    group_type = models.IntegerField(default=0, choices=GROUP_TYPES)
-    description = models.TextField(blank=True, null=True)
-
-    country = CountryField()
-    country_slug = models.SlugField()
-    country_flag = models.ImageField(
-        upload_to="organisation/network/chapter",
-        blank=True
-    )
-
-    region = models.CharField(max_length=100, blank=True)
-    region_slug = models.SlugField(default=None)
-
-    mailinglist_url = models.URLField(blank=True)
-    homepage_url = models.URLField(blank=True)
-    twitter = models.CharField(max_length=18, blank=True)
-    facebook_url = models.URLField(blank=True)
-    linkedin_url = models.URLField(blank=True)
-    mastodon_url = models.URLField(blank=True)
-    forum_group_url = models.URLField(blank=True)
-
-    extra_information = models.TextField(blank=True, null=True)
-
-    members = models.ManyToManyField("Person", through="NetworkGroupMembership")
-
-    def __str__(self):
-        return self.name
-
-    def save(self, *args, **kwargs):
-        if self.twitter and self.twitter.startswith("@"):
-            self.twitter = self.twitter[1:]
-
-        # Slug is either the country slugified or the region
-        # Therefore we cannot force slug to be unique
-        # (regions might have same name in different countries)
-        self.country_slug = slugify(self.get_country_display())
-        self.region_slug = slugify(self.region)
-
-        super().save(*args, **kwargs)
-
-    def get_absolute_url(self):
-        # Because reverse can't be smart about conditional parameters
-        # we have to have two different urls depending on if it is a
-        # country or a region group
-        if self.region:
-            try:
-                url = reverse(
-                    "network-region",
-                    kwargs={"country": self.country_slug, "region": self.region_slug},
-                )
-            except NoReverseMatch:
-                logger.error(
-                    f"NetworkGroup.get_absolute_url ERROR: {self.region} :: {self.country}"
-                )
-                url = "/"
-        else:
-            # Some countries are missing (?)
-            try:
-                url = reverse("network-country", kwargs={"country": self.country_slug})
-            except NoReverseMatch:
-                logger.error(f"NetworkGroup.get_absolute_url ERROR: {self.country}")
-                url = "/"
-
-        return url
-
-    class Meta:
-        unique_together = ("country", "region")
-        ordering = ("country", "region")
-
-
-class NetworkGroupMembership(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    title = models.CharField(max_length=100, blank=True)
-    order = models.IntegerField(
-        blank=True,
-        null=True,
-        help_text="The lower the number the higher on the"
-        " page this Person will be shown.",
-    )
-    networkgroup = models.ForeignKey("NetworkGroup", on_delete=models.CASCADE)
-    person = models.ForeignKey("Person", on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.person.name + " - " + self.networkgroup.name
-
-    class Meta:
-        ordering = ["-order", "person__name"]
-
-
-class NetworkGroupList(CMSPlugin):
-    group_type = models.IntegerField(default=0, choices=NetworkGroup.GROUP_TYPES)
-
-    def __str__(self):
-        return self.get_group_type_display()
 
 
 class SignupForm(CMSPlugin):
