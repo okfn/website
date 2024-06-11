@@ -6,17 +6,7 @@ from django.http import HttpResponse
 from iso3166 import countries
 import csv
 
-from .models import Board, NetworkGroup, NetworkGroupMembership, Person
-
-
-class BoardView(DetailView):
-    model = Board
-    template_name = 'organisation/board_details.html'
-    board = None
-
-    def get_object(self, *args, **kwargs):
-        # Try to find the board based on the slug or 404
-        return get_object_or_404(Board, slug=self.board)
+from .models import NetworkGroup, NetworkGroupMembership, Person
 
 
 class NetworkGroupDetailView(DetailView):
