@@ -6,6 +6,7 @@ from cms.extensions import PageExtension
 from django.urls import reverse
 from django.urls.exceptions import NoReverseMatch
 from django.db import models
+from django.utils.text import slugify
 from django_countries.fields import CountryField
 
 
