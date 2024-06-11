@@ -3,8 +3,7 @@ import reversion
 from django.contrib import admin
 from .forms import PersonForm
 from .models import (
-    Person, Unit, Board,
-    NetworkGroup, UnitMembership,
+    Person, Board, NetworkGroup,
     BoardMembership, NetworkGroupMembership, SideBarExtension
 )
 
@@ -19,20 +18,6 @@ class PersonAdmin(reversion.admin.VersionAdmin):
 
 
 admin.site.register(Person, PersonAdmin)
-
-
-class UnitMembershipInline(admin.TabularInline):
-    model = UnitMembership
-
-
-class UnitAdmin(reversion.admin.VersionAdmin):
-    list_display = ('name',)
-    ordering = ('name',)
-
-    inlines = [UnitMembershipInline]
-
-
-admin.site.register(Unit, UnitAdmin)
 
 
 class BoardMembershipInline(admin.TabularInline):
