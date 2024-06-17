@@ -209,7 +209,7 @@ typing-extensions==4.11.0
     # via
     #   asgiref
     #   django-countries
-urllib3==2.2.1
+urllib3==2.2.2
     # via requests
 webencodings==0.5.1
     # via
