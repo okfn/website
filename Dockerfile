@@ -2,7 +2,7 @@ FROM python:3.10-buster
 MAINTAINER Open Knowledge Foundation
 
 WORKDIR /app
-RUN apt-get update
+RUN apt-get update -y && apt-get upgrade -y
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 RUN apt-get install -y nginx
 RUN apt-get install -y supervisor
