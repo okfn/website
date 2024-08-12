@@ -116,7 +116,7 @@ google-api-core==2.18.0
     # via
     #   google-cloud-core
     #   google-cloud-storage
-google-auth==2.29.0
+google-auth==2.33.0
     # via
     #   -r requirements.in
     #   google-api-core
