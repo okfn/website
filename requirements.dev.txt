@@ -43,7 +43,7 @@ tomli==2.0.1
     #   pyproject-hooks
 waitress==3.0.0
     # via webtest
-webob==1.8.7
+webob==1.8.8
     # via webtest
 webtest==3.0.0
     # via django-webtest
