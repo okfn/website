@@ -1,13 +1,14 @@
 {% load static %}
 
-<footer style="padding: 15px; background: #00d1ff;">
-  <div style="display: flex; flex-direction:row; gap: 50px; padding: 20px 20px; flex-wrap: wrap;">
+<footer class="main-footer">
+  <div class="master">
+  <div class="flex flex-row flex-wrap gap-4">
     <div class="flex-none">
       <a href="/">
         <img src="{% static '/images/lg-okfn-black.svg' %}" class="h-20" alt="Open Knowledge Foundation">
       </a>
     </div>
-      <ul style="display: flex; flex-direction: row; gap: 50px; flex-grow: 1; justify-content: end; align-items: center;">
+      <ul class="flex flex-wor flex-grow gap-10 justify-end items-center">
       <li><a href="https://us9.list-manage.com/subscribe?u=73f922f8e68e21a10efa21f02&id=32d370a7fc" target="_blank"><img src="{% static '/images/footer/mailinglist.svg' %}"></a></li>
       <li><a href="https://github.com/okfn" target="_blank"></a><img src="{% static '/images/footer/github.svg' %}"></li>
       <li><a href="https://www.linkedin.com/company/open-knowledge-foundation/" target="_blank"><img src="{% static '/images/footer/linkedin.svg' %}"></a></li>
@@ -17,14 +18,14 @@
       <li><a href="https://flickr.com/photos/okfn/" target="_blank"><img src="{% static '/images/footer/flickr.svg' %}"></a></li>
       </ul>
   </div>
-  <div style="display: flex; flex-direction:row; justify-content: space-between; flex-wrap: wrap; gap: 50px; padding: 20px 20px;">
-    <div style="width: 25%;">
+  <div class="flex flex-row flex-wrap justify-between gap-10 p-4">
+    <div class="w-1/4">
       OKFN is a not-for-profit organisation incorporated in England & Wales with company number 05133759.
       </br>
       </br>
       <strong><a href="mailto:info@okfn.org" target="_blank">info@okfn.org</a></strong>
     </div>
-        <ul style="width: 60%; display:grid; grid-template-columns: repeat(4, 1fr);  grid-template-rows: repeat(3, auto); text-align:left;">
+        <ul class="w-3/5 grid grid-cols-4 grid-rows-3 text-left">
           <li><a href="/privacy-policy/">Privacy policy</a></li>
           <li><a href="/terms-of-use/">Terms of use</a></li>
           <li><a href="/newsroom/#resources">Brand Guidelines</a></li>
@@ -39,26 +40,27 @@
           <li><a href="https://network.okfn.org/specialist/">Global Directory</a></li>
         </ul>
   </div>
-  <div style="padding: 20px 20px;">
-  <div style="display: flex; flex-direction:row; gap: 10px; margin-bottom: 40px; align-items: center;">
+  <div>
+  <div class="flex flex-row items-center gap-4 mb-3">
       <a href="https://en.wikipedia.org/wiki/MIT_License"><img src="{% static '/images/footer/subfooter/license.png' %}"></a>
       <div>Source code available under the MIT license.</div>
   </div>
-  <div style="display: flex; flex-direction:row; gap: 10px; margin-bottom: 40px; align-items: center;">
+  <div class="flex flex-row items-center gap-4 mb-3"> 
     <a href="https://creativecommons.org/licenses/by/4.0/"><img src="{% static '/images/footer/subfooter/creative-commons.png' %}"></a>
     <div>Content on this site, made by Open Knowledge, is licensed under a Creative Commons Attribution 4.0 International License.</div>
   </div>
-  <div style="display: flex; flex-direction:row; gap: 10px; margin-bottom: 40px; align-items: center;">
+  <div class="flex flex-row items-center gap-4 mb-3">
     <a href="https://okfn.org/en/who-we-are/governance/"><img src="{% static '/images/footer/subfooter/ngo-source.png' %}"></a>
     <div>Open Knowledge is certified by NGOsource in accordance with the Equivalency Determination (ED).</div>
   </div>
-  <div style="display: flex; flex-direction:row; gap: 10px; margin-bottom: 40px; align-items: center;">
+  <div class="flex flex-row items-center gap-4 mb-3">
     <a href="https://www.ckan.org"><img width="82px" src="{% static '/images/footer/subfooter/ckan-dpg.svg' %}"></a>
     <div>CKAN assets are held in trust by Open Knowledge, with best practice policies on governing openly and for use of the trademark.</div>
   </div>
-  <div style="display: flex; flex-direction:row; gap: 10px; margin-bottom: 40px; align-items: center;">
+  <div class="flex flex-row items-center gap-4 mb-3">
     <a href="https://www.digitalpublicgoods.net/"><img src="{% static '/images/footer/subfooter/dpga.png' %}"></a>
     <div>Open Knowledge is part of the Digital Public Goods Alliance, accelerating the attainment of the Sustainable Development Goals.</div>
+  </div>
   </div>
   </div>
 </footer>
