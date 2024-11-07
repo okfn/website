@@ -1,47 +1,64 @@
 {% load static %}
 
-<footer class="main-footer">
-  <div class="master">
-    <div class="container">
-      <div class="main-footer__head">
-        <a href="/" class="lg">
-          <img src="{% static '/images/lg-okfn-black.svg' %}" class="h-20" alt="Open Knowledge Foundation">
-        </a>
-      </div>
-      <nav class="main-footer__nav -main">
-        <ul>
-          <li><a href="/privacy-policy/">Privacy Policy</a></li>
-          <li><a href="/ip-policy/">IP Policy</a></li>
-          <li><a href="/cookie-policy/">Cookie Policy</a></li>
-          <li><a href="/terms-of-use/">Terms of Use</a></li>
-        </ul>
-        <ul>
-          <li><a href="/code-of-conduct/">Code of Conduct</a></li>
-          <li><a href="/en/jobs/">Jobs</a></li>
-          <li><a href="/contact/">Contact</a></li>
-          <li><a href="/contact/">Request a Quote</a></li>
-        </ul>
-      </nav>
-      <nav class="main-footer__nav -social">
-        <ul>
-          <li><a href="https://twitter.com/okfn" target="_blank">Twitter/X</a></li>
-          <li><a href="https://fosstodon.org/@okfn" target="_blank">Mastodon</a></li>
-          <li><a href="https://www.youtube.com/@OpenKnowledgeFoundation/videos" target="_blank">YouTube</a></li>
-          <li><a href="https://www.linkedin.com/company/open-knowledge-foundation/" target="_blank">Linkedin</a></li>
-          <li><a href="https://github.com/okfn" target="_blank">GitHub</a></li>
-        </ul>
-      </nav>
-      <div class="main-footer__disclaimers">
-        <p class="mb-6">Source code available under the MIT license.</p>
-        <a class="flex items-center gap-4 mb-6" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
-          <img src="/assets/images/icons/footer-cc.svg" class="block w-6" alt="Creative Commons">
-          <img src="/assets/images/icons/footer-attribution.svg" class="block w-6" alt="Creative Commons">
-        </a>
-        <p class="mb-6">Content on this site, made by Open Knowledge, is licensed under a Creative Commons Attribution 4.0 International License. </p>
-        <a class="flex items-center gap-4 mb-6" href="https://okfn.org/en/who-we-are/governance/" target="_blank">
-          <img src="/assets/img/ngo-source.png" class="block w-20" alt="NGO Source">
-        </a>
-      </div>
+<footer style="padding: 15px; background: #00d1ff;">
+  <div style="display: flex; flex-direction:row; gap: 50px; padding: 20px 20px; flex-wrap: wrap;">
+    <div class="flex-none">
+      <a href="/">
+        <img src="{% static '/images/lg-okfn-black.svg' %}" class="h-20" alt="Open Knowledge Foundation">
+      </a>
     </div>
+      <ul style="display: flex; flex-direction: row; gap: 50px; flex-grow: 1; justify-content: end; align-items: center;">
+      <li><a href="https://us9.list-manage.com/subscribe?u=73f922f8e68e21a10efa21f02&id=32d370a7fc" target="_blank"><img src="{% static '/images/footer/mailinglist.svg' %}"></a></li>
+      <li><a href="https://github.com/okfn" target="_blank"></a><img src="{% static '/images/footer/github.svg' %}"></li>
+      <li><a href="https://www.linkedin.com/company/open-knowledge-foundation/" target="_blank"><img src="{% static '/images/footer/linkedin.svg' %}"></a></li>
+      <li><a href="https://fosstodon.org/@okfn" target="_blank"><img src="{% static '/images/footer/mastodon.svg' %}"></a></li>
+      <li><a href="https://twitter.com/okfn" target="_blank"><img src="{% static '/images/footer/x.svg' %}"></a></li>
+      <li><a href="https://www.youtube.com/@OpenKnowledgeFoundation/videos" target="_blank"><img src="{% static '/images/footer/youtube.svg' %}"></a></li>
+      <li><a href="https://flickr.com/photos/okfn/" target="_blank"><img src="{% static '/images/footer/flickr.svg' %}"></a></li>
+      </ul>
+  </div>
+  <div style="display: flex; flex-direction:row; justify-content: space-between; flex-wrap: wrap; gap: 50px; padding: 20px 20px;">
+    <div style="width: 25%;">
+      OKFN is a not-for-profit organisation incorporated in England & Wales with company number 05133759.
+      </br>
+      </br>
+      <strong><a href="mailto:info@okfn.org" target="_blank">info@okfn.org</a></strong>
+    </div>
+        <ul style="width: 60%; display:grid; grid-template-columns: repeat(4, 1fr);  grid-template-rows: repeat(3, auto); text-align:left;">
+          <li><a href="/privacy-policy/">Privacy policy</a></li>
+          <li><a href="/terms-of-use/">Terms of use</a></li>
+          <li><a href="/newsroom/#resources">Brand Guidelines</a></li>
+          <li><a href="/network">Open Knowledge Network</a></li>
+          <li><a href="/ip-policy/">IP policy</a></li>
+          <li><a href="/code-of-conduct/">Code of conduct</a></li>
+          <li><a href="/who-we-are/governance">Governance</a></li>
+          <li><a href="https://network.okfn.org/project/">Project repository</a></li>
+          <li><a href="/cookie-policy/">Cookie policy</a></li>
+          <li><a href="/en/jobs/">Jobs & Opportunities</a></li>
+          <li><a href="https://www.paypal.com/donate/?hosted_button_id=RRFW36P7AQUJL">Donate</a></li>
+          <li><a href="https://network.okfn.org/specialist/">Global Directory</a></li>
+        </ul>
+  </div>
+  <div style="padding: 20px 20px;">
+  <div style="display: flex; flex-direction:row; gap: 10px; margin-bottom: 40px; align-items: center;">
+      <a href="https://en.wikipedia.org/wiki/MIT_License"><img src="{% static '/images/footer/subfooter/license.png' %}"></a>
+      <div>Source code available under the MIT license.</div>
+  </div>
+  <div style="display: flex; flex-direction:row; gap: 10px; margin-bottom: 40px; align-items: center;">
+    <a href="https://creativecommons.org/licenses/by/4.0/"><img src="{% static '/images/footer/subfooter/creative-commons.png' %}"></a>
+    <div>Content on this site, made by Open Knowledge, is licensed under a Creative Commons Attribution 4.0 International License.</div>
+  </div>
+  <div style="display: flex; flex-direction:row; gap: 10px; margin-bottom: 40px; align-items: center;">
+    <a href="https://okfn.org/en/who-we-are/governance/"><img src="{% static '/images/footer/subfooter/ngo-source.png' %}"></a>
+    <div>Open Knowledge is certified by NGOsource in accordance with the Equivalency Determination (ED).</div>
+  </div>
+  <div style="display: flex; flex-direction:row; gap: 10px; margin-bottom: 40px; align-items: center;">
+    <a href="https://www.ckan.org"><img width="82px" src="{% static '/images/footer/subfooter/ckan-dpg.svg' %}"></a>
+    <div>CKAN assets are held in trust by Open Knowledge, with best practice policies on governing openly and for use of the trademark.</div>
+  </div>
+  <div style="display: flex; flex-direction:row; gap: 10px; margin-bottom: 40px; align-items: center;">
+    <a href="https://www.digitalpublicgoods.net/"><img src="{% static '/images/footer/subfooter/dpga.png' %}"></a>
+    <div>Open Knowledge is part of the Digital Public Goods Alliance, accelerating the attainment of the Sustainable Development Goals.</div>
+  </div>
   </div>
 </footer>
