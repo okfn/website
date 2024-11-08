@@ -2,7 +2,7 @@
   @apply py-12 bg-okfn-blue;
 
   a {
-    @apply transition-colors duration-200 ease-in-out;
+    @apply font-bold transition-colors duration-200 ease-in-out;
 
     &:hover {
       @apply text-white;
@@ -11,43 +11,5 @@
     &:active {
       @apply text-okfn-purple duration-75;
     }
-  }
-
-  &__head {
-    @apply col-span-full mb-12 md:mb-0;
-
-    .lg {
-      img {
-        @apply mx-auto md:mx-0;
-      }
-    }
-  }
-
-  &__nav {
-    @apply col-span-6 md:col-span-2 md:flex md:items-end gap-16 mb-12 md:mb-0 font-bold;
-
-    &.-main {
-      @apply md:col-span-4;
-    }
-
-    ul {
-      @apply flex-1;
-
-      & + ul {
-        @apply mt-4 md:mt-0;
-      }
-    }
-
-    li {
-      @apply mb-4;
-
-      &:last-child {
-        @apply mb-0;
-      }
-    }
-  }
-
-  &__disclaimers {
-    @apply col-span-full md:col-start-10 md:col-span-4;
   }
 }
