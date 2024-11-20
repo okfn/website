@@ -1,6 +1,8 @@
 .main-footer {
   @apply py-12 bg-okfn-blue;
-
+  ul > li > a > img {
+    max-width: 90%;
+  }
   a {
     @apply font-bold transition-colors duration-200 ease-in-out;
 
