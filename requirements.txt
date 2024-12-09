@@ -47,25 +47,25 @@ django-classy-tags==4.1.0
     # via
     #   django-cms
     #   django-sekizai
-django-cms==3.11.4
+django-cms==3.11.9
     # via
     #   -r requirements.in
     #   djangocms-attributes-field
     #   djangocms-picture
     #   djangocms-text-ckeditor
-django-countries==7.5.1
+django-countries==7.6.1
     # via -r requirements.in
-django-csp==3.7
+django-csp==3.8
     # via -r requirements.in
 django-environ==0.11.2
     # via -r requirements.in
-django-filer==3.1.3
+django-filer==3.3.1
     # via
     #   -r requirements.in
     #   djangocms-picture
 django-formtools==2.5.1
     # via django-cms
-django-haystack==3.2.1
+django-haystack==3.3.0
     # via -r requirements.in
 django-js-asset==2.2.0
     # via django-mptt
@@ -79,7 +79,7 @@ django-polymorphic==3.1.0
     # via django-filer
 django-ranged-response==0.2.0
     # via django-simple-captcha
-django-reversion==5.0.12
+django-reversion==5.1.0
     # via -r requirements.in
 django-sekizai==4.1.0
     # via
@@ -87,9 +87,9 @@ django-sekizai==4.1.0
     #   django-cms
 django-simple-captcha==0.6.0
     # via -r requirements.in
-django-storages==1.14.3
+django-storages==1.14.4
     # via -r requirements.in
-django-treebeard==4.7
+django-treebeard==4.7.1
     # via
     #   -r requirements.in
     #   django-cms
@@ -103,9 +103,9 @@ djangocms-attributes-field==3.0.0
     #   djangocms-picture
 djangocms-picture==4.1.1
     # via -r requirements.in
-djangocms-text-ckeditor==5.1.5
+djangocms-text-ckeditor==5.1.6
     # via -r requirements.in
-easy-thumbnails[svg]==2.8.5
+easy-thumbnails[svg]==2.10
     # via
     #   -r requirements.in
     #   django-filer
@@ -116,7 +116,7 @@ google-api-core==2.18.0
     # via
     #   google-cloud-core
     #   google-cloud-storage
-google-auth==2.29.0
+google-auth==2.36.0
     # via
     #   -r requirements.in
     #   google-api-core
@@ -124,17 +124,17 @@ google-auth==2.29.0
     #   google-cloud-storage
 google-cloud-core==2.4.1
     # via google-cloud-storage
-google-cloud-storage==2.14.0
+google-cloud-storage==2.19.0
     # via -r requirements.in
 google-crc32c==1.5.0
     # via
     #   google-cloud-storage
     #   google-resumable-media
-google-resumable-media==2.7.0
+google-resumable-media==2.7.2
     # via google-cloud-storage
 googleapis-common-protos==1.63.0
     # via google-api-core
-gunicorn==22.0.0
+gunicorn==23.0.0
     # via -r requirements.in
 html5lib==1.1
     # via djangocms-text-ckeditor
@@ -150,14 +150,15 @@ lxml==5.2.1
     # via svglib
 markdown2==2.4.13
     # via django-markdown-deux
-micawber==0.5.5
+micawber==0.5.6
     # via -r requirements.in
 packaging==24.0
     # via
     #   django-cms
+    #   django-haystack
     #   djangocms-text-ckeditor
     #   gunicorn
-pillow==10.3.0
+pillow==10.4.0
     # via
     #   -r requirements.in
     #   django-pagedown
@@ -172,7 +173,7 @@ protobuf==4.25.3
     #   google-api-core
     #   googleapis-common-protos
     #   proto-plus
-psycopg2-binary==2.9.9
+psycopg2-binary==2.9.10
     # via -r requirements.in
 pyasn1==0.6.0
     # via
