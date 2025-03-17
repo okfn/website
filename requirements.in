@@ -7,7 +7,7 @@ beautifulsoup4==4.12.3
 cssmin==0.2.0
 
 Django==4.2.17
-django-cms==3.11.9
+django-cms==4.1.4
 django-countries==7.6.1
 django-csp==3.8
 django-environ==0.11.2
