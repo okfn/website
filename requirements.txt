@@ -55,7 +55,7 @@ django-cms==3.11.9
     #   djangocms-text-ckeditor
 django-countries==7.6.1
     # via -r requirements.in
-django-csp==3.8
+django-csp==4.0
     # via -r requirements.in
 django-environ==0.11.2
     # via -r requirements.in
@@ -155,6 +155,7 @@ micawber==0.5.6
 packaging==24.0
     # via
     #   django-cms
+    #   django-csp
     #   django-haystack
     #   djangocms-text-ckeditor
     #   gunicorn

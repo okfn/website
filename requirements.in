@@ -9,7 +9,7 @@ cssmin==0.2.0
 Django==4.2.17
 django-cms==3.11.9
 django-countries==7.6.1
-django-csp==3.8
+django-csp==4.0
 django-environ==0.11.2
 django-haystack==3.3.0
 django-filer==3.3.1
