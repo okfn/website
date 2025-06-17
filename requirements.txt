@@ -8,7 +8,7 @@ asgiref==3.8.1
     # via
     #   django
     #   django-countries
-beautifulsoup4==4.12.3
+beautifulsoup4==4.13.4
     # via -r requirements.in
 cachetools==5.3.3
     # via google-auth
@@ -22,7 +22,7 @@ cssmin==0.2.0
     # via -r requirements.in
 cssselect2==0.7.0
     # via svglib
-django==4.2.17
+django==4.2.23
     # via
     #   -r requirements.in
     #   django-classy-tags
@@ -47,7 +47,7 @@ django-classy-tags==4.1.0
     # via
     #   django-cms
     #   django-sekizai
-django-cms==3.11.9
+django-cms==3.11.10
     # via
     #   -r requirements.in
     #   djangocms-attributes-field
@@ -57,7 +57,7 @@ django-countries==7.6.1
     # via -r requirements.in
 django-csp==3.8
     # via -r requirements.in
-django-environ==0.11.2
+django-environ==0.12.0
     # via -r requirements.in
 django-filer==3.3.1
     # via
@@ -71,7 +71,7 @@ django-js-asset==2.2.0
     # via django-mptt
 django-markdown-deux==1.0.6
     # via -r requirements.in
-django-mptt==0.16.0
+django-mptt==0.17.0
     # via -r requirements.in
 django-pagedown==2.2.1
     # via -r requirements.in
@@ -87,7 +87,7 @@ django-sekizai==4.1.0
     #   django-cms
 django-simple-captcha==0.6.0
     # via -r requirements.in
-django-storages==1.14.4
+django-storages==1.14.6
     # via -r requirements.in
 django-treebeard==4.7.1
     # via
@@ -103,7 +103,7 @@ djangocms-attributes-field==3.0.0
     #   djangocms-picture
 djangocms-picture==4.1.1
     # via -r requirements.in
-djangocms-text-ckeditor==5.1.6
+djangocms-text-ckeditor==5.1.7
     # via -r requirements.in
 easy-thumbnails[svg]==2.10
     # via
@@ -116,7 +116,7 @@ google-api-core==2.18.0
     # via
     #   google-cloud-core
     #   google-cloud-storage
-google-auth==2.36.0
+google-auth==2.40.3
     # via
     #   -r requirements.in
     #   google-api-core
@@ -185,7 +185,7 @@ reportlab==4.2.0
     # via
     #   easy-thumbnails
     #   svglib
-requests==2.32.3
+requests==2.32.4
     # via
     #   -r requirements.in
     #   google-api-core
@@ -209,6 +209,7 @@ tinycss2==1.2.1
 typing-extensions==4.11.0
     # via
     #   asgiref
+    #   beautifulsoup4
     #   django-countries
 urllib3==2.2.1
     # via requests
