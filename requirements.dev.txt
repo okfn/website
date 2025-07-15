@@ -6,13 +6,13 @@
 #
 beautifulsoup4==4.13.4
     # via
-    #   -c requirements.txt
+    #   -c /home/dependabot/dependabot-updater/tmp/20250714-1302-ogwwpk/dependabot_20250714-1302-c7m6s0/requirements.txt
     #   webtest
 build==1.2.1
     # via pip-tools
 click==8.1.7
     # via pip-tools
-coverage==7.9.1
+coverage==7.9.2
     # via -r requirements.dev.in
 django-webtest==1.9.13
     # via -r requirements.dev.in
@@ -22,7 +22,7 @@ mccabe==0.7.0
     # via flake8
 packaging==24.0
     # via
-    #   -c requirements.txt
+    #   -c /home/dependabot/dependabot-updater/tmp/20250714-1302-ogwwpk/dependabot_20250714-1302-c7m6s0/requirements.txt
     #   build
 pip-tools==7.4.1
     # via -r requirements.dev.in
@@ -36,7 +36,7 @@ pyproject-hooks==1.0.0
     #   pip-tools
 soupsieve==2.5
     # via
-    #   -c requirements.txt
+    #   -c /home/dependabot/dependabot-updater/tmp/20250714-1302-ogwwpk/dependabot_20250714-1302-c7m6s0/requirements.txt
     #   beautifulsoup4
 tomli==2.0.1
     # via
@@ -45,7 +45,7 @@ tomli==2.0.1
     #   pyproject-hooks
 typing-extensions==4.11.0
     # via
-    #   -c requirements.txt
+    #   -c /home/dependabot/dependabot-updater/tmp/20250714-1302-ogwwpk/dependabot_20250714-1302-c7m6s0/requirements.txt
     #   beautifulsoup4
 waitress==3.0.0
     # via webtest
