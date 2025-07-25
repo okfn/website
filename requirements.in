@@ -28,8 +28,8 @@ djangocms-picture==4.1.1
 djangocms-text-ckeditor==5.1.7
 
 # Django CMS v4.0 migration
-djangocms-4-migration==0.0.2
-djangocms-versioning==2.4.0
+git+https://github.com/django-cms/djangocms-4-migration@3211778b24230dd3e17128c4bcc979b4bdfbd933
+djangocms-versioning==2.0.0
 djangocms-alias==2.0.4
 
 easy-thumbnails==2.10
