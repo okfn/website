@@ -7,7 +7,7 @@ beautifulsoup4==4.13.4
 cssmin==0.2.0
 
 Django==4.2.23
-django-cms==3.11.10
+django-cms==4.1.1
 django-countries==7.6.1
 django-csp==3.8
 django-environ==0.12.0
@@ -26,6 +26,11 @@ djangocms-admin-style==3.3.1
 djangocms-attributes-field==3.0.0
 djangocms-picture==4.1.1
 djangocms-text-ckeditor==5.1.7
+
+# Django CMS v4.0 migration
+djangocms-4-migration==0.0.2
+djangocms-versioning==2.4.0
+djangocms-alias==2.0.4
 
 easy-thumbnails==2.10
 feedparser==6.0.11

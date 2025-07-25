@@ -33,6 +33,7 @@ django==4.2.23
     #   django-haystack
     #   django-js-asset
     #   django-pagedown
+    #   django-parler
     #   django-polymorphic
     #   django-ranged-response
     #   django-reversion
@@ -41,18 +42,22 @@ django==4.2.23
     #   django-storages
     #   django-treebeard
     #   djangocms-admin-style
+    #   djangocms-alias
+    #   djangocms-versioning
     #   easy-thumbnails
     #   jsonfield
 django-classy-tags==4.1.0
     # via
     #   django-cms
     #   django-sekizai
-django-cms==3.11.10
+django-cms==4.1.1
     # via
     #   -r requirements.in
+    #   djangocms-alias
     #   djangocms-attributes-field
     #   djangocms-picture
     #   djangocms-text-ckeditor
+    #   djangocms-versioning
 django-countries==7.6.1
     # via -r requirements.in
 django-csp==3.8
@@ -65,6 +70,8 @@ django-filer==3.3.1
     #   djangocms-picture
 django-formtools==2.5.1
     # via django-cms
+django-fsm==2.8.2
+    # via djangocms-versioning
 django-haystack==3.3.0
     # via -r requirements.in
 django-js-asset==2.2.0
@@ -75,6 +82,8 @@ django-mptt==0.17.0
     # via -r requirements.in
 django-pagedown==2.2.1
     # via -r requirements.in
+django-parler==2.3
+    # via djangocms-alias
 django-polymorphic==3.1.0
     # via django-filer
 django-ranged-response==0.2.0
@@ -93,10 +102,14 @@ django-treebeard==4.7.1
     # via
     #   -r requirements.in
     #   django-cms
+djangocms-4-migration==0.0.2
+    # via -r requirements.in
 djangocms-admin-style==3.3.1
     # via
     #   -r requirements.in
     #   django-cms
+djangocms-alias==2.0.4
+    # via -r requirements.in
 djangocms-attributes-field==3.0.0
     # via
     #   -r requirements.in
@@ -104,6 +117,8 @@ djangocms-attributes-field==3.0.0
 djangocms-picture==4.1.1
     # via -r requirements.in
 djangocms-text-ckeditor==5.1.7
+    # via -r requirements.in
+djangocms-versioning==2.4.0
     # via -r requirements.in
 easy-thumbnails[svg]==2.10
     # via
@@ -157,6 +172,7 @@ packaging==24.0
     #   django-cms
     #   django-haystack
     #   djangocms-text-ckeditor
+    #   djangocms-versioning
     #   gunicorn
 pillow==10.4.0
     # via
@@ -220,3 +236,6 @@ webencodings==0.5.1
     #   tinycss2
 whoosh==2.7.4
     # via -r requirements.in
+
+# The following packages are considered to be unsafe in a requirements file:
+# setuptools
