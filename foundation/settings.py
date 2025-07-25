@@ -129,6 +129,9 @@ INSTALLED_APPS = (
     'djangocms_text_ckeditor',
     'easy_thumbnails',
     'filer',
+    "djangocms_4_migration",
+    "djangocms_versioning",
+    "djangocms_alias",
 
     # CMS
     'cms',
@@ -168,7 +171,7 @@ INSTALLED_APPS = (
     'foundation.okfplugins.card_person',
     'foundation.okfplugins.iframe',
 )
-
+CMS_CONFIRM_VERSION4 = True
 MIDDLEWARE = [
     'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
