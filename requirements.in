@@ -23,7 +23,7 @@ django-treebeard==4.7.1
 django-simple-captcha==0.6.0
 djangocms-admin-style==3.3.1
 # djangocms-attributes-field could be removed when other deps updates to 3.0.0
-djangocms-attributes-field==3.0.0
+djangocms-attributes-field==4.1.1
 djangocms-picture==4.1.1
 djangocms-text-ckeditor==5.1.7
 
