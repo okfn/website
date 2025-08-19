@@ -122,9 +122,9 @@ google-auth==2.40.3
     #   google-api-core
     #   google-cloud-core
     #   google-cloud-storage
-google-cloud-core==2.4.1
+google-cloud-core==2.4.3
     # via google-cloud-storage
-google-cloud-storage==2.19.0
+google-cloud-storage==3.3.0
     # via -r requirements.in
 google-crc32c==1.5.0
     # via
