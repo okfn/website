@@ -3,16 +3,16 @@
 # Maintain the alphabetical order
 # Use pip list -o to check for outdated packages
 
-beautifulsoup4==4.13.4
+beautifulsoup4==4.13.5
 cssmin==0.2.0
 
-Django==4.2.23
+Django==4.2.24
 django-cms==3.11.10
 django-countries==7.6.1
 django-csp==3.8
 django-environ==0.12.0
 django-haystack==3.3.0
-django-filer==3.3.1
+django-filer==3.3.2
 django-markdown-deux==1.0.6
 django-mptt==0.17.0
 django-pagedown==2.2.1
@@ -27,18 +27,18 @@ djangocms-attributes-field==3.0.0
 djangocms-picture==4.1.1
 djangocms-text-ckeditor==5.1.7
 
-easy-thumbnails==2.10
-feedparser==6.0.11
+easy-thumbnails==2.10.1
+feedparser==6.0.12
 google-auth==2.40.3
 google-cloud-storage==2.19.0
 gunicorn==23.0.0
 iso3166==2.1.1
-jsonfield==3.1.0
+jsonfield==3.2.0
 libsass==0.23.0
 micawber==0.5.6
 # django-pagedown, djangocms-text-ckeditor and easy-thumbnails use it but don't specify the version
 # this is a secure version
 pillow==10.4.0
 psycopg2-binary==2.9.10
-requests==2.32.4
+requests==2.32.5
 whoosh==2.7.4
