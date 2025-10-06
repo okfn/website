@@ -3,7 +3,7 @@
 # Maintain the alphabetical order
 # Use pip list -o to check for outdated packages
 
-beautifulsoup4==4.13.5
+beautifulsoup4==4.14.2
 cssmin==0.2.0
 
 Django==4.2.25
