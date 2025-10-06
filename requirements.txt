@@ -71,7 +71,7 @@ django-js-asset==2.2.0
     # via django-mptt
 django-markdown-deux==1.0.6
     # via -r requirements.in
-django-mptt==0.17.0
+django-mptt==0.18.0
     # via -r requirements.in
 django-pagedown==2.2.1
     # via -r requirements.in
