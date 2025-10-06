@@ -22,7 +22,7 @@ cssmin==0.2.0
     # via -r requirements.in
 cssselect2==0.7.0
     # via svglib
-django==4.2.24
+django==4.2.25
     # via
     #   -r requirements.in
     #   django-classy-tags
