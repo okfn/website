@@ -211,7 +211,7 @@ typing-extensions==4.11.0
     #   asgiref
     #   beautifulsoup4
     #   django-countries
-urllib3==2.2.1
+urllib3==2.6.3
     # via requests
 webencodings==0.5.1
     # via
