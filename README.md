@@ -164,7 +164,8 @@ For more info read this [doc](/docs/cloud/google-deploy.md).
 
 Dependencies are managed with [pip-tools](https://github.com/jazzband/pip-tools).
 Add new packages to `requirements.in` / `requirements.dev.in`
-and compile `requirements.txt` / `requirements.dev.txt` with `pip-compile`.
+and compile `requirements.txt` / `requirements.dev.txt` with
+`uv pip compile requirements.in -o requirements.txt` (previously `pip-compile`).
 
 You can run `pip list --outdated` to see outdated packages.
 
