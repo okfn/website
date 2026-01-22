@@ -4,7 +4,7 @@
 #
 #    pip-compile requirements.dev.in
 #
-beautifulsoup4==4.13.4
+beautifulsoup4==4.14.3
     # via
     #   -c requirements.txt
     #   webtest
@@ -24,6 +24,7 @@ packaging==24.0
     # via
     #   -c requirements.txt
     #   build
+    #   wheel
 pip-tools==7.4.1
     # via -r requirements.dev.in
 pycodestyle==2.12.1
@@ -53,7 +54,7 @@ webob==1.8.7
     # via webtest
 webtest==3.0.0
     # via django-webtest
-wheel==0.43.0
+wheel==0.46.2
     # via pip-tools
 
 # The following packages are considered to be unsafe in a requirements file:
