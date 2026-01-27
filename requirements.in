@@ -29,8 +29,8 @@ djangocms-text-ckeditor==5.1.7
 
 easy-thumbnails==2.10.1
 feedparser==6.0.12
-google-auth==2.40.3
-google-cloud-storage==2.19.0
+google-auth==2.48.0
+google-cloud-storage==3.8.0
 gunicorn==23.0.0
 iso3166==2.1.1
 jsonfield==3.2.0
@@ -38,8 +38,8 @@ libsass==0.23.0
 micawber==0.5.6
 # django-pagedown, djangocms-text-ckeditor and easy-thumbnails use it but don't specify the version
 # this is a secure version
-pillow==10.4.0
-psycopg2-binary==2.9.10
+pillow==12.1.0
+psycopg2-binary==2.9.11
 requests==2.32.5
 urllib3==2.6.3
 whoosh==2.7.4
