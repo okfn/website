@@ -18,7 +18,7 @@ cssmin==0.2.0
     # via -r requirements.in
 cssselect2==0.7.0
     # via svglib
-django==4.2.26
+django==4.2.28
     # via
     #   -r requirements.in
     #   django-classy-tags
@@ -101,7 +101,7 @@ djangocms-picture==4.1.1
     # via -r requirements.in
 djangocms-text-ckeditor==5.1.7
     # via -r requirements.in
-easy-thumbnails==2.10.1
+easy-thumbnails[svg]==2.10.1
     # via
     #   -r requirements.in
     #   django-filer
@@ -204,6 +204,7 @@ tinycss2==1.2.1
     #   svglib
 typing-extensions==4.11.0
     # via
+    #   asgiref
     #   beautifulsoup4
     #   django-countries
 urllib3==2.6.3
