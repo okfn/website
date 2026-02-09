@@ -51,7 +51,7 @@ django-cms==3.11.10
     #   djangocms-attributes-field
     #   djangocms-picture
     #   djangocms-text-ckeditor
-django-countries==7.6.1
+django-countries==8.2.0
     # via -r requirements.in
 django-csp==3.8
     # via -r requirements.in
@@ -206,8 +206,9 @@ tinycss2==1.2.1
     # via
     #   cssselect2
     #   svglib
-typing-extensions==4.11.0
+typing-extensions==4.15.0
     # via
+    #   -r requirements.in
     #   beautifulsoup4
     #   django-countries
 urllib3==2.6.3
