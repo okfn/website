@@ -6,19 +6,21 @@ asgiref==3.8.1
     #   django-countries
 beautifulsoup4==4.14.3
     # via -r requirements.in
-cachetools==5.3.3
-    # via google-auth
 certifi==2024.2.2
     # via requests
+cffi==2.0.0
+    # via cryptography
 chardet==5.2.0
     # via reportlab
 charset-normalizer==3.3.2
     # via requests
+cryptography==46.0.3
+    # via google-auth
 cssmin==0.2.0
     # via -r requirements.in
 cssselect2==0.7.0
     # via svglib
-django==4.2.26
+django==4.2.28
     # via
     #   -r requirements.in
     #   django-classy-tags
@@ -49,7 +51,7 @@ django-cms==3.11.10
     #   djangocms-attributes-field
     #   djangocms-picture
     #   djangocms-text-ckeditor
-django-countries==7.6.1
+django-countries==8.2.0
     # via -r requirements.in
 django-csp==3.8
     # via -r requirements.in
@@ -108,19 +110,19 @@ easy-thumbnails==2.10.1
     #   djangocms-picture
 feedparser==6.0.12
     # via -r requirements.in
-google-api-core==2.18.0
+google-api-core==2.29.0
     # via
     #   google-cloud-core
     #   google-cloud-storage
-google-auth==2.40.3
+google-auth==2.48.0
     # via
     #   -r requirements.in
     #   google-api-core
     #   google-cloud-core
     #   google-cloud-storage
-google-cloud-core==2.4.1
+google-cloud-core==2.5.0
     # via google-cloud-storage
-google-cloud-storage==2.19.0
+google-cloud-storage==3.8.0
     # via -r requirements.in
 google-crc32c==1.5.0
     # via
@@ -154,7 +156,7 @@ packaging==24.0
     #   django-haystack
     #   djangocms-text-ckeditor
     #   gunicorn
-pillow==10.4.0
+pillow==12.1.0
     # via
     #   -r requirements.in
     #   django-pagedown
@@ -169,7 +171,7 @@ protobuf==4.25.8
     #   google-api-core
     #   googleapis-common-protos
     #   proto-plus
-psycopg2-binary==2.9.10
+psycopg2-binary==2.9.11
     # via -r requirements.in
 pyasn1==0.6.0
     # via
@@ -177,6 +179,8 @@ pyasn1==0.6.0
     #   rsa
 pyasn1-modules==0.4.0
     # via google-auth
+pycparser==3.0
+    # via cffi
 reportlab==4.2.0
     # via
     #   easy-thumbnails
@@ -202,8 +206,9 @@ tinycss2==1.2.1
     # via
     #   cssselect2
     #   svglib
-typing-extensions==4.11.0
+typing-extensions==4.15.0
     # via
+    #   -r requirements.in
     #   beautifulsoup4
     #   django-countries
 urllib3==2.6.3
