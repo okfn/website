@@ -14,7 +14,7 @@ django-environ==0.12.0
 django-haystack==3.3.0
 django-filer==3.3.2
 django-markdown-deux==1.0.6
-django-mptt==0.17.0
+django-mptt==0.18.0
 django-pagedown==2.2.1
 django-reversion==5.1.0
 django-sekizai==4.1.0
