@@ -29,7 +29,7 @@ djangocms-text-ckeditor==5.1.7
 
 easy-thumbnails==2.10.1
 feedparser==6.0.12
-google-auth==2.48.0
+google-auth==2.49.1
 google-cloud-storage==3.8.0
 gunicorn==23.0.0
 iso3166==2.1.1
@@ -40,6 +40,10 @@ micawber==0.5.6
 # this is a secure version
 pillow==12.1.0
 psycopg2-binary==2.9.11
+# pyasn1-modules is forced to updted pyasn to a secure version
+# we added it here temporarily until google-auth updates their pyasn1 dependency
+# TODO drop pyasn1-modules from here when google-auth updates their dependency
+pyasn1-modules==0.4.2
 requests==2.32.5
 # We need to manually force typing-extensions to upgrade
 typing-extensions==4.15.0
