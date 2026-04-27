@@ -99,6 +99,13 @@ if env.get('DJANGO_ALLOWED_HOSTS'):
     DEFAULT_FROM_EMAIL = 'noreply@%s' % ALLOWED_HOSTS[0]
     SERVER_EMAIL = 'admin-noreply@%s' % ALLOWED_HOSTS[0]
 
+# Origins (scheme + host[:port]) browsers may POST to. Required since Django 4
+# for any cross-origin POST, including admin login from a non-default port.
+# Set via DJANGO_CSRF_TRUSTED_ORIGINS (comma-separated).
+CSRF_TRUSTED_ORIGINS = []
+if env.get('DJANGO_CSRF_TRUSTED_ORIGINS'):
+    CSRF_TRUSTED_ORIGINS = env.get('DJANGO_CSRF_TRUSTED_ORIGINS').split(',')
+
 INSTALLED_APPS = (
     # CMS admin theme
     'djangocms_admin_style',
