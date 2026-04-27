@@ -5,7 +5,9 @@ asgiref==3.8.1
     #   django
     #   django-countries
 beautifulsoup4==4.14.3
-    # via -r requirements.in
+    # via
+    #   -r requirements.in
+    #   micawber
 certifi==2024.2.2
     # via requests
 cffi==2.0.0
@@ -20,7 +22,7 @@ cssmin==0.2.0
     # via -r requirements.in
 cssselect2==0.7.0
     # via svglib
-django==4.2.29
+django==4.2.30
     # via
     #   -r requirements.in
     #   django-classy-tags
@@ -55,9 +57,9 @@ django-countries==8.2.0
     # via -r requirements.in
 django-csp==3.8
     # via -r requirements.in
-django-environ==0.12.0
+django-environ==0.13.0
     # via -r requirements.in
-django-filer==3.3.2
+django-filer==3.4.4
     # via
     #   -r requirements.in
     #   djangocms-picture
@@ -69,7 +71,7 @@ django-js-asset==2.2.0
     # via django-mptt
 django-markdown-deux==1.0.6
     # via -r requirements.in
-django-mptt==0.17.0
+django-mptt==0.18.0
     # via -r requirements.in
 django-pagedown==2.2.1
     # via -r requirements.in
@@ -83,11 +85,11 @@ django-sekizai==4.1.0
     # via
     #   -r requirements.in
     #   django-cms
-django-simple-captcha==0.6.0
+django-simple-captcha==0.6.3
     # via -r requirements.in
 django-storages==1.14.6
     # via -r requirements.in
-django-treebeard==4.7.1
+django-treebeard==4.8.0
     # via
     #   -r requirements.in
     #   django-cms
@@ -114,7 +116,7 @@ google-api-core==2.29.0
     # via
     #   google-cloud-core
     #   google-cloud-storage
-google-auth==2.49.1
+google-auth==2.49.2
     # via
     #   -r requirements.in
     #   google-api-core
@@ -122,7 +124,7 @@ google-auth==2.49.1
     #   google-cloud-storage
 google-cloud-core==2.5.0
     # via google-cloud-storage
-google-cloud-storage==3.8.0
+google-cloud-storage==3.10.1
     # via -r requirements.in
 google-crc32c==1.5.0
     # via
@@ -145,10 +147,12 @@ jsonfield==3.2.0
 libsass==0.23.0
     # via -r requirements.in
 lxml==5.2.1
-    # via svglib
+    # via
+    #   micawber
+    #   svglib
 markdown2==2.4.13
     # via django-markdown-deux
-micawber==0.5.6
+micawber==0.6.2
     # via -r requirements.in
 packaging==24.0
     # via
@@ -156,7 +160,7 @@ packaging==24.0
     #   django-haystack
     #   djangocms-text-ckeditor
     #   gunicorn
-pillow==12.1.0
+pillow==12.2.0
     # via
     #   -r requirements.in
     #   django-pagedown
@@ -171,7 +175,7 @@ protobuf==4.25.8
     #   google-api-core
     #   googleapis-common-protos
     #   proto-plus
-psycopg2-binary==2.9.11
+psycopg2-binary==2.9.12
     # via -r requirements.in
 pyasn1==0.6.3
     # via pyasn1-modules
@@ -185,7 +189,7 @@ reportlab==4.2.0
     # via
     #   easy-thumbnails
     #   svglib
-requests==2.32.5
+requests==2.33.1
     # via
     #   -r requirements.in
     #   google-api-core
@@ -199,7 +203,9 @@ soupsieve==2.5
 sqlparse==0.5.0
     # via django
 svglib==1.5.1
-    # via easy-thumbnails
+    # via
+    #   django-filer
+    #   easy-thumbnails
 tinycss2==1.2.1
     # via
     #   cssselect2

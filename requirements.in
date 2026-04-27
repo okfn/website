@@ -6,21 +6,21 @@
 beautifulsoup4==4.14.3
 cssmin==0.2.0
 
-Django==4.2.29
+Django==4.2.30
 django-cms==3.11.10
 django-countries==8.2.0
 django-csp==3.8
-django-environ==0.12.0
+django-environ==0.13.0
 django-haystack==3.3.0
-django-filer==3.3.2
+django-filer==3.4.4
 django-markdown-deux==1.0.6
-django-mptt==0.17.0
+django-mptt==0.18.0
 django-pagedown==2.2.1
 django-reversion==5.1.0
 django-sekizai==4.1.0
 django-storages==1.14.6
-django-treebeard==4.7.1
-django-simple-captcha==0.6.0
+django-treebeard==4.8.0
+django-simple-captcha==0.6.3
 djangocms-admin-style==3.3.1
 # djangocms-attributes-field could be removed when other deps updates to 3.0.0
 djangocms-attributes-field==3.0.0
@@ -29,22 +29,22 @@ djangocms-text-ckeditor==5.1.7
 
 easy-thumbnails==2.10.1
 feedparser==6.0.12
-google-auth==2.49.1
-google-cloud-storage==3.8.0
+google-auth==2.49.2
+google-cloud-storage==3.10.1
 gunicorn==23.0.0
 iso3166==2.1.1
 jsonfield==3.2.0
 libsass==0.23.0
-micawber==0.5.6
+micawber==0.6.2
 # django-pagedown, djangocms-text-ckeditor and easy-thumbnails use it but don't specify the version
 # this is a secure version
-pillow==12.1.0
-psycopg2-binary==2.9.11
+pillow==12.2.0
+psycopg2-binary==2.9.12
 # pyasn1-modules is forced to updted pyasn to a secure version
 # we added it here temporarily until google-auth updates their pyasn1 dependency
 # TODO drop pyasn1-modules from here when google-auth updates their dependency
 pyasn1-modules==0.4.2
-requests==2.32.5
+requests==2.33.1
 # We need to manually force typing-extensions to upgrade
 typing-extensions==4.15.0
 urllib3==2.6.3
