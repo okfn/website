@@ -16,6 +16,11 @@ django-filer==3.4.4
 django-markdown-deux==1.0.6
 django-mptt==0.18.0
 django-pagedown==2.2.1
+# Pinned directly so we get a 4.x release that uses `importlib.metadata`
+# instead of the deprecated `pkg_resources`. django-filer pulls it in
+# transitively but doesn't pin a specific version, so without this we'd
+# resolve to an old 3.x release that breaks on Python 3.12.
+django-polymorphic==4.11.2
 django-reversion==5.1.0
 django-sekizai==4.1.0
 django-storages==1.14.6

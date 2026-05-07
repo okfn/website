@@ -75,8 +75,10 @@ django-mptt==0.18.0
     # via -r requirements.in
 django-pagedown==2.2.1
     # via -r requirements.in
-django-polymorphic==3.1.0
-    # via django-filer
+django-polymorphic==4.11.2
+    # via
+    #   -r requirements.in
+    #   django-filer
 django-ranged-response==0.2.0
     # via django-simple-captcha
 django-reversion==5.1.0
@@ -215,6 +217,7 @@ typing-extensions==4.15.0
     #   -r requirements.in
     #   beautifulsoup4
     #   django-countries
+    #   django-polymorphic
 urllib3==2.6.3
     # via
     #   -r requirements.in
