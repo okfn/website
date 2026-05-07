@@ -19,13 +19,31 @@ If we need to make global styling or data model changes, then we need to edit th
 
 ## Prerequisites and assumptions
 
-You must have the following installed:
+The fastest path is **Docker only** — see "Quick start with Make" below. You don't need Python or Node on the host for that flow.
 
-- Python 3.10
-- Node JS 16
+If you want to run things directly on the host (faster dev loop, but more setup):
+
+- Python 3.12
+- Node 20
+- [`uv`](https://github.com/astral-sh/uv) — used to compile the `requirements.txt` lock files
 
 The [/Dockerfile](/Dockerfile) (used for staging/production) and the [requirements file](/requirements.txt)
 (built with `pip-tools`) in this repo shows you the application dependencies.
+
+## Quick start with Make
+
+The repo ships a `Makefile` that wraps the most common Docker operations. From a clean checkout:
+
+```bash
+make build      # build the image
+make run        # start the container on http://localhost:8888
+make logs       # follow logs (Ctrl-C to detach)
+make test       # run Django's test suite inside the container
+make stop       # stop the container
+```
+
+Run `make` with no arguments to see all available targets (`bash`, `shell`, `lint`, `check`, `migrate`,
+`css`, `deps-compile`, `clean`, etc.).
 
 # Development
 
@@ -59,14 +77,14 @@ DB_PORT=5432
 
 Prepare the app:
 
-Make sure to have the correct node version:
+Make sure to have the correct Node version (20):
 
 ```bash
-nvm install 16
-nvm use 16
+nvm install 20
+nvm use 20
 ```
 
-Create a Python 3.10 local environment (e.g. `python3.10 -m venv ~/okf-website-env`)
+Create a Python 3.12 local environment (e.g. `python3.12 -m venv ~/okf-website-env`)
 
 ```bash
 pip install -r requirements.txt
@@ -82,11 +100,20 @@ Start the server:
 python manage.py runserver
 ```
 
-Another option is to use Docker.
+Another option is to use Docker — wrapped by the Makefile:
+
+```bash
+make build
+make run            # http://localhost:8888
+make stop
+```
+
+Or the raw commands:
 
 ```bash
 docker build -t okfn .
-docker run -d -p 8888:80 okfn
+docker run -d --rm --name okfn -p 8888:80 okfn
+docker stop okfn
 ```
 
 ## File uploads
@@ -111,7 +138,7 @@ of how it works: [Installing Tailwind CSS as a PostCSS plugin](https://tailwindc
 
 The css build is done by `PostCSS` and the configuration files for it are `tailwind.config.cjs` and `postcss.config.cjs`.
 
-Running `npm run build` will compile our main `styles.css` file and place it in `static/css/styles.css`. (It then will be collected by
+Running `npm run build` (or `make css`) will compile our main `styles.css` file and place it in `static/css/styles.css`. (It then will be collected by
 Django when building the Dockerfile)
 
 **Remember:** Tailwind CSS works by scanning all of our HTML files, JavaScript components, and any other templates
@@ -162,12 +189,15 @@ For more info read this [doc](/docs/cloud/google-deploy.md).
 
 ## Dependency Management
 
-Dependencies are managed with [pip-tools](https://github.com/jazzband/pip-tools).
-Add new packages to `requirements.in` / `requirements.dev.in`
-and compile `requirements.txt` / `requirements.dev.txt` with
-`uv pip compile requirements.in -o requirements.txt` (previously `pip-compile`).
+Dependencies are managed with [`uv`](https://github.com/astral-sh/uv) (formerly
+[pip-tools](https://github.com/jazzband/pip-tools)). Add new packages to
+`requirements.in` / `requirements.dev.in` and recompile the lock files:
 
-You can run `pip list --outdated` to see outdated packages.
+```bash
+make deps-compile           # regenerates both requirements.txt files
+```
+
+You can also run `pip list --outdated` to see outdated packages.
 
 ## Changelog
 
