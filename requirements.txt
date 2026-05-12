@@ -47,7 +47,7 @@ django-classy-tags==4.1.0
     # via
     #   django-cms
     #   django-sekizai
-django-cms==3.11.10
+django-cms==3.11.11
     # via
     #   -r requirements.in
     #   djangocms-attributes-field
@@ -75,7 +75,7 @@ django-mptt==0.18.0
     # via -r requirements.in
 django-pagedown==2.2.1
     # via -r requirements.in
-django-polymorphic==4.11.2
+django-polymorphic==4.11.3
     # via
     #   -r requirements.in
     #   django-filer
@@ -118,7 +118,7 @@ google-api-core==2.29.0
     # via
     #   google-cloud-core
     #   google-cloud-storage
-google-auth==2.49.2
+google-auth==2.52.0
     # via
     #   -r requirements.in
     #   google-api-core
@@ -191,7 +191,7 @@ reportlab==4.2.0
     # via
     #   easy-thumbnails
     #   svglib
-requests==2.33.1
+requests==2.34.0
     # via
     #   -r requirements.in
     #   google-api-core
@@ -218,7 +218,7 @@ typing-extensions==4.15.0
     #   beautifulsoup4
     #   django-countries
     #   django-polymorphic
-urllib3==2.6.3
+urllib3==2.7.0
     # via
     #   -r requirements.in
     #   requests
