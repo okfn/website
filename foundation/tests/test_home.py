@@ -9,7 +9,15 @@ The test DB is empty, so there are no CMS Page objects. The point of these
 tests is to catch regressions in routing, middleware, and template loading,
 not to assert specific page content.
 """
+import os
+import unittest
+
 from django.test import TestCase
+
+
+SAMPLE_DATA_PATH = os.path.join(
+    os.path.dirname(__file__), "fixtures", "sample_data.json"
+)
 
 
 class HomePageTests(TestCase):
@@ -39,6 +47,10 @@ class AdminEntryPointTests(TestCase):
         self.assertContains(response, "csrfmiddlewaretoken")
 
 
+@unittest.skipUnless(
+    os.path.exists(SAMPLE_DATA_PATH),
+    "sample_data.json not present — run `make fixtures-dump` to enable.",
+)
 class HomePageWithSampleDataTests(TestCase):
     """Tests that load a real slice of CMS data via fixtures and exercise
     the actual page-rendering pipeline. Regenerate the fixture with
