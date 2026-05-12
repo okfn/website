@@ -34,7 +34,8 @@ whoosh_index
 .env
 .env.staging
 .env.production
+.env.docker-pg
 assets
-
+CLAUDE.md
 .vscode
 test_website
