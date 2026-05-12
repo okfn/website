@@ -9,7 +9,15 @@ The test DB is empty, so there are no CMS Page objects. The point of these
 tests is to catch regressions in routing, middleware, and template loading,
 not to assert specific page content.
 """
+import os
+import unittest
+
 from django.test import TestCase
+
+
+SAMPLE_DATA_PATH = os.path.join(
+    os.path.dirname(__file__), "fixtures", "sample_data.json"
+)
 
 
 class HomePageTests(TestCase):
@@ -37,3 +45,23 @@ class AdminEntryPointTests(TestCase):
         response = self.client.get("/admin/login/")
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "csrfmiddlewaretoken")
+
+
+@unittest.skipUnless(
+    os.path.exists(SAMPLE_DATA_PATH),
+    "sample_data.json not present — run `make fixtures-dump` to enable.",
+)
+class HomePageWithSampleDataTests(TestCase):
+    """Tests that load a real slice of CMS data via fixtures and exercise
+    the actual page-rendering pipeline. Regenerate the fixture with
+    `make fixtures-dump` after changes to the prod-flavored DB."""
+
+    fixtures = ["sample_data.json"]
+
+    def test_home_renders_real_content(self):
+        response = self.client.get("/", follow=True)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("text/html", response["Content-Type"])
+        # The fixture includes the production home page; CMS should pick it
+        # up by `is_home=True` and render its template.
+        self.assertContains(response, "<html")
