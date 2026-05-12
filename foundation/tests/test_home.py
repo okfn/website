@@ -37,3 +37,19 @@ class AdminEntryPointTests(TestCase):
         response = self.client.get("/admin/login/")
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "csrfmiddlewaretoken")
+
+
+class HomePageWithSampleDataTests(TestCase):
+    """Tests that load a real slice of CMS data via fixtures and exercise
+    the actual page-rendering pipeline. Regenerate the fixture with
+    `make fixtures-dump` after changes to the prod-flavored DB."""
+
+    fixtures = ["sample_data.json"]
+
+    def test_home_renders_real_content(self):
+        response = self.client.get("/", follow=True)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("text/html", response["Content-Type"])
+        # The fixture includes the production home page; CMS should pick it
+        # up by `is_home=True` and render its template.
+        self.assertContains(response, "<html")
