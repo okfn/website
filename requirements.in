@@ -7,7 +7,7 @@ beautifulsoup4==4.14.3
 cssmin==0.2.0
 
 Django==4.2.30
-django-cms==3.11.10
+django-cms==3.11.11
 django-countries==8.2.0
 django-csp==3.8
 django-environ==0.13.0
@@ -20,7 +20,7 @@ django-pagedown==2.2.1
 # instead of the deprecated `pkg_resources`. django-filer pulls it in
 # transitively but doesn't pin a specific version, so without this we'd
 # resolve to an old 3.x release that breaks on Python 3.12.
-django-polymorphic==4.11.2
+django-polymorphic==4.11.3
 django-reversion==5.1.0
 django-sekizai==4.1.0
 django-storages==1.14.6
@@ -34,7 +34,7 @@ djangocms-text-ckeditor==5.1.7
 
 easy-thumbnails==2.10.1
 feedparser==6.0.12
-google-auth==2.49.2
+google-auth==2.52.0
 google-cloud-storage==3.10.1
 gunicorn==23.0.0
 iso3166==2.1.1
@@ -49,8 +49,8 @@ psycopg2-binary==2.9.12
 # we added it here temporarily until google-auth updates their pyasn1 dependency
 # TODO drop pyasn1-modules from here when google-auth updates their dependency
 pyasn1-modules==0.4.2
-requests==2.33.1
+requests==2.34.0
 # We need to manually force typing-extensions to upgrade
 typing-extensions==4.15.0
-urllib3==2.6.3
+urllib3==2.7.0
 whoosh==2.7.4

@@ -6,4 +6,4 @@
 pip-tools==7.5.3
 flake8==7.3.0
 django-webtest==1.9.14
-coverage==7.13.5
+coverage==7.14.0
