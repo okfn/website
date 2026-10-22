@@ -162,8 +162,10 @@ pillow==13.0.0
     #   django-simple-captcha
     #   djangocms-text-ckeditor
     #   easy-thumbnails
-proto-plus==1.23.0
-    # via google-api-core
+proto-plus==1.28.2
+    # via
+    #   -r requirements.in
+    #   google-api-core
 protobuf==4.25.8
     # via
     #   google-api-core
