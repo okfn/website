@@ -3,29 +3,29 @@
 # Maintain the alphabetical order
 # Use pip list -o to check for outdated packages
 
-beautifulsoup4==4.14.3
+beautifulsoup4==4.15.0
 cssmin==0.2.0
 
 Django==4.2.30
 django-cms==3.11.11
 django-countries==8.2.0
 django-csp==3.8
-django-environ==0.13.0
-django-haystack==3.3.0
-django-filer==3.4.4
+django-environ==0.14.0
+django-haystack==3.4.0
+django-filer==3.6.0
 django-markdown-deux==1.0.6
-django-mptt==0.18.0
+django-mptt==0.20.0
 django-pagedown==2.2.1
 # Pinned directly so we get a 4.x release that uses `importlib.metadata`
 # instead of the deprecated `pkg_resources`. django-filer pulls it in
 # transitively but doesn't pin a specific version, so without this we'd
 # resolve to an old 3.x release that breaks on Python 3.12.
-django-polymorphic==4.11.3
+django-polymorphic==4.11.7
 django-reversion==5.1.0
 django-sekizai==4.1.0
 django-storages==1.14.6
 django-treebeard==4.8.0
-django-simple-captcha==0.6.3
+django-simple-captcha==0.7.0
 djangocms-admin-style==3.3.1
 # djangocms-attributes-field could be removed when other deps updates to 3.0.0
 djangocms-attributes-field==3.0.0
@@ -33,24 +33,24 @@ djangocms-picture==4.1.1
 djangocms-text-ckeditor==5.1.7
 
 easy-thumbnails==2.10.1
-feedparser==6.0.12
-google-auth==2.52.0
-google-cloud-storage==3.10.1
-gunicorn==23.0.0
+feedparser==6.0.14
+google-auth==2.62.0
+google-cloud-storage==3.17.1
+gunicorn==26.2.0
 iso3166==2.1.1
 jsonfield==3.2.0
 libsass==0.23.0
-micawber==0.6.2
+micawber==0.8.0
 # django-pagedown, djangocms-text-ckeditor and easy-thumbnails use it but don't specify the version
 # this is a secure version
-pillow==12.2.0
-psycopg2-binary==2.9.12
+pillow==13.0.0
+psycopg2-binary==2.9.13
 # pyasn1-modules is forced to updted pyasn to a secure version
 # we added it here temporarily until google-auth updates their pyasn1 dependency
 # TODO drop pyasn1-modules from here when google-auth updates their dependency
 pyasn1-modules==0.4.2
-requests==2.34.0
+requests==2.34.2
 # We need to manually force typing-extensions to upgrade
-typing-extensions==4.15.0
-urllib3==2.7.0
+typing-extensions==4.16.0
+urllib3==2.8.0
 whoosh==2.7.4

@@ -4,7 +4,7 @@ asgiref==3.8.1
     # via
     #   django
     #   django-countries
-beautifulsoup4==4.14.3
+beautifulsoup4==4.15.0
     # via
     #   -r requirements.in
     #   micawber
@@ -12,16 +12,12 @@ certifi==2024.2.2
     # via requests
 cffi==2.0.0
     # via cryptography
-chardet==5.2.0
-    # via reportlab
 charset-normalizer==3.3.2
     # via requests
 cryptography==46.0.3
     # via google-auth
 cssmin==0.2.0
     # via -r requirements.in
-cssselect2==0.7.0
-    # via svglib
 django==4.2.30
     # via
     #   -r requirements.in
@@ -57,25 +53,25 @@ django-countries==8.2.0
     # via -r requirements.in
 django-csp==3.8
     # via -r requirements.in
-django-environ==0.13.0
+django-environ==0.14.0
     # via -r requirements.in
-django-filer==3.4.4
+django-filer==3.6.0
     # via
     #   -r requirements.in
     #   djangocms-picture
 django-formtools==2.5.1
     # via django-cms
-django-haystack==3.3.0
+django-haystack==3.4.0
     # via -r requirements.in
-django-js-asset==2.2.0
+django-js-asset==4.2.0
     # via django-mptt
 django-markdown-deux==1.0.6
     # via -r requirements.in
-django-mptt==0.18.0
+django-mptt==0.20.0
     # via -r requirements.in
 django-pagedown==2.2.1
     # via -r requirements.in
-django-polymorphic==4.11.3
+django-polymorphic==4.11.7
     # via
     #   -r requirements.in
     #   django-filer
@@ -87,7 +83,7 @@ django-sekizai==4.1.0
     # via
     #   -r requirements.in
     #   django-cms
-django-simple-captcha==0.6.3
+django-simple-captcha==0.7.0
     # via -r requirements.in
 django-storages==1.14.6
     # via -r requirements.in
@@ -112,13 +108,15 @@ easy-thumbnails==2.10.1
     #   -r requirements.in
     #   django-filer
     #   djangocms-picture
-feedparser==6.0.12
+feedparser==6.0.14
     # via -r requirements.in
+feedparser-sgmllib==2.1.0
+    # via feedparser
 google-api-core==2.29.0
     # via
     #   google-cloud-core
     #   google-cloud-storage
-google-auth==2.52.0
+google-auth==2.62.0
     # via
     #   -r requirements.in
     #   google-api-core
@@ -126,9 +124,9 @@ google-auth==2.52.0
     #   google-cloud-storage
 google-cloud-core==2.5.0
     # via google-cloud-storage
-google-cloud-storage==3.10.1
+google-cloud-storage==3.17.1
     # via -r requirements.in
-google-crc32c==1.5.0
+google-crc32c==1.9.0
     # via
     #   google-cloud-storage
     #   google-resumable-media
@@ -136,7 +134,7 @@ google-resumable-media==2.7.2
     # via google-cloud-storage
 googleapis-common-protos==1.63.0
     # via google-api-core
-gunicorn==23.0.0
+gunicorn==26.2.0
     # via -r requirements.in
 html5lib==1.1
     # via djangocms-text-ckeditor
@@ -148,28 +146,22 @@ jsonfield==3.2.0
     # via -r requirements.in
 libsass==0.23.0
     # via -r requirements.in
-lxml==5.2.1
-    # via
-    #   micawber
-    #   svglib
 markdown2==2.4.13
     # via django-markdown-deux
-micawber==0.6.2
+micawber==0.8.0
     # via -r requirements.in
 packaging==24.0
     # via
     #   django-cms
     #   django-haystack
     #   djangocms-text-ckeditor
-    #   gunicorn
-pillow==12.2.0
+pillow==13.0.0
     # via
     #   -r requirements.in
     #   django-pagedown
     #   django-simple-captcha
     #   djangocms-text-ckeditor
     #   easy-thumbnails
-    #   reportlab
 proto-plus==1.23.0
     # via google-api-core
 protobuf==4.25.8
@@ -177,8 +169,10 @@ protobuf==4.25.8
     #   google-api-core
     #   googleapis-common-protos
     #   proto-plus
-psycopg2-binary==2.9.12
+psycopg2-binary==2.9.13
     # via -r requirements.in
+py-svg-hush==0.3.0
+    # via django-filer
 pyasn1==0.6.3
     # via pyasn1-modules
 pyasn1-modules==0.4.2
@@ -187,45 +181,28 @@ pyasn1-modules==0.4.2
     #   google-auth
 pycparser==3.0
     # via cffi
-reportlab==4.2.0
-    # via
-    #   easy-thumbnails
-    #   svglib
-requests==2.34.0
+requests==2.34.2
     # via
     #   -r requirements.in
     #   google-api-core
     #   google-cloud-storage
-sgmllib3k==1.0.0
-    # via feedparser
 six==1.16.0
     # via html5lib
 soupsieve==2.5
     # via beautifulsoup4
 sqlparse==0.5.0
     # via django
-svglib==1.5.1
-    # via
-    #   django-filer
-    #   easy-thumbnails
-tinycss2==1.2.1
-    # via
-    #   cssselect2
-    #   svglib
-typing-extensions==4.15.0
+typing-extensions==4.16.0
     # via
     #   -r requirements.in
     #   beautifulsoup4
     #   django-countries
     #   django-polymorphic
-urllib3==2.7.0
+urllib3==2.8.0
     # via
     #   -r requirements.in
     #   requests
 webencodings==0.5.1
-    # via
-    #   cssselect2
-    #   html5lib
-    #   tinycss2
+    # via html5lib
 whoosh==2.7.4
     # via -r requirements.in
